@@ -3,8 +3,8 @@
 
 #include "Arduino.h"
 
-#define IR_LEFT_PIN 12
-#define IR_RIGHT_PIN 11
+#define IR_LEFT_PIN 8
+#define IR_RIGHT_PIN 7
 
 
 
