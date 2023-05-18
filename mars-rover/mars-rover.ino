@@ -20,7 +20,7 @@
 
  *******************************************************************/
 
-#define VERSION "0.0.1"
+#define VERSION "0.0.2"
 
 #include <Arduino.h>
 #include <SoftPWM.h>
@@ -32,8 +32,8 @@
 #include "ultrasonic.h"
 #include "cmd_code_config.hpp"
 #include "ai_camera.h"
-// #include "soft_servo.h"
-#include "Servo.h"
+#include "soft_servo.h"
+// #include "Servo.h"
 #include "battery.h"
 
 
@@ -106,8 +106,8 @@
 
 /** Instantiate aicamera, a class for serial communication with ESP32-CAM */
 AiCamera aiCam = AiCamera(NAME, TYPE);
-Servo servo;
-// SoftServo servo;
+// Servo servo;
+SoftServo servo;
 
 bool irOrAppFlag = false; // true: App, false: IR
 
@@ -275,15 +275,15 @@ void obstacleAvoidance() {
 /**
  * websocket received data processing
  */
-void onReceive(char* recvBuf, char* sendBuf) {
+void onReceive() {
   
   // Mode select: obstacle following, obstacle avoidance
-  if (aiCam.getSwitch(recvBuf, REGION_O)) {
+  if (aiCam.getSwitch(REGION_O)) {
     irOrAppFlag = true;
     if (currentMode != MODE_OBSTACLE_FOLLOWING) {
       currentMode = MODE_OBSTACLE_FOLLOWING;
     }
-  } else if (aiCam.getSwitch(recvBuf, REGION_P)) {
+  } else if (aiCam.getSwitch(REGION_P)) {
     irOrAppFlag = true;
     if (currentMode != MODE_OBSTACLE_AVOIDANCE) {
       currentMode = MODE_OBSTACLE_AVOIDANCE;
@@ -297,7 +297,7 @@ void onReceive(char* recvBuf, char* sendBuf) {
     }
   }
 
-  int temp = aiCam.getSlider(recvBuf, REGION_L);
+  int temp = aiCam.getSlider(REGION_L);
   if (servoAngle != temp) {
     if (currentMode != MODE_APP_CONTROL) {
       currentMode = MODE_APP_CONTROL;
@@ -308,14 +308,14 @@ void onReceive(char* recvBuf, char* sendBuf) {
     servoAngle = temp;
   }
    
-  temp = aiCam.getThrottle(recvBuf, REGION_K);
+  temp = aiCam.getThrottle(REGION_K);
   if (leftMotorPower != temp) {
     if (currentMode != MODE_APP_CONTROL) {
       currentMode = MODE_APP_CONTROL;
     }
     leftMotorPower = temp;
   }
-  temp = aiCam.getThrottle(recvBuf, REGION_Q);
+  temp = aiCam.getThrottle(REGION_Q);
   if (rightMotorPower != temp) {
     if (currentMode != MODE_APP_CONTROL) {
       currentMode = MODE_APP_CONTROL;
@@ -323,6 +323,12 @@ void onReceive(char* recvBuf, char* sendBuf) {
     rightMotorPower = temp;
   }
 
-  uint8_t batteryPercent = batteryGetPercentage();
-  aiCam.setBattery(sendBuf, batteryPercent);
+  // uint8_t batteryPercent = batteryGetPercentage();
+  // aiCam.setBattery(sendBuf, batteryPercent);
+
+  // voltage
+  float vol = analogRead(VOL_PIN)/1024.0*5*2;
+  vol = int(vol*100)/100.0;
+  Serial.print(F("vol:"));Serial.println(vol);
+  aiCam.send_doc["BV"] = vol;
 }
