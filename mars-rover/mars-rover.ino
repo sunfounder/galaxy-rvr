@@ -323,12 +323,8 @@ void onReceive() {
     rightMotorPower = temp;
   }
 
-  // uint8_t batteryPercent = batteryGetPercentage();
-  // aiCam.setBattery(sendBuf, batteryPercent);
 
-  // voltage
-  float vol = analogRead(VOL_PIN)/1024.0*5*2;
-  vol = int(vol*100)/100.0;
-  Serial.print(F("vol:"));Serial.println(vol);
-  aiCam.send_doc["BV"] = vol;
+  // battery voltage
+  Serial.print(F("voltage:"));Serial.println(batteryGetVoltage());
+  aiCam.send_doc["BV"] = batteryGetVoltage();
 }

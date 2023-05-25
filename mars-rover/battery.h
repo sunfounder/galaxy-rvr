@@ -20,8 +20,10 @@ void batteryBegin() {
  */
 float batteryGetVoltage() {
   int adcValue = analogRead(BATTERY_PIN);
-  int adcVoltage = map(adcValue, 0, 1023, 0, 5000);
-  float batteryVoltage = adcVoltage * 2 / 1000.0;
+  // int adcVoltage = map(adcValue, 0, 1023, 0, 5000);
+  // float batteryVoltage = adcVoltage * 2 / 1000.0;
+  float adcVoltage = adcValue / 1024.0*5*2;
+  float batteryVoltage = int(vol*100)/100.0 // round two decimal places
   return batteryVoltage;
 }
 
