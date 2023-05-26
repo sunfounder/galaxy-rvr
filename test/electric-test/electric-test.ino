@@ -4,9 +4,9 @@
 #define MOTOR_PIN_LEFT_B 4
 #define MOTOR_PIN_RIGHT_A 2
 #define MOTOR_PIN_RIGHT_B 3
-#define RGB_PIN_R 8
+#define RGB_PIN_R 12
 #define RGB_PIN_G 13
-#define RGB_PIN_B 9
+#define RGB_PIN_B 11
 #define ULTRASONIC_PIN_TRIG 10
 #define ULTRASONIC_PIN_ECHO 10
 
@@ -29,6 +29,10 @@ void setup() {
   digitalWrite(MOTOR_PIN_LEFT_B, LOW);
   digitalWrite(MOTOR_PIN_RIGHT_A, LOW);
   digitalWrite(MOTOR_PIN_RIGHT_B, LOW);
+
+  pinMode(RGB_PIN_R, OUTPUT);
+  pinMode(RGB_PIN_G, OUTPUT);
+  pinMode(RGB_PIN_B, OUTPUT);
 }
 
 void motor_test() {
@@ -89,7 +93,8 @@ void ultasonic_test() {
     Serial.println("Ultrasonic read: error");
   }
 
-  Serial.println("Ultrasonic read: distance");
+  Serial.print("Ultrasonic read:");Serial.println(distance);
+  delay(200);
 }
 
 void loop() {
