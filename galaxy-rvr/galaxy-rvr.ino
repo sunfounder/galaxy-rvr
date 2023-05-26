@@ -1,5 +1,5 @@
 /*******************************************************************
-  The control program of the Ardunio Mars Rover.
+  The control program of the Ardunio GalaxyRVR.
   
   Please install SunFounder Controller APP from APP Store(iOS) or Google Play(Android).
 
@@ -64,18 +64,18 @@
 
 /** Configure Wifi mode, SSID, password*/
 #define WIFI_MODE WIFI_MODE_AP
-#define SSID "Mars Rover"
-#define PASSWORD "11111111"
+#define SSID "GalaxyRVR"
+#define PASSWORD "12345678"
 
 // #define WIFI_MODE WIFI_MODE_STA
 // #define SSID "xxxxxxxxxx"
 // #define PASSWORD "xxxxxxxxxx"
 
 /** Configure product name */
-#define NAME "Mars Rover"
+#define NAME "GalaxyRVR"
 
 /** Configure product type */
-#define TYPE "Mars Rover"
+#define TYPE "GalaxyRVR"
 
 /** Configure websockets port
  * Sunfounder Controller APP fixed using port 8765
@@ -127,7 +127,7 @@ uint8_t servoAngle = 90;
 void setup() {
   int m = millis();
   Serial.begin(115200);
-  Serial.print("Mars rover version ");Serial.println(VERSION);
+  Serial.print("GalaxyRVR version ");Serial.println(VERSION);
 
   Serial.println(F("Initialzing..."));
   SoftPWMBegin(); // init softpwm, before the motors initialization and the rgb LEDs initialization
