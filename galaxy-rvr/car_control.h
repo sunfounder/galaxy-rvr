@@ -14,9 +14,9 @@
  */
 
 /** Set the pins for the motors */
-#define MOTOR_PINS       (uint8_t[4]){5, 4, 2, 3} 
+#define MOTOR_PINS       (uint8_t[4]){2, 3, 4, 5} 
 /** Set the positive and negative directions for the motors */
-#define MOTOR_DIRECTIONS (uint8_t[2]){0, 0}
+#define MOTOR_DIRECTIONS (uint8_t[2]){1, 0}
 
 /** define motors default speed */
 #define CAR_DEFAULT_POWER 80

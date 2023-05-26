@@ -3,52 +3,30 @@
 #include "rgb.h"
 
 /**
-* Use custom serial port
-*/
-// #define AI_CAM_DEBUG_CUSTOM
-#ifdef AI_CAM_DEBUG_CUSTOM
-  #include <SoftwareSerial.h>
-  SoftwareSerial dSerial(10, 11); // RX, TX
-  #define DateSerial dSerial
-  #define DebugSerial Serial
-#else
-  #define DateSerial Serial
-  #define DebugSerial Serial
-#endif
-
-/**
-*  Set SERIAL_TIMEOUT & WS_BUFFER_SIZE
-*/
-#define SERIAL_TIMEOUT 100
-#define WS_BUFFER_SIZE 100
-
-/**
-* Some keywords for communication with ESP32-CAM
-*/
-#define CHECK "SC"
-#define OK_FLAG "[OK]"
-#define ERROR_FLAG "[ERR]"
-#define WS_HEADER "WS+"
-#define CAM_INIT "[Init]"
-
-/**
 *  functions for manipulating string 
 */
 #define IsStartWith(str, prefix) (strncmp(str, prefix, strlen(prefix)) == 0)
 #define StrAppend(str, suffix) uint32_t len=strlen(str); str[len] = suffix; str[len+1] = '\0'
 #define StrClear(str) str[0] = 0
 
+int32_t cmd_timeout = SERIAL_TIMEOUT;
+int32_t ws_send_time = millis();
+// int32_t ws_send_interval = 100;
+int32_t ws_send_interval = 60;
+
+int32_t vol_send_time = millis();
+int32_t vol_send_interval = 5000;
+
 /**
 * Declare global variables
 */
-char name[32];
-char type[32];
-char readBuffer[WS_BUFFER_SIZE + strlen(WS_HEADER)];
+char name[25];
+char type[25];
 
 /**
 * Declare the receive callback function
 */
-void (*__on_receive__)(char*, char*);
+void (*__on_receive__)();
 
 /**
  * @brief instantiate AiCamera Class, set name and type
@@ -73,19 +51,30 @@ void AiCamera::begin(const char* ssid, const char* password, const char* wifiMod
   #ifdef AI_CAM_DEBUG_CUSTOM
   DateSerial.begin(115200);
   #endif
-  char ip[15];
-  // this->set("RESET");
+  char ip[25];
+  char version[25];
+
+  set_command_timeout(3000);
+  this->get("RESET", version);
+  DebugSerial.print(F("ESP32 firmware version ")); DebugSerial.println(version);
+
+  set_command_timeout(1000);
   this->set("NAME", name);
   this->set("TYPE", type);
   this->set("SSID", ssid);
   this->set("PSK",  password);
   this->set("MODE", wifiMode);
   this->set("PORT", wsPort);
+
+  set_command_timeout(5000);
   this->get("START", ip);
+  delay(20);
   DebugSerial.print(F("WebServer started on ws://"));
   DebugSerial.print(ip);
   DebugSerial.print(F(":"));
   DebugSerial.println(wsPort);
+
+  set_command_timeout(SERIAL_TIMEOUT);
 }
 
 /**
@@ -100,26 +89,69 @@ void AiCamera::setOnReceived(void (*func)(char*, char*)) { __on_receive__ = func
  * @brief Receive and process serial port data in a loop
  */
 void AiCamera::loop() {
-  char recvBuffer[WS_BUFFER_SIZE + strlen(WS_HEADER)];
-  char sendBuffer[WS_BUFFER_SIZE] = ";;;;;;;;;;;;;;;;;;;;;;;;;";
   this->readInto(recvBuffer);
   if (strlen(recvBuffer) != 0) {
+    // Serial.print("recv: ");Serial.println(recvBuffer);
+
     // ESP32-CAM reboot detection
     if (IsStartWith(recvBuffer, CAM_INIT)) {
       Serial.println(F("ESP32-CAM reboot detected"));
       carStop();
-      rgbWrite(RED);
-      while(1);
+      ws_connected = false;
     }
-
-    if (IsStartWith(recvBuffer, WS_HEADER)) {
-      Serial.println(recvBuffer);
+    // ESP32-CAM websocket connected
+    else if (IsStartWith(recvBuffer, WS_CONNECT)) {
+      Serial.println(F("ESP32-CAM websocket connected"));
+      ws_connected = true;
+    }   
+    // ESP32-CAM websocket disconnected
+    else if (IsStartWith(recvBuffer, WS_DISCONNECT)) {
+      Serial.println(F("ESP32-CAM websocket disconnected"));
+      ws_connected = false;
+    }
+    // ESP32-CAM APP_STOP
+    else if (IsStartWith(recvBuffer, APP_STOP)) {
+      if (ws_connected) {
+        Serial.println(F("APP STOP"));
+      }
+      ws_connected = false;
+    }
+    // recv WS+ data
+    else if (IsStartWith(recvBuffer, WS_HEADER)) {
+      // debug("RX:"); debug(recvBuffer);
+      DateSerial.print("RX:"); DateSerial.println(recvBuffer);
+      ws_connected = true;
       this->subString(recvBuffer, strlen(WS_HEADER));
       if (__on_receive__ != NULL) {
-        __on_receive__(recvBuffer, sendBuffer);
+        __on_receive__();
+        // if (millis() - ws_send_time > ws_send_interval) {
+        //   this->sendData();
+        //   ws_send_time = millis();
+        // }
       }
     }
-  this->sendData(sendBuffer);
+
+
+
+    // send data
+    // this->sendData();
+    if (millis() - ws_send_time > ws_send_interval) {
+
+      this->sendData();
+      ws_send_time = millis();
+    }
+
+
+    // send vol
+    if (millis() - vol_send_time > vol_send_interval) {
+      float vol = analogRead(VOL_PIN)/1024.0*5*2;
+      vol = int(vol*100)/100.0;
+      Serial.print(F("vol:"));Serial.println(vol);
+      
+      send_doc["BV"] = vol;
+      vol_send_time = millis()
+    }
+
   }
 }
 
@@ -158,48 +190,48 @@ void AiCamera::debug(char* msg) {
 /** 
  * @brief Store the data read from the serial port into the buffer
  *       
- * @param buffer  Pointer to the character value of the stored data
+ * @param buffer  Pointer to the String value of the stored data
  */
 void AiCamera::readInto(char* buffer) {
+  /* !!! attention buffer size*/
   bool finished = false;
-  char incomingChar;
+  char inchar;
   StrClear(buffer);
   uint32_t count = 0;
 
+  uint32_t char_time = millis();
+  
   // recv Byte
   while (DateSerial.available()) {
     count += 1;
     if (count > WS_BUFFER_SIZE) {
-      // Serial.print(F("count = ")); Serial.println(count);  
-      // rgbWrite(0, 0, 0);
-      // while (1);
       finished = true;
       break;
     }
-
-    incomingChar = (char)DateSerial.read();
-    if (incomingChar == '\n') {
+    inchar = (char)DateSerial.read();
+    // Serial.print(inchar);
+    if (inchar == '\n') {
       finished = true;
+      // Serial.println(">");
       break;
-    } else if (incomingChar == '\r') {
+    } else if (inchar == '\r') {
       continue;
-    } else if ((int)incomingChar > 31 && (int)incomingChar < 127) {
-      StrAppend(readBuffer, incomingChar);
+    } else if ((int)inchar > 31 && (int)inchar < 127) {
+      StrAppend(buffer, inchar);
+      delay(1); // Wait for StrAppend
     }
   }
-  // recv finished
+
+  // if recv debug info
   if (finished) {
-    debug(readBuffer);
-    if (IsStartWith(readBuffer, CAM_DEBUG_HEAD_DEBUG)) {
+    debug(buffer);
+    if (IsStartWith(buffer, CAM_DEBUG_HEAD_DEBUG)) {
       #if (CAM_DEBUG_LEVEL ==  CAM_DEBUG_LEVEL_DEBUG) // all
         DebugSerial.print(CAM_DEBUG_HEAD_DEBUG);
-        DebugSerial.println(readBuffer);
+        DebugSerial.println(buffer);
       #endif
       StrClear(buffer);
-    }else{
-      strcpy(buffer, readBuffer);
     }
-    StrClear(readBuffer);
   }
 }
 
@@ -208,11 +240,17 @@ void AiCamera::readInto(char* buffer) {
  *         
  * @param sendBuffer  Pointer to the character value of the data buffer to be sent
  */
-void AiCamera::sendData(char* sendBuffer) {
+void AiCamera::sendData() {
   DateSerial.print(F(WS_HEADER));
-  DateSerial.println(sendBuffer);
+  // send_doc["A"] = 0;
+  serializeJson(send_doc, DateSerial);
+  DateSerial.print("\n");
 }
 
+
+void AiCamera::set_command_timeout(uint32_t _timeout) {
+  cmd_timeout = _timeout;
+}
 /** 
  * @brief Send command to ESP32-CAM with serial
  *         
@@ -222,24 +260,42 @@ void AiCamera::sendData(char* sendBuffer) {
  */
 void AiCamera::command(const char* command, const char* value, char* result) {
   bool is_ok = false;
-  while(1) {
-    DateSerial.print("SET+");
-    DateSerial.print(command);
-    DateSerial.println(value);
+  uint8_t retry_count = 0;
+  uint8_t retry_max_count = 3;
 
-    while (1) {
-      this->readInto(result);
-      if (IsStartWith(result, OK_FLAG)){
+  while (retry_count < retry_max_count) {
+    if (retry_count == 0) {
+      DateSerial.print(F("SET+"));
+      DateSerial.print(command);
+      DateSerial.println(value);
+      DateSerial.print(F("..."));
+    }
+    retry_count++;
+
+    uint32_t st = millis();
+    while ((millis() - st) < cmd_timeout) {
+      this->readInto(recvBuffer);
+      if (IsStartWith(recvBuffer, OK_FLAG)) {
         is_ok = true;
-        this->subString(result, strlen(OK_FLAG) + 1); // Add 1 for Space
+        DateSerial.println(F(OK_FLAG));
+        this->subString(recvBuffer, strlen(OK_FLAG) + 1); // Add 1 for Space
+        // !!! Note that the reslut size here is too small and may be out of bounds, 
+        // causing unexpected data changes
+        strcpy(result, recvBuffer);
         break;
       }
     }
 
-    if(is_ok == true) {
+    if (is_ok == true) {
       break;
     }
   }
+
+  if (is_ok == false) {
+    Serial.println(F("[FAIL]"));
+    while(1);
+  }
+
 }
 
 /** 
@@ -309,8 +365,8 @@ void AiCamera::get(const char* command, const char* value, char* result) {
  * @param region the key of component
  * @return the value of the slider contorl component 
  */
-int16_t AiCamera::getSlider(char* buf, uint8_t region) {
-  int16_t value = getIntOf(buf, region);
+int16_t AiCamera::getSlider(uint8_t region) {
+  int16_t value = getIntOf(recvBuffer, region);
   return value;
 }
 
@@ -323,8 +379,8 @@ int16_t AiCamera::getSlider(char* buf, uint8_t region) {
  *        - true
  *        - flase 
  */
-bool AiCamera::getButton(char* buf, uint8_t region) {
-  bool value = getBoolOf(buf, region);
+bool AiCamera::getButton(uint8_t region) {
+  bool value = getBoolOf(recvBuffer, region);
   return value;
 }
 
@@ -337,8 +393,8 @@ bool AiCamera::getButton(char* buf, uint8_t region) {
  *        - true
  *        - flase 
  */
-bool AiCamera::getSwitch(char* buf, uint8_t region) {
-  bool value = getBoolOf(buf, region);
+bool AiCamera::getSwitch(uint8_t region) {
+  bool value = getBoolOf(recvBuffer, region);
   return value;
 }
 
@@ -351,12 +407,10 @@ bool AiCamera::getSwitch(char* buf, uint8_t region) {
  *             could be JOYSTICK_X, JOYSTICK_Y, JOYSTICK_ANGLE, JOYSTICK_RADIUS
  * @return the value of the Joystick component 
  */
-int16_t AiCamera::getJoystick(char* buf, uint8_t region, uint8_t axis) {
-  char valueStr[10];
-  char xStr[4];
-  char yStr[4];
+int16_t AiCamera::getJoystick(uint8_t region, uint8_t axis) {
+  char valueStr[20];
   int16_t x, y, angle, radius;
-  getStrOf(buf, region, valueStr, ';');
+  getStrOf(recvBuffer, region, valueStr, ';');
   x = getIntOf(valueStr, 0, ',');
   y = getIntOf(valueStr, 1, ',');
   angle = atan2(x, y) * 180.0 / PI;
@@ -379,9 +433,9 @@ int16_t AiCamera::getJoystick(char* buf, uint8_t region, uint8_t axis) {
  * @return the value of the DPadDPad component, 
  *         it could be null, "forward", "backward", "left", "stop"
  */
-uint8_t AiCamera::getDPad(char* buf, uint8_t region) {
-  char value[10];
-  getStrOf(buf, region, value, ';');
+uint8_t AiCamera::getDPad(uint8_t region) {
+  char value[20];
+  getStrOf(recvBuffer, region, value, ';');
   uint8_t result;
   if ((String)value == (String)"forward") result = DPAD_FORWARD;
   else if ((String)value == (String)"backward") result = DPAD_BACKWARD;
@@ -399,8 +453,8 @@ uint8_t AiCamera::getDPad(char* buf, uint8_t region) {
  * 
  * @return the value of the Throttle component, 
  */
-int16_t AiCamera::getThrottle(char* buf, uint8_t region) {
-  int16_t value = getIntOf(buf, region);
+int16_t AiCamera::getThrottle(uint8_t region) {
+  int16_t value = getIntOf(recvBuffer, region);
   return value;
 }
 
@@ -412,8 +466,8 @@ int16_t AiCamera::getThrottle(char* buf, uint8_t region) {
  * @param result char array pointer to hold the result
  * @return the value of the Joystick component 
  */
-void AiCamera::getSpeech(char* buf, uint8_t region, char* result) {
-  getStrOf(buf, region, result, ';');
+void AiCamera::getSpeech(uint8_t region, char* result) {
+  getStrOf(recvBuffer, region, result, ';');
 
 }
 
@@ -424,8 +478,8 @@ void AiCamera::getSpeech(char* buf, uint8_t region, char* result) {
  * @param region the key of component
  * @param value the value to be filled
  */
-void AiCamera::setMeter(char* buf, uint8_t region, double value) {
-  setStrOf(buf, region, String(value));
+void AiCamera::setMeter(uint8_t region, double value) {
+  setStrOf(recvBuffer, region, String(value));
 }
 
 /** 
@@ -436,8 +490,8 @@ void AiCamera::setMeter(char* buf, uint8_t region, double value) {
  * @param angle the orientation of the obstacle
  * @param distance the distance of the obstacle
  */
-void AiCamera::setRadar(char* buf, uint8_t region, int16_t angle, double distance) {
-  setStrOf(buf, region, String(angle) + "," + String(distance));
+void AiCamera::setRadar(uint8_t region, int16_t angle, double distance) {
+  setStrOf(recvBuffer, region, String(angle) + "," + String(distance));
 }
 
 /** 
@@ -449,18 +503,15 @@ void AiCamera::setRadar(char* buf, uint8_t region, int16_t angle, double distanc
  * @param value2  
  * @param value3  
  */
-void AiCamera::setGreyscale(char* buf, uint8_t region, uint16_t value1, uint16_t value2, uint16_t value3) {
-  setStrOf(buf, region, String(value1) + "," + String(value2) + "," + String(value3));
+void AiCamera::setGreyscale(uint8_t region, uint16_t value1, uint16_t value2, uint16_t value3) {
+  setStrOf(recvBuffer, region, String(value1) + "," + String(value2) + "," + String(value3));
 }
 
 
-void AiCamera::setValue(char* buf, uint8_t region, double value) {
-  setStrOf(buf, region, String(value));
+void AiCamera::setValue(uint8_t region, double value) {
+  setStrOf(recvBuffer, region, String(value));
 }
 
-void AiCamera::setBattery(char* buf, uint8_t value) {
-  // setStrOf(buf, region, String(value));
-}
 
 /** 
  * @brief subtract part of the string
@@ -496,6 +547,7 @@ void AiCamera::getStrOf(char* str, uint8_t index, char* result, char divider) {
   uint8_t start, end;
   uint8_t length = strlen(str);
   uint8_t i, j;
+
   // Get start index
   if (index == 0) {
     start = 0;
@@ -517,6 +569,10 @@ void AiCamera::getStrOf(char* str, uint8_t index, char* result, char divider) {
     }
   }
   // Copy result
+  // if ((end - start + 2) > sizeof(result)) { // '\0' takes up one byte
+  //   end = start + sizeof(result) -1; 
+  // }
+
   for (i = start, j = 0; i < end; i++, j++) {
     result[j] = str[i];
   }
@@ -571,14 +627,14 @@ void AiCamera::setStrOf(char* str, uint8_t index, String value, char divider=';'
  */
 int16_t AiCamera::getIntOf(char* str, uint8_t index, char divider=';') {
   int16_t result;
-  char strResult[6];
+  char strResult[20];
   getStrOf(str, index, strResult, divider);
   result = String(strResult).toInt();
   return result;
 }
 
 bool AiCamera::getBoolOf(char* str, uint8_t index) {
-  char strResult[5];
+  char strResult[20];
   getStrOf(str, index, strResult, ';');
   return String(strResult).toInt();
 }

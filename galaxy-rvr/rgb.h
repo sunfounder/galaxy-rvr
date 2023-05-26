@@ -10,7 +10,7 @@
 #define COMMON_ANODE 0
 
 /** Set the pins of RGB leds, the order is R,G,B */
-#define RGB_PINS (uint8_t[3]){8, 13, 9}
+#define RGB_PINS (uint8_t[3]){12, 13, 11}
 
 /**
  *@name Defines the hexadecimal value of the color
