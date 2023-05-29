@@ -250,19 +250,37 @@ void obstacleFollowing() {
 /**
  * Obstacle avoidance program
  */
+int8_t last_clear = -1; // last_clear, 1, left; -1, right;
+bool last_forward = false;
+
 void obstacleAvoidance() {
   byte result = irObstacleRead();
   bool leftIsClear = result & 0b00000001;
   bool rightIsClear = result & 0b00000010;
   bool middleIsClear = ultrasonicIsClear();
 
-  if (middleIsClear && leftIsClear && rightIsClear) {
+  if (middleIsClear && leftIsClear && rightIsClear) { // 111
+    last_forward = true;
     carForward(OBSTACLE_AVOID_POWER);
   } else {
-    if (leftIsClear) {
-      carTurnLeft(OBSTACLE_AVOID_POWER);
-    } else {
-      carTurnRight(OBSTACLE_AVOID_POWER);
+    if( (leftIsClear&& rightIsClear) || (!leftIsClear&& !rightIsClear)) { // 101, 000, 010
+      if (last_clear == 1)  carTurnLeft(OBSTACLE_AVOID_POWER);
+      else carTurnRight(OBSTACLE_AVOID_POWER);
+      last_forward = false;
+    }
+    else if (leftIsClear) { // 100, 110
+      if (last_clear == 1 || last_forward == true) {
+        carTurnLeft(OBSTACLE_AVOID_POWER);
+        last_clear = 1;
+        last_forward = false;
+      }
+    } 
+    else if ( rightIsClear) { // 001, 011
+      if (last_clear == -1 || last_forward == true) {
+        carTurnRight(OBSTACLE_AVOID_POWER);
+        last_clear = -1;
+        last_forward = false;
+      }
     }
   }
 }
