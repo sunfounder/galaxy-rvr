@@ -1,7 +1,7 @@
 /*******************************************************************
   The control program of the Ardunio GalaxyRVR.
   
-  Please install SunFounder Controller APP from APP Store(iOS) or Google Play(Android).
+  Please install the SunFounder Controller APP from APP Store(iOS) or Google Play(Android).
 
   Development test environment:
     - Arduino IDE 2.0.3
@@ -11,19 +11,22 @@
     - IRLremote
     - SoftPWM
 
-  Version: 0.0.1
-    -- https://github.com/sunfounder/zeus-car.git
+  Version: 0.0.2
+    -- https://github.com/sunfounder/galaxy-rvr.git
   
+  Documentation:
+    -- https://docs.sunfounder.com/projects/galaxy-rvr/en/latest/
+
   Author: Sunfounder
   Website: https://www.sunfounder.com
            https://docs.sunfounder.com
 
- *******************************************************************/
-
+********************************************************************/
 #define VERSION "0.0.2"
 
 #include <Arduino.h>
 #include <SoftPWM.h>
+#include <Servo.h>
 #include <string.h>
 
 #include "rgb.h"
@@ -32,11 +35,7 @@
 #include "ultrasonic.h"
 #include "cmd_code_config.hpp"
 #include "ai_camera.h"
-#include "soft_servo.h"
-// #include "Servo.h"
 #include "battery.h"
-
-
 /*************************** Configure *******************************/
 /** @name Configure 
  * 
@@ -82,13 +81,9 @@
 */
 #define PORT "8765"
 
-#define SERVO_REVERSE true
-#define SERVO_PIN 6
-#define BATTERY_LEVEL_PIN A3
 
 /** Configure the motors speed in different modes */
 #define SPEECH_REMOTE_POWER 40
-#define IR_REMOTE_POWER  50
 #define OBSTACLE_AVOID_POWER 80
 #define OBSTACLE_FOLLOW_POWER 80
 
@@ -98,6 +93,8 @@
 /** websocket communication headers */ 
 #define WS_HEADER "WS+"
 
+
+
 ///@}
 
 /*********************** Global variables ****************************/
@@ -106,10 +103,11 @@
 
 /** Instantiate aicamera, a class for serial communication with ESP32-CAM */
 AiCamera aiCam = AiCamera(NAME, TYPE);
-// Servo servo;
-SoftServo servo;
 
-bool irOrAppFlag = false; // true: App, false: IR
+/* Config Camera Servo */
+Servo servo;
+#define SERVO_PIN 6
+#define SERVO_REVERSE true
 
 char speech_buf[20];
 uint8_t leftMotorPower = 0;
@@ -137,6 +135,7 @@ void setup() {
   irObstacleBegin();
   batteryBegin();
   servo.attach(SERVO_PIN);
+  servo.write(90);
   aiCam.begin(SSID, PASSWORD, WIFI_MODE, PORT);
   aiCam.setOnReceived(onReceive);
   while (millis() - m < 500) { // Wait for peripherals to be ready
@@ -211,10 +210,6 @@ void modeHandler() {
       rgbWrite(MODE_OBSTACLE_AVOIDANCE_COLOR);
       obstacleAvoidance();
       break;
-    case MODE_REMOTE_CONTROL:
-      rgbWrite(MODE_REMOTE_CONTROL_COLOR);
-      carSetMotors(leftMotorDir * IR_REMOTE_POWER, rightMotorDir * IR_REMOTE_POWER);
-      break;
     case MODE_APP_CONTROL:
       rgbWrite(MODE_APP_CONTROL_COLOR);
       servo.write(servoAngle);
@@ -279,18 +274,15 @@ void onReceive() {
   
   // Mode select: obstacle following, obstacle avoidance
   if (aiCam.getSwitch(REGION_O)) {
-    irOrAppFlag = true;
     if (currentMode != MODE_OBSTACLE_FOLLOWING) {
       currentMode = MODE_OBSTACLE_FOLLOWING;
     }
   } else if (aiCam.getSwitch(REGION_P)) {
-    irOrAppFlag = true;
     if (currentMode != MODE_OBSTACLE_AVOIDANCE) {
       currentMode = MODE_OBSTACLE_AVOIDANCE;
     }
   } else {
-    if (irOrAppFlag == true) {
-      irOrAppFlag = false;
+    if (currentMode == MODE_OBSTACLE_FOLLOWING || currentMode == MODE_OBSTACLE_AVOIDANCE) {
       currentMode = MODE_NONE;
       stop();
       return;
