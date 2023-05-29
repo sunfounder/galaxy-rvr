@@ -42,18 +42,10 @@ const char cmd_str_1[] PROGMEM = "forward";
 const char cmd_str_2[] PROGMEM = "backward";
 const char cmd_str_3[] PROGMEM = "turn left";
 const char cmd_str_4[] PROGMEM = "turn right";
-const char cmd_str_5[] PROGMEM = "left forward";
-const char cmd_str_6[] PROGMEM = "left backward";
-const char cmd_str_7[] PROGMEM = "right forward";
-const char cmd_str_8[] PROGMEM = "right backward";
-const char cmd_str_9[] PROGMEM = "move left";
-const char cmd_str_10[] PROGMEM = "move right";
-const char cmd_str_11[] PROGMEM = "pasue";
 
 const char *const cmd_str_table[] PROGMEM = {
   cmd_str_0, cmd_str_1, cmd_str_2, cmd_str_3,
-  cmd_str_4, cmd_str_5, cmd_str_6, cmd_str_7,
-  cmd_str_8, cmd_str_9, cmd_str_10,cmd_str_11,
+  cmd_str_4,
 };
 
 #define STOP             0x00
@@ -61,7 +53,6 @@ const char *const cmd_str_table[] PROGMEM = {
 #define BACKWARD         0x02
 #define TRUE_LEFT        0x03
 #define TRUE_RIGHT       0x04
-#define PAUSE            0x0B
 
 const int8_t cmd_code_table[CMD_SUM] PROGMEM={
   STOP,
@@ -69,7 +60,6 @@ const int8_t cmd_code_table[CMD_SUM] PROGMEM={
   BACKWARD,
   TRUE_LEFT,
   TRUE_RIGHT,
-  PAUSE,
 };
 
 
@@ -94,7 +84,6 @@ void forward();
 void backward();
 void turn_left();
 void turn_right();
-void pause();
 
 void (*cmd_fuc_table [])(){
   stop,
@@ -102,7 +91,6 @@ void (*cmd_fuc_table [])(){
   backward,
   turn_left,
   turn_right,
-  pause,
 };
 
 void stop(){
@@ -130,12 +118,6 @@ void turn_left(){
 void turn_right(){
   leftMotorDir = 1;
   rightMotorDir = -1;
-}
-
-void pause(){
-  leftMotorDir = 0;
-  rightMotorDir = 0;
-  carStop();
 }
 
 #endif
