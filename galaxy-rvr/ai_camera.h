@@ -5,8 +5,6 @@
 #include <string.h>
 #include <ArduinoJson.h>
 
-/** Set vol pin */
-#define VOL_PIN A3 
 
 /**
 * Use custom serial port

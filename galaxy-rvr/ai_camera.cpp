@@ -11,8 +11,7 @@
 
 int32_t cmd_timeout = SERIAL_TIMEOUT;
 int32_t ws_send_time = millis();
-// int32_t ws_send_interval = 100;
-int32_t ws_send_interval = 60;
+int32_t ws_send_interval = 60; // 100
 
 int32_t vol_send_time = millis();
 int32_t vol_send_interval = 5000;
@@ -131,25 +130,11 @@ void AiCamera::loop() {
       }
     }
 
-
-
     // send data
     // this->sendData();
     if (millis() - ws_send_time > ws_send_interval) {
-
       this->sendData();
       ws_send_time = millis();
-    }
-
-
-    // send vol
-    if (millis() - vol_send_time > vol_send_interval) {
-      float vol = analogRead(VOL_PIN)/1024.0*5*2;
-      vol = int(vol*100)/100.0;
-      Serial.print(F("vol:"));Serial.println(vol);
-      
-      send_doc["BV"] = vol;
-      vol_send_time = millis()
     }
 
   }
