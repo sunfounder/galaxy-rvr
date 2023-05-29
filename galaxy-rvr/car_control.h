@@ -18,10 +18,6 @@
 /** Set the positive and negative directions for the motors */
 #define MOTOR_DIRECTIONS (uint8_t[2]){1, 0}
 
-/** define motors default speed */
-#define CAR_DEFAULT_POWER 80
-
-
 void carBegin();
 void carSetMotors(int8_t power0, int8_t power1);
 void carForward(int8_t power);

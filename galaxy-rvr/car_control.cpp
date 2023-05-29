@@ -16,7 +16,7 @@ void carBegin() {
 }
 
 /** 
- * @name simple move functions with CAR_DEFAULT_POWER
+ * @name simple move functions
  */
 void carForward(int8_t power)       { carSetMotors( power,  power); }
 void carBackward(int8_t power)      { carSetMotors(-power, -power); }
