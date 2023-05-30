@@ -95,7 +95,7 @@
 
 
 
-///@}
+///@} 
 
 /*********************** Global variables ****************************/
 /** Check if a string starts with a certain character */
@@ -226,8 +226,8 @@ void modeHandler() {
  */
 void obstacleFollowing() {
   byte result = irObstacleRead();
-  bool leftIsClear = result & 0b00000001;
-  bool rightIsClear = result & 0b00000010;
+  bool leftIsClear = result & 0b00000010;
+  bool rightIsClear = result & 0b00000001;
   float usDistance = ultrasonicRead();
 
   if (usDistance < 4) {
@@ -255,8 +255,8 @@ bool last_forward = false;
 
 void obstacleAvoidance() {
   byte result = irObstacleRead();
-  bool leftIsClear = result & 0b00000001;
-  bool rightIsClear = result & 0b00000010;
+  bool leftIsClear = result & 0b00000010;
+  bool rightIsClear = result & 0b00000001;
   bool middleIsClear = ultrasonicIsClear();
 
   if (middleIsClear && leftIsClear && rightIsClear) { // 111
@@ -289,15 +289,29 @@ void obstacleAvoidance() {
  * websocket received data processing
  */
 void onReceive() {
-  
+  // --------------------- send data ---------------------
+  // battery voltage
+  // Serial.print(F("voltage:"));Serial.println(batteryGetVoltage());
+  aiCam.send_doc["BV"] = batteryGetVoltage();
+
+  // IR obstacle detection data
+  byte result = irObstacleRead();
+  aiCam.send_doc["N"] = int(bool(result & 0b00000010)); // left
+  aiCam.send_doc["P"] = int(bool(result & 0b00000001)); // right
+
+  // ultrasonic
+  float usDistance = int(ultrasonicRead()*100)/100.0; // round two decimal places
+  aiCam.send_doc["O"] = usDistance;
+
+  // --------------------- get data ---------------------
   // Mode select: obstacle following, obstacle avoidance
-  if (aiCam.getSwitch(REGION_O)) {
-    if (currentMode != MODE_OBSTACLE_FOLLOWING) {
-      currentMode = MODE_OBSTACLE_FOLLOWING;
-    }
-  } else if (aiCam.getSwitch(REGION_P)) {
+  if (aiCam.getSwitch(REGION_E)) {
     if (currentMode != MODE_OBSTACLE_AVOIDANCE) {
       currentMode = MODE_OBSTACLE_AVOIDANCE;
+    }
+  } else if (aiCam.getSwitch(REGION_F)) {
+    if (currentMode != MODE_OBSTACLE_FOLLOWING) {
+      currentMode = MODE_OBSTACLE_FOLLOWING;
     }
   } else {
     if (currentMode == MODE_OBSTACLE_FOLLOWING || currentMode == MODE_OBSTACLE_AVOIDANCE) {
@@ -307,7 +321,8 @@ void onReceive() {
     }
   }
 
-  int temp = aiCam.getSlider(REGION_L);
+  // servo angle
+  int temp = aiCam.getSlider(REGION_D);
   if (servoAngle != temp) {
     if (currentMode != MODE_APP_CONTROL) {
       currentMode = MODE_APP_CONTROL;
@@ -315,9 +330,10 @@ void onReceive() {
     if (SERVO_REVERSE) {
       temp = 180 - temp;      
     }
-    servoAngle = temp;
+    servoAngle = map(temp, 0, 180, 60, 180);
   }
    
+  // throttle
   temp = aiCam.getThrottle(REGION_K);
   if (leftMotorPower != temp) {
     if (currentMode != MODE_APP_CONTROL) {
@@ -333,8 +349,4 @@ void onReceive() {
     rightMotorPower = temp;
   }
 
-
-  // battery voltage
-  Serial.print(F("voltage:"));Serial.println(batteryGetVoltage());
-  aiCam.send_doc["BV"] = batteryGetVoltage();
 }
