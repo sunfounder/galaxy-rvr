@@ -10,7 +10,10 @@
 /** Configure ultrasonic obstacle avoidance distance, unit cm */
 #define ULTRASONIC_AVOIDANCE_THRESHOLD 20
 
-#define MAX_DISTANCE 2000 // unit: cm 
+
+#define MAX_DISTANCE 300 // unit: cm 
+
+#define ULTRASONIC_READ_TIMEOUT 18000 // us , 2*300/34000*1000000 ~= 17647 us
 
 /** Return the distance read by the ultrasonic module, unit cm */
 float ultrasonicRead();
