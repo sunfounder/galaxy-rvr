@@ -165,6 +165,9 @@ void loop() {
     // because the value in a is constantly updated
     // Note that the cycle interval of the "aiCam.loop()" should be less than 80ms to avoid data d
     aiCam.loop();
+   if (aiCam.ws_connected == false) {
+      currentMode = MODE_NONE;
+    }
     modeHandler();
   #else
     /* Select the item to be tested, multiple selection allowed */
@@ -200,7 +203,8 @@ void loop() {
 void modeHandler() {
   switch (currentMode) {
     case MODE_NONE: 
-      rgbWrite(MODE_NONE_COLOR);    
+      rgbWrite(MODE_NONE_COLOR);
+      carStop();
       break;
     case MODE_OBSTACLE_FOLLOWING:
       rgbWrite(MODE_OBSTACLE_FOLLOWING_COLOR);
