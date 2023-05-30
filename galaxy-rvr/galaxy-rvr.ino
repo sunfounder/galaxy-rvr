@@ -331,10 +331,11 @@ void onReceive() {
     if (currentMode != MODE_APP_CONTROL) {
       currentMode = MODE_APP_CONTROL;
     }
+    temp = constrain(temp, 40, 180);
     if (SERVO_REVERSE) {
       temp = 180 - temp;      
     }
-    servoAngle = map(temp, 0, 180, 60, 180);
+    servoAngle = temp;
   }
    
   // throttle
