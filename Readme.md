@@ -17,6 +17,8 @@ The control program of the GalaxyRVR for Ardunio UNO.
 ## Dependency libraries
 - IRLremote
 - SoftPWM
+- Servo
+- ArduinoJson
 
 ## ESP32-CAM firmware
 https://github.com/sunfounder/ai-camera-firmware
@@ -25,6 +27,27 @@ https://docs.sunfounder.com
 
 ## Project Tree
 ```
+galaxy-rvr                  
+├─ galaxy-rvr               
+│  ├─ ai_camera.cpp         // functions for communicating with ESP32-CAM
+│  ├─ ai_camera.h           
+│  ├─ battery.h             // functions for getting the battery status
+│  ├─ car_control.cpp       // functions for controll motors 
+│  ├─ car_control.h         
+│  ├─ cmd_code_config.hpp   // the command table for voice control, and the 
+│  ├─ galaxy-rvr.ino        // Arduino main program
+│  ├─ ir_obstacle.cpp       // functions for IR obstacle avoidance module
+│  ├─ ir_obstacle.h         
+│  ├─ rgb.cpp               // functions for rgb led strip
+│  ├─ rgb.h                 
+│  ├─ test.h                
+│  ├─ ultrasonic.cpp        // functions for ultrasonic module
+│  └─ ultrasonic.h          
+├─ test                     
+│  └─ electric-test         
+│     └─ electric-test.ino  // modules test
+├─ LICENSE                  
+└─ Readme.md                
 
 ```
 ## About SunFounder
