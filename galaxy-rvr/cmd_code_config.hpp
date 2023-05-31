@@ -10,6 +10,7 @@
 #define MODE_OBSTACLE_FOLLOWING      1
 #define MODE_OBSTACLE_AVOIDANCE      2
 #define MODE_APP_CONTROL             3
+#define MODE_VOICE_CONTROL           4
 
 /** Set the color to match the mode */
 #define ERROR_COLOR RED
@@ -21,6 +22,8 @@
 
 #define MODE_OBSTACLE_FOLLOWING_COLOR       BLUE
 #define MODE_OBSTACLE_AVOIDANCE_COLOR       PURPLE
+ 
+#define MODE_VOICE_CONTROL_COLOR       MAGENTA
 
 
 // State machine for almost all mode. State define see every function
@@ -31,7 +34,7 @@ int8_t rightMotorDir = 0;
 
 bool remoteDriftEnable  = false;
 
-#define CMD_SUM 12
+#define CMD_SUM 5
 
 // Pay attention to the order,
 // eg: 'left forward' needs to be placed before' left' and 'forward'
@@ -46,20 +49,26 @@ const char *const cmd_str_table[] PROGMEM = {
   cmd_str_4,
 };
 
-#define STOP             0x00
-#define FORWARD          0x01
-#define BACKWARD         0x02
-#define TRUE_LEFT        0x03
-#define TRUE_RIGHT       0x04
-
-const int8_t cmd_code_table[CMD_SUM] PROGMEM={
-  STOP,
-  FORWARD,
-  BACKWARD,
-  TRUE_LEFT,
-  TRUE_RIGHT,
+int8_t voice_action_time[] = {
+  1,
+  -1, // Endless
+  -1,
+  10,
+  10,
 };
 
+void stop(int8_t power){
+  currentMode = MODE_NONE;
+  carStop();
+}
+
+void (*cmd_fuc_table [])(int8_t power) { 
+  stop,
+  carForward,
+  carBackward,
+  carTurnLeft,
+  carTurnRight,
+};
 
 int8_t text_2_cmd_code(char* text){
   String str = String(text);
@@ -67,56 +76,21 @@ int8_t text_2_cmd_code(char* text){
   for(uint8_t i=0; i<CMD_SUM; i++){
     strcpy_P(buffer, (char *)pgm_read_word(&cmd_str_table[i]));
     if(str.indexOf(buffer) != -1){
-      // Serial.print(pgm_read_byte(&cmd_code_table[i]), HEX);
+      // Serial.print(i);
       // Serial.print(" , ");
       // Serial.println(buffer);
-      return pgm_read_byte(&cmd_code_table[i]);
+      return i;
     }
   }
   return -1; //error-code
 }
 
-
-void stop();
-void forward();
-void backward();
-void turn_left();
-void turn_right();
-
-void (*cmd_fuc_table [])(){
-  stop,
-  forward,
-  backward,
-  turn_left,
-  turn_right,
-};
-
-void stop(){
-  currentMode = MODE_NONE;
-  leftMotorDir = 0;
-  rightMotorDir = 0;
-  carStop();
+void voice_action(int8_t cmd_code, int8_t power) {
+    cmd_fuc_table[cmd_code](power);
 }
 
-void forward(){
-  leftMotorDir = 1;
-  rightMotorDir = 1;
-}
 
-void backward(){
-  leftMotorDir = -1;
-  rightMotorDir = -1;
-}
 
-void turn_left(){
-  leftMotorDir = -1;
-  rightMotorDir = 1;
-}
-
-void turn_right(){
-  leftMotorDir = 1;
-  rightMotorDir = -1;
-}
 
 #endif
 

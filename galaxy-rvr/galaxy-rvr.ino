@@ -53,9 +53,10 @@
   #include "test.h"
 #endif
 
-/** Whether to enable  */
+/** Whether to enable print Memory Used */
 #define MEM 0
 #if MEM
+  // https://github.com/mpflaga/Arduino-MemoryFree
   #include <MemoryFree.h>
   #include <pgmStrToRAM.h> // not needed for new way. but good to have for reference.
 #endif
@@ -83,9 +84,9 @@
 
 
 /** Configure the motors speed in different modes */
-#define SPEECH_REMOTE_POWER 40
 #define OBSTACLE_AVOID_POWER 80
 #define OBSTACLE_FOLLOW_POWER 80
+#define VOICE_CONTROL_POWER 80
 
 /** Configure the follow distance of obstacle follow */
 #define FOLLOW_DISTANCE 20
@@ -107,7 +108,11 @@ Servo servo;
 #define SERVO_PIN 6
 #define SERVO_REVERSE true
 
-char speech_buf[20];
+
+char voice_buf_temp[20];
+int8_t current_voice_code = -1;
+int8_t voice_time = 0;
+
 uint8_t leftMotorPower = 0;
 uint8_t rightMotorPower = 0;
 uint8_t servoAngle = 90;
@@ -223,6 +228,10 @@ void modeHandler() {
       servo.write(servoAngle);
       carSetMotors(leftMotorPower, rightMotorPower);
       break;
+    case MODE_VOICE_CONTROL:
+      rgbWrite(MODE_VOICE_CONTROL_COLOR);
+      voice_control();
+      break;
     default:
       break;
   }
@@ -294,9 +303,29 @@ void obstacleAvoidance() {
 }
 
 /**
+ * voicecontrol program
+ */
+void voice_control() {
+  if (voice_time == -1) {
+    voice_action(current_voice_code, VOICE_CONTROL_POWER);
+    aiCam.send_doc["J"] = 1;
+  } else {
+    if (voice_time > 0) {
+      voice_time --;
+      voice_action(current_voice_code, VOICE_CONTROL_POWER);
+      aiCam.send_doc["J"] = 1;
+    } else { // voice_time == 0
+      currentMode = MODE_NONE;
+      current_voice_code = -1;
+      aiCam.send_doc["J"] = 0;
+    }
+  }
+}
+
+/**
  * websocket received data processing
  */
-void onReceive() {
+void onReceive() {  
   // --------------------- send data ---------------------
   // battery voltage
   // Serial.print(F("voltage:"));Serial.println(batteryGetVoltage());
@@ -312,6 +341,16 @@ void onReceive() {
   aiCam.send_doc["O"] = usDistance;
 
   // --------------------- get data ---------------------
+  // Stop
+  if (aiCam.getButton(REGION_F)) {
+    currentMode = MODE_NONE;
+    current_voice_code = -1;
+    voice_time = 0;
+    aiCam.send_doc["J"] = 0;
+    stop();
+    return;
+  }
+
   // Mode select: obstacle following, obstacle avoidance
   if (aiCam.getSwitch(REGION_E)) {
     if (currentMode != MODE_OBSTACLE_AVOIDANCE) {
@@ -324,9 +363,34 @@ void onReceive() {
   } else {
     if (currentMode == MODE_OBSTACLE_FOLLOWING || currentMode == MODE_OBSTACLE_AVOIDANCE) {
       currentMode = MODE_NONE;
-      stop();
+      carStop();
       return;
     }
+  }
+
+  // Speech control
+  if (currentMode != MODE_VOICE_CONTROL) {
+    current_voice_code = -1;
+    voice_time = 0;
+    aiCam.send_doc["J"] = 0;
+  }
+
+  int8_t code = -1;
+  voice_buf_temp[0] = 0; // voice_buf_temp
+  aiCam.getSpeech(REGION_J, voice_buf_temp);
+  if (strlen(voice_buf_temp) > 0) {
+    code = text_2_cmd_code(voice_buf_temp);
+    if (code != -1) {
+      current_voice_code = code;
+      voice_time = voice_action_time[code];
+    }
+  }
+
+  if (current_voice_code != -1) {
+    currentMode = MODE_VOICE_CONTROL;
+  } else {
+    voice_time = 0;
+    aiCam.send_doc["J"] = 0;
   }
 
   // servo angle
