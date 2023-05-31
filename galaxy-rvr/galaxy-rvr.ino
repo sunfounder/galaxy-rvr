@@ -62,9 +62,9 @@
 
 
 /** Configure Wifi mode, SSID, password*/
-// #define WIFI_MODE WIFI_MODE_AP
-// #define SSID "GalaxyRVR"
-// #define PASSWORD "12345678"
+#define WIFI_MODE WIFI_MODE_AP
+#define SSID "GalaxyRVR"
+#define PASSWORD "12345678"
 
 // #define WIFI_MODE WIFI_MODE_STA
 // #define SSID "xxxxxxxxxx"
