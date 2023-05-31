@@ -30,8 +30,8 @@
 
 /* Calibrate brightness */
 #define R_OFFSET  1.0
-#define G_OFFSET  0.16
-#define B_OFFSET  0.30
+#define G_OFFSET  0.25 //0.16
+#define B_OFFSET  0.45 //0.30
 
 /** Initialize RGB leds */
 void rgbBegin();
