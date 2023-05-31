@@ -62,9 +62,9 @@
 
 
 /** Configure Wifi mode, SSID, password*/
-#define WIFI_MODE WIFI_MODE_AP
-#define SSID "GalaxyRVR"
-#define PASSWORD "12345678"
+// #define WIFI_MODE WIFI_MODE_AP
+// #define SSID "GalaxyRVR"
+// #define PASSWORD "12345678"
 
 // #define WIFI_MODE WIFI_MODE_STA
 // #define SSID "xxxxxxxxxx"
@@ -92,8 +92,6 @@
 
 /** websocket communication headers */ 
 #define WS_HEADER "WS+"
-
-
 
 ///@} 
 
@@ -136,8 +134,12 @@ void setup() {
   batteryBegin();
   servo.attach(SERVO_PIN);
   servo.write(90);
-  aiCam.begin(SSID, PASSWORD, WIFI_MODE, PORT);
-  aiCam.setOnReceived(onReceive);
+
+  #if !TEST
+    aiCam.begin(SSID, PASSWORD, WIFI_MODE, PORT);
+    aiCam.setOnReceived(onReceive);
+  #endif
+
   while (millis() - m < 500) { // Wait for peripherals to be ready
     delay(1);
   }
@@ -205,6 +207,8 @@ void modeHandler() {
     case MODE_NONE: 
       rgbWrite(MODE_NONE_COLOR);
       carStop();
+      servoAngle = 90;
+      servo.write(servoAngle);
       break;
     case MODE_OBSTACLE_FOLLOWING:
       rgbWrite(MODE_OBSTACLE_FOLLOWING_COLOR);
@@ -259,8 +263,8 @@ bool last_forward = false;
 
 void obstacleAvoidance() {
   byte result = irObstacleRead();
-  bool leftIsClear = result & 0b00000010;
-  bool rightIsClear = result & 0b00000001;
+  bool leftIsClear = result & 0b00000010; // left, clear: True
+  bool rightIsClear = result & 0b00000001; // right, clear: True
   bool middleIsClear = ultrasonicIsClear();
 
   if (middleIsClear && leftIsClear && rightIsClear) { // 111
@@ -300,8 +304,8 @@ void onReceive() {
 
   // IR obstacle detection data
   byte result = irObstacleRead();
-  aiCam.send_doc["N"] = int(bool(result & 0b00000010)); // left
-  aiCam.send_doc["P"] = int(bool(result & 0b00000001)); // right
+  aiCam.send_doc["N"] = int(!bool(result & 0b00000010)); // left, clear:0
+  aiCam.send_doc["P"] = int(!bool(result & 0b00000001)); // right, clear:0
 
   // ultrasonic
   float usDistance = int(ultrasonicRead()*100)/100.0; // round two decimal places

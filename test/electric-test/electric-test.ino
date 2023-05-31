@@ -1,4 +1,6 @@
 #include <Arduino.h>
+#include <Servo.h>
+#include <SoftPWM.h>
 
 #define MOTOR_PIN_LEFT_A 5
 #define MOTOR_PIN_LEFT_B 4
@@ -10,7 +12,13 @@
 #define ULTRASONIC_PIN_TRIG 10
 #define ULTRASONIC_PIN_ECHO 10
 
-#define MAX_DISTANCE 2000 // unit: cm 
+#define MAX_DISTANCE 300 // unit: cm 
+
+#define ULTRASONIC_READ_TIMEOUT 18000 // us , 2*300/34000*1000000 ~= 17647 us
+
+Servo servo;
+#define SERVO_PIN 6
+#define SERVO_REVERSE true
 
 void setup() {
   Serial.begin(115200);
@@ -33,6 +41,11 @@ void setup() {
   pinMode(RGB_PIN_R, OUTPUT);
   pinMode(RGB_PIN_G, OUTPUT);
   pinMode(RGB_PIN_B, OUTPUT);
+
+  servo.attach(SERVO_PIN);
+  servo.write(90);
+  SoftPWMBegin(); // init softpwm, before the motors initialization and the rgb LEDs initialization
+
 }
 
 void motor_test() {
@@ -81,13 +94,13 @@ void ultasonic_test() {
   digitalWrite(ULTRASONIC_PIN_TRIG, LOW);
   pinMode(ULTRASONIC_PIN_ECHO, INPUT);
 
-  // noInterrupts(); // Pause all interruptions to avoid affecting data
+  noInterrupts(); // Pause all interruptions to avoid affecting data
                      // However，turning off interrupts affects the functionality of softpwm, such as motors
 
-  float duration = pulseIn(ULTRASONIC_PIN_ECHO, HIGH);
+  float duration = pulseIn(ULTRASONIC_PIN_ECHO, HIGH, ULTRASONIC_READ_TIMEOUT);
   float distance = duration  * 0.017; // S = vt = 340m/s * (t/2)us= (340 * 100 cm/s) * 0.5 * (t / 10^6)s = 0.017 * t
   
-  // interrupts(); // resume interruptions
+  interrupts(); // resume interruptions
 
   if (distance > MAX_DISTANCE) {
     Serial.println("Ultrasonic read: error");
@@ -98,7 +111,7 @@ void ultasonic_test() {
 }
 
 void loop() {
-  // motor_test();
-  rgb_test();
+  motor_test();
+  // rgb_test();
   // ultasonic_test();
 }
