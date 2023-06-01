@@ -118,6 +118,9 @@ uint8_t leftMotorPower = 0;
 uint8_t rightMotorPower = 0;
 uint8_t servoAngle = 90;
 
+uint32_t rgb_blink_interval = 500; // uint: ms
+uint32_t rgb_blink_start_time = 0;
+bool rgb_blink_flag = 0;
 //@}
 
 /*********************** setup() & loop() ************************/
@@ -174,9 +177,15 @@ void loop() {
     // Note that the cycle interval of the "aiCam.loop()" should be less than 80ms to avoid data d
     aiCam.loop();
    if (aiCam.ws_connected == false) {
-      currentMode = MODE_NONE;
+      currentMode = MODE_DISCONNECT;
       int8_t current_voice_code = -1;
       int8_t voice_time = 0;
+      if (currentMode != MODE_DISCONNECT) {
+        rgb_blink_start_time = 0;
+        rgb_blink_flag = 1;
+      }
+    } else {
+      if (currentMode == MODE_DISCONNECT) currentMode = MODE_NONE;
     }
     modeHandler();
   #else
@@ -214,6 +223,17 @@ void modeHandler() {
   switch (currentMode) {
     case MODE_NONE: 
       rgbWrite(MODE_NONE_COLOR);
+      carStop();
+      servoAngle = 90;
+      servo.write(servoAngle);
+      break;
+    case MODE_DISCONNECT:
+      if (millis() - rgb_blink_start_time > rgb_blink_interval) {
+        rgb_blink_flag = !rgb_blink_flag;
+        rgb_blink_start_time = millis();
+      }
+      if (rgb_blink_flag) rgbWrite(MODE_DISCONNECT_COLOR);
+      else rgbOff();
       carStop();
       servoAngle = 90;
       servo.write(servoAngle);
