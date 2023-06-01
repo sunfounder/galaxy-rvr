@@ -10,6 +10,8 @@
   Libraries:
     - IRLremote
     - SoftPWM
+    - Servo
+    - ArduinoJson
 
   Version: 0.0.2
     -- https://github.com/sunfounder/galaxy-rvr.git
@@ -114,8 +116,8 @@ int8_t current_voice_code = -1;
 int32_t voice_time = 0; // uint:s
 uint32_t voice_start_time = 0; // uint:s
 
-uint8_t leftMotorPower = 0;
-uint8_t rightMotorPower = 0;
+int8_t leftMotorPower = 0;
+int8_t rightMotorPower = 0;
 uint8_t servoAngle = 90;
 
 uint32_t rgb_blink_interval = 500; // uint: ms
@@ -240,10 +242,12 @@ void modeHandler() {
       break;
     case MODE_OBSTACLE_FOLLOWING:
       rgbWrite(MODE_OBSTACLE_FOLLOWING_COLOR);
+      servo.write(servoAngle);
       obstacleFollowing();
       break;
     case MODE_OBSTACLE_AVOIDANCE:
       rgbWrite(MODE_OBSTACLE_AVOIDANCE_COLOR);
+      servo.write(servoAngle);
       obstacleAvoidance();
       break;
     case MODE_APP_CONTROL:
@@ -253,6 +257,7 @@ void modeHandler() {
       break;
     case MODE_VOICE_CONTROL:
       rgbWrite(MODE_VOICE_CONTROL_COLOR);
+      servo.write(servoAngle);
       voice_control();
       break;
     default:
@@ -417,9 +422,6 @@ void onReceive() {
   // servo angle
   int temp = aiCam.getSlider(REGION_D);
   if (servoAngle != temp) {
-    if (currentMode != MODE_APP_CONTROL) {
-      currentMode = MODE_APP_CONTROL;
-    }
     temp = constrain(temp, 40, 180);
     if (SERVO_REVERSE) {
       temp = 180 - temp;      
@@ -428,19 +430,14 @@ void onReceive() {
   }
    
   // throttle
-  temp = aiCam.getThrottle(REGION_K);
-  if (leftMotorPower != temp) {
-    if (currentMode != MODE_APP_CONTROL) {
-      currentMode = MODE_APP_CONTROL;
-    }
-    leftMotorPower = temp;
-  }
-  temp = aiCam.getThrottle(REGION_Q);
-  if (rightMotorPower != temp) {
-    if (currentMode != MODE_APP_CONTROL) {
-      currentMode = MODE_APP_CONTROL;
-    }
-    rightMotorPower = temp;
+  int throttle_L = aiCam.getThrottle(REGION_K);
+  int throttle_R = aiCam.getThrottle(REGION_Q);
+  Serial.print("throttle_L: "); Serial.print(throttle_L);
+  Serial.print("throttle_R: "); Serial.println(throttle_R);
+  if ( throttle_L != 0 || throttle_R != 0 || throttle_L != leftMotorPower || throttle_R != rightMotorPower) {
+    currentMode = MODE_APP_CONTROL;
+    leftMotorPower = throttle_L;
+    rightMotorPower = throttle_R;
   }
 
 }
