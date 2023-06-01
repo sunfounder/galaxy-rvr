@@ -422,6 +422,9 @@ void onReceive() {
   // servo angle
   int temp = aiCam.getSlider(REGION_D);
   if (servoAngle != temp) {
+    if (currentMode == MODE_NONE || currentMode == MODE_DISCONNECT) {
+      currentMode = MODE_APP_CONTROL;
+    }
     temp = constrain(temp, 40, 180);
     if (SERVO_REVERSE) {
       temp = 180 - temp;      
