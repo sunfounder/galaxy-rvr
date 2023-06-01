@@ -49,12 +49,12 @@ const char *const cmd_str_table[] PROGMEM = {
   cmd_str_4,
 };
 
-int8_t voice_action_time[] = {
+int32_t voice_action_time[] = { // uint: ms
   1,
   -1, // Endless
   -1,
-  10,
-  10,
+  3000,
+  3000,
 };
 
 void stop(int8_t power){

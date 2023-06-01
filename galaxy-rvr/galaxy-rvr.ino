@@ -111,7 +111,8 @@ Servo servo;
 
 char voice_buf_temp[20];
 int8_t current_voice_code = -1;
-int8_t voice_time = 0;
+int32_t voice_time = 0; // uint:s
+uint32_t voice_start_time = 0; // uint:s
 
 uint8_t leftMotorPower = 0;
 uint8_t rightMotorPower = 0;
@@ -174,6 +175,8 @@ void loop() {
     aiCam.loop();
    if (aiCam.ws_connected == false) {
       currentMode = MODE_NONE;
+      int8_t current_voice_code = -1;
+      int8_t voice_time = 0;
     }
     modeHandler();
   #else
@@ -308,16 +311,13 @@ void obstacleAvoidance() {
 void voice_control() {
   if (voice_time == -1) {
     voice_action(current_voice_code, VOICE_CONTROL_POWER);
-    aiCam.send_doc["J"] = 1;
   } else {
-    if (voice_time > 0) {
-      voice_time --;
+    if (millis() - voice_start_time <= voice_time) {
       voice_action(current_voice_code, VOICE_CONTROL_POWER);
-      aiCam.send_doc["J"] = 1;
-    } else { // voice_time == 0
+    } else {
       currentMode = MODE_NONE;
+      voice_start_time = 0;
       current_voice_code = -1;
-      aiCam.send_doc["J"] = 0;
     }
   }
 }
@@ -342,12 +342,11 @@ void onReceive() {
 
   // --------------------- get data ---------------------
   // Stop
-  if (aiCam.getButton(REGION_F)) {
+  if (aiCam.getButton(REGION_I)) {
     currentMode = MODE_NONE;
     current_voice_code = -1;
     voice_time = 0;
-    aiCam.send_doc["J"] = 0;
-    stop();
+    carStop();
     return;
   }
 
@@ -372,6 +371,7 @@ void onReceive() {
   if (currentMode != MODE_VOICE_CONTROL) {
     current_voice_code = -1;
     voice_time = 0;
+    voice_start_time = 0;
     aiCam.send_doc["J"] = 0;
   }
 
@@ -379,18 +379,19 @@ void onReceive() {
   voice_buf_temp[0] = 0; // voice_buf_temp
   aiCam.getSpeech(REGION_J, voice_buf_temp);
   if (strlen(voice_buf_temp) > 0) {
+    aiCam.send_doc["J"] = 1;
+    aiCam.sendData();
+    aiCam.send_doc["J"] = 0;
     code = text_2_cmd_code(voice_buf_temp);
     if (code != -1) {
       current_voice_code = code;
       voice_time = voice_action_time[code];
+      voice_start_time = millis();
     }
   }
 
   if (current_voice_code != -1) {
     currentMode = MODE_VOICE_CONTROL;
-  } else {
-    voice_time = 0;
-    aiCam.send_doc["J"] = 0;
   }
 
   // servo angle
