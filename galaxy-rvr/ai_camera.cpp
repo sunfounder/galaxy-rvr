@@ -56,7 +56,7 @@ void AiCamera::begin(const char* ssid, const char* password, const char* wifiMod
   set_command_timeout(3000);
   this->get("RESET", version);
   DebugSerial.print(F("ESP32 firmware version ")); DebugSerial.println(version);
-
+  
   set_command_timeout(1000);
   this->set("NAME", name);
   this->set("TYPE", type);
@@ -249,12 +249,12 @@ void AiCamera::command(const char* command, const char* value, char* result) {
   uint8_t retry_max_count = 3;
 
   while (retry_count < retry_max_count) {
-    if (retry_count == 0) {
+    // if (retry_count == 0) {
       DateSerial.print(F("SET+"));
       DateSerial.print(command);
       DateSerial.println(value);
       DateSerial.print(F("..."));
-    }
+    // }
     retry_count++;
 
     uint32_t st = millis();
