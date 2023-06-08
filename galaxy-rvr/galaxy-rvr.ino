@@ -13,7 +13,7 @@
     - Servo
     - ArduinoJson
 
-  Version: 0.0.2
+  Version: 0.0.3
     -- https://github.com/sunfounder/galaxy-rvr.git
   
   Documentation:
@@ -24,7 +24,7 @@
            https://docs.sunfounder.com
 
 ********************************************************************/
-#define VERSION "0.0.2"
+#define VERSION "0.0.3"
 
 #include <Arduino.h>
 #include <SoftPWM.h>
