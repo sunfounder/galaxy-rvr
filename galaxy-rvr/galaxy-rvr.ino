@@ -434,8 +434,8 @@ void onReceive() {
   // throttle
   int throttle_L = aiCam.getThrottle(REGION_K);
   int throttle_R = aiCam.getThrottle(REGION_Q);
-  Serial.print("throttle_L: "); Serial.print(throttle_L);
-  Serial.print("throttle_R: "); Serial.println(throttle_R);
+  // Serial.print("throttle_L: "); Serial.print(throttle_L);
+  // Serial.print("throttle_R: "); Serial.println(throttle_R);
   if ( throttle_L != 0 || throttle_R != 0 || throttle_L != leftMotorPower || throttle_R != rightMotorPower) {
     currentMode = MODE_APP_CONTROL;
     leftMotorPower = throttle_L;
