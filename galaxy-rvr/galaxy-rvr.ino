@@ -99,9 +99,6 @@
 ///@} 
 
 /*********************** Global variables ****************************/
-/** Check if a string starts with a certain character */
-#define IsStartWith(str, prefix) (strncmp(str, prefix, strlen(prefix)) == 0)
-
 /** Instantiate aicamera, a class for serial communication with ESP32-CAM */
 AiCamera aiCam = AiCamera(NAME, TYPE);
 
@@ -110,16 +107,18 @@ Servo servo;
 #define SERVO_PIN 6
 #define SERVO_REVERSE true
 
-
+/* variables of voice control */
 char voice_buf_temp[20];
 int8_t current_voice_code = -1;
 int32_t voice_time = 0; // uint:s
 uint32_t voice_start_time = 0; // uint:s
 
+/* variables of motors and servo*/
 int8_t leftMotorPower = 0;
 int8_t rightMotorPower = 0;
 uint8_t servoAngle = 90;
 
+/* variables of rgb_blink when disconnected */
 uint32_t rgb_blink_interval = 500; // uint: ms
 uint32_t rgb_blink_start_time = 0;
 bool rgb_blink_flag = 0;
@@ -331,7 +330,7 @@ void obstacleAvoidance() {
 }
 
 /**
- * voicecontrol program
+ * voice control program
  */
 void voice_control() {
   if (voice_time == -1) {
