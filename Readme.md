@@ -1,7 +1,7 @@
 # GalaxyRVR
 The control program of the GalaxyRVR for Ardunio UNO.
 
-- [GalaxyRVR](#GalaxyRVR)
+- [GalaxyRVR](#galaxyrvr)
   - [Development test environment](#development-test-environment)
   - [Dependency libraries](#dependency-libraries)
   - [ESP32-CAM firmware](#esp32-cam-firmware)
@@ -19,6 +19,7 @@ The control program of the GalaxyRVR for Ardunio UNO.
 - SoftPWM
 - Servo
 - ArduinoJson
+- SunFounder_AI_Camera
 
 ## ESP32-CAM firmware
 https://github.com/sunfounder/ai-camera-firmware

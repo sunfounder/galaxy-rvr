@@ -36,7 +36,7 @@
 #include "ir_obstacle.h"
 #include "ultrasonic.h"
 #include "cmd_code_config.hpp"
-#include "ai_camera.h"
+#include "SunFounder_AI_Camera.h"
 #include "battery.h"
 /*************************** Configure *******************************/
 /** @name Configure 
@@ -353,16 +353,16 @@ void onReceive() {
   // --------------------- send data ---------------------
   // battery voltage
   // Serial.print(F("voltage:"));Serial.println(batteryGetVoltage());
-  aiCam.send_doc["BV"] = batteryGetVoltage();
+  aiCam.sendDoc["BV"] = batteryGetVoltage();
 
   // IR obstacle detection data
   byte result = irObstacleRead();
-  aiCam.send_doc["N"] = int(!bool(result & 0b00000010)); // left, clear:0
-  aiCam.send_doc["P"] = int(!bool(result & 0b00000001)); // right, clear:0
+  aiCam.sendDoc["N"] = int(!bool(result & 0b00000010)); // left, clear:0
+  aiCam.sendDoc["P"] = int(!bool(result & 0b00000001)); // right, clear:0
 
   // ultrasonic
   float usDistance = int(ultrasonicRead()*100)/100.0; // round two decimal places
-  aiCam.send_doc["O"] = usDistance;
+  aiCam.sendDoc["O"] = usDistance;
 
   // --------------------- get data ---------------------
   // Stop
@@ -396,16 +396,16 @@ void onReceive() {
     current_voice_code = -1;
     voice_time = 0;
     voice_start_time = 0;
-    aiCam.send_doc["J"] = 0;
+    aiCam.sendDoc["J"] = 0;
   }
 
   int8_t code = -1;
   voice_buf_temp[0] = 0; // voice_buf_temp
   aiCam.getSpeech(REGION_J, voice_buf_temp);
   if (strlen(voice_buf_temp) > 0) {
-    aiCam.send_doc["J"] = 1;
+    aiCam.sendDoc["J"] = 1;
     aiCam.sendData();
-    aiCam.send_doc["J"] = 0;
+    aiCam.sendDoc["J"] = 0;
     code = text_2_cmd_code(voice_buf_temp);
     if (code != -1) {
       current_voice_code = code;
