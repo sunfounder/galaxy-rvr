@@ -1,0 +1,118 @@
+Lesson 8 Advanced Obstacle Avoidance and Intelligent Following System
+=======================================================================
+
+In today's lesson, we're going to push our STEAM skills a step further. We'll combine an obstacle avoidance module 
+with an ultrasonic sensor to create an advanced obstacle avoidance system. 
+We'll also implement an intelligent following system to our Rover.
+
+By the end of this lesson, our Mars Rover will not only be able to avoid obstacles in its path
+but also follow moving objects. Imagine having a mini robotic pet following you around! 
+Exciting, isn't it? So let's get started.
+
+.. raw:: html
+
+    <video width="600" loop autoplay muted>
+        <source src="_static/video/ultrasonic_ir_avoid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+Course Objectives
+--------------------------
+
+
+Course Materials
+------------------------
+
+* Mars Rover model (the one we built in previous lessons)
+* Arduino IDE
+* Computer
+* And of course, your creative mind!
+
+Course Steps
+--------------------
+
+**Step 1: Understanding the Concept**
+
+The obstacle avoidance module, as the name suggests, helps our Rover avoid obstacles. 
+It detects obstacles by transmitting an infrared signal and then receiving the signal 
+reflected back from the object. If there is an obstacle in front of the module, 
+the infrared signal is reflected back, and the module detects it.
+
+Now, adding an ultrasonic sensor to the mix improves this system. Ultrasonic sensors measure distance by 
+sending out a sound wave at a specific frequency and listening for that sound wave to bounce back. 
+By recording the elapsed time between the sound wave being generated and the sound wave bouncing back, 
+it is possible to calculate the distance between the sensor and the object.
+
+Combining these two gives us a reliable, efficient, and versatile obstacle avoidance system!
+
+
+**Step 2: Constructing Advanced Obstacle Avoidance Systems**
+
+In our previous lessons, we've learned the basics of obstacle avoidance using infrared sensors. We've also explored how an ultrasonic module works. Now, we are going to bring all these pieces together and build an advanced obstacle avoidance system!
+
+Our enhanced Mars Rover will now use both ultrasonic and infrared sensors to navigate its surroundings.
+
+Let's envision how the infrared and ultrasonic modules should work together. To help clarify our logic, let's use a flowchart. Learning how to create flowcharts is an invaluable step in our coding journey as it can help you clarify your thoughts and systematically outline your plan.
+
+.. image:: img/ultrasonic_ir_avoid_flowchart.png
+    :width: 800
+
+Now let's turn this flowchart into actual code to bring our Rover to life.
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/53d72ee5-a4c8-4524-92f8-4b0f4760c015/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+
+Note that the ``handleForwardMovement()`` function is where we've integrated the behavior of the ultrasonic sensor. We read the distance data from the sensor and based on this data, we decide the movement of the Rover.
+
+
+After uploading the code to your R3 board, it's time to test the system.
+Make sure the Rover can detect and avoid obstacles efficiently. 
+Remember, you may need to adjust the detection distance in the code based on your actual environment to perfect the system.
+
+**Step 3: Coding the Intelligent Following System**
+
+With our Rover now capable of avoiding obstacles, let's enhance it further by making it follow objects. Our goal is to modify our existing code to make the Rover move towards a moving object while ensuring it maintains a safe distance.
+
+Ever wondered about the differences between a following system and an obstacle avoidance system?
+
+The key here is that in a following system, we want our Rover to move in response to detected objects, while in an obstacle avoidance system, we're looking to steer clear of detected objects.
+
+Let's visualize the desired workflow:
+
+.. image:: img/ultrasonic_ir_follow_flowchart.png
+
+* If the ultrasonic sensor detects an object within 5-30 cm, our Rover should move towards it.
+* If the left IR sensor detects an object, our Rover should take a left turn.
+* If the right IR sensor detects an object, our Rover should take a right turn.
+* In all other cases, our Rover should remain stationary.
+
+Now, it's time for us to complete the code.
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/75662c17-4b0a-4494-b18b-089cc2b32311/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+Once the code is completed, test if the Rover follows your movements.
+
+As we did with the obstacle avoidance system, it will be crucial to test our following system and troubleshoot any issues that may arise. Ready to start?
+
+
+
+**Step 4: Summary and Reflection**
+
+Congratulations on completing this lesson! Today you've combined different modules and concepts to create advanced systems 
+for your Rover. Reflect on what you've learned and consider how these new skills can be applied to other projects. 
+Keep exploring and innovating!
+
+
+During this process, you may encounter some challenges. 
+Remember, troubleshooting is part of the learning process in STEAM. 
+Here, we'll discuss some common issues you might face and how to solve them.
+
+
+
+Now that you've learned how to build an advanced obstacle avoidance and intelligent following system, 
+think about how you could use these systems in other applications or how you could improve them. 
+This is where your creativity comes into play!
