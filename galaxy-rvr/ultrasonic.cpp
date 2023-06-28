@@ -34,6 +34,11 @@ bool ultrasonicIsObstacle() {
 }
 
 bool ultrasonicIsClear() {
-  return ultrasonicRead() > ULTRASONIC_AVOIDANCE_THRESHOLD;
+  float distance = ultrasonicRead();
+  if (distance > ULTRASONIC_AVOIDANCE_THRESHOLD || distance < 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
 

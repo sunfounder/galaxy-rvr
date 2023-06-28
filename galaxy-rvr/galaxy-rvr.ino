@@ -12,8 +12,9 @@
     - SoftPWM
     - Servo
     - ArduinoJson
+    - Sunfounder_AI_Camera
 
-  Version: 0.0.3
+  Version: 0.0.4
     -- https://github.com/sunfounder/galaxy-rvr.git
   
   Documentation:
@@ -24,7 +25,7 @@
            https://docs.sunfounder.com
 
 ********************************************************************/
-#define VERSION "0.0.3"
+#define VERSION "0.0.4"
 
 #include <Arduino.h>
 #include <SoftPWM.h>
