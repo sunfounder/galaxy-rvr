@@ -18,12 +18,15 @@ Exciting, isn't it? So let's get started.
 
 Course Objectives
 --------------------------
-
+* Learn how to combine obstacle avoidance modules with an ultrasonic module for improved navigation.
+* Understand the principles and functionalities behind an advanced obstacle avoidance system.
+* Learn how to implement an intelligent following system in the Mars Rover.
 
 Course Materials
 ------------------------
 
 * Mars Rover model (the one we built in previous lessons)
+* USB Cable
 * Arduino IDE
 * Computer
 * And of course, your creative mind!
@@ -73,7 +76,7 @@ Remember, you may need to adjust the detection distance in the code based on you
 
 **Step 3: Coding the Intelligent Following System**
 
-With our Rover now capable of avoiding obstacles, let's enhance it further by making it follow objects. Our goal is to modify our existing code to make the Rover move towards a moving object while ensuring it maintains a safe distance.
+With our Rover now capable of avoiding obstacles, let's enhance it further by making it follow objects. Our goal is to modify our existing code to make the Rover move towards a moving object.
 
 Ever wondered about the differences between a following system and an obstacle avoidance system?
 
@@ -99,20 +102,16 @@ Once the code is completed, test if the Rover follows your movements.
 As we did with the obstacle avoidance system, it will be crucial to test our following system and troubleshoot any issues that may arise. Ready to start?
 
 
-
 **Step 4: Summary and Reflection**
 
-Congratulations on completing this lesson! Today you've combined different modules and concepts to create advanced systems 
-for your Rover. Reflect on what you've learned and consider how these new skills can be applied to other projects. 
-Keep exploring and innovating!
+Today, you've accomplished something amazing. You combined different modules and concepts to create an advanced obstacle avoidance and following system for your Mars Rover. Remember, learning does not end here - keep exploring, innovating, and applying your newfound skills to other projects.
 
+Remember to always reflect on your learning process. Think about the following:
 
-During this process, you may encounter some challenges. 
-Remember, troubleshooting is part of the learning process in STEAM. 
-Here, we'll discuss some common issues you might face and how to solve them.
+* Why do you think we prioritized the obstacle avoidance module before the ultrasonic sensor in our obstacle avoidance system, and vice versa in the following system?
+* How would the outcome differ if we were to swap the order in which these modules are checked in the code?
 
+Challenges and problems are an integral part of the STEAM learning process, offering valuable opportunities for improvement. Don't shy away from troubleshooting - it's a powerful learning tool in itself!
 
+As you continue on your journey, know that every obstacle you overcome brings you one step closer to mastering your STEAM skills. Keep going and enjoy the journey!
 
-Now that you've learned how to build an advanced obstacle avoidance and intelligent following system, 
-think about how you could use these systems in other applications or how you could improve them. 
-This is where your creativity comes into play!

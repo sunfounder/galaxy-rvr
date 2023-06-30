@@ -1,4 +1,4 @@
-Lesson 5: Exploring Mars Rover Motion control
+Lesson 5: Unleashing Mars Rover Mobility
 ======================================================
 
 Get ready, young explorers! We've mastered controlling motors, now we're taking those skills to the red planet. In this lesson, we're bringing the Mars Rover to life!
@@ -23,28 +23,31 @@ Learning Objectives
 
 Materials needed
 --------------------------
-
-* Arduino UNO Development Board
-* 6 TT Motors
-* Mars Rover model
+* SunFounder R3 Board
+* TT Motors
+* GalaxyRVR Shield
+* Battery
+* Mars Rover Model (Equipped with Rocker-Bogie System)
+* Basic tools and accessories (e.g. screwdriver, screws, etc.)
+* USB Cable
 * Arduino IDE
-* A Computer
+* Computer
 
 Steps
 --------------
 
-**Step 1: Install the TT motors**
+**Step 1: Assembling the Rover Components**
+
+In this step, we will assemble the battery, R3 board, GalaxyRVR Shield, motors, and wheels onto the pre-assembled rocker-bogie system. This will bring the GalaxyRVR to a runnable state.
 
 .. raw:: html
 
     <iframe width="600" height="400" src="https://www.youtube.com/embed/lu8K26MY96s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-First, we'll explain how to install the TT motors and wheels onto the Mars Rover's Rocker-Bogie suspension system. 
-We'll delve into how the two groups of motors work on the left and right and how they coordinate on different terrains.
+Congratulations! We've successfully built our very own rover, and it's ready to start exploring. Let's get moving!
 
 **Step 2: Set the Rover in Motion**
 
-We've done it! We've built our very own rover, and it's just itching to explore. 
 Now it's time to breathe life into our creation and send it off on its maiden voyage. 
 But how do we communicate with our rover? How do we tell it where to go and what to do? 
 That's where our coding skills come into play!
@@ -124,7 +127,7 @@ Here's how we'd do that in code, we do just the opposite. The right wheels shoul
 
 In this code, we use ``SoftPWMSet()`` to tell the left motors to rotate clockwise and the right motors to rotate counterclockwise.
 
-Isn't it fascinating how we can control our rover's journey simply with code? The next time you're in a car, take a moment to think about the journey of your rover, exploring the world one rotation at a time. Stay tuned, because our rover's journey is just beginning!
+Isn't it fascinating that we can control our rover's journey simply with code? The next time you're in a car, take a moment to think about the journey of your rover, exploring the world one rotation at a time. Stay tuned, because our rover's journey is just beginning!
 
 **Step 3: Making the Rover Move in Other Directions**
 
@@ -165,23 +168,14 @@ Let's see how we can implement both ways in code:
         SoftPWMSet(in4, 200);
 
         delay(2000);  // Last for 2 seconds
-
-        // Stop all motors
-        SoftPWMSet(in1, 0);
-        SoftPWMSet(in2, 0);
-        SoftPWMSet(in3, 0);
-        SoftPWMSet(in4, 0);
-
-        delay(5000);  // Pause for 5 seconds
     }
 
 In this code, we have decreased the speed of the left motors while keeping the right motors at a higher speed. This will make the rover turn towards the left.
 
 **Method 2: Rotating all motors in the same direction**
-5_turn_left2.ino
 
 .. code-block:: arduino
-    :emphasize-lines: 16,17,20,21
+    :emphasize-lines: 16,17,18,19
 
     #include <SoftPWM.h>
 
@@ -202,16 +196,6 @@ In this code, we have decreased the speed of the left motors while keeping the r
         SoftPWMSet(in2, 255);
         SoftPWMSet(in3, 0);
         SoftPWMSet(in4, 255);
-        
-        delay(2000);  // Last for 2 seconds
-        
-        // Stop all motors
-        SoftPWMSet(in1, 0);
-        SoftPWMSet(in2, 0);
-        SoftPWMSet(in3, 0);
-        SoftPWMSet(in4, 0);
-        
-        delay(5000);  // Pause for 5 seconds
     }
 
 In this code, we set all motors to rotate clockwise. The rover will spin around its own axis and the direction will change to the left.
@@ -230,52 +214,19 @@ Let's see how we can do this:
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/90c13522-9757-4212-b250-63ffbc790fd3/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-With this structure, our main loop remains simple and easy to follow. We can clearly see that the rover moves forward, then backward, then turns left and right, and finally stops. The details of how each of these actions is achieved are hidden away in separate functions. This is a key aspect of good programming practices known as abstraction.
-
-**Step 5: Let the Mars Rover Roam in Different Scenes**
-
-Now that we've given our Mars Rover the ability to move, it's time to let it start its exploration journey! You can let it wander in various terrains mimicking the Mars environment.
-
-For instance, you can let it climb over a heap of stones.
+With this structure, our main loop remains simple and easy to follow. We can clearly see that the rover moves forward, then backward, 
+then turns left and right, and finally stops. 
 
 .. raw:: html
 
    <video width="600" loop autoplay muted>
-      <source src="_static/video/move_stone.mp4" type="video/mp4">
+      <source src="_static/video/car_move.mp4" type="video/mp4">
       Your browser does not support the video tag.
    </video>
 
-Or let it navigate through a thick grassy patch.
+The details of how each of these actions is achieved are hidden away in separate functions. This is a key aspect of good programming practices known as abstraction.
 
-.. raw:: html
-
-   <video width="600" loop autoplay muted>
-      <source src="_static/video/move_grass.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-   </video>
-
-Or set it on a course on a gravel terrain full of stones.
-
-.. raw:: html
-
-   <video width="600" loop autoplay muted>
-      <source src="_static/video/move_stone1.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-   </video>
-
-However, please note that if the obstacle is too high, the rover might not be able to climb over it.
-
-.. raw:: html
-
-   <video width="400" height="400" loop autoplay muted>
-      <source src="_static/video/move_failed.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-   </video>
-
-These varied terrains present unique challenges for the rover, just as they would for a real Mars Rover. As you watch your rover try to overcome these obstacles, you're experiencing a small part of what scientists and engineers at NASA do when they send rovers to Mars!
-
-
-**Step 6: Sharing and Reflection**
+**Step 5: Sharing and Reflection**
 
 Congratulations on completing this exploration journey with the Mars Rover! This is a practical application of your knowledge of science and engineering, and you did a fantastic job!
 

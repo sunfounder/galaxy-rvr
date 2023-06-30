@@ -25,7 +25,7 @@ Materials
 -------------
 * Blueprints and reference materials (such as NASA Mars Rover design drawings and videos on how the Rocker-Bogie suspension system works)
 * Mars Rover structure kit
-* Basic tools (such as sockets, screwdrivers, etc.)
+* Basic tools and accessories (e.g. screwdriver, screws, etc.)
 
 Steps
 --------------

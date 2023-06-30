@@ -1,6 +1,6 @@
 
-Lesson 3: Stepping into Arduino and Programming
-===================================================
+Lesson 3:  Entering the World of Arduino and Coding
+=====================================================
 
 In our previous lesson, we successfully built the Rocker-Bogie Suspension System. 
 However, to make it functional, we need to provide it with power, a control board, and programming to dictate its movements.
@@ -56,7 +56,7 @@ Sure, let's break it down:
         :width: 600
         :align: center
 
-* **Arduino IDE**: This is like the teaching classroom for your Arduino. It's a program that runs on your computer where you can write the instructions that tell your Arduino what to do. These instructions are written in a programming language (kind of like a secret code) based on C++. Once you've written your instructions, you can send them to the Arduino board using a USB cable, just like handing in your homework!
+* **Arduino IDE**: This is like the teaching classroom for your Arduino. It's a program that runs on your computer where you can write the instructions that tell your Arduino what to do. These instructions are written in a programming language based on C++. Once you've written your instructions, you can send them to the Arduino board using a USB cable, just like handing in your homework!
 
     .. image:: img/arduino_ide_icon.png
         :width: 200
@@ -64,19 +64,14 @@ Sure, let's break it down:
 
 Now that you understand these basic ideas, you're well on your way to becoming an Arduino expert!
 
-Now, let's take a look at this short video to learn more about what Arduino is and how it works.
-
-.. raw:: html
-
-    <iframe width="600" height="400" src="https://www.youtube.com/embed/waOk9VtkCqw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-After the video, we'll start discussing some of the Arduino fundamentals that you'll need to understand for this course, and then we'll dive into some hands-on activities to get you acquainted with Arduino programming and engineering principles. Get ready for an exciting learning journey!
+Then we'll dive into some hands-on activities to get you acquainted with Arduino programming and engineering principles. 
+Get ready for an exciting learning journey!
 
 
 
 **Step 2: Getting to Know Your SunFounder R3 Board**
 
-Inside your kit, you'll find a blue board, which might look like a small city of tiny metal towers and pathways. But don't be overwhelmed! This is called the SunFounder R3 board with almost the same functions as the Arduino Uno board. 
+Inside your kit, you'll find a blue board, seemingly a tiny city filled with small metallic towers and pathways. But don't let it intimidate you! This is the SunFounder R3 development board, a kind of Arduino board that can be used to program and control a vast array of electronic devices and projects. 
 
 Let's understand its key features in simple terms:
 
@@ -159,15 +154,15 @@ Let's imagine together that the Arduino IDE is a magical playground filled with 
 Here's what you'll find in your playground:
 
 * **Verify / Upload** - Imagine this as your magic elevator. It takes the code you've written and whisks it up into your Arduino board.
-* **Select Board & Port** - This is your treasure map. It automatically shows the Arduino boards you've plugged into your computer, and tells you their "secret code" (port number).
+* **Select Board & Port** - This is your treasure map. It automatically shows the Arduino boards you've plugged into your computer, and tells you their port number.
 * **Sketchbook** - This is your personal library. It's where all your sketches (programs) are stored on your computer. Plus, it can connect to the Arduino Cloud, so you can fetch your sketches from the online world too.
-* **Boards Manager** - Think of this as your toolkit. It's where you can find and install different packages for your Arduino. Need something for your MKR WiFi 1010 board? You'll find it here!
+* **Boards Manager** - Think of this as your toolkit. It's where you can find and install different packages for your Arduino.
 * **Library Manager** - This is your endless treasure chest. Thousands of libraries made by Arduino and its community are waiting for you here. Need a tool or material for your code? Dive in and find it!
 * **Debugger** - Imagine you had a superpower that let you test and debug your code in real time, finding and fixing problems as they happen. That's what this is!
 * **Search** - Think of this as your magnifying glass. It helps you search for keywords in your code.
 * **Open Serial Monitor** - This is like your communicator device. It opens a new tab that lets your computer and Arduino board send messages back and forth.
 
-Now that we've taken a tour of the park, let's start exploring and creating!
+Now that we've gotten a glimpse of the playground, it's time to dive in and start creating!
 
 
 **Step 5: Upload Your First Sketch**
@@ -194,7 +189,7 @@ Let's break it down:
 
     .. image:: img/led_blink.png
 
-#. **Upload the sketch**: Once you've selected the correct board and port, click on the upload button. It's like putting a letter in a mailbox - you're sending your instructions off to Arduino!
+#. **Upload the sketch**: Once you've selected the correct board and port, just click the upload button. It's as easy as sending a letter; you're delivering your instructions to the Arduino board! Most of the time, the system will automatically detect the board and port for you.
 
     .. image:: img/upload_blink.gif
 

@@ -7,6 +7,13 @@ Welcome to the Course Mode, a structured journey through 13 enlightening lessons
 
 From the second lesson, we'll start getting hands-on. Each lesson spotlights a unique component crucial to our Mars rover. You'll not only understand its purpose and significance but also master its assembly and integration into the rover.
 
+.. raw:: html
+
+   <video width="600" loop autoplay muted>
+      <source src="_static/video/move_stone1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+   </video>
+
 Whether you are a novice eager to dive into the world of Mars rovers or an experienced hobbyist looking to hone your skills, these lessons are crafted to provide a comprehensive understanding of the mechanics, electronics, and software that bring our GalaxyRVR to life. By the end of the course, you'll not only have assembled your very own Mars rover, but you'll also possess the knowledge to troubleshoot, modify, and further experiment with your rover.
 
 So, buckle up for an exciting journey into the world of Mars rovers! Dive in and start exploring the red planet from the comfort of your home.

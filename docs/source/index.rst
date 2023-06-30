@@ -12,9 +12,10 @@ Welcome to the world of the GalaxyRVR, a Mars Rover kit from SunFounder, designe
     :width: 600
     :align: center
 
-Built upon the same universal rocker-bogie suspension system employed by NASA's real Mars rovers, GalaxyRVR is capable of traversing all kinds of terrains – be it rocky mountains, sandy beaches, or grassy fields. The suspension system ensures smooth mobility, making the alien world of Mars feel just like home.
+Built upon the same universal rocker-bogie system employed by NASA's real Mars rovers, GalaxyRVR is capable of traversing all kinds of terrains – be it rocky mountains, sandy beaches, or grassy fields. The suspension system ensures smooth mobility, making the alien world of Mars feel just like home.
 
-Equipped with a high-definition camera module, GalaxyRVR offers a first-person view, providing an immersive piloting experience as if you're truly navigating the Red Planet. Its advanced obstacle avoidance and ultrasonic modules ensure it can dodge obstacles, embodying a spirit of autonomy and resilience.
+Equipped with a high-definition camera module, GalaxyRVR offers a first-person view, providing an immersive piloting experience as if 
+you're truly navigating the Red Planet. Its advanced obstacle avoidance module and ultrasonic module ensure it can dodge obstacles, embodying a spirit of autonomy and resilience.
 
 **Delve into the Cosmos: The Courses**
 

@@ -1,11 +1,12 @@
-Lesson 1 Understanding the Mars Rover
+Lesson 1 Unveiling the Mars Rover
 ========================================
+
+Welcome to Lesson 1: Understanding the Mars Rover. Today, we dive into the thrilling world of Mars rovers—our remote explorers on the Red Planet. We will learn about their evolution, their functions, and the technological marvels that they are. Furthermore, you'll channel your creativity to design your own rover and hone your presentation skills by explaining your unique design. Get ready to explore Mars from your classroom!
+
 
 Learning Objectives
 -------------------------
 * Gain an understanding of the evolution and purpose of Mars rovers
-* Learn about the key design features and mechanisms of Mars rovers
-* Explore the science and technology behind how Mars rovers work
 * Express creativity by designing your own Mars rover
 * Enhance presentation skills by sharing and explaining your rover design
 
@@ -145,6 +146,4 @@ Remember, there are no wrong answers in this activity. The purpose is to stimula
 
 As we conclude our Mars Rover lesson, let's take a few minutes to reflect on what we have learned. How do our rover designs reflect the advancements in technology and scientific objectives? How might the real Mars rovers continue to evolve in the future?
 
-This is also a great time to ask any remaining questions about Mars rovers, their missions, or the design process we used today. The goal of our STEAM activity is to integrate science, technology, engineering, art, and math in a fun and engaging way.
-
-Thank you for your active participation and creative ideas! Remember, the exploration of space, like any STEAM field, is all about asking questions, solving problems, and using creativity. Keep exploring, keep asking questions, and keep being curious!
+Remember, the exploration of space, like any STEAM field, is all about asking questions, solving problems, and using creativity. Keep exploring, keep asking questions, and keep being curious!

@@ -1,5 +1,5 @@
 
-Lesson 6: Exploring the Obstacle Avoidance module
+Lesson 6: Exploring the Obstacle Avoidance Module
 ==============================================================
 
 We're diving into the world of the Infrared Obstacle Avoidance Module. Tucked at the sides of our Mars Rover, these sensors act as the rover's "eyes," helping it dodge side obstacles and safely navigate the Martian landscape.
@@ -26,19 +26,24 @@ Learning Objectives
 Materials Needed
 ---------------------
 
-* Arduino UNO Development Board
-* Infrared Obstacle Avoidance Module
-* Small car chassis and motors (optional)
+* Obstacle Avoidance Modules
+* Basic tools and accessories (e.g. screwdriver, screws, wires etc.)
+* Mars Rover Model (Equipped with rocker-bogie system, main boards, motors)
+* USB Cable
 * Arduino IDE
 * Computer
 
 Steps
 -------------
-**Step 1: Install the Infrared Obstacle Avoidance Module**
+**Step 1: Install the Obstacle Avoidance Module**
+
+Now we will install the two obstacle avoidance modules onto the rover.
 
 .. raw:: html
 
     <iframe width="600" height="400" src="https://www.youtube.com/embed/UWEj_ROYAt0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+The assembly steps were simple, weren't they? In the following steps, we will learn about the working principle of these modules, and how they help our Mars Rover to avoid obstacles. Stay tuned!
 
 
 **Step 2: Demystifying the Module**
@@ -49,10 +54,14 @@ Meet the Infrared Obstacle Avoidance Module - our rover's smart sidekick. This l
     :width: 300
     :align: center
 
+
+Here are the pin definitions:
+
 * **GND**: This is like the module's anchor, connecting it to the ground or common point in the circuit.
 * **+**: Here's where the module gets its energy, needing a power supply of 3.3 to 5V DC.
 * **Out**: This is the module's communicator. By default, it stays high and only goes low when it spots an obstacle.
 * **EN**: Meet the module's controller. This **enable** pin decides when the module should work. By default, it is connected to GND, meaning the module is always on the job.
+
 
 Curious about how this tiny module works? It's quite interesting! It uses a pair of IR components - a transmitter and a receiver. The transmitter is like the module's flashlight, emitting infrared light. 
 When an obstacle appears, the infrared light bounces back and gets caught by the receiver. The module then gives a low signal, alerting our rover of the obstacle.
@@ -63,6 +72,7 @@ When an obstacle appears, the infrared light bounces back and gets caught by the
 Our little module is quite robust, spotting obstacles within a range of 2-40cm and boasting excellent anti-interference abilities. 
 However, the color of objects does impact its sensing. Darker objects, especially black ones, are detected at a shorter range. 
 Against a white wall, the sensor is most efficient, sensing within the 2-30cm range.
+
 
 The **EN** pin's low-level state activates the module, with the jumper cap securing the **EN** pin to the GND. If you wish to control the **EN** pin via code, the jumper cap needs to be removed.
 
@@ -92,7 +102,7 @@ Just like curious space explorers, let's dive into the universe of codes and sen
 #. Next, we'll need to communicate with our Rover using the universal language of Arduino code.
 
 
-    First things first, let's give a unique name to each eye of the Rover. Let's call them IR_RIGHT and IR_LEFT, this way we won't mix them up.
+    First things first, let's give a unique name to each eye of the Rover. Let's call them ``IR_RIGHT`` and ``IR_LEFT``, this way we won't mix them up.
 
         .. code-block:: arduino
 
@@ -187,7 +197,7 @@ Here's how you can make adjustments:
         </video>
 
 
-#. Repeat the same process for the other module.
+#. Repeat the same process for another module.
 
 Now that our sensors are fully prepared, let's embark on the next journey!
 
@@ -235,7 +245,7 @@ In this code, we are using ``if...else`` statement in the ``loop()`` function.
     * If condition1 is true, code block 1 is executed.
     * If condition1 is false, then condition2 is evaluated.
     * If condition2 is true, code block 2 is executed.
-    * If condition2 is false, code block 3 is executed.
+    * If condition2 is false, then condition3 is evaluated.
     * If condition3 is true, code block 3 is executed.
     * If condition3 is false, code block 4 is executed.
 

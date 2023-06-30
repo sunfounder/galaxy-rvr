@@ -1,11 +1,11 @@
 
-Lesson 4: Exploring the TT Motor
+Lesson 4: Mastering the TT Motor
 =================================
 
 In the previous lessons, we explored Mars rovers, their suspension systems, and delved into knowledge about Arduino. 
 
 In this exciting course, we'll explore the workings of motors, a key component that drives Mars rovers. 
-We'll understand the principles that power these motors and learn to control them using SunFounder R3 board and a sensor shield. 
+We'll understand the principles that power these motors and learn to control them using SunFounder R3 board and a GalaxyRVR Shield. 
 
 By the end of this course, you'll have a solid understanding of motor operation and hands-on experience in motor control. 
 
@@ -21,15 +21,18 @@ Let's dive in!
 Course Objectives
 ----------------------
 * Understand the basic principles of motors and the characteristics of the TT motor.
-* Learn to control the TT motor using the Arduino UNO and a motor driver board.
-* Practice designing and building a propulsion system based on the TT motor.
+* Learn how to control the direction and speed of the TT motor.
+* Understand how the GalaxyRVR Shield controls six motors.
+
 
 Course Materials
 -----------------------
 
 * SunFounder R3 Board
 * TT Motor
-* Expansion board with TC618CS motor driver chip
+* GalaxyRVR Shield
+* Battery
+* USB Cable
 * Arduino IDE
 * Computer
 
@@ -38,7 +41,7 @@ Course Steps
 
 **Step 1: What is a Motor?**
 
-Can you imagine a world without motors? They're everywhere! From the electric fans that cool us on hot days, the mixers that help us make delicious cakes, to the electric cars that whizz by on the streets – motors make things move!
+Motors play an integral part in our daily lives. They're everywhere! From the electric fans that cool us on hot days, the mixers that help us make delicious cakes, to the electric cars that whizz by on the streets – motors make things move!
 
 .. image:: img/motor_application.jpg
 
@@ -50,7 +53,7 @@ The magic behind a motor isn't magic at all - it's science, specifically the pri
 .. image:: img/motor_rotate.gif
     :align: center
 
-The type of motor we're focusing on in our Mars rover is a specific kind called a TT Gear Motor. 
+The type of motor we're focusing on in our GalaxyRVR is a specific kind called a TT Gear Motor. 
 
 .. image:: img/tt_motor_xh.jpg
     :align: center
@@ -87,7 +90,7 @@ Now we know that connecting the motor directly to a battery can make it spin, bu
 
 If you guessed that the motor would not spin, you are correct! But why is that so?
 
-The answer lies in the current output of the Arduino board. A typical Arduino board can only output a current of about 20mA, which is insufficient to drive a motor.
+The answer lies in the current output of the Arduino board. The signal pins on a typical Arduino board can output only about 20mA of current, which is insufficient to drive a motor.
 
 So, how can we control motors using our Arduino? This is where a crucial component comes into the picture - a motor driver. Think of a motor driver as a bridge between the Arduino and the motor. It takes the low-current control signal from the Arduino, amplifies it, and sends it to the motor, thus enabling the motor to spin.
 
@@ -98,7 +101,7 @@ In our next step, we'll dive into the specifics of the motor driver and understa
 
 **Step 3: How the Motor is controlled by the Motor Driver**
 
-Our Sensor Shield, included in the kit, serves as the control center for our Mars Rover. It is the hub where we connect all our sensors, motors, and power supply. It consists of several components that allow us to control and power our Rover effectively.
+Our GalaxyRVR Shield, included in the kit, serves as the control center for our Mars Rover. It is the hub where we connect all our sensors, motors, and power supply. It consists of several components that allow us to control and power our Rover effectively.
 
 On the right side of the shield, you'll notice six motor ports. However, they are grouped into two sets, each controlled by a separate motor drive chip. Three ports marked "Left" are controlled by one chip, and the other three ports marked "Right" are controlled by another.
 
@@ -106,9 +109,9 @@ On the right side of the shield, you'll notice six motor ports. However, they ar
 
 Let's learn how these two drive chips control the six motors through hands-on experience:
 
-* **Connecting the Circuit**
+* **1. Connecting the Circuit**
 
-    #. Plug the Sensor Shield into the R3 board, connect a motor, and finally plug in the battery to provide power to the expansion board.
+    #. Plug the GalaxyRVR Shield into the R3 board, connect a motor, and finally plug in the battery to provide power to the expansion board.
 
         .. raw:: html
 
@@ -117,7 +120,7 @@ Let's learn how these two drive chips control the six motors through hands-on ex
                 Your browser does not support the video tag.
             </video>
 
-    #. When first used or when the battery cable is unplugged, the Sensor Shield activates its over-discharge protection circuitry. You’ll need to plug in the Type-C cable for about 5 seconds to release the protection. If the power indicator lights up, it means the protection status has been released. Check the battery indicators at this point - if both are off, keep the Type-C cable plugged in to charge the battery.
+    #. When first used or when the battery cable is unplugged, the GalaxyRVR Shield activates its over-discharge protection circuitry. You’ll need to plug in the Type-C cable for about 5 seconds to release the protection. If the power indicator lights up, it means the protection status has been released. Check the battery indicators at this point - if both are off, keep the Type-C cable plugged in to charge the battery.
 
         .. raw:: html
 
@@ -126,7 +129,7 @@ Let's learn how these two drive chips control the six motors through hands-on ex
                 Your browser does not support the video tag.
             </video>
 
-* **Writing and Uploading Code**
+* **2. Writing and Uploading Code**
 
     #. Open the Arduino IDE and input the following code:
 
@@ -147,12 +150,7 @@ Let's learn how these two drive chips control the six motors through hands-on ex
 
     #. Once you've selected the correct board(Arduino Uno) and port, click on the **Upload** button. It's like putting a letter in a mailbox - you're sending your instructions off to Arduino!
 
-        .. raw:: html
-
-            <video width="600" loop autoplay muted>
-                <source src="_static/video/upload_blink.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        .. image:: img/motor_upload.png
         
     #. Once the code has been successfully uploaded, you will see the motor start to rotate clockwise.
 
@@ -163,7 +161,7 @@ Let's learn how these two drive chips control the six motors through hands-on ex
                 Your browser does not support the video tag.
             </video>
     
-* **About Circuit Internal Connection**
+* **3. About Circuit Internal Connection**
 
     #. You can plug two more motors into the "Left" marked motor ports. You will see them rotate simultaneously.
 
@@ -172,7 +170,7 @@ Let's learn how these two drive chips control the six motors through hands-on ex
         .. image:: img/motor_driver.png
             :width: 500
 
-    #. If you want to test the other drive chip, you just need to change the pins to ``4`` and ``5``.
+    #. If you want to test another drive chip, you just need to change the pins to ``4`` and ``5``.
 
         .. code-block:: arduino
             :emphasize-lines: 10,11
@@ -195,7 +193,7 @@ Let's learn how these two drive chips control the six motors through hands-on ex
         Think of it as if we're assigning a specific role or duty to each pin number. When we decide to reassign the roles, instead of going through the entire script and changing every instance, we just update the assignment at the beginning of the script (where the variable is initially defined).
 
 
-* **About Drive Logic**
+* **4. About Drive Logic**
 
     #. In the previous tests, you would have noticed that the motors all spin in one direction. How do we make it spin in the opposite direction? Someone might suggest swapping the HIGH and LOW of the two pins. That's correct.
 
@@ -274,7 +272,7 @@ Let's learn how these two drive chips control the six motors through hands-on ex
         * Here we use the ``delay()`` function to make the Arduino pause for a certain amount of time, much like taking a short nap in the middle of our story.
         * In the code, we use the "Brake" state to stop the motor, and you'll notice that the motor stops abruptly. Try setting both pins to LOW to test the "Standby" state, and you'll find that the motor gradually slows down to a stop.
 
-Now that you should have a better understanding of how the motor driver chip controls the motors through the Sensor Shield and how we can use Arduino code to manipulate the motor's movements. Isn't it fascinating how a few lines of code can dictate the behavior of a physical object like our motor?
+Now that you should have a better understanding of how the motor driver chip controls the motors through the GalaxyRVR Shield and how we can use Arduino code to manipulate the motor's movements. Isn't it fascinating how a few lines of code can dictate the behavior of a physical object like our motor?
 
 Consider the following questions as you move forward:
 
@@ -299,7 +297,7 @@ With PWM, we can simulate the effect of an analogue signal while only actually o
 
 You might be finding this hard to understand, and that's okay! We'll be learning how to adjust motor speed using PWM through coding in the following sections.
 
-Note that although the Arduino UNO R3 board has some pins with built-in PWM functionality, we can’t use them for our motor because they're already serving other functions. Thus, we're connecting the driver chips to pins 2, 3, 4, and 5, and using the Arduino’s SoftPWM library to enable PWM on these pins.
+Note that although the SunFounder R3 board has some pins with built-in PWM functionality, we can’t use them for our motor because they're already serving other functions. Thus, we're connecting the driver chips to pins 2, 3, 4, and 5, and using the Arduino’s SoftPWM library to enable PWM on these pins.
 
 Here's what we'll do next:
 
@@ -315,7 +313,7 @@ Here's what we'll do next:
 #. Enter the following code into Arduino IDE. After uploading the code successfully, the motor will rotate clockwise.
 
     .. code-block:: arduino
-        :emphasize-lines: 7,11,12
+        :emphasize-lines: 1, 7,11,12
 
         #include <SoftPWM.h>
 
@@ -360,7 +358,7 @@ Here's what we'll do next:
             delay(1000);
         }
     
-    In the code above, we use a ``for`` loop to increment a variable i up to 255. The ``for`` loop in C language is used to iterate over a part of the program several times. It consists of three parts:
+    In the code above, we use a ``for`` loop to increment a variable ``i`` up to ``255``. The ``for`` loop in C language is used to iterate over a part of the program several times. It consists of three parts:
 
     .. image:: img/motor_for123.png
         :width: 400

@@ -1,4 +1,4 @@
-Lesson 12: Steering the Rover with the App
+Lesson 12: Driving the Rover with the App
 ===========================================
 
 In our last adventure, we mastered the art of using the SunFounder Controller to not only explore the world through the rover's eyes but also to adjust its gaze by controlling the tilt mechanism. It was like giving our Mars rover a sense of sight!

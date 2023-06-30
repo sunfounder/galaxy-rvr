@@ -1,4 +1,4 @@
-Lesson 7: Making advanced obstacle avoidance systems
+Lesson 7: Enhancing Rover Navigation with Ultrasonic Module
 =============================================================
 
 In our last adventure, we equipped our Mars Rover with "eyes" on its sides, creating a basic obstacle avoidance system. Yet, there's a blind spot right in front – a challenge we're ready to overcome!
@@ -27,12 +27,13 @@ Course Objectives
 * Learn how to use Arduino and ultrasonic module for distance measurement.
 * Practice applying the ultrasonic module for obstacle avoidance on the Mars Rover model.
 
-Course Materials
-------------------------
+Materials Needed
+---------------------
 
-* Arduino UNO development board
-* Ultrasonic module
-* Mars Rover model (equipped with TT motors and suspension system)
+* Ultrasonic Module
+* Basic tools and accessories (e.g. screwdriver, screws, wires etc.)
+* Mars Rover Model (Equipped with rocker-bogie system, main boards, motors, obstacle avoidance module)
+* USB Cable
 * Arduino IDE
 * Computer
 
@@ -49,9 +50,9 @@ Now that we've got our eyes set on equipping our Mars Rover with a powerful new 
 And there we have it! Our Mars Rover now has a fully-assembled ultrasonic sensor module, ready to help it navigate like never before. Are you excited to see how it changes our Rover's obstacle detection abilities? Let's dive right into it!
 
 
-**Step 2: Exploring the World of Sound Waves with Ultrasonic module**
+**Step 2: Exploring the Ultrasonic Module**
 
-Meet the HC-SR04, our ultrasonic superhero! This tiny device can accurately measure distances from 2 cm up to 400 cm, all without touching a thing! Amazing, right? It's like having a superhero power! It can "see" the distances just by using sound waves, like how a bat navigates at night.
+Let's get to know the HC-SR04, a powerful ultrasonic distance sensor. This tiny device can accurately measure distances from 2 cm up to 400 cm, all without touching a thing! Amazing, right? It's like having a superhero power! It can "see" the distances just by using sound waves, like how a bat navigates at night.
 
 It uses four superpowers, or rather, four pins to do its magic:
 
@@ -83,7 +84,7 @@ Having assembled our superhero sensor and understood how it uses its superpowers
 
 Here are the key steps that our superhero sensor will follow:
 
-* We have connected both the TRIG and ECHO pins to pin 10 on the Sensor Shield. This allows us to control both signal transmission and reception of the ultrasonic module using a single Arduino pin.
+* We have connected both the TRIG and ECHO pins to pin 10 on the GalaxyRVR Shield. This allows us to control both signal transmission and reception of the ultrasonic module using a single Arduino pin.
 
 .. image:: img/ultrasonic_shield.png
 
@@ -159,7 +160,7 @@ Here's the complete code that turns our sensor into a superhero:
 
   <iframe src=https://create.arduino.cc/editor/sunfounder01/35bddbcf-145c-4e4f-b3ea-21e8210af4a6/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-**Step 4: Programming Our Superhero Sensor to Drive the Mars Rover**
+**Step 4: Programming the Ultrasonic Module to Drive the Mars Rover**
 
 Now that we've equipped our Mars Rover with an ultrasonic sensor module, it's time to program it to respond based on the sensor's measurements. 
 
@@ -220,8 +221,8 @@ Now that we've equipped our Mars Rover with an ultrasonic sensor module, it's ti
     }
 
   * If the path is clear (the obstacle is more than 50 cm away), our Rover boldly moves forward.
-  * And if an obstacle is getting close (less than 50 cm but more than 15 cm away), our Rover wisely stops to avoid a collision.
-  * If an obstacle is too close for comfort (less than 15 cm away), our Rover will move forward at a lower speed.
+  * And if an obstacle is getting close (less than 50 cm but more than 15 cm away), our Rover will move forward at a lower speed.
+  * If an obstacle is too close for comfort (less than 15 cm away), the Mars rover will move backward and then turn to the left.
 
   .. image:: img/ultrasonic_flowchart.png
 
@@ -232,8 +233,9 @@ Below is the complete code. You can upload this code to the R3 board and see if 
   <iframe src=https://create.arduino.cc/editor/sunfounder01/cded6408-1469-4289-b79b-7d445b56352b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-With these super-senses, our Mars Rover has truly become a space superhero, ready to explore the Red Planet without fear of obstacles!
+By leveraging these enhanced capabilities, the Mars Rover would be better equipped to identify potential obstacles in its path, measure distances accurately, and make informed decisions to navigate around them. This would significantly reduce the likelihood of collisions or other hazards that could hinder the rover's exploration mission.
 
+With its super-senses, the Mars Rover can operate with greater confidence and efficiency, enabling it to delve deeper into the mysteries of Mars and gather valuable scientific data for researchers back on Earth.
 
 **Step 5: Summary and Reflection**
 

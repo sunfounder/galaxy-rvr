@@ -1,5 +1,5 @@
 
-Lesson 9: Illuminating Our Path with RGB LED Strips
+Lesson 9: Lighting the Way with RGB LED Strips
 ============================================================
 
 In our journey so far, we've transformed our Mars Rover into a smart explorer, capable of skilfully manoeuvring around obstacles. It's become quite adept at navigating the Mars-like terrains we've set up for it.

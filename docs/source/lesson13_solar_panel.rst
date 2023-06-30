@@ -1,5 +1,5 @@
 
-Lesson 13: Exploring the Energy System of the Mars Rover
+Lesson 13: Investigating the Mars Rover Energy System
 =================================================================
 
 Welcome to the final lesson of our Mars rover exploration journey. This time, we are going to delve into the heart of the rover - its energy system.
@@ -220,11 +220,52 @@ By completing this step, we've mastered the Mars Rover's energy system and gaine
 
 Now that we have learned how to harness the sun's power to operate the Mars Rover effectively, we can start planning more extensive explorations of our backyard or even venture into more challenging terrains!
 
-**Step 6: Reflection and Looking Forward**
+**Step 6: Reflection**
 
 Throughout this lesson, we've focused on understanding the crucial role of the energy system in the Mars Rover, and the mechanisms to monitor the Rover's remaining energy. The solar panel-based energy system not only powers the Rover but also underlines the importance of renewable energy sources in space exploration.
 
 With the knowledge you have now, think about the real-life implications of this system. Consider the challenges that a solar energy system might encounter on Mars. How might extreme temperatures, dust storms, or long periods of darkness affect the energy supply? What solutions could you propose to tackle these obstacles?
 
+**Step 7: Looking Forward**
+
+Now that we've given our Mars Rover the ability to move, it's time to let it start its exploration journey! You can let it wander in various terrains mimicking the Mars environment.
+
+For instance, you can let it climb over a heap of stones.
+
+.. raw:: html
+
+   <video width="600" loop autoplay muted>
+      <source src="_static/video/move_stone.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+   </video>
+
+Or let it navigate through a thick grassy patch.
+
+.. raw:: html
+
+   <video width="600" loop autoplay muted>
+      <source src="_static/video/move_grass.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+   </video>
+
+Or set it on a course on a gravel terrain full of stones.
+
+.. raw:: html
+
+   <video width="600" loop autoplay muted>
+      <source src="_static/video/move_stone1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+   </video>
+
+However, please note that if the obstacle is too high, the rover might not be able to climb over it.
+
+.. raw:: html
+
+   <video width="400" height="400" loop autoplay muted>
+      <source src="_static/video/move_failed.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+   </video>
+
+These varied terrains present unique challenges for the rover, just as they would for a real Mars Rover. As you watch your rover try to overcome these obstacles, you're experiencing a small part of what scientists and engineers at NASA do when they send rovers to Mars!
 
 As we conclude our Mars Rover lessons, it's important to reflect on what we've learned. We hope this journey has not only expanded your knowledge and skills but also sparked curiosity and a desire to explore. Whether your Rover roams in your backyard or across the vast expanse of your imagination, the discoveries you make along the way are sure to be extraordinary.

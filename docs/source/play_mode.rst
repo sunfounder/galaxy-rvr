@@ -5,7 +5,6 @@ Play Mode
 
 Are you eager to kick-start your Martian journey right away? Our Play Mode is perfectly tailored for those of you who just can't wait to dive in. Equipped with factory-preloaded code, you can jump straight into the action after assembling your GalaxyRVR. Use the user-friendly SunFounder Controller app to explore its myriad of functions including first-person driving, switching between obstacle avoidance and follow modes, and even voice control.
 
-
 .. raw:: html
     
     <video width="600" loop autoplay muted>
@@ -15,16 +14,34 @@ Are you eager to kick-start your Martian journey right away? Our Play Mode is pe
 
 But before you set off to explore the Red Planet, let's make sure you are fully equipped and ready for the adventure. Below is a Quick Guide to assist you in this exciting journey!
 
+.. note::
+
+    If your R3 board has already been uploaded with other code, but you want to continue using Play Mode, you will need to download the relevant code. Then, open the ``galaxy-rvr.ino`` file located in the ``galaxy-rvr-main\galaxy-rvr`` directory, and upload it to the R3 board.
+
+    * :download:`GalaxyRVR Codes <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
+
+
 Quick Guide
 ---------------------
 
 #. Assemble the GalaxyRVR.
 
-    Follow the step-by-step assembly videos to build your GalaxyRVR, and utilize the provided assembly instruction foldout for additional support.
+    Follow the step-by-step assembly videos to build your GalaxyRVR.
     
+
+    .. note::
+
+        * You can refer to the provided assembly instruction foldout for additional support.
+
+            .. raw:: html
+            
+                <a href="_static/pdf/z0112v10-a0001012-galaxyrvr.pdf" target="_blank">GalaxyRVR Assembly Instructions</a>
+
+        * The following assembly videos are in a series of 7. You can check out other videos from the playlist in the upper-right corner, or let it play automatically.
+
     .. raw:: html
-   
-        <a href="_static/pdf/z0112v10-a0001012-galaxyrvr.pdf" target="_blank">GalaxyRVR Assembly Instructions</a>
+
+        <iframe width="600" height="400" src="https://www.youtube.com/embed/videoseries?list=PLwWF-ICTWmB62DgzmHWZwilt0Le4vGFry" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 #. Install `SunFounder Controller <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_ from **APP Store(iOS)** or **Google Play(Android)**.
@@ -66,7 +83,7 @@ Quick Guide
 
 #. Set up a controller.
 
-    * To create a controller on SunFounder Controller, click the **+** icon.
+    * To create a controller on SunFounder Controller, tap the **+** icon.
 
         .. image:: img/app/app1.png
 
@@ -74,24 +91,24 @@ Quick Guide
 
         .. image:: img/app/play_preset1.png
 
-    * Give it a name or use the default and click **Confirm**.
+    * Give it a name or use the default and tap **Confirm**.
 
         .. image:: img/app/play_name.png
     
-    * You are now inside the controller, which already has several widgets set up. Click the |app_save| button in the upper right corner.
+    * You are now inside the controller, which already has several widgets set up. Tap the |app_save| button in the upper right corner.
 
         .. image:: img/app/play_edit.png
 
 #. Connect and Activate the Controller.
 
-    * Now, click the |app_connect| button to connect the SunFounder Controller with the Rover and establish a line of communication. After a brief wait, you should see ``GalaxyRVR(IP)`` appear. Click on it to initiate a connection.
+    * Now, tap the |app_connect| button to connect the SunFounder Controller with the Rover and establish a line of communication. After a brief wait, you should see ``GalaxyRVR(IP)`` appear. Tap on it to initiate a connection.
 
         .. image:: img/app/camera_connect.png
 
         .. note::
             Please verify that your Wi-Fi is connected to ``GalaxyRVR`` if you don't see the above message after some time.
 
-    * Once you see the "Connected Successfully" message, press the |app_run| button. This will bring up the camera's live footage on the app.
+    * Once you see the "Connected Successfully" message, tap the |app_run| button. This will bring up the camera's live footage on the app.
 
         .. image:: img/app/play_run_view.png
 
@@ -162,27 +179,38 @@ Once in follow mode, the GalaxyRVR will move towards an object in front of it or
 
 .. _app_speech_control:
 
-Speech(J)
+STT(J)
 -------------------
 
-.. warning::
 
-    Note that the speech control function is currently not available on Android devices. This feature requires the Android device to have an internet connection and the Google services component installed.
+STT stands for Speech to Text. The SunFounder Controller app integrates with your mobile device's voice recognition engine. Hence, when you tap and hold the **STT(J)** widget on the SunFounder Controller and speak into your mobile device,
 
-    While iOS devices use offline voice recognition engine, no network connection is required, AP and STA mode connection are both available.
+Your device will capture your speech, convert it into text, and send it to the GalaxyRVR. If this text matches the pre-set commands in your code, the Rover will carry out the corresponding actions.
 
-In the SunFounder Controller app, the GalaxyRVR can be controlled using voice commands. The Rover will perform set actions based on the commands you speak into your mobile device.
+The following are the commands currently preset in the code. Speak any of the following commands and observe how the GalaxyRVR responds.
 
-Try it out! Press and hold the **Speech(J)** widget and voice any of the following commands. Watch how the GalaxyRVR responds.
+.. image:: img/app/play_speech.png
+    :width: 600
 
-* ``stop``
-* ``forward``
-* ``backward``
-* ``turn left``
-* ``turn right``
+* ``stop``: All movements of the rover can be stopped.
+* ``forward``: Let the rover move forward.
+* ``backward``: Let the rover move backward.
+* ``left``: Let the rover turn left.
+* ``right``: Let the rover turn right.
 
 
+.. note::
 
+    The STT (Speech to Text) function requires an internet connection and Google services on Android devices. However, this doesn't work with the pre-set AP (Access Point) mode on the GalaxyRVR. 
+    
+    In AP mode, the GalaxyRVR creates a local Wi-Fi network that your mobile device can connect to, but it does not provide internet access.
+    
+    To use the STT function on Android, switch the Rover's code from AP to STA mode as outlined in :ref:`stt_android`.
+
+.. note::
+
+    iOS devices, using an offline voice recognition engine, work fine in both AP and STA modes. 
+    
 
 
 
