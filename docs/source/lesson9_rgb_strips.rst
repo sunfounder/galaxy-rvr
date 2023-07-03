@@ -27,15 +27,18 @@ Objective
 Materials Needed
 -------------------------
 
-* Arduino UNO board
 * RGB LED Strips (each strip has 8 RGB LEDs, a total of two strips)
-* Mars Rover Model (Equipped with TT motors, suspension system, ultrasonic and infrared obstacle avoidance modules)
+* Basic tools and accessories (e.g. screwdriver, screws, wires etc.)
+* Mars Rover Model (Equipped with rocker-bogie system, main boards, motors, obstacle avoidance module, ultrasonic module)
+* USB Cable
 * Arduino IDE
 * Computer
 
 Course Steps
 ------------------
 **Step 1: Install the RGB LED Strips on the Mars Rover**
+
+Now, fix the two RGB light strips to the bottom sides of the car. They are controlled by a single set of pins, so there is no need to differentiate during the wiring process.
 
 .. raw:: html
 

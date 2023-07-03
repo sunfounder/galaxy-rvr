@@ -20,7 +20,6 @@ camera can better survey the Martian landscape.
 
 So, buckle up, explorers, let's start our mission to equip our Rover with its very own visual system!
 
-
 .. raw:: html
 
     <video width="600" loop autoplay muted>
