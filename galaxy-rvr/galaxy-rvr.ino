@@ -109,7 +109,7 @@ AiCamera aiCam = AiCamera(NAME, TYPE);
 /* Config Camera Servo */
 Servo servo;
 #define SERVO_PIN 6
-#define SERVO_REVERSE true
+#define SERVO_REVERSE false
 
 /* variables of voice control */
 char voice_buf_temp[20];
@@ -279,12 +279,12 @@ void obstacleFollowing() {
   bool leftIsClear = result & 0b00000010;
   bool rightIsClear = result & 0b00000001;
   float usDistance = ultrasonicRead();
-
-  if (usDistance < 4) {
+  // usDistance = -1 while the distance is too far
+  if (usDistance < 4 && usDistance > 0) {
     carStop();
-  } else if (usDistance < 10) {
+  } else if (usDistance < 10 && usDistance > 0) {
     carForward(30);
-  } else if (usDistance < FOLLOW_DISTANCE) {
+  } else if (usDistance < FOLLOW_DISTANCE && usDistance > 0) {
     carForward(OBSTACLE_FOLLOW_POWER);
   } else {
     if (!leftIsClear) {
@@ -430,9 +430,11 @@ void onReceive() {
     if (currentMode == MODE_NONE || currentMode == MODE_DISCONNECT) {
       currentMode = MODE_APP_CONTROL;
     }
-    temp = constrain(temp, 40, 180);
     if (SERVO_REVERSE) {
+      temp = constrain(temp, 0, 140);
       temp = 180 - temp;      
+    } else {
+      temp = constrain(temp, 40, 180);
     }
     servoAngle = temp;
   }
