@@ -1,6 +1,8 @@
 #include <Arduino.h>
 #include <Servo.h>
+#if defined(ARDUINO_AVR_UNO)
 #include <SoftPWM.h>
+#endif
 
 #define MOTOR_PIN_LEFT_A 5
 #define MOTOR_PIN_LEFT_B 4
@@ -44,7 +46,9 @@ void setup() {
 
   servo.attach(SERVO_PIN);
   servo.write(90);
+  #if defined(ARDUINO_AVR_UNO)
   SoftPWMBegin(); // init softpwm, before the motors initialization and the rgb LEDs initialization
+  #endif
 
 }
 

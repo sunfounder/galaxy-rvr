@@ -1,7 +1,9 @@
 #include "car_control.h"
 
 #include <Arduino.h>
+#if defined(ARDUINO_AVR_UNO)
 #include <SoftPWM.h>
+#endif
 
 #define MOTOR_POWER_MIN 28  // 28/255
 
@@ -9,10 +11,12 @@
 * @brief Initialize the motor, and (block) the initialization compass
 */
 void carBegin() {
+  #if defined(ARDUINO_AVR_UNO)
   for (uint8_t i = 0; i < 4; i++) {
     SoftPWMSet(MOTOR_PINS[i], 0);
     SoftPWMSetFadeTime(MOTOR_PINS[i], 100, 100);
   }
+  #endif
 }
 
 /** 
@@ -45,7 +49,12 @@ void carSetMotors(int8_t power0, int8_t power1) {
     } else {
       newPower[i] = map(abs(power[i]), 0, 100, MOTOR_POWER_MIN, 255);
     }
+    #if defined(ARDUINO_AVR_UNO)
     SoftPWMSet(MOTOR_PINS[i*2], dir[i] * newPower[i]);
     SoftPWMSet(MOTOR_PINS[i*2+1], !dir[i] * newPower[i]);
+    #elif defined(ARDUINO_MINIMA)
+    analogWrite(MOTOR_PINS[i*2], dir[i] * newPower[i]);
+    analogWrite(MOTOR_PINS[i*2+1], !dir[i] * newPower[i]);
+    #endif
   }
 }

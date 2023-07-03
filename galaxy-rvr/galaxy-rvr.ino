@@ -28,9 +28,12 @@
 #define VERSION "0.0.4"
 
 #include <Arduino.h>
-#include <SoftPWM.h>
 #include <Servo.h>
 #include <string.h>
+
+#if defined(ARDUINO_AVR_UNO)
+#include <SoftPWM.h>
+#endif
 
 #include "rgb.h"
 #include "car_control.h"
@@ -137,7 +140,9 @@ void setup() {
   Serial.print("GalaxyRVR version ");Serial.println(VERSION);
 
   Serial.println(F("Initialzing..."));
+  #if defined(ARDUINO_AVR_UNO)
   SoftPWMBegin(); // init softpwm, before the motors initialization and the rgb LEDs initialization
+  #endif
   rgbBegin();
   rgbWrite(ORANGE); // init hint
   carBegin();
