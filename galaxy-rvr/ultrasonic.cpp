@@ -16,6 +16,7 @@ float ultrasonicRead() {
                   // However，turning off interrupts affects the functionality of softpwm, such as motors
 
   // float duration = pulseIn(ULTRASONIC_ECHO_PIN, HIGH);
+  // it will return 0 while timeout
   float duration = pulseIn(ULTRASONIC_ECHO_PIN, HIGH, ULTRASONIC_READ_TIMEOUT);
  
   // interrupts(); // resume interruptions
@@ -23,7 +24,7 @@ float ultrasonicRead() {
   float distance = duration  * 0.017; // S = vt = 340m/s * (t/2)us= (340 * 100 cm/s) * 0.5 * (t / 10^6)s = 0.017 * t
   
 
-  if (distance > MAX_DISTANCE) {
+  if (distance > MAX_DISTANCE || distance == 0) {
     return -1;
   } 
   return distance;
