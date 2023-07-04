@@ -39,6 +39,13 @@ Quick Guide
 
         * The following assembly videos are in a series of 7. You can check out other videos from the playlist in the upper-right corner, or let it play automatically.
 
+        * When inserting the ESP32 CAM into the Camera Adapter, be aware of its orientation. It should align properly with the ESP32 Adapter.
+        
+            .. image:: img/esp32_cam_direction.png
+                :width: 300
+                :align: center
+
+
     .. raw:: html
 
         <iframe width="600" height="400" src="https://www.youtube.com/embed/videoseries?list=PLwWF-ICTWmB62DgzmHWZwilt0Le4vGFry" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

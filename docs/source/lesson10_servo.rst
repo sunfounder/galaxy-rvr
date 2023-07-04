@@ -115,6 +115,14 @@ Great job, explorers! You've just learned how to control a servo motor with Ardu
 
 You're now ready to assemble the visual system of our Rover.
 
+.. note::
+
+    * When inserting the ESP32 CAM into the Camera Adapter, be aware of its orientation. It should align properly with the ESP32 Adapter.
+
+    .. image:: img/esp32_cam_direction.png
+        :width: 300
+        :align: center
+    
 .. raw:: html
 
     <iframe width="600" height="400" src="https://www.youtube.com/embed/YCmkalk8ebk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
