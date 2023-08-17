@@ -10,11 +10,10 @@
   Libraries:
     - IRLremote
     - SoftPWM
-    - Servo
     - ArduinoJson
     - Sunfounder_AI_Camera
 
-  Version: 0.0.4
+  Version: 1.0.0
     -- https://github.com/sunfounder/galaxy-rvr.git
   
   Documentation:
@@ -25,14 +24,14 @@
            https://docs.sunfounder.com
 
 ********************************************************************/
-#define VERSION "0.0.4"
+#define VERSION "1.0.0"
 
 #include <Arduino.h>
 #include <SoftPWM.h>
-#include <Servo.h>
 #include <string.h>
 
 #include "rgb.h"
+#include "soft_servo.h"
 #include "car_control.h"
 #include "ir_obstacle.h"
 #include "ultrasonic.h"
@@ -104,7 +103,8 @@
 AiCamera aiCam = AiCamera(NAME, TYPE);
 
 /* Config Camera Servo */
-Servo servo;
+SoftServo servo;
+
 #define SERVO_PIN 6
 #define SERVO_REVERSE false
 
@@ -426,10 +426,10 @@ void onReceive() {
       currentMode = MODE_APP_CONTROL;
     }
     if (SERVO_REVERSE) {
-      temp = constrain(temp, 0, 140);
+      temp = constrain(temp, 40, 180);
       temp = 180 - temp;      
     } else {
-      temp = constrain(temp, 40, 180);
+      temp = constrain(temp, 0, 140);
     }
     servoAngle = temp;
   }
