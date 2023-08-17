@@ -2,7 +2,6 @@
 #define _TEST_H_
 
 #include <Arduino.h>
-#include <SoftPWM.h>
 
 #include "car_control.h"
 #include "ir_obstacle.h"
