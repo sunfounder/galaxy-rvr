@@ -24,7 +24,7 @@
            https://docs.sunfounder.com
 
 ********************************************************************/
-#define VERSION "1.0.0"
+#define VERSION "1.1.0"
 
 #include <Arduino.h>
 #include <SoftPWM.h>
@@ -47,21 +47,21 @@
 /** Whether to enable Watchdog */
 #define WATCH_DOG 0
 #if WATCH_DOG
-#include <avr/wdt.h>
+  #include <avr/wdt.h>
 #endif
 
 /** Whether to enable TEST mode */
 #define TEST 0
 #if TEST
-#include "test.h"
+  #include "test.h"
 #endif
 
 /** Whether to enable print Memory Used */
 #define MEM 0
 #if MEM
-// https://github.com/mpflaga/Arduino-MemoryFree
-#include <MemoryFree.h>
-#include <pgmStrToRAM.h>  // not needed for new way. but good to have for reference.
+  // https://github.com/mpflaga/Arduino-MemoryFree
+  #include <MemoryFree.h>
+  #include <pgmStrToRAM.h> // not needed for new way. but good to have for reference.
 #endif
 
 
@@ -112,8 +112,8 @@ SoftServo servo;
 /* variables of voice control */
 char voice_buf_temp[20];
 int8_t current_voice_code = -1;
-int32_t voice_time = 0;         // uint:s
-uint32_t voice_start_time = 0;  // uint:s
+int32_t voice_time = 0; // uint:s
+uint32_t voice_start_time = 0; // uint:s
 
 /* variables of motors and servo*/
 int8_t leftMotorPower = 0;
@@ -121,7 +121,7 @@ int8_t rightMotorPower = 0;
 uint8_t servoAngle = 90;
 
 /* variables of rgb_blink when disconnected */
-uint32_t rgb_blink_interval = 500;  // uint: ms
+uint32_t rgb_blink_interval = 500; // uint: ms
 uint32_t rgb_blink_start_time = 0;
 bool rgb_blink_flag = 0;
 
@@ -138,15 +138,14 @@ bool cam_lamp_status = false;
 void setup() {
   int m = millis();
   Serial.begin(115200);
-  Serial.print("GalaxyRVR version ");
-  Serial.println(VERSION);
+  Serial.print("GalaxyRVR version "); Serial.println(VERSION);
 
   Serial.println(F("Initialzing..."));
 #if defined(ARDUINO_AVR_UNO)
-  SoftPWMBegin();  // init softpwm, before the motors initialization and the rgb LEDs initialization
+  SoftPWMBegin(); // init softpwm, before the motors initialization and the rgb LEDs initialization
 #endif
   rgbBegin();
-  rgbWrite(ORANGE);  // init hint
+  rgbWrite(ORANGE); // init hint
   carBegin();
   irObstacleBegin();
   batteryBegin();
