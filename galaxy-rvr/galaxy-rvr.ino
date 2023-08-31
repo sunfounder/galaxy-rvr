@@ -47,21 +47,21 @@
 /** Whether to enable Watchdog */
 #define WATCH_DOG 0
 #if WATCH_DOG
-  #include <avr/wdt.h>
+#include <avr/wdt.h>
 #endif
 
 /** Whether to enable TEST mode */
 #define TEST 0
 #if TEST
-  #include "test.h"
+#include "test.h"
 #endif
 
 /** Whether to enable print Memory Used */
 #define MEM 0
 #if MEM
-  // https://github.com/mpflaga/Arduino-MemoryFree
-  #include <MemoryFree.h>
-  #include <pgmStrToRAM.h> // not needed for new way. but good to have for reference.
+// https://github.com/mpflaga/Arduino-MemoryFree
+#include <MemoryFree.h>
+#include <pgmStrToRAM.h>  // not needed for new way. but good to have for reference.
 #endif
 
 
@@ -94,10 +94,10 @@
 /** Configure the follow distance of obstacle follow */
 #define FOLLOW_DISTANCE 20
 
-/** websocket communication headers */ 
+/** websocket communication headers */
 #define WS_HEADER "WS+"
 
-///@} 
+///@}
 
 /*********************** Global variables ****************************/
 /** Instantiate aicamera, a class for serial communication with ESP32-CAM */
@@ -112,8 +112,8 @@ SoftServo servo;
 /* variables of voice control */
 char voice_buf_temp[20];
 int8_t current_voice_code = -1;
-int32_t voice_time = 0; // uint:s
-uint32_t voice_start_time = 0; // uint:s
+int32_t voice_time = 0;         // uint:s
+uint32_t voice_start_time = 0;  // uint:s
 
 /* variables of motors and servo*/
 int8_t leftMotorPower = 0;
@@ -121,9 +121,12 @@ int8_t rightMotorPower = 0;
 uint8_t servoAngle = 90;
 
 /* variables of rgb_blink when disconnected */
-uint32_t rgb_blink_interval = 500; // uint: ms
+uint32_t rgb_blink_interval = 500;  // uint: ms
 uint32_t rgb_blink_start_time = 0;
 bool rgb_blink_flag = 0;
+
+/* variable of esp32-cam flash lamp*/
+bool cam_lamp_status = false;
 //@}
 
 /*********************** setup() & loop() ************************/
@@ -135,37 +138,38 @@ bool rgb_blink_flag = 0;
 void setup() {
   int m = millis();
   Serial.begin(115200);
-  Serial.print("GalaxyRVR version ");Serial.println(VERSION);
+  Serial.print("GalaxyRVR version ");
+  Serial.println(VERSION);
 
   Serial.println(F("Initialzing..."));
-  #if defined(ARDUINO_AVR_UNO)
-  SoftPWMBegin(); // init softpwm, before the motors initialization and the rgb LEDs initialization
-  #endif
+#if defined(ARDUINO_AVR_UNO)
+  SoftPWMBegin();  // init softpwm, before the motors initialization and the rgb LEDs initialization
+#endif
   rgbBegin();
-  rgbWrite(ORANGE); // init hint
+  rgbWrite(ORANGE);  // init hint
   carBegin();
   irObstacleBegin();
   batteryBegin();
   servo.attach(SERVO_PIN);
   servo.write(90);
 
-  #if !TEST
-    aiCam.begin(SSID, PASSWORD, WIFI_MODE, PORT);
-    aiCam.setOnReceived(onReceive);
-  #endif
+#if !TEST
+  aiCam.begin(SSID, PASSWORD, WIFI_MODE, PORT);
+  aiCam.setOnReceived(onReceive);
+#endif
 
-  while (millis() - m < 500) { // Wait for peripherals to be ready
+  while (millis() - m < 500) {  // Wait for peripherals to be ready
     delay(1);
   }
 
-  #if WATCH_DOG
-  wdt_disable();  /* Disable the watchdog and wait for more than 2 seconds */
-  delay(3000);  /* Done so that the Arduino doesn't keep resetting infinitely in case of wrong configuration */
-  wdt_enable(WDTO_2S);  /* Enable the watchdog with a timeout of 2 seconds */
-  #endif
+#if WATCH_DOG
+  wdt_disable();       /* Disable the watchdog and wait for more than 2 seconds */
+  delay(3000);         /* Done so that the Arduino doesn't keep resetting infinitely in case of wrong configuration */
+  wdt_enable(WDTO_2S); /* Enable the watchdog with a timeout of 2 seconds */
+#endif
 
   Serial.println(F("Okie!"));
-  rgbWrite(GREEN); // init finished
+  rgbWrite(GREEN);  // init finished
 }
 
 /**
@@ -177,40 +181,39 @@ void setup() {
  * - or modules test
  */
 void loop() {
-  #if !TEST 
-    // because the value in a is constantly updated
-    // Note that the cycle interval of the "aiCam.loop()" should be less than 80ms to avoid data d
-    aiCam.loop();
-   if (aiCam.ws_connected == false) {
-      currentMode = MODE_DISCONNECT;
-      int8_t current_voice_code = -1;
-      int8_t voice_time = 0;
-      if (currentMode != MODE_DISCONNECT) {
-        rgb_blink_start_time = 0;
-        rgb_blink_flag = 1;
-      }
-    } else {
-      if (currentMode == MODE_DISCONNECT) currentMode = MODE_NONE;
+#if !TEST
+  // because the value in a is constantly updated
+  // Note that the cycle interval of the "aiCam.loop()" should be less than 80ms to avoid data d
+  aiCam.loop();
+  if (aiCam.ws_connected == false) {
+    currentMode = MODE_DISCONNECT;
+    int8_t current_voice_code = -1;
+    int8_t voice_time = 0;
+    if (currentMode != MODE_DISCONNECT) {
+      rgb_blink_start_time = 0;
+      rgb_blink_flag = 1;
     }
-    modeHandler();
-  #else
-    /* Select the item to be tested, multiple selection allowed */
-    motors_test();
-    // rgb_test();
-    // ultrasonic_test();
-    // ir_obstacle_test();
-    // obstacleAvoidance();
-  #endif 
+  } else {
+    if (currentMode == MODE_DISCONNECT) currentMode = MODE_NONE;
+  }
+  modeHandler();
+#else
+  /* Select the item to be tested, multiple selection allowed */
+  motors_test();
+  // rgb_test();
+  // ultrasonic_test();
+  // ir_obstacle_test();
+  // obstacleAvoidance();
+#endif
 
-  #if WATCH_DOG
-    wdt_reset();  /* Reset the watchdog */
-  #endif
+#if WATCH_DOG
+  wdt_reset(); /* Reset the watchdog */
+#endif
 
-  #if MEM
-    Serial.print(F("Free RAM = ")); //F function does the same and is now a built in library, in IDE > 1.0.0
-    Serial.println(freeMemory());  // print how much RAM is available in bytes.
-  #endif
-
+#if MEM
+  Serial.print(F("Free RAM = "));  //F function does the same and is now a built in library, in IDE > 1.0.0
+  Serial.println(freeMemory());    // print how much RAM is available in bytes.
+#endif
 }
 
 /***************************** Functions ******************************/
@@ -226,7 +229,7 @@ void loop() {
  */
 void modeHandler() {
   switch (currentMode) {
-    case MODE_NONE: 
+    case MODE_NONE:
       rgbWrite(MODE_NONE_COLOR);
       carStop();
       servoAngle = 90;
@@ -298,32 +301,30 @@ void obstacleFollowing() {
 /**
  * Obstacle avoidance program
  */
-int8_t last_clear = -1; // last_clear, 1, left; -1, right;
+int8_t last_clear = -1;  // last_clear, 1, left; -1, right;
 bool last_forward = false;
 
 void obstacleAvoidance() {
   byte result = irObstacleRead();
-  bool leftIsClear = result & 0b00000010; // left, clear: True
-  bool rightIsClear = result & 0b00000001; // right, clear: True
+  bool leftIsClear = result & 0b00000010;   // left, clear: True
+  bool rightIsClear = result & 0b00000001;  // right, clear: True
   bool middleIsClear = ultrasonicIsClear();
 
-  if (middleIsClear && leftIsClear && rightIsClear) { // 111
+  if (middleIsClear && leftIsClear && rightIsClear) {  // 111
     last_forward = true;
     carForward(OBSTACLE_AVOID_POWER);
   } else {
-    if( (leftIsClear&& rightIsClear) || (!leftIsClear&& !rightIsClear)) { // 101, 000, 010
-      if (last_clear == 1)  carTurnLeft(OBSTACLE_AVOID_POWER);
+    if ((leftIsClear && rightIsClear) || (!leftIsClear && !rightIsClear)) {  // 101, 000, 010
+      if (last_clear == 1) carTurnLeft(OBSTACLE_AVOID_POWER);
       else carTurnRight(OBSTACLE_AVOID_POWER);
       last_forward = false;
-    }
-    else if (leftIsClear) { // 100, 110
+    } else if (leftIsClear) {  // 100, 110
       if (last_clear == 1 || last_forward == true) {
         carTurnLeft(OBSTACLE_AVOID_POWER);
         last_clear = 1;
         last_forward = false;
       }
-    } 
-    else if ( rightIsClear) { // 001, 011
+    } else if (rightIsClear) {  // 001, 011
       if (last_clear == -1 || last_forward == true) {
         carTurnRight(OBSTACLE_AVOID_POWER);
         last_clear = -1;
@@ -353,7 +354,7 @@ void voice_control() {
 /**
  * websocket received data processing
  */
-void onReceive() {  
+void onReceive() {
   // --------------------- send data ---------------------
   // battery voltage
   // Serial.print(F("voltage:"));Serial.println(batteryGetVoltage());
@@ -361,11 +362,11 @@ void onReceive() {
 
   // IR obstacle detection data
   byte result = irObstacleRead();
-  aiCam.sendDoc["N"] = int(!bool(result & 0b00000010)); // left, clear:0
-  aiCam.sendDoc["P"] = int(!bool(result & 0b00000001)); // right, clear:0
+  aiCam.sendDoc["N"] = int(!bool(result & 0b00000010));  // left, clear:0
+  aiCam.sendDoc["P"] = int(!bool(result & 0b00000001));  // right, clear:0
 
   // ultrasonic
-  float usDistance = int(ultrasonicRead()*100)/100.0; // round two decimal places
+  float usDistance = int(ultrasonicRead() * 100) / 100.0;  // round two decimal places
   aiCam.sendDoc["O"] = usDistance;
 
   // --------------------- get data ---------------------
@@ -395,6 +396,17 @@ void onReceive() {
     }
   }
 
+  // cam lamp
+  if (aiCam.getSwitch(REGION_M) && !cam_lamp_status) {
+    Serial.println("lamp on");
+    aiCam.lamp_on(5);  //turn on cam lamp, level 0 ~ 10 
+    cam_lamp_status = true;
+  } else if (!aiCam.getSwitch(REGION_M) && cam_lamp_status) {
+    Serial.println("lamp off");
+    aiCam.lamp_off();  // turn off cam lamp
+    cam_lamp_status = false;
+  }
+
   // Speech control
   if (currentMode != MODE_VOICE_CONTROL) {
     current_voice_code = -1;
@@ -404,7 +416,7 @@ void onReceive() {
   }
 
   int8_t code = -1;
-  voice_buf_temp[0] = 0; // voice_buf_temp
+  voice_buf_temp[0] = 0;  // voice_buf_temp
   aiCam.getSpeech(REGION_J, voice_buf_temp);
   if (strlen(voice_buf_temp) > 0) {
     aiCam.sendDoc["J"] = 1;
@@ -430,22 +442,21 @@ void onReceive() {
     }
     if (SERVO_REVERSE) {
       temp = constrain(temp, 40, 180);
-      temp = 180 - temp;      
+      temp = 180 - temp;
     } else {
       temp = constrain(temp, 0, 140);
     }
     servoAngle = temp;
   }
-   
+
   // throttle
   int throttle_L = aiCam.getThrottle(REGION_K);
   int throttle_R = aiCam.getThrottle(REGION_Q);
   // Serial.print("throttle_L: "); Serial.print(throttle_L);
   // Serial.print("throttle_R: "); Serial.println(throttle_R);
-  if ( throttle_L != 0 || throttle_R != 0 || throttle_L != leftMotorPower || throttle_R != rightMotorPower) {
+  if (throttle_L != 0 || throttle_R != 0 || throttle_L != leftMotorPower || throttle_R != rightMotorPower) {
     currentMode = MODE_APP_CONTROL;
     leftMotorPower = throttle_L;
     rightMotorPower = throttle_R;
   }
-
 }
