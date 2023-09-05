@@ -16,6 +16,14 @@ Exciting, isn't it? So let's get started.
         Your browser does not support the video tag.
     </video>
 
+.. note::
+
+    If you are learning this course after fully assembling the GalaxyRVR, you need to move this switch to the right before uploading the code.
+
+    .. image:: img/camera_upload.png
+        :width: 500
+        :align: center
+
 Course Objectives
 --------------------------
 * Learn how to combine obstacle avoidance modules with an ultrasonic module for improved navigation.

@@ -18,7 +18,7 @@ import time
 
 # -- Project information -----------------------------------------------------
 
-project = 'SunFounder Zeus Robot Car Kit for Arduino'
+project = 'SunFounder GalaxyRVR Kit for Arduino'
 copyright = f'{time.localtime().tm_year}, SunFounder'
 author = 'www.sunfounder.com'
 
@@ -100,6 +100,10 @@ rst_epilog = """
 .. |link_widgets_list| raw:: html
 
     <a href="https://docs.sunfounder.com/projects/sf-controller/en/latest/widgets_list.html" target="_blank">Widgets List</a>
+
+.. |link_ai_camera_firmware| raw:: html
+
+    <a href="https://github.com/sunfounder/ai-camera-firmware" target="_blank">ai-camera-firmware</a>
 
 
 """

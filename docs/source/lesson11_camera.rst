@@ -76,10 +76,10 @@ Here's how we can do it:
 
         .. code-block:: arduino
 
-            // AP Mode
-            #define WIFI_MODE WIFI_MODE_AP
-            #define SSID "AiCamera"
-            #define PASSWORD "12345678"
+        // AP Mode
+        #define WIFI_MODE WIFI_MODE_AP
+        #define SSID "GalaxyRVR"
+        #define PASSWORD "12345678"
 
     * **STA Mode**: In this mode, the Rover connects to your home WiFi network. Remember that your controlling device (like a mobile phone or tablet) should also be connected to the same WiFi network. This mode allows your device to keep its regular internet access while controlling the Rover, but limits the Rover's operational range to your WiFi coverage area.
 
@@ -155,7 +155,7 @@ Now you can! With the help of the SunFounder Controller app, you'll be able to d
     
         // AP Mode
         #define WIFI_MODE WIFI_MODE_AP
-        #define SSID "AiCamera"
+        #define SSID "GalaxyRVR"
         #define PASSWORD "12345678"
 
     * Next, we add an ``onReceive()`` function to receive values from the SunFounder Controller and print these values in the Serial Monitor. We use the ``getSlider()`` function to get the value of the **slider** widget. I added a **slider** widget in Region D, but if you added it in a different region, you need to change ``REGION_D`` to your region.
@@ -261,12 +261,12 @@ Now you can! With the help of the SunFounder Controller app, you'll be able to d
 
         void onReceive() {
             ...
-          myServo.write(int(sliderD));  // control the servo to move to the current angle
+            myServo.write(int(sliderD));  // control the servo to move to the current angle
         }
 
         void setup() {
             ...
-        myServo.attach(6);  // attaches the servo on pin 6
+            myServo.attach(6);  // attaches the servo on pin 6
             ...
         }
 

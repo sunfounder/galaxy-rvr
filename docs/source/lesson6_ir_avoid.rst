@@ -15,6 +15,13 @@ Get ready to gear up our rover with some Martian obstacle-dodging intelligence! 
       Your browser does not support the video tag.
    </video>
 
+.. note::
+
+    If you are learning this course after fully assembling the GalaxyRVR, you need to move this switch to the right before uploading the code.
+
+    .. image:: img/camera_upload.png
+        :width: 500
+        :align: center
 
 Learning Objectives
 ----------------------

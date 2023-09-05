@@ -16,18 +16,22 @@ But before you set off to explore the Red Planet, let's make sure you are fully 
 
 .. note::
 
-    If your R3 board has already been uploaded with other code, but you want to continue using Play Mode, you will need to download the relevant code. Then, open the ``galaxy-rvr.ino`` file located in the ``galaxy-rvr-main\galaxy-rvr`` directory, and upload it to the R3 board.
+    * If your R3 board has already been uploaded with other code, but you want to continue using Play Mode, you will need to download the relevant code.
 
-    * :download:`GalaxyRVR Codes <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
+        * :download:`GalaxyRVR Codes <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
 
-
-Quick Guide
----------------------
-
-#. Assemble the GalaxyRVR.
-
-    Follow the step-by-step assembly videos to build your GalaxyRVR.
+    * Then, open the ``galaxy-rvr.ino`` file located in the ``galaxy-rvr-main\galaxy-rvr`` directory.
     
+    * Move the switch to the right and then click **Upload**.
+
+    .. image:: img/camera_upload.png
+        :width: 400
+        :align: center
+
+Assemble Video
+--------------------
+
+Follow the step-by-step assembly videos to build your GalaxyRVR.
 
     .. note::
 
@@ -50,8 +54,8 @@ Quick Guide
 
         <iframe width="600" height="400" src="https://www.youtube.com/embed/videoseries?list=PLwWF-ICTWmB62DgzmHWZwilt0Le4vGFry" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-
-#. Install `SunFounder Controller <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_ from **APP Store(iOS)** or **Google Play(Android)**.
+Quick Guide
+---------------------
 
 #. Let's start the GalaxyRVR.
 
@@ -72,6 +76,8 @@ Quick Guide
                 <source src="_static/video/play_reset.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+
+#. Install `SunFounder Controller <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_ from **APP Store(iOS)** or **Google Play(Android)**.
 
 
 #. Connect to the ``GalaxyRVR`` Network.
@@ -94,43 +100,41 @@ Quick Guide
 
         .. image:: img/app/app1.png
 
-    * There are preset controllers for certain products. For this, we'll select **GalaxyRVR**.
+    * Preset controllers are available for some products, here we choose **GalaxyRVR**. Give it a name, or simply tap **Confirm**.
 
-        .. image:: img/app/play_preset1.png
-
-    * Give it a name or use the default and tap **Confirm**.
-
-        .. image:: img/app/play_name.png
+        .. image:: img/app/play_preset.jpg
     
-    * You are now inside the controller, which already has several widgets set up. Tap the |app_save| button in the upper right corner.
+    * Once inside, the app will automatically search for the GalaxyRVR. After a moment, you will see a prompt saying "Connected Successfully".
 
-        .. image:: img/app/play_edit.png
-
-#. Connect and Activate the Controller.
-
-    * Now, tap the |app_connect| button to connect the SunFounder Controller with the Rover and establish a line of communication. After a brief wait, you should see ``GalaxyRVR(IP)`` appear. Tap on it to initiate a connection.
-
-        .. image:: img/app/camera_connect.png
+        .. image:: img/app/auto_connect.jpg
 
         .. note::
-            Please verify that your Wi-Fi is connected to ``GalaxyRVR`` if you don't see the above message after some time.
 
-    * Once you see the "Connected Successfully" message, tap the |app_run| button. This will bring up the camera's live footage on the app.
+            * If not connected, please confirm that your Wi-Fi is connected to ``GalaxyRVR``.
+            * You can also tap the |app_connect| button to connect manually. After a short wait, you should see ``GalaxyRVR(IP)`` appear. Tap on it to establish a connection.
 
-        .. image:: img/app/play_run_view.png
+            .. image:: img/app/camera_connect.png
+                :width: 300
+                :align: center
 
-    * Let's now delve into the functions of each widget:
+
+    * Now, tap the |app_run| button enables you to view the live video feed from the camera and control the car using the provided widgets. 
+
+        .. image:: img/app/play_run_view.jpg
+
+#. Let's now delve into the functions of each widget:
 
         * **Servo(D)**: Controls the tilt mechanism of the Rover's camera, allowing you to observe a wider range.
 
-        * :ref:`app_avoid`: Switches the Rover into obstacle avoidance mode.
+        * :ref:`app_avoid`: Switches the Rover into obstacle avoidance mode. The factory-set detection distances for each obstacle avoidance module may differ. Manual adjustment is required.
 
-        * :ref:`app_follow`: Toggles the Rover into follow mode.
+        * :ref:`app_follow`: Toggles the Rover into follow mode. The factory-set detection distances for each obstacle avoidance module may differ. Manual adjustment is required.
 
         * **Stop(I)**: Immediately halts all Rover movements.
 
         * :ref:`app_speech_control`: Press this widget to initiate voice recognition and make the Rover perform corresponding actions.
 
+        * **HeadLamp(M)**: To turn the LED on/off on the ESP32 CAM.
         * **Throttle Widgets on K and Q**: The throttle widget in the K area controls the Rover's left motors, while the one in the Q area controls the right motors. Coordinating both widgets allows the GalaxyRVR to move in any direction.
 
         * **Left IR(N)**: Displays the readings from the left obstacle avoidance module.

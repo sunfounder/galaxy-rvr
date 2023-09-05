@@ -27,6 +27,7 @@ So, buckle up, explorers, let's start our mission to equip our Rover with its ve
         Your browser does not support the video tag.
     </video>
 
+
 Objective
 ----------------
 
@@ -136,13 +137,20 @@ Can you imagine a bird trying to bend its neck too much that it hits its own bod
 
 If we try to force it to move beyond this point by writing an unreachable angle in our code, our little servo birdie can get stuck and even damage itself! We don't want that to happen, do we? So, let's understand its movement limitations with a little experiment.
 
+We use a for loop to rotate the servo from 0 to 180 degrees while keeping a note of the angle in the Serial Monitor.
+
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/848c7a3a-16b2-4a7e-8d66-bb91848bc6d9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-We use a for loop to rotate the servo from 0 to 180 degrees while keeping a note of the angle in the Serial Monitor.
+* The ESP32-CAM and the Arduino board share the same RX (receive) and TX (transmit) pins. So, before uploading the code, you'll need to first release the ESP32-CAM by slide this switch to right side to avoid any conflicts or potential issues.
 
-After we upload this code, the servo starts to rotate from 0°. On my Rover, the tilt mechanism could go up to around 140° before it hit the body of the Rover and couldn't go any further.
+    .. image:: img/camera_upload.png
+        :width: 600
+
+* After we upload this code, open the **Serial Monitor**. If no information appears, press the **Reset button** on the GalaxyRVR shield to run the code again. 
+
+* You will see the servo rotate, and the Serial Monitor will display the angle. 
 
 .. image:: img/servo_range.png
 
@@ -152,6 +160,8 @@ After we upload this code, the servo starts to rotate from 0°. On my Rover, the
         <source src="_static/video/servo_range.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+    
+On my Rover, the tilt mechanism could go up to around 140° before it hit the body of the Rover and couldn't go any further.
 
 So, explorers, always remember to respect the limits of your rover to keep it safe and functioning!
 

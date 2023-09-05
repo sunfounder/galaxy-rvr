@@ -88,3 +88,8 @@ Now follow the steps below.
     * ``backward``: Let the rover move backward.
     * ``left``: Let the rover turn left.
     * ``right``: Let the rover turn right.
+
+Q4: About the ESP32 CAM Firmware
+---------------------------------------------------
+
+Here is the firmeware link of ESP32 CAM: |link_ai_camera_firmware|

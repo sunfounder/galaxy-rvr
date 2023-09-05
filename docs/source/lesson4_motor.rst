@@ -18,6 +18,14 @@ Let's dive in!
         Your browser does not support the video tag.
     </video>
 
+.. note::
+
+    If you are learning this course after fully assembling the GalaxyRVR, you need to move this switch to the right before uploading the code.
+
+    .. image:: img/camera_upload.png
+        :width: 500
+        :align: center
+
 Course Objectives
 ----------------------
 * Understand the basic principles of motors and the characteristics of the TT motor.

@@ -17,6 +17,14 @@ Our goal in this lesson is to understand the principles of RGB LED strips, learn
         Your browser does not support the video tag.
     </video>
 
+.. note::
+
+    If you are learning this course after fully assembling the GalaxyRVR, you need to move this switch to the right before uploading the code.
+
+    .. image:: img/camera_upload.png
+        :width: 500
+        :align: center
+
 Objective
 -------------
 
