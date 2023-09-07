@@ -21,6 +21,10 @@ you're truly navigating the Red Planet. Its advanced obstacle avoidance module a
 
 <a id="update"></a>
 ## Update:
+2023-09-07:
+
+    - Create a separate page for the assembly video.
+
 2023-09-04:
 
     - Modified the email and language display prompts on the homepage.

@@ -32,6 +32,7 @@ The GalaxyRVR isn't just a toy, but a gateway to Mars, an educational tool, and 
     :maxdepth: 2
 
     About this Kit <self>
+    assemble_video
     play_mode
     course_mode
     faq
