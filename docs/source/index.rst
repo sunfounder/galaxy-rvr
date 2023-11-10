@@ -35,6 +35,7 @@ The GalaxyRVR isn't just a toy, but a gateway to Mars, an educational tool, and 
     assemble_video
     play_mode
     course_mode
+    hardware/hardware
     faq
 
 **About the display language**

@@ -34,8 +34,8 @@ Quick Guide
 
 #. Let's start the GalaxyRVR.
 
-    * If it's your first time using the GalaxyRVR or if the battery cable has been unplugged, the GalaxyRVR Shield will engage its over-discharge protection mechanism. To deactivate this protection, plug in the Type-C cable for approximately 5 seconds. If the power indicator lights up, the protection status has been released. Check the battery indicators – if both are off, please continue charging the battery using the Type-C cable.
-
+    * The first time you use your GalaxyRVR, it is recommended that you plug in a Type-C USB cable to fully charge the battery first. Then turn the power on.
+    
         .. raw:: html
 
             <video width="600" loop autoplay muted>

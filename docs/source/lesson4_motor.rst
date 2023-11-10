@@ -128,8 +128,8 @@ Let's learn how these two drive chips control the six motors through hands-on ex
                 Your browser does not support the video tag.
             </video>
 
-    #. When first used or when the battery cable is unplugged, the GalaxyRVR Shield activates its over-discharge protection circuitry. You’ll need to plug in the Type-C cable for about 5 seconds to release the protection. If the power indicator lights up, it means the protection status has been released. Check the battery indicators at this point - if both are off, keep the Type-C cable plugged in to charge the battery.
-
+    #. The first time you use, it is recommended that you plug in a Type-C USB cable to fully charge the battery first. Then turn the power on.
+    
         .. raw:: html
 
             <video width="600" loop autoplay muted>

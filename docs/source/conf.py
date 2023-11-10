@@ -64,10 +64,49 @@ html_css_files = [
     'https://ezblock.cc/readDocFile/custom.css',
 ]
 
+# pictures
+rst_epilog = """
+
+.. |app_connect| image:: /img/app/app_connect.jpg
+    :width: 20
+
+.. |app_save| image:: /img/app/app_save.jpg
+    :width: 20
+
+.. |app_run| image:: /img/app/app_run.png
+    :width: 20
+
+.. |app_edit| image:: /img/app/app_edit.jpg
+    :width: 20
+
+.. |app_set| image:: /img/app/app_set.png
+    :width: 20
+
+"""
+
 
 # open link in a new window
 
-rst_epilog = """
+rst_epilog += """
+
+.. |link_esp32cam_schematic| raw:: html
+
+    <a href="https://docs.ai-thinker.com/_media/esp32/docs/esp32_cam_sch.pdf" target="_blank">ESP32-CAM schematic diagram</a>
+
+.. |link_cam_ov2640| raw:: html
+
+    <a href="https://docs.ai-thinker.com/_media/esp32/docs/ov2640_ds_1.8_.pdf" target="_blank">ov2640_ds_1.8</a>
+
+
+.. |link_aithiner| raw:: html
+
+    <a href="https://docs.ai-thinker.com/en/esp32-cam" target="_blank">Ai-Thinker</a>
+
+
+.. |link_qmc6310_datasheet| raw:: html
+
+    <a href="https://www.qstcorp.com/upload/pdf/202202/%EF%BC%88%E5%B7%B2%E4%BC%A0%EF%BC%8913-52-17%20QMC6310%20Datasheet%20Rev.C(1).pdf" target="_blank">QMC6310 Datasheet</a>
+
 
 .. |link_download_arduino| raw:: html
 
@@ -104,26 +143,5 @@ rst_epilog = """
 .. |link_ai_camera_firmware| raw:: html
 
     <a href="https://github.com/sunfounder/ai-camera-firmware" target="_blank">ai-camera-firmware</a>
-
-
-"""
-
-# pictures
-rst_epilog += """
-
-.. |app_connect| image:: img/app/app_connect.jpg
-    :width: 20
-
-.. |app_save| image:: img/app/app_save.jpg
-    :width: 20
-
-.. |app_run| image:: img/app/app_run.png
-    :width: 20
-
-.. |app_edit| image:: img/app/app_edit.jpg
-    :width: 20
-
-.. |app_set| image:: img/app/app_set.png
-    :width: 20
 
 """
