@@ -51,7 +51,7 @@ Now follow the steps below.
 #. Modify the AP mode of ``galaxy-rvr.ino`` file to STA mode.
 
     * Open the the ``galaxy-rvr.ino`` file located in the ``galaxy-rvr-main\galaxy-rvr`` directory. 
-    * Then comment out the AP mode related code. Uncomment the STA mode related code and fill in  the ``SSD`` and ``PASSWORD`` of your home Wi-Fi.
+    * Then comment out the AP mode related code. Uncomment the STA mode related code and fill in  the ``SSID`` and ``PASSWORD`` of your home Wi-Fi.
 
         .. code-block:: arduino
 
