@@ -1,117 +1,103 @@
-Lesson 1 Unveiling the Mars Rover
+レッスン1 火星ローバーの紹介
 ========================================
 
-Welcome to Lesson 1: Understanding the Mars Rover. Today, we dive into the thrilling world of Mars rovers—our remote explorers on the Red Planet. We will learn about their evolution, their functions, and the technological marvels that they are. Furthermore, you'll channel your creativity to design your own rover and hone your presentation skills by explaining your unique design. Get ready to explore Mars from your classroom!
+レッスン1へようこそ：火星ローバーについて学ぶ。今日は、火星ローバーという赤い惑星のリモート探査機のスリリングな世界に飛び込みます。彼らの進化、機能、そして彼らが持つ技術的な驚異について学びます。さらに、独自のローバーを設計することで創造性を発揮し、ユニークなデザインを説明することでプレゼンテーションスキルを磨きます。教室から火星探索の準備をしましょう！
 
-
-Learning Objectives
+学習目標
 -------------------------
-* Gain an understanding of the evolution and purpose of Mars rovers
-* Express creativity by designing your own Mars rover
-* Enhance presentation skills by sharing and explaining your rover design
+* 火星ローバーの進化と目的についての理解を深める
+* 独自の火星ローバーを設計することで創造性を表現する
+* ローバーのデザインを共有し説明することでプレゼンテーションスキルを向上させる
 
-Materials
+材料
 -----------
-* Mars Rover images and technical specifications for reference
-* Documentary video on the history of Mars rovers
-* Computer with internet access for research and viewing documentary
-* Presentation slides or interactive whiteboard for lesson delivery
-* Drawing paper, pencils, and coloring materials for rover design activity
-* Worksheets for guided note-taking, reflection, and design planning
+* 参考のための火星ローバーの画像と技術仕様
+* 火星ローバーの歴史に関するドキュメンタリー映画
+* 研究とドキュメンタリー視聴のためのインターネットアクセス付きコンピュータ
+* レッスン配信用のプレゼンテーションスライドやインタラクティブホワイトボード
+* ローバーデザインアクティビティ用のドローイングペーパー、鉛筆、色塗り材料
+* ガイド付きノート取り、反射、デザイン計画用のワークシート
 
-Steps
+手順
 --------------
 
-**Step 1: What are Mars Rovers?**
+**ステップ1: 火星ローバーとは？**
 
-Before we dive into Mars rovers, let's first acquaint ourselves with Mars itself. As we can see from the images and models, 
-the surface of Mars is marked with craters, mountains, valleys, and dust storms, painting a picture of a landscape 
-that is both fascinating and challenging.
+火星ローバーについて詳しく知る前に、まず火星自体について知りましょう。画像やモデルから分かるように、火星の表面はクレーター、山、谷、砂嵐で印象づけられており、魅力的でありながら挑戦的な風景を描いています。
 
     .. image:: img/mars_surface.jpg
         :width: 600
     .. image:: img/mars_surface.png
         :width: 600
 
-Can you imagine what it would be like to navigate through such a rugged terrain? 
-Now, suppose you have the task of designing a rover for Mars.
+想像してみてください。このような険しい地形をナビゲートするのはどのようなものでしょうか？
+では、火星用のローバーを設計する任務があるとしましょう。
 
-* What considerations will you keep in mind given the terrain and conditions of Mars?
-* What features will you equip it with to ensure it can perform its functions effectively?
-* What tasks do you envision your Mars rover would need to accomplish?
+* 火星の地形や条件を考慮して、どのような点を重視しますか？
+* 効果的に機能を果たすために、どのような特徴を装備しますか？
+* あなたの火星ローバーが達成する必要があると思われるタスクは何ですか？
 
-Remember, a Mars rover is a robot designed to explore Mars, study its environment, and send data back to Earth. 
-So think about aspects such as movement, communication, power supply, scientific research capabilities, and durability 
-under Mars' extreme conditions.
+火星ローバーは、火星を探索し、その環境を研究し、データを地球に送り返すために設計されたロボットです。
+したがって、移動、通信、電源供給、科学研究能力、火星の極端な条件下での耐久性などの側面について考えてみましょう。
 
-Let's take a moment to brainstorm and share our ideas. It's interesting to think like engineers and scientists, isn't it? 
-We'll delve deeper into actual Mars rover designs and their functions in the following steps, 
-so keep your creative ideas in mind as we progress.
+少し時間をとって、アイデアをブレインストーミングし、共有しましょう。エンジニアや科学者のように考えるのは面白いですよね？
+次のステップでは、実際の火星ローバーのデザインとその機能についてさらに詳しく掘り下げますので、進行中も創造的なアイデアを念頭に置いてください。
 
+**ステップ2: 火星ローバーの歴史を探る**
 
-**Step 2: Exploring the History of Mars Rovers**
+次に、火星ローバーの歴史について詳しく説明したドキュメンタリーを見ながら、時間を遡る旅に出ます。
+このドキュメンタリーは、残念ながら1971年に着陸に失敗したソビエト連邦の火星3号ローバーから、1997年のNASAの最初の成功した火星ローバー、ソジャーナーに至るまでを紹介します。
 
-Next, we'll embark on a journey through time by watching a documentary that details the history of Mars rovers. 
-The documentary takes us from the first attempt at deploying a rover on Mars, the Soviet Mars 3 rover which unfortunately 
-didn't succeed upon landing in 1971, to NASA's first successful Mars rover, Sojourner, in 1997. 
-
-Our journey doesn't stop there, as we venture further to understand the adventures of the most advanced rovers yet: Spirit, Opportunity, Curiosity, and Perseverance.
+私たちの旅はそこで終わらず、現在までの最も進歩したローバー、スピリット、オポチュニティ、キュリオシティ、パーサヴィアランスの冒険をさらに理解するために進みます。
 
 .. raw:: html
 
     <iframe width="600" height="400" src="https://www.youtube.com/embed/OO5CTBBgtXs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-This documentary not only presents a historical context but also provides a comprehensive understanding of the progressive 
-scientific and engineering milestones that have led to the current Mars exploration era.
+このドキュメンタリーは、歴史的な背景を提供するだけでなく、現在の火星探査時代に至るまでの進歩的な科学的および工学的なマイルストーンを総合的に理解するためのものです。
 
 
-**Step 3: Summarize the Mars Rovers**
+**ステップ3：火星ローバーをまとめる**
 
-After watching the documentary, let's summarize the different Mars rovers that have been sent on the red planet.
+ドキュメンタリーを視聴した後、火星に送られたさまざまなローバーについてまとめてみましょう。
 
-* **Sojourner** (1997)
+* **Sojourner** （1997）
 
-    **Sojourner**, the pioneer of Mars rovers, embarked on its journey as a part of the Mars Pathfinder mission. 
-    It made a successful landing in the Ares Vallis region on July 4, 1997. As the first wheeled vehicle to roam 
-    on a planet other than Earth, Sojourner marked a significant milestone in Martian exploration. 
-    Although it was operational on Mars for only 92 Martian days, or sols, it set the groundwork for future exploratory rovers.
+    **Sojourner** は、火星探査の先駆者として、火星パスファインダー計画の一部としてその旅を開始しました。 
+    1997年7月4日、アレス・バリス地域に成功裏に着陸しました。他の惑星で走行する最初の車輪付き車両として、ソジャーナーは火星探査における重要なマイルストーンを築きました。 
+    火星での稼働はわずか92火星日（ソル）でしたが、将来の探査ローバーにとっての礎を築きました。
 
     .. image:: img/mars_sojourner.jpg
 
-* **Spirit** (2004–2010) and **Opportunity** (2004–2018)
+* **Spirit** （2004–2010）と **Opportunity** （2004–2018）
 
-    **Spirit** and **Opportunity** are twin rovers of NASA's Mars Exploration Rover (MER) mission. **Spirit**, also known as MER-A, 
-    operated on Mars from 2004 to 2010. 
+    **Spirit** と **Opportunity** は、NASAの火星探査ローバー（MER）ミッションの双子のローバーです。 **Spirit** （MER）は、2004年から2010年まで火星で活動しました。
     
-    On the other hand, **Opportunity**, or MER-B, had a remarkably long run from 2004 to 2018. 
-    Together, they greatly expanded our understanding of the Martian surface and geological history.
+    一方、 **Opportunity** は、2004年から2018年まで長く稼働しました。彼らは、火星の表面と地質の歴史に関する私たちの理解を大きく拡大しました。
 
     .. image:: img/mars_opportunity.jpg
 
-* **Curiosity** (2012–present):
+* **Curiosity** （2012年〜現在）:
 
-    **Curiosity**, a car-sized Mars rover, was designed to explore the Gale crater on Mars as part of NASA's 
-    Mars Science Laboratory (MSL) mission. Since its arrival in 2012, **Curiosity** has made numerous significant discoveries, 
-    including evidence of past liquid water on Mars.
+    車サイズの火星ローバーである **Curiosity** は、NASAの火星科学研究所（MSL）ミッションの一環として、火星のゲールクレーターを探査するために設計されました。2012年の到着以来、 **Curiosity** は火星上の過去の液体水の存在など、数多くの重要な発見を行っています。
 
     .. image:: img/mars_curiosity.jpg
 
-* Perseverance (2021–present):
+* Perseverance（2021年〜現在）:
 
-    **Perseverance**, also known as Percy, is the most recent rover to arrive on Mars. It's designed to explore the Jezero crater 
-    as part of NASA's Mars 2020 mission. Along with its scientific instruments, **Perseverance** also carries Ingenuity, a small experimental Mars helicopter, marking another first in Martian exploration.
+    **Perseverance** は、最も最近火星に到着したローバーです。NASAの火星2020ミッションの一環として、ジェゼロクレーターを探査するために設計されました。 **Perseverance** は、科学的な機器と共に、火星の小型実験ヘリコプターであるインジェニュイティも搭載しており、火星探査の新たな一歩を記しています。
 
     .. image:: img/mars_perseverance.jpg
 
-Now, let's have a discussion. Reflect on the evolution of these rovers.
+さて、議論しましょう。これらのローバーの進化について考えてみましょう。
 
-* How do the designs of these rovers differ? How are they similar?
-* How did the mission objectives influence the design of each rover?
-* What advancements in technology can you identify between each rover?
-* What features do you think the next Mars rover should have?
-* Share your thoughts and reflections, as well as any questions you might have!
+* これらのローバーのデザインはどのように異なりますか？どのように似ていますか？
+* ミッションの目標は、各ローバーのデザインにどのような影響を与えましたか？
+* 各ローバー間でどのような技術的進歩が見られますか？
+* 次の火星ローバーにはどのような特徴があるべきだと思いますか？
+* あなたの考えや反省、または質問を共有してください！
 
-**Step 4: Art Activity: Draw Your Own Mars Rover**
+**ステップ4：アートアクティビティ：自分だけの火星ローバーを描こう**
 
 .. image:: img/sojourner-first.jpg
 .. image:: img/spirit-opportunity.jpg
@@ -119,31 +105,31 @@ Now, let's have a discussion. Reflect on the evolution of these rovers.
 .. image:: img/curiosity.png
 .. image:: img/perseverance_rover.png
 
-For our next activity, let's put our knowledge and creativity to work by designing our very own Mars rover. Consider the key characteristics of the rovers we've studied so far, but also think about the unique attributes you would want to incorporate in your design.
+次のアクティビティでは、これまでに学んだ知識と創造性を活用して、独自の火星ローバーを設計しましょう。これまでに学んだローバーの主要な特徴を考慮しつつ、あなたのデザインに取り入れたい独自の属性についても考えてみてください。
 
-Materials you'll need:
+必要な材料：
 
-* Drawing paper
-* Pencils and erasers
-* Colored pencils, crayons, or markers
+* 画用紙
+* 鉛筆と消しゴム
+* 色鉛筆、クレヨン、またはマーカー
 
-Drawing Instructions:
+描画指示：
 
-#. Start with the body of the rover. What shape will it be? How large?
-#. Consider the wheels. How many will your rover have? What size and shape will they be?
-#. Don't forget about the instruments. What scientific equipment will your rover carry? Cameras, drills, spectrometers, or something entirely new?
-#. Lastly, consider any unique features. Does your rover have solar panels, or does it use a different power source? Can it communicate directly with Earth, or does it need a relay satellite?
+#. ローバーのボディから始めましょう。その形は？どれくらいの大きさ？
+#. 車輪について考えてみてください。あなたのローバーにはいくつの車輪がありますか？それらのサイズや形は？
+#. 機器を忘れないでください。あなたのローバーはどんな科学機器を搭載しますか？カメラ、ドリル、分光計、またはまったく新しいもの？
+#. 最後に、ユニークな特徴を考えてみてください。あなたのローバーには太陽電池パネルがありますか、それとも異なる電源を使用していますか？直接地球と通信できますか、それとも中継衛星が必要ですか？
 
-Once everyone has completed their drawings, we'll share them with the class. Explain your design choices and the mission you envision for your rover.
+みんなが描き終えたら、クラスで共有しましょう。デザインの選択と、あなたのローバーの想定ミッションについて説明してください。
 
-**Step 5: Present Your Mars Rover Designs**
+**ステップ5：火星ローバーのデザインを発表する**
 
-Now that everyone has completed their Mars Rover drawings, it's time to share them! As you present, discuss the thought process behind your design. What is your rover's mission? How does the design support this mission?
+みんなが火星ローバーの描画を完成させたので、共有する時間です！発表する際に、あなたのデザインの背後にある思考プロセスを話しましょう。あなたのローバーのミッションは何ですか？そのデザインはどのようにしてこのミッションをサポートしますか？
 
-Remember, there are no wrong answers in this activity. The purpose is to stimulate your creativity and deepen your understanding of Mars rover technology.
+この活動には間違った答えはありません。目的は、あなたの創造性を刺激し、火星ローバー技術への理解を深めることです。
 
-**Step 6: Reflection and Conclusion**
+**ステップ6：振り返りと結論**
 
-As we conclude our Mars Rover lesson, let's take a few minutes to reflect on what we have learned. How do our rover designs reflect the advancements in technology and scientific objectives? How might the real Mars rovers continue to evolve in the future?
+火星ローバーレッスンを終えるにあたり、学んだことについて数分間振り返ってみましょう。私たちのローバーデザインは、技術の進歩と科学的目標をどのように反映していますか？本物の火星ローバーは将来どのように進化し続けるでしょうか？
 
-Remember, the exploration of space, like any STEAM field, is all about asking questions, solving problems, and using creativity. Keep exploring, keep asking questions, and keep being curious!
+宇宙探査は、STEAM分野と同様、質問をする、問題を解決する、そして創造性を使うことについてです。探求を続け、質問をし続け、好奇心を持ち続けましょう！

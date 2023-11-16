@@ -1,102 +1,99 @@
-Lesson 2 Understanding and Making Rocker-Bogie System
+レッスン2 ロッカーボギーシステムの理解と作成
 ============================================================
-In our previous lesson, we learned about the Mars rovers and their basic structure. One interesting aspect that we notice 
-when looking at the evolution of Mars rovers is the consistency in their suspension system. 
-Despite the advancement in technology, all the rovers from Sojourner to Perseverance have been 
-designed using a similar type of suspension system known as the Rocker-Bogie system.
+前回のレッスンでは、火星ローバーとその基本構造について学びました。火星ローバーの進化を見ると、サスペンションシステムの一貫性が興味深い点です。
+技術の進歩にもかかわらず、ソジャーナーからパーサヴィアランスまでのすべてのローバーは、ロッカーボギーシステムと呼ばれる同様のタイプのサスペンションシステムを使用して設計されています。
 
-But why stick with the Rocker-Bogie system, you might wonder? What benefits does this particular design offer for Mars exploration?
+しかし、なぜロッカーボギーシステムに固執するのでしょうか？この特定のデザインが火星探査にどのような利点をもたらすのでしょうか？
 
 .. image:: img/rocker_bogie_pic.webp
 
 
-In today's lesson, we're going to dig deeper into the science and engineering behind the Rocker-Bogie system, then build one.
+今日のレッスンでは、ロッカーボギーシステムの科学と工学について深く掘り下げ、実際に一つを作ります。
 
-Let's embark on this exciting engineering journey!
+このエキサイティングなエンジニアリングの旅に出発しましょう！
 
-Learning Objectives
+学習目標
 ----------------------
 
-* Understand the design principle of the Rocker-Bogie suspension system and its advantages.
-* Learn how to design and make a basic model of the Rocker-Bogie suspension system.
-* Apply basic principles of physics to explain how the Rocker-Bogie suspension system overcomes complex terrains.
+* ロッカーボギーサスペンションシステムの設計原理とその利点を理解する。
+* ロッカーボギーサスペンションシステムの基本モデルの設計と作成方法を学ぶ。
+* 物理学の基本原理を適用して、ロッカーボギーサスペンションシステムが複雑な地形を克服する方法を説明する。
 
-Materials
+材料
 -------------
-* Blueprints and reference materials (such as NASA Mars Rover design drawings and videos on how the Rocker-Bogie suspension system works)
-* Mars Rover structure kit
-* Basic tools and accessories (e.g. screwdriver, screws, etc.)
+* 設計図と参考資料（NASAの火星ローバー設計図やロッカーボギーサスペンションシステムの動作に関するビデオなど）
+* 火星ローバー構造キット
+* 基本的な工具とアクセサリー（例：ドライバー、ネジなど）
 
-Steps
+手順
 --------------
 
-**Step 1: Unraveling the Rocker-Bogie System**
+**ステップ1：ロッカーボギーシステムの解明**
 
-The Rocker-Bogie system is like a mountain goat of mechanics - designed to keep all wheels of the rover grounded while it navigates over rough and rocky terrains. It's specially built for handling Mars' unpredictable landscape, including steep inclines and sizable boulders. This system skips springs and instead leverages the geometry of its six wheels and their interactions to conquer tricky terrain. It's a shining example of how clever mechanical design can surmount environmental hurdles.
+ロッカーボギーシステムは機械工学の山羊のようなもので、ローバーが荒々しい岩場の地形を越える際にすべての車輪を地面に接地させるように設計されています。火星の予測不可能な風景、例えば険しい傾斜や大きな岩場を処理するために特別に作られました。このシステムはバネを使用せず、6つの車輪の幾何学とそれらの相互作用を利用して困難な地形を克服します。環境の障害を乗り越えるための巧妙な機械設計の見事な例です。
 
-Let's dive into the two main parts of this system - the "rocker" and the "bogie".
+このシステムの二つの主要な部分、「rocker」と「bogie」について詳しく見てみましょう。
 
 .. image:: img/rocker_bogie.png
 
-* The "rocker" part of the system is like the two large limbs on either side of the rover's body. These limbs, or rockers, connect to each other and the rover's body, or chassis, through a mechanism called a differential. Just like two legs walking, the rockers rotate in opposite directions relative to the chassis, making sure that most of the wheels keep in contact with the ground. The body of the rover maintains the average angle of both rockers. One end of a rocker connects to a wheel, while the other end connects to the bogie.
+* システムの「rocker」部分は、ローバーの体の両側にある二つの大きな四肢のようなものです。これらの四肢、つまりロッカーは、ディファレンシャルと呼ばれる機構を介して互いにおよびローバーのボディ、またはシャーシに接続されています。二つの脚が歩くように、ロッカーはシャーシに対して反対方向に回転し、ほとんどの車輪が地面と接触し続けることを保証します。ローバーのボディは、両方のロッカーの平均角度を維持します。ロッカーの一方の端は車輪に、もう一方の端はボギーに接続されています。
 
-* The "bogie" part of the system is like a mini-limbed creature attached to the rocker. It's a smaller linkage system that pivots in the middle to the rocker and has a wheel at both ends.
+* システムの「bogie」部分は、ロッカーに取り付けられた小さな四肢のような生き物のようなものです。これは、中央でロッカーにピボットし、両端に車輪があるより小さいリンケージシステムです。
 
-With this basic understanding, let's hop to the next step of our adventure.
+この基本的な理解を持って、私たちの冒険の次のステップに進みましょう。
 
 
-**Step 2: Seeing the System in Action**
+**ステップ2：システムの実際の動作を見る**
 
-Below is a GIF that showcases the unique features of the Rocker-Bogie suspension system and illustrates how it enables Mars rovers to navigate the challenging Martian terrain.
+以下は、ロッカーボギーサスペンションシステムのユニークな特徴を示し、火星ローバーが火星の挑戦的な地形をナビゲートするのを可能にする様子を描いたGIFです。
 
 .. image:: img/rocker_bogie.gif
     :align: center
 
-After watching the gif, let's have a discussion! Think about these questions:
+GIFを見た後、議論しましょう！次の質問について考えてみてください：
 
-* Why do you think the Rocker-Bogie suspension system is suitable for Mars exploration?
-* Can you describe how the Rocker-Bogie system works in your own words?
-* What are the key features of the Rocker-Bogie system that help the rovers to negotiate rough terrain?
+* なぜロッカーボギーサスペンションシステムが火星探査に適していると思いますか？
+* ロッカーボギーシステムの動作方法を自分の言葉で説明できますか？
+* ロッカーボギーシステムの主な特徴は何でしょうか？どのようにしてローバーが険しい地形を交渉するのに役立ちますか？
 
-Feel free to share your thoughts and insights about the Rocker-Bogie suspension system.
+ロッカーボギーサスペンションシステムについてのあなたの考えや洞察を自由に共有してください。
 
-**Step 3: Building it**
+**ステップ3：組み立て**
 
-Now that we've learned about the Rocker-Bogie system, it's time to build our own.
+ロッカーボギーシステムについて学んだ今、私たち自身のものを作る時が来ました。
 
-Materials you need:
+必要な材料：
 
-* GalaxyRVR Kit
-* Basic tools like screwdriver and wrench
-* Follow the steps provided in the assembly instructions of the GalaxyRVR Kit to construct the suspension system of the Rover.
+* GalaxyRVRキット
+* ドライバーやレンチなどの基本的な工具
+* GalaxyRVRキットの組立説明書に記載されている手順に従って、ローバーのサスペンションシステムを組み立てます。
 
 .. raw:: html
 
     <iframe width="600" height="400" src="https://www.youtube.com/embed/a1xtgDUEvR0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
-Please note that patience and precision are essential here, make sure you correctly place every piece and secure it tightly.
+ここでは忍耐と正確さが重要です。各部品を正しく配置し、しっかりと固定してください。
 
-In the meantime, discuss with your peers about the design and function of each component you are assembling. 
-This will not only help in understanding the design but also its practical application in Mars exploration.
+その間、組み立てる各部品の設計と機能について仲間と議論しましょう。これにより、設計の理解だけでなく、火星探査での実際の適用も助けられます。
 
 
-Remember, don't worry if you encounter any issues during the assembly or testing. 
-This is all part of the engineering process! Troubleshooting problems is how we learn and innovate.
+組み立てやテスト中に問題が発生しても心配しないでください。
+これもすべてエンジニアリングプロセスの一部です！問題をトラブルシューティングすることが、私たちが学び、革新する方法です。
 
-**Step 4: Summary and Reflection**
+**ステップ4：要約と反省**
 
-During the assembly of the suspension system, did you notice that all the moving parts utilize self-locking nuts? Have you ever wondered why?
+サスペンションシステムの組み立て中に、動く部分すべてが自己ロックナットを使用していることに気づきましたか？なぜそうするのか、考えたことはありますか？
 
 
 .. image:: img/self_locking_nuts.webp
     :align: center
 
-Self-locking nuts are a type of fastener that includes a rubber ring inside a regular nut. This design ensures that the assembled parts won't easily loosen and fall off due to vibrations during movement.
+自己ロックナットは、通常のナットの内部にゴムリングを含むタイプの留め具です。この設計により、動きの際の振動で組み立てた部品が簡単に緩んで落ちることがありません。
 
-In addition, it also ensures that the parts can rotate within a certain range.
+さらに、部品が一定の範囲内で回転できることも保証します。
 
-So during assembly, you need to tighten the screw and self-locking nut with a socket and screwdriver first, then loosen it a bit. This ensures that there's room for free rotation between the parts without them being too loose.
+そのため、組み立て中にはまずソケットとドライバーでネジと自己ロックナットを締め、その後少し緩める必要があります。これにより、部品間に自由な回転が可能なスペースが確保される一方で、緩すぎない状態を保ちます。
 
 
 .. raw:: html
@@ -106,8 +103,7 @@ So during assembly, you need to tighten the screw and self-locking nut with a so
         Your browser does not support the video tag.
    </video>
 
-In this lesson, we not only learned about the Rocker-Bogie System but also built one ourselves. Furthermore, we can manually simulate how it allows the Mars Rover to move smoothly over various rough terrains.
+このレッスンでは、ロッカーボギーシステムについて学ぶだけでなく、自分たちで一つを作りました。さらに、火星ローバーがさまざまな険しい地形をスムーズに移動するのを手動でシミュレートすることもできます。
 
-Armed with this knowledge and experience, we are now better equipped to venture deeper into the unknown realms of Martian exploration. Let's continue to unravel the mysteries of the red planet.
-
+この知識と経験を得たことで、火星探査の未知の領域にさらに深く進出する準備ができました。赤い惑星の謎を解き明かし続けましょう。
 

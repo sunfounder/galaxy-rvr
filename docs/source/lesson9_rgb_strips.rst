@@ -1,94 +1,93 @@
-
-Lesson 9: Lighting the Way with RGB LED Strips
+レッスン9：RGB LEDストリップで道を照らす
 ============================================================
 
-In our journey so far, we've transformed our Mars Rover into a smart explorer, capable of skilfully manoeuvring around obstacles. It's become quite adept at navigating the Mars-like terrains we've set up for it.
+これまでの旅で、私たちは火星ローバーを賢く、障害物を巧みに回避する探検家に変えてきました。設定した火星のような地形でナビゲートするのが得意になりました。
 
-But, what if we could add a bit of flair to its practicality? Let's give our Rover the ability to express itself through a spectacle of colors and light. We're talking about incorporating RGB LED strips - a cool feature that would allow our Rover to illuminate its path, even in the darkest conditions.
+でも、実用性にちょっとした華やかさを加えたらどうでしょう？ローバーに色と光のスペクタクルを通じて自己表現する能力を与えましょう。RGB LEDストリップを取り入れることを考えています - ローバーが最も暗い条件でもその道を照らすことができるクールな機能です。
 
-Picture this - the Rover leaves a trail of color-coded signals, making it easier for us to understand its moves. A green glow when it's on the go, a stern red when it halts, or a flashy yellow during those swift turns. It could even light up in an array of colors just for the sheer fun of it!
+想像してみてください - ローバーが色分けされた信号の軌跡を残します。動いているときは緑色の光、停止するときは真っ赤な光、素早いターンの際には派手な黄色の光を発します。単なる楽しみのためにさまざまな色で光ることもできます！
 
-Our goal in this lesson is to understand the principles of RGB LED strips, learn to control their color and brightness, and then synchronize this with the Rover's movements. By the end, our Mars Rover will be more than a machine. It'll be a luminous, color-changing entity, leading the way in the vast Martian landscape!
+このレッスンの目標は、RGB LEDストリップの原理を理解し、その色と明るさを制御する方法を学び、それをローバーの動きと同期させることです。最後には、火星ローバーは単なる機械以上のものになります。それは発光し、色が変わる存在となり、広大な火星の風景を先導します！
 
 .. raw:: html
 
     <video width="600" loop autoplay muted>
         <source src="_static/video/car_rgb.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        お使いのブラウザーはビデオタグをサポートしていません。
     </video>
 
 .. note::
 
-    If you are learning this course after fully assembling the GalaxyRVR, you need to move this switch to the right before uploading the code.
+    GalaxyRVRを完全に組み立てた後にこのコースを学習する場合、コードをアップロードする前にこのスイッチを右に移動させる必要があります。
 
     .. image:: img/camera_upload.png
         :width: 500
         :align: center
 
-Objective
+学習目標
 -------------
 
-* Understand the working principles and applications of RGB LED strips.
-* Learn how to use Arduino programming to control the color and brightness of RGB LED strips.
-* Practice installing and using RGB LED strips on the Mars Rover model as indicators.
+* RGB LEDストリップの動作原理とアプリケーションを理解する。
+* Arduinoプログラミングを使用してRGB LEDストリップの色と明るさを制御する方法を学ぶ。
+* 火星ローバーモデルにRGB LEDストリップをインジケーターとして取り付け、使用する方法を実践する。
 
-Materials Needed
+材料
 -------------------------
 
-* RGB LED Strips (each strip has 8 RGB LEDs, a total of two strips)
-* Basic tools and accessories (e.g. screwdriver, screws, wires etc.)
-* Mars Rover Model (Equipped with rocker-bogie system, main boards, motors, obstacle avoidance module, ultrasonic module)
-* USB Cable
+* RGB LEDストリップ（各ストリップに8つのRGB LED、合計2つのストリップ）
+* 基本的なツールとアクセサリー（例：ドライバー、ネジ、ワイヤーなど）
+* 火星ローバーモデル（ロッカーボギーシステム、メインボード、モーター、障害物回避モジュール、超音波モジュール装備）
+* USBケーブル
 * Arduino IDE
-* Computer
+* コンピューター
 
-Course Steps
+手順
 ------------------
-**Step 1: Install the RGB LED Strips on the Mars Rover**
+**ステップ1：火星ローバーにRGB LEDストリップを取り付ける**
 
-Now, fix the two RGB light strips to the bottom sides of the car. They are controlled by a single set of pins, so there is no need to differentiate during the wiring process.
+まず、2つのRGBライトストリップを車の底面の両側に取り付けます。一組のピンで制御されるため、配線プロセス中に区別する必要はありません。
 
 .. raw:: html
 
     <iframe width="600" height="400" src="https://www.youtube.com/embed/v4YGjNwPOJE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-**Step 2: Explore the Magic of Light with RGB LED Strips**
+**ステップ2：RGB LEDストリップで光の魔法を探る**
 
-Do you remember the last time you saw a rainbow? How it made the sky colorful with seven vibrant hues? How would you like to create your own rainbow, right here in our little Martian rover? Let's dive into the magic of light with RGB LED strips!
+虹を見た最後の時間を覚えていますか？7色の鮮やかな色で空を彩るあの感じ。私たちの小さな火星ローバーで自分だけの虹を作るのはどうですか？RGB LEDストリップを使った光の魔法に飛び込みましょう！
 
 .. image:: img/4_rgb_strip.jpg
 
-You might notice that our RGB LED Strip has four pins labeled as follows:
+RGB LEDストリップには4つのピンがあり、以下のようにラベル付けされています：
 
-* **+5V**: This is the common "positive" end or the "anode" of the three tiny light bulbs (LEDs) inside our strip. It needs to connect to DC 5V, a kind of electric juice that powers our tiny bulbs!
-* **B**: This is the "negative" end or the "cathode" of the blue LED.
-* **R**: This is the "cathode" of the red LED.
-* **G**: This is the "cathode" of the green LED.
+* **+5V**：ストリップ内の3つの小さな電球（LED）の「正極」または「アノード」です。DC 5Vに接続する必要があります。これは、私たちの小さな電球に電力を供給する電気ジュースのようなものです！
+* **B**：青色LEDの「負極」または「カソード」です。
+* **R**：赤色LEDの「カソード」です。
+* **G**：緑色LEDの「カソード」です。
 
 .. image:: img/rgb_5050.jpg
 
-Do you remember the three primary colors - Red, Blue, and Green - that we learned in our art class? Just like an artist mixes these colors on his palette to create new shades, our strip contains 4 "5050" LEDs that can mix these primary colors to create virtually any color! Each "5050" LED is like a tiny art studio that houses these three colored bulbs.
+芸術の授業で学んだ三原色 - 赤、青、緑 - を覚えていますか？画家がパレットでこれらの色を混ぜて新しい色を作るように、私たちのストリップには、これらの原色を混ぜてほぼどんな色でも作ることができる4つの「5050」LEDが含まれています。各「5050」LEDは、これら三色の電球を収容する小さなアートスタジオのようなものです。
 
 .. image:: img/rgb_5050_sche.png
 
-These tiny art studios are then connected in a smart way on a flexible circuit board - kind of like a mini electric highway! The "positive" ends of all LEDs (anodes) are connected together, while the "negative" ends (cathodes) are connected to their corresponding color lanes (G to G, R to R, B to B).
+これらの小さなアートスタジオは、柔軟な回路基板上で賢く接続されています - ちょうどミニ電気ハイウェイのように！すべてのLEDの「正極」（アノード）は一緒に接続され、それぞれの「負極」（カソード）は対応する色のレーン（G to G, R to R, B to B）に接続されています。
 
 .. image:: img/rgb_strip_sche.png
 
-And the coolest part? With our command, all the LEDs on this strip can change their colors at once! It's like having our own light orchestra at the tip of our fingers!
+そして最もクールな部分？私たちの命令で、このストリップ上のすべてのLEDが一度に色を変えることができます！指先でライトオーケストラを持っているようなものです！
 
-So let's get ready to play some light music! In our next step, we'll learn how to control these LEDs to display the colors we want. It will be like conducting a symphony of light!
+では、ライトミュージックを演奏しましょう！次のステップでは、これらのLEDを制御して、私たちが望む色を表示する方法を学びます。それは、光の交響曲を指揮するようなものになります！
 
 
-**Step 3: Light Up the Show - Coding to Control the RGB LED Strips**
+**ステップ3：ショーを照らす - RGB LEDストリップの制御コーディング**
 
-We've stepped into the realm of colors, it's time to bring our Mars Rover to life. Brace yourself to paint the darkness with a spectrum of colors using RGB LED strips. Think of this as a chance to transform your Mars Rover into a mobile disco party!
+色の領域に足を踏み入れたので、火星ローバーを命を吹き込む時が来ました。RGB LEDストリップを使って暗闇に色のスペクトルを描く準備をしましょう。これを機会と考えて、火星ローバーをモバイルディスコパーティーに変えてみてください！
 
-* Before we dive into the fun part, let's understand that even though we have two LED strips, they are both controlled by the same set of pins. Think of it as having two dazzling dancers moving in perfect synchronization!
+* 楽しい部分に飛び込む前に、2つのLEDストリップがあっても、同じ一組のピンで制御されていることを理解しましょう。完璧な同期で動く2人の魅力的なダンサーを持っているようなものです。
 
     .. image:: img/rgb_shield.png
 
-* It's time to summon our coding magic. We're going to initiate our pins with the Arduino code.
+* コーディングの魔法を使う時が来ました。Arduinoコードでピンを初期化しましょう。
 
     .. code-block:: arduino
 
@@ -99,7 +98,7 @@ We've stepped into the realm of colors, it's time to bring our Mars Rover to lif
         const int redPin = 12;
         const int greenPin = 13;
 
-* With our pins in place, we'll now use the ``SoftPWMSet()`` function to control these pins. To make the RGB strip display red, we turn the red LED on and switch off the others.
+* ピンが準備できたら、 ``SoftPWMSet()`` 関数を使用してこれらのピンを制御します。RGBストリップに赤色を表示させるには、赤色のLEDを点灯させ、他を消します。
 
     .. code-block:: arduino
 
@@ -116,69 +115,67 @@ We've stepped into the realm of colors, it's time to bring our Mars Rover to lif
             delay(1000); // Wait for 1 second
         }
 
-In the above code, we've only demonstrated how to display a single color. 
+上記のコードでは、単一の色を表示する方法のみを示しています。
 
-If we were to showcase a variety of colors using this method, the code could become quite cumbersome. Therefore, to make our code more concise and maintainable, we can create a function to assign PWM values to the three pins. Then, within the ``loop()``, we can easily set a multitude of colors.
+この方法を使用してさまざまな色を展示しようとすると、コードはかなり煩雑になる可能性があります。したがって、コードをより簡潔で保守しやすくするために、3つのピンにPWM値を割り当てる関数を作成できます。その後、 ``loop()`` 内で多数の色を簡単に設定できます。
 
 .. raw:: html
 
   <iframe src=https://create.arduino.cc/editor/sunfounder01/cac90501-04c1-44c2-a1d7-4f863e50f186/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-After uploading the code to your R3 board, you may find that the orange and yellow colors seem a bit off. 
-This is because the red LED on the strip is relatively dim compared to the other two LEDs. 
-Thus, you'll need to introduce offset values in your code to correct this color discrepancy.
+R3ボードにコードをアップロードした後、オレンジ色と黄色が少し変に見えるかもしれません。
+これは、ストリップ上の赤色LEDが他の2つのLEDに比べて比較的暗いためです。
+したがって、この色の不一致を修正するために、コードにオフセット値を導入する必要があります。
 
 .. raw:: html
 
   <iframe src=https://create.arduino.cc/editor/sunfounder01/60ec867f-5637-44bd-b72d-4709fc4f5349/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-Now, the RGB LED strip should be able to display the correct colors. If you still notice discrepancies, you can manually adjust the values of ``R_OFFSET``, ``G_OFFSET``, and ``B_OFFSET``.
+これで、RGB LEDストリップは正しい色を表示できるはずです。まだ不一致がある場合は、 ``R_OFFSET``、 ``G_OFFSET``、および ``B_OFFSET`` の値を手動で調整できます。
 
-Feel free to experiment and display any color of your choosing on the LED strip. All you need to do is fill in the RGB values for the color you want.
+LEDストリップに好きな色を表示するために実験してみてください。必要なことは、望む色のRGB値を入力することだけです。
 
-Here's a tip: You can use the Paint tool on your computer to determine the RGB values of your desired color.
+ヒント：コンピューター上のペイントツールを使用して、希望する色のRGB値を決定できます。
 
 .. image:: img/rgb_paint.png
 
-Now that we've mastered the art of color-setting, in the next step, we'll integrate these dazzling displays with the movements of the Mars Rover. Exciting times ahead!
+色の設定の芸術をマスターしたので、次のステップでは、これらの鮮やかなディスプレイを火星ローバーの動きと統合します。楽しみな時間が待っています！
 
-**Step 4: Move the Rover with Color Indication**
+**ステップ4：色の表示を伴うローバーの動き**
 
-Now, we'll add color indications to the movements of the Mars Rover. For instance, we can use green for forward, red for backward, and yellow for turning left or right.
+今度は、火星ローバーの動きに色の表示を追加します。例えば、前進には緑、後退には赤、左右への旋回には黄色を使用できます。
 
-To do this, we will add a control mechanism in our code that sets the color of the LED strip based on the Rover's movement. This will involve modifying our Rover control code to include our color control functions.
+これを実現するために、ローバーの動きに基づいてLEDストリップの色を設定する制御機構をコードに追加します。これには、色制御機能を含むローバー制御コードを変更することが含まれます。
 
-Let's see an example of how we can do this:
+ローバーの動きに基づいて色を設定する方法の例を見てみましょう：
 
 .. raw:: html
 
   <iframe src=https://create.arduino.cc/editor/sunfounder01/5412eebe-75b8-4f98-a348-f0889e8a7fde/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-Within the ``loop()`` function, we commanded the Rover to perform a series of actions by calling different functions. 
-Each action had its corresponding color display - green for moving forward, red for moving backward, and yellow for turning. 
-This color display feature was brought to life using the ``setColor()`` function, which manipulated the brightness of 
-each RGB color channel.
+``loop()`` 関数内で、異なる関数を呼び出すことによってローバーに一連のアクションを実行させました。
+各アクションにはそれに対応する色表示がありました - 前進には緑、後退には赤、旋回には黄色。
+この色表示機能は、 ``setColor()`` 関数を使用して、各RGB色チャネルの明るさを操作することで実現されました。
 
-For the stop action, we introduced an engaging element - a breathing effect with a red and blue light. 
-This was achieved by cyclically adjusting the brightness of the red and blue channels within the ``stopMove()`` function. 
-As such, upon stopping, the LED strip transitioned colors between red and blue, creating a dynamic visual effect.
+停止アクションでは、魅力的な要素 - 赤と青の光の呼吸効果 - を導入しました。
+これは ``stopMove()`` 関数内で赤と青のチャネルの明るさを周期的に調整することで達成されました。
+そのため、停止すると、LEDストリップは赤と青の色を変えて、ダイナミックな視覚効果を作り出しました。
 
-Now, our Mars Rover now possesses its own vibrant color effects, leaving behind a trail of color-coded signals, each representing a 
-unique movement. 
+これで、火星ローバーには独自の鮮やかな色効果が備わり、それぞれのユニークな動きを表す色分けされた信号の軌跡を残します。
 
-Through this project, we've discovered how STEAM subjects can amalgamate to breathe life into an 
-otherwise ordinary machine, turning it into a vibrant, interactive, and fun learning tool.
+このプロジェクトを通じて、STEAMの科目が組み合わさり、そうでなければ普通の機械に命を吹き込み、それを鮮やかでインタラクティブで楽しい学習ツールに変える方法を発見しました。
 
 
-**Step 5: Summary and Reflection**
+**ステップ5：まとめと反省**
 
-In today's lesson, we delved into the world of RGB LED strips, exploring how to manipulate them to display a vivid array of colors. These brilliant hues breathed new life into our Mars Rover, transforming it from a mere machine into a vibrant spectacle.
+今日のレッスンでは、RGB LEDストリップの世界に深く潜り込み、鮮やかな色の配列を表示する方法を探求しました。これらの鮮やかな色は火星ローバーに新たな命を吹き込み、単なる機械から鮮やかなスペクタクルに変えました。
 
-Now, I invite you to ponder - If it was you in the driver's seat, how would you utilize these colors to enhance your Mars Rover? What unique effects would you want it to exhibit?
+今、考えてみてください - もしあなたがドライバーシートに座っていたら、これらの色をどのように利用して火星ローバーを強化しますか？どんなユニークな効果をそれに表現させたいですか？
 
-Moreover, through the process, I hope you had a hands-on understanding of how diverse STEAM concepts can be interwoven in an engaging project, providing you with a broader perspective of its practical applications. 
+さらに、このプロセスを通じて、多様なSTEAMの概念がどのように魅力的なプロジェクトで組み合わせられ、その実用的な応用の幅広い視点を提供するかの実践的な理解が得られたことを願っています。
 
-See you in our next exciting adventure!
+次のエキサイティングな冒険でお会いしましょう！
+

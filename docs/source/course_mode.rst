@@ -1,22 +1,23 @@
 .. _course_mode:
 
-Course Mode
+コースモード
 ===============
 
-Welcome to the Course Mode, a structured journey through 13 enlightening lessons. We kick off with a fascinating glimpse into the history of Mars rovers, setting the stage for our own rover assembly.
+コースモードへようこそ。これは13の啓蒙的なレッスンを通じた構造化された旅です。私たちは、火星ローバーの歴史に関する魅力的な一瞥からスタートし、自分たちのローバー組み立ての舞台を整えます。
 
-From the second lesson, we'll start getting hands-on. Each lesson spotlights a unique component crucial to our Mars rover. You'll not only understand its purpose and significance but also master its assembly and integration into the rover.
+二つ目のレッスンからは、実践的な取り組みを始めます。各レッスンでは、火星ローバーにとって不可欠なユニークなコンポーネントに焦点を当てます。その目的と重要性を理解するだけでなく、その組み立てとローバーへの統合もマスターします。
 
 .. raw:: html
 
    <video width="600" loop autoplay muted>
       <source src="_static/video/move_stone1.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+      お使いのブラウザはビデオタグをサポートしていません。
    </video>
 
-Whether you are a novice eager to dive into the world of Mars rovers or an experienced hobbyist looking to hone your skills, these lessons are crafted to provide a comprehensive understanding of the mechanics, electronics, and software that bring our GalaxyRVR to life. By the end of the course, you'll not only have assembled your very own Mars rover, but you'll also possess the knowledge to troubleshoot, modify, and further experiment with your rover.
+火星ローバーの世界に飛び込むことに熱心な初心者であろうと、スキルを磨くことを望む経験豊かな趣味家であろうと、これらのレッスンは、私たちのGalaxyRVRを動かすメカニクス、エレクトロニクス、ソフトウェアを総合的に理解するために作られています。コースの終わりまでに、あなただけの火星ローバーを組み立てるだけでなく、あなたのローバーをトラブルシューティング、改造、さらなる実験を行うための知識も持つことになるでしょう。
 
-So, buckle up for an exciting journey into the world of Mars rovers! Dive in and start exploring the red planet from the comfort of your home.
+では、火星ローバーの世界へのエキサイティングな旅に備えましょう！飛び込んで、自宅の快適さから赤い惑星を探索し始めてください。
+
 
 
 .. toctree::

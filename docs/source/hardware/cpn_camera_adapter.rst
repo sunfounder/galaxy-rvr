@@ -1,38 +1,38 @@
-Camera Adapter Board
-=====================
+カメラアダプターボード
+=======================
 
 .. image:: img/cam_adapter_board.jpg
     :width: 500
     :align: center
 
-* **RST**: Used to reset the ESP32-CAM.
-* **SCL**: Serial data pin for QMC6310
-* **SDA**: Serial clock pin of the QMC6310
-* **RXD**: The RXD of ESP32-CAM, you need to upload code to ESP32-CAM through these two serial pins, RXD and TXD.
-* **TXD**: TXD of ESP32-CAM
-* **5V**: 5V DC Supply Input
-* **GND**: Ground Input
+* **RST**: ESP32-CAMのリセットに使用します。
+* **SCL**: QMC6310用のシリアルデータピンです。
+* **SDA**: QMC6310のシリアルクロックピンです。
+* **RXD**: ESP32-CAMのRXDピンです。ESP32-CAMへのコードのアップロードにはこの2つのシリアルピン、RXDとTXDを使用する必要があります。
+* **TXD**: ESP32-CAMのTXDピンです。
+* **5V**: 5Vの直流電源入力
+* **GND**: グラウンド入力
 
-The Camera Adapter Board, as the name implies, is an expansion board for the ESP-32 CAM, used to expand the ESP32-CAM so that it can be secured to the robot, and can be easily wired.
+名前の通り、カメラアダプターボードはESP-32 CAM用の拡張ボードです。ESP32-CAMをロボットに固定し、簡単に配線できるようにするために使用されます。
 
 .. image:: img/cam_adapter_esp32cam.png
     :width: 400
     :align: center
 
-Also because the geomagnetic chip QMC6310 is susceptible to interference from motors, we put it on this camera adapter board to keep it as far away from the motors as possible.
+また、磁気センサーQMC6310はモーターの干渉を受けやすいため、できるだけモーターから離れた位置にこのカメラアダプターボードに配置しています。
 
 .. image:: img/cam_adapter_qmc6310.png
     :width: 400
     :align: center
 
-**Features**
+**特徴**
 
-* Working voltage: 5V
-* Interface Model: ZH1.5, 7P
-* Dimension: 40mm x 27mm x 15mm
-* Communication protocol: UART and I2C
+* 動作電圧: 5V
+* インターフェースモデル: ZH1.5、7P
+* 寸法: 40mm x 27mm x 15mm
+* 通信プロトコル: UARTおよびI2C
 
-**Documents**
+**ドキュメント**
 
 * PCB
 
@@ -42,17 +42,17 @@ Also because the geomagnetic chip QMC6310 is susceptible to interference from mo
 .. image:: img/cam_adap_pcb_top.png
     :width: 300
 
-* Schematic
+* 回路図
 
 .. image:: img/cam_adapter_sche.png
 
 
-**About QMC6310**
+**QMC6310について**
 
-The QMC6310 is a three-axis magnetic sensor, which integrates magnetic sensors and signal condition ASIC into one silicon chip. This Land Grid Array package (LGA) is targeted for applications such as e-compass, map rotation, gaming and personal navigation in mobile and wearable devices. 
+QMC6310は、磁気センサーと信号調整ASICを1つのシリコンチップに統合した3軸磁気センサーです。このLand Grid Arrayパッケージ（LGA）は、携帯電話やウェアラブルデバイスのeコンパス、地図の回転、ゲーム、個人のナビゲーションなどのアプリケーションを対象としています。
 
-The QMC6310 is based on state-of-the-art, high resolution, magneto-resistive technology. Along with the custom-designed 16-bit ADC ASIC, it offers the advantages of low noise, high accuracy, low power consumption, offset cancellation and temperature compensations. QMC6310 enables 1° to 2° compass heading accuracy. The I²C serial bus allows for easy interface. 
+QMC6310は最新の高分解能磁気抵抗技術を基にしており、カスタム設計の16ビットADC ASICとともに、低ノイズ、高精度、低消費電力、オフセットキャンセル、温度補償などの利点を提供します。QMC6310は1°から2°のコンパスの方位精度を実現します。I²Cシリアルバスにより、簡単なインターフェースが可能です。
 
-The QMC6310 is in a 1.2x1.2x0.53mm3 surface mount 8-pin LGA package.
+QMC6310は1.2x1.2x0.53mm3の表面実装8ピンLGAパッケージに入っています。
 
 * |link_qmc6310_datasheet|

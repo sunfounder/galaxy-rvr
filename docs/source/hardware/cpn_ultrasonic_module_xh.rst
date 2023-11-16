@@ -1,48 +1,44 @@
-
-Ultrasonic Module
+超音波モジュール
 ================================
 
 .. image:: img/ultrasonic_pic.png
     :width: 400
     :align: center
 
-* **TRIG**: Trigger Pulse Input
-* **ECHO**: Echo Pulse Output
-* **GND**: Ground
-* **VCC**: 5V Supply
+* **TRIG**: トリガーパルスの入力
+* **ECHO**: エコーパルスの出力
+* **GND**: グラウンド
+* **VCC**: 5Vの電源
 
-This is the HC-SR04 ultrasonic distance sensor, providing non-contact measurement from 2 cm to 400 cm with a range accuracy of up to 3 mm. Included on the module is an ultrasonic transmitter, a receiver and a control circuit.
+これはHC-SR04超音波距離センサーで、2 cmから400 cmまでの非接触測定を提供します。範囲精度は最大3 mmです。モジュールには超音波送信器、受信器、および制御回路が含まれています。
 
-You only need to connect 4 pins: VCC (power), Trig (trigger), Echo (receive) and GND (ground) to make it easy to use for your measurement projects.
+計測プロジェクトで使用するために、VCC（電源）、Trig（トリガー）、Echo（受信）、GND（グラウンド）の4つのピンを接続するだけで簡単に使用できます。
 
-**Features**
+**特徴**
 
-* Working Voltage: DC5V
-* Working Current: 16mA
-* Working Frequency: 40Hz
-* Max Range: 500cm
-* Min Range: 2cm
-* Trigger Input Signal: 10uS TTL pulse
-* Echo Output Signal: Input TTL lever signal and the range in proportion
-* Connector: XH2.54-4P
-* Dimension: 46x20.5x15 mm
+* 動作電圧: DC5V
+* 動作電流: 16mA
+* 動作周波数: 40Hz
+* 最大範囲: 500cm
+* 最小範囲: 2cm
+* トリガ入力信号: 10uS TTLパルス
+* エコー出力信号: 入力TTLレベル信号で、範囲に比例します
+* コネクタ: XH2.54-4P
+* サイズ: 46x20.5x15 mm
 
-**Principle**
+**原理**
 
-The basic principles are as follows:
+基本原理は次の通りです：
 
-* Using IO trigger for at least 10us high level signal.
-* The module sends an 8 cycle burst of ultrasound at 40 kHz and detects whether a pulse signal is received.
-* Echo will output a high level if a signal is returned; the duration of the high level is the time from emission to return.
-* Distance = (high level time x velocity of sound (340M/S)) / 2
+* IOトリガーを使用して、少なくとも10μ秒の高レベル信号を送信します。
+* モジュールは40 kHzで超音波の8サイクルバーストを送信し、パルス信号が受信されたかどうかを検出します。
+* エコーは、信号が返された場合に高レベルを出力します。高レベルの持続時間は、発射から返信までの時間です。
+* 距離 = （高レベルの時間 x 音速（340M/S））/ 2
 
     .. image:: img/ultrasonic_prin.jpg
         :width: 800
 
+**使用上の注意**
 
-
-**Application Notes**
-
-* This module should not be connected under power up, if necessary, let the module's GND be connected first. Otherwise, it will affect the work of the module.
-* The area of the object to be measured should be at least 0.5 square meters and as flat as possible. Otherwise, it will affect results.
-
+* このモジュールは、電源投入時に接続しないでください。必要な場合は、モジュールのGNDを最初に接続してください。そうしないと、モジュールの動作に影響を与える可能性があります。
+* 測定対象の面積は少なくとも0.5平方メートルで、できるだけ平坦である必要があります。そうしないと、結果に影響を与える可能性があります。

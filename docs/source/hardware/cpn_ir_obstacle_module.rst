@@ -1,79 +1,75 @@
-IR Obstacle Avoidcance Module
+IR障害物回避モジュール
 =======================================
 
-This is an infrared obstacle avoidance module that can detect the presence of objects ahead. It is commonly used in robots, automation systems, and other intelligent devices. Its detection range is 2cm to 40cm, and objects of different colors have different levels of reflectivity. Therefore, the darker the object, the shorter the detection distance.
+これは前方の物体の存在を検知できる赤外線障害物回避モジュールです。これは一般的にロボット、自動化システム、および他のインテリジェントデバイスで使用されます。検知範囲は2cmから40cmであり、異なる色の物体は反射率が異なります。したがって、物体がより暗いほど、検知距離は短くなります。
 
 .. image:: img/ir_avoid.png
     :width: 400
     :align: center
 
-Here are the pin definitions:
+以下にピンの定義を示します：
 
-* **GND**: Ground
-* **+**: Power supply, 3.3 ~ 5V DC.
-* **Out**: By default, it stays high and only goes low when it spots an obstacle.
-* **EN**: This **enable** pin decides when the module should work. By default, it is connected to GND, meaning the module is always on the job.
+* **GND**: グラウンド
+* **+**: 電源供給、3.3〜5V DC
+* **Out**: デフォルトでは高い状態を保ち、障害物を検知すると低くなります。
+* **EN**: この **enable（イネーブル）** ピンは、モジュールが動作するタイミングを決定します。デフォルトではGNDに接続されており、モジュールは常に作動しています。
 
+**どのように動作するのか？**
 
-**How it works?**
-
-This module contains a pair of IR transmitting and receiving components. Basically, the transmitter emits infrared light, when the emitted infrared light encounters an obstacle, it is reflected back and received by the receiver. Upon detection, the indicator lights up. After circuit processing, it outputs a low level signal.
+このモジュールには、赤外線送信および受信コンポーネントのペアが含まれています。基本的に、送信機は赤外線を放射し、放射された赤外線が障害物に遭遇すると反射され、受信機で受信されます。検知されると、インジケータが点灯します。回路処理の後、低レベルの信号が出力されます。
 
 .. image:: img/ir_receive.png
     :width: 600
     :align: center
 
-
-The **EN** pin's low-level state activates the module, with the jumper cap securing the **EN** pin to the GND. To control the EN pin programmatically, remove the jumper cap.
+**EN** ピンの低レベル状態でモジュールが作動し、ジャンパキャップが **EN** ピンをGNDに接続して固定します。ENピンをプログラムで制御する場合は、ジャンパキャップを外してください。
 
 .. image:: img/ir_cap.png
     :width: 400
     :align: center
 
-There are two potentiometers on the module, one for adjusting the transmitting power and one for adjusting the transmitting frequency, and by adjusting these two potentiometers you can adjust its effective distance.
+モジュールには2つのポテンショメータがあり、1つは送信電力の調整、もう1つは送信周波数の調整に使用されます。これらの2つのポテンショメータを調整することで、効果的な距離を調整できます。
 
 .. image:: img/ir_avoid_pot.png
     :width: 400
-    :align: center 
+    :align: center
 
+**検出距離の調整**
 
-**Adjust the detection distance**
+障害物回避モジュールの検出範囲は、最適な性能のために正確にキャリブレーションする必要があります。デフォルトの工場設定は特定の要件と一致しない場合があるためです。
 
-The obstacle avoidance module's detection range must be precisely calibrated for optimal performance, as default factory settings may not align with specific requirements.
+キャリブレーションの手順は次のとおりです：
 
-Calibration involves the following steps:
-
-#. Alignment of the Module: Start with the right-hand side obstacle avoidance module. Transportation can occasionally displace the alignment of the module's infrared transmitter and receiver. They should be manually realigned to ensure accuracy.
+1. モジュールの位置合わせ：右側の障害物回避モジュールから始めます。輸送中にモジュールの赤外線送信機と受信機の位置がずれることがあります。正確さを確保するために、手動で位置を調整する必要があります。
 
     .. raw:: html
 
         <video width="600" loop autoplay muted>
             <source src="../_static/video/ir_adjust1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            お使いのブラウザーはビデオタグをサポートしていません。
         </video>
 
-#. Place an obstacle about 20 cm directly in front of the right module. The box in which our Rover kit came is a good choice for this! Now, turn the potentiometer on the module until the indicator light on the module just lights up. Then, keep moving the obstacle back and forth to check if the indicator light comes on at the desired distance. If the light doesn't turn on at the correct distance or if it remains on without going out, you'll need to adjust the other potentiometer.
+2. モジュールの正面に直径20cmの障害物を配置します。私たちのRoverキットの箱がこれには良い選択肢です！次に、モジュールのポテンショメータを調整して、モジュール上のインジケータライトが点灯するようにします。そして、障害物を前後に動かして、インジケータライトが所望の距離で点灯するかどうかを確認します。もしライトが正しい距離で点灯しない場合や点灯し続ける場合は、もう1つのポテンショメータを調整する必要があります。
 
     .. raw:: html
 
         <video width="600" loop autoplay muted>
             <source src="../_static/video/ir_adjust2.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            お使いのブラウザはビデオタグをサポートしていません。
         </video>
 
+3. もう1つのモジュールに対して同じ手順を繰り返します。
 
-#. Repeat the same process for another module.
+**特徴**
 
-**Features**
-
-* operating voltage: 3.3 V to 5 V
-* output: digital (on/off)
-* detection threshold: adjustable by 2 potentiometers
-* distance range: 2 to 40 cm
-* adjustment R5: frequency adjustment 38 kHz (already optimized)
-* adjustment R6: IR LED duty cycle adjustment (already optimized)
-* operating temperature: -10 °C to +50 °C
-* effective angle: 35°
-* I/O interface: 4 wire interface (- / + / S / EN)
-* dimensions: 45 x 16 x 10 mm
-* weight: 9 g 
+* 運転電圧：3.3Vから5V
+* 出力：デジタル（オン/オフ）
+* 検出閾値：2つのポテンショメータによる調整可能
+* 距離範囲：2cmから40cm
+* 調整 R5：周波数調整38kHz（すでに最適化済み）
+* 調整 R6：赤外線LEDデューティサイクルの調整（すでに最適化済み）
+* 動作温度：-10℃から+50℃
+* 有効な角度：35°
+* I/Oインターフェース：4線インターフェース（- / + / S / EN）
+* 寸法：45 x 16 x 10 mm
+* 重量：9 g

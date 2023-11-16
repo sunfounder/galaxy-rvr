@@ -1,122 +1,121 @@
-
-Lesson 6: Exploring the Obstacle Avoidance Module
+レッスン6：赤外線障害物回避モジュールの探究
 ==============================================================
 
-We're diving into the world of the Infrared Obstacle Avoidance Module. Tucked at the sides of our Mars Rover, these sensors act as the rover's "eyes," helping it dodge side obstacles and safely navigate the Martian landscape.
+ここでは、赤外線障害物回避モジュールの世界に飛び込んでいきます。私たちの火星ローバーの側面に配置されたこれらのセンサーは、ローバーの「目」として機能し、横方向の障害物を回避し、火星の地形を安全にナビゲートするのに役立ちます。
 
-We'll learn how to integrate these modules with our rover, unravel the magic behind their functioning, and develop code to make our rover smartly sidestep any hurdles it comes across.
+これらのモジュールをローバーに統合する方法、その機能の裏にある魔法を解き明かし、ローバーが出くわす障害物を巧みに避けるためのコードを開発する方法を学びます。
 
-Get ready to gear up our rover with some Martian obstacle-dodging intelligence! Let's get rolling!
+火星の障害物回避インテリジェンスでローバーを整える準備をしましょう！さあ、出発しましょう！
 
 .. raw:: html
 
    <video width="600" loop autoplay muted>
       <source src="_static/video/car_ir1.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+      お使いのブラウザーはビデオタグをサポートしていません。
    </video>
 
 .. note::
 
-    If you are learning this course after fully assembling the GalaxyRVR, you need to move this switch to the right before uploading the code.
+    GalaxyRVRを組み立てた後にこのコースを学習する場合、コードをアップロードする前にこのスイッチを右に移動させる必要があります。
 
     .. image:: img/camera_upload.png
         :width: 500
         :align: center
 
-Learning Objectives
+学習目標
 ----------------------
 
-* Understand the working principle and application of the infrared obstacle avoidance module.
-* Learn to use Arduino to control the infrared obstacle avoidance module.
-* Practice designing and building an automatic obstacle avoidance system based on infrared obstacle avoidance.
+* 赤外線障害物回避モジュールの動作原理と応用を理解する。
+* Arduinoを使って赤外線障害物回避モジュールを制御する方法を学ぶ。
+* 赤外線障害物回避に基づいた自動障害物回避システムの設計と構築を実践する。
 
-Materials Needed
+材料
 ---------------------
 
-* Obstacle Avoidance Modules
-* Basic tools and accessories (e.g. screwdriver, screws, wires etc.)
-* Mars Rover Model (Equipped with rocker-bogie system, main boards, motors)
-* USB Cable
+* 障害物回避モジュール
+* 基本的なツールとアクセサリー（例：ドライバー、ネジ、ワイヤーなど）
+* 火星ローバーモデル（ロッカーボギーシステム、メインボード、モーター装備）
+* USBケーブル
 * Arduino IDE
-* Computer
+* コンピューター
 
-Steps
+手順
 -------------
-**Step 1: Install the Obstacle Avoidance Module**
+**ステップ1：障害物回避モジュールの取り付け**
 
-Now we will install the two obstacle avoidance modules onto the rover.
+これから、二つの障害物回避モジュールをローバーに取り付けます。
 
 .. raw:: html
 
     <iframe width="600" height="400" src="https://www.youtube.com/embed/UWEj_ROYAt0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-The assembly steps were simple, weren't they? In the following steps, we will learn about the working principle of these modules, and how they help our Mars Rover to avoid obstacles. Stay tuned!
+組み立て手順は簡単でしたね？次のステップでは、これらのモジュールの動作原理と、火星ローバーが障害物を回避するのにどのように役立つかについて学びます。お楽しみに！
 
 
-**Step 2: Demystifying the Module**
+**ステップ2：モジュールの解明**
 
-Meet the Infrared Obstacle Avoidance Module - our rover's smart sidekick. This little device is a pack of wonders. Let's take a tour:
+赤外線障害物回避モジュール、我々のローバーの賢い助手と会いましょう。この小さなデバイスは驚きのパックです。見てみましょう：
 
 .. image:: img/ir_avoid.png
     :width: 300
     :align: center
 
 
-Here are the pin definitions:
+ピン定義はこちらです：
 
-* **GND**: This is like the module's anchor, connecting it to the ground or common point in the circuit.
-* **+**: Here's where the module gets its energy, needing a power supply of 3.3 to 5V DC.
-* **Out**: This is the module's communicator. By default, it stays high and only goes low when it spots an obstacle.
-* **EN**: Meet the module's controller. This **enable** pin decides when the module should work. By default, it is connected to GND, meaning the module is always on the job.
+* **GND**：これはモジュールのアンカーのようなもので、回路内の接地点または共通点に接続します。
+* **+**：モジュールがエネルギーを得る場所で、3.3～5V DCの電源が必要です。
+* **Out**：これがモジュールのコミュニケーターです。デフォルトでは高い状態を保ち、障害物を検出したときのみ低下します。
+* **EN**：モジュールのコントローラーに会いましょう。この **enable** ピンは、モジュールが作動すべき時を決定します。デフォルトではGNDに接続されており、モジュールは常に作業を行っています。
 
 
-Curious about how this tiny module works? It's quite interesting! It uses a pair of IR components - a transmitter and a receiver. The transmitter is like the module's flashlight, emitting infrared light. 
-When an obstacle appears, the infrared light bounces back and gets caught by the receiver. The module then gives a low signal, alerting our rover of the obstacle.
+
+この小さなモジュールがどのように機能するのか気になりますか？とても興味深いですよ！赤外線コンポーネントのペア、つまり送信機と受信機を使用しています。送信機はモジュールの懐中電灯のようなもので、赤外線を放射します。
+障害物が現れると、赤外線が反射して受信機に捉えられます。その後、モジュールは低い信号を出し、ローバーに障害物を知らせます。
 
 .. image:: img/ir_receive.png
     :align: center
 
-Our little module is quite robust, spotting obstacles within a range of 2-40cm and boasting excellent anti-interference abilities. 
-However, the color of objects does impact its sensing. Darker objects, especially black ones, are detected at a shorter range. 
-Against a white wall, the sensor is most efficient, sensing within the 2-30cm range.
+この小さなモジュールはかなり頑丈で、2〜40cmの範囲内で障害物を発見し、優れた干渉防止能力を誇っています。
+しかし、物体の色は感知に影響します。特に黒い暗い物体は、より短い範囲で検出されます。
+白い壁に対しては、センサーは最も効率的で、2〜30cmの範囲内で感知します。
 
-
-The **EN** pin's low-level state activates the module, with the jumper cap securing the **EN** pin to the GND. If you wish to control the **EN** pin via code, the jumper cap needs to be removed.
+**EN** ピンの低レベル状態がモジュールを活性化し、ジャンパーキャップで **EN** ピンをGNDに固定します。コードで **EN** ピンを制御したい場合、ジャンパーキャップを外す必要があります。
 
 .. image:: img/ir_cap.png
     :width: 400
     :align: center
 
-There are two potentiometers on the module, one for adjusting the transmitting power and one for adjusting the transmitting frequency, and by adjusting these two potentiometers you can adjust its effective distance.
+モジュールには、送信パワーを調整するためのポテンショメータと送信周波数を調整するためのものが2つあります。これら2つのポテンショメータを調整することで、有効距離を調整できます。
 
 .. image:: img/ir_avoid_pot.png
     :width: 400
     :align: center 
 
 
-That's quite a bit about our little module. In the next step, we'll learn how to integrate it with our rover and control it using the Arduino. Stay tuned!
+私たちの小さなモジュールについてはこれくらいです。次のステップでは、ローバーに統合し、Arduinoを使用して制御する方法を学びます。お楽しみに！
 
 
-**Step 3: Read from the 2 Modules**
+**ステップ3：2つのモジュールからの読み取り**
 
-Just like curious space explorers, let's dive into the universe of codes and sensors!
+好奇心旺盛な宇宙探査家のように、コードとセンサーの宇宙に飛び込みましょう！
 
 
-#. Our Mars Rover is equipped with two special "Alien-Eye" sensors, perched neatly on pins 7 (right) and 8 (left). These "Alien-Eye" sensors are actually our infrared obstacle avoidance modules, always vigilant to dodge any "space rocks" (obstacles) in our Rover's interstellar journey!
+#. 私たちの火星ローバーは、特別な「エイリアンアイ」センサーを2つ搭載しています。これらは7番ピン（右）と8番ピン（左）にきちんと取り付けられています。これらの「エイリアンアイ」センサーは、実際には私たちの赤外線障害物回避モジュールで、ローバーの星間旅行中に「宇宙の岩」（障害物）を回避するために常に警戒しています！
 
     .. image:: img/ir_shield.png
 
-#. Next, we'll need to communicate with our Rover using the universal language of Arduino code.
+#. 次に、Arduinoコードの普遍的な言語を使用してローバーと通信する必要があります。
 
 
-    First things first, let's give a unique name to each eye of the Rover. Let's call them ``IR_RIGHT`` and ``IR_LEFT``, this way we won't mix them up.
+    最初に、ローバーの各目に固有の名前を付けましょう。それらを ``IR_RIGHT`` と ``IR_LEFT`` と呼ぶことにしましょう。そうすれば、混乱することはありません。
 
         .. code-block:: arduino
 
             #define IR_RIGHT 7
             #define IR_LEFT 8
 
-    Now, we let our Rover know that these are its special eyes - they will feed information from the world outside into the Rover's electronic brain.
+    次に、これらがローバーの特別な目であることをローバーに知らせます。これらは、外の世界からの情報をローバーの電子脳に送る役割を果たします。
 
         .. code-block:: arduino
 
@@ -124,14 +123,14 @@ Just like curious space explorers, let's dive into the universe of codes and sen
             pinMode(IR_LEFT, INPUT);
 
 
-    To make sure our Rover shares its findings with us, we establish a secret line of communication, like spies in a sci-fi movie. This next line kicks off a serial conversation at the speed of 9600 bits per second - that's lightning fast chatter!
+    ローバーが発見したことを私たちと共有するために、SF映画のスパイのような秘密の通信ラインを確立しましょう。次の行は、秒間9600ビットの速度でシリアル通信を開始します。それは稲妻のように速い会話です！
     
         .. code-block:: arduino
 
             Serial.begin(9600);
 
 
-    Now, our Rover scans its surroundings with its "Alien-Eyes" and relays the findings back to us. If it spots an obstacle, the value will be 0; if the path is clear, the value will be 1. It keeps sending these messages to us, keeping us in the loop.
+    続いて、ローバーは「エイリアンアイ」で周囲をスキャンし、その結果を私たちに伝えます。障害物を見つけた場合、値は0になります。道がクリアなら、値は1になります。これらのメッセージを私たちに送り続け、常に情報を共有してくれます。
 
         .. code-block:: arduino
 
@@ -143,27 +142,28 @@ Just like curious space explorers, let's dive into the universe of codes and sen
             Serial.println(leftValue);
 
 
-    Finally, the Rover pauses for a moment (about 200 milliseconds) after each transmission. This tiny break gives us the chance to interpret the Rover's message before it sends another one.
+    最後に、ローバーは各送信の後に短い休憩（約200ミリ秒）を取ります。この小さな休憩は、ローバーが次のメッセージを送る前に、私たちがそのメッセージを解釈する機会を与えてくれます。
 
         .. code-block:: arduino
 
             delay(200);
 
-    Here is the complete code:
+    以下が完全なコードです：
 
     .. raw:: html
         
         <iframe src=https://create.arduino.cc/editor/sunfounder01/98546821-5f4b-42ae-bc9f-e7ec15544c8b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-#. Once your code is ready, select the correct board and port, and beam up the code to your Mars Rover. Then, tune into our secret communication line (the Serial Monitor) by clicking on its icon in the top right corner.
+
+#. コードが準備できたら、正しいボードとポートを選択し、コードを火星ローバーに送信します。次に、右上隅にあるアイコンをクリックして、私たちの秘密の通信ライン（シリアルモニター）にチューニングしてください。
 
     .. image:: img/ir_open_serial.png
 
-#. Before you start receiving the Rover's messages, make sure your secret communication line is tuned at the same speed (9600 baud) as your Rover. And there you have it - live updates from your Mars Rover!
+#. ローバーからのメッセージを受信し始める前に、秘密の通信ラインがローバーと同じ速度（9600ボー）でチューニングされていることを確認してください。これで、火星ローバーからのライブアップデートが得られます！
 
     .. image:: img/ir_serial.png
 
-#. To put our system to the test, wave a "space rock" (your hand) in front of one of the sensors. You'll see the value flip to 0, and the corresponding LED on the module lights up. That's the Rover saying, "Look out, space rock on my right!"
+#. システムをテストするために、「宇宙の岩」（あなたの手）をセンサーの前に振ってみてください。値が0に変わり、モジュールの対応するLEDが点灯します。これはローバーが「注意、私の右に宇宙の岩がある！」と言っているようなものです。
 
     .. code-block::
 
@@ -174,63 +174,64 @@ Just like curious space explorers, let's dive into the universe of codes and sen
         Right IR: 0
         Left IR: 1
 
-By now, you've not just journeyed through space but also deciphered Martian! Can't wait to see what interstellar secrets we unveil in our next mission!
+これで、あなたは宇宙を旅するだけでなく、火星語も解読したことになります！次のミッションでどんな星間の秘密を解き明かすか、待ちきれません！
 
-**Step 4: Adjusting the Detection Distance**
+**ステップ4：検出距離の調整**
 
-We have arrived at an essential step, which is to adjust the detection distances of our sensors based on our current environment. The factory settings may not be optimal.
+現在の環境に基づいてセンサーの検出距離を調整する、重要なステップに到達しました。工場出荷時の設定が最適でない場合があります。
 
-If the detection distance of the two infrared modules is too short, the Mars Rover might collide with obstacles. If it's too far, the Rover might start turning while still a significant distance from an obstacle, potentially impacting its movement.
+赤外線モジュールの2つの検出距離が短すぎると、火星ローバーは障害物に衝突する可能性があります。距離が遠すぎると、障害物からまだかなりの距離があるにもかかわらず、ローバーが旋回し始める可能性があり、その動きに影響を与えることがあります。
 
-Here's how you can make adjustments:
+調整する方法は次のとおりです：
 
 
-#. Start by adjusting the right obstacle avoidance module. During transportation, collisions may cause the transmitter and receiver on the infrared module to tilt. Therefore, you need to manually straighten them.
+#. 右の障害物回避モジュールの調整から始めます。輸送中の衝突により、赤外線モジュール上の送信機と受信機が傾く可能性があるため、手動で直してください。
 
     .. raw:: html
 
         <video width="600" loop autoplay muted>
             <source src="_static/video/ir_adjust1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            お使いのブラウザーはビデオタグをサポートしていません。
         </video>
 
-#. Place an obstacle about 20 cm directly in front of the right module. The box in which our Rover kit came is a good choice for this! Now, turn the potentiometer on the module until the indicator light on the module just lights up. Then, keep moving the obstacle back and forth to check if the indicator light comes on at the desired distance. If the light doesn't turn on at the correct distance or if it remains on without going out, you'll need to adjust the other potentiometer.
+#. 約20cmの距離で直接、右のモジュールの前に障害物を置きます。ローバーキットが届いた箱がこれには最適です！次に、モジュール上のポテンショメータを回して、モジュールのインジケーターライトがちょうど点灯するまで調整します。それから、障害物を前後に動かして、インジケーターライトが望む距離で点灯するかどうかを確認します。ライトが正しい距離で点灯しない場合、または消えずに点灯し続ける場合は、もう一方のポテンショメータを調整する必要があります。
 
     .. raw:: html
 
         <video width="600" loop autoplay muted>
             <source src="_static/video/ir_adjust2.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            お使いのブラウザーはビデオタグをサポートしていません。
         </video>
 
 
-#. Repeat the same process for another module.
+#. 同じプロセスをもう一つのモジュールに対して繰り返します。
 
-Now that our sensors are fully prepared, let's embark on the next journey!
+センサーが完全に準備できたので、次の旅に出発しましょう！
 
-**Step 5: Design an Automatic Obstacle Avoidance System**
 
-Now, let's take a big leap in our space exploration and make use of these messages from the Rover. 
-We're going to create an automatic obstacle avoidance system!
+**ステップ5：自動障害物回避システムの設計**
 
-Here's our plan: If the right sensor detects an obstacle, the Rover will turn to the back right. If the left sensor detects an obstacle, the Rover will turn to the back left. If both sensors detect an obstacle, the Rover will move backward. If no obstacles are detected, the Rover will continue moving straight ahead.
+さて、宇宙探査で大きな一歩を踏み出し、ローバーからのメッセージを活用しましょう。
+自動障害物回避システムを作成します！
 
-Let's visualize this in a flowchart to make it even more clear. Flowcharts are a great way to logically outline a plan, especially when it comes to programming!
+計画は次のとおりです。右センサーが障害物を検出した場合、ローバーは右後ろに回転します。左センサーが障害物を検出した場合、ローバーは左後ろに回転します。両方のセンサーが障害物を検出した場合、ローバーは後退します。障害物が検出されない場合、ローバーはまっすぐ進み続けます。
+
+この計画をフローチャートで視覚化して、さらに明確にしましょう。フローチャートは、特にプログラミングの際に計画を論理的に概要化するのに最適です！
 
 .. image:: img/ir_flowchart.png
 
-Let's whisper this plan to our Rover in its language(Arduino code):
+この計画をローバーの言語（Arduinoコード）でささやきましょう：
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/af6539d4-7b4b-4e74-a04a-9fa069391d4d/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-In this code, we are using ``if...else`` statement in the ``loop()`` function.
+このコードでは、 ``loop()`` 関数内で ``if...else`` ステートメントを使用しています。
 
-    The ``if...else`` statement is used to execute a block of code among two alternatives. 
-    However, when we need to choose among more than two alternatives, we use the ``if...else if...else`` statement.
+    ``if...else`` ステートメントは、2つの選択肢のうち1つのコードブロックを実行するために使用されます。
+    ただし、2つ以上の選択肢から選ぶ必要がある場合は、 ``if...else if...else`` ステートメントを使用します。
 
-    The syntax of the ``if...else if...else`` statement is:
+    ``if...else if...else`` ステートメントの構文は以下の通りです：
 
     .. code-block:: arduino
 
@@ -247,31 +248,31 @@ In this code, we are using ``if...else`` statement in the ``loop()`` function.
         // code block 4
         }
     
-    Here,
+    ここで、
 
-    * If condition1 is true, code block 1 is executed.
-    * If condition1 is false, then condition2 is evaluated.
-    * If condition2 is true, code block 2 is executed.
-    * If condition2 is false, then condition3 is evaluated.
-    * If condition3 is true, code block 3 is executed.
-    * If condition3 is false, code block 4 is executed.
+    * condition1が真の場合、code block 1が実行されます。
+    * condition1が偽の場合、condition2が評価されます。
+    * condition2が真の場合、code block 2が実行されます。
+    * condition2が偽の場合、condition3が評価されます。
+    * condition3が真の場合、code block 3が実行されます。
+    * condition3が偽の場合、code block 4が実行されます。
 
-Now that we've designed our automatic obstacle avoidance system, it's time for the exciting part - putting it to the test!
+自動障害物回避システムを設計したので、ワクワクする部分、テストに取り掛かりましょう！
 
-* You can observe if the Rover moves as you expected.
-* Or, place it in different lighting conditions to see how its movements change.
+* ローバーが期待通りに動くか観察できます。
+* または、異なる照明条件下でローバーの動きがどのように変わるかを確認します。
 
-By integrating science into our engineering project, we're becoming space detectives, solving the mysteries of our Rover's behavior. 
-This isn't just about correcting errors but optimizing performance, making our Rover the best it can be! Keep up the fantastic work, space detectives!
+科学をエンジニアリングプロジェクトに統合することで、私たちは宇宙探偵となり、ローバーの行動の謎を解明します。
+これは単なるエラーの修正ではなく、パフォーマンスの最適化に関するもので、ローバーを最高の状態にします！素晴らしい仕事を続けてください、宇宙探偵の皆さん！
 
 
-**Step 6: Reflection and Summary**
+**ステップ6：振り返りとまとめ**
 
-In the testing phase, you might have noticed an interesting behavior of our Mars Rover: while it expertly avoids obstacles to its left and right, it might struggle to detect smaller obstacles straight ahead.
+テストフェーズでは、火星ローバーの興味深い挙動に気づかれたかもしれません：左右の障害物を巧みに回避する一方で、真正面の小さな障害物の検出に苦労することがあります。
 
-How can we solve this challenge?
+この課題をどのように解決できるでしょうか？
 
-Stay tuned for the next lesson, where we'll continue our exploration into the fascinating world of coding, sensors, and obstacle detection.
+次のレッスンで、コーディング、センサー、障害物検出の魅力的な世界への探索を続けます。お楽しみに！
 
-Remember, every challenge is an opportunity for learning and innovation. And as we continue our space exploration journey, there's so much more to discover and learn!
+覚えておいてください、すべての課題は学習とイノベーションの機会です。宇宙探査の旅を続ける中で、まだまだ多くのことを発見し、学ぶことがあります！
 

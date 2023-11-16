@@ -1,20 +1,20 @@
-Assemble Video
+組み立てビデオ
 =========================
 
 .. note::
 
-    * If you want to learn while assembling the various components, you can refer to :ref:`course_mode`. In Course Mode, each lesson comes with assembly videos, component principles, and related test code, allowing you to learn as you go. So, you can skip this chapter.
+    * さまざまなコンポーネントを組み立てながら学びたい場合は、 :ref:`course_mode` を参照できます。コースモードでは、各レッスンに組み立てビデオ、コンポーネントの原理、関連するテストコードが付属しており、学習しながら進むことができます。ですので、この章はスキップしても構いません。
 
-    * If you want to quickly assemble and start playing, you can watch the assembly video first. After completing the assembly, proceed to :ref:`play_mode` to learn about the app installation and connection. Then, you can use the app to control the GalaxyRVR.
+    * 素早く組み立てて遊び始めたい場合は、まず組み立てビデオをご覧ください。組み立てが完了したら、 :ref:`play_mode` に進んでアプリのインストールと接続について学びます。その後、アプリを使用してGalaxyRVRを操作できます。
 
 
-For the assembly of the GalaxyRVR, we provide printed assembly instructions in the kit. Here is the PDF version of it:
+GalaxyRVRの組み立てには、キットに印刷された組み立て説明書が付属しています。こちらがそのPDF版です：
 
     .. raw:: html
     
-        <a href="_static/pdf/z0112v10-a0001012-galaxyrvr.pdf" target="_blank">GalaxyRVR Assembly Instructions</a>
+        <a href="_static/pdf/z0112v10-a0001012-galaxyrvr.pdf" target="_blank">GalaxyRVR 組み立て説明書</a>
 
-If you are having difficulty understanding the printed assembly instructions, you can instead follow our step-by-step assembly video.
+印刷された組み立て説明書の理解が難しい場合は、代わりにステップバイステップの組み立てビデオをフォローすることができます。
 
     .. raw:: html
 
@@ -22,12 +22,10 @@ If you are having difficulty understanding the printed assembly instructions, yo
 
 .. note::
 
-    * The assembly videos are in a series of 7. You can check out other videos from the playlist in the upper-right corner, or let it play automatically.
+    * 組み立てビデオは合計7本のシリーズになっています。右上のプレイリストから他のビデオをチェックすることができますし、自動再生も可能です。
 
-    * When inserting the ESP32 CAM into the Camera Adapter, be aware of its orientation. It should align properly with the ESP32 Adapter.
+    * ESP32 CAMをカメラアダプターに挿入する際には、その方向を注意してください。ESP32アダプターに正しく整列するようにしてください。
     
         .. image:: img/esp32_cam_direction.png
             :width: 300
             :align: center
-
-

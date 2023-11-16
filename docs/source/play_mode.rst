@@ -1,156 +1,156 @@
 .. _play_mode:
 
-Play Mode
+プレイモード
 =========================
 
-Are you eager to kick-start your Martian journey right away? Our Play Mode is perfectly tailored for those of you who just can't wait to dive in. Equipped with factory-preloaded code, you can jump straight into the action after assembling your GalaxyRVR. Use the user-friendly SunFounder Controller app to explore its myriad of functions including first-person driving, switching between obstacle avoidance and follow modes, and even voice control.
+すぐに火星の旅を始めたいと思っていますか？私たちのプレイモードは、待ちきれないあなたのために特別に設計されています。工場出荷時にプリロードされたコードを装備しているので、GalaxyRVRを組み立てた後すぐにアクションに飛び込むことができます。使いやすいSunFounderコントローラーアプリを使用して、一人称視点の運転、障害物回避モードとフォローモードの切り替え、さらには音声制御など、多様な機能を探索してみてください。
 
 .. raw:: html
     
     <video width="600" loop autoplay muted>
         <source src="_static/video/play_mode.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        お使いのブラウザはビデオタグをサポートしていません。
     </video>
 
-But before you set off to explore the Red Planet, let's make sure you are fully equipped and ready for the adventure. Below is a Quick Guide to assist you in this exciting journey!
+しかし、赤い惑星の探索に出かける前に、冒険に備えて完全に装備されていることを確認しましょう。以下に、このエキサイティングな旅のためのクイックガイドを用意しました！
 
 .. note::
 
-    * If your R3 board has already been uploaded with other code, but you want to continue using Play Mode, you will need to download the relevant code.
+    * R3ボードに他のコードが既にアップロードされているが、プレイモードを続けたい場合は、関連するコードをダウンロードする必要があります。
 
-        * :download:`GalaxyRVR Codes <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
+        * :download:`GalaxyRVR コード <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
 
-    * Then, open the ``galaxy-rvr.ino`` file located in the ``galaxy-rvr-main\galaxy-rvr`` directory.
+    * 次に、 ``galaxy-rvr-main\galaxy-rvr`` ディレクトリにある ``galaxy-rvr.ino`` ファイルを開きます。
     
-    * Move the switch to the right and then click **Upload**.
+    * スイッチを右に移動し、 **Upload** をクリックします。
 
     .. image:: img/camera_upload.png
         :width: 400
         :align: center
 
 
-Quick Guide
+クイックガイド
 ---------------------
 
-#. Let's start the GalaxyRVR.
+#. GalaxyRVRを起動しましょう。
 
-    * The first time you use your GalaxyRVR, it is recommended that you plug in a Type-C USB cable to fully charge the battery first. Then turn the power on.
+    * GalaxyRVRを初めて使用する際には、まずType-C USBケーブルを接続してバッテリーを完全に充電することをお勧めします。その後、電源をオンにします。
     
         .. raw:: html
 
             <video width="600" loop autoplay muted>
                 <source src="_static/video/play_start.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+                お使いのブラウザはビデオタグをサポートしていません。
             </video>
 
-    * To activate the ESP32 CAM, move the mode switch to the **Run** position, and press the **reset** button to reboot the R3 board. You will then observe a cyan light flashing on the bottom strip.
+    * ESP32 CAMをアクティブにするには、モードスイッチを **Run** 位置に移動し、R3ボードを再起動するために **reset** ボタンを押します。すると、下部のストリップにシアン色の光が点滅するのが観察できます。
 
         .. raw:: html
 
             <video width="600" loop autoplay muted>
                 <source src="_static/video/play_reset.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+                お使いのブラウザはビデオタグをサポートしていません。
             </video>
 
-#. Install `SunFounder Controller <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_ from **APP Store(iOS)** or **Google Play(Android)**.
+#. `SunFounder Controller <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_ を **APP Store(iOS)** または **Google Play(Android)** からインストールします。
 
 
-#. Connect to the ``GalaxyRVR`` Network.
+#. ``GalaxyRVR`` ネットワークに接続します。
 
-    For optimal communication between your mobile device and the Rover, you'll need to connect them to the same local area network (LAN) provided by GalaxyRVR.
+    モバイルデバイスとローバーの間の最適な通信を実現するためには、それらをGalaxyRVRが提供する同じローカルエリアネットワーク（LAN）に接続する必要があります。
 
 
-    * Find ``GalaxyRVR`` on the list of available networks on your mobile device (tablet or smartphone), enter the password ``12345678``, and connect to it.
+    * モバイルデバイス（タブレットやスマートフォン）の利用可能なネットワークリストで ``GalaxyRVR`` を見つけ、パスワード ``12345678`` を入力し、それに接続します。
 
         .. image:: img/app/camera_lan.png
 
-    * The default connection mode is **AP mode**. After you've connected, there might be a prompt warning that there is no internet access on this network. If so, choose "Stay connected".
+    * デフォルトの接続モードは **AP mode** です。接続した後、このネットワークにインターネットアクセスがないという警告プロンプトが表示される場合があります。その場合は、「Stay connected」を選択してください。
 
         .. image:: img/app/camera_stay.png
 
 
-#. Set up a controller.
+#. コントローラーの設定。
 
-    * To create a controller on SunFounder Controller, tap the **+** icon.
+    * SunFounder Controllerでコントローラーを作成するには、 **+** アイコンをタップします。
 
         .. image:: img/app/app1.png
 
-    * Preset controllers are available for some products, here we choose **GalaxyRVR**. Give it a name, or simply tap **Confirm**.
+    * いくつかの製品にはプリセットコントローラーが用意されていますが、ここでは **GalaxyRVR** を選択します。名前を付けるか、単に **Confirm** をタップします。
 
         .. image:: img/app/play_preset.jpg
     
-    * Once inside, the app will automatically search for the GalaxyRVR. After a moment, you will see a prompt saying "Connected Successfully".
+    * アプリ内で、GalaxyRVRを自動的に検索します。しばらくすると、「Connected Successfully」というプロンプトが表示されます。
 
         .. image:: img/app/auto_connect.jpg
 
         .. note::
 
-            * If not connected, please confirm that your Wi-Fi is connected to ``GalaxyRVR``.
-            * You can also tap the |app_connect| button to connect manually. After a short wait, you should see ``GalaxyRVR(IP)`` appear. Tap on it to establish a connection.
+            * 接続されていない場合は、Wi-Fiが ``GalaxyRVR`` に接続されているか確認してください。
+            * |app_connect| ボタンをタップして手動で接続することもできます。少し待つと、 ``GalaxyRVR(IP)`` が表示されます。タップして接続を確立します。
 
             .. image:: img/app/camera_connect.png
                 :width: 300
                 :align: center
 
 
-    * Now, tap the |app_run| button enables you to view the live video feed from the camera and control the car using the provided widgets. 
+    * 今、|app_run| ボタンをタップすると、カメラからのライブ映像を視聴し、提供されたウィジェットを使用して車を制御できます。
 
         .. image:: img/app/play_run_view.jpg
 
-#. Let's now delve into the functions of each widget:
+#. それでは、各ウィジェットの機能について詳しく見ていきましょう：
 
-        * **Servo(D)**: Controls the tilt mechanism of the Rover's camera, allowing you to observe a wider range.
+        * **Servo(D)**：ローバーのカメラのチルト機構を制御し、より広範囲を観察できます。
 
-        * :ref:`app_avoid`: Switches the Rover into obstacle avoidance mode. The factory-set detection distances for each obstacle avoidance module may differ. Manual adjustment is required.
+        * :ref:`app_avoid`：ローバーを障害物回避モードに切り替えます。各障害物回避モジュールの工場設定の検出距離は異なる場合があります。手動調整が必要です。
 
-        * :ref:`app_follow`: Toggles the Rover into follow mode. The factory-set detection distances for each obstacle avoidance module may differ. Manual adjustment is required.
+        * :ref:`app_follow`：ローバーをフォローモードに切り替えます。各障害物回避モジュールの工場設定の検出距離は異なる場合があります。手動調整が必要です。
 
-        * **Stop(I)**: Immediately halts all Rover movements.
+        * **Stop(I)**：ローバーのすべての動きを即座に停止します。
 
-        * :ref:`app_speech_control`: Press this widget to initiate voice recognition and make the Rover perform corresponding actions.
+        * :ref:`app_speech_control`：このウィジェットを押して音声認識を開始し、ローバーに対応するアクションを実行させます。
 
-        * **HeadLamp(M)**: To turn the LED on/off on the ESP32 CAM.
-        * **Throttle Widgets on K and Q**: The throttle widget in the K area controls the Rover's left motors, while the one in the Q area controls the right motors. Coordinating both widgets allows the GalaxyRVR to move in any direction.
+        * **HeadLamp(M)**：ESP32 CAMのLEDをオン/オフにします。
+        * **Throttle Widgets on K and Q**：Kエリアのスロットルウィジェットはローバーの左モーターを制御し、Qエリアのものは右モーターを制御します。両方のウィジェットを調整することで、GalaxyRVRを任意の方向に動かすことができます。
 
-        * **Left IR(N)**: Displays the readings from the left obstacle avoidance module.
+        * **Left IR(N)**：左側の障害物回避モジュールからの読み取りを表示します。
 
-        * **Ultrasonic(O)**: Shows the distance measured by the ultrasonic module.
+        * **Ultrasonic(O)**：超音波モジュールによって測定された距離を表示します。
 
-        * **Right IR(P)**: Displays the readings from the right obstacle avoidance module.
+        * **Right IR(P)**：右側の障害物回避モジュールからの読み取りを表示します。
 
 .. _app_avoid:
 
 Avoid(E)
 ------------------------
 
-Tap the **Avoid(E)** widget to activate the obstacle avoidance mode.
+**Avoid(E)** ウィジェットをタップして障害物回避モードを有効にします。
 
-Before enabling this mode, you may need to adjust the detection ranges of the sensors according to your current environment, as the factory settings may not be ideal for all situations.
+このモードを有効にする前に、現在の環境に応じてセンサーの検出範囲を調整する必要があるかもしれません。工場設定はすべての状況に適しているわけではありません。
 
-If the detection range of the two infrared modules is too short, the Mars Rover might bump into obstacles. Conversely, if the range is too long, the Rover might start swerving too far away from an obstacle, potentially disrupting its navigation.
+二つの赤外線モジュールの検出範囲が短すぎると、火星ローバーが障害物にぶつかる可能性があります。逆に、範囲が長すぎると、ローバーが障害物から遠ざかりすぎてしまい、ナビゲーションが妨げられる可能性があります。
 
-Here's how you can fine-tune the settings:
+以下の方法で設定を微調整できます：
 
-#. Start by adjusting the right obstacle avoidance module. During transportation, collisions may cause the transmitter and receiver on the infrared module to tilt. Therefore, you need to manually straighten them.
+#. 右の障害物回避モジュールの調整から始めます。輸送中の衝突により、赤外線モジュールの送信機と受信機が傾く可能性があるため、手動で直す必要があります。
 
     .. raw:: html
 
         <video width="600" loop autoplay muted>
             <source src="_static/video/ir_adjust1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            お使いのブラウザはビデオタグをサポートしていません。
         </video>
 
-#. Place an obstacle about 20 cm directly in front of the right module. The box in which our Rover kit came is a good choice for this! Now, turn the potentiometer on the module until the indicator light on the module just lights up. Then, keep moving the obstacle back and forth to check if the indicator light comes on at the desired distance. If the light doesn't turn on at the correct distance or if it remains on without going out, you'll need to adjust the other potentiometer.
+#. 障害物を右モジュールの正面約20cmの位置に置きます。ローバーキットが入っていた箱を使用すると良いでしょう！次に、モジュール上のポテンショメーターを回して、モジュール上のインジケーターライトが点灯するまで調整します。その後、障害物を前後に動かして、希望する距離でインジケーターライトが点灯するか確認します。正しい距離でライトが点灯しない場合や、消えない場合は、もう一方のポテンショメーターを調整する必要があります。
 
     .. raw:: html
 
         <video width="600" loop autoplay muted>
             <source src="_static/video/ir_adjust2.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            お使いのブラウザはビデオタグをサポートしていません。
         </video>
 
 
-#. Repeat the same process for the other module.
+#. 同じプロセスをもう一方のモジュールに対して繰り返します。
 
 
 .. _app_follow:
@@ -158,9 +158,9 @@ Here's how you can fine-tune the settings:
 Follow(F)
 ------------
 
-When you're ready to activate follow mode, simply tap the **Follow(F)** widget. If you haven't previously adjusted the detection distance of the obstacle avoidance modules, you will need to follow the steps in :ref:`app_avoid` first.
+フォローモードを有効にしたい場合は、 **Follow(F)** ウィジェットをタップするだけです。以前に障害物回避モジュールの検出距離を調整していない場合は、まず :ref:`app_avoid` の手順に従う必要があります。
 
-Once in follow mode, the GalaxyRVR will move towards an object in front of it or turn left or right to follow the object's movement.
+フォローモードになると、GalaxyRVRは前方の物体に向かって動くか、物体の動きに合わせて左右に回転します。
 
 
 .. _app_speech_control:
@@ -169,40 +169,31 @@ STT(J)
 -------------------
 
 
-STT stands for Speech to Text. The SunFounder Controller app integrates with your mobile device's voice recognition engine. Hence, when you tap and hold the **STT(J)** widget on the SunFounder Controller and speak into your mobile device,
+STTはSpeech to Textの略です。SunFounder Controllerアプリは、モバイルデバイスの音声認識エンジンと連携しています。したがって、SunFounder Controllerで **STT(J)** ウィジェットをタップし続け、モバイルデバイスに向かって話すと、
 
-Your device will capture your speech, convert it into text, and send it to the GalaxyRVR. If this text matches the pre-set commands in your code, the Rover will carry out the corresponding actions.
+あなたのデバイスはあなたの発言をキャプチャし、テキストに変換してGalaxyRVRに送信します。このテキストがコード内の事前設定されたコマンドと一致する場合、ローバーは対応するアクションを実行します。
 
-The following are the commands currently preset in the code. Speak any of the following commands and observe how the GalaxyRVR responds.
+以下は、コードに事前設定されたコマンドです。以下のコマンドのいずれかを話して、GalaxyRVRがどのように反応するかを観察してください。
 
 .. image:: img/app/play_speech.png
     :width: 600
 
-* ``stop``: All movements of the rover can be stopped.
-* ``forward``: Let the rover move forward.
-* ``backward``: Let the rover move backward.
-* ``left``: Let the rover turn left.
-* ``right``: Let the rover turn right.
+* ``stop``：ローバーのすべての動きを停止させることができます。
+* ``forward``：ローバーを前進させます。
+* ``backward``：ローバーを後退させます。
+* ``left``：ローバーを左に曲げます。
+* ``right``：ローバーを右に曲げます。
 
 
 .. note::
 
-    The STT (Speech to Text) function requires an internet connection and Google services on Android devices. However, this doesn't work with the pre-set AP (Access Point) mode on the GalaxyRVR. 
+    STT（Speech to Text）機能は、インターネット接続とAndroidデバイス上のGoogleサービスを必要とします。しかし、GalaxyRVRの事前設定されたAP（アクセスポイント）モードでは動作しません。
     
-    In AP mode, the GalaxyRVR creates a local Wi-Fi network that your mobile device can connect to, but it does not provide internet access.
+    APモードでは、GalaxyRVRがローカルWi-Fiネットワークを作成し、モバイルデバイスが接続できますが、インターネットアクセスは提供されません。
     
-    To use the STT function on Android, switch the Rover's code from AP to STA mode as outlined in :ref:`stt_android`.
+    AndroidでSTT機能を使用するには、:ref:`stt_android` で説明されているように、ローバーのコードをAPモードからSTAモードに切り替えてください。
 
 .. note::
 
-    iOS devices, using an offline voice recognition engine, work fine in both AP and STA modes. 
+    iOSデバイスは、オフラインの音声認識エンジンを使用しているため、APモードとSTAモードの両方で問題なく動作します。
     
-
-
-
-
-
-
-
-
-

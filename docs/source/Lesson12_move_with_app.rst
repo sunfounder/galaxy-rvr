@@ -1,114 +1,113 @@
-Lesson 12: Driving the Rover with the App
+レッスン12：アプリでローバーを操作
 ===========================================
 
-In our last adventure, we mastered the art of using the SunFounder Controller to not only explore the world through the rover's eyes but also to adjust its gaze by controlling the tilt mechanism. It was like giving our Mars rover a sense of sight!
+前回の冒険では、SunFounderコントローラーを使い、ローバーの目を通じて世界を探索し、チルト機構を制御してその視線を調整する技術を習得しました。まるで、私たちの火星ローバーに視力を与えたかのようでした！
 
-Now, imagine if you could steer this Martian explorer as well, directing its path at your whim. In this lesson, that's exactly what we're going to do! We're going to take our understanding of the SunFounder Controller to the next level and learn to maneuver our rover, giving us the thrilling experience of being a Mars rover driver!
+今度は、この火星探検車を自分の意志で操り、その道筋を指示できたらどうでしょう。このレッスンでは、まさにそれを実現します！SunFounderコントローラーについての理解を深め、ローバーを操る方法を学びます。まるで火星ローバーのドライバーになったようなスリリングな体験が待っています！
 
-With our vivid and lively STEAM course, children will not just learn; they'll experience the excitement and wonder of space exploration! Strap in and get ready for an exciting journey!
+生き生きとしたSTEAMコースを通じて、子供たちはただ学ぶだけでなく、宇宙探査の興奮と驚きを体験します！準備を整え、ワクワクする旅に出発しましょう！
 
 .. raw:: html
 
     <video width="600" loop autoplay muted>
         <source src="_static/video/camera_app.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        お使いのブラウザーはビデオタグをサポートしていません。
     </video>
 
-Learning Goals
+学習目標
 -----------------------
 
-* Gain a deeper understanding of the SunFounder Controller.
-* Learn how to drive the Mars rover using the mobile app.
+* SunFounderコントローラーについての理解を深める。
+* モバイルアプリを使用して火星ローバーを操作する方法を学ぶ。
 
 
-Materials needed
+材料
 ------------------------
 
-* Mars Rover model (equipped with all components, except for solar panel and bottom plate)
+* 全部品を装備した火星ローバーモデル（ソーラーパネルと底板を除く）
 * Arduino IDE
-* Computer
-* Tablet or smartphone with SunFounder Controller app installed
+* コンピューター
+* SunFounderコントローラーアプリがインストールされたタブレットまたはスマートフォン
 
-Course Steps
+手順
 ----------------------
 
-**Step 1: Dive Deeper into the SunFounder Controller**
+**ステップ1：SunFounderコントローラーをより深く理解する**
 
-In our previous lesson, we got our first taste of the SunFounder Controller, its basic operations and uses. But surely, you're left with some burning questions, right? Time to quench that curiosity and delve deeper into this tech marvel.
+前回のレッスンでは、SunFounderコントローラーの基本的な操作と使用法を初めて体験しました。しかし、まだ疑問が残っているのではないでしょうか？この好奇心を満たし、この技術の驚異についてさらに深く掘り下げてみましょう。
 
-On creating a new controller, you'll be met with a screen that might look like an enigma at first.
+新しいコントローラーを作成すると、最初は謎のように見える画面が表示されます。
 
 .. image:: img/app/app_blank.png
 
-You'll see a kaleidoscope of shapes: long rectangles, short rectangles, and large squares, each uniquely tagged with identifiers from A to Q.
+長方形、短方形、大きな正方形など、さまざまな形のカレイドスコープが、AからQまでの識別子でユニークにタグ付けされています。
 
-Ever wondered why such diversity? What do the identifiers A to Q imply?
+その多様性はなぜでしょうか？AからQの識別子は何を意味するのでしょうか？
 
-Let's embark on this exploratory journey!
+この探索の旅に出発しましょう！
 
-* **Deciphering the Shapes**
+* **形の解読**
 
-    For instance, tap on a long rectangular area. Like opening a treasure chest, you'll unveil several widgets. Remember the **Slider** from our previous class? Swiping it left or right controlled the Mars rover's camera tilt. Then there's the **Gauge**, can be used as your rover's personal speedometer. And a plethora of other widgets!
+    たとえば、長方形のエリアをタップしてみてください。宝箱を開けるように、いくつかのウィジェットが現れます。前回のクラスで使った **Slider** を覚えていますか？左右にスワイプすると、火星ローバーのカメラのチルトを制御しました。次に、 **Gauge** があります。これは、あなたのローバーの個人的な速度計として使うことができます。そして、他にも多くのウィジェットがあります！
 
     .. image:: img/app/app_long.png
 
-    Tap on the shorter rectangle, and it reveals a different set of widgets. The **Button** widget, like a binary switch, issues singular commands, while the **Microphone** widget can listens to your voice commands to control the rover, among other widgets.
+    短い長方形をタップすると、異なるウィジェットセットが現れます。 **Button** ウィジェットは、バイナリスイッチのように単一のコマンドを発行し、 **Microphone** ウィジェットはあなたの声のコマンドを聞いてローバーを制御することができます。
 
     .. image:: img/app/app_short.png
 
-    What about the square block, you ask? It houses the **Joystick** widget, the D-pad widget, and the Throttle widget. And yes, there's more!
+    正方形ブロックはどうでしょうか？ **Joystick** ウィジェット、Dパッドウィジェット、スロットルウィジェットが入っています。もちろん、それだけではありません！
 
     .. image:: img/app/app_square.png
 
-    At this point, don't fret about each widget's function or usage. Familiarize yourself with what widgets each shape houses.
+    この時点で、各ウィジェットの機能や使用法について心配する必要はありません。どの形がどのウィジェットを収容しているかを知り、それに慣れることが大切です。
 
-* **Harnessing the Widgets**
 
-    Through the content above, we know that there are many different widgets. So what can these widgets be used for?
+* **ウィジェットの活用**
 
-    We categorize these widgets into two types: control widgets and show widgets.
+    上記の内容から、さまざまなウィジェットがあることがわかります。では、これらのウィジェットは何に使えるのでしょうか？
 
-    * **Control widgets** primarily let you manipulate the app, and then the Mars rover receives these control commands and performs corresponding actions.
-    * **Show widgets** allow you to use them to show some values in the app, such as sensor values, etc.
+    これらのウィジェットは、コントロール ウィジェットと表示ウィジェットの 2 つのタイプに分類されます。
 
-    For a detailed description of these widgets, please refer to: |link_widgets_list|.
+    * **コントロールウィジェット** は主にアプリの操作を可能にし、その後、火星ローバーがこれらの制御コマンドを受け取り、対応する動作を行います。
+    * **ショーウィジェット** は、アプリ内でセンサー値などの値を表示するために使用できます。
 
-    Also, for the functions, parameters, etc. related to these widgets, please refer to: |link_ai_camera_library_api|.
+    これらのウィジェットの詳細な説明については、以下を参照してください：|link_widgets_list|。
 
-* **The Role of Identifiers**
+    また、これらのウィジェットに関連する機能、パラメーターなどについては、以下を参照してください：|link_ai_camera_library_api|。
 
-    Every shape carries an identifier on the bottom right corner. Why, you ask? Let's understand this with an example.
+* **識別子の役割**
 
-    In our last class, we added a **Slider** widget in the **D** region. The code to get its value looked something like this:
+    各形には右下に識別子が付いています。なぜでしょうか？例を挙げて説明しましょう。
+
+    前回のクラスでは、 **D** 領域に **Slider** ウィジェットを追加しました。その値を取得するコードは次のようなものでした：
 
         .. code-block:: arduino
 
             int16_t sliderD = aiCam.getSlider(REGION_D);
         
-    What if we added a **Slider** widget in the **B** region? How would the code change? As simple as replacing ``REGION_D`` with ``REGION_B``.
+    もし、 **B** 領域に **Slider** ウィジェットを追加したら、コードはどのように変わるでしょうか？単に ``REGION_D`` を ``REGION_B`` に置き換えるだけです。
 
         .. code-block:: arduino
 
             int16_t sliderD = aiCam.getSlider(REGION_B);
 
-    Easy, right? These identifiers help discern which widget you've added in which area.
+    簡単ですよね？これらの識別子は、どの領域にどのウィジェットを追加したかを識別するのに役立ちます。
 
 
 .. note::
-    * Detailed instructions on creating and adding widgets, and connecting and operating the SunFounder Controller, are available in ``Step 3`` of ``Lesson 11``.
-    * For more in-depth operations, please visit |link_sc_page|.
+    * ウィジェットの作成・追加、SunFounderコントローラーの接続・操作に関する詳細な指示は、 ``レッスン11`` の ``ステップ3`` で利用可能です。
+    * より深い操作については、 |link_sc_page| をご覧ください。
 
-**Step 2: Control the Mars Rover with Dual Throttles**
+**ステップ2：デュアルスロットルで火星ローバーを制御**
 
-Now that we've delved into the ins and outs of the SunFounder Controller widgets, let's elevate our game by incorporating 
-two Throttle widgets to commandeer the movement of the Mars Rover.
+SunFounderコントローラーウィジェットの内外を掘り下げたので、2つのスロットルウィジェットを組み込んで火星ローバーの動きをコントロールすることで、私たちのゲームをレベルアップしましょう。
 
-#. Place a **Throttle** widget each in the **K** and **Q** regions. You will need to hit the |app_edit| button at the top right to switch to editing mode, and once you're done setting things up, click |app_save| to store your changes.
+#. **K** 領域と **Q** 領域に **Throttle** ウィジェットをそれぞれ配置します。編集モードに切り替えるために右上の |app_edit| ボタンを押し、設定が完了したら、変更を保存するために |app_save| をクリックします。
 
     .. image:: img/app/app_throttle.png
 
-#. Since we plan to utilize two **Throttle** widgets to govern the Rover's mobility, let's tweak the function that dictates the rover's movements accordingly:
-
+#. 2つの **Throttle** ウィジェットを使用してローバーの移動を制御する予定なので、それに応じてローバーの動きを指示する機能を調整しましょう：
 
     .. code-block:: arduino
 
@@ -133,23 +132,23 @@ two Throttle widgets to commandeer the movement of the Mars Rover.
             }
         }
 
-    Sure, let's break down the ``carSetMotors()`` function. This function accepts two arguments, ``power_L`` and ``power_R``, which are likely the power settings for the left and right motors respectively. The values of these arguments are presumably from -100 to 100, where negative values indicate reverse motion, 0 indicates stop, and positive values indicate forward motion.
+    もちろんです。 ``carSetMotors()`` 関数を詳しく見てみましょう。この関数は2つの引数 ``power_L`` と ``power_R`` を受け取り、これらは左右のモーターの電力設定であると思われます。これらの引数の値は、マイナス100から100までで、負の値は後退を示し、0は停止を示し、正の値は前進を示します。
 
-    * Set power for the left motor:
+    * 左モーターの電力を設定する：
 
-        * If ``power_L`` is greater than or equal to 0, the left motor is set to move forward. 
-        
-        * ``SoftPWMSet(in1, map(power_L, 0, 100, 0, 255))`` uses the Arduino ``map`` function to map the input range (0 to 100) to the output range (0 to 255) - this is because PWM values in Arduino are between 0 (0% duty cycle) and 255 (100% duty cycle). This mapped value is then passed to the ``SoftPWMSet`` function along with ``in1``.
+        * ``power_L`` が0以上の場合、左モーターは前進するように設定されます。
 
-        * If ``power_L`` is less than 0, the left motor is set to move in reverse and the input range for the ``map`` function is now 0 to -100.
+        * ``SoftPWMSet(in1, map(power_L, 0, 100, 0, 255))`` はArduinoの ``map`` 関数を使用して、入力範囲（0から100）を出力範囲（0から255）にマッピングします。これは、ArduinoのPWM値が0（0%デューティサイクル）から255（100%デューティサイクル）の間であるためです。このマッピングされた値は、 ``SoftPWMSet`` 関数に ``in1`` とともに渡されます。
 
-    * Set power for the right motor:
+        * ``power_L`` が0未満の場合、左モーターは逆方向に動くように設定され、 ``map`` 関数の入力範囲は0からマイナス100になります。
 
-        * This follows the same logic as setting the power for the left motor, but uses ``in3`` and ``in4`` instead, and the input power values are ``power_R`` instead of ``power_L``.
+    * 右モーターの電力を設定する：
 
-    Overall, this function takes two motor power values, converts them into the appropriate PWM values, and sets the PWM values on the correct motor control pins to achieve the desired motion.
+        * これは左モーターの電力を設定するのと同じロジックに従いますが、 ``in3`` と ``in4`` を使用し、入力電力値は ``power_L`` の代わりに ``power_R`` です。
 
-#. Within the ``onReceive()`` function, retrieve the values from the two **Throttle** widgets and employ them as the power for the left and right motors of the Mars Rover.
+    全体として、この関数は2つのモーターの電力値を受け取り、それを適切なPWM値に変換し、所望の動きを実現するために正しいモーター制御ピンにPWM値を設定します。
+
+#. ``onReceive()`` 関数内で、2つの **Throttle** ウィジェットから値を取得し、火星ローバーの左右のモーターの電力として使用します。
 
     .. code-block:: arduino
         :emphasize-lines: 9,10,13
@@ -169,37 +168,38 @@ two Throttle widgets to commandeer the movement of the Mars Rover.
             carSetMotors(throttle_L, throttle_R);
         }
 
-Here is the complete code:
+完全なコードはこちらです：
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/c70d2598-a1f9-465a-83bb-4ebd38eb74fa/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Each time you rerun the code, you need to repeat the following four steps:
+コードを再実行するたびに、以下の4つのステップを繰り返す必要があります：
 
-* Prior to uploading the code, ensure the switch is turned to the right.
+* コードをアップロードする前に、スイッチが右に向いていることを確認してください。
 
     .. image:: img/camera_upload.png
 
-* Once the code has been successfully uploaded, switch to the left to initiate the ESP32 CAM.
-* Connect to the ``GalaxyRVR`` Network.
-* Connect and run the controller.
 
-Now, with a simple glide of the thumb on your ``Throttle`` widgets, you'll witness the Mars Rover in action, powering and pivoting with a renewed spirit. Let the exploration commence!
+* コードが正常にアップロードされたら、左にスイッチを切り替えてESP32 CAMを起動します。
+* ``GalaxyRVR`` ネットワークに接続します。
+* コントローラーを接続し、実行します。
 
-**Step 3: Visualizing Sensor Readings**
+これで、 ``Throttle`` ウィジェット上で指を滑らせるだけで、火星ローバーが動き出し、新たな精神で力強くピボットします。探索を始めましょう！
 
-In our journey with the SunFounder Controller, we have been actively interacting with our Mars rover through control widgets, including sliders for adjusting the tilt and throttles for dictating the rover's movement. But what about harnessing the power of display widgets to paint a vivid picture of our rover's surroundings?
+**ステップ3：センサー読み取りの視覚化**
 
-Let's see how we can bring this to life by visualizing the values from the left and right infrared (IR) avoidance modules and the distance captured by the ultrasonic module. This real-time data will provide us with a clear snapshot of the rover's operating environment.
+SunFounderコントローラーとの旅では、チルト調整のためのスライダーや、ローバーの動きを指示するスロットルなど、制御ウィジェットを通じて火星ローバーと積極的にやり取りしてきました。では、表示ウィジェットの力を利用して、ローバーの周囲の鮮明なイメージを描くのはどうでしょうか？
 
-Here's how we can achieve this:
+左右の赤外線（IR）回避モジュールと、超音波モジュールによって捕捉された距離の値を視覚化することで、これを実現しましょう。このリアルタイムデータにより、ローバーの運用環境の明確なスナップショットを提供します。
 
-#. Get started by adding three Number widgets to your SunFounder Controller. Don't forget, you can personalize their names and units using the settings button.
+これを達成する方法は以下の通りです：
+
+#. まず、SunFounderコントローラーに3つのナンバーウィジェットを追加します。設定ボタンを使用して、それらの名前や単位をカスタマイズすることを忘れないでください。
 
     .. image:: img/app/app_show.png
 
-#. Next, let's delve into the code. Start by bringing over the IR avoidance modules and ultrasonic module code snippets from our previous lessons.
+#. 次に、コードに取り掛かりましょう。前回のレッスンからIR回避モジュールと超音波モジュールのコードスニペットを持ってきます。
 
     .. code-block:: arduino
 
@@ -231,7 +231,7 @@ Here's how we can achieve this:
         }
 
 
-#. In the ``onReceive()`` function, extract the values from the avoidance modules and the ultrasonic sensor. Subsequently, update these values in the ``sendDoc[]`` dictionary. The ``N``, ``P``, and ``O`` keys correspond to the region codes of the three Number widgets you've added.
+#. ``onReceive()`` 関数内で、回避モジュールと超音波センサーから値を抽出し、それらの値を ``sendDoc[]`` 辞書に更新します。 ``N``、 ``P``、 ``O`` のキーは、追加した3つのナンバーウィジェットの領域コードに対応しています。
 
     .. code-block:: arduino
 
@@ -251,29 +251,29 @@ Here's how we can achieve this:
             aiCam.sendDoc["O"] = distance;
         }
 
-Here is the complete code:
+完全なコードはこちらです：
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/6c867007-a0e8-4f85-980d-ec1cd1a70969/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Once the code has been successfully uploaded, get your SunFounder Controller up and running. You'll be greeted with the real-time values of the avoidance modules and the distance detected by the ultrasonic sensor, painting a clear picture of the rover's immediate environment.
+コードが正常にアップロードされたら、SunFounderコントローラーを起動します。回避モジュールと超音波センサーが検出した距離のリアルタイム値が表示され、ローバーの直接的な環境の明確なイメージが描かれます。
 
 .. image:: img/app/app_show_ir_ultrasonic.png
 
-With this step behind you, you've successfully navigated the world of show widgets. Feel free to experiment with different widgets to display the information that you find interesting. Happy exploring!
+このステップを終えると、表示ウィジェットの世界を無事にナビゲートできました。興味のある情報を表示するために、さまざまなウィジェットを試してみてください。探索を楽しんでください！
 
-**Step 4: Reflection and Conclusion**
+**ステップ4：振り返りと結論**
 
-In this lesson, we've forged a deeper understanding of the SunFounder Controller, grasping how we can utilize its widgets to not only steer our Mars rover but also monitor its environmental data in real time.
+このレッスンでは、SunFounderコントローラーについての理解を深め、そのウィジェットを使用して火星ローバーを操縦するだけでなく、リアルタイムで環境データをモニタリングする方法を把握しました。
 
-Now, here's a challenge for you:
+ここで挑戦です：
 
-How about adding some Switch widgets to your SunFounder Controller? With these switches activated, the Mars rover could switch between avoidance and follow modes. Or, why not use the switches to control the light strip – switching it on or off, or even changing its color?
+SunFounderコントローラーにスイッチウィジェットを追加してみませんか？これらのスイッチをアクティブにすると、火星ローバーは回避モードとフォローモードを切り替えることができます。または、ライトストリップを制御するためにスイッチを使用し、オンまたはオフにする、または色を変えるのはどうでしょうか？
 
-Do you have the confidence to take this on?
+この挑戦を受ける自信はありますか？
 
-We're looking forward to seeing you conquer this challenge!
+この挑戦を克服するあなたを楽しみにしています！
 
 
 

@@ -1,52 +1,50 @@
-
-GalaxyRVR - SunFounder Mars Rover Kit
+GalaxyRVR - SunFounder社の火星探査ローバーキット
 ========================================================
 
-Imagine piloting a rover on the desolate terrain of Mars, exploring alien landscapes and confronting the unknown. Sounds like a dream for NASA engineers, right?
+NASAのエンジニアが夢見る、荒涼とした火星の地形を探査するローバーの操縦を想像してみてください。未知との遭遇、異世界の風景を探索するのは、まるで夢のようですよね？
 
-Not anymore.
+でも、それはもう夢ではありません。
 
-Welcome to the world of the GalaxyRVR, a Mars Rover kit from SunFounder, designed to bring interplanetary exploration right into your living room.
+GalaxyRVRの世界へようこそ。これはSunFounderから提供される火星探査ローバーキットで、宇宙探査のスリルをあなたのリビングルームに持ち込むことを目指しています。
 
 .. image:: img/galaxyRVR.jpg
     :width: 600
     :align: center
 
-Built upon the same universal rocker-bogie system employed by NASA's real Mars rovers, GalaxyRVR is capable of traversing all kinds of terrains – be it rocky mountains, sandy beaches, or grassy fields. The suspension system ensures smooth mobility, making the alien world of Mars feel just like home.
+NASAの本物の火星探査ローバーに使われているユニバーサルロッカーボギーシステムを採用したGalaxyRVRは、岩だらけの山々、砂浜、草原など、あらゆる地形を横断する能力を持っています。このサスペンションシステムは、スムーズな移動を保証し、火星の異世界を家のように感じさせます。
 
-Equipped with a high-definition camera module, GalaxyRVR offers a first-person view, providing an immersive piloting experience as if 
-you're truly navigating the Red Planet. Its advanced obstacle avoidance module and ultrasonic module ensure it can dodge obstacles, embodying a spirit of autonomy and resilience.
+高解像度のカメラモジュールを装備しているGalaxyRVRは、まるで赤い惑星を実際にナビゲートしているかのような没入感のある一人称視点を提供します。進化した障害物回避モジュールと超音波モジュールにより、障害物を避けながら、自律性と復元力の精神を体現しています。
 
-**Delve into the Cosmos: The Courses**
+**宇宙への深い探究：コース**
 
-* :ref:`play_mode`: Want a quick start? Play Mode is designed for those who can't wait to start their Martian journey. With factory-preloaded code, simply assemble your GalaxyRVR and control it using the convenient app to explore its multitude of functions.
+* :ref:`play_mode`：すぐに始めたいですか？プレイモードは、火星の旅に待ちきれない人向けに設計されています。工場出荷時にプリロードされたコードを使用して、GalaxyRVRを組み立て、便利なアプリで制御して、多様な機能を探索しましょう。
 
-* :ref:`course_mode`: Intrigued by the underlying technology? Course Mode is for those who want to delve deeper. Understand the principles behind the GalaxyRVR's design, learn to code, and empower your rover with a variety of exciting features.
+* :ref:`course_mode`：その基盤となる技術に興味がありますか？コースモードは、より深く探究したい人向けです。GalaxyRVRの設計背景を理解し、コーディングを学び、ローバーにさまざまなエキサイティングな機能を付加しましょう。
 
-This documentation is your guide to exploring the intricacies of GalaxyRVR. It includes detailed assembly instructions, programming guides, and insights into the working principles of a Mars Rover, all aimed to stimulate your curiosity and foster creativity.
+このドキュメンテーションは、GalaxyRVRの複雑さを探究するためのガイドです。詳細な組み立て手順、プログラミングガイド、火星探査ローバーの動作原理への洞察など、あなたの好奇心を刺激し、創造力を育むための内容が含まれています。
 
-The GalaxyRVR isn't just a toy, but a gateway to Mars, an educational tool, and a catalyst for limitless imagination. Start your cosmic journey today with GalaxyRVR, and let your world become an extension of Mars.
+GalaxyRVRは単なるおもちゃではなく、火星への入り口、教育ツール、そして無限の想像力の触媒です。GalaxyRVRで今日から宇宙の旅を始めて、あなたの世界を火星の一部にしましょう。
 
 
 .. toctree::
     :maxdepth: 2
 
-    About this Kit <self>
+    このキットについて <self>
     assemble_video
     play_mode
     course_mode
     hardware/hardware
     faq
 
-**About the display language**
+**表示言語について**
 
-This document is available in other languages as well. To switch the display language, kindly click on the **Read the Docs** icon located in the lower left corner of the page.
+このドキュメントは他の言語でも利用可能です。表示言語を変更するには、ページの左下隅にある **Read the Docs** アイコンをクリックしてください。
 
 .. image:: img/translation.png
-    
-If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
 
-**Copyright Notice**
+ご質問がある場合は、service@sunfounder.com まで電子メールをお送りください。できるだけ早く回答いたします。
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
+**著作権に関するお知らせ**
+
+このマニュアルに含まれるテキスト、画像、コードなどのすべての内容はSunFounder社が所有しています。これらの内容は、著者および関連する権利保有者の合法的な権利を侵害することなく、個人的な学習、研究、楽しみ、その他の非営利目的のためにのみ使用してください。許可なく商業的な利益のためにこれらの内容を使用する個人または団体に対しては、会社は法的措置をとる権利を留保します。
 

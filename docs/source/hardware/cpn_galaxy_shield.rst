@@ -1,69 +1,66 @@
-GalaxyRVR Shield
+GalaxyRVRシールド
 =========================
 
 .. image:: img/galaxy_shield.jpg
     :width: 500
     :align: center
 
-This is an all-in-one expansion board designed for Arduino by SunFounder, which contains various module ports 
-such as motor, RGB strip, obstacle avoidance, grayscale, ESP32 CAM and ultrasonic module. 
+これはSunFounderによってArduino用に設計されたオールインワン拡張ボードで、モーター、RGBストリップ、障害物回避、グレースケール、ESP32 CAM、超音波モジュールなど様々なモジュールポートが含まれています。
 
-This expansion board also has a built-in charging circuit, which can charge the battery with PH2.0-3P interface, 
-and the estimated charging time is 130 minutes.
+この拡張ボードには組み込みの充電回路があり、PH2.0-3Pインターフェースのバッテリーを充電することができ、推定充電時間は130分です。
 
-
-**Pinout**
+**ピンアウト**
 
 .. image:: img/zeus_car_shield_pinout.png
 
 * Charge Port
-    * After plugging into the 5V/2A USB-C port, it can be used to charge the battery for 130min.
+    * 5V/2AのUSB-Cポートに接続すると、130分でバッテリーを充電できます。
 
 * **Battery Port**: 
-    * 6.6V~8.4V PH2.0-3P power input.
-    * Powering the GalaxyRVR Shield and Arduino board at the same time.
+    * 6.6V～8.4VのPH2.0-3P電源入力。
+    * GalaxyRVRシールドとArduinoボードの両方に電力を供給します。
 
 * Reset Button
-    * Press this button to reset the program on the Arduino board.
+    * このボタンを押すと、Arduinoボード上のプログラムがリセットされます。
 
 * Indicators
-    * **Charge Indicator**: Glows red when the shield is charging through the USB-C port.
-    * **Power Indicator**: Glows green when the power switch is in the "ON" position.
-    * **Battery Indicator**: Two orange indicators represent different battery levels. They flash during charging and turn off when the battery needs charging.
+    * **Charge Indicator**: USB-Cポートを通じてシールドが充電されているときに赤く光ります。
+    * **Power Indicator**: 電源スイッチが「ON」位置にあるときに緑色に光ります。
+    * **Battery Indicator**: 2つのオレンジ色のインジケーターが異なるバッテリーレベルを表し、充電中に点滅し、バッテリーが充電を必要とするときに消えます。
 
 * Power Switch
-    * Slide to ON to power on the GalaxyRVR.
+    * ONにスライドさせてGalaxyRVRを起動します。
 
 * :ref:`shield_motor_pin`
-    * **Motor Port(Right)**: 3 motors can be connected, but all 3 motors are controlled by the same set of signal **pins 2 and 3**.
-    * **Motor Port(Left)**: 3 motors can be connected, but all 3 motors are controlled by the same set of signal **pins 4 and 5**.
-    * Port Type: XH2.54, 2P.
+    * **Motor Port(Right)**: 3つのモーターを接続できますが、すべてのモーターは同じ **pins 2 and 3** によって制御されます。
+    * **Motor Port(Left)**: 3つのモーターを接続できますが、すべてのモーターは同じ **pins 4 and 5** によって制御されます。
+    * ポートタイプ: XH2.54, 2P。
 
 * :ref:`shield_strip_pin`
-    * For connecting 2 RGB LED Strips, the three pins of the strip are connected to **12, 13 and 11** respectively.
-    * Port Type: ZH1.5, 4P.
+    * 2つのRGB LEDストリップを接続するために、ストリップの3つのピンがそれぞれ **12、13、11** に接続されます。
+    * ポートタイプ: ZH1.5, 4P。
 
 * :ref:`shield_avoid_pin`
-    * Used for connecting two IR obstacle avoidance modules.
-    * The **left obstacle avoidance module** is connected to **pin 8**, the **right obstacle avoidance module** is connected to **pin 7**.
-    * Port Type: ZH1.5, 3P.
+    * 2つのIR障害物回避モジュールを接続するために使用します。
+    * **left obstacle avoidance module** は **pin 8** に、 **right obstacle avoidance module** は **pin 7** に接続されます。
+    * ポートタイプ: ZH1.5, 3P。
 
 * :ref:`shield_camera_pin`
-    * The Camera Adapter Board port.
-    * Port Type: ZH1.5, 5P.
+    * カメラアダプターボードポート。
+    * ポートタイプ: ZH1.5, 5P。
 
 * :ref:`shield_ultrasonic_pin`
-    * To connect the ultrasonic module, both Trig & Echo pins are connected on **pin 10** of the Arduino board.
-    * Port Type: ZH1.5, 4P.
+    * 超音波モジュールを接続するために、TrigとEchoの両方のピンがArduinoボードの **pin 10** に接続されます。
+    * ポートタイプ: ZH1.5, 4P。
 
 * Mode Switch
-    * The ESP32-CAM and the Arduino board share the same RX (receive) and TX (transmit) pins. 
-    * So, when you're uploading code, you'll need to toggle this switch to the **right side** to disconnect the ESP32-CAM to avoid any conflicts or potential issues.
-    * When you need to use the camera, toggle this switch to the **left side** so that the ESP32-CAM can communicate with the Arduino board.
+    * ESP32-CAMとArduinoボードは、同じRX（受信）とTX（送信）ピンを共有します。
+    * そのため、コードをアップロードする際には、このスイッチを **right side** に切り替えてESP32-CAMの接続を切断し、衝突や潜在的な問題を避ける必要があります。
+    * カメラを使用する必要があるときは、このスイッチを **left side** に切り替えて、ESP32-CAMがArduinoボードと通信できるようにします。
 
 * SOLAR
-    * This is the port for the solar panel, which can charge the battery when plugged into the solar panel.
-    * Port Type: XH2.54, 2P.
+    * これはソーラーパネル用のポートで、ソーラーパネルに接続するとバッテリーを充電することができます。
+    * ポートタイプ: XH2.54, 2P。
 
 
 .. _shield_ultrasonic_pin:
@@ -71,7 +68,7 @@ and the estimated charging time is 130 minutes.
 Ultrasonic Port
 --------------------
 
-This is the pinout for the ZH1.5-4P ultrasonic port, with the Trig & Echo pins connected to pin 10 of the Arduino board.
+こちらはZH1.5-4P超音波ポートのピンアウトで、TrigとEchoのピンがArduinoボードのピン10に接続されます。
 
 .. image:: img/ultrasonic_shield.png
 
@@ -80,9 +77,9 @@ This is the pinout for the ZH1.5-4P ultrasonic port, with the Trig & Echo pins c
 Camera Adapter Port
 ----------------------
 
-The camera adapter interface pin diagram is shown here, the type is ZH1.5-7P.
+こちらはカメラアダプターインターフェースのピン図で、タイプはZH1.5-7Pです。
 
-* TX and RX are used for ESP32 CAM.
+* TXとRXはESP32 CAM用です。
 
 .. image:: img/camera_shield.png
 
@@ -92,7 +89,7 @@ The camera adapter interface pin diagram is shown here, the type is ZH1.5-7P.
 Obstacle Avoidance Port
 ----------------------------
 
-This is the pinout of the obstacle avoidance port.
+こちらは障害物回避ポートのピンアウトです。
 
 .. image:: img/ir_shield.png
 
@@ -102,7 +99,7 @@ This is the pinout of the obstacle avoidance port.
 RGB LED Strip Port
 -------------------------
 
-Below is the pinout diagram of the two RGB LED Strip, they are connected in parallel and the pinouts are the same.
+以下は2つのRGB LEDストリップのピンアウト図で、並列接続され、ピンアウトは同じです。
 
 .. image:: img/rgb_shield.png
 
@@ -113,14 +110,9 @@ Below is the pinout diagram of the two RGB LED Strip, they are connected in para
 Motor Port
 ---------------
 
-Here is the pinout of the 2 sets of motor ports.
+こちらは2セットのモーターポートのピンアウトです。
 
 
 .. image:: img/motor_shield.png
     :width: 600
     :align: center
-
-
-
-
-

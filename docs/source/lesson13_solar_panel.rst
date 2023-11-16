@@ -1,102 +1,97 @@
-
-Lesson 13: Investigating the Mars Rover Energy System
+レッスン13：火星ローバーのエネルギーシステムの調査
 =================================================================
 
-Welcome to the final lesson of our Mars rover exploration journey. This time, we are going to delve into the heart of the rover - its energy system.
+私たちの火星ローバー探査の旅の最終レッスンへようこそ。今回は、ローバーの心臓部であるエネルギーシステムを掘り下げていきます。
 
-When we think about exploring distant planets like Mars, one of the most crucial aspects to consider is energy. 
-How do these rovers power themselves in such harsh and remote environments? 
-In this lesson, we'll explore this fascinating topic and learn how rovers, like our Mars rover model, harness and manage energy.
+遠く離れた惑星、例えば火星を探査することを考えるとき、最も重要な要素の一つはエネルギーです。
+これらのローバーは、どのようにして過酷で人里離れた環境で自らを動力供給するのでしょうか？
+このレッスンでは、この興味深いトピックを探究し、私たちの火星ローバーモデルのようなローバーが、どのようにエネルギーを取り込み、管理するかを学びます。
 
-We'll investigate the working principles of battery and solar panel and even get our hands-on practice in installing and 
-using these power sources on our rover model. Furthermore, we'll take our skills a notch higher by using Arduino to monitor 
-the battery level.
+私たちは、バッテリーとソーラーパネルの動作原理を調査し、これらの電源をローバーモデルに実際に取り付けて使用する実践も行います。さらに、Arduinoを使用してバッテリーのレベルを監視するスキルを一段と高めます。
 
-By the end of the lesson, we'll be able to display these vital energy statistics right on our APP, 
-allowing us to have a real-time understanding of our rover's energy status. Ready to power up our exploration? Let's get started!
+レッスンの終わりには、これらの重要なエネルギー統計を私たちのアプリに表示し、ローバーのエネルギー状態をリアルタイムで理解することができるようになります。探査のパワーアップに準備はいいですか？始めましょう！
 
 .. image:: img/solar_panel.jpg
     :width: 600
     :align: center
 
-Learning Goals
+学習目標
 -----------------------
 
-* Understand the working principles of batterry and solar panel.
-* Practice installing the solar panel on the Mars rover model.
-* Learn how to use Arduino to monitor battery level and the charging status of solar panel.
-* Display battery level on the APP.
+* バッテリーとソーラーパネルの動作原理を理解する。
+* 火星ローバーモデルにソーラーパネルを取り付ける実践を行う。
+* Arduinoを使用してバッテリーレベルとソーラーパネルの充電状態を監視する方法を学ぶ。
+* アプリ上にバッテリーレベルを表示する。
 
-Materials needed
+材料
 ------------------------
 
-* Mars Rover model (equipped with all components, except for solar panel and bottom plate)
-* Solar panel and bottom plate
+* 全部品を装備した火星ローバーモデル（ソーラーパネルと底板を除く）
+* ソーラーパネルと底板
 * Arduino IDE
-* Computer
-* Tablet or smartphone with SunFounder Controller app installed
+* コンピューター
+* SunFounderコントローラーアプリがインストールされたタブレットまたはスマートフォン
 
 
 
-Course Steps
+手順
 ----------------------
 
-**Step1: Introduction to the Mars Rover's Energy System**
+**ステップ1：火星ローバーのエネルギーシステムの紹介**
 
-Just as our bodies need a constant supply of energy to function, our Mars Rover needs a way to store and generate power for its exploration missions. Imagine the Rover's energy system like the heart in our bodies. Just as our hearts pump blood to all parts of our body, supplying necessary oxygen and nutrients, the Rover's energy system keeps energy flowing to every part of the Rover, ensuring it can perform its tasks smoothly.
+私たちの体が機能するためには常にエネルギーが必要なように、火星ローバーも探査ミッションのためにエネルギーを蓄え、発電する方法が必要です。ローバーのエネルギーシステムを私たちの体の心臓に例えてみてください。心臓が血液を体中に送り、必要な酸素や栄養素を供給するように、ローバーのエネルギーシステムはエネルギーをローバーの各部分に流し、スムーズにタスクを遂行できるようにします。
 
-The main components of this energy system are the batteries and the solar panels, working in tandem to ensure the Rover can operate at all times, day or night.
+このエネルギーシステムの主要なコンポーネントは、昼夜を問わずローバーが動作できるように連携して働くバッテリーとソーラーパネルです。
 
-The role of the batteries in the Rover's energy system is similar to the role of energy storage in our bodies. Just as we need to store energy for use when active, the Rover needs a way to store energy for its exploration missions. The energy stored in the batteries is continuously dispatched to various parts of the Rover, allowing it to carry out its tasks systematically.
+ローバーのエネルギーシステムにおけるバッテリーの役割は、私たちの体のエネルギー蓄積の役割に似ています。私たちが活動時に使用するエネルギーを蓄える必要があるように、ローバーも探査ミッションのためにエネルギーを蓄える方法が必要です。バッテリーに蓄えられたエネルギーは、ローバーのさまざまな部分に継続的に送られ、タスクを体系的に実行できるようになります。
 
 .. image:: img/battery_galaxyrvr.png
     :width: 600
     :align: center
 
-But what happens when the energy in the batteries runs out? How does it replenish its energy stores? This is where the solar panels come into play.
+しかし、バッテリーのエネルギーが尽きたときはどうなるのでしょうか？どのようにしてエネルギーを補充するのでしょうか？ここでソーラーパネルが登場します。
 
-Much like trees absorb sunlight for photosynthesis to create food, our Mars Rover uses solar panels to harness energy from the Sun, converting it into electricity that is stored in the batteries for use. Each solar panel is made up of many smaller solar cells. These cells are composed of a material that can convert light into electricity – a process called the photovoltaic effect. When sunlight hits the cells, they generate an electric current that can be used immediately or stored in the Rover's batteries for later use.
+木々が光合成のために太陽光を吸収し、食物を作るように、私たちの火星ローバーはソーラーパネルを使用して太陽からエネルギーを取り込み、それを電気に変換し、使用するためにバッテリーに蓄えます。各ソーラーパネルは、多くの小さなソーラーセルで構成されています。これらのセルは、光を電気に変換することができる材料でできており、この過程は光起電力効果と呼ばれます。太陽光がセルに当たると、すぐに使用することも、後で使用するためにローバーのバッテリーに蓄えることもできる電流が発生します。
 
 .. image:: img/solar_panel_gala.png
     :width: 600
     :align: center
 
-However, harnessing solar energy on Mars is not as easy as it sounds. Dust storms can reduce the amount of sunlight reaching the panels, and the weaker Martian sunlight (compared to Earth's) means that the panels generate less power than they would here at home. Despite these challenges, solar power is still the most practical and efficient way of powering our Mars Rover.
+しかし、火星でのソーラーエネルギーの取り込みは、思ったほど簡単ではありません。砂嵐によりパネルに到達する太陽光が減少したり、地球よりも弱い火星の太陽光のためにパネルが生成する電力が少なくなることがあります。これらの課題にもかかわらず、ソーラー発電は私たちの火星ローバーを動力供給するための最も実用的で効率的な方法です。
 
-But how do we know when the solar panels are doing their job and when the batteries are getting low on power? This is where our Arduino comes in. In the next section, we will learn how to use Arduino to monitor the charging and discharging of the Rover's batteries.
+しかし、ソーラーパネルが仕事をしているか、バッテリーの電力が低下しているかをどのように知るのでしょうか？ここでArduinoの出番です。次のセクションでは、Arduinoを使用してローバーのバッテリーの充電と放電を監視する方法を学びます。
 
 
-**Step 2: Mounting the Solar Panel on the Mars Rover**
+**ステップ2：火星ローバーへのソーラーパネルの取り付け**
 
-Before we begin this step, we need to have our Mars Rover model, a solar panel, and the cables necessary to connect the solar panel to the Rover's power system.
+このステップを始める前に、火星ローバーモデル、ソーラーパネル、およびソーラーパネルをローバーの電源システムに接続するためのケーブルが必要です。
 
-This is a process that allows us to put theory into practice and truly appreciate the charm of Science, Technology, Engineering, and Mathematics (STEM) education. Let's get started!
+これは理論を実践に移す過程であり、科学、技術、工学、数学（STEM）教育の魅力を本当に理解できる機会です。さあ、始めましょう！
 
 .. raw:: html
 
     <iframe width="600" height="400" src="https://www.youtube.com/embed/-Vj-dcniFrA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-**Step 3: Programming to Monitor Battery Voltage and Charge**
+**ステップ3：バッテリー電圧と充電のモニタリングのためのプログラミング**
 
-Now that we have installed the solar panels on our Mars Rover model, the next step is to monitor the voltage and charge of the battery through programming. 
-
+火星ローバーモデルにソーラーパネルを取り付けたので、次のステップは、プログラミングを通じてバッテリーの電圧と充電状態を監視することです。
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/2e85e234-9575-4a1f-982b-2f9aba8e3156/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-This code effectively creates a simple battery monitor, which is particularly useful in applications like the Mars Rover where power management is crucial. It will allow you to monitor the state of the battery, helping you understand when the Rover needs to be recharged or when power-consuming tasks should be scheduled.
+このコードは、電力管理が重要な火星ローバーのようなアプリケーションで特に役立つシンプルなバッテリーモニターを作成します。バッテリーの状態を監視することで、ローバーを再充電する必要がある時や、電力を消費するタスクをスケジュールするべき時を理解するのに役立ちます。
 
-Sure, let's break down the different parts of this code:
+コードの異なる部分を詳しく見ていきましょう：
 
-*  This line is defining ``BATTERY_PIN`` as the analog pin A3, which is where the battery voltage will be read from.
+* この行は、 ``BATTERY_PIN`` をアナログピンA3として定義しており、ここからバッテリー電圧が読み取られます。
 
     .. code-block:: arduino
 
         #define BATTERY_PIN A3
 
-* This function calculates the battery's voltage. It first reads the analog value from ``BATTERY_PIN``, then converts it into voltage. Because the Arduino's analog-to-digital converter (ADC) operates on a scale of 0-1023, we divide the raw reading by 1023. We then multiply by 5 (the reference voltage of the Arduino) and by 2 (assuming a voltage divider of 2), to convert this to a voltage reading.
+* この関数はバッテリーの電圧を計算します。まず ``BATTERY_PIN`` からアナログ値を読み取り、それを電圧に変換します。Arduinoのアナログ-デジタルコンバータ（ADC）は0-1023のスケールで動作するため、生の読み取り値を1023で割ります。次に、Arduinoの基準電圧5と、2（電圧分割器を2と仮定）を掛けて、これを電圧の読み取り値に変換します。
 
     .. code-block:: arduino
         :emphasize-lines: 5
@@ -112,11 +107,11 @@ Sure, let's break down the different parts of this code:
         }
     
 
-    The raw ADC reading from the Arduino's analog-to-digital converter is divided by 1023 to convert it into a fraction, then multiplied by 5 to translate it into voltage, as Arduino uses a reference voltage of 5 volts.
+    Arduinoのアナログ-デジタルコンバータからの生のADC読み取り値は、1023で割って分数に変換し、5を掛けて電圧に変換します。これは、Arduinoが5ボルトの基準電圧を使用しているためです。
 
-    However, because the battery voltage higher than Arduino's maximum input voltage, a resistor is used to protect the Arduino. Therefore, we multiply the ADC voltage by 2 to counteract the effect of the resistor and obtain the correct battery voltage.
+    しかし、バッテリー電圧がArduinoの最大入力電圧よりも高いため、Arduinoを保護するために抵抗器が使用されます。そのため、ADC電圧を2倍にして、抵抗器の影響を相殺し、正しいバッテリー電圧を得ます。
 
-* This function calculates the battery's percentage of charge based on its voltage. It uses the ``map`` function to ``map`` the voltage value (ranging from 6.6 to 8.4 volts) to a percentage (ranging from 0 to 100).
+* この関数は、電圧に基づいてバッテリーの充電率を計算します。 ``map`` 関数を使用して、電圧値（6.6ボルトから8.4ボルトの範囲）をパーセンテージ（0から100の範囲）に ``map`` します。
 
     .. code-block:: arduino
 
@@ -129,47 +124,43 @@ Sure, let's break down the different parts of this code:
             return percentage;
         }
 
-**Step 4: Putting the Mars Rover's Energy System to the Test: Indoor and Outdoor Runs**
+**ステップ4：火星ローバーのエネルギーシステムのテスト：屋内および屋外での走行試験**
 
-Having coded our battery monitoring system, it's now time to set the Mars Rover into action. 
-Begin by charging the Rover to full capacity, and plan for two 30-minute exploratory missions - one indoors, 
-and another outdoors in the sunlight. Record the initial battery level before each mission, 
-and compare it with the battery percentage at the end of each test. 
-The following table serves as a useful template to keep track of your findings:
+バッテリーモニタリングシステムのコーディングが完了したので、今度は火星ローバーを実際に動かす時です。
+まず、ローバーをフル充電し、屋内で30分間、屋外で太陽光の下で30分間の探査ミッションを計画します。各ミッション前の初期バッテリーレベルを記録し、各テスト終了時のバッテリーパーセンテージと比較します。
+以下の表は、あなたの発見を追跡するのに役立つ便利なテンプレートです：
 
 
 
-.. list-table:: Power Test
+.. list-table:: 電力テスト
    :widths: 50 25 25
    :header-rows: 1
 
    * - 
-     - Sun Shine
-     - In Room
-   * - Start Battery Percentage
+     - 日光
+     - 屋内
+   * - スタートバッテリーパーセンテージ
      -
      - 
-   * - End Battery Percentage
+   * - エンドバッテリーパーセンテージ
      - 
      - 
 
-Observe the difference in the battery levels following each test. Did the Rover's battery last longer when it was basking in 
-outdoor sunlight? What conclusions can we draw about the efficacy of the solar panel from this observation?
+各テスト後のバッテリーレベルの違いを観察します。ローバーのバッテリーは屋外の日光の中で長持ちしましたか？この観察から、ソーラーパネルの効果についてどのような結論を引き出せるでしょうか？
 
-Understanding these variances will help us better comprehend how solar energy can effectively power a Mars Rover, 
-even in remote, harsh environments such as those found on the Martian surface.
+これらの差異を理解することで、ソーラーエネルギーが火星ローバーを効果的に動力供給できるか、また火星表面のような遠隔地や過酷な環境でもどのように機能するかをよりよく理解できます。
 
-**Step 5: Display the Battery Level on the App**
+**ステップ5：アプリでバッテリーレベルを表示する**
 
-Naturally, it's impractical to repeatedly upload new code to the Mars Rover just to check the remaining battery level. That could be quite inconvenient.
+もちろん、残りのバッテリーレベルを確認するために、繰り返し新しいコードを火星ローバーにアップロードするのは非現実的です。それはかなり不便になるでしょう。
 
-Instead, we can send the battery level to an app, allowing us to easily monitor how much playtime is left while we're having fun!
+代わりに、バッテリーレベルをアプリに送信し、楽しんでいる間にどれだけのプレイ時間が残っているかを簡単にモニターできるようにします。
 
-From previous lessons, we've learned that when we want to shown data on the SunFounder Controller or control the Mars Rover using widgets, we need to add these widgets first.
+前のレッスンから、SunFounderコントローラーでデータを表示したり、ウィジェットを使用して火星ローバーを制御したりするときは、まずこれらのウィジェットを追加する必要があることを学びました。
 
-However, the battery level display is a special widget. It has a dedicated key (``BV``), and its display isn't located in the areas labeled from A to Q. Instead, it's represented by a battery icon in the top-right corner.
+しかし、バッテリーレベル表示は特別なウィジェットです。専用のキー(``BV``)があり、その表示はAからQとラベル付けされた領域にはありません。代わりに、右上隅にバッテリーアイコンとして表示されます。
 
-Here's how we include it in our code:
+コードに含める方法は次のとおりです：
 
 .. code-block:: Arduino
 
@@ -205,67 +196,67 @@ Here's how we include it in our code:
         return batteryVoltage;
     }
 
-Please find the full code attached:
+以下は完全なコードです：
 
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/8b6e0dbd-6fcc-45ac-8408-e8aa706a4bf3/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After successfully uploading the code, get your SunFounder Controller up and running. You'll see the battery level shown in the top-right corner.
+コードのアップロードに成功したら、SunFounderコントローラーを起動します。右上隅にバッテリーレベルが表示されるのを見ることができます。
 
 .. image:: img/battery_icon.png
 
-By completing this step, we've mastered the Mars Rover's energy system and gained the ability to monitor its power levels in real-time.
+このステップを完了することで、私たちは火星ローバーのエネルギーシステムをマスターし、リアルタイムでその電力レベルを監視する能力を得ました。
 
-Now that we have learned how to harness the sun's power to operate the Mars Rover effectively, we can start planning more extensive explorations of our backyard or even venture into more challenging terrains!
+これで太陽の力を利用して火星ローバーを効果的に操作する方法を学んだので、庭でのより広範な探査や、さらに挑戦的な地形への冒険を計画することができます！
 
-**Step 6: Reflection**
+**ステップ6：振り返り**
 
-Throughout this lesson, we've focused on understanding the crucial role of the energy system in the Mars Rover, and the mechanisms to monitor the Rover's remaining energy. The solar panel-based energy system not only powers the Rover but also underlines the importance of renewable energy sources in space exploration.
+このレッスンを通じて、火星ローバーのエネルギーシステムの重要な役割と、ローバーの残りエネルギーを監視するメカニズムを理解することに焦点を当てました。ソーラーパネルベースのエネルギーシステムは、ローバーに電力を供給するだけでなく、宇宙探査における再生可能エネルギー源の重要性を強調しています。
 
-With the knowledge you have now, think about the real-life implications of this system. Consider the challenges that a solar energy system might encounter on Mars. How might extreme temperatures, dust storms, or long periods of darkness affect the energy supply? What solutions could you propose to tackle these obstacles?
+このシステムの実生活への影響について考えてみてください。火星でのソーラーエネルギーシステムが直面する可能性のある課題を考えてみてください。極端な温度、砂嵐、または長期間の暗闇は、エネルギー供給にどのような影響を与えるでしょうか？これらの障害を克服するための解決策を提案できますか？
 
-**Step 7: Looking Forward**
+**ステップ7：前進**
 
-Now that we've given our Mars Rover the ability to move, it's time to let it start its exploration journey! You can let it wander in various terrains mimicking the Mars environment.
+火星ローバーに動きの能力を与えたので、探査の旅を始める時が来ました！火星環境を模倣したさまざまな地形で、ローバーを自由に動かしてみましょう。
 
-For instance, you can let it climb over a heap of stones.
+たとえば、石の山を登らせることができます。
 
 .. raw:: html
 
    <video width="600" loop autoplay muted>
       <source src="_static/video/move_stone.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+      お使いのブラウザはビデオタグをサポートしていません。
    </video>
 
-Or let it navigate through a thick grassy patch.
+または、濃い草のパッチをナビゲートさせることもできます。
 
 .. raw:: html
 
    <video width="600" loop autoplay muted>
       <source src="_static/video/move_grass.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+      お使いのブラウザはビデオタグをサポートしていません。
    </video>
 
-Or set it on a course on a gravel terrain full of stones.
+または、石がいっぱいの砂利の地形でコースを設定することもできます。
 
 .. raw:: html
 
    <video width="600" loop autoplay muted>
       <source src="_static/video/move_stone1.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+      お使いのブラウザはビデオタグをサポートしていません。
    </video>
 
-However, please note that if the obstacle is too high, the rover might not be able to climb over it.
+ただし、障害物が高すぎる場合、ローバーはそれを乗り越えることができないかもしれません。
 
 .. raw:: html
 
    <video width="400" height="400" loop autoplay muted>
       <source src="_static/video/move_failed.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+      お使いのブラウザはビデオタグをサポートしていません。
    </video>
 
-These varied terrains present unique challenges for the rover, just as they would for a real Mars Rover. As you watch your rover try to overcome these obstacles, you're experiencing a small part of what scientists and engineers at NASA do when they send rovers to Mars!
+これらのさまざまな地形は、本物の火星ローバーにとっても、ローバーにとっても独特の挑戦を提供します。ローバーがこれらの障害を克服しようとするのを見ながら、NASAの科学者やエンジニアが火星にローバーを送るときに経験することの一部を体験しているのです！
 
-As we conclude our Mars Rover lessons, it's important to reflect on what we've learned. We hope this journey has not only expanded your knowledge and skills but also sparked curiosity and a desire to explore. Whether your Rover roams in your backyard or across the vast expanse of your imagination, the discoveries you make along the way are sure to be extraordinary.
+火星ローバーのレッスンを終えるにあたり、私たちが学んだことについて振り返ることが重要です。この旅があなたの知識やスキルを広げただけでなく、好奇心を刺激し、探究する意欲をかき立てたことを願っています。ローバーがあなたの庭を歩き回るか、広大な想像力の世界を横断するかにかかわらず、途中で発見することは確実に非凡なものになるでしょう。

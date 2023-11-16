@@ -1,98 +1,94 @@
-
-Lesson 10: Exploring the Mars Rover Visual System - Servo and Tilt Mechanism
+レッスン10：火星ローバーの視覚システム - サーボとチルトメカニズムの探求
 ===================================================================================
 
-Welcome back, young explorers! In today's adventure, we are going to delve into the fascinating world of the Mars Rover's visual system. 
-Just like our eyes and neck work together to help us see and navigate our surroundings, our Rover too needs a similar system to 
-navigate the treacherous Martian landscape. And that's exactly what we are going to build today!
+若い探検家の皆さん、お帰りなさい！今日の冒険では、火星ローバーの魅力的な視覚システムについて深く掘り下げます。
+私たちの目と首が連携して周囲を見たりナビゲートしたりするように、ローバーにも火星の危険な地形をナビゲートするための同様のシステムが必要です。そして、今日はそれを作ることになります！
 
-The visual system of our Rover has two main parts: a camera that acts as its "eyes", and a tilt mechanism that acts like a "neck", 
-allowing it to look up and down. By the end of this lesson, we'll give our Rover the ability to "see" and "nod"!
+ローバーの視覚システムには二つの主要な部分があります：「目」として機能するカメラと、「首」として機能し、上下に見ることを可能にするチルトメカニズムです。このレッスンの終わりまでに、ローバーに「見る」と「うなずく」能力を与えましょう！
 
-First, we'll build the tilt mechanism - a device that will hold our Rover's camera and let it rotate vertically. 
-It's like giving our Rover a neck, so it can nod its "head" or camera up and down!
+まず、チルトメカニズムを作ります - ローバーのカメラを保持し、垂直に回転させる装置です。
+これは、ローバーに首を与え、その「頭」またはカメラを上下にうなずかせるようなものです！
 
-Next, we'll learn about the servo, the tiny yet powerful "muscle" that moves our tilt mechanism. 
-We'll understand how it works and how we can control it using Arduino programming.
+次に、チルトメカニズムを動かす小さくて強力な「筋肉」であるサーボについて学びます。
+その動作原理と、Arduinoプログラミングを使用してどのように制御するかを理解しましょう。
 
-Just as our neck muscles move our head so our eyes can get a better view, the servo will move the tilt mechanism so the Rover's 
-camera can better survey the Martian landscape.
+首の筋肉が私たちの頭を動かして目がより良い視界を得られるように、サーボがチルトメカニズムを動かしてローバーのカメラが火星の地形をより良く調査できるようにします。
 
-So, buckle up, explorers, let's start our mission to equip our Rover with its very own visual system!
+では、探検家の皆さん、ベルトを締めて、ローバーに独自の視覚システムを装備するミッションを始めましょう！
 
 .. raw:: html
 
     <video width="600" loop autoplay muted>
         <source src="_static/video/servo_range.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        お使いのブラウザーはビデオタグをサポートしていません。
     </video>
 
 
-Objective
+学習目標
 ----------------
 
-* Practice installing and operating the tilt mechanism on the Mars Rover model.
-* Understand the principles of operation and application of servo.
-* Learn how to control servo movement through Arduino programming.
+* 火星ローバーモデルにチルトメカニズムを取り付け、操作する方法を実践する。
+* サーボの動作原理とアプリケーションを理解する。
+* Arduinoプログラミングを通じてサーボの動きを制御する方法を学ぶ。
 
-Materials
+材料
 ---------------
 
-* Arduino UNO development board
-* Servo
-* Gimbal and camera
-* Mars Rover model (already equipped with TT motor, suspension system, ultrasonic and infrared obstacle avoidance modules, RGB LED strip)
+* Arduino UNO開発ボード
+* サーボ
+* ジンバルとカメラ
+* 火星ローバーモデル（TTモーター、サスペンションシステム、超音波および赤外線障害物回避モジュール、RGB LEDストリップ装備）
 * Arduino IDE
-* Computer
+* コンピューター
 
-Steps
+手順
 -----------
 
-**Step 1: What is a Servo?**
+**ステップ1：サーボとは何か？**
 
-Have you ever watched a puppet show? If you have, you might have marveled at how the puppeteer can make the puppet's arms, legs, and head move so smoothly, just by pulling on some strings. In a way, servo motors are like our puppeteers.
+人形劇を見たことがありますか？もし見たことがあれば、人形使いがいくつかの糸を引くだけで、人形の腕、足、頭をスムーズに動かす方法に驚いたかもしれません。ある意味で、サーボモーターは私たちの人形使いのようなものです。
 
 .. image:: img/puppet_show.png
     :width: 200
     :align: center
 
-Servo motors are special type of motors that don’t just spin around and around like a wheel. Instead, they can move to a specific position and hold that position. Imagine if you're playing a game of Simon says, and Simon says, "Raise your arm to a 90-degree angle!" You can do it, right? That's because, like a servo, you can control exactly how much to move your arm.
+サーボモーターは、車輪のようにぐるぐる回る通常のモーターとは異なります。代わりに、特定の位置に動かしてその位置を保持することができます。例えば、「サイモンが言う、腕を90度の角度に上げろ！」というゲームをしているとします。それができますよね？サーボのように、腕をどれだけ動かすかを正確に制御できるからです。
 
 .. image:: img/servo.png
     :align: center
 
-* Brown Line: GND
-* Orange Line: Signal pin, connect to the PWM pin of main board.
-* Red wire: VCC
+* 茶色の線：GND
+* オレンジの線：シグナルピン、メインボードのPWMピンに接続。
+* 赤い線：VCC
 
-Just like you can control your arms to move to specific positions, we can use servo motors to control the exact position of objects in our projects. In our Mars Rover, we will use a servo to control the up and down movement of our tilt mechanism, just like how you can nod your head up and down.
+あなたが特定の位置に腕を動かすように制御できるのと同様に、サーボモーターを使用してプロジェクトの中で物体の正確な位置を制御することができます。火星ローバーでは、サーボを使用してチルトメカニズムの上下の動きを制御します。これは、あなたが頭を上下にうなずくのと同じようなものです。
 
-In the next step, we will go on a fascinating journey inside a servo motor to understand how it works. Excited? Let's go!
+次のステップでは、サーボモーターの内部を詳しく探り、その動作原理を理解します。ワクワクしますね？さあ、行きましょう！
 
-**Step 2: How does a Servo Work?**
+**ステップ2：サーボはどのように動くのか？**
 
-So how does a servo work its magic? Let's go on an exciting journey inside a servo!
+サーボはどのようにしてその魔法を発揮するのでしょうか？サーボの中を興味深く探検してみましょう！
 
-If we were to peek inside a servo, we would see a few parts. At the heart of a servo is a regular motor, very similar to the motors that spin our Mars Rover's wheels. Wrapped around the motor, there is a big gear that is connected to a smaller gear on the motor shaft. This is how the motor's fast, circular motion gets transformed into slower but stronger motion.
+サーボの内部を覗いてみると、いくつかの部品が見えます。サーボの中心には、通常のモーターがあり、それは火星ローバーの車輪を回すモーターと非常に似ています。モーターの周りには大きな歯車があり、モーターシャフト上の小さな歯車と接続されています。これにより、モーターの高速で円を描く動きが、より遅くて力強い動きに変換されます。
 
 .. image:: img/servo_internal.png
     :align: center
 
-But that's not what makes a servo special. The magic happens in a tiny piece of electronics called a "potentiometer" and the "control circuitry". Here's how it works: when the servo moves, the potentiometer turns and changes its resistance. The control circuitry measures this change in resistance and knows exactly what position the servo is in. Clever, isn't it?
+しかし、それがサーボを特別なものにしているわけではありません。魔法は「potentiometer」と「control circuitry」の小さな電子部品で起こります。こう動きます：サーボが動くと、ポテンショメーターが回転して抵抗が変わります。制御回路はこの抵抗の変化を測定し、サーボがどの位置にあるかを正確に知ることができます。賢いですね？
 
-To control a servo, we send it a special kind of signal called a "pulse-width modulation" signal or PWM. By changing the width of these pulses, we can control exactly how much the servo moves and hold it in that position.
+サーボを制御するためには、「パルス幅変調」信号またはPWMを送ります。これらのパルスの幅を変えることで、サーボがどれだけ動くかを正確に制御し、その位置で保持することができます。
 
-In the next step, we'll learn how to control a servo using an Arduino. Ready for some magic spells in the form of code? Let's go!
+次のステップでは、Arduinoを使用してサーボを制御する方法を学びます。コードの形での魔法の呪文の準備はできましたか？さあ、行きましょう！
 
-**Step 3: Controlling a Servo using Arduino**
+**ステップ3：Arduinoを使用してサーボを制御する**
 
-Alright, explorers, now that we know how a servo works, let's learn how to control it using our magic wand, the Arduino!
+さて、探検家の皆さん、サーボの動作原理がわかったので、魔法の杖であるArduinoを使用して制御する方法を学びましょう！
 
-Controlling a servo is like giving it directions. Remember the pulse-width modulation (PWM) signals we mentioned earlier? We are going to use those to tell the servo where to move.
+サーボを制御することは、それに指示を与えるようなものです。先ほど言及したパルス幅変調（PWM）信号を覚えていますか？それらを使用してサーボにどこに移動するかを伝えます。
 
-Luckily, Arduino makes this task easy for us with a built-in library called ``Servo``. With this library, we can create a ``Servo`` object, attach a pin to it (the pin that our servo is connected to), and then use a simple command, ``write()``, to set the angle.
+幸いなことに、Arduinoには ``Servo`` という組み込みライブラリがあり、これにより作業が簡単になります。このライブラリを使用して ``Servo`` オブジェクトを作成し、それにピンをアタッチ（サーボが接続されているピン）し、 ``write()`` という単純なコマンドを使用して角度を設定できます。
 
-Here's a snippet of what the code looks like:
+コードのスニペットは次のようになります：
 
 .. code-block:: arduino
 
@@ -108,17 +104,17 @@ Here's a snippet of what the code looks like:
         myServo.write(90);  // tell servo to go to 90 degrees
     }
 
-In this code, ``myServo`` is our Servo object, ``attach(6)`` tells the Arduino that our servo is connected to pin 6, and ``write(90)`` tells the servo to move to 90 degrees.
+このコードでは、 ``myServo`` はサーボオブジェクトで、 ``attach(6)`` はサーボがピン6に接続されていることをArduinoに伝え、 ``write(90)`` はサーボに90度に動くよう指示します。
 
-Great job, explorers! You've just learned how to control a servo motor with Arduino. You can experiment with different angles too! 
+よくやりました、探検家の皆さん！Arduinoを使用してサーボモーターを制御する方法を学びました。さまざまな角度で実験してみてください！
 
-**Step 4: Assemble the Visual System**
+**ステップ4：視覚システムの組み立て**
 
-You're now ready to assemble the visual system of our Rover.
+これで、ローバーの視覚システムの組み立ての準備が整いました。
 
 .. note::
 
-    * When inserting the ESP32 CAM into the Camera Adapter, be aware of its orientation. It should align properly with the ESP32 Adapter.
+    * ESP32 CAMをカメラアダプターに挿入する際は、その向きに注意してください。ESP32アダプターに正しく合わせる必要があります。
 
     .. image:: img/esp32_cam_direction.png
         :width: 300
@@ -128,29 +124,28 @@ You're now ready to assemble the visual system of our Rover.
 
     <iframe width="600" height="400" src="https://www.youtube.com/embed/26q03wXD66U?si=6sG5FL0mA354QqrT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-**Step 5: Understanding the Limits of the Tilt Mechanism**
+**ステップ5：チルトメカニズムの限界を理解する**
 
-Even though servo is designed to rotate between 0 and 180 degrees, you may notice that it stops responding beyond a certain point (let's say after 150 degrees). Have you ever wondered why this happens? Let's explore this mystery together in our next adventure!
+サーボは0度から180度の間で回転するように設計されていますが、ある地点（例えば150度を超えた後）で反応しなくなることに気付くかもしれません。なぜこのようなことが起こるのか、疑問に思ったことはありませんか？次の冒険で一緒にこの謎を探りましょう！
 
+鳥が首をあまりにも曲げて自分の体にぶつかり、これ以上動けなくなるのを想像できますか？ローバーのチルトメカニズムも同様の状況に直面します。サーボがメカニズムを下に動かすと、ローバーの本体にぶつかり、ある角度を超えることができなくなります。
 
-Can you imagine a bird trying to bend its neck too much that it hits its own body and can't move any further? Our Rover's tilt mechanism faces a similar situation. As the servo moves the mechanism downwards, it can bump into the body of our Rover and can't go beyond a certain angle.
+コード内で手の届かない角度を書き込んで、この地点を超えて動かそうとすると、小さなサーボ鳥は詰まってしまい、さらには自身を傷つける可能性があります！それは望まないことですよね？ですので、ちょっとした実験をして、その動きの限界を理解しましょう。
 
-If we try to force it to move beyond this point by writing an unreachable angle in our code, our little servo birdie can get stuck and even damage itself! We don't want that to happen, do we? So, let's understand its movement limitations with a little experiment.
-
-We use a for loop to rotate the servo from 0 to 180 degrees while keeping a note of the angle in the Serial Monitor.
+サーボを0度から180度まで回転させるためにforループを使用し、シリアルモニターで角度を記録します。
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/848c7a3a-16b2-4a7e-8d66-bb91848bc6d9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-* The ESP32-CAM and the Arduino board share the same RX (receive) and TX (transmit) pins. So, before uploading the code, you'll need to first release the ESP32-CAM by slide this switch to right side to avoid any conflicts or potential issues.
+* ESP32-CAMとArduinoボードは、同じRX（受信）およびTX（送信）ピンを共有しています。したがって、コードをアップロードする前に、ESP32-CAMを右側にスライドさせて解放し、競合や潜在的な問題を避ける必要があります。
 
     .. image:: img/camera_upload.png
         :width: 600
 
-* After we upload this code, open the **Serial Monitor**. If no information appears, press the **Reset button** on the GalaxyRVR shield to run the code again. 
+* このコードをアップロードした後、 **Serial Monitor** を開きます。情報が表示されない場合は、GalaxyRVRシールド上の **Reset button** を押してコードを再度実行します。
 
-* You will see the servo rotate, and the Serial Monitor will display the angle. 
+* サーボが回転し、シリアルモニターに角度が表示されます。
 
 .. image:: img/servo_range.png
 
@@ -158,20 +153,20 @@ We use a for loop to rotate the servo from 0 to 180 degrees while keeping a note
 
     <video width="600" loop autoplay muted>
         <source src="_static/video/servo_range.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        お使いのブラウザーはビデオタグをサポートしていません。
     </video>
     
-On my Rover, the tilt mechanism could go up to around 140° before it hit the body of the Rover and couldn't go any further.
+私のローバーでは、チルトメカニズムは約140°まで上がりましたが、ローバーの本体にぶつかり、それ以上進むことができませんでした。
 
-So, explorers, always remember to respect the limits of your rover to keep it safe and functioning!
+ですので、探検家の皆さん、ローバーを安全で機能的に保つために、その限界を尊重することを常に忘れないでください！
 
 
-**Step 6: Sharing and Reflection**
+**ステップ6：共有と反省**
 
-Well done, explorers! Today, you've not only built a tilt mechanism for your Rover but also understood how to control a servo to move it around. That's a big step forward in our Mars Rover mission.
+よくやりました、探検家の皆さん！今日、あなたはローバーにチルトメカニズムを構築しただけでなく、サーボを制御して動かす方法も理解しました。これは、火星ローバーミッションにおける大きな一歩です。
 
-Now, let's share our experiences and reflect on what we've learned. 
+さて、今日の経験を共有し、学んだことを反省しましょう。
 
-Did you encounter any challenges while setting up the tilt mechanism or programming the servo? How did you overcome them?
+チルトメカニズムの設定やサーボのプログラミング中に何か課題に遭遇しましたか？それらはどのように乗り越えましたか？
 
-Remember, every challenge we overcome makes us smarter and our Rover better. So don't hesitate to share your stories, ideas, and solutions. You never know, your innovative solution might help a fellow explorer in their journey!
+乗り越えた課題は私たちをより賢くし、ローバーをより良くします。ですので、あなたの話、アイデア、解決策を共有することをためらわないでください。あなたの革新的な解決策が、他の探検家の旅を助けるかもしれません！

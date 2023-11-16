@@ -21,6 +21,8 @@ you're truly navigating the Red Planet. Its advanced obstacle avoidance module a
 
 <a id="update"></a>
 ## Update:
+2023-11-16:
+- First release in Japanese.
 
 2023-11-10:
 - Add the hardware introductions.

@@ -1,22 +1,22 @@
-4 RGB LEDs Strip
-====================
+4 RGB LED ストリップ
+======================
 
 .. image:: img/4_rgb_strip.jpg
 
 
-* **+5V**: Common anode of the three LEDs and needs to connect to DC 5V
-* **B**: Cathode of the blue LED
-* **R**: Cathode of the red LED
-* **G**: Cathode of the green LED
+* **+5V**: 3つのLEDの共通アノードであり、DC 5Vに接続する必要があります
+* **B**: 青色LEDのカソード
+* **R**: 赤色LEDのカソード
+* **G**: 緑色LEDのカソード
 
-This RGB LED strip features four R5050 RGB LEDs, capable of creating any color shade by combining the three primary colors: red, blue, and green.
+このRGB LEDストリップは、赤、青、緑の3つの基本色を組み合わせて任意の色合いを作り出すことができる、4つのR5050 RGB LEDを特徴としています。
 
-The R5050 RGB LEDs are designed with a common anode configuration. Each LED on the strip functions as an independent circuit, allowing you to cut the strip at designated points without affecting other sections. The strip's flexibility and adaptability are enhanced by its construction on an FPC board, which is backed with double-sided adhesive for easy installation.
+R5050 RGB LEDは共通アノード構成で設計されています。ストリップ上の各LEDは独立した回路として機能し、他のセクションに影響を与えることなく、指定されたポイントでストリップを切断することができます。ストリップの柔軟性と適応性は、FPC基板上に構築され、両面粘着テープで裏打ちされていることによって向上しています。簡単な取り付けが可能です。
 
 
-**What is R5050 RGB LED?**
+**R5050 RGB LEDとは？**
 
-The R5050 RGB LED is a type of LED that combines red, blue, and green light-emitting diodes in a single package. Each LED within this package has its own pin, allowing for individual control. This configuration enables the production of a wide range of colors by varying the intensity of each LED.
+R5050 RGB LEDは、赤色、青色、緑色の発光ダイオードを1つのパッケージに組み合わせたLEDの一種です。このパッケージ内の各LEDは独自のピンを持ち、個別の制御が可能です。この構成により、各LEDの強度を変化させることで幅広い色の生成が可能となります。
 
 .. image:: img/rgb_5050.jpg
     :width: 400
@@ -24,20 +24,20 @@ The R5050 RGB LED is a type of LED that combines red, blue, and green light-emit
 .. image:: img/rgb_5050_sche.png
     :width: 200
 
-In a typical application, multiple R5050 RGB LEDs are arranged on a flexible circuit in a smart configuration. This is done by connecting the "positive" ends (anodes) of all LEDs together, while the "negative" ends (cathodes) are connected to their respective color lanes. This means that all green cathodes are connected together, all red cathodes are connected together, and all blue cathodes are connected together. This arrangement allows for efficient control of color blending and light intensity, making these LEDs popular in applications where customizable color lighting is desired, such as in decorative lighting, signage, and display technologies.
+典型的な応用では、複数のR5050 RGB LEDがスマートな構成で柔軟な回路上に配置されます。これは、すべてのLEDの「正」端子（アノード）を接続し、各色の「負」端子（カソード）をそれぞれのカラーレーンに接続することによって行われます。すなわち、すべての緑色カソードが接続され、すべての赤色カソードが接続され、すべての青色カソードが接続されます。この配置により、色のブレンドと光の強度の効率的な制御が可能となり、装飾照明、サイン、ディスプレイ技術など、カスタマイズ可能なカラー照明が必要なアプリケーションでこれらのLEDが人気です。
 
 .. image:: img/rgb_strip_sche.png
 
 
 
-**Features**
+**特徴**
 
-* Work Voltage: DC5V
-* Color: Full color RGB
-* Working Temperature: -15-50
-* RGB Type: 5050RGB
-* Current: 150mA (single circuit)
-* Power: 1.5W
-* Light Strip Thickness: 2mm
-* Light Strip Width: 5.5mm
-* Cable: ZH1.5-4P, 25cm, 28AWG, Black
+* 動作電圧：DC5V
+* 色：フルカラーRGB
+* 動作温度：-15〜50度
+* RGBタイプ：5050RGB
+* 電流：150mA（シングル回路）
+* 電力：1.5W
+* ストリップ厚さ：2mm
+* ストリップ幅：5.5mm
+* ケーブル：ZH1.5-4P、25cm、28AWG、ブラック

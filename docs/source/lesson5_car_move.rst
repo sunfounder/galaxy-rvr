@@ -1,74 +1,74 @@
-Lesson 5: Unleashing Mars Rover Mobility
+レッスン5：火星ローバーの移動性の解放
 ======================================================
 
-Get ready, young explorers! We've mastered controlling motors, now we're taking those skills to the red planet. In this lesson, we're bringing the Mars Rover to life!
+若い探検家たち、準備はいいですか？モーターの制御をマスターしたので、これらのスキルを赤い惑星へと持って行きます。このレッスンでは、火星ローバーを活性化させます！
 
-We'll learn how to assemble the motors into the Rocker-Bogie suspension system system and then, using our coding skills, we'll guide our Rover across imagined Martian landscapes.
+ロッカーボギーサスペンションシステムにモーターを組み立てる方法を学び、コーディングスキルを使って、想像上の火星の風景をローバーで横断します。
 
-It's a Martian adventure in our classroom. Let's get started!
+教室での火星冒険です。始めましょう！
 
 .. raw:: html
 
    <video width="600" loop autoplay muted>
       <source src="_static/video/car_move.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+      あなたのブラウザはビデオタグをサポートしていません。
    </video>
 
 .. note::
 
-    If you are learning this course after fully assembling the GalaxyRVR, you need to move this switch to the right before uploading the code.
+    GalaxyRVRを完全に組み立てた後にこのコースを学ぶ場合、コードをアップロードする前にこのスイッチを右に移動する必要があります。
 
     .. image:: img/camera_upload.png
         :width: 500
         :align: center
 
-Learning Objectives
+学習目標
 ---------------------------
 
-* Understand how to assemble the motors into the Mars Rover's Rocker-Bogie suspension system.
-* Learn to use Arduino to control the motion of the Mars Rover.
-* Practice writing a program to control the Mars Rover's motion on different terrains.
+* 火星ローバーのロッカーボギーサスペンションシステムにモーターを組み立てる方法を理解する。
+* Arduinoを使用して火星ローバーの動きを制御する方法を学ぶ。
+* 異なる地形で火星ローバーの動きを制御するプログラムを書く練習をする。
 
-Materials needed
+材料
 --------------------------
-* SunFounder R3 Board
-* TT Motors
-* GalaxyRVR Shield
-* Battery
-* Mars Rover Model (Equipped with Rocker-Bogie System)
-* Basic tools and accessories (e.g. screwdriver, screws, etc.)
-* USB Cable
+* SunFounder R3ボード
+* TTモーター
+* GalaxyRVRシールド
+* バッテリー
+* ロッカーボギーシステム搭載の火星ローバーモデル
+* 基本的な工具とアクセサリー（例：ドライバー、ネジなど）
+* USBケーブル
 * Arduino IDE
-* Computer
+* コンピュータ
 
-Steps
+手順
 --------------
 
-**Step 1: Assembling the Rover Components**
+**ステップ1：ローバーのコンポーネントを組み立てる**
 
-In this step, we will assemble the battery, R3 board, GalaxyRVR Shield, motors, and wheels onto the pre-assembled rocker-bogie system. This will bring the GalaxyRVR to a runnable state.
+このステップでは、バッテリー、R3ボード、GalaxyRVRシールド、モーター、車輪を事前に組み立てられたロッカーボギーシステムに組み付けます。これによりGalaxyRVRが走行可能な状態になります。
 
 .. raw:: html
 
     <iframe width="600" height="400" src="https://www.youtube.com/embed/lu8K26MY96s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-Congratulations! We've successfully built our very own rover, and it's ready to start exploring. Let's get moving!
+おめでとう！自分たちのローバーを成功裏に組み立て、探索の準備ができました。さあ、動き出しましょう！
 
-**Step 2: Set the Rover in Motion**
+**ステップ2：ローバーを動かす**
 
-Now it's time to breathe life into our creation and send it off on its maiden voyage. 
-But how do we communicate with our rover? How do we tell it where to go and what to do? 
-That's where our coding skills come into play!
+さて、私たちの作成物に命を吹き込み、初の旅行に出発させる時が来ました。
+しかし、ローバーとどうやって通信するのでしょうか？どうやってどこに行くのか、何をするのかを指示するのでしょうか？
+ここで私たちのコーディングスキルが活躍します！
 
-In the real world, if we want a car to move forward, we push the accelerator, and both wheels start spinning. 
-The wheels on the right side turn clockwise, while those on the left side turn counterclockwise.
+現実世界で車を前進させたいときはアクセルを踏み込み、両方の車輪が回転を始めます。
+右側の車輪は時計回りに、左側の車輪は反時計回りに回転します。
 
 .. image:: img/move_car.gif
     :align: center
 
-Imagine you're sitting in the driver's seat, the world whizzing past you as you cruise along the open road - that's exactly the experience we're going to give our rover.
+運転席に座っていると想像してください。道路を走りながら世界があなたの周りを駆け巡る - まさに私たちがローバーに与える経験です。
 
-Now, let's translate that experience into the language our rover understands - code!
+さて、その経験をローバーが理解する言語、つまりコードに変換しましょう！
 
     .. code-block:: arduino
 
@@ -96,15 +96,14 @@ Now, let's translate that experience into the language our rover understands - c
             
         }
 
-In this code, we're speaking to our rover, telling it exactly what to do. 
-With the ``SoftPWMSet()`` function, we're acting like the car's accelerator and brakes, 
-controlling the speed and direction of each motor. 
-We tell the left motors to spin counterclockwise and the right motors to spin clockwise, and just like that, our rover moves forward!
+このコードでは、ローバーに正確に何をすべきかを伝えています。
+``SoftPWMSet()`` 関数を使って、車のアクセルとブレーキのように、各モーターの速度と方向を制御しています。
+左のモーターに反時計回りに回転するように、右のモーターに時計回りに回転するように指示し、そのようにして、ローバーは前進します！
 
-Absolutely, the concept of reversing the rover is straightforward once you understand how to move it forward.
-To make the rover move backward, we just need to reverse the direction of rotation of each motor. 
+もちろん、ローバーを前進させる方法を理解すれば、後退させることも簡単です。
+ローバーを後退させるには、各モーターの回転方向を逆にするだけです。
 
-Here's how we'd do that in code, we do just the opposite. The right wheels should now rotate counterclockwise, and the left wheels should rotate clockwise.
+コードでどのように行うかというと、まさにその逆を行います。右の車輪は今度は反時計回りに、左の車輪は時計回りに回転させることになります。
 
 .. code-block:: arduino
     :emphasize-lines: 16,17,20,21
@@ -133,22 +132,22 @@ Here's how we'd do that in code, we do just the opposite. The right wheels shoul
         
     }
 
-In this code, we use ``SoftPWMSet()`` to tell the left motors to rotate clockwise and the right motors to rotate counterclockwise.
+このコードでは、 ``SoftPWMSet()`` を使って左のモーターを時計回りに、右のモーターを反時計回りに回転させます。
 
-Isn't it fascinating that we can control our rover's journey simply with code? The next time you're in a car, take a moment to think about the journey of your rover, exploring the world one rotation at a time. Stay tuned, because our rover's journey is just beginning!
+コードでローバーの旅を簡単に制御できるのは魅力的ではありませんか？次に車に乗るときは、一回転ごとに世界を探索するローバーの旅を考えてみてください。ローバーの旅はまだ始まったばかりですから、乞うご期待！
 
-**Step 3: Making the Rover Move in Other Directions**
+**ステップ3：ローバーを他の方向に動かす**
 
-Now that we know how to move our Mars Rover forward and backward, what if we want it to turn left or right?
+火星ローバーを前進・後進させる方法を学んだので、左または右に曲がるようにしたい場合はどうすればいいでしょうか？
 
-Just as in real life driving, there are two main ways for a car to turn left.
+実際の運転と同じように、車が左に曲がるには主に2つの方法があります。
 
-* The first way is by having the wheels on the left side rotate slower than the ones on the right. This difference in speed will make the rover turn towards the left.
-* The second way is by making both left and right motors rotate in the same direction (clockwise in this case), which will make the rover spin to the left on its axis.
+* 一つ目の方法は、左側の車輪を右側よりも遅く回転させることです。この速度の差により、ローバーが左に曲がります。
+* 二つ目の方法は、左右のモーターを同じ方向（この場合は時計回り）に回転させることで、ローバーが軸上で左に回転するようにします。
 
-Let's see how we can implement both ways in code:
+両方の方法をコードでどのように実装するか見てみましょう：
 
-**Method 1: Different speeds on each side**
+**方法1：各側で異なる速度**
 
 .. code-block:: arduino
     :emphasize-lines: 16,17,20,21
@@ -178,9 +177,9 @@ Let's see how we can implement both ways in code:
         delay(2000);  // Last for 2 seconds
     }
 
-In this code, we have decreased the speed of the left motors while keeping the right motors at a higher speed. This will make the rover turn towards the left.
+このコードでは、左のモーターの速度を下げ、右のモーターの速度を高く保ちます。これにより、ローバーが左に曲がります。
 
-**Method 2: Rotating all motors in the same direction**
+**方法2：すべてのモーターを同じ方向に回転させる**
 
 .. code-block:: arduino
     :emphasize-lines: 16,17,18,19
@@ -206,40 +205,41 @@ In this code, we have decreased the speed of the left motors while keeping the r
         SoftPWMSet(in4, 255);
     }
 
-In this code, we set all motors to rotate clockwise. The rover will spin around its own axis and the direction will change to the left.
+このコードでは、すべてのモーターを時計回りに回転させています。ローバーは自軸の周りで回転し、左方向に変わります。
 
-For making the rover turn right, the concepts are the same but the directions are reversed. Can you figure out how to do it?
+ローバーを右に曲がらせるためには、概念は同じですが方向が逆になります。どのように行うかお分かりですか？
 
-**Step 4: Moving in All Directions**
+**ステップ4：全方向への移動**
 
-As we develop more functionalities for our Mars Rover, our code could become quite long and messy. In programming, it's a good practice to keep your code organized and maintainable. One way to achieve this is by creating separate functions for separate tasks.
+火星ローバーの機能をさらに開発するにつれて、私たちのコードはかなり長く複雑になることがあります。プログラミングでは、コードを整理して保守しやすく保つことが良い習慣です。これを実現する一つの方法は、別々のタスクに対して別々の関数を作成することです。
 
-In this case, we can create separate functions for each direction the rover can move. This not only makes our code easier to understand but also allows us to re-use these functions anywhere in our program without having to re-write the same lines of code.
+この場合、ローバーが移動できる各方向に対して別々の関数を作成できます。これによりコードが理解しやすくなるだけでなく、同じ行のコードを再度書き直すことなく、プログラムのどこでもこれらの関数を再利用することができます。
 
-Let's see how we can do this:
+どのように行うか見てみましょう：
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/90c13522-9757-4212-b250-63ffbc790fd3/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-With this structure, our main loop remains simple and easy to follow. We can clearly see that the rover moves forward, then backward, 
-then turns left and right, and finally stops. 
+この構造により、メインループはシンプルで追いやすくなります。ローバーが前進し、後退し、
+左右に曲がり、最後に停止することがはっきりとわかります。
 
 .. raw:: html
 
    <video width="600" loop autoplay muted>
       <source src="_static/video/car_move.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+      あなたのブラウザはビデオタグをサポートしていません。
    </video>
 
-The details of how each of these actions is achieved are hidden away in separate functions. This is a key aspect of good programming practices known as abstraction.
+これらの各アクションがどのように達成されるかの詳細は、別の関数に隠されています。これは、抽象化として知られる良いプログラミング慣行の重要な側面です。
 
-**Step 5: Sharing and Reflection**
+**ステップ5：共有と振り返り**
 
-Congratulations on completing this exploration journey with the Mars Rover! This is a practical application of your knowledge of science and engineering, and you did a fantastic job!
+火星ローバーとのこの探索旅行を完了したことをお祝いします！これはあなたの科学と工学に関する知識の実用的な応用で、素晴らしい仕事をしました！
 
-Now, you can share how your rover overcomes various terrain obstacles. You could film your rover navigating different terrains, or show off your rover to your friends.
+さて、ローバーが様々な地形の障害をどのように乗り越えるかを共有することができます。ローバーが異なる地形をナビゲートする様子を撮影したり、友人にローバーを見せて自慢することもできます。
 
-Reflecting on your learning process is also very important. What have you learned during this process? Did any new ideas or creative thoughts emerge? What have you gained in controlling motors and programming?
+学習プロセスを振り返ることも非常に重要です。このプロセスで何を学びましたか？新しいアイデアや創造的な考えは出てきましたか？モーターの制御とプログラミングで何を得たのでしょうか？
 
-You can continue to explore, discover new knowledge, and constantly improve yourself. Keep it up, future scientists and engineers!
+さらに探求し、新しい知識を発見し、常に自分を改善し続けることができます。これからも頑張って、未来の科学者やエンジニアになりましょう！
+

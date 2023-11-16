@@ -1,20 +1,18 @@
-Solar Panel
+ソーラーパネル
 =======================
 
 .. image:: img/solar_panel.png
     :width: 400
     :align: center
 
-Solar panels are devices that convert sunlight into electricity. They are made up of photovoltaic (PV) cells, which are made of semiconductor materials such as silicon. When sunlight hits a PV cell, it knocks electrons loose from their atoms. These electrons flow through the cell, creating an electric current.
+ソーラーパネルは、太陽光を電気に変換する装置です。それはシリコンなどの半導体材料で作られた太陽電池（PVセル）で構成されています。太陽光がPVセルに当たると、電子が原子から放たれます。これらの電子はセルを通って電流を生み出します。
 
-Solar panels can be used to generate electricity for a variety of purposes, including powering homes, businesses, and even entire communities. They are a clean and renewable source of energy that can help reduce our reliance on fossil fuels.
+ソーラーパネルは、家庭や事業所、さらにはまるごと地域全体の電力供給に使用することができます。それらはクリーンで再生可能なエネルギー源であり、化石燃料への依存を減らすのに役立ちます。
 
+**特徴**
 
-**Features**
-
-
-* Output power: 6V/660mA
-* Time to fully charge the battery: 7.2h (theoretical value, assuming strong sunlight)
-* Size: 170mm x 170mm
-* Wires: Gray and Black, 24AWG, 200mm
-* Connector: White, XH2.54-2P
+* 出力電力：6V/660mA
+* バッテリーの完全充電にかかる時間：7.2時間（理論値、強い日光を仮定）
+* サイズ：170mm x 170mm
+* ワイヤー：グレーとブラック、24AWG、200mm
+* コネクタ：ホワイト、XH2.54-2P

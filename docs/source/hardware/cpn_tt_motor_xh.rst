@@ -1,56 +1,51 @@
 .. _cpn_tt_motor:
 
-TT Motor
+TTモーター
 ==============
-
 
 .. image:: img/tt_motor_xh.jpg
     :width: 400
     :align: center
 
-This is a TT DC gear motor with a gear ratio of 1:120. It comes with two 250mm wires with an XH2.54-2P connector. It can be powered with 3VDC.
+このTT DCギアモーターは、ギア比1:120を持つものです。XH2.54-2Pコネクタが付いた250mmのワイヤーが2本付属しています。3VDCで動作します。
 
-**How Motors Work**
+**モーターの働き方**
 
-A motor functions as the heart of a machine, transforming electrical energy into mechanical energy. This conversion brings to life various devices, from children's toys and household appliances to large vehicles.
+モーターは機械の心臓として機能し、電気エネルギーを機械エネルギーに変換します。この変換により、子供のおもちゃや家庭用電化製品から大型車両まで、さまざまなデバイスが生み出されます。
 
-Here's the process: 
+以下がそのプロセスです：
 
-When electricity flows into a motor, it generates a magnetic field. This field interacts with other magnets within the motor, prompting it to spin. This spinning action, akin to a top whirling around, can then drive the movement of wheels, propellers, or other moving parts in a machine.
+電気がモーターに流れ込むと、磁界が生成されます。この磁界は、モーター内の他の磁石と相互作用し、回転を促します。この回転運動は、こまのようにぐるぐる回るもので、車輪やプロペラ、または他の機械の可動部品の動きを駆動することができます。
 
 .. image:: img/motor_rotate.gif
     :align: center
 
-The TT Gear Motor is a specialized type of motor. It combines a standard motor with a series of gears, all housed within a durable plastic shell.
+TTギアモーターは、特殊なタイプのモーターです。標準モーターと一連のギアを、丈夫なプラスチックのシェル内に組み合わせています。
 
-As the motor spins, the gears effectively transmit this rotational motion to the wheels of our rover. The integration of gears is pivotal, as it amplifies torque. This increased torque capacity enables the motor to maneuver larger and heavier loads, an essential capability in various applications.
+モーターが回転すると、ギアはこの回転運動を効果的にローバーの車輪に伝えます。ギアの統合は重要であり、トルクを増幅します。この増加したトルク容量により、モーターはより大きな荷重を操作することができ、さまざまなアプリケーションで重要な能力となります。
 
 .. image:: img/motor_internal.gif
     :align: center
     :width: 600
     
-**Features**
+**特徴**
 
-* Suggested Voltage 3V~4.5V DC
-* Number of Shafts: Single shaft
-* Gear Ratio: 1:120
-* No load current: 130mA
-* No load speed: 38rpm±8%rpm
-* Starting Voltage: 2V (max.) under no load
-* Output torque: 3V ≥1.2kgf.cm
-* Useful life: 70-120H
-* Direction of rotation: Bi-directions
-* Body Dimensions: 70 x 22.5 x 36.6mm
-* Wires: Gray and Black, 24AWG, 250mm
-* Connector: White, XH2.54-2P
-* Weight: 28.5g
+* 推奨電圧：3V〜4.5V DC
+* シャフトの数：シングルシャフト
+* ギア比：1:120
+* 無負荷電流：130mA
+* 無負荷回転数：38rpm±8%rpm
+* 始動電圧：無負荷時2V（最大）
+* 出力トルク：3V ≥1.2kgf.cm
+* 有効寿命：70-120時間
+* 回転方向：両方向
+* 本体寸法：70 x 22.5 x 36.6mm
+* ワイヤー：グレーとブラック、24AWG、250mm
+* コネクタ：ホワイト、XH2.54-2P
+* 重量：28.5g
 
+**寸法図**
 
-
-**Dimensional Drawing**
-
-Unit: mm
+単位：mm
 
 .. image:: img/motor_size.jpg
-
-

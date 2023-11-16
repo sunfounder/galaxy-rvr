@@ -5,54 +5,54 @@ ESP32 CAM
     :width: 500
     :align: center
 
-The ESP32-CAM is a very small camera module with the ESP32-S chip that costs approximately $10. Besides the OV2640 camera, and several GPIOs to connect peripherals, it also features a microSD card slot that can be useful to store images taken with the camera or to store files to serve to clients.
+ESP32-CAMは、ESP32-Sチップを搭載した非常に小型のカメラモジュールで、約$10です。OV2640カメラの他に、周辺機器を接続するためのいくつかのGPIOがあり、カメラで撮影した画像を保存したり、クライアントに提供するためのファイルを保存するために役立つマイクロSDカードスロットも備えています。
 
-The module can work independently as the smallest system, with a size of only 27*40.5*4.5mm, and a deep sleep current as low as 6mA.
+このモジュールは、27*40.5*4.5mmのサイズで、最小システムとして独立して動作でき、ディープスリープ時の電流は6mAまで低下します。
 
-ESP32-CAM can be widely used in various IoT applications, suitable for home smart devices, industrial wireless control, wireless monitoring, QR wireless identification, wireless positioning system signals and other IoT applications. It is an ideal solution for IoT applications.
+ESP32-CAMは、さまざまなIoTアプリケーションで広く使用され、家庭のスマートデバイス、産業用ワイヤレス制御、ワイヤレス監視、QRワイヤレス識別、ワイヤレス位置情報システムシグナルなどのIoTアプリケーションに適しています。IoTアプリケーションに理想的なソリューションです。
 
 
 
-**Technical Specifications**
+**技術仕様**
 
 .. list-table::
     :widths: 25 50
 
-    * - Module Model
+    * - モジュールモデル
       - ESP32-CAM
-    * - Package
+    * - パッケージ
       - DIP-16
-    * - Size
+    * - サイズ
       - 27*40.5*4.5（±0.2）mm
-    * - SPI Flash
-      - default 32Mbit
+    * - SPIフラッシュ
+      - 標準32Mbit
     * - RAM
-      - Internal 520KB + External 8MB PSRAM
+      - 内部520KB + 外部8MB PSRAM
     * - Bluetooth
-      - Bluetooth 4.2 BR/EDR and BLE standards
+      - Bluetooth 4.2 BR/EDRおよびBLE標準
     * - Wi-Fi
       - 802.11 b/g/n/e/i
-    * - Support Interfaces
+    * - サポートインターフェース
       - UART、SPI、I2C、PWM
-    * - Support TF Card
-      - up to 4G
-    * - IO Pins
+    * - サポートTFカード
+      - 最大4G
+    * - IOピン
       -  9
-    * - Serial Port Speed
-      - default 115200 bps
-    * - Image Output Format
-      - JPEG(only OV2640 support),BMP,GRAYSCALE
-    * - Spectrum range
-      - 2400 ~2483.5MHz
-    * - Antenna Type
-      - On-board PCB antenna, gain 2dBi
-    * - Transmit Power
+    * - シリアルポート速度
+      - 標準115200 bps
+    * - 画像出力フォーマット
+      - JPEG（OV2640のみ対応）、BMP、GRAYSCALE
+    * - スペクトル範囲
+      - 2400 ～2483.5MHz
+    * - アンテナタイプ
+      - オンボードPCBアンテナ、利得2dBi
+    * - 送信電力
       - 802.11b\: 17±2 dBm (@11Mbps) 
     * - 
       - 802.11g\: 14±2 dBm (@54Mbps) 
     * - 
       - 802.11n\: 13±2 dBm (@MCS7)
-    * - Receive Sensitivity
+    * - 受信感度
       - CCK, 1 Mbps\: -90dBm, 
     * - 
       - CCK, 11 Mbps\: -85 dBm
@@ -62,59 +62,59 @@ ESP32-CAM can be widely used in various IoT applications, suitable for home smar
       - 54 Mbps (3/4 64-QAM)\: -70dBm
     * - 
       - MCS7 (65 Mbps, 72.2 Mbps)\: -67dBm
-    * - Power Consumption
-      - Flash off\: 180mA\@5V, 
+    * - 電力消費
+      - フラッシュオフ\: 180mA\@5V, 
     * - 
-      - Flash on and brightness to maximum\: 310mA\@5V
+      - フラッシュオンで明るさ最大\: 310mA\@5V
     * - 
-      - Deep-sleep\: the lowest power consumption can reach 6mA\@5V
+      - ディープスリープ\: 最低電力消費6mA\@5V
     * - 
-      - Moderm-sleep\: minimum 20mA\@5V
+      - モデムスリープ\: 最低20mA\@5V
     * - 
-      - Light-sleep\: minimum 6.7mA\@5V
-    * - Security
+      - ライトスリープ\: 最低6.7mA\@5V
+    * - セキュリティ
       - WPA/WPA2/WPA2-Enterprise/WPS
-    * - Power supply range
+    * - 電源供給範囲
       - 4.75-5.25V
-    * - Operating Temperature
+    * - 動作温度
       - -20 ℃ ~ 70 ℃
-    * - Storage Environment
+    * - 保存環境
       - -40 ℃ ~ 125 ℃ , < 90%RH
 
 
-**ESP32-CAM Pinout**
+**ESP32-CAMピンアウト**
 
 
-The following figure shows the ESP32-CAM pinout (AI-Thinker module).
+以下の図はESP32-CAMピンアウト（AI-Thinkerモジュール）を示しています。
 
 .. image:: img/esp32_cam_pinout.png
     :width: 800
 
-* There are three **GND** pins and three pins for power: 3.3V, 5V and either 3.3V or 5V.
-* **GPIO 1** and **GPIO 3** are the serial pins. You need these pins to upload code to your board. 
-* Additionally, **GPIO 0** also plays an important role, since it determines whether the ESP32 is in flashing mode or not. When **GPIO 0** is connected to **GND**, the ESP32 is in flashing mode.
+* 3つの **GND** ピンと3つの電源ピンがあります：3.3V、5V、および3.3Vまたは5V。
+* **GPIO 1** と **GPIO 3** はシリアルピンです。ボードへのコードアップロードにこれらのピンが必要です。
+* さらに、 **GPIO 0** も重要な役割を果たします。これは、ESP32がフラッシングモードにあるかどうかを決定します。 **GPIO 0** が **GND** に接続されている場合、ESP32はフラッシングモードになります。
 
-* The following pins are internally connected to the microSD card reader:
+* 以下のピンはマイクロSDカードリーダーに内部接続されています：
 
 * GPIO 14: CLK
 * GPIO 15: CMD
 * GPIO 2: Data 0
-* GPIO 4: Data 1 (also connected to the on-board LED)
+* GPIO 4: Data 1（オンボードLEDにも接続）
 * GPIO 12: Data 2
 * GPIO 13: Data 3
 
-**Note**
+**注意**
 
-* Please make sure that the input power of the module is at least 5V 2A, otherwise the picture may have water lines.
-* The ESP32 GPIO32 pin controls the camera power. When the camera is working, please pull GPIO32 low.
-* Since GPIO0 is connected to the camera XCLK, please leave GPIO0 in the air when using it, and do not connect it to high or low level.
-* The default firmware is already included in the factory, and no additional download is provided. Please be careful if you need to re-burn other firmware.
+* モジュールの入力電力は少なくとも5V 2Aであることを確認してください。そうでないと、画像に水線が現れる可能性があります。
+* ESP32のGPIO32ピンがカメラの電力を制御します。カメラが動作しているときは、GPIO32を低く引っ張ってください。
+* GPIO0はカメラのXCLKに接続されているため、使用時にGPIO0を空中に放置し、高または低レベルに接続しないでください。
+* 工場出荷時に既にファームウェアが含まれており、追加のダウンロードは提供されていません。他のファームウェアを再度焼く必要がある場合は注意してください。
 
 
-**Document**
+**文書**
 
-* Schematic diagram: |link_esp32cam_schematic|
-* Camera specification (English version): |link_cam_ov2640|
+* 回路図：|link_esp32cam_schematic|
+* カメラ仕様（英語版）：|link_cam_ov2640|
 
 .. note::
-    All information above comes from |link_aithiner|
+    以上の情報はすべて |link_aithiner| から来ています
