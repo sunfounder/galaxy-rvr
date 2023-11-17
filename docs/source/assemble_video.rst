@@ -1,20 +1,20 @@
-Assemble Video
+Montagevideo
 =========================
 
 .. note::
 
-    * If you want to learn while assembling the various components, you can refer to :ref:`course_mode`. In Course Mode, each lesson comes with assembly videos, component principles, and related test code, allowing you to learn as you go. So, you can skip this chapter.
+    * Wenn Sie während der Montage der verschiedenen Komponenten lernen möchten, können Sie auf :ref:`course_mode` verweisen. Im Kursmodus wird jede Lektion mit Montagevideos, Komponentenprinzipien und zugehörigem Testcode geliefert, sodass Sie beim Bauen lernen können. Daher können Sie dieses Kapitel überspringen.
 
-    * If you want to quickly assemble and start playing, you can watch the assembly video first. After completing the assembly, proceed to :ref:`play_mode` to learn about the app installation and connection. Then, you can use the app to control the GalaxyRVR.
+    * Wenn Sie schnell montieren und sofort spielen möchten, können Sie sich zuerst das Montagevideo ansehen. Nach Abschluss der Montage, gehen Sie zu :ref:`play_mode`, um mehr über die App-Installation und -Verbindung zu erfahren. Dann können Sie die App nutzen, um den GalaxyRVR zu steuern.
 
 
-For the assembly of the GalaxyRVR, we provide printed assembly instructions in the kit. Here is the PDF version of it:
+Für die Montage des GalaxyRVR bieten wir gedruckte Montageanleitungen im Kit an. Hier ist die PDF-Version davon:
 
     .. raw:: html
     
-        <a href="_static/pdf/z0112v10-a0001012-galaxyrvr.pdf" target="_blank">GalaxyRVR Assembly Instructions</a>
+        <a href="_static/pdf/z0112v10-a0001012-galaxyrvr.pdf" target="_blank">GalaxyRVR Montageanleitung</a>
 
-If you are having difficulty understanding the printed assembly instructions, you can instead follow our step-by-step assembly video.
+Wenn Sie Schwierigkeiten haben, die gedruckte Montageanleitung zu verstehen, können Sie stattdessen unserem schrittweisen Montagevideo folgen.
 
     .. raw:: html
 
@@ -22,12 +22,11 @@ If you are having difficulty understanding the printed assembly instructions, yo
 
 .. note::
 
-    * The assembly videos are in a series of 7. You can check out other videos from the playlist in the upper-right corner, or let it play automatically.
+    * Die Montagevideos bestehen aus einer Serie von 7. Sie können andere Videos aus der Playlist in der oberen rechten Ecke auswählen oder es automatisch abspielen lassen.
 
-    * When inserting the ESP32 CAM into the Camera Adapter, be aware of its orientation. It should align properly with the ESP32 Adapter.
+    * Achten Sie bei der Einsetzung des ESP32 CAM in den Kamera-Adapter auf die Ausrichtung. Es sollte richtig mit dem ESP32-Adapter ausgerichtet sein.
     
         .. image:: img/esp32_cam_direction.png
             :width: 300
             :align: center
-
 

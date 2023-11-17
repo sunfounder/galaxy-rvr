@@ -1,52 +1,49 @@
-
 GalaxyRVR - SunFounder Mars Rover Kit
 ========================================================
 
-Imagine piloting a rover on the desolate terrain of Mars, exploring alien landscapes and confronting the unknown. Sounds like a dream for NASA engineers, right?
+Stellen Sie sich vor, einen Rover auf dem öden Terrain des Mars zu steuern, fremde Landschaften zu erkunden und sich dem Unbekannten zu stellen. Klingt wie ein Traum für NASA-Ingenieure, nicht wahr?
 
-Not anymore.
+Nicht mehr.
 
-Welcome to the world of the GalaxyRVR, a Mars Rover kit from SunFounder, designed to bring interplanetary exploration right into your living room.
+Willkommen in der Welt des GalaxyRVR, einem Mars-Rover-Kit von SunFounder, entworfen, um interplanetare Erkundungen direkt in Ihr Wohnzimmer zu bringen.
 
 .. image:: img/galaxyRVR.jpg
     :width: 600
     :align: center
 
-Built upon the same universal rocker-bogie system employed by NASA's real Mars rovers, GalaxyRVR is capable of traversing all kinds of terrains – be it rocky mountains, sandy beaches, or grassy fields. The suspension system ensures smooth mobility, making the alien world of Mars feel just like home.
+Auf dem universellen Rocker-Bogie-System aufgebaut, das von den echten Mars-Rovern der NASA verwendet wird, ist der GalaxyRVR in der Lage, alle Arten von Gelände zu überqueren – seien es felsige Berge, sandige Strände oder grasige Felder. Das Federungssystem sorgt für eine reibungslose Mobilität und macht die fremde Welt des Mars so heimisch wie Ihre eigene.
 
-Equipped with a high-definition camera module, GalaxyRVR offers a first-person view, providing an immersive piloting experience as if 
-you're truly navigating the Red Planet. Its advanced obstacle avoidance module and ultrasonic module ensure it can dodge obstacles, embodying a spirit of autonomy and resilience.
+Ausgestattet mit einem hochauflösenden Kameramodul, bietet der GalaxyRVR eine First-Person-Ansicht und liefert ein immersives Pilotenerlebnis, als ob Sie tatsächlich den Roten Planeten navigieren. Sein fortschrittliches Hindernisvermeidungsmodul und Ultraschallmodul sorgen dafür, dass er Hindernissen ausweichen kann, und verkörpert so einen Geist der Autonomie und Widerstandsfähigkeit.
 
-**Delve into the Cosmos: The Courses**
+**Eintauchen in den Kosmos: Die Kurse**
 
-* :ref:`play_mode`: Want a quick start? Play Mode is designed for those who can't wait to start their Martian journey. With factory-preloaded code, simply assemble your GalaxyRVR and control it using the convenient app to explore its multitude of functions.
+* :ref:`play_mode`: Möchten Sie schnell starten? Der Spielmodus ist für diejenigen gedacht, die es kaum erwarten können, ihre Reise zum Mars zu beginnen. Mit vorinstalliertem Code können Sie einfach Ihren GalaxyRVR zusammenbauen und ihn mit der praktischen App steuern, um seine vielfältigen Funktionen zu erkunden.
 
-* :ref:`course_mode`: Intrigued by the underlying technology? Course Mode is for those who want to delve deeper. Understand the principles behind the GalaxyRVR's design, learn to code, and empower your rover with a variety of exciting features.
+* :ref:`course_mode`: Interessieren Sie sich für die zugrundeliegende Technologie? Der Kursmodus ist für diejenigen, die tiefer eintauchen wollen. Verstehen Sie die Prinzipien hinter dem Design des GalaxyRVR, lernen Sie zu programmieren und bereichern Sie Ihren Rover mit einer Vielzahl von spannenden Funktionen.
 
-This documentation is your guide to exploring the intricacies of GalaxyRVR. It includes detailed assembly instructions, programming guides, and insights into the working principles of a Mars Rover, all aimed to stimulate your curiosity and foster creativity.
+Diese Dokumentation ist Ihr Leitfaden, um die Feinheiten des GalaxyRVR zu erforschen. Sie enthält detaillierte Montageanleitungen, Programmieranleitungen und Einblicke in die Arbeitsprinzipien eines Mars-Rovers, alles darauf ausgerichtet, Ihre Neugier zu wecken und Kreativität zu fördern.
 
-The GalaxyRVR isn't just a toy, but a gateway to Mars, an educational tool, and a catalyst for limitless imagination. Start your cosmic journey today with GalaxyRVR, and let your world become an extension of Mars.
-
+Der GalaxyRVR ist nicht nur ein Spielzeug, sondern ein Tor zum Mars, ein Bildungswerkzeug und ein Katalysator für grenzenlose Vorstellungskraft. Beginnen Sie Ihre kosmische Reise heute mit dem GalaxyRVR und lassen Sie Ihre Welt eine Erweiterung des Mars werden.
 
 .. toctree::
     :maxdepth: 2
 
-    About this Kit <self>
+    Über dieses Kit <self>
     assemble_video
     play_mode
     course_mode
     hardware/hardware
     faq
 
-**About the display language**
+**Über die Anzeigesprache**
 
-This document is available in other languages as well. To switch the display language, kindly click on the **Read the Docs** icon located in the lower left corner of the page.
+Dieses Dokument ist auch in anderen Sprachen verfügbar. Um die Anzeigesprache zu wechseln, klicken Sie bitte auf das **Read the Docs**-Symbol in der unteren linken Ecke der Seite.
 
 .. image:: img/translation.png
     
-If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
+Wenn Sie Fragen haben, senden Sie bitte eine E-Mail an service@sunfounder.com, und wir werden so schnell wie möglich antworten.
 
-**Copyright Notice**
+**Urheberrechtshinweis**
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
+Alle Inhalte, einschließlich aber nicht beschränkt auf Texte, Bilder und Code in diesem Handbuch, sind Eigentum der SunFounder Company. Sie sollten es nur für persönliches Studium, Untersuchungen, Vergnügen oder andere nicht-kommerzielle oder gemeinnützige Zwecke verwenden, unter Einhaltung der zugehörigen Vorschriften und Urheberrechtsgesetze, ohne die gesetzlichen Rechte des Autors und der relevanten Rechteinhaber zu verletzen. Für jede Einzelperson oder Organisation, die diese zu kommerziellen Zwecken ohne Erlaubnis nutzt, behält sich das Unternehmen das Recht vor, rechtliche Schritte einzuleiten.
 

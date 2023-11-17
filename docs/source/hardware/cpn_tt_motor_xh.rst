@@ -1,6 +1,6 @@
 .. _cpn_tt_motor:
 
-TT Motor
+TT-Motor
 ==============
 
 
@@ -8,49 +8,50 @@ TT Motor
     :width: 400
     :align: center
 
-This is a TT DC gear motor with a gear ratio of 1:120. It comes with two 250mm wires with an XH2.54-2P connector. It can be powered with 3VDC.
+Dies ist ein TT-DC-Getriebemotor mit einem Übersetzungsverhältnis von 1:120. Er wird mit zwei 250mm Kabeln mit einem XH2.54-2P-Stecker geliefert. Er kann mit 3VDC betrieben werden.
 
-**How Motors Work**
+**Wie Motoren funktionieren**
 
-A motor functions as the heart of a machine, transforming electrical energy into mechanical energy. This conversion brings to life various devices, from children's toys and household appliances to large vehicles.
+Ein Motor fungiert als Herz einer Maschine und wandelt elektrische Energie in mechanische Energie um. Diese Umwandlung bringt verschiedene Geräte zum Leben, von Kinderspielzeug und Haushaltsgeräten bis hin zu großen Fahrzeugen.
 
-Here's the process: 
+Hier ist der Prozess: 
 
-When electricity flows into a motor, it generates a magnetic field. This field interacts with other magnets within the motor, prompting it to spin. This spinning action, akin to a top whirling around, can then drive the movement of wheels, propellers, or other moving parts in a machine.
+Wenn Strom in einen Motor fließt, erzeugt er ein Magnetfeld. Dieses Feld interagiert mit anderen Magneten im Motor und bringt ihn zum Drehen. Diese Drehbewegung, ähnlich wie ein Kreisel, kann dann die Bewegung von Rädern, Propellern oder anderen beweglichen Teilen in einer Maschine antreiben.
 
 .. image:: img/motor_rotate.gif
     :align: center
 
-The TT Gear Motor is a specialized type of motor. It combines a standard motor with a series of gears, all housed within a durable plastic shell.
+Der TT-Getriebemotor ist eine spezialisierte Art von Motor. Er kombiniert einen Standardmotor mit einer Reihe von Zahnrädern, die alle in einem robusten Kunststoffgehäuse untergebracht sind.
 
-As the motor spins, the gears effectively transmit this rotational motion to the wheels of our rover. The integration of gears is pivotal, as it amplifies torque. This increased torque capacity enables the motor to maneuver larger and heavier loads, an essential capability in various applications.
+Wenn der Motor sich dreht, übertragen die Zahnräder diese Rotationsbewegung effektiv auf die Räder unseres Rovers. Die Integration von Zahnrädern ist entscheidend, da sie das Drehmoment verstärkt. Diese erhöhte Drehmomentkapazität ermöglicht es dem Motor, größere und schwerere Lasten zu bewegen, eine wesentliche Fähigkeit in verschiedenen Anwendungen.
 
 .. image:: img/motor_internal.gif
     :align: center
     :width: 600
     
-**Features**
+**Merkmale**
 
-* Suggested Voltage 3V~4.5V DC
-* Number of Shafts: Single shaft
-* Gear Ratio: 1:120
-* No load current: 130mA
-* No load speed: 38rpm±8%rpm
-* Starting Voltage: 2V (max.) under no load
-* Output torque: 3V ≥1.2kgf.cm
-* Useful life: 70-120H
-* Direction of rotation: Bi-directions
-* Body Dimensions: 70 x 22.5 x 36.6mm
-* Wires: Gray and Black, 24AWG, 250mm
-* Connector: White, XH2.54-2P
-* Weight: 28.5g
+* Vorgeschlagene Spannung 3V~4.5V DC
+* Anzahl der Wellen: Einzelwelle
+* Übersetzungsverhältnis: 1:120
+* Leerlaufstrom: 130mA
+* Leerlaufgeschwindigkeit: 38rpm±8%rpm
+* Startspannung: 2V (max.) im Leerlauf
+* Ausgangsdrehmoment: 3V ≥1.2kgf.cm
+* Nützliche Lebensdauer: 70-120H
+* Drehrichtung: Beide Richtungen
+* Körperabmessungen: 70 x 22,5 x 36,6mm
+* Kabel: Grau und Schwarz, 24AWG, 250mm
+* Stecker: Weiß, XH2.54-2P
+* Gewicht: 28,5g
 
 
 
-**Dimensional Drawing**
+**Maßzeichnung**
 
-Unit: mm
+Einheit: mm
 
 .. image:: img/motor_size.jpg
+
 
 

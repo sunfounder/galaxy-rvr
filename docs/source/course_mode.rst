@@ -1,22 +1,22 @@
 .. _course_mode:
 
-Course Mode
+Kursmodus
 ===============
 
-Welcome to the Course Mode, a structured journey through 13 enlightening lessons. We kick off with a fascinating glimpse into the history of Mars rovers, setting the stage for our own rover assembly.
+Willkommen im Kursmodus, einer strukturierten Reise durch 13 aufschlussreiche Lektionen. Wir beginnen mit einem faszinierenden Einblick in die Geschichte der Mars-Rover und legen damit den Grundstein für unseren eigenen Roverbau.
 
-From the second lesson, we'll start getting hands-on. Each lesson spotlights a unique component crucial to our Mars rover. You'll not only understand its purpose and significance but also master its assembly and integration into the rover.
+Ab der zweiten Lektion werden wir praktisch. Jede Lektion konzentriert sich auf eine einzigartige Komponente, die für unseren Mars-Rover entscheidend ist. Du wirst nicht nur ihren Zweck und ihre Bedeutung verstehen, sondern auch deren Montage und Integration in den Rover meistern.
 
 .. raw:: html
 
    <video width="600" loop autoplay muted>
       <source src="_static/video/move_stone1.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+      Ihr Browser unterstützt das Video-Tag nicht.
    </video>
 
-Whether you are a novice eager to dive into the world of Mars rovers or an experienced hobbyist looking to hone your skills, these lessons are crafted to provide a comprehensive understanding of the mechanics, electronics, and software that bring our GalaxyRVR to life. By the end of the course, you'll not only have assembled your very own Mars rover, but you'll also possess the knowledge to troubleshoot, modify, and further experiment with your rover.
+Ob Du ein Anfänger bist, der in die Welt der Mars-Rover eintauchen möchte, oder ein erfahrener Hobbyist, der seine Fähigkeiten verfeinern will, diese Lektionen sind so gestaltet, dass sie ein umfassendes Verständnis der Mechanik, Elektronik und Software vermitteln, die unseren GalaxyRVR zum Leben erwecken. Am Ende des Kurses wirst Du nicht nur deinen eigenen Mars-Rover zusammengebaut haben, sondern auch das Wissen besitzen, um Probleme zu beheben, Änderungen vorzunehmen und weiter mit deinem Rover zu experimentieren.
 
-So, buckle up for an exciting journey into the world of Mars rovers! Dive in and start exploring the red planet from the comfort of your home.
+Also, schnall Dich an für eine spannende Reise in die Welt der Mars-Rover! Tauche ein und beginne, den roten Planeten bequem von zu Hause aus zu erkunden.
 
 
 .. toctree::

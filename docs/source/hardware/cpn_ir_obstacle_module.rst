@@ -1,79 +1,80 @@
-IR Obstacle Avoidcance Module
+IR-Hindernisvermeidungsmodul
 =======================================
 
-This is an infrared obstacle avoidance module that can detect the presence of objects ahead. It is commonly used in robots, automation systems, and other intelligent devices. Its detection range is 2cm to 40cm, and objects of different colors have different levels of reflectivity. Therefore, the darker the object, the shorter the detection distance.
+Dies ist ein Infrarot-Hindernisvermeidungsmodul, das die Anwesenheit von Objekten vor sich erkennen kann. Es wird häufig in Robotern, Automatisierungssystemen und anderen intelligenten Geräten verwendet. Sein Erfassungsbereich liegt zwischen 2 cm und 40 cm, und Objekte unterschiedlicher Farbe haben unterschiedliche Reflexionsniveaus. Daher ist der Erfassungsbereich umso kürzer, je dunkler das Objekt ist.
 
 .. image:: img/ir_avoid.png
     :width: 400
     :align: center
 
-Here are the pin definitions:
+Hier sind die Pin-Definitionen:
 
-* **GND**: Ground
-* **+**: Power supply, 3.3 ~ 5V DC.
-* **Out**: By default, it stays high and only goes low when it spots an obstacle.
-* **EN**: This **enable** pin decides when the module should work. By default, it is connected to GND, meaning the module is always on the job.
+* **GND**: Erdung
+* **+**: Stromversorgung, 3,3 ~ 5V DC.
+* **Out**: Standardmäßig bleibt es hoch und wird nur niedrig, wenn es ein Hindernis erkennt.
+* **EN**: Dieser **Enable**-Pin entscheidet, wann das Modul arbeiten soll. Standardmäßig ist er mit GND verbunden, was bedeutet, dass das Modul immer in Betrieb ist.
 
 
-**How it works?**
+**Wie funktioniert das?**
 
-This module contains a pair of IR transmitting and receiving components. Basically, the transmitter emits infrared light, when the emitted infrared light encounters an obstacle, it is reflected back and received by the receiver. Upon detection, the indicator lights up. After circuit processing, it outputs a low level signal.
+Dieses Modul enthält ein Paar IR-Sendungs- und Empfangskomponenten. Der Sender emittiert Infrarotlicht, das, wenn es auf ein Hindernis trifft, zurückreflektiert und vom Empfänger aufgenommen wird. Bei Erkennung leuchtet die Anzeige auf. Nach der Schaltungsverarbeitung gibt es ein niedriges Signal aus.
 
 .. image:: img/ir_receive.png
     :width: 600
     :align: center
 
 
-The **EN** pin's low-level state activates the module, with the jumper cap securing the **EN** pin to the GND. To control the EN pin programmatically, remove the jumper cap.
+Der niedrige Zustand des **EN**-Pins aktiviert das Modul, wobei die Jumperkappe den **EN**-Pin mit dem GND sichert. Um den EN-Pin programmgesteuert zu steuern, entfernen Sie die Jumperkappe.
 
 .. image:: img/ir_cap.png
     :width: 400
     :align: center
 
-There are two potentiometers on the module, one for adjusting the transmitting power and one for adjusting the transmitting frequency, and by adjusting these two potentiometers you can adjust its effective distance.
+Auf dem Modul befinden sich zwei Potentiometer, eines zur Einstellung der Sendeleistung und eines zur Einstellung der Sendefrequenz. Durch die Anpassung dieser beiden Potentiometer können Sie seine effektive Entfernung einstellen.
 
 .. image:: img/ir_avoid_pot.png
     :width: 400
     :align: center 
 
 
-**Adjust the detection distance**
+**Einstellen der Erfassungsdistanz**
 
-The obstacle avoidance module's detection range must be precisely calibrated for optimal performance, as default factory settings may not align with specific requirements.
+Der Erfassungsbereich des Hindernisvermeidungsmoduls muss präzise kalibriert werden, um eine optimale Leistung zu erzielen, da die Standardeinstellungen der Fabrik möglicherweise nicht den spezifischen Anforderungen entsprechen.
 
-Calibration involves the following steps:
+Die Kalibrierung umfasst die folgenden Schritte:
 
-#. Alignment of the Module: Start with the right-hand side obstacle avoidance module. Transportation can occasionally displace the alignment of the module's infrared transmitter and receiver. They should be manually realigned to ensure accuracy.
+#. Ausrichtung des Moduls: Beginnen Sie mit dem rechten Hindernisvermeidungsmodul. Transport kann gelegentlich die Ausrichtung des Infrarotsenders und -empfängers des Moduls verschieben. Sie sollten manuell neu ausgerichtet werden, um Genauigkeit zu gewährleisten.
 
     .. raw:: html
 
         <video width="600" loop autoplay muted>
             <source src="../_static/video/ir_adjust1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            Ihr Browser unterstützt das Video-Tag nicht.
         </video>
 
-#. Place an obstacle about 20 cm directly in front of the right module. The box in which our Rover kit came is a good choice for this! Now, turn the potentiometer on the module until the indicator light on the module just lights up. Then, keep moving the obstacle back and forth to check if the indicator light comes on at the desired distance. If the light doesn't turn on at the correct distance or if it remains on without going out, you'll need to adjust the other potentiometer.
+#. Platzieren Sie ein Hindernis etwa 20 cm direkt vor dem rechten Modul. Die Box, in der unser Rover-Kit geliefert wurde, ist eine gute Wahl dafür! Drehen Sie nun das Potentiometer am Modul, bis die Anzeige am Modul gerade aufleuchtet. Bewegen Sie dann das Hindernis hin und her, um zu prüfen, ob die Anzeige im gewünschten Abstand aufleuchtet. Wenn das Licht nicht in der richtigen Entfernung aufleuchtet oder ständig eingeschaltet bleibt, müssen Sie das andere Potentiometer einstellen.
 
     .. raw:: html
 
         <video width="600" loop autoplay muted>
             <source src="../_static/video/ir_adjust2.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            Ihr Browser unterstützt das Video-Tag nicht.
         </video>
 
 
-#. Repeat the same process for another module.
+#. Wiederholen Sie den gleichen Prozess für ein weiteres Modul.
 
-**Features**
+**Merkmale**
 
-* operating voltage: 3.3 V to 5 V
-* output: digital (on/off)
-* detection threshold: adjustable by 2 potentiometers
-* distance range: 2 to 40 cm
-* adjustment R5: frequency adjustment 38 kHz (already optimized)
-* adjustment R6: IR LED duty cycle adjustment (already optimized)
-* operating temperature: -10 °C to +50 °C
-* effective angle: 35°
-* I/O interface: 4 wire interface (- / + / S / EN)
-* dimensions: 45 x 16 x 10 mm
-* weight: 9 g 
+* Betriebsspannung: 3,3 V bis 5 V
+* Ausgang: digital (ein/aus)
+* Einstellschwelle: einstellbar durch 2 Potentiometer
+* Distanzbereich: 2 bis 40 cm
+* Einstellung R5: Frequenzeinstellung 38 kHz (bereits optimiert)
+* Einstellung R6: IR-LED-Tastverhältniseinstellung (bereits optimiert)
+* Betriebstemperatur: -10 °C bis +50 °C
+* Effektiver Winkel: 35°
+* I/O-Schnittstelle: 4-Draht-Schnittstelle (- / + / S / EN)
+* Abmessungen: 45 x 16 x 10 mm
+* Gewicht: 9 g 
+

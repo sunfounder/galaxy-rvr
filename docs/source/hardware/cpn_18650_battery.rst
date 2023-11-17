@@ -1,25 +1,23 @@
-18650 Battery
+18650 Batterie
 =================
 
 .. image:: img/3pin_battery.jpg
     :width: 500
     :align: center
 
-* **VCC**: Battery positive terminal, here there are two sets of VCC and GND is to increase the current and reduce the resistance.
-* **Middle**: To balance the voltage between the two cells and thus protect the battery.
-* **GND**: Negative battery terminal.
+* **VCC**: Positiver Batterieanschluss, hier gibt es zwei Sätze von VCC und GND, um den Strom zu erhöhen und den Widerstand zu verringern.
+* **Middle**: Zur Ausgleichung der Spannung zwischen den beiden Zellen und somit zum Schutz der Batterie.
+* **GND**: Negativer Batterieanschluss.
 
+Dies ist ein von SunFounder hergestelltes spezielles Batteriepaket, bestehend aus zwei 18650 Batterien mit einer Kapazität von 2200mAh. 
+Der Anschluss ist PH2.0-3P, der nach dem Einstecken in das Shield direkt aufgeladen werden kann.
 
-This is a custom battery pack made by SunFounder consisting of two 18650 batteries with a capacity of 2200mAh. 
-The connector is PH2.0-3P, which can be charged directly after being inserted into the shield.
+**Merkmale**
 
-
-**Features**
-
-* Battery charge: 5V/2A
-* Battery output: 5V/5A
-* Battery capacity: 3.7V 2000mAh x 2
-* Battery life: 90min
-* Battery charge time: 130min
-* Connector: PH2.0, 3P
+* Batterieladung: 5V/2A
+* Batterieausgang: 5V/5A
+* Batteriekapazität: 3.7V 2000mAh x 2
+* Batterielebensdauer: 90min
+* Ladezeit der Batterie: 130min
+* Anschluss: PH2.0, 3P
 

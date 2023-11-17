@@ -1,105 +1,104 @@
-
-Lesson 9: Lighting the Way with RGB LED Strips
+Lektion 9: Den Weg mit RGB-LED-Streifen beleuchten
 ============================================================
 
-In our journey so far, we've transformed our Mars Rover into a smart explorer, capable of skilfully manoeuvring around obstacles. It's become quite adept at navigating the Mars-like terrains we've set up for it.
+Auf unserer bisherigen Reise haben wir unseren Mars-Rover in einen intelligenten Entdecker verwandelt, der geschickt um Hindernisse manövriert. Er ist mittlerweile recht geschickt darin, sich auf den Mars-ähnlichen Geländen, die wir für ihn vorbereitet haben, zurechtzufinden.
 
-But, what if we could add a bit of flair to its practicality? Let's give our Rover the ability to express itself through a spectacle of colors and light. We're talking about incorporating RGB LED strips - a cool feature that would allow our Rover to illuminate its path, even in the darkest conditions.
+Aber, was wäre, wenn wir seinem praktischen Nutzen ein wenig Flair hinzufügen könnten? Lassen Sie uns unserem Rover die Fähigkeit geben, sich durch ein Spektakel aus Farben und Licht auszudrücken. Wir sprechen davon, RGB-LED-Streifen zu integrieren - ein cooles Feature, das es unserem Rover ermöglichen würde, seinen Weg zu erhellen, selbst unter dunkelsten Bedingungen.
 
-Picture this - the Rover leaves a trail of color-coded signals, making it easier for us to understand its moves. A green glow when it's on the go, a stern red when it halts, or a flashy yellow during those swift turns. It could even light up in an array of colors just for the sheer fun of it!
+Stellen Sie sich das vor - der Rover hinterlässt eine Spur aus farbcodierten Signalen, die es uns erleichtert, seine Bewegungen zu verstehen. Ein grünes Leuchten, wenn er unterwegs ist, ein strenges Rot, wenn er hält, oder ein auffälliges Gelb bei diesen schnellen Wendungen. Er könnte sogar nur zum Spaß in einem Farbenmeer aufleuchten!
 
-Our goal in this lesson is to understand the principles of RGB LED strips, learn to control their color and brightness, and then synchronize this with the Rover's movements. By the end, our Mars Rover will be more than a machine. It'll be a luminous, color-changing entity, leading the way in the vast Martian landscape!
+Unser Ziel in dieser Lektion ist es, die Prinzipien von RGB-LED-Streifen zu verstehen, zu lernen, wie man ihre Farbe und Helligkeit steuert und dies dann mit den Bewegungen des Rovers zu synchronisieren. Am Ende wird unser Mars-Rover mehr als eine Maschine sein. Er wird eine leuchtende, farbwechselnde Entität sein, die den Weg in der weiten Marslandschaft weist!
 
 .. raw:: html
 
     <video width="600" loop autoplay muted>
         <source src="_static/video/car_rgb.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        Ihr Browser unterstützt das Video-Tag nicht.
     </video>
 
 .. note::
 
-    If you are learning this course after fully assembling the GalaxyRVR, you need to move this switch to the right before uploading the code.
+    Wenn Sie diesen Kurs nach der vollständigen Montage des GalaxyRVR absolvieren, müssen Sie diesen Schalter nach rechts bewegen, bevor Sie den Code hochladen.
 
     .. image:: img/camera_upload.png
         :width: 500
         :align: center
 
-Objective
+Kursziele
 -------------
 
-* Understand the working principles and applications of RGB LED strips.
-* Learn how to use Arduino programming to control the color and brightness of RGB LED strips.
-* Practice installing and using RGB LED strips on the Mars Rover model as indicators.
+* Verstehen der Arbeitsprinzipien und Anwendungen von RGB-LED-Streifen.
+* Lernen, wie man Arduino-Programmierung verwendet, um die Farbe und Helligkeit von RGB-LED-Streifen zu steuern.
+* Übung im Installieren und Verwenden von RGB-LED-Streifen am Mars-Rover-Modell als Anzeiger.
 
-Materials Needed
+Kursmaterialien
 -------------------------
 
-* RGB LED Strips (each strip has 8 RGB LEDs, a total of two strips)
-* Basic tools and accessories (e.g. screwdriver, screws, wires etc.)
-* Mars Rover Model (Equipped with rocker-bogie system, main boards, motors, obstacle avoidance module, ultrasonic module)
-* USB Cable
+* RGB-LED-Streifen (jeder Streifen hat 8 RGB-LEDs, insgesamt zwei Streifen)
+* Grundwerkzeuge und Zubehör (z. B. Schraubendreher, Schrauben, Kabel usw.)
+* Mars-Rover-Modell (ausgestattet mit Schaukel-Bogie-System, Hauptplatinen, Motoren, Hindernisvermeidungsmodul, Ultraschallmodul)
+* USB-Kabel
 * Arduino IDE
 * Computer
 
-Course Steps
+Kursschritte
 ------------------
-**Step 1: Install the RGB LED Strips on the Mars Rover**
+**Schritt 1: Installieren der RGB-LED-Streifen am Mars-Rover**
 
-Now, fix the two RGB light strips to the bottom sides of the car. They are controlled by a single set of pins, so there is no need to differentiate during the wiring process.
+Fixieren Sie nun die beiden RGB-Lichtstreifen an den unteren Seiten des Wagens. Sie werden von einem einzigen Satz Pins gesteuert, daher ist während des Verdrahtungsprozesses keine Unterscheidung notwendig.
 
 .. raw:: html
 
     <iframe width="600" height="400" src="https://www.youtube.com/embed/v4YGjNwPOJE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-**Step 2: Explore the Magic of Light with RGB LED Strips**
+**Schritt 2: Erforschen Sie die Magie des Lichts mit RGB-LED-Streifen**
 
-Do you remember the last time you saw a rainbow? How it made the sky colorful with seven vibrant hues? How would you like to create your own rainbow, right here in our little Martian rover? Let's dive into the magic of light with RGB LED strips!
+Erinnern Sie sich an das letzte Mal, als Sie einen Regenbogen gesehen haben? Wie er den Himmel mit sieben lebendigen Farben bunt gemacht hat? Wie wäre es, wenn Sie hier bei unserem kleinen Mars-Rover Ihren eigenen Regenbogen kreieren könnten? Lassen Sie uns in die Magie des Lichts mit RGB-LED-Streifen eintauchen!
 
 .. image:: img/4_rgb_strip.jpg
 
-You might notice that our RGB LED Strip has four pins labeled as follows:
+Sie werden bemerken, dass unser RGB-LED-Streifen vier Pins wie folgt beschriftet hat:
 
-* **+5V**: This is the common "positive" end or the "anode" of the three tiny light bulbs (LEDs) inside our strip. It needs to connect to DC 5V, a kind of electric juice that powers our tiny bulbs!
-* **B**: This is the "negative" end or the "cathode" of the blue LED.
-* **R**: This is the "cathode" of the red LED.
-* **G**: This is the "cathode" of the green LED.
+* **+5V**: Dies ist das gemeinsame „positive“ Ende oder die „Anode“ der drei kleinen Glühbirnen (LEDs) in unserem Streifen. Es muss mit DC 5V verbunden werden, einer Art elektrischem Saft, der unsere winzigen Glühbirnen antreibt!
+* **B**: Dies ist das „negative“ Ende oder die „Kathode“ der blauen LED.
+* **R**: Dies ist die „Kathode“ der roten LED.
+* **G**: Dies ist die „Kathode“ der grünen LED.
 
 .. image:: img/rgb_5050.jpg
 
-Do you remember the three primary colors - Red, Blue, and Green - that we learned in our art class? Just like an artist mixes these colors on his palette to create new shades, our strip contains 4 "5050" LEDs that can mix these primary colors to create virtually any color! Each "5050" LED is like a tiny art studio that houses these three colored bulbs.
+Erinnern Sie sich an die drei Grundfarben - Rot, Blau und Grün - die wir im Kunstunterricht gelernt haben? Genau wie ein Künstler diese Farben auf seiner Palette mischt, um neue Schattierungen zu kreieren, enthält unser Streifen 4 „5050“ LEDs, die diese Grundfarben mischen können, um praktisch jede Farbe zu erzeugen! Jede „5050“ LED ist wie ein winziges Kunststudio, das diese drei farbigen Glühbirnen beherbergt.
 
 .. image:: img/rgb_5050_sche.png
 
-These tiny art studios are then connected in a smart way on a flexible circuit board - kind of like a mini electric highway! The "positive" ends of all LEDs (anodes) are connected together, while the "negative" ends (cathodes) are connected to their corresponding color lanes (G to G, R to R, B to B).
+Diese winzigen Kunststudios sind dann auf einer flexiblen Platine clever verbunden - quasi wie eine Mini-Elektroautobahn! Die „positiven“ Enden aller LEDs (Anoden) sind miteinander verbunden, während die „negativen“ Enden (Kathoden) mit ihren entsprechenden Farbspuren verbunden sind (G zu G, R zu R, B zu B).
 
 .. image:: img/rgb_strip_sche.png
 
-And the coolest part? With our command, all the LEDs on this strip can change their colors at once! It's like having our own light orchestra at the tip of our fingers!
+Und das coolste daran? Auf unseren Befehl hin können alle LEDs auf diesem Streifen gleichzeitig ihre Farben ändern! Es ist, als hätten wir unser eigenes Lichtorchester an der Spitze unserer Finger!
 
-So let's get ready to play some light music! In our next step, we'll learn how to control these LEDs to display the colors we want. It will be like conducting a symphony of light!
+Also bereiten wir uns darauf vor, etwas Lichtmusik zu spielen! Im nächsten Schritt lernen wir, wie wir diese LEDs steuern können, um die gewünschten Farben anzuzeigen. Es wird sein, als würden wir eine Symphonie des Lichts dirigieren!
 
 
-**Step 3: Light Up the Show - Coding to Control the RGB LED Strips**
+**Schritt 3: Die Show erleuchten - Programmierung zur Steuerung der RGB-LED-Streifen**
 
-We've stepped into the realm of colors, it's time to bring our Mars Rover to life. Brace yourself to paint the darkness with a spectrum of colors using RGB LED strips. Think of this as a chance to transform your Mars Rover into a mobile disco party!
+Wir sind in das Reich der Farben eingetreten, es ist Zeit, unseren Mars-Rover zum Leben zu erwecken. Machen Sie sich bereit, die Dunkelheit mit einem Farbspektrum zu bemalen, das mit RGB-LED-Streifen erzeugt wird. Denken Sie daran, dies als Chance zu sehen, Ihren Mars-Rover in eine mobile Diskoparty zu verwandeln!
 
-* Before we dive into the fun part, let's understand that even though we have two LED strips, they are both controlled by the same set of pins. Think of it as having two dazzling dancers moving in perfect synchronization!
+* Bevor wir in den spaßigen Teil eintauchen, sollten wir verstehen, dass wir zwar zwei LED-Streifen haben, diese jedoch beide von denselben Pins gesteuert werden. Denken Sie daran, als hätten Sie zwei umwerfende Tänzer, die sich in perfekter Synchronisation bewegen!
 
     .. image:: img/rgb_shield.png
 
-* It's time to summon our coding magic. We're going to initiate our pins with the Arduino code.
+* Jetzt ist es an der Zeit, unsere Programmiermagie zu beschwören. Wir werden unsere Pins mit dem Arduino-Code initialisieren.
 
     .. code-block:: arduino
 
         #include <SoftPWM.h>
 
-        // Define the pin numbers for the RGB strips
+         // Define the pin numbers for the RGB strips
         const int bluePin = 11;
         const int redPin = 12;
         const int greenPin = 13;
 
-* With our pins in place, we'll now use the ``SoftPWMSet()`` function to control these pins. To make the RGB strip display red, we turn the red LED on and switch off the others.
+* Mit unseren Pins an ihrem Platz werden wir jetzt die Funktion ``SoftPWMSet()`` verwenden, um diese Pins zu steuern. Um den RGB-Streifen rot anzeigen zu lassen, schalten wir die rote LED ein und die anderen aus.
 
     .. code-block:: arduino
 
@@ -116,69 +115,69 @@ We've stepped into the realm of colors, it's time to bring our Mars Rover to lif
             delay(1000); // Wait for 1 second
         }
 
-In the above code, we've only demonstrated how to display a single color. 
+Im obigen Code haben wir nur demonstriert, wie man eine einzelne Farbe anzeigt.
 
-If we were to showcase a variety of colors using this method, the code could become quite cumbersome. Therefore, to make our code more concise and maintainable, we can create a function to assign PWM values to the three pins. Then, within the ``loop()``, we can easily set a multitude of colors.
+Wenn wir eine Vielzahl von Farben mit dieser Methode präsentieren würden, könnte der Code recht umständlich werden. Daher, um unseren Code prägnanter und wartbarer zu machen, können wir eine Funktion erstellen, um PWM-Werte den drei Pins zuzuweisen. Dann können wir innerhalb der ``loop()``-Funktion ganz einfach eine Vielzahl von Farben einstellen.
 
 .. raw:: html
 
   <iframe src=https://create.arduino.cc/editor/sunfounder01/cac90501-04c1-44c2-a1d7-4f863e50f186/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-After uploading the code to your R3 board, you may find that the orange and yellow colors seem a bit off. 
-This is because the red LED on the strip is relatively dim compared to the other two LEDs. 
-Thus, you'll need to introduce offset values in your code to correct this color discrepancy.
+Nachdem Sie den Code auf Ihr R3-Board hochgeladen haben, stellen Sie möglicherweise fest, dass die Farben Orange und Gelb etwas abweichen. 
+Dies liegt daran, dass die rote LED auf dem Streifen im Vergleich zu den anderen beiden LEDs relativ schwach leuchtet. 
+Daher müssen Sie in Ihrem Code Offset-Werte einführen, um diese Farbabweichung zu korrigieren.
 
 .. raw:: html
 
   <iframe src=https://create.arduino.cc/editor/sunfounder01/60ec867f-5637-44bd-b72d-4709fc4f5349/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-Now, the RGB LED strip should be able to display the correct colors. If you still notice discrepancies, you can manually adjust the values of ``R_OFFSET``, ``G_OFFSET``, and ``B_OFFSET``.
+Nun sollte der RGB-LED-Streifen die richtigen Farben anzeigen können. Wenn Sie immer noch Abweichungen bemerken, können Sie die Werte von ``R_OFFSET``, ``G_OFFSET`` und ``B_OFFSET`` manuell anpassen.
 
-Feel free to experiment and display any color of your choosing on the LED strip. All you need to do is fill in the RGB values for the color you want.
+Fühlen Sie sich frei zu experimentieren und jede beliebige Farbe Ihrer Wahl auf dem LED-Streifen anzuzeigen. Alles, was Sie tun müssen, ist, die RGB-Werte für die gewünschte Farbe einzugeben.
 
-Here's a tip: You can use the Paint tool on your computer to determine the RGB values of your desired color.
+Hier ein Tipp: Sie können das Malprogramm auf Ihrem Computer verwenden, um die RGB-Werte Ihrer gewünschten Farbe zu ermitteln.
 
 .. image:: img/rgb_paint.png
 
-Now that we've mastered the art of color-setting, in the next step, we'll integrate these dazzling displays with the movements of the Mars Rover. Exciting times ahead!
+Jetzt, wo wir die Kunst des Farbsettings gemeistert haben, werden wir im nächsten Schritt diese schillernden Displays mit den Bewegungen des Mars-Rovers integrieren. Aufregende Zeiten stehen bevor!
 
-**Step 4: Move the Rover with Color Indication**
+**Schritt 4: Bewegung des Rovers mit Farbanzeige**
 
-Now, we'll add color indications to the movements of the Mars Rover. For instance, we can use green for forward, red for backward, and yellow for turning left or right.
+Nun werden wir Farbanzeigen zu den Bewegungen des Mars-Rovers hinzufügen. Beispielsweise können wir Grün für Vorwärtsbewegungen, Rot für Rückwärtsbewegungen und Gelb für das Abbiegen nach links oder rechts verwenden.
 
-To do this, we will add a control mechanism in our code that sets the color of the LED strip based on the Rover's movement. This will involve modifying our Rover control code to include our color control functions.
+Um dies zu tun, werden wir einen Steuermechanismus in unserem Code hinzufügen, der die Farbe des LED-Streifens basierend auf der Bewegung des Rovers einstellt. Dies wird beinhalten, unseren Rover-Steuerungscode zu modifizieren, um unsere Farbsteuerungsfunktionen einzubeziehen.
 
-Let's see an example of how we can do this:
+Lassen Sie uns ein Beispiel sehen, wie wir das machen können:
 
 .. raw:: html
 
   <iframe src=https://create.arduino.cc/editor/sunfounder01/5412eebe-75b8-4f98-a348-f0889e8a7fde/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-Within the ``loop()`` function, we commanded the Rover to perform a series of actions by calling different functions. 
-Each action had its corresponding color display - green for moving forward, red for moving backward, and yellow for turning. 
-This color display feature was brought to life using the ``setColor()`` function, which manipulated the brightness of 
-each RGB color channel.
+Innerhalb der ``loop()``-Funktion haben wir den Rover beauftragt, eine Reihe von Aktionen durchzuführen, indem wir verschiedene Funktionen aufrufen. 
+Jede Aktion hatte ihre entsprechende Farbanzeige - Grün für Vorwärtsbewegungen, Rot für Rückwärtsbewegungen und Gelb für das Abbiegen. 
+Diese Farbanzeigefunktion wurde mit der Funktion ``setColor()`` zum Leben erweckt, welche die Helligkeit 
+jedes RGB-Farbkanals steuerte.
 
-For the stop action, we introduced an engaging element - a breathing effect with a red and blue light. 
-This was achieved by cyclically adjusting the brightness of the red and blue channels within the ``stopMove()`` function. 
-As such, upon stopping, the LED strip transitioned colors between red and blue, creating a dynamic visual effect.
+Für die Stop-Aktion haben wir ein fesselndes Element eingeführt - einen Atmungseffekt mit rotem und blauem Licht. 
+Dies wurde erreicht, indem die Helligkeit der roten und blauen Kanäle in der Funktion ``stopMove()`` zyklisch angepasst wurde. 
+So wechselte der LED-Streifen beim Anhalten die Farben zwischen Rot und Blau und schuf einen dynamischen visuellen Effekt.
 
-Now, our Mars Rover now possesses its own vibrant color effects, leaving behind a trail of color-coded signals, each representing a 
-unique movement. 
+Nun besitzt unser Mars-Rover seine eigenen lebhaften Farbeffekte und hinterlässt eine Spur aus farbcodierten Signalen, von denen jedes 
+eine einzigartige Bewegung darstellt. 
 
-Through this project, we've discovered how STEAM subjects can amalgamate to breathe life into an 
-otherwise ordinary machine, turning it into a vibrant, interactive, and fun learning tool.
+Durch dieses Projekt haben wir entdeckt, wie STEAM-Fächer verschmelzen können, um einem 
+ansonsten gewöhnlichen Gerät Leben einzuhauchen, und es in ein lebendiges, interaktives und unterhaltsames Lernwerkzeug zu verwandeln.
 
 
-**Step 5: Summary and Reflection**
+**Schritt 5: Zusammenfassung und Reflexion**
 
-In today's lesson, we delved into the world of RGB LED strips, exploring how to manipulate them to display a vivid array of colors. These brilliant hues breathed new life into our Mars Rover, transforming it from a mere machine into a vibrant spectacle.
+In der heutigen Lektion haben wir uns in die Welt der RGB-LED-Streifen vertieft und erforscht, wie man sie manipuliert, um eine lebendige Palette von Farben anzuzeigen. Diese brillanten Farbtöne hauchten unserem Mars-Rover neues Leben ein und verwandelten ihn von einer bloßen Maschine in ein lebendiges Spektakel.
 
-Now, I invite you to ponder - If it was you in the driver's seat, how would you utilize these colors to enhance your Mars Rover? What unique effects would you want it to exhibit?
+Nun lade ich Sie ein, nachzudenken - Wenn Sie am Steuer säßen, wie würden Sie diese Farben nutzen, um Ihren Mars-Rover zu verbessern? Welche einzigartigen Effekte möchten Sie, dass er zeigt?
 
-Moreover, through the process, I hope you had a hands-on understanding of how diverse STEAM concepts can be interwoven in an engaging project, providing you with a broader perspective of its practical applications. 
+Darüber hinaus hoffe ich, dass Sie durch den Prozess ein praktisches Verständnis dafür gewonnen haben, wie verschiedene STEAM-Konzepte in einem ansprechenden Projekt verwoben werden können, und Ihnen eine breitere Perspektive ihrer praktischen Anwendungen bieten. 
 
-See you in our next exciting adventure!
+Wir sehen uns in unserem nächsten spannenden Abenteuer!

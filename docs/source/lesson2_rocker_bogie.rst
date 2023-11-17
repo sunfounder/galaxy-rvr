@@ -1,113 +1,110 @@
-Lesson 2 Understanding and Making Rocker-Bogie System
+Lektion 2: Verständnis und Bau des Rocker-Bogie-Systems
 ============================================================
-In our previous lesson, we learned about the Mars rovers and their basic structure. One interesting aspect that we notice 
-when looking at the evolution of Mars rovers is the consistency in their suspension system. 
-Despite the advancement in technology, all the rovers from Sojourner to Perseverance have been 
-designed using a similar type of suspension system known as the Rocker-Bogie system.
+In unserer vorherigen Lektion haben wir über die Mars-Rover und ihre grundlegende Struktur gelernt. Ein interessanter Aspekt, den wir bei der Betrachtung der Evolution der Mars-Rover feststellen, ist die Konstanz in ihrem Federungssystem. 
+Trotz des technologischen Fortschritts wurden alle Rover von Sojourner bis Perseverance 
+mit einem ähnlichen Typ von Federungssystem entworfen, das als Rocker-Bogie-System bekannt ist.
 
-But why stick with the Rocker-Bogie system, you might wonder? What benefits does this particular design offer for Mars exploration?
+Aber warum halten sie am Rocker-Bogie-System fest, fragt man sich vielleicht? Welche Vorteile bietet dieses spezielle Design für die Mars-Erkundung?
 
 .. image:: img/rocker_bogie_pic.webp
 
 
-In today's lesson, we're going to dig deeper into the science and engineering behind the Rocker-Bogie system, then build one.
+In der heutigen Lektion werden wir tiefer in die Wissenschaft und Technik hinter dem Rocker-Bogie-System eintauchen und dann eines bauen.
 
-Let's embark on this exciting engineering journey!
+Lasst uns auf diese spannende Ingenieurreise gehen!
 
-Learning Objectives
-----------------------
+Kursziele
+-------------------------
 
-* Understand the design principle of the Rocker-Bogie suspension system and its advantages.
-* Learn how to design and make a basic model of the Rocker-Bogie suspension system.
-* Apply basic principles of physics to explain how the Rocker-Bogie suspension system overcomes complex terrains.
+* Das Designprinzip des Rocker-Bogie-Federungssystems und seine Vorteile verstehen.
+* Lernen, wie man ein Grundmodell des Rocker-Bogie-Federungssystems entwirft und baut.
+* Grundlegende Physikprinzipien anwenden, um zu erklären, wie das Rocker-Bogie-Federungssystem komplexe Gelände meistert.
 
-Materials
--------------
-* Blueprints and reference materials (such as NASA Mars Rover design drawings and videos on how the Rocker-Bogie suspension system works)
-* Mars Rover structure kit
-* Basic tools and accessories (e.g. screwdriver, screws, etc.)
+Kursmaterialien
+-----------------------
+* Blaupausen und Referenzmaterialien (wie NASA Mars Rover-Designzeichnungen und Videos, die zeigen, wie das Rocker-Bogie-Federungssystem funktioniert)
+* Mars-Rover-Strukturbausatz
+* Grundwerkzeuge und Zubehör (z. B. Schraubendreher, Schrauben usw.)
 
-Steps
+Kursschritte
 --------------
 
-**Step 1: Unraveling the Rocker-Bogie System**
+**Schritt 1: Entschlüsselung des Rocker-Bogie-Systems**
 
-The Rocker-Bogie system is like a mountain goat of mechanics - designed to keep all wheels of the rover grounded while it navigates over rough and rocky terrains. It's specially built for handling Mars' unpredictable landscape, including steep inclines and sizable boulders. This system skips springs and instead leverages the geometry of its six wheels and their interactions to conquer tricky terrain. It's a shining example of how clever mechanical design can surmount environmental hurdles.
+Das Rocker-Bogie-System ist wie eine Gebirgsziege der Mechanik – konzipiert, um alle Räder des Rovers am Boden zu halten, während er über raues und felsiges Gelände navigiert. Es ist speziell für die Bewältigung der unvorhersehbaren Landschaft des Mars gebaut, einschließlich steiler Anstiege und großer Felsbrocken. Dieses System verzichtet auf Federn und nutzt stattdessen die Geometrie seiner sechs Räder und deren Interaktion, um schwieriges Gelände zu bewältigen. Es ist ein glänzendes Beispiel dafür, wie intelligentes mechanisches Design Umwelthindernisse überwinden kann.
 
-Let's dive into the two main parts of this system - the "rocker" and the "bogie".
+Lassen Sie uns in die zwei Hauptteile dieses Systems eintauchen – den „Rocker“ und den „Bogie“.
 
 .. image:: img/rocker_bogie.png
 
-* The "rocker" part of the system is like the two large limbs on either side of the rover's body. These limbs, or rockers, connect to each other and the rover's body, or chassis, through a mechanism called a differential. Just like two legs walking, the rockers rotate in opposite directions relative to the chassis, making sure that most of the wheels keep in contact with the ground. The body of the rover maintains the average angle of both rockers. One end of a rocker connects to a wheel, while the other end connects to the bogie.
+* Der „Rocker“-Teil des Systems ist wie die zwei großen Gliedmaßen an beiden Seiten des Rovers. Diese Glieder, oder Rocker, verbinden sich miteinander und mit dem Körper des Rovers, oder Chassis, durch einen Mechanismus, der als Differenzial bekannt ist. Ähnlich wie zwei Beine beim Gehen, rotieren die Rocker in entgegengesetzte Richtungen relativ zum Chassis und sorgen dafür, dass die meisten Räder Kontakt zum Boden halten. Der Körper des Rovers behält den durchschnittlichen Winkel beider Rocker bei. Ein Ende eines Rockers verbindet sich mit einem Rad, während das andere Ende mit dem Bogie verbunden ist.
 
-* The "bogie" part of the system is like a mini-limbed creature attached to the rocker. It's a smaller linkage system that pivots in the middle to the rocker and has a wheel at both ends.
+* Der „Bogie“-Teil des Systems ist wie ein kleines, beinähnliches Wesen, das sich an den Rocker anschließt. Es ist ein kleineres Verbindungssystem, das sich in der Mitte zum Rocker hin dreht und an beiden Enden ein Rad hat.
 
-With this basic understanding, let's hop to the next step of our adventure.
+Mit diesem Grundverständnis springen wir zum nächsten Schritt unseres Abenteuers.
 
 
-**Step 2: Seeing the System in Action**
+**Schritt 2: Das System in Aktion sehen**
 
-Below is a GIF that showcases the unique features of the Rocker-Bogie suspension system and illustrates how it enables Mars rovers to navigate the challenging Martian terrain.
+Unten ist ein GIF, das die einzigartigen Merkmale des Rocker-Bogie-Federungssystems zeigt und veranschaulicht, wie es Mars-Rovern ermöglicht, das herausfordernde Marsgelände zu bewältigen.
 
 .. image:: img/rocker_bogie.gif
     :align: center
 
-After watching the gif, let's have a discussion! Think about these questions:
+Nachdem wir das GIF gesehen haben, lasst uns diskutieren! Denkt über diese Fragen nach:
 
-* Why do you think the Rocker-Bogie suspension system is suitable for Mars exploration?
-* Can you describe how the Rocker-Bogie system works in your own words?
-* What are the key features of the Rocker-Bogie system that help the rovers to negotiate rough terrain?
+* Warum denkst du, ist das Rocker-Bogie-Federungssystem für die Mars-Erkundung geeignet?
+* Kannst du beschreiben, wie das Rocker-Bogie-System in deinen eigenen Worten funktioniert?
+* Was sind die Schlüsselelemente des Rocker-Bogie-Systems, die den Rovern helfen, schwieriges Gelände zu bewältigen?
 
-Feel free to share your thoughts and insights about the Rocker-Bogie suspension system.
+Fühle dich frei, deine Gedanken und Einsichten über das Rocker-Bogie-Federungssystem zu teilen.
 
-**Step 3: Building it**
+**Schritt 3: Bau es**
 
-Now that we've learned about the Rocker-Bogie system, it's time to build our own.
+Jetzt, wo wir über das Rocker-Bogie-System gelernt haben, ist es an der Zeit, unser eigenes zu bauen.
 
-Materials you need:
+Materialien, die du benötigst:
 
-* GalaxyRVR Kit
-* Basic tools like screwdriver and wrench
-* Follow the steps provided in the assembly instructions of the GalaxyRVR Kit to construct the suspension system of the Rover.
+* GalaxyRVR-Kit
+* Grundwerkzeuge wie Schraubendreher und Schraubenschlüssel
+* Befolge die Schritte in der Montageanleitung des GalaxyRVR-Kits, um das Federungssystem des Rovers zu konstruieren.
 
 .. raw:: html
 
     <iframe width="600" height="400" src="https://www.youtube.com/embed/a1xtgDUEvR0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
-Please note that patience and precision are essential here, make sure you correctly place every piece and secure it tightly.
+Bitte beachte, dass Geduld und Präzision hier wesentlich sind, stelle sicher, dass du jedes Teil korrekt platzierst und fest sicherst.
 
-In the meantime, discuss with your peers about the design and function of each component you are assembling. 
-This will not only help in understanding the design but also its practical application in Mars exploration.
+Unterdessen diskutiere mit deinen Kollegen über das Design und die Funktion jedes Bauteils, das du zusammenbaust. 
+Dies wird nicht nur beim Verständnis des Designs helfen, sondern auch bei seiner praktischen Anwendung in der Mars-Erkundung.
 
 
-Remember, don't worry if you encounter any issues during the assembly or testing. 
-This is all part of the engineering process! Troubleshooting problems is how we learn and innovate.
 
-**Step 4: Summary and Reflection**
+Denke daran, mach dir keine Sorgen, wenn du während des Zusammenbaus oder der Tests auf Probleme stößt. 
+Das ist alles Teil des Ingenieurprozesses! Probleme zu lösen ist, wie wir lernen und Neues entwickeln.
 
-During the assembly of the suspension system, did you notice that all the moving parts utilize self-locking nuts? Have you ever wondered why?
+**Schritt 4: Zusammenfassung und Reflexion**
 
+Hast du während des Zusammenbaus des Federungssystems bemerkt, dass alle beweglichen Teile selbstsichernde Muttern verwenden? Hast du dich jemals gefragt, warum?
 
 .. image:: img/self_locking_nuts.webp
     :align: center
 
-Self-locking nuts are a type of fastener that includes a rubber ring inside a regular nut. This design ensures that the assembled parts won't easily loosen and fall off due to vibrations during movement.
+Selbstsichernde Muttern sind eine Art Befestigungselement, das einen Gummiring in einer gewöhnlichen Mutter enthält. Dieses Design stellt sicher, dass die montierten Teile durch Vibrationen während der Bewegung nicht leicht lockern und abfallen.
 
-In addition, it also ensures that the parts can rotate within a certain range.
+Darüber hinaus stellt es auch sicher, dass sich die Teile innerhalb eines bestimmten Bereichs drehen können.
 
-So during assembly, you need to tighten the screw and self-locking nut with a socket and screwdriver first, then loosen it a bit. This ensures that there's room for free rotation between the parts without them being too loose.
-
+Daher musst du während der Montage die Schraube und die selbstsichernde Mutter zuerst mit einer Steckdose und einem Schraubendreher festziehen und dann ein wenig lockern. Dies stellt sicher, dass zwischen den Teilen genügend Raum für freie Rotation besteht, ohne dass sie zu locker sind.
 
 .. raw:: html
 
    <video width="600" loop autoplay muted>
         <source src="_static/video/rocker_bogie_system.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        Ihr Browser unterstützt das Video-Tag nicht.
    </video>
 
-In this lesson, we not only learned about the Rocker-Bogie System but also built one ourselves. Furthermore, we can manually simulate how it allows the Mars Rover to move smoothly over various rough terrains.
+In dieser Lektion haben wir nicht nur über das Rocker-Bogie-System gelernt, sondern auch selbst eines gebaut. Darüber hinaus können wir manuell simulieren, wie es dem Mars-Rover ermöglicht, reibungslos über verschiedene raue Gelände zu fahren.
 
-Armed with this knowledge and experience, we are now better equipped to venture deeper into the unknown realms of Martian exploration. Let's continue to unravel the mysteries of the red planet.
-
+Mit diesem Wissen und dieser Erfahrung sind wir nun besser gerüstet, um tiefer in die unbekannten Reiche der Mars-Erkundung vorzudringen. Lassen Sie uns weiterhin die Geheimnisse des roten Planeten entschlüsseln.
 

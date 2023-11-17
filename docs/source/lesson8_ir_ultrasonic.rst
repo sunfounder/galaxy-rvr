@@ -1,125 +1,120 @@
-Lesson 8 Advanced Obstacle Avoidance and Intelligent Following System
-=======================================================================
+Lektion 8 Fortgeschrittene Hindernisvermeidung und intelligentes Folgesystem
+====================================================================================
 
-In today's lesson, we're going to push our STEAM skills a step further. We'll combine an obstacle avoidance module 
-with an ultrasonic sensor to create an advanced obstacle avoidance system. 
-We'll also implement an intelligent following system to our Rover.
+In der heutigen Lektion werden wir unsere STEAM-Fähigkeiten weiterentwickeln. Wir kombinieren ein Hindernisvermeidungsmodul mit einem Ultraschallsensor, um ein fortgeschrittenes Hindernisvermeidungssystem zu erstellen. Außerdem implementieren wir ein intelligentes Folgesystem in unseren Rover.
 
-By the end of this lesson, our Mars Rover will not only be able to avoid obstacles in its path
-but also follow moving objects. Imagine having a mini robotic pet following you around! 
-Exciting, isn't it? So let's get started.
+Am Ende dieser Lektion wird unser Mars-Rover nicht nur in der Lage sein, Hindernisse auf seinem Weg zu vermeiden, sondern auch beweglichen Objekten zu folgen. Stellen Sie sich vor, Sie hätten ein kleines robotisches Haustier, das Ihnen folgt! Aufregend, nicht wahr? Also, lassen Sie uns beginnen.
 
 .. raw:: html
 
     <video width="600" loop autoplay muted>
         <source src="_static/video/ultrasonic_ir_avoid.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        Ihr Browser unterstützt das Video-Tag nicht.
     </video>
 
 .. note::
 
-    If you are learning this course after fully assembling the GalaxyRVR, you need to move this switch to the right before uploading the code.
+    Wenn Sie diesen Kurs nach der vollständigen Montage des GalaxyRVR absolvieren, müssen Sie diesen Schalter nach rechts bewegen, bevor Sie den Code hochladen.
 
     .. image:: img/camera_upload.png
         :width: 500
         :align: center
 
-Course Objectives
+Kursziele
 --------------------------
-* Learn how to combine obstacle avoidance modules with an ultrasonic module for improved navigation.
-* Understand the principles and functionalities behind an advanced obstacle avoidance system.
-* Learn how to implement an intelligent following system in the Mars Rover.
+* Lernen, wie man Hindernisvermeidungsmodule mit einem Ultraschallmodul für verbesserte Navigation kombiniert.
+* Verstehen der Prinzipien und Funktionalitäten hinter einem fortgeschrittenen Hindernisvermeidungssystem.
+* Erlernen der Implementierung eines intelligenten Folgesystems im Mars-Rover.
 
-Course Materials
+Kursmaterialien
 ------------------------
 
-* Mars Rover model (the one we built in previous lessons)
-* USB Cable
+* Mars-Rover-Modell (das wir in den vorherigen Lektionen gebaut haben)
+* USB-Kabel
 * Arduino IDE
 * Computer
-* And of course, your creative mind!
+* Und natürlich Ihren kreativen Geist!
 
-Course Steps
+Kursschritte
 --------------------
 
-**Step 1: Understanding the Concept**
+**Schritt 1: Verständnis des Konzepts**
 
-The obstacle avoidance module, as the name suggests, helps our Rover avoid obstacles. 
-It detects obstacles by transmitting an infrared signal and then receiving the signal 
-reflected back from the object. If there is an obstacle in front of the module, 
-the infrared signal is reflected back, and the module detects it.
+Das Hindernisvermeidungsmodul hilft unserem Rover, wie der Name schon sagt, Hindernisse zu vermeiden. 
+Es erkennt Hindernisse, indem es ein Infrarotsignal aussendet und dann das vom Objekt 
+reflektierte Signal empfängt. Ist ein Hindernis vor dem Modul, wird das Infrarotsignal 
+zurückreflektiert, und das Modul erkennt es.
 
-Now, adding an ultrasonic sensor to the mix improves this system. Ultrasonic sensors measure distance by 
-sending out a sound wave at a specific frequency and listening for that sound wave to bounce back. 
-By recording the elapsed time between the sound wave being generated and the sound wave bouncing back, 
-it is possible to calculate the distance between the sensor and the object.
+Wenn wir nun einen Ultraschallsensor hinzufügen, verbessert sich dieses System. Ultraschallsensoren messen Entfernungen, indem sie 
+eine Schallwelle mit einer bestimmten Frequenz aussenden und auf das Zurückprallen dieser Schallwelle hören. 
+Indem man die vergangene Zeit zwischen der Erzeugung der Schallwelle und dem Zurückprallen der Schallwelle aufzeichnet, 
+kann man die Entfernung zwischen dem Sensor und dem Objekt berechnen.
 
-Combining these two gives us a reliable, efficient, and versatile obstacle avoidance system!
+Die Kombination dieser beiden Systeme ergibt ein zuverlässiges, effizientes und vielseitiges Hindernisvermeidungssystem!
 
 
-**Step 2: Constructing Advanced Obstacle Avoidance Systems**
+**Schritt 2: Konstruktion fortgeschrittener Hindernisvermeidungssysteme**
 
-In our previous lessons, we've learned the basics of obstacle avoidance using infrared sensors. We've also explored how an ultrasonic module works. Now, we are going to bring all these pieces together and build an advanced obstacle avoidance system!
+In unseren vorherigen Lektionen haben wir die Grundlagen der Hindernisvermeidung mit Infrarotsensoren gelernt. Wir haben auch erforscht, wie ein Ultraschallmodul funktioniert. Jetzt werden wir all diese Teile zusammenbringen und ein fortgeschrittenes Hindernisvermeidungssystem bauen!
 
-Our enhanced Mars Rover will now use both ultrasonic and infrared sensors to navigate its surroundings.
+Unser verbesserter Mars-Rover wird nun sowohl Ultraschall- als auch Infrarotsensoren nutzen, um seine Umgebung zu navigieren.
 
-Let's envision how the infrared and ultrasonic modules should work together. To help clarify our logic, let's use a flowchart. Learning how to create flowcharts is an invaluable step in our coding journey as it can help you clarify your thoughts and systematically outline your plan.
+Lassen Sie uns überlegen, wie die Infrarot- und Ultraschallmodule zusammenarbeiten sollten. Um unsere Logik zu verdeutlichen, verwenden wir ein Flussdiagramm. Das Erlernen der Erstellung von Flussdiagrammen ist ein wertvoller Schritt auf unserer Programmierreise, da es Ihnen helfen kann, Ihre Gedanken zu klären und Ihren Plan systematisch zu skizzieren.
 
 .. image:: img/ultrasonic_ir_avoid_flowchart.png
     :width: 800
 
-Now let's turn this flowchart into actual code to bring our Rover to life.
+Nun lassen Sie uns dieses Flussdiagramm in tatsächlichen Code umsetzen, um unseren Rover zum Leben zu erwecken.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/53d72ee5-a4c8-4524-92f8-4b0f4760c015/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-Note that the ``handleForwardMovement()`` function is where we've integrated the behavior of the ultrasonic sensor. We read the distance data from the sensor and based on this data, we decide the movement of the Rover.
+Beachten Sie, dass die Funktion ``handleForwardMovement()`` der Ort ist, an dem wir das Verhalten des Ultraschallsensors integriert haben. Wir lesen die Entfernungsdaten vom Sensor und entscheiden auf Basis dieser Daten über die Bewegung des Rovers.
 
+Nachdem Sie den Code auf Ihr R3-Board hochgeladen haben, ist es Zeit, das System zu testen.
+Stellen Sie sicher, dass der Rover Hindernisse effizient erkennen und vermeiden kann.
+Denken Sie daran, dass Sie die Erkennungsdistanz im Code basierend auf Ihrer tatsächlichen Umgebung anpassen müssen, um das System zu perfektionieren.
 
-After uploading the code to your R3 board, it's time to test the system.
-Make sure the Rover can detect and avoid obstacles efficiently. 
-Remember, you may need to adjust the detection distance in the code based on your actual environment to perfect the system.
+**Schritt 3: Programmierung des intelligenten Folgesystems**
 
-**Step 3: Coding the Intelligent Following System**
+Jetzt, da unser Rover in der Lage ist, Hindernissen auszuweichen, wollen wir ihn weiter verbessern, indem wir ihn Objekte verfolgen lassen. Unser Ziel ist es, unseren bestehenden Code zu modifizieren, damit der Rover sich auf ein sich bewegendes Objekt zubewegt.
 
-With our Rover now capable of avoiding obstacles, let's enhance it further by making it follow objects. Our goal is to modify our existing code to make the Rover move towards a moving object.
+Haben Sie sich jemals über die Unterschiede zwischen einem Folgesystem und einem Hindernisvermeidungssystem gewundert?
 
-Ever wondered about the differences between a following system and an obstacle avoidance system?
+Der Schlüssel liegt darin, dass wir in einem Folgesystem möchten, dass unser Rover auf erkannte Objekte reagiert, während wir in einem Hindernisvermeidungssystem versuchen, erkannten Objekten auszuweichen.
 
-The key here is that in a following system, we want our Rover to move in response to detected objects, while in an obstacle avoidance system, we're looking to steer clear of detected objects.
-
-Let's visualize the desired workflow:
+Lassen Sie uns den gewünschten Arbeitsablauf visualisieren:
 
 .. image:: img/ultrasonic_ir_follow_flowchart.png
 
-* If the ultrasonic sensor detects an object within 5-30 cm, our Rover should move towards it.
-* If the left IR sensor detects an object, our Rover should take a left turn.
-* If the right IR sensor detects an object, our Rover should take a right turn.
-* In all other cases, our Rover should remain stationary.
+* Wenn der Ultraschallsensor ein Objekt im Bereich von 5-30 cm erkennt, sollte unser Rover sich darauf zubewegen.
+* Wenn der linke IR-Sensor ein Objekt erkennt, sollte unser Rover nach links abbiegen.
+* Wenn der rechte IR-Sensor ein Objekt erkennt, sollte unser Rover nach rechts abbiegen.
+* In allen anderen Fällen sollte unser Rover stillstehen.
 
-Now, it's time for us to complete the code.
+Jetzt ist es an der Zeit, den Code zu vervollständigen.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/75662c17-4b0a-4494-b18b-089cc2b32311/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Once the code is completed, test if the Rover follows your movements.
+Sobald der Code fertiggestellt ist, testen Sie, ob der Rover Ihren Bewegungen folgt.
 
-As we did with the obstacle avoidance system, it will be crucial to test our following system and troubleshoot any issues that may arise. Ready to start?
+Wie bei dem Hindernisvermeidungssystem wird es entscheidend sein, unser Folgesystem zu testen und eventuell auftretende Probleme zu beheben. Sind Sie bereit zu beginnen?
 
 
-**Step 4: Summary and Reflection**
+**Schritt 4: Zusammenfassung und Reflexion**
 
-Today, you've accomplished something amazing. You combined different modules and concepts to create an advanced obstacle avoidance and following system for your Mars Rover. Remember, learning does not end here - keep exploring, innovating, and applying your newfound skills to other projects.
+Heute haben Sie etwas Erstaunliches erreicht. Sie haben verschiedene Module und Konzepte kombiniert, um ein fortgeschrittenes Hindernisvermeidungs- und Folgesystem für Ihren Mars-Rover zu erstellen. Denken Sie daran, das Lernen endet hier nicht - erkunden Sie weiter, innovieren Sie und wenden Sie Ihre neu erworbenen Fähigkeiten auf andere Projekte an.
 
-Remember to always reflect on your learning process. Think about the following:
+Denken Sie immer daran, über Ihren Lernprozess zu reflektieren. Überlegen Sie folgendes:
 
-* Why do you think we prioritized the obstacle avoidance module before the ultrasonic sensor in our obstacle avoidance system, and vice versa in the following system?
-* How would the outcome differ if we were to swap the order in which these modules are checked in the code?
+* Warum denken Sie, haben wir im Hindernisvermeidungssystem das Hindernisvermeidungsmodul vor dem Ultraschallsensor priorisiert und umgekehrt im Folgesystem?
+* Wie würde sich das Ergebnis ändern, wenn wir die Reihenfolge, in der diese Module im Code überprüft werden, tauschen würden?
 
-Challenges and problems are an integral part of the STEAM learning process, offering valuable opportunities for improvement. Don't shy away from troubleshooting - it's a powerful learning tool in itself!
+Herausforderungen und Probleme sind ein integraler Bestandteil des STEAM-Lernprozesses und bieten wertvolle Möglichkeiten zur Verbesserung. Scheuen Sie sich nicht vor der Fehlersuche – sie ist an sich ein mächtiges Lernwerkzeug!
 
-As you continue on your journey, know that every obstacle you overcome brings you one step closer to mastering your STEAM skills. Keep going and enjoy the journey!
+Auf Ihrem Weg wissen Sie, dass jede überwundene Hürde Sie einen Schritt näher an die Meisterung Ihrer STEAM-Fähigkeiten bringt. Machen Sie weiter und genießen Sie die Reise!
 

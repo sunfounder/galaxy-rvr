@@ -1,23 +1,23 @@
 FAQ
 ==============
 
-Q1: Compilation error: SoftPWM.h: No such file or directory？
----------------------------------------------------------------------
-If you get a “Compilation error: SoftPWM.h: No such file or directory” prompt, it means you don’t have the SoftPWM library installed.
+Q1: Kompilierungsfehler: SoftPWM.h: Datei oder Verzeichnis nicht gefunden?
+---------------------------------------------------------------------------------
+Wenn die Meldung „Compilation error: SoftPWM.h: No such file or directory“ erscheint, bedeutet dies, dass die SoftPWM-Bibliothek nicht installiert ist.
 
-Please install the two required libraries ``SoftPWM`` and ``SunFounder AI Camera`` as shown.
+Bitte installieren Sie die beiden erforderlichen Bibliotheken ``SoftPWM`` und ``SunFounder AI Camera``, wie gezeigt.
 
     .. raw:: html
 
         <video width="600" loop autoplay muted>
             <source src="_static/video/install_softpwm.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            Ihr Browser unterstützt das Video-Tag nicht.
         </video>
 
 
-Q2: avrdude: stk500_getsync() attempt 10 of 10: not in sync: resp=0x6e?
------------------------------------------------------------------------------
-If the following message keeps appearing after clicking the **Upload** button when the board and port have been selected correctly.
+Q2: avrdude: stk500_getsync() Versuch 10 von 10: nicht synchronisiert: resp=0x6e?
+-----------------------------------------------------------------------------------------
+Wenn die folgende Nachricht weiterhin erscheint, nachdem Sie auf die Schaltfläche **Upload** geklickt haben und das Board sowie der Port korrekt ausgewählt wurden.
 
 .. code-block::
     
@@ -29,29 +29,29 @@ If the following message keeps appearing after clicking the **Upload** button wh
     avrdude: stk500_getsync() attempt 3 of 10: not in sync: resp=0x00
     At this point, you need to make sure that the ESP32 CAM is unplugged.
 
-The ESP32-CAM and the Arduino board share the same RX (receive) and TX (transmit) pins. So, before you’re uploading code, you’ll need to first disconnect the ESP32-CAM to avoid any conflicts or potential issues.
+Das ESP32-CAM und das Arduino-Board teilen sich die gleichen RX (Empfang) und TX (Sendung) Pins. Daher müssen Sie vor dem Hochladen des Codes zuerst das ESP32-CAM trennen, um Konflikte oder potenzielle Probleme zu vermeiden.
 
     .. image:: img/camera_upload.png
         :width: 600
 
-After the code is successfully uploaded, if you need to use the ESP32 CAM, then you need to move the switch to the left to start the ESP32 CAM.
+Nachdem der Code erfolgreich hochgeladen wurde, wenn Sie das ESP32 CAM nutzen möchten, müssen Sie den Schalter nach links bewegen, um das ESP32 CAM zu starten.
 
     .. image:: img/camera_run.png
         :width: 600
 
 .. _stt_android:
 
-Q3: How can I use the STT mode on my Android device?
+Q3: Wie kann ich den STT-Modus auf meinem Android-Gerät verwenden?
 ------------------------------------------------------------------------
 
-The STT mode requires the Android mobile device to be connected to the Internet and to install the Google service component.
+Der STT-Modus erfordert, dass das Android-Mobilgerät mit dem Internet verbunden ist und die Google-Servicekomponente installiert ist.
 
-Now follow the steps below.
+Folgen Sie nun den untenstehenden Schritten.
 
-#. Modify the AP mode of ``galaxy-rvr.ino`` file to STA mode.
+#. Ändern Sie den AP-Modus der Datei ``galaxy-rvr.ino`` in den STA-Modus.
 
-    * Open the the ``galaxy-rvr.ino`` file located in the ``galaxy-rvr-main\galaxy-rvr`` directory. 
-    * Then comment out the AP mode related code. Uncomment the STA mode related code and fill in  the ``SSID`` and ``PASSWORD`` of your home Wi-Fi.
+    * Öffnen Sie die Datei ``galaxy-rvr.ino``, die sich im Verzeichnis ``galaxy-rvr-main\galaxy-rvr`` befindet. 
+    * Kommentieren Sie dann den AP-Modus bezogenen Code aus. Kommentieren Sie den STA-Modus bezogenen Code ein und füllen Sie das ``SSID`` und das ``PASSWORD`` Ihres Heim-WLANs ein.
 
         .. code-block:: arduino
 
@@ -64,32 +64,33 @@ Now follow the steps below.
             #define SSID "xxxxxxxxxx"
             #define PASSWORD "xxxxxxxxxx"
 
-    * Save this code, select the correct board (Arduino Uno) and port, then click the **Upload** button to upload it to the R3 board.
+    * Speichern Sie diesen Code, wählen Sie das richtige Board (Arduino Uno) und den Port aus, dann klicken Sie auf die Schaltfläche **Upload**, um ihn auf das R3-Board zu laden.
 
-#. Search ``google`` in Google Play, find the app shown below and install it.
+#. Suchen Sie in Google Play nach ``google``, finden Sie die unten gezeigte App und installieren Sie sie.
 
     .. image:: img/google_voice.png
 
-#. Connect your mobile device to the same Wi-Fi as you wrote in the code.
+#. Verbinden Sie Ihr Mobilgerät mit demselben WLAN, das Sie im Code angegeben haben.
 
     .. image:: img/sta_wifi.png
 
-#. Open the controller previously created in SunFounder Controller and connect it to ``GalaxyRVR`` through the |app_connect| button.
+#. Öffnen Sie den zuvor in SunFounder Controller erstellten Controller und verbinden Sie ihn durch den |app_connect|-Button mit ``GalaxyRVR``.
 
     .. image:: img/app/camera_connect.png
 
 
-#. Tap and hold the **STT(J)** widget after clicking the |app_run| button. A prompt will appear indicating that it is listening. Say the following command to move the car.
+#. Tippen und halten Sie das **STT(J)**-Widget, nachdem Sie den |app_run|-Button angeklickt haben. Es erscheint ein Hinweis, dass es zuhört. Sagen Sie den folgenden Befehl, um das Auto zu bewegen.
 
     .. image:: img/app/play_speech.png
 
-    * ``stop``: All movements of the rover can be stopped.
-    * ``forward``: Let the rover move forward.
-    * ``backward``: Let the rover move backward.
-    * ``left``: Let the rover turn left.
-    * ``right``: Let the rover turn right.
+    * ``stop``: Alle Bewegungen des Rovers können gestoppt werden.
+    * ``forward``: Lassen Sie den Rover vorwärts fahren.
+    * ``backward``: Lassen Sie den Rover rückwärts fahren.
+    * ``left``: Lassen Sie den Rover nach links abbiegen.
+    * ``right``: Lassen Sie den Rover nach rechts abbiegen.
 
-Q4: About the ESP32 CAM Firmware
+Q4: Über die ESP32 CAM Firmware
 ---------------------------------------------------
 
-Here is the firmeware link of ESP32 CAM: |link_ai_camera_firmware|
+Hier ist der Firmware-Link des ESP32 CAM: |link_ai_camera_firmware|
+

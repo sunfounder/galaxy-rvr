@@ -1,48 +1,49 @@
 
-Ultrasonic Module
+Ultraschallmodul
 ================================
 
 .. image:: img/ultrasonic_pic.png
     :width: 400
     :align: center
 
-* **TRIG**: Trigger Pulse Input
-* **ECHO**: Echo Pulse Output
-* **GND**: Ground
-* **VCC**: 5V Supply
+* **TRIG**: Trigger-Pulseingang
+* **ECHO**: Echo-Pulseausgang
+* **GND**: Erdung
+* **VCC**: 5V Versorgung
 
-This is the HC-SR04 ultrasonic distance sensor, providing non-contact measurement from 2 cm to 400 cm with a range accuracy of up to 3 mm. Included on the module is an ultrasonic transmitter, a receiver and a control circuit.
+Dies ist der HC-SR04 Ultraschall-Abstandssensor, der berührungslose Messungen von 2 cm bis 400 cm mit einer Bereichsgenauigkeit von bis zu 3 mm bietet. Das Modul enthält einen Ultraschall-Sender, einen Empfänger und eine Steuerschaltung.
 
-You only need to connect 4 pins: VCC (power), Trig (trigger), Echo (receive) and GND (ground) to make it easy to use for your measurement projects.
+Sie müssen nur 4 Pins anschließen: VCC (Stromversorgung), Trig (Auslöser), Echo (Empfang) und GND (Erdung), um es leicht für Ihre Messprojekte zu verwenden.
 
-**Features**
+**Merkmale**
 
-* Working Voltage: DC5V
-* Working Current: 16mA
-* Working Frequency: 40Hz
-* Max Range: 500cm
-* Min Range: 2cm
-* Trigger Input Signal: 10uS TTL pulse
-* Echo Output Signal: Input TTL lever signal and the range in proportion
-* Connector: XH2.54-4P
-* Dimension: 46x20.5x15 mm
+* Betriebsspannung: DC5V
+* Betriebsstrom: 16mA
+* Arbeitsfrequenz: 40Hz
+* Maximaler Bereich: 500cm
+* Minimaler Bereich: 2cm
+* Trigger-Eingangssignal: 10uS TTL-Impuls
+* Echo-Ausgangssignal: Eingang TTL-Pegelsignal und der Bereich im Verhältnis
+* Steckverbinder: XH2.54-4P
+* Abmessung: 46x20.5x15 mm
 
-**Principle**
+**Prinzip**
 
-The basic principles are as follows:
+Die grundlegenden Prinzipien sind wie folgt:
 
-* Using IO trigger for at least 10us high level signal.
-* The module sends an 8 cycle burst of ultrasound at 40 kHz and detects whether a pulse signal is received.
-* Echo will output a high level if a signal is returned; the duration of the high level is the time from emission to return.
-* Distance = (high level time x velocity of sound (340M/S)) / 2
+* Verwendung von IO-Trigger für mindestens 10us hohes Signalniveau.
+* Das Modul sendet einen 8-Zyklus-Burst von Ultraschall mit 40 kHz und erkennt, ob ein Pulssignal empfangen wird.
+* Echo gibt ein hohes Niveau aus, wenn ein Signal zurückkommt; die Dauer des hohen Niveaus ist die Zeit von der Emission bis zur Rückkehr.
+* Entfernung = (Zeit des hohen Niveaus x Schallgeschwindigkeit (340M/S)) / 2
 
     .. image:: img/ultrasonic_prin.jpg
         :width: 800
 
 
 
-**Application Notes**
+**Anwendungshinweise**
 
-* This module should not be connected under power up, if necessary, let the module's GND be connected first. Otherwise, it will affect the work of the module.
-* The area of the object to be measured should be at least 0.5 square meters and as flat as possible. Otherwise, it will affect results.
+* Dieses Modul sollte nicht unter Strom angeschlossen werden, falls nötig, sollte zuerst der GND des Moduls angeschlossen werden. Andernfalls beeinflusst es die Arbeit des Moduls.
+* Die Fläche des zu messenden Objekts sollte mindestens 0,5 Quadratmeter betragen und möglichst flach sein. Andernfalls beeinflusst es die Ergebnisse.
+
 

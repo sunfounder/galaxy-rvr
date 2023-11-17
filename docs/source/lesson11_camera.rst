@@ -1,78 +1,79 @@
-Lesson 11: Exploring the Mars Rover Visual System - Camera and Real-time Control
-==================================================================================
+Lektion 11: Erforschung des visuellen Systems des Mars-Rovers - Kamera und Echtzeitsteuerung
+================================================================================================
 
-Welcome back, young explorers! In the last lesson, we equipped our Mars Rover with the ability to "nod" using a tilt mechanism. Now, it's time to give our Rover "eyes" - the camera!
+Willkommen zurück, junge Entdecker! In der letzten Lektion haben wir unseren Mars-Rover mit der Fähigkeit ausgestattet, mit einem Kippmechanismus zu „nicken“. Jetzt ist es an der Zeit, unserem Rover „Augen“ zu geben - die Kamera!
 
-In this thrilling journey, we'll dive into the setup of the Rover's camera system. You'll learn how to relay the visuals captured by the Rover's camera to a web page, so you can see exactly what the Rover sees, in real time. Imagine the excitement of experiencing the Martian landscape from the Rover's perspective!
+In dieser aufregenden Reise tauchen wir in die Einrichtung des Kamera-Systems des Rovers ein. Ihr werdet lernen, wie man die vom Rover eingefangenen Bilder auf eine Webseite überträgt, sodass ihr genau sehen könnt, was der Rover sieht, und das in Echtzeit. Stellt euch die Begeisterung vor, die Marslandschaft aus der Perspektive des Rovers zu erleben!
 
-The excitement continues as we also introduce the SunFounder Controller app. This application allows us to get a live feed of the Rover's view as it navigates around, and we can control the tilt mechanism directly from our smartphones or tablets. It's like having a remote control with a built-in screen! 
+Die Begeisterung setzt sich fort, da wir auch die SunFounder Controller-App vorstellen. Diese Anwendung ermöglicht es uns, ein Live-Feed der Sicht des Rovers zu erhalten, während er sich bewegt, und wir können den Kippmechanismus direkt von unseren Smartphones oder Tablets aus steuern. Es ist, als hätte man eine Fernbedienung mit eingebautem Bildschirm!
 
-This offers an even more interactive and engaging experience with our Rover. Stay tuned for more adventures!
+Dies bietet ein noch interaktiveres und spannenderes Erlebnis mit unserem Rover. Bleibt dran für mehr Abenteuer!
 
     .. image:: img/app/camera_view_app.png
 
-Learning Goals
-------------------
-* Understand how to establish a WiFi connection with the ESP32 CAM.
-* Learn how to see exactly what the Rover sees, in real time.
-* Learn how to use the SunFounder Controller app to create a virtual remote and control the Mars Rover.
+Kursziele
+-------------------------
+* Verstehen, wie man eine WLAN-Verbindung mit dem ESP32 CAM herstellt.
+* Lernen, genau zu sehen, was der Rover sieht, und das in Echtzeit.
+* Lernen, wie man die SunFounder Controller-App verwendet, um eine virtuelle Fernbedienung zu erstellen und den Mars-Rover zu steuern.
 
-Materials needed
-------------------------
+Kursmaterialien
+-----------------------
 
-* Mars Rover model (equipped with all components)
+* Mars-Rover-Modell (mit allen Komponenten ausgestattet)
 * Arduino IDE
 * Computer
-* Tablet or smartphone with SunFounder Controller app installed
+* Tablet oder Smartphone mit installierter SunFounder Controller-App
 
-Course Steps
-----------------------
+Kursschritte
+--------------
 
-**Step 1: Introduction to ESP32 CAM**
+**Schritt 1: Einführung in ESP32 CAM**
 
-In our previous adventure, we have equipped our Mars Rover with a pair of "eyes" by integrating the ESP32 CAM. Today, we're going to learn more about it and actually make it "see".
+In unserem vorherigen Abenteuer haben wir unseren Mars-Rover mit einem Paar „Augen“ ausgestattet, indem wir den ESP32 CAM integriert haben. Heute werden wir mehr darüber lernen und ihn tatsächlich „sehen“ lassen.
 
 .. image:: img/esp32_cam.png
     :width: 400
     :align: center
 
-The ESP32 CAM, acting like the eyes of our Rover, is a small yet powerful module. Not only does it integrate Wi-Fi and Bluetooth functionalities, it also comes with a compact camera. This camera helps our Rover capture images of its surroundings.
+Der ESP32 CAM, der als die Augen unseres Rovers fungiert, ist ein kleines, aber leistungsstarkes Modul. Es integriert nicht nur WLAN- und Bluetooth-Funktionalitäten, sondern verfügt auch über eine kompakte Kamera. Diese Kamera hilft unserem Rover, Bilder seiner Umgebung aufzunehmen.
 
-Just like we use our eyes to observe our environment, the ESP32 CAM can "see" what lies ahead for the Rover, then send these visual data to our smartphone or computer. This allows us to see everything the Rover sees in real-time!
+Genau wie wir unsere Augen verwenden, um unsere Umgebung zu beobachten, kann der ESP32 CAM „sehen“, was vor dem Rover liegt, und diese visuellen Daten an unser Smartphone oder Computer senden. Dies ermöglicht es uns, alles zu sehen, was der Rover in Echtzeit sieht!
 
-It's as if we're piloting the Rover directly, observing not just the Rover itself, but also the world it explores! Incredible, isn't it? So, let's dive deeper into it...
+Es ist, als würden wir den Rover direkt steuern, nicht nur den Rover selbst beobachten, sondern auch die Welt, die er erkundet! Unglaublich, oder? Also, lasst uns tiefer eintauchen...
 
 
-**Step 2: Programming the Rover's Camera and Viewing the Feed**
 
-After fitting the ESP32-CAM to our Rover, we now need to breathe life into it. 
-To do so, we will use the Arduino IDE to write a program that will control the camera, allow it to connect to WiFi, 
-and stream the visuals it captures. 
+**Schritt 2: Programmierung der Kamera des Rovers und Betrachtung des Feeds**
 
-Here's how we can do it:
+Nachdem wir die ESP32-CAM an unseren Rover angebracht haben, müssen wir sie nun zum Leben erwecken.
+Dazu verwenden wir die Arduino IDE, um ein Programm zu schreiben, das die Kamera steuert, es ihr ermöglicht, sich mit WLAN zu verbinden, 
+und die eingefangenen Bilder zu streamen.
 
-#. Install the ``SunFounder AI Camera`` library.
+So können wir das tun:
 
-    * Open the Arduino IDE's **Library Manager**, search for "SunFounder Camera", and click **INSTALL**.
+#. Installieren Sie die ``SunFounder AI Camera``-Bibliothek.
+
+    * Öffnen Sie den **Library Manager** der Arduino IDE, suchen Sie nach "SunFounder Camera" und klicken Sie auf **INSTALL**.
 
         .. image:: img/camera_install_lib.png
 
-    * A pop-up window will appear for the installation of library dependencies. Click **INSTALL ALL** and wait for the process to complete.
+    * Ein Popup-Fenster erscheint für die Installation der Bibliotheksabhängigkeiten. Klicken Sie auf **INSTALL ALL** und warten Sie, bis der Vorgang abgeschlossen ist.
 
         .. image:: img/camera_install_lib1.png
 
-#. In the Arduino IDE, input the following code.
+#. Geben Sie in der Arduino IDE den folgenden Code ein.
 
-    Regarding the variables ``NAME``, ``TYPE``, and ``PORT`` in the code, let's not delve into them at this point. They will come into play in our next step. Just keep in mind that these variables will be important in our upcoming journey to establish a real-time video feed from our Mars Rover.
+    Bezüglich der Variablen ``NAME``, ``TYPE`` und ``PORT`` im Code werden wir uns an dieser Stelle nicht vertiefen. Sie kommen im nächsten Schritt zum Einsatz. Behalten Sie lediglich im Hinterkopf, dass diese Variablen in unserer bevorstehenden Reise wichtig sein werden, um einen Echtzeit-Video-Feed von unserem Mars-Rover zu etablieren.
 
     .. raw:: html
 
         <iframe src=https://create.arduino.cc/editor/sunfounder01/06b648e4-23e8-4b28-accd-aac171069116/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-    Notice we have two connection modes in the code - **AP** mode and **STA** mode. You can decide which one to use based on your specific needs.
+    Beachten Sie, dass wir im Code zwei Verbindungsmodi haben - **AP**-Modus und **STA**-Modus. Sie können entscheiden, welchen Sie je nach Ihren spezifischen Bedürfnissen verwenden möchten.
 
-    * **AP Mode**: In this mode, the Rover creates a hotspot (named as ``GalaxyRVR`` in our code). This allows any device like a mobile phone, tablet, or laptop to connect to this network. This is especially useful when you want to control the Rover remotely under any circumstances. However, note that this would make your device temporarily unable to connect to the Internet.
+    * **AP Mode**: In diesem Modus erstellt der Rover einen Hotspot (in unserem Code als ``GalaxyRVR`` benannt). Dies ermöglicht es jedem Gerät wie einem Mobiltelefon, Tablet oder Laptop, sich mit diesem Netzwerk zu verbinden. Dies ist besonders nützlich, wenn Sie den Rover unter allen Umständen fernsteuern möchten. Beachten Sie jedoch, dass dies Ihr Gerät vorübergehend daran hindert, eine Internetverbindung herzustellen.
 
         .. code-block:: arduino
 
@@ -81,7 +82,7 @@ Here's how we can do it:
         #define SSID "GalaxyRVR"
         #define PASSWORD "12345678"
 
-    * **STA Mode**: In this mode, the Rover connects to your home WiFi network. Remember that your controlling device (like a mobile phone or tablet) should also be connected to the same WiFi network. This mode allows your device to keep its regular internet access while controlling the Rover, but limits the Rover's operational range to your WiFi coverage area.
+    * **STA Mode**: In diesem Modus verbindet sich der Rover mit Ihrem Heim-WLAN-Netzwerk. Denken Sie daran, dass Ihr Steuergerät (wie ein Mobiltelefon oder Tablet) ebenfalls mit demselben WLAN-Netzwerk verbunden sein sollte. Dieser Modus ermöglicht es Ihrem Gerät, seine reguläre Internetverbindung beizubehalten, während es den Rover steuert, beschränkt aber den Einsatzbereich des Rovers auf Ihre WLAN-Abdeckungsfläche.
 
         .. code-block:: arduino
 
@@ -90,66 +91,67 @@ Here's how we can do it:
             #define SSID "YOUR SSID"
             #define PASSWORD "YOUR PASSWORD"
 
-#. Upload the code to our Rover and bring our ESP32 CAM to life!
+#. Laden Sie den Code auf unseren Rover und erwecken Sie unsere ESP32-CAM zum Leben!
 
-    * The ESP32-CAM and the Arduino board share the same RX (receive) and TX (transmit) pins. So, before uploading the code, you’ll need to first release the ESP32-CAM by slide this switch to right side to avoid any conflicts or potential issues.
+    * Der ESP32-CAM und das Arduino-Board teilen sich die gleichen RX (Empfang) und TX (Senden) Pins. Daher müssen Sie vor dem Hochladen des Codes zuerst den ESP32-CAM durch Verschieben dieses Schalters nach rechts freigeben, um Konflikte oder mögliche Probleme zu vermeiden.
 
         .. image:: img/camera_upload.png
             :width: 600
 
-    * Once the code has been uploaded successfully, switch it back to the left side to start the ESP32 CAM.
+    * Sobald der Code erfolgreich hochgeladen wurde, schalten Sie ihn zurück auf die linke Seite, um die ESP32-CAM zu starten.
 
         .. note::
-            This step and the previous one are required every time you re-upload the code.
+            Dieser Schritt und der vorherige sind jedes Mal erforderlich, wenn Sie den Code neu hochladen.
 
         .. image:: img/camera_run.png
             :width: 600
         
-    * Open the **Serial Monitor** and set the baud rate to 115200. If no information appears, press the **Reset button** on the GalaxyRVR shield to run the code again. You should see an IP address in the serial monitor output. This is the address your Rover's camera is broadcasting to.
+    * Öffnen Sie den **Serial Monitor** und stellen Sie die Baudrate auf 115200 ein. Wenn keine Informationen erscheinen, drücken Sie die **Reset button** auf dem GalaxyRVR-Shield, um den Code erneut auszuführen. Sie sollten eine IP-Adresse im Ausgabebereich des seriellen Monitors sehen. Dies ist die Adresse, an die die Kamera Ihres Rovers sendet.
 
         .. image:: img/camera_serial.png
 
 
-    * Now, it's time to actually see what our Rover sees! Open up a web browser - we recommend Google Chrome - and enter the URL you see in the Serial Monitor, in the format ``http://ip:9000/mjpg``.
+    * Jetzt ist es an der Zeit, tatsächlich zu sehen, was unser Rover sieht! Öffnen Sie einen Webbrowser - wir empfehlen Google Chrome - und geben Sie die URL ein, die Sie im Seriellen Monitor sehen, im Format ``http://ip:9000/mjpg``.
 
         .. image:: img/camera_view.png
 
-And voila! You should now be able to see the live feed from your Rover's camera. Isn't it amazing to think that you are viewing Mars (or maybe just your living room) from the Rover's perspective? Just like a real Mars Rover scientist!
+Und voilà! Jetzt sollten Sie den Live-Feed von der Kamera Ihres Rovers sehen können. Ist es nicht erstaunlich zu denken, dass Sie den Mars (oder vielleicht nur Ihr Wohnzimmer) aus der Perspektive des Rovers betrachten? Ganz wie ein echter Mars-Rover-Wissenschaftler!
 
-Remember, this is just the beginning. There is so much more to explore and learn. In our next step, we will explore how to control our Rover while viewing the live camera feed. Exciting, isn't it? Onwards, explorers!
-
-
-**Step 3: Controlling and Viewing the Camera Feed Using the App**
-
-Ever wished you could view the Mars Rover's visual feed right on your smartphone while also being able to control its tilt mechanism? 
-Now you can! With the help of the SunFounder Controller app, you'll be able to do exactly that. Follow the steps below:
+Denken Sie daran, dies ist erst der Anfang. Es gibt noch so viel mehr zu entdecken und zu lernen. Im nächsten Schritt werden wir erforschen, wie wir unseren Rover steuern können, während wir den Live-Kamera-Feed betrachten. Aufregend, nicht wahr? Weiter so, Entdecker!
 
 
-#. Install  from **APP Store(iOS)** or **Google Play(Android)**.
+**Schritt 3: Steuern und Anzeigen des Kamera-Feeds mit der App**
 
-#. Create a controller.
+Haben Sie sich schon einmal gewünscht, den visuellen Feed des Mars-Rovers direkt auf Ihrem Smartphone ansehen zu können, während Sie gleichzeitig seinen Kippmechanismus steuern? 
+Jetzt können Sie das! Mit Hilfe der SunFounder Controller-App können Sie genau das tun. Folgen Sie den unten stehenden Schritten:
 
-    * To add a controller on SunFounder Controller, click the **+** icon.
+
+#. Installieren Sie  aus dem **APP Store(iOS)** oder **Google Play(Android)**.
+
+#. Erstellen Sie einen Controller.
+
+    * Um einen Controller in der SunFounder Controller-App hinzuzufügen, klicken Sie auf das **+**-Symbol.
 
         .. image:: img/app/app1.png
 
-    * Choose the **Blank** preset, select either **Dual** or **Single Stick** according to your preference. Give your new controller a name and click **Confirm**.
+    * Wählen Sie das **Blank**-Voreinstellung, wählen Sie entweder **Dual** oder **Single Stick** je nach Ihrer Präferenz. Geben Sie Ihrem neuen Controller einen Namen und klicken Sie auf **Confirm**.
 
         .. image:: img/app/camera_controller.png
 
-    * You are now inside the controller. Click the **+** icon in the D section, then select Slider from the popup menu.
+    * Sie befinden sich jetzt im Controller. Klicken Sie im D-Bereich auf das **+**-Symbol und wählen Sie Slider aus dem Popup-Menü.
 
     .. image:: img/app/camera_add_slider.png
 
-    * This Slider widget is designed to control the tilt mechanism. As we learned in the previous lesson, its range is from 0 to 140. Therefore, we will set these as the minimum and maximum values for our Slider widget.
+    * Dieses Slider-Widget ist dazu gedacht, den Kippmechanismus zu steuern. Wie wir in der vorherigen Lektion gelernt haben, liegt sein Bereich zwischen 0 und 140. Daher werden wir diese Werte als Mindest- und Höchstwerte für unser Slider-Widget festlegen.
 
         .. image:: img/app/camera_slider_set.png
     
-    * Click the |app_save| button in the upper right corner to save this controller.
-    
-#. Let's write a code to capture the value of the slider:
+    * Klicken Sie auf den |app_save|-Button in der oberen rechten Ecke, um diesen Controller zu speichern.
 
-    * Based on the previous code, let's switch to AP mode, where you can set the SSID and PASSWORD to whatever you prefer.
+    
+#. Schreiben wir einen Code, um den Wert des Sliders zu erfassen:
+
+    * Basierend auf dem vorherigen Code wechseln wir in den AP-Modus, in dem Sie das SSID und PASSWORD nach Ihren Wünschen festlegen können.
     
     .. code-block:: arduino
     
@@ -158,7 +160,7 @@ Now you can! With the help of the SunFounder Controller app, you'll be able to d
         #define SSID "GalaxyRVR"
         #define PASSWORD "12345678"
 
-    * Next, we add an ``onReceive()`` function to receive values from the SunFounder Controller and print these values in the Serial Monitor. We use the ``getSlider()`` function to get the value of the **slider** widget. I added a **slider** widget in Region D, but if you added it in a different region, you need to change ``REGION_D`` to your region.
+    * Als Nächstes fügen wir eine ``onReceive()``-Funktion hinzu, um Werte vom SunFounder Controller zu empfangen und diese Werte im Seriellen Monitor anzuzeigen. Wir verwenden die Funktion ``getSlider()``, um den Wert des **slider**-Widgets zu erhalten. Ich habe ein **slider**-Widget in Region D hinzugefügt, aber wenn Sie es in einer anderen Region hinzugefügt haben, müssen Sie ``REGION_D`` in Ihre Region ändern.
 
         .. code-block::
 
@@ -175,23 +177,23 @@ Now you can! With the help of the SunFounder Controller app, you'll be able to d
                 ...
             }
 
-    * Here is the complete code:
+    * Hier ist der komplette Code:
 
         .. raw:: html
 
             <iframe src=https://create.arduino.cc/editor/sunfounder01/b914aa48-85e7-4682-b420-89961cc761ca/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
     
-    * Before uploading the code, make sure the switch is turned to the right. 
+    * Stellen Sie vor dem Hochladen des Codes sicher, dass der Schalter nach rechts gedreht ist.
 
         .. image:: img/camera_upload.png
             :width: 600
 
-    * After the code is successfully uploaded, move the switch to the left to start the ESP32 CAM.
+    * Nachdem der Code erfolgreich hochgeladen wurde, bewegen Sie den Schalter nach links, um die ESP32-CAM zu starten.
 
         .. image:: img/camera_run.png
             :width: 600
 
-    * When you see the following information in the Serial Monitor, you can move on to the next step.
+    * Wenn Sie die folgenden Informationen im Seriellen Monitor sehen, können Sie mit dem nächsten Schritt fortfahren.
 
         .. code-block:: arduino
         
@@ -204,34 +206,34 @@ Now you can! With the help of the SunFounder Controller app, you'll be able to d
             Video streamer started on http://192.168.4.1:9000/mjpg
             WS+null
 
-#.  Connect to the ``GalaxyRVR`` Network.
+#. Verbinden Sie sich mit dem Netzwerk ``GalaxyRVR``.
 
-    At this point, you should connect your mobile device to the local area network (LAN) provided by the GalaxyRVR. 
-    By doing this, both your mobile device and the Rover will be on the same network, enabling smooth communication 
-    between the applications on your mobile device and the Rover.
+    An diesem Punkt sollten Sie Ihr mobiles Gerät mit dem lokalen Netzwerk (LAN) verbinden, das von GalaxyRVR bereitgestellt wird.
+    Dadurch befinden sich sowohl Ihr mobiles Gerät als auch der Rover im selben Netzwerk, was eine reibungslose Kommunikation 
+    zwischen den Anwendungen auf Ihrem mobilen Gerät und dem Rover ermöglicht.
 
-    * Find ``GalaxyRVR`` on the list of available networks on your mobile device (tablet or smartphone), enter the password ``12345678``, and connect to it.
+    * Finden Sie ``GalaxyRVR`` in der Liste der verfügbaren Netzwerke auf Ihrem mobilen Gerät (Tablet oder Smartphone), geben Sie das Passwort ``12345678`` ein und verbinden Sie sich damit.
 
         .. image:: img/app/camera_lan.png
 
-    * The default connection mode is **AP mode**. After you connect, there may be a prompt warning you that there is no Internet access on this WLAN network, please choose to continue the connection.
+    * Der Standardverbindungsmodus ist **AP mode**. Nachdem Sie die Verbindung hergestellt haben, kann eine Warnmeldung erscheinen, dass es keinen Internetzugang in diesem WLAN-Netzwerk gibt, bitte wählen Sie, die Verbindung fortzusetzen.
 
         .. image:: img/app/camera_stay.png
 
-#. Connect and Activate the Controller.
+#. Verbinden und Aktivieren des Controllers.
 
-    * Now, return to the controller you created earlier (in my case, it's named "camera"). Use the |app_connect| button to link the SunFounder Controller to the Rover and establish a line of communication. After a brief wait, ``GalaxyRVR(IP)`` (the name you assigned in the code with ``#define NAME "GalaxyRVR"``) will appear. Click on it to establish a connection. 
+    * Kehren Sie nun zu dem Controller zurück, den Sie zuvor erstellt haben (in meinem Fall heißt er "camera"). Verwenden Sie den |app_connect|-Button, um den SunFounder Controller mit dem Rover zu verbinden und eine Kommunikationsverbindung herzustellen. Nach einer kurzen Wartezeit erscheint „GalaxyRVR(IP)“ (der Name, den Sie im Code mit ``#define NAME "GalaxyRVR"`` zugewiesen haben). Klicken Sie darauf, um eine Verbindung herzustellen.
 
         .. image:: img/app/camera_connect.png
 
         .. note::
-            Please verify that your Wi-Fi is connected to ``GalaxyRVR`` if you don't see the above message after some time.
+            Bitte überprüfen Sie, ob Ihr WLAN mit „GalaxyRVR“ verbunden ist, falls Sie die obige Nachricht nach einiger Zeit nicht sehen.
 
-    * Once you see the "Connected Successfully" message, press the |app_run| button. This will bring up the camera's live footage on the app.
+    * Sobald Sie die Nachricht „Connected Successfully“ sehen, drücken Sie den |app_run|-Button. Dies wird das Live-Footage der Kamera in der App anzeigen.
 
         .. image:: img/app/camera_view_app.png
 
-    * Now, move the slider and open Arduino IDE's serial monitor simultaneously. You should see similar data like below.
+    * Bewegen Sie jetzt den Schieberegler und öffnen Sie gleichzeitig den seriellen Monitor der Arduino IDE. Sie sollten ähnliche Daten wie unten sehen.
 
         .. code-block:: 
     
@@ -243,11 +245,10 @@ Now you can! With the help of the SunFounder Controller app, you'll be able to d
             WS+null
 
 
-#. Let the Slider control the tilt mechanism.
+#. Lassen Sie den Schieberegler den Kippmechanismus steuern.
 
-    Now that we know the values transmitted by the slider widget, we can directly use these values to rotate the servo.
-     Therefore, based on the previous code, add the following lines to initialize the servo and write the slider's value to the servo.
-
+    Jetzt, wo wir die vom Slider-Widget übertragenen Werte kennen, können wir diese Werte direkt verwenden, um den Servo zu drehen.
+     Fügen Sie daher basierend auf dem vorherigen Code die folgenden Zeilen hinzu, um den Servo zu initialisieren und den Wert des Schiebereglers auf den Servo zu schreiben.
 
     .. code-block::
 
@@ -270,38 +271,38 @@ Now you can! With the help of the SunFounder Controller app, you'll be able to d
             ...
         }
 
-    Here is the complete code:
+    Hier ist der vollständige Code:
     
     .. raw:: html
     
         <iframe src=https://create.arduino.cc/editor/sunfounder01/b737352b-2509-4967-8147-1fd6bdc7d19d/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-    Upload the above code to the GalaxyRVR, repeat steps 4 and 5 above, reconnect to the ``GalaxyRVR`` LAN and re-run in the 
-    SunFounder Controller, then you can slide the slider to control the rover's tilt mechanism.
+    Laden Sie den oben stehenden Code auf den GalaxyRVR, wiederholen Sie die Schritte 4 und 5 von oben, verbinden Sie sich erneut mit dem LAN ``GalaxyRVR`` und führen Sie den Vorgang im 
+    SunFounder Controller erneut aus, dann können Sie den Schieberegler verwenden, um den Kippmechanismus des Rovers zu steuern.
 
-Now you've successfully learned to implement the SunFounder Controller and how to use the slider widget to control servo movements. This process will allow you to interact with your GalaxyRVR in a more intuitive and direct way. 
+Jetzt haben Sie erfolgreich gelernt, den SunFounder Controller zu implementieren und wie Sie das Schieberegler-Widget verwenden, um Servobewegungen zu steuern. Dieser Prozess ermöglicht es Ihnen, auf intuitive und direkte Weise mit Ihrem GalaxyRVR zu interagieren.
 
 
-**Step 4: Reflection and Summary**
+**Schritt 4: Reflexion und Zusammenfassung**
 
-Using the SunFounder Controller to operate your Mars Rover may seem a bit complicated at first. Every time you modify your code, you'll need to repeat the following steps:
+Die Verwendung des SunFounder Controllers zur Bedienung Ihres Mars-Rovers mag anfangs etwas kompliziert erscheinen. Jedes Mal, wenn Sie Ihren Code ändern, müssen Sie die folgenden Schritte wiederholen:
 
-* Prior to uploading the code, ensure the switch is turned to the right.
+* Stellen Sie vor dem Hochladen des Codes sicher, dass der Schalter nach rechts gedreht ist.
 
     .. image:: img/camera_upload.png
         :width: 600
 
-* Once the code has been successfully uploaded, switch to the left to initiate the ESP32 CAM.
-* Connect to the ``GalaxyRVR`` Network.
-* Connect and run the controller.
+* Nachdem der Code erfolgreich hochgeladen wurde, schalten Sie auf die linke Seite, um die ESP32-CAM zu starten.
+* Verbinden Sie sich mit dem Netzwerk ``GalaxyRVR``.
+* Verbinden und starten Sie den Controller.
 
-Though these steps might seem tedious, they are crucial for the process. After repeating them a few times, you'll become more familiar and comfortable with the procedure.
+Obwohl diese Schritte mühsam erscheinen mögen, sind sie entscheidend für den Prozess. Nachdem Sie sie einige Male wiederholt haben, werden Sie mit dem Verfahren vertrauter und wohler fühlen.
 
 
-Now that we've finished this lesson, let's reflect on what we've learned through some questions:
+Jetzt, da wir diese Lektion abgeschlossen haben, lassen Sie uns über das Nachdenken, was wir gelernt haben, durch einige Fragen reflektieren:
 
-* In the process of creating a new controller, you've encountered many different types of blocks. Have you considered what their individual functions might be?
-* Is it possible to use other widgets to control the tilt mechanism?
-* Or even directly control the Mars Rover's movements?
+* Bei der Erstellung eines neuen Controllers sind Sie auf viele verschiedene Arten von Bausteinen gestoßen. Haben Sie sich überlegt, welche individuellen Funktionen diese haben könnten?
+* Ist es möglich, andere Widgets zu verwenden, um den Kippmechanismus zu steuern?
+* Oder sogar direkt die Bewegungen des Mars-Rovers zu steuern?
 
-Let's anticipate our exploration of these questions in the next lesson!
+Lassen Sie uns unsere Erkundung dieser Fragen in der nächsten Lektion mit Spannung erwarten!

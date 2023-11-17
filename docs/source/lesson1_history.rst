@@ -1,117 +1,116 @@
-Lesson 1 Unveiling the Mars Rover
+Lektion 1: Enthüllung des Mars-Rovers
 ========================================
 
-Welcome to Lesson 1: Understanding the Mars Rover. Today, we dive into the thrilling world of Mars rovers—our remote explorers on the Red Planet. We will learn about their evolution, their functions, and the technological marvels that they are. Furthermore, you'll channel your creativity to design your own rover and hone your presentation skills by explaining your unique design. Get ready to explore Mars from your classroom!
+Willkommen zu Lektion 1: Verständnis des Mars-Rovers. Heute tauchen wir in die aufregende Welt der Mars-Rover ein – unsere entfernten Erforscher des Roten Planeten. Wir werden ihre Entwicklung, ihre Funktionen und die technologischen Wunder, die sie darstellen, kennenlernen. Darüber hinaus wirst du deine Kreativität nutzen, um deinen eigenen Rover zu entwerfen und deine Präsentationsfähigkeiten zu schärfen, indem du dein einzigartiges Design erklärst. Bereite dich darauf vor, den Mars von deinem Klassenzimmer aus zu erkunden!
 
-
-Learning Objectives
+Kursziele
 -------------------------
-* Gain an understanding of the evolution and purpose of Mars rovers
-* Express creativity by designing your own Mars rover
-* Enhance presentation skills by sharing and explaining your rover design
+* Ein Verständnis für die Entwicklung und den Zweck von Mars-Rovern gewinnen
+* Kreativität ausdrücken, indem du deinen eigenen Mars-Rover entwirfst
+* Präsentationsfähigkeiten verbessern, indem du dein Rover-Design teilst und erklärst
 
-Materials
------------
-* Mars Rover images and technical specifications for reference
-* Documentary video on the history of Mars rovers
-* Computer with internet access for research and viewing documentary
-* Presentation slides or interactive whiteboard for lesson delivery
-* Drawing paper, pencils, and coloring materials for rover design activity
-* Worksheets for guided note-taking, reflection, and design planning
+Kursmaterialien
+-----------------------
+* Bilder und technische Spezifikationen von Mars-Rovern als Referenz
+* Dokumentarfilm über die Geschichte der Mars-Rover
+* Computer mit Internetzugang für Recherche und das Ansehen des Dokumentarfilms
+* Präsentationsfolien oder interaktives Whiteboard für die Unterrichtsgestaltung
+* Zeichenpapier, Bleistifte und Farbmaterialien für die Rover-Design-Aktivität
+* Arbeitsblätter für angeleitetes Notieren, Reflexion und Designplanung
 
-Steps
+Kursschritte
 --------------
 
-**Step 1: What are Mars Rovers?**
+**Schritt 1: Was sind Mars-Rover?**
 
-Before we dive into Mars rovers, let's first acquaint ourselves with Mars itself. As we can see from the images and models, 
-the surface of Mars is marked with craters, mountains, valleys, and dust storms, painting a picture of a landscape 
-that is both fascinating and challenging.
+Bevor wir in die Welt der Mars-Rover eintauchen, machen wir uns zuerst mit dem Mars selbst vertraut. Wie wir anhand der Bilder und Modelle sehen können, 
+ist die Oberfläche des Mars von Kratern, Bergen, Tälern und Staubstürmen gezeichnet, was ein faszinierendes und herausforderndes Landschaftsbild ergibt.
 
     .. image:: img/mars_surface.jpg
         :width: 600
     .. image:: img/mars_surface.png
         :width: 600
 
-Can you imagine what it would be like to navigate through such a rugged terrain? 
-Now, suppose you have the task of designing a rover for Mars.
+Kannst du dir vorstellen, wie es wäre, durch ein solch unwegsames Gelände zu navigieren?
+Nun stell dir vor, du hast die Aufgabe, einen Rover für den Mars zu entwerfen.
 
-* What considerations will you keep in mind given the terrain and conditions of Mars?
-* What features will you equip it with to ensure it can perform its functions effectively?
-* What tasks do you envision your Mars rover would need to accomplish?
+* Welche Überlegungen wirst du angesichts des Geländes und der Bedingungen auf dem Mars anstellen?
+* Mit welchen Funktionen wirst du ihn ausstatten, um sicherzustellen, dass er seine Aufgaben effektiv erfüllen kann?
+* Welche Aufgaben stellst du dir vor, sollte dein Mars-Rover bewältigen?
 
-Remember, a Mars rover is a robot designed to explore Mars, study its environment, and send data back to Earth. 
-So think about aspects such as movement, communication, power supply, scientific research capabilities, and durability 
-under Mars' extreme conditions.
+Denke daran, ein Mars-Rover ist ein Roboter, der dazu bestimmt ist, den Mars zu erforschen, seine Umgebung zu studieren und Daten zurück zur Erde zu senden.
+Also denke über Aspekte wie Bewegung, Kommunikation, Energieversorgung, wissenschaftliche Forschungsmöglichkeiten und Haltbarkeit 
+unter den extremen Bedingungen des Mars nach.
 
-Let's take a moment to brainstorm and share our ideas. It's interesting to think like engineers and scientists, isn't it? 
-We'll delve deeper into actual Mars rover designs and their functions in the following steps, 
-so keep your creative ideas in mind as we progress.
+Lassen wir uns einen Moment Zeit, um zu brainstormen und unsere Ideen zu teilen. Es ist interessant, wie Ingenieure und Wissenschaftler zu denken, nicht wahr?
+Wir werden uns in den folgenden Schritten näher mit den tatsächlichen Mars-Rover-Designs und ihren Funktionen befassen,
+also behalte deine kreativen Ideen im Hinterkopf, während wir weitermachen.
 
 
-**Step 2: Exploring the History of Mars Rovers**
+**Schritt 2: Erkundung der Geschichte der Mars-Rover**
 
-Next, we'll embark on a journey through time by watching a documentary that details the history of Mars rovers. 
-The documentary takes us from the first attempt at deploying a rover on Mars, the Soviet Mars 3 rover which unfortunately 
-didn't succeed upon landing in 1971, to NASA's first successful Mars rover, Sojourner, in 1997. 
+Als Nächstes begeben wir uns auf eine Zeitreise, indem wir einen Dokumentarfilm ansehen, der die Geschichte der Mars-Rover detailliert darstellt.
+Der Film führt uns vom ersten Versuch, einen Rover auf dem Mars zu platzieren, dem sowjetischen Mars 3 Rover, der leider 
+1971 bei der Landung scheiterte, bis zum ersten erfolgreichen Mars-Rover der NASA, Sojourner, im Jahr 1997.
 
-Our journey doesn't stop there, as we venture further to understand the adventures of the most advanced rovers yet: Spirit, Opportunity, Curiosity, and Perseverance.
+Unsere Reise endet hier jedoch nicht, denn wir wagen uns weiter, um die Abenteuer der fortschrittlichsten Rover zu verstehen: Spirit, Opportunity, Curiosity und Perseverance.
 
 .. raw:: html
 
     <iframe width="600" height="400" src="https://www.youtube.com/embed/OO5CTBBgtXs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-This documentary not only presents a historical context but also provides a comprehensive understanding of the progressive 
-scientific and engineering milestones that have led to the current Mars exploration era.
+Dieser Dokumentarfilm bietet nicht nur einen historischen Kontext, sondern vermittelt auch ein umfassendes Verständnis der fortschreitenden 
+wissenschaftlichen und technischen Meilensteine, die zur aktuellen Ära der Mars-Erkundung geführt haben.
 
 
-**Step 3: Summarize the Mars Rovers**
+**Schritt 3: Zusammenfassung der Mars-Rover**
 
-After watching the documentary, let's summarize the different Mars rovers that have been sent on the red planet.
+Nachdem wir den Dokumentarfilm gesehen haben, fassen wir die verschiedenen Mars-Rover zusammen, die auf den roten Planeten geschickt wurden.
 
 * **Sojourner** (1997)
 
-    **Sojourner**, the pioneer of Mars rovers, embarked on its journey as a part of the Mars Pathfinder mission. 
-    It made a successful landing in the Ares Vallis region on July 4, 1997. As the first wheeled vehicle to roam 
-    on a planet other than Earth, Sojourner marked a significant milestone in Martian exploration. 
-    Although it was operational on Mars for only 92 Martian days, or sols, it set the groundwork for future exploratory rovers.
+    **Sojourner**, der Pionier der Mars-Rover, begann seine Reise als Teil der Mars Pathfinder-Mission. 
+    Er landete erfolgreich in der Region Ares Vallis am 4. Juli 1997. Als erstes Radfahrzeug, das auf einem anderen Planeten als der Erde fuhr, 
+    markierte Sojourner einen bedeutenden Meilenstein in der Erforschung des Mars. 
+    Obwohl er nur 92 Marstage, oder Sols, auf dem Mars operierte, legte er den Grundstein für zukünftige Forschungsrover.
 
     .. image:: img/mars_sojourner.jpg
 
-* **Spirit** (2004–2010) and **Opportunity** (2004–2018)
+* **Spirit** (2004–2010) und **Opportunity** (2004–2018)
 
-    **Spirit** and **Opportunity** are twin rovers of NASA's Mars Exploration Rover (MER) mission. **Spirit**, also known as MER-A, 
-    operated on Mars from 2004 to 2010. 
+    **Spirit** und **Opportunity** sind Zwillingsrover der NASA-Mars-Explorations-Rover-Mission (MER). **Spirit**, auch bekannt als MER-A, 
+    war von 2004 bis 2010 auf dem Mars aktiv.
     
-    On the other hand, **Opportunity**, or MER-B, had a remarkably long run from 2004 to 2018. 
-    Together, they greatly expanded our understanding of the Martian surface and geological history.
+    Andererseits hatte **Opportunity**, oder MER-B, einen bemerkenswert langen Lauf von 2004 bis 2018. 
+    Zusammen erweiterten sie unser Verständnis der Marsoberfläche und der geologischen Geschichte erheblich.
 
     .. image:: img/mars_opportunity.jpg
 
-* **Curiosity** (2012–present):
+* **Curiosity** (2012–heute):
 
-    **Curiosity**, a car-sized Mars rover, was designed to explore the Gale crater on Mars as part of NASA's 
-    Mars Science Laboratory (MSL) mission. Since its arrival in 2012, **Curiosity** has made numerous significant discoveries, 
-    including evidence of past liquid water on Mars.
+    **Curiosity**, ein auto-großer Mars-Rover, wurde entwickelt, um den Gale-Krater auf dem Mars als Teil der 
+    Mars Science Laboratory (MSL)-Mission der NASA zu erkunden. Seit seiner Ankunft im Jahr 2012 hat **Curiosity** zahlreiche bedeutende Entdeckungen gemacht, 
+    darunter Hinweise auf früheres flüssiges Wasser auf dem Mars.
 
     .. image:: img/mars_curiosity.jpg
 
-* Perseverance (2021–present):
+* Perseverance (2021–heute):
 
-    **Perseverance**, also known as Percy, is the most recent rover to arrive on Mars. It's designed to explore the Jezero crater 
-    as part of NASA's Mars 2020 mission. Along with its scientific instruments, **Perseverance** also carries Ingenuity, a small experimental Mars helicopter, marking another first in Martian exploration.
+    **Perseverance**, auch bekannt als Percy, ist der jüngste Rover, der auf dem Mars angekommen ist. Er wurde entworfen, um den Jezero-Krater 
+    als Teil der Mars 2020-Mission der NASA zu erforschen. Neben seinen wissenschaftlichen Instrumenten trägt **Perseverance** auch Ingenuity, einen kleinen experimentellen Mars-Hubschrauber, und markiert damit ein weiteres Novum in der Erforschung des Mars.
 
     .. image:: img/mars_perseverance.jpg
 
-Now, let's have a discussion. Reflect on the evolution of these rovers.
+Jetzt lasst uns diskutieren. Denkt über die Entwicklung dieser Rover nach.
 
-* How do the designs of these rovers differ? How are they similar?
-* How did the mission objectives influence the design of each rover?
-* What advancements in technology can you identify between each rover?
-* What features do you think the next Mars rover should have?
-* Share your thoughts and reflections, as well as any questions you might have!
+* Worin unterscheiden sich die Designs dieser Rover? Inwiefern sind sie ähnlich?
+* Wie haben die Missionsziele das Design jedes Rovers beeinflusst?
+* Welche technologischen Fortschritte könnt ihr zwischen den einzelnen Rovern erkennen?
+* Welche Funktionen sollte der nächste Mars-Rover eurer Meinung nach haben?
+* Teilt eure Gedanken und Reflexionen sowie etwaige Fragen, die ihr haben könntet!
 
-**Step 4: Art Activity: Draw Your Own Mars Rover**
+
+**Schritt 4: Kunstaktivität: Zeichne deinen eigenen Mars-Rover**
 
 .. image:: img/sojourner-first.jpg
 .. image:: img/spirit-opportunity.jpg
@@ -119,31 +118,31 @@ Now, let's have a discussion. Reflect on the evolution of these rovers.
 .. image:: img/curiosity.png
 .. image:: img/perseverance_rover.png
 
-For our next activity, let's put our knowledge and creativity to work by designing our very own Mars rover. Consider the key characteristics of the rovers we've studied so far, but also think about the unique attributes you would want to incorporate in your design.
+Für unsere nächste Aktivität setzen wir unser Wissen und unsere Kreativität ein, um unseren eigenen Mars-Rover zu entwerfen. Berücksichtige die wichtigsten Merkmale der bisher studierten Rover, denke aber auch über die einzigartigen Eigenschaften nach, die du in deinem Design einbringen möchtest.
 
-Materials you'll need:
+Materialien, die du benötigst:
 
-* Drawing paper
-* Pencils and erasers
-* Colored pencils, crayons, or markers
+* Zeichenpapier
+* Bleistifte und Radiergummis
+* Buntstifte, Wachsmalstifte oder Filzstifte
 
-Drawing Instructions:
+Zeichenanleitung:
 
-#. Start with the body of the rover. What shape will it be? How large?
-#. Consider the wheels. How many will your rover have? What size and shape will they be?
-#. Don't forget about the instruments. What scientific equipment will your rover carry? Cameras, drills, spectrometers, or something entirely new?
-#. Lastly, consider any unique features. Does your rover have solar panels, or does it use a different power source? Can it communicate directly with Earth, or does it need a relay satellite?
+#. Beginne mit dem Körper des Rovers. Welche Form wird er haben? Wie groß wird er sein?
+#. Betrachte die Räder. Wie viele wird dein Rover haben? Welche Größe und Form werden sie haben?
+#. Vergiss nicht die Instrumente. Welche wissenschaftliche Ausrüstung wird dein Rover tragen? Kameras, Bohrer, Spektrometer oder etwas völlig Neues?
+#. Überlege dir zuletzt besondere Merkmale. Hat dein Rover Solarpanele oder nutzt er eine andere Energiequelle? Kann er direkt mit der Erde kommunizieren oder benötigt er einen Relaissatelliten?
 
-Once everyone has completed their drawings, we'll share them with the class. Explain your design choices and the mission you envision for your rover.
+Sobald alle ihre Zeichnungen fertiggestellt haben, teilen wir sie mit der Klasse. Erkläre deine Designentscheidungen und die Mission, die du dir für deinen Rover vorstellst.
 
-**Step 5: Present Your Mars Rover Designs**
+**Schritt 5: Präsentiere deine Mars-Rover-Entwürfe**
 
-Now that everyone has completed their Mars Rover drawings, it's time to share them! As you present, discuss the thought process behind your design. What is your rover's mission? How does the design support this mission?
+Jetzt, wo jeder seine Mars-Rover-Zeichnungen fertiggestellt hat, ist es an der Zeit, sie zu teilen! Während du präsentierst, besprich den Gedankenprozess hinter deinem Design. Was ist die Mission deines Rovers? Wie unterstützt das Design diese Mission?
 
-Remember, there are no wrong answers in this activity. The purpose is to stimulate your creativity and deepen your understanding of Mars rover technology.
+Denke daran, in dieser Aktivität gibt es keine falschen Antworten. Der Zweck ist es, deine Kreativität anzuregen und dein Verständnis für die Technologie der Mars-Rover zu vertiefen.
 
-**Step 6: Reflection and Conclusion**
+**Schritt 6: Reflexion und Schlussfolgerung**
 
-As we conclude our Mars Rover lesson, let's take a few minutes to reflect on what we have learned. How do our rover designs reflect the advancements in technology and scientific objectives? How might the real Mars rovers continue to evolve in the future?
+Während wir unsere Mars-Rover-Lektion abschließen, nehmen wir uns ein paar Minuten Zeit, um über das Gelernte nachzudenken. Wie spiegeln unsere Rover-Designs die Fortschritte in der Technologie und die wissenschaftlichen Ziele wider? Wie könnten sich die echten Mars-Rover in Zukunft weiterentwickeln?
 
-Remember, the exploration of space, like any STEAM field, is all about asking questions, solving problems, and using creativity. Keep exploring, keep asking questions, and keep being curious!
+Denke daran, die Erforschung des Weltraums, wie jedes STEAM-Feld, dreht sich darum, Fragen zu stellen, Probleme zu lösen und Kreativität zu nutzen. Bleibe am Forschen, stelle Fragen und sei neugierig!

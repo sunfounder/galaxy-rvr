@@ -1,145 +1,145 @@
+Lektion 4: Beherrschung des TT-Motors
+===========================================
 
-Lesson 4: Mastering the TT Motor
-=================================
+In den vorherigen Lektionen haben wir Mars-Rover, ihre Federungssysteme erkundet und uns in das Wissen über Arduino vertieft.
 
-In the previous lessons, we explored Mars rovers, their suspension systems, and delved into knowledge about Arduino. 
+In diesem spannenden Kurs werden wir die Funktionsweise von Motoren erforschen, einer Schlüsselkomponente, die Mars-Rover antreibt.
+Wir werden die Prinzipien verstehen, die diese Motoren antreiben, und lernen, sie mit Hilfe eines SunFounder R3-Boards und einem GalaxyRVR-Shield zu steuern.
 
-In this exciting course, we'll explore the workings of motors, a key component that drives Mars rovers. 
-We'll understand the principles that power these motors and learn to control them using SunFounder R3 board and a GalaxyRVR Shield. 
+Am Ende dieses Kurses wirst du ein solides Verständnis für den Betrieb von Motoren und praktische Erfahrung in der Motorsteuerung haben.
 
-By the end of this course, you'll have a solid understanding of motor operation and hands-on experience in motor control. 
-
-Let's dive in!
+Lass uns eintauchen!
 
 .. raw:: html
 
     <video width="600" loop autoplay muted>
         <source src="_static/video/left_1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        Ihr Browser unterstützt das Video-Tag nicht.
     </video>
 
 .. note::
 
-    If you are learning this course after fully assembling the GalaxyRVR, you need to move this switch to the right before uploading the code.
+    Wenn du diesen Kurs nach dem vollständigen Zusammenbau des GalaxyRVR lernst, musst du diesen Schalter vor dem Hochladen des Codes nach rechts bewegen.
 
     .. image:: img/camera_upload.png
         :width: 500
         :align: center
 
-Course Objectives
+Kursziele
 ----------------------
-* Understand the basic principles of motors and the characteristics of the TT motor.
-* Learn how to control the direction and speed of the TT motor.
-* Understand how the GalaxyRVR Shield controls six motors.
+* Verstehe die grundlegenden Prinzipien von Motoren und die Eigenschaften des TT-Motors.
+* Lerne, wie man die Richtung und Geschwindigkeit des TT-Motors steuert.
+* Verstehe, wie das GalaxyRVR-Shield sechs Motoren steuert.
 
 
-Course Materials
+Kursmaterialien
 -----------------------
 
-* SunFounder R3 Board
-* TT Motor
-* GalaxyRVR Shield
-* Battery
-* USB Cable
+* SunFounder R3-Board
+* TT-Motor
+* GalaxyRVR-Shield
+* Batterie
+* USB-Kabel
 * Arduino IDE
 * Computer
 
-Course Steps
+Kursschritte
 ------------------
 
-**Step 1: What is a Motor?**
+**Schritt 1: Was ist ein Motor?**
 
-Motors play an integral part in our daily lives. They're everywhere! From the electric fans that cool us on hot days, the mixers that help us make delicious cakes, to the electric cars that whizz by on the streets – motors make things move!
+Motoren spielen eine integrale Rolle in unserem täglichen Leben. Sie sind überall! Von den elektrischen Ventilatoren, die uns an heißen Tagen kühlen, den Mixern, die uns helfen, köstliche Kuchen zu backen, bis hin zu den Elektroautos, die auf den Straßen vorbeiflitzen – Motoren bringen Dinge in Bewegung!
 
 .. image:: img/motor_application.jpg
 
-A motor is like the heart of a machine. It converts electrical energy into mechanical energy, making our toys, appliances, and even big vehicles come to life!
+Ein Motor ist wie das Herz einer Maschine. Er wandelt elektrische Energie in mechanische Energie um und bringt so unsere Spielzeuge, Haushaltsgeräte und sogar große Fahrzeuge zum Leben!
 
 
-The magic behind a motor isn't magic at all - it's science, specifically the principle of electromagnetic induction. Here's how it works: when electricity is supplied to a motor, it generates a magnetic field. This magnetic field then interacts with other magnets within the motor, causing the motor to spin. This spin, like spinning a top, can then be used to move wheels, propellers, or any other moving parts of a machine.
+Die Magie hinter einem Motor ist gar keine Magie – es ist Wissenschaft, genauer gesagt das Prinzip der elektromagnetischen Induktion. So funktioniert es: Wenn Strom einem Motor zugeführt wird, erzeugt er ein Magnetfeld. Dieses Magnetfeld interagiert dann mit anderen Magneten innerhalb des Motors, wodurch der Motor sich zu drehen beginnt. Diese Drehung, wie das Drehen eines Kreisels, kann dann verwendet werden, um Räder, Propeller oder andere bewegliche Teile einer Maschine zu bewegen.
 
 .. image:: img/motor_rotate.gif
     :align: center
 
-The type of motor we're focusing on in our GalaxyRVR is a specific kind called a TT Gear Motor. 
+Der Typ des Motors, auf den wir uns in unserem GalaxyRVR konzentrieren, ist eine spezifische Art namens TT-Getriebemotor.
 
 .. image:: img/tt_motor_xh.jpg
     :align: center
     :width: 400
 
-This is essentially a regular motor combined with a series of gears, all encased within a plastic shell.
+Dies ist im Wesentlichen ein normaler Motor, kombiniert mit einer Reihe von Zahnrädern, die alle in einem Kunststoffgehäuse eingeschlossen sind.
 
-As the motor spins, the gears translate this spin to the wheels of our rover. The use of gears provides a crucial benefit - it increases torque, enabling the motor to move larger, heavier loads.
+Während sich der Motor dreht, übersetzen die Zahnräder diese Drehung auf die Räder unseres Rovers. Der Einsatz von Zahnrädern bietet einen entscheidenden Vorteil - er erhöht das Drehmoment und ermöglicht es dem Motor, größere, schwerere Lasten zu bewegen.
 
 .. image:: img/motor_internal.gif
     :align: center
     :width: 600
 
-Isn't it fascinating to see how science and engineering principles come to life? Motors are a perfect example of these principles in action. By understanding how motors work, we can dream up and invent a wide array of machines. Let's dive deeper into the world of motors and unleash our creativity!
+Ist es nicht faszinierend zu sehen, wie Wissenschafts- und Ingenieursprinzipien zum Leben erwachen? Motoren sind ein perfektes Beispiel für diese Prinzipien in Aktion. Indem wir verstehen, wie Motoren funktionieren, können wir uns eine Vielzahl von Maschinen ausdenken und erfinden. Lass uns tiefer in die Welt der Motoren eintauchen und unsere Kreativität entfesseln!
 
 
-**Step 2: Exploring Motor Functioning and Operation**
 
-Having understood what a motor is and its broad spectrum of applications, it's time we venture into the heart of motor operation.
+**Schritt 2: Erforschung der Funktionsweise und des Betriebs von Motoren**
 
-In essence, a motor works on the principle of electromagnetism. When an electric current passes through a wire, it generates a magnetic field around it. This magnetic field can interact with other magnetic fields, causing motion.
+Nachdem wir verstanden haben, was ein Motor ist und sein breites Spektrum an Anwendungen kennen, wird es Zeit, uns in das Herz des Motorbetriebs zu begeben.
 
-Consider a simple experiment where we connect a motor directly to a battery. The current from the battery flows into the motor, triggering the internal mechanism of the motor to start spinning. This spinning action is due to the magnetic forces inside the motor.
+Im Wesentlichen funktioniert ein Motor nach dem Prinzip des Elektromagnetismus. Wenn ein elektrischer Strom durch einen Draht fließt, erzeugt er ein Magnetfeld um sich herum. Dieses Magnetfeld kann mit anderen Magnetfeldern interagieren und Bewegung verursachen.
+
+Betrachten wir ein einfaches Experiment, bei dem wir einen Motor direkt an eine Batterie anschließen. Der Strom aus der Batterie fließt in den Motor und löst den internen Mechanismus des Motors aus, der zu drehen beginnt. Diese Drehbewegung ist auf die magnetischen Kräfte im Inneren des Motors zurückzuführen.
 
     .. image:: img/motor_battery.png
 
-Interestingly, if you reverse the connections to the battery, the motor spins in the opposite direction! This happens because the direction of current flow changes, altering the direction of the magnetic field and consequently the direction of the motor's spin.
+Interessanterweise dreht sich der Motor in die entgegengesetzte Richtung, wenn Sie die Anschlüsse an der Batterie umkehren! Dies geschieht, weil sich die Richtung des Stromflusses ändert, was wiederum die Richtung des Magnetfelds und somit die Drehrichtung des Motors ändert.
 
-Now we know that connecting the motor directly to a battery can make it spin, but often we want to control its movement with code, so we include an Arduino board between them. But what would happen if we tried to connect the motor directly to the signal pins on the Arduino board?
+Nun wissen wir, dass der Anschluss des Motors direkt an eine Batterie ihn zum Drehen bringen kann, aber oft möchten wir seine Bewegung mit Code steuern, also schließen wir ein Arduino-Board dazwischen an. Aber was würde passieren, wenn wir versuchen, den Motor direkt an die Signalpins auf dem Arduino-Board anzuschließen?
 
 .. image:: img/motor_uno.png
     :width: 600
     :align: center
 
-If you guessed that the motor would not spin, you are correct! But why is that so?
+Wenn Sie erraten haben, dass sich der Motor nicht drehen würde, liegen Sie richtig! Aber warum ist das so?
 
-The answer lies in the current output of the Arduino board. The signal pins on a typical Arduino board can output only about 20mA of current, which is insufficient to drive a motor.
+Die Antwort liegt im Stromausgang des Arduino-Boards. Die Signalpins auf einem typischen Arduino-Board können nur etwa 20 mA Strom ausgeben, was nicht ausreicht, um einen Motor anzutreiben.
 
-So, how can we control motors using our Arduino? This is where a crucial component comes into the picture - a motor driver. Think of a motor driver as a bridge between the Arduino and the motor. It takes the low-current control signal from the Arduino, amplifies it, and sends it to the motor, thus enabling the motor to spin.
+Wie können wir also Motoren mit unserem Arduino steuern? Hier kommt eine entscheidende Komponente ins Spiel - ein Motor-Treiber. Denken Sie an einen Motor-Treiber als eine Brücke zwischen dem Arduino und dem Motor. Er nimmt das schwache Steuersignal des Arduino auf, verstärkt es und leitet es an den Motor weiter, wodurch der Motor sich zu drehen beginnt.
 
 .. image:: img/motor_uno2.png
 
-In our next step, we'll dive into the specifics of the motor driver and understand how we can effectively use it with our Arduino board to control a motor. Stay tuned for more exciting learning!
+Im nächsten Schritt werden wir uns mit den Einzelheiten des Motor-Treibers befassen und verstehen, wie wir ihn effektiv mit unserem Arduino-Board verwenden können, um einen Motor zu steuern. Bleiben Sie dran für weiteres spannendes Lernen!
 
 
-**Step 3: How the Motor is controlled by the Motor Driver**
+**Schritt 3: Wie der Motor durch den Motor-Treiber gesteuert wird**
 
-Our GalaxyRVR Shield, included in the kit, serves as the control center for our Mars Rover. It is the hub where we connect all our sensors, motors, and power supply. It consists of several components that allow us to control and power our Rover effectively.
+Unser GalaxyRVR-Shield, das im Kit enthalten ist, dient als Kontrollzentrum für unseren Mars-Rover. Es ist der Hub, an den wir alle unsere Sensoren, Motoren und die Stromversorgung anschließen. Es besteht aus mehreren Komponenten, die es uns ermöglichen, unseren Rover effektiv zu steuern und mit Strom zu versorgen.
 
-On the right side of the shield, you'll notice six motor ports. However, they are grouped into two sets, each controlled by a separate motor drive chip. Three ports marked "Left" are controlled by one chip, and the other three ports marked "Right" are controlled by another.
+Auf der rechten Seite des Shields finden Sie sechs Motoranschlüsse. Diese sind jedoch in zwei Gruppen unterteilt, die jeweils von einem separaten Motor-Treiber-Chip gesteuert werden. Drei Anschlüsse, die mit „Links“ gekennzeichnet sind, werden von einem Chip gesteuert, und die anderen drei Anschlüsse, die mit „Rechts“ gekennzeichnet sind, werden von einem anderen gesteuert.
 
 .. image:: img/motor_shield.png
 
-Let's learn how these two drive chips control the six motors through hands-on experience:
+Lernen wir, wie diese beiden Treiber-Chips die sechs Motoren steuern, durch praktische Erfahrung:
 
-* **1. Connecting the Circuit**
+* **1. Verbinden des Schaltkreises**
 
-    #. Plug the GalaxyRVR Shield into the R3 board, connect a motor, and finally plug in the battery to provide power to the expansion board.
+    #. Stecken Sie das GalaxyRVR-Shield in das R3-Board, schließen Sie einen Motor an und stecken Sie schließlich den Akku ein, um das Erweiterungsboard mit Strom zu versorgen.
 
         .. raw:: html
 
             <video width="600" loop autoplay muted>
                 <source src="_static/video/connect_shield.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+                Ihr Browser unterstützt das Video-Tag nicht.
             </video>
 
-    #. The first time you use, it is recommended that you plug in a Type-C USB cable to fully charge the battery first. Then turn the power on.
+    #. Beim ersten Gebrauch wird empfohlen, zuerst ein Type-C USB-Kabel anzuschließen, um den Akku vollständig aufzuladen. Schalten Sie dann den Strom ein.
     
         .. raw:: html
 
             <video width="600" loop autoplay muted>
                 <source src="_static/video/plug_usbc.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+                Ihr Browser unterstützt das Video-Tag nicht.
             </video>
 
-* **2. Writing and Uploading Code**
+* **2. Code schreiben und hochladen**
 
-    #. Open the Arduino IDE and input the following code:
+    #. Öffne die Arduino IDE und gib den folgenden Code ein:
 
         .. code-block:: arduino
 
@@ -153,32 +153,32 @@ Let's learn how these two drive chips control the six motors through hands-on ex
                 digitalWrite(3, HIGH);
             }
     
-        * ``pinMode()``: This function sets a pin as INPUT or OUTPUT, akin to deciding whether a character in our story speaks (OUTPUT) or listens (INPUT).
-        * ``digitalWrite()``: This function can set a pin HIGH (on) or LOW (off), much like switching a magic light on and off.
+        * ``pinMode()``: Diese Funktion setzt einen Pin als EINGANG oder AUSGANG, vergleichbar mit der Entscheidung, ob eine Figur in unserer Geschichte spricht (OUTPUT) oder zuhört (INPUT).
+        * ``digitalWrite()``: Mit dieser Funktion kann ein Pin auf HIGH (on) oder LOW (off) gesetzt werden, ähnlich dem Ein- und Ausschalten eines magischen Lichts.
 
-    #. Once you've selected the correct board(Arduino Uno) and port, click on the **Upload** button. It's like putting a letter in a mailbox - you're sending your instructions off to Arduino!
+    #. Nachdem du das richtige Board (Arduino Uno) und den Port ausgewählt hast, klicke auf den **Upload**-Button. Es ist, als würdest du einen Brief in einen Briefkasten legen - du schickst deine Anweisungen an Arduino!
 
         .. image:: img/motor_upload.png
         
-    #. Once the code has been successfully uploaded, you will see the motor start to rotate clockwise.
+    #. Sobald der Code erfolgreich hochgeladen wurde, siehst du, wie sich der Motor im Uhrzeigersinn zu drehen beginnt.
 
         .. raw:: html
 
             <video width="600" loop autoplay muted>
                 <source src="_static/video/left_1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+                Ihr Browser unterstützt das Video-Tag nicht.
             </video>
     
-* **3. About Circuit Internal Connection**
+* **3. Über den internen Schaltungsaufbau**
 
-    #. You can plug two more motors into the "Left" marked motor ports. You will see them rotate simultaneously.
+    #. Du kannst zwei weitere Motoren in die mit „Links“ gekennzeichneten Motoranschlüsse stecken. Du wirst sehen, dass sie sich gleichzeitig drehen.
 
-    #. Now, let's understand the simple principle of how the two drive chips control the six motors. Pins 2 and 3 on the Arduino board output signals to the motor drive chip, and the other end of the chip is connected to three motors in parallel. Similarly, pins 4 and 5 output signals to another drive chip, which in turn is connected to another three motors in parallel.
+    #. Jetzt verstehen wir das einfache Prinzip, wie die beiden Treiber-Chips die sechs Motoren steuern. Pins 2 und 3 auf dem Arduino-Board geben Signale an den Motor-Treiber-Chip aus, und das andere Ende des Chips ist parallel mit drei Motoren verbunden. Ähnlich geben die Pins 4 und 5 Signale an einen anderen Treiber-Chip aus, der wiederum parallel mit drei weiteren Motoren verbunden ist.
 
         .. image:: img/motor_driver.png
             :width: 500
 
-    #. If you want to test another drive chip, you just need to change the pins to ``4`` and ``5``.
+    #. Wenn du einen anderen Treiber-Chip testen möchtest, musst du nur die Pins auf ``4`` und ``5`` ändern.
 
         .. code-block:: arduino
             :emphasize-lines: 10,11
@@ -196,14 +196,14 @@ Let's learn how these two drive chips control the six motors through hands-on ex
                 digitalWrite(in4, HIGH);
             }
 
-        Here, we define two variables to represent pins 4 and 5. By using variables, we can easily manage and adjust our pin assignments throughout our code.
+        Hier definieren wir zwei Variablen, um die Pins 4 und 5 zu repräsentieren. Durch die Verwendung von Variablen können wir unsere Pin-Zuweisungen im gesamten Code leicht verwalten und anpassen.
 
-        Think of it as if we're assigning a specific role or duty to each pin number. When we decide to reassign the roles, instead of going through the entire script and changing every instance, we just update the assignment at the beginning of the script (where the variable is initially defined).
+        Denk daran, als ob wir jeder Pin-Nummer eine spezifische Rolle oder Aufgabe zuweisen. Wenn wir uns entscheiden, die Rollen neu zuzuweisen, müssen wir anstatt das gesamte Skript zu durchlaufen und jede Instanz zu ändern, lediglich die Zuweisung am Anfang des Skripts aktualisieren (wo die Variable zuerst definiert wird).
 
 
-* **4. About Drive Logic**
+* **4. Über die Antriebslogik**
 
-    #. In the previous tests, you would have noticed that the motors all spin in one direction. How do we make it spin in the opposite direction? Someone might suggest swapping the HIGH and LOW of the two pins. That's correct.
+    #. In den vorherigen Tests haben Sie vielleicht bemerkt, dass sich die Motoren alle in eine Richtung drehen. Wie lassen wir sie in die entgegengesetzte Richtung drehen? Jemand könnte vorschlagen, die Zustände HIGH und LOW der beiden Pins zu tauschen. Das ist korrekt.
 
         .. code-block:: arduino
             :emphasize-lines: 1,2
@@ -221,16 +221,16 @@ Let's learn how these two drive chips control the six motors through hands-on ex
                 digitalWrite(in4, LOW);
             }
 
-        Once you've written your code and uploaded it to your Arduino board, the motor will behave as instructed.
+        Sobald Sie Ihren Code geschrieben und auf Ihr Arduino-Board hochgeladen haben, wird sich der Motor entsprechend verhalten.
 
         .. raw:: html
 
             <video width="600" loop autoplay muted>
                 <source src="_static/video/right_cc.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+                Ihr Browser unterstützt das Video-Tag nicht.
             </video>
 
-    #. Let's now look at the internal driving logic of the drive chip.
+    #. Schauen wir uns jetzt die interne Antriebslogik des Treiberchips an.
 
         .. list-table::
             :widths: 25 25 50
@@ -244,15 +244,15 @@ Let's learn how these two drive chips control the six motors through hands-on ex
               - Standby
             * - L
               - H
-              - Clockwise
+              - Im Uhrzeigersinn
             * - H
               - L
-              - Counterclockwise
+              - Gegen den Uhrzeigersinn
             * - H
               - H
-              - Brake
+              - Bremse
     
-    #. Now, let's try to make the motor rotate clockwise for 2 seconds, counterclockwise for 2 seconds, and then stop.
+    #. Versuchen wir jetzt, den Motor 2 Sekunden lang im Uhrzeigersinn, 2 Sekunden lang gegen den Uhrzeigersinn drehen zu lassen und dann anzuhalten.
 
         .. code-block:: arduino
             :emphasize-lines: 10,11,12,13,14,15,16,17,18
@@ -277,48 +277,48 @@ Let's learn how these two drive chips control the six motors through hands-on ex
                 delay(5000);
             }
 
-        * Here we use the ``delay()`` function to make the Arduino pause for a certain amount of time, much like taking a short nap in the middle of our story.
-        * In the code, we use the "Brake" state to stop the motor, and you'll notice that the motor stops abruptly. Try setting both pins to LOW to test the "Standby" state, and you'll find that the motor gradually slows down to a stop.
+        * Hier verwenden wir die Funktion ``delay()``, um Arduino eine gewisse Zeit pausieren zu lassen, ähnlich einer kurzen Ruhepause in unserer Geschichte.
+        * Im Code verwenden wir den Zustand „Brake“ zum Anhalten des Motors, und Sie werden bemerken, dass der Motor abrupt stoppt. Versuchen Sie, beide Pins auf LOW zu setzen, um den Zustand "Standby" zu testen, und Sie werden feststellen, dass der Motor allmählich langsamer wird, bis er stoppt.
 
-Now that you should have a better understanding of how the motor driver chip controls the motors through the GalaxyRVR Shield and how we can use Arduino code to manipulate the motor's movements. Isn't it fascinating how a few lines of code can dictate the behavior of a physical object like our motor?
+Nun solltest du ein besseres Verständnis davon haben, wie der Motor-Treiber-Chip die Motoren über das GalaxyRVR-Shield steuert und wie wir Arduino-Code verwenden können, um die Bewegungen des Motors zu beeinflussen. Ist es nicht faszinierend, wie ein paar Zeilen Code das Verhalten eines physischen Objekts wie unseres Motors bestimmen können?
 
-Consider the following questions as you move forward:
+Betrachte folgende Fragen, während du weitermachst:
 
-* If we move all the code from the ``loop()`` function into the ``setup()`` function, how would the behavior of the motor change?
-* How would you modify the code to control six motors simultaneously?
+* Wenn wir den gesamten Code aus der Funktion ``loop()`` in die Funktion ``setup()`` verschieben, wie würde sich das Verhalten des Motors ändern?
+* Wie würdest du den Code ändern, um sechs Motoren gleichzeitig zu steuern?
 
-Remember, the more you experiment and play around with your code, the more you learn. Feel free to tweak, modify, and optimize your code as you deem fit. Happy coding!
+Denk daran, je mehr du mit deinem Code experimentierst und spielst, desto mehr lernst du. Fühle dich frei, deinen Code nach Belieben anzupassen, zu modifizieren und zu optimieren. Viel Spaß beim Programmieren!
 
 
-**Step 4: Controlling Motor Speed**
+**Schritt 4: Steuerung der Motorgeschwindigkeit**
 
-In the previous step, we controlled the motor’s direction by simply setting its pins HIGH or LOW. 
-This is like giving the motor full power to drive it, similar to pressing the accelerator pedal to the floor in a car. 
-But in many situations, we might want to adjust the motor speed to suit different scenarios, 
-just like we adjust the speed of a car depending on whether we're driving in a city or on a highway. 
-This is where Pulse Width Modulation (PWM) comes in.
+Im vorherigen Schritt haben wir die Richtung des Motors gesteuert, indem wir seine Pins einfach auf HIGH oder LOW gesetzt haben.
+Das ist so, als würden wir dem Motor volle Leistung geben, ähnlich wie wenn wir das Gaspedal in einem Auto durchtreten.
+In vielen Situationen möchten wir jedoch die Motorgeschwindigkeit an unterschiedliche Szenarien anpassen,
+genau wie wir die Geschwindigkeit eines Autos anpassen, je nachdem, ob wir in der Stadt oder auf der Autobahn fahren.
+Hier kommt die Pulsweitenmodulation (PWM) ins Spiel.
 
 .. image:: img/motor_pwm.jpg
 
-PWM is a technique used to create the effect of variable voltage output by rapidly switching the output between HIGH and LOW. 
-With PWM, we can simulate the effect of an analogue signal while only actually outputting digital signals.
+PWM ist eine Technik, die verwendet wird, um den Effekt einer variablen Spannungsausgabe zu erzeugen, indem der Ausgang schnell zwischen HIGH und LOW geschaltet wird.
+Mit PWM können wir den Effekt eines analogen Signals simulieren, während wir tatsächlich nur digitale Signale ausgeben.
 
-You might be finding this hard to understand, and that's okay! We'll be learning how to adjust motor speed using PWM through coding in the following sections.
+Du findest das vielleicht schwer zu verstehen, und das ist in Ordnung! Wir werden im Folgenden lernen, wie man die Motorgeschwindigkeit durch Programmierung mit PWM anpasst.
 
-Note that although the SunFounder R3 board has some pins with built-in PWM functionality, we can’t use them for our motor because they're already serving other functions. Thus, we're connecting the driver chips to pins 2, 3, 4, and 5, and using the Arduino’s SoftPWM library to enable PWM on these pins.
+Beachte, dass das SunFounder R3-Board einige Pins mit eingebauter PWM-Funktionalität hat, diese können wir aber für unseren Motor nicht verwenden, da sie bereits andere Funktionen erfüllen. Daher verbinden wir die Treiberchips mit den Pins 2, 3, 4 und 5 und verwenden die SoftPWM-Bibliothek von Arduino, um PWM auf diesen Pins zu ermöglichen.
 
-Here's what we'll do next:
+Das werden wir als Nächstes tun:
 
-#. Open Arduino IDE, search for ``softpwm`` in the **LIBRARY MANAGER** and install it.
+#. Öffne die Arduino IDE, suche in der **LIBRARY MANAGER** nach ``softpwm`` und installiere sie.
 
     .. raw:: html
 
         <video width="600" loop autoplay muted>
             <source src="_static/video/install_softpwm.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            Ihr Browser unterstützt das Video-Tag nicht.
         </video>
 
-#. Enter the following code into Arduino IDE. After uploading the code successfully, the motor will rotate clockwise.
+#. Gib den folgenden Code in die Arduino IDE ein. Nach dem erfolgreichen Hochladen des Codes wird sich der Motor im Uhrzeigersinn drehen.
 
     .. code-block:: arduino
         :emphasize-lines: 1, 7,11,12
@@ -338,12 +338,12 @@ Here's what we'll do next:
 
         }
 
-    * In the code above, we first add ``SoftPWM.h`` to the top of the code, enabling us to use the functions in the ``SoftPWM`` library directly.
-    * Then, initialize the ``SoftPWM`` library with ``SoftPWMBegin()`` function.
-    * Finally, in the ``loop()`` function, we use ``SoftPWMSet()`` to assign different values to ``in1`` and ``in2``, setting the motor in motion. You will notice the effect is similar to directly using ``LOW`` and ``HIGH``, but here we use numerical values within a range of ``0~255``.
-    * Remember, in the world of Arduino, speed is expressed as a value between 0 (like a car at a stop sign) and 255 (zooming down the highway!). So, when we say ``SoftPWMSet(in2, 255)``, we're telling that motor to go full speed ahead!
+    * Im obigen Code fügen wir zuerst ``SoftPWM.h`` oben im Code hinzu, um die Funktionen in der ``SoftPWM``-Bibliothek direkt nutzen zu können.
+    * Dann initialisieren wir die ``SoftPWM``-Bibliothek mit der Funktion ``SoftPWMBegin()``.
+    * Schließlich verwenden wir in der Funktion ``loop()`` ``SoftPWMSet()``, um verschiedenen Werten an ``in1`` und ``in2`` zuzuweisen, was den Motor in Bewegung setzt. Du wirst bemerken, dass der Effekt dem direkten Einsatz von ``LOW`` und ``HIGH`` ähnelt, aber hier verwenden wir numerische Werte im Bereich von ``0~255``.
+    * Denke daran, in der Welt von Arduino wird Geschwindigkeit als ein Wert zwischen 0 (wie ein Auto an einem Stoppschild) und 255 (rasend auf der Autobahn!) ausgedrückt. Wenn wir also sagen ``SoftPWMSet(in2, 255)``, sagen wir dem Motor, dass er Vollgas geben soll!
 
-#. Now, let's enter other values and observe any differences in motor speed.
+#. Jetzt geben wir andere Werte ein und beobachten, ob sich die Motorgeschwindigkeit ändert.
 
     .. code-block:: arduino
         :emphasize-lines: 12,13,14,15
@@ -366,41 +366,42 @@ Here's what we'll do next:
             delay(1000);
         }
     
-    In the code above, we use a ``for`` loop to increment a variable ``i`` up to ``255``. The ``for`` loop in C language is used to iterate over a part of the program several times. It consists of three parts:
+    Im obigen Code verwenden wir eine ``for``-Schleife, um eine Variable ``i`` bis ``255`` zu erhöhen. Die ``for``-Schleife in der C-Sprache wird verwendet, um einen Teil des Programms mehrmals zu iterieren. Sie besteht aus drei Teilen:
 
     .. image:: img/motor_for123.png
         :width: 400
         :align: center
 
-    * **Initialization**: This step is executed first and only once when we enter the loop for the first time. It allows us to declare and initialize any loop control variables.
-    * **Condition**: This is the next step after initialization. If it's true, the body of the loop is executed. If it's false, the body of the loop does not execute and the flow of control goes outside of the for loop.
-    * **Increment or Decrement**: After executing the Initialization and Condition steps and the loop body code, the Increment or Decrement step is executed. This statement allows us to update any loop control variables.
+    * **Initialization**: Dieser Schritt wird zuerst und nur einmal ausgeführt, wenn wir das erste Mal in die Schleife eintreten. Er ermöglicht es uns, jegliche Schleifensteuerungsvariablen zu deklarieren und zu initialisieren.
+    * **Condition**: Dies ist der nächste Schritt nach der Initialisierung. Ist sie wahr, wird der Schleifenkörper ausgeführt. Ist sie falsch, wird der Schleifenkörper nicht ausgeführt und die Steuerung des Flusses verlässt die for-Schleife.
+    * **Increment or Decrement**: Nach Ausführung der Schritte Initialisierung und Bedingung sowie des Schleifenkörper-Codes wird der Schritt Inkrement oder Dekrement ausgeführt. Diese Anweisung ermöglicht es uns, jegliche Schleifensteuerungsvariablen zu aktualisieren.
     
-    The flowchart for the for loop is shown below:
+    Das Flussdiagramm für die for-Schleife wird unten gezeigt:
 
     .. image:: img/motor_for.png
 
-    So, after running the above code, you will see the motor speed gradually increasing. It stops for a second, and then starts again from 0 and gradually increases.
+    Nach dem Ausführen des obigen Codes wirst du sehen, dass die Motorgeschwindigkeit allmählich zunimmt. Er hält für eine Sekunde an und beginnt dann wieder von 0 und steigt allmählich an.
 
     .. raw:: html
 
         <video width="600" loop autoplay muted>
             <source src="_static/video/left_speed.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            Ihr Browser unterstützt das Video-Tag nicht.
         </video>
 
-In this step, we have learned about Pulse Width Modulation (PWM), a technique for controlling the speed of our motor. By using the Arduino's SoftPWM library, we can adjust the speed of the motor, allowing us to simulate analogue signals while only outputting digital signals. This provides us with finer control over our rover's movements, and prepares us for more complex maneuvers in the future.
+In diesem Schritt haben wir die Pulsweitenmodulation (PWM) kennengelernt, eine Technik zur Steuerung der Geschwindigkeit unseres Motors. Durch die Verwendung der SoftPWM-Bibliothek von Arduino können wir die Geschwindigkeit des Motors anpassen, was uns ermöglicht, analoge Signale zu simulieren, während wir nur digitale Signale ausgeben. Dies bietet uns eine feinere Kontrolle über die Bewegungen unseres Rovers und bereitet uns auf komplexere Manöver in der Zukunft vor.
 
-**Step 5: Reflect and Improve**
+**Schritt 5: Reflektieren und Verbessern**
 
-Having completed this lesson, you should now be familiar with the working principles of motors, as well as how to control their direction and speed through programming.
+Nachdem du diese Lektion abgeschlossen hast, solltest du nun mit den Arbeitsprinzipien von Motoren vertraut sein, sowie damit, wie man ihre Richtung und Geschwindigkeit durch Programmierung steuert.
 
-Let's test your understanding with these challenges:
+Teste dein Verständnis mit diesen Herausforderungen:
 
-* How would you modify the for loop to gradually decrease the motor speed?
-* How would you control the motor to accelerate or decelerate while rotating counterclockwise?
+* Wie würdest du die for-Schleife ändern, um die Motorgeschwindigkeit allmählich zu verringern?
+* Wie würdest du den Motor so steuern, dass er beim Drehen gegen den Uhrzeigersinn beschleunigt oder verlangsamt?
 
-You can experiment with the provided code to answer these questions. Feel free to adjust the code according to your hypotheses and observe the changes in the motor's behavior.
+Du kannst mit dem bereitgestellten Code experimentieren, um diese Fragen zu beantworten. Fühle dich frei, den Code entsprechend deinen Hypothesen anzupassen und beobachte die Veränderungen im Verhalten des Motors.
 
-Your hands-on experiments and reflections on these questions will deepen your understanding and enhance your problem-solving skills. It is through challenges like these that real learning occurs. Always remember, there is no "right" or "wrong" in your exploratory journey – this is all about learning and discovery!
+Deine praktischen Experimente und Reflexionen über diese Fragen werden dein Verständnis vertiefen und deine Problemlösungsfähigkeiten verbessern. Es ist durch Herausforderungen wie diese, dass echtes Lernen stattfindet. Denke immer daran, es gibt kein „richtig“ oder „falsch“ auf deiner Entdeckungsreise – es geht alles um Lernen und Entdecken!
+
 

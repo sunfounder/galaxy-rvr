@@ -1,98 +1,98 @@
+Lektion 10: Erkundung des visuellen Systems des Mars-Rovers - Servo und Kippmechanismus
+===========================================================================================
 
-Lesson 10: Exploring the Mars Rover Visual System - Servo and Tilt Mechanism
-===================================================================================
+Willkommen zurück, junge Entdecker! In unserem heutigen Abenteuer werden wir in die faszinierende Welt des visuellen Systems des Mars-Rovers eintauchen.
+Genau wie unsere Augen und unser Hals zusammenarbeiten, um uns zu helfen, unsere Umgebung zu sehen und zu navigieren, benötigt unser Rover ein ähnliches System, 
+um die tückische Marslandschaft zu durchqueren. Und genau das werden wir heute bauen!
 
-Welcome back, young explorers! In today's adventure, we are going to delve into the fascinating world of the Mars Rover's visual system. 
-Just like our eyes and neck work together to help us see and navigate our surroundings, our Rover too needs a similar system to 
-navigate the treacherous Martian landscape. And that's exactly what we are going to build today!
+Das visuelle System unseres Rovers besteht aus zwei Hauptteilen: einer Kamera, die als seine „Augen“ dient, und einem Kippmechanismus, der wie ein „Hals“ fungiert, 
+der es ihm ermöglicht, nach oben und unten zu schauen. Bis zum Ende dieser Lektion werden wir unserem Rover die Fähigkeit geben, zu „sehen“ und zu „nicken“!
 
-The visual system of our Rover has two main parts: a camera that acts as its "eyes", and a tilt mechanism that acts like a "neck", 
-allowing it to look up and down. By the end of this lesson, we'll give our Rover the ability to "see" and "nod"!
+Zuerst werden wir den Kippmechanismus bauen - ein Gerät, das die Kamera unseres Rovers hält und es ihr ermöglicht, sich vertikal zu drehen. 
+Es ist, als würden wir unserem Rover einen Hals geben, damit er seinen „Kopf“ oder die Kamera nach oben und unten nicken kann!
 
-First, we'll build the tilt mechanism - a device that will hold our Rover's camera and let it rotate vertically. 
-It's like giving our Rover a neck, so it can nod its "head" or camera up and down!
+Als Nächstes werden wir den Servo kennenlernen, den winzigen, aber leistungsstarken „Muskel“, der unseren Kippmechanismus bewegt. 
+Wir werden verstehen, wie er funktioniert und wie wir ihn mit Arduino-Programmierung steuern können.
 
-Next, we'll learn about the servo, the tiny yet powerful "muscle" that moves our tilt mechanism. 
-We'll understand how it works and how we can control it using Arduino programming.
+Genau wie unsere Halsmuskeln unseren Kopf bewegen, damit unsere Augen eine bessere Sicht haben, wird der Servo den Kippmechanismus bewegen, damit die Kamera des Rovers 
+die Marslandschaft besser überblicken kann.
 
-Just as our neck muscles move our head so our eyes can get a better view, the servo will move the tilt mechanism so the Rover's 
-camera can better survey the Martian landscape.
-
-So, buckle up, explorers, let's start our mission to equip our Rover with its very own visual system!
+Also, schnallt euch an, Entdecker, lasst uns unsere Mission beginnen, unseren Rover mit seinem eigenen visuellen System auszustatten!
 
 .. raw:: html
 
     <video width="600" loop autoplay muted>
         <source src="_static/video/servo_range.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        Ihr Browser unterstützt das Video-Tag nicht.
     </video>
 
 
-Objective
-----------------
+Kursziele
+-------------------------
 
-* Practice installing and operating the tilt mechanism on the Mars Rover model.
-* Understand the principles of operation and application of servo.
-* Learn how to control servo movement through Arduino programming.
+* Üben Sie die Installation und Bedienung des Kippmechanismus am Mars-Rover-Modell.
+* Verstehen Sie die Funktionsprinzipien und Anwendungsmöglichkeiten eines Servos.
+* Erlernen Sie, wie man die Bewegung des Servos durch Arduino-Programmierung steuert.
 
-Materials
----------------
+Kursmaterialien
+-----------------------
 
-* Arduino UNO development board
+* Arduino UNO Entwicklungsboard
 * Servo
-* Gimbal and camera
-* Mars Rover model (already equipped with TT motor, suspension system, ultrasonic and infrared obstacle avoidance modules, RGB LED strip)
+* Gimbal und Kamera
+* Mars-Rover-Modell (bereits ausgestattet mit TT-Motor, Federungssystem, Ultraschall- und Infrarot-Hindernisvermeidungsmodulen, RGB-LED-Streifen)
 * Arduino IDE
 * Computer
 
-Steps
------------
+Kursschritte
+--------------
 
-**Step 1: What is a Servo?**
+**Schritt 1: Was ist ein Servo?**
 
-Have you ever watched a puppet show? If you have, you might have marveled at how the puppeteer can make the puppet's arms, legs, and head move so smoothly, just by pulling on some strings. In a way, servo motors are like our puppeteers.
+Haben Sie schon einmal eine Puppenshow gesehen? Wenn ja, haben Sie sich vielleicht darüber gewundert, wie der Puppenspieler die Arme, Beine und den Kopf der Puppe so geschmeidig bewegen kann, nur indem er an einigen Fäden zieht. In gewisser Weise sind Servomotoren wie unsere Puppenspieler.
 
 .. image:: img/puppet_show.png
     :width: 200
     :align: center
 
-Servo motors are special type of motors that don’t just spin around and around like a wheel. Instead, they can move to a specific position and hold that position. Imagine if you're playing a game of Simon says, and Simon says, "Raise your arm to a 90-degree angle!" You can do it, right? That's because, like a servo, you can control exactly how much to move your arm.
+Servomotoren sind eine besondere Art von Motoren, die sich nicht einfach nur drehen wie ein Rad. Stattdessen können sie sich auf eine bestimmte Position bewegen und diese Position halten. Stellen Sie sich vor, Sie spielen „Simon sagt“, und Simon sagt: „Heben Sie Ihren Arm in einem 90-Grad-Winkel!“ Das können Sie, oder? Das liegt daran, dass Sie, genau wie ein Servo, genau steuern können, wie weit Sie Ihren Arm bewegen.
 
 .. image:: img/servo.png
     :align: center
 
-* Brown Line: GND
-* Orange Line: Signal pin, connect to the PWM pin of main board.
-* Red wire: VCC
+* Braune Leitung: GND
+* Orange Leitung: Signalleitung, verbinden mit dem PWM-Pin des Hauptboards.
+* Rotes Kabel: VCC
 
-Just like you can control your arms to move to specific positions, we can use servo motors to control the exact position of objects in our projects. In our Mars Rover, we will use a servo to control the up and down movement of our tilt mechanism, just like how you can nod your head up and down.
+Genau wie Sie Ihre Arme kontrollieren können, um sich in bestimmte Positionen zu bewegen, können wir Servomotoren verwenden, um die genaue Position von Objekten in unseren Projekten zu steuern. In unserem Mars-Rover werden wir einen Servo verwenden, um die Auf- und Abbewegung unseres Kippmechanismus zu steuern, genau wie Sie mit Ihrem Kopf nicken können.
 
-In the next step, we will go on a fascinating journey inside a servo motor to understand how it works. Excited? Let's go!
+Im nächsten Schritt werden wir eine faszinierende Reise ins Innere eines Servomotors unternehmen, um zu verstehen, wie er funktioniert. Gespannt? Los geht's!
 
-**Step 2: How does a Servo Work?**
 
-So how does a servo work its magic? Let's go on an exciting journey inside a servo!
+**Schritt 2: Wie funktioniert ein Servo?**
 
-If we were to peek inside a servo, we would see a few parts. At the heart of a servo is a regular motor, very similar to the motors that spin our Mars Rover's wheels. Wrapped around the motor, there is a big gear that is connected to a smaller gear on the motor shaft. This is how the motor's fast, circular motion gets transformed into slower but stronger motion.
+Wie genau funktioniert nun ein Servo? Lassen Sie uns eine spannende Reise ins Innere eines Servos unternehmen!
+
+Wenn wir in einen Servo hineinschauen würden, würden wir einige Teile sehen. Im Herzen eines Servos befindet sich ein normaler Motor, ganz ähnlich den Motoren, die die Räder unseres Mars-Rovers drehen. Um den Motor herum befindet sich ein großes Zahnrad, das mit einem kleineren Zahnrad auf der Motorwelle verbunden ist. So wird die schnelle, kreisförmige Bewegung des Motors in eine langsamere, aber stärkere Bewegung umgewandelt.
 
 .. image:: img/servo_internal.png
     :align: center
 
-But that's not what makes a servo special. The magic happens in a tiny piece of electronics called a "potentiometer" and the "control circuitry". Here's how it works: when the servo moves, the potentiometer turns and changes its resistance. The control circuitry measures this change in resistance and knows exactly what position the servo is in. Clever, isn't it?
+Aber das ist nicht das, was einen Servo besonders macht. Die Magie passiert in einem winzigen Stück Elektronik, genannt „potentiometer“, und der „control circuitry“. So funktioniert es: Wenn sich der Servo bewegt, dreht sich das Potentiometer und ändert seinen Widerstand. Die Steuerschaltung misst diese Widerstandsänderung und weiß genau, in welcher Position sich der Servo befindet. Clever, oder?
 
-To control a servo, we send it a special kind of signal called a "pulse-width modulation" signal or PWM. By changing the width of these pulses, we can control exactly how much the servo moves and hold it in that position.
+Um einen Servo zu steuern, senden wir ihm ein spezielles Signal, genannt "Pulsbreitenmodulations"-Signal oder PWM. Indem wir die Breite dieser Pulse ändern, können wir genau steuern, wie weit sich der Servo bewegt und ihn in dieser Position halten.
 
-In the next step, we'll learn how to control a servo using an Arduino. Ready for some magic spells in the form of code? Let's go!
+Im nächsten Schritt lernen wir, wie man einen Servo mit einem Arduino steuert. Bereit für ein paar magische Sprüche in Form von Code? Los geht's!
 
-**Step 3: Controlling a Servo using Arduino**
+**Schritt 3: Steuerung eines Servos mit Arduino**
 
-Alright, explorers, now that we know how a servo works, let's learn how to control it using our magic wand, the Arduino!
+In Ordnung, Entdecker, jetzt, wo wir wissen, wie ein Servo funktioniert, lernen wir, wie man ihn mit unserem Zauberstab, dem Arduino, steuert!
 
-Controlling a servo is like giving it directions. Remember the pulse-width modulation (PWM) signals we mentioned earlier? We are going to use those to tell the servo where to move.
+Einen Servo zu steuern ist wie ihm Anweisungen zu geben. Erinnern Sie sich an die zuvor erwähnten Pulsbreitenmodulations- (PWM) Signale? Diese werden wir verwenden, um dem Servo zu sagen, wohin er sich bewegen soll.
 
-Luckily, Arduino makes this task easy for us with a built-in library called ``Servo``. With this library, we can create a ``Servo`` object, attach a pin to it (the pin that our servo is connected to), and then use a simple command, ``write()``, to set the angle.
+Glücklicherweise macht Arduino uns diese Aufgabe leicht mit einer eingebauten Bibliothek namens ``Servo``. Mit dieser Bibliothek können wir ein ``Servo``-Objekt erstellen, einen Pin damit verbinden (den Pin, an den unser Servo angeschlossen ist) und dann einen einfachen Befehl, ``write()``, verwenden, um den Winkel einzustellen.
 
-Here's a snippet of what the code looks like:
+Hier ist ein Ausschnitt, wie der Code aussieht:
 
 .. code-block:: arduino
 
@@ -108,17 +108,17 @@ Here's a snippet of what the code looks like:
         myServo.write(90);  // tell servo to go to 90 degrees
     }
 
-In this code, ``myServo`` is our Servo object, ``attach(6)`` tells the Arduino that our servo is connected to pin 6, and ``write(90)`` tells the servo to move to 90 degrees.
+In diesem Code ist ``myServo`` unser Servo-Objekt, ``attach(6)`` sagt dem Arduino, dass unser Servo an Pin 6 angeschlossen ist, und ``write(90)`` sagt dem Servo, er soll sich auf 90 Grad bewegen.
 
-Great job, explorers! You've just learned how to control a servo motor with Arduino. You can experiment with different angles too! 
+Großartige Arbeit, Entdecker! Sie haben gerade gelernt, wie man einen Servomotor mit Arduino steuert. Sie können auch mit verschiedenen Winkeln experimentieren! 
 
-**Step 4: Assemble the Visual System**
+**Schritt 4: Montage des visuellen Systems**
 
-You're now ready to assemble the visual system of our Rover.
+Jetzt sind Sie bereit, das visuelle System unseres Rovers zusammenzubauen.
 
 .. note::
 
-    * When inserting the ESP32 CAM into the Camera Adapter, be aware of its orientation. It should align properly with the ESP32 Adapter.
+    * Achten Sie beim Einsetzen der ESP32 CAM in den Kameraadapter auf die Ausrichtung. Sie sollte richtig mit dem ESP32-Adapter ausgerichtet sein.
 
     .. image:: img/esp32_cam_direction.png
         :width: 300
@@ -128,29 +128,28 @@ You're now ready to assemble the visual system of our Rover.
 
     <iframe width="600" height="400" src="https://www.youtube.com/embed/26q03wXD66U?si=6sG5FL0mA354QqrT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-**Step 5: Understanding the Limits of the Tilt Mechanism**
+**Schritt 5: Die Grenzen des Kippmechanismus verstehen**
 
-Even though servo is designed to rotate between 0 and 180 degrees, you may notice that it stops responding beyond a certain point (let's say after 150 degrees). Have you ever wondered why this happens? Let's explore this mystery together in our next adventure!
+Obwohl der Servo dafür ausgelegt ist, sich zwischen 0 und 180 Grad zu drehen, haben Sie vielleicht bemerkt, dass er jenseits eines bestimmten Punktes (sagen wir nach 150 Grad) nicht mehr reagiert. Haben Sie sich jemals gefragt, warum das passiert? Lassen Sie uns dieses Geheimnis in unserem nächsten Abenteuer zusammen erkunden!
 
+Können Sie sich einen Vogel vorstellen, der versucht, seinen Hals zu weit zu beugen, sodass er seinen eigenen Körper berührt und sich nicht weiterbewegen kann? Unser Rover-Kippmechanismus steht vor einer ähnlichen Situation. Wenn sich der Servo nach unten bewegt, kann er gegen den Körper unseres Rovers stoßen und kann nicht über einen bestimmten Winkel hinausgehen.
 
-Can you imagine a bird trying to bend its neck too much that it hits its own body and can't move any further? Our Rover's tilt mechanism faces a similar situation. As the servo moves the mechanism downwards, it can bump into the body of our Rover and can't go beyond a certain angle.
+Wenn wir versuchen, ihn durch Schreiben eines unerreichbaren Winkels in unserem Code zu zwingen, sich über diesen Punkt hinaus zu bewegen, kann unser kleiner Servo-Vogel stecken bleiben und sich sogar beschädigen! Das wollen wir nicht, oder? Daher wollen wir seine Bewegungsgrenzen mit einem kleinen Experiment verstehen.
 
-If we try to force it to move beyond this point by writing an unreachable angle in our code, our little servo birdie can get stuck and even damage itself! We don't want that to happen, do we? So, let's understand its movement limitations with a little experiment.
-
-We use a for loop to rotate the servo from 0 to 180 degrees while keeping a note of the angle in the Serial Monitor.
+Wir verwenden eine for-Schleife, um den Servo von 0 bis 180 Grad zu drehen, während wir den Winkel im Seriellen Monitor notieren.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/848c7a3a-16b2-4a7e-8d66-bb91848bc6d9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-* The ESP32-CAM and the Arduino board share the same RX (receive) and TX (transmit) pins. So, before uploading the code, you'll need to first release the ESP32-CAM by slide this switch to right side to avoid any conflicts or potential issues.
+* Der ESP32-CAM und das Arduino-Board teilen sich dieselben RX (Empfang) und TX (Senden) Pins. Daher müssen Sie vor dem Hochladen des Codes zuerst den ESP32-CAM durch Verschieben dieses Schalters nach rechts freigeben, um Konflikte oder potenzielle Probleme zu vermeiden.
 
     .. image:: img/camera_upload.png
         :width: 600
 
-* After we upload this code, open the **Serial Monitor**. If no information appears, press the **Reset button** on the GalaxyRVR shield to run the code again. 
+* Nachdem Sie diesen Code hochgeladen haben, öffnen Sie den **Serial Monitor**. Wenn keine Informationen erscheinen, drücken Sie die **Reset button** auf dem GalaxyRVR-Shield, um den Code erneut auszuführen.
 
-* You will see the servo rotate, and the Serial Monitor will display the angle. 
+* Sie werden sehen, wie sich der Servo dreht, und der Serielle Monitor zeigt den Winkel an.
 
 .. image:: img/servo_range.png
 
@@ -158,20 +157,21 @@ We use a for loop to rotate the servo from 0 to 180 degrees while keeping a note
 
     <video width="600" loop autoplay muted>
         <source src="_static/video/servo_range.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        Ihr Browser unterstützt das Video-Tag nicht.
     </video>
     
-On my Rover, the tilt mechanism could go up to around 140° before it hit the body of the Rover and couldn't go any further.
+Bei meinem Rover konnte der Kippmechanismus bis zu etwa 140° hochgehen, bevor er den Körper des Rovers berührte und nicht weiter gehen konnte.
 
-So, explorers, always remember to respect the limits of your rover to keep it safe and functioning!
+Also, Entdecker, denken Sie immer daran, die Grenzen Ihres Rovers zu respektieren, um ihn sicher und funktionsfähig zu halten!
 
 
-**Step 6: Sharing and Reflection**
+**Schritt 6: Teilen und Reflektieren**
 
-Well done, explorers! Today, you've not only built a tilt mechanism for your Rover but also understood how to control a servo to move it around. That's a big step forward in our Mars Rover mission.
+Gut gemacht, Entdecker! Heute haben Sie nicht nur einen Kippmechanismus für Ihren Rover gebaut, sondern auch verstanden, wie man einen Servo steuert, um ihn zu bewegen. Das ist ein großer Schritt vorwärts in unserer Mars-Rover-Mission.
 
-Now, let's share our experiences and reflect on what we've learned. 
+Jetzt wollen wir unsere Erfahrungen teilen und über das, was wir gelernt haben, nachdenken.
 
-Did you encounter any challenges while setting up the tilt mechanism or programming the servo? How did you overcome them?
+Sind Ihnen beim Aufbau des Kippmechanismus oder bei der Programmierung des Servos Herausforderungen begegnet? Wie haben Sie diese überwunden?
 
-Remember, every challenge we overcome makes us smarter and our Rover better. So don't hesitate to share your stories, ideas, and solutions. You never know, your innovative solution might help a fellow explorer in their journey!
+Denken Sie daran, jede Herausforderung, die wir überwinden, macht uns klüger und unseren Rover besser. Zögern Sie also nicht, Ihre Geschichten, Ideen und Lösungen zu teilen. Wer weiß, vielleicht hilft Ihre innovative Lösung einem anderen Entdecker auf seiner Reise!
+

@@ -1,113 +1,112 @@
-Lesson 12: Driving the Rover with the App
-===========================================
+Lektion 12: Steuerung des Rovers mit der App
+============================================
 
-In our last adventure, we mastered the art of using the SunFounder Controller to not only explore the world through the rover's eyes but also to adjust its gaze by controlling the tilt mechanism. It was like giving our Mars rover a sense of sight!
+In unserem letzten Abenteuer haben wir gelernt, mit dem SunFounder Controller nicht nur die Welt durch die Augen des Rovers zu erkunden, sondern auch seinen Blick durch Steuerung des Neigungsmechanismus anzupassen. Es war, als hätten wir unserem Mars-Rover das Sehen beigebracht!
 
-Now, imagine if you could steer this Martian explorer as well, directing its path at your whim. In this lesson, that's exactly what we're going to do! We're going to take our understanding of the SunFounder Controller to the next level and learn to maneuver our rover, giving us the thrilling experience of being a Mars rover driver!
+Stellen Sie sich nun vor, Sie könnten diesen Mars-Erkunder auch steuern und seinen Weg nach Belieben lenken. In dieser Lektion werden wir genau das tun! Wir vertiefen unser Verständnis des SunFounder Controllers und lernen, unseren Rover zu manövrieren, was uns das aufregende Erlebnis eines Mars-Rover-Fahrers bietet!
 
-With our vivid and lively STEAM course, children will not just learn; they'll experience the excitement and wonder of space exploration! Strap in and get ready for an exciting journey!
+Mit unserem lebendigen und anschaulichen STEAM-Kurs werden Kinder nicht nur lernen; sie erleben die Spannung und das Wunder der Raumfahrt! Schnallen Sie sich an und bereiten Sie sich auf eine spannende Reise vor!
 
 .. raw:: html
 
     <video width="600" loop autoplay muted>
         <source src="_static/video/camera_app.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        Ihr Browser unterstützt das Video-Tag nicht.
     </video>
 
-Learning Goals
+Kursziele
 -----------------------
 
-* Gain a deeper understanding of the SunFounder Controller.
-* Learn how to drive the Mars rover using the mobile app.
+* Vertiefung des Verständnisses des SunFounder Controllers.
+* Erlernen der Steuerung des Mars-Rovers mittels der mobilen App.
 
-
-Materials needed
+Kursmaterialien
 ------------------------
 
-* Mars Rover model (equipped with all components, except for solar panel and bottom plate)
+* Mars-Rover-Modell (mit allen Komponenten, außer Solarpanel und Bodenplatte)
 * Arduino IDE
 * Computer
-* Tablet or smartphone with SunFounder Controller app installed
+* Tablet oder Smartphone mit installierter SunFounder Controller-App
 
-Course Steps
+Kursschritte
 ----------------------
 
-**Step 1: Dive Deeper into the SunFounder Controller**
+**Schritt 1: Vertiefung in den SunFounder Controller**
 
-In our previous lesson, we got our first taste of the SunFounder Controller, its basic operations and uses. But surely, you're left with some burning questions, right? Time to quench that curiosity and delve deeper into this tech marvel.
+In unserer letzten Lektion haben wir erste Einblicke in den SunFounder Controller, seine grundlegenden Funktionen und Anwendungen erhalten. Aber sicherlich haben Sie noch einige brennende Fragen, richtig? Zeit, diese Neugier zu stillen und tiefer in dieses technologische Wunder einzutauchen.
 
-On creating a new controller, you'll be met with a screen that might look like an enigma at first.
+Beim Erstellen eines neuen Controllers werden Sie zunächst mit einem Bildschirm konfrontiert, der anfangs wie ein Rätsel erscheinen mag.
 
 .. image:: img/app/app_blank.png
 
-You'll see a kaleidoscope of shapes: long rectangles, short rectangles, and large squares, each uniquely tagged with identifiers from A to Q.
+Sie sehen eine Vielfalt von Formen: lange Rechtecke, kurze Rechtecke und große Quadrate, jedes einzigartig mit Kennzeichnungen von A bis Q versehen.
 
-Ever wondered why such diversity? What do the identifiers A to Q imply?
+Haben Sie sich jemals gefragt, warum diese Vielfalt? Was bedeuten die Kennzeichnungen von A bis Q?
 
-Let's embark on this exploratory journey!
+Begeben wir uns auf diese Entdeckungsreise!
 
-* **Deciphering the Shapes**
+* **Entschlüsselung der Formen**
 
-    For instance, tap on a long rectangular area. Like opening a treasure chest, you'll unveil several widgets. Remember the **Slider** from our previous class? Swiping it left or right controlled the Mars rover's camera tilt. Then there's the **Gauge**, can be used as your rover's personal speedometer. And a plethora of other widgets!
+    Tippen Sie beispielsweise auf ein langes Rechteck. Wie das Öffnen einer Schatztruhe werden mehrere Widgets enthüllt. Erinnern Sie sich an den **Slider** aus unserem letzten Unterricht? Durch Wischen nach links oder rechts wurde die Neigung der Mars-Rover-Kamera gesteuert. Dann gibt es das **Gauge**, das als Tachometer Ihres Rovers dienen kann. Und eine Vielzahl anderer Widgets!
 
     .. image:: img/app/app_long.png
 
-    Tap on the shorter rectangle, and it reveals a different set of widgets. The **Button** widget, like a binary switch, issues singular commands, while the **Microphone** widget can listens to your voice commands to control the rover, among other widgets.
+    Tippen Sie auf das kürzere Rechteck, und es zeigt eine andere Gruppe von Widgets. Das **Button**-Widget, ähnlich einem binären Schalter, gibt einzelne Befehle aus, während das **Microphone**-Widget Ihre Sprachbefehle zum Steuern des Rovers hören kann, unter anderen Widgets.
 
     .. image:: img/app/app_short.png
 
-    What about the square block, you ask? It houses the **Joystick** widget, the D-pad widget, and the Throttle widget. And yes, there's more!
+    Und der quadratische Block? Er beherbergt das **Joystick**-Widget, das D-Pad-Widget und das Gashebel-Widget. Und ja, es gibt noch mehr!
 
     .. image:: img/app/app_square.png
 
-    At this point, don't fret about each widget's function or usage. Familiarize yourself with what widgets each shape houses.
+    Keine Sorge um die Funktion oder Anwendung jedes Widgets zu diesem Zeitpunkt. Machen Sie sich erst einmal mit den Widgets vertraut, die in jeder Form enthalten sind.
 
-* **Harnessing the Widgets**
 
-    Through the content above, we know that there are many different widgets. So what can these widgets be used for?
+* **Nutzung der Widgets**
 
-    We categorize these widgets into two types: control widgets and show widgets.
+    Durch den oben genannten Inhalt wissen wir, dass es viele verschiedene Widgets gibt. Wofür können diese Widgets also verwendet werden?
 
-    * **Control widgets** primarily let you manipulate the app, and then the Mars rover receives these control commands and performs corresponding actions.
-    * **Show widgets** allow you to use them to show some values in the app, such as sensor values, etc.
+    Wir kategorisieren diese Widgets in zwei Typen: Steuerungs-Widgets und Anzeige-Widgets.
 
-    For a detailed description of these widgets, please refer to: |link_widgets_list|.
+    * **Steuerungs-Widgets** ermöglichen es Ihnen, die App zu manipulieren, woraufhin der Mars-Rover diese Steuerbefehle empfängt und entsprechende Aktionen ausführt.
+    * **Anzeige-Widgets** erlauben es Ihnen, bestimmte Werte in der App anzuzeigen, wie zum Beispiel Sensordaten.
 
-    Also, for the functions, parameters, etc. related to these widgets, please refer to: |link_ai_camera_library_api|.
+    Für eine detaillierte Beschreibung dieser Widgets, siehe bitte: |link_widgets_list|.
 
-* **The Role of Identifiers**
+    Für Funktionen, Parameter usw., die mit diesen Widgets zusammenhängen, siehe bitte: |link_ai_camera_library_api|.
 
-    Every shape carries an identifier on the bottom right corner. Why, you ask? Let's understand this with an example.
+* **Die Rolle der Kennzeichner**
 
-    In our last class, we added a **Slider** widget in the **D** region. The code to get its value looked something like this:
+    Jede Form trägt einen Kennzeichner in der unteren rechten Ecke. Warum, fragen Sie? Verstehen wir das anhand eines Beispiels.
+
+    In unserer letzten Klasse haben wir ein **Slider**-Widget im Bereich **D** hinzugefügt. Der Code, um dessen Wert zu erhalten, sah in etwa so aus:
 
         .. code-block:: arduino
 
             int16_t sliderD = aiCam.getSlider(REGION_D);
         
-    What if we added a **Slider** widget in the **B** region? How would the code change? As simple as replacing ``REGION_D`` with ``REGION_B``.
+    Was, wenn wir ein **Slider**-Widget im Bereich **B** hinzugefügt hätten? Wie würde sich der Code ändern? So einfach, wie ``REGION_D`` durch ``REGION_B`` zu ersetzen.
 
         .. code-block:: arduino
 
             int16_t sliderD = aiCam.getSlider(REGION_B);
 
-    Easy, right? These identifiers help discern which widget you've added in which area.
+    Einfach, richtig? Diese Kennzeichner helfen dabei, zu erkennen, welches Widget Sie in welchem Bereich hinzugefügt haben.
 
 
 .. note::
-    * Detailed instructions on creating and adding widgets, and connecting and operating the SunFounder Controller, are available in ``Step 3`` of ``Lesson 11``.
-    * For more in-depth operations, please visit |link_sc_page|.
+    * Detaillierte Anweisungen zum Erstellen und Hinzufügen von Widgets sowie zum Verbinden und Bedienen des SunFounder Controllers finden Sie in ``Schritt 3`` von ``Lektion 11``.
+    * Für tiefgreifendere Operationen besuchen Sie bitte |link_sc_page|.
 
-**Step 2: Control the Mars Rover with Dual Throttles**
+**Schritt 2: Steuerung des Mars-Rovers mit Dual-Throttles**
 
-Now that we've delved into the ins and outs of the SunFounder Controller widgets, let's elevate our game by incorporating 
-two Throttle widgets to commandeer the movement of the Mars Rover.
+Jetzt, da wir uns eingehend mit den SunFounder Controller Widgets beschäftigt haben, steigern wir unser Spiel, indem wir zwei Drosselklappen-Widgets verwenden, um die Bewegung des Mars-Rovers zu steuern.
 
-#. Place a **Throttle** widget each in the **K** and **Q** regions. You will need to hit the |app_edit| button at the top right to switch to editing mode, and once you're done setting things up, click |app_save| to store your changes.
+#. Platzieren Sie je ein **Throttle**-Widget in den Bereichen **K** und **Q**. Sie müssen oben rechts auf die Schaltfläche |app_edit| klicken, um in den Bearbeitungsmodus zu wechseln, und nachdem Sie alles eingerichtet haben, klicken Sie auf |app_save|, um Ihre Änderungen zu speichern.
 
     .. image:: img/app/app_throttle.png
 
-#. Since we plan to utilize two **Throttle** widgets to govern the Rover's mobility, let's tweak the function that dictates the rover's movements accordingly:
+#. Da wir zwei **Throttle**-Widgets zur Steuerung der Mobilität des Rovers verwenden wollen, passen wir die Funktion, die die Bewegungen des Rovers steuert, entsprechend an:
 
 
     .. code-block:: arduino
@@ -133,23 +132,23 @@ two Throttle widgets to commandeer the movement of the Mars Rover.
             }
         }
 
-    Sure, let's break down the ``carSetMotors()`` function. This function accepts two arguments, ``power_L`` and ``power_R``, which are likely the power settings for the left and right motors respectively. The values of these arguments are presumably from -100 to 100, where negative values indicate reverse motion, 0 indicates stop, and positive values indicate forward motion.
+    Natürlich, lassen Sie uns die Funktion ``carSetMotors()`` genauer betrachten. Diese Funktion nimmt zwei Argumente entgegen, ``power_L`` und ``power_R``, die wahrscheinlich die Leistungseinstellungen für die linken und rechten Motoren sind. Die Werte dieser Argumente liegen vermutlich zwischen -100 und 100, wobei negative Werte Rückwärtsbewegung anzeigen, 0 einen Stopp bedeutet und positive Werte Vorwärtsbewegung signalisieren.
 
-    * Set power for the left motor:
+    * Leistungseinstellung für den linken Motor:
 
-        * If ``power_L`` is greater than or equal to 0, the left motor is set to move forward. 
-        
-        * ``SoftPWMSet(in1, map(power_L, 0, 100, 0, 255))`` uses the Arduino ``map`` function to map the input range (0 to 100) to the output range (0 to 255) - this is because PWM values in Arduino are between 0 (0% duty cycle) and 255 (100% duty cycle). This mapped value is then passed to the ``SoftPWMSet`` function along with ``in1``.
+        * Wenn ``power_L`` größer oder gleich 0 ist, wird der linke Motor auf Vorwärtsbewegung eingestellt. 
 
-        * If ``power_L`` is less than 0, the left motor is set to move in reverse and the input range for the ``map`` function is now 0 to -100.
+        * ``SoftPWMSet(in1, map(power_L, 0, 100, 0, 255))`` verwendet die Arduino-Funktion ``map``, um den Eingabebereich (0 bis 100) auf den Ausgabebereich (0 bis 255) abzubilden - dies liegt daran, dass die PWM-Werte in Arduino zwischen 0 (0 % Tastverhältnis) und 255 (100 % Tastverhältnis) liegen. Dieser abgebildete Wert wird dann zusammen mit ``in1`` an die Funktion ``SoftPWMSet`` übergeben.
 
-    * Set power for the right motor:
+        * Wenn ``power_L`` kleiner als 0 ist, wird der linke Motor auf Rückwärtsbewegung eingestellt, und der Eingabebereich für die Funktion ``map`` ist jetzt 0 bis -100.
 
-        * This follows the same logic as setting the power for the left motor, but uses ``in3`` and ``in4`` instead, and the input power values are ``power_R`` instead of ``power_L``.
+    * Leistungseinstellung für den rechten Motor:
 
-    Overall, this function takes two motor power values, converts them into the appropriate PWM values, and sets the PWM values on the correct motor control pins to achieve the desired motion.
+        * Dies folgt der gleichen Logik wie das Einstellen der Leistung für den linken Motor, aber benutzt stattdessen ``in3`` und ``in4``, und die Werte für die Eingangsleistung sind ``power_R`` anstelle von ``power_L``.
 
-#. Within the ``onReceive()`` function, retrieve the values from the two **Throttle** widgets and employ them as the power for the left and right motors of the Mars Rover.
+    Insgesamt nimmt diese Funktion zwei Motorleistungswerte, wandelt sie in die entsprechenden PWM-Werte um und setzt die PWM-Werte auf den richtigen Motorsteuerungspins, um die gewünschte Bewegung zu erreichen.
+
+#. Innerhalb der Funktion ``onReceive()`` holen Sie die Werte von den beiden **Throttle**-Widgets ab und verwenden sie als Leistung für die linken und rechten Motoren des Mars-Rovers.
 
     .. code-block:: arduino
         :emphasize-lines: 9,10,13
@@ -169,37 +168,37 @@ two Throttle widgets to commandeer the movement of the Mars Rover.
             carSetMotors(throttle_L, throttle_R);
         }
 
-Here is the complete code:
+Hier ist der vollständige Code:
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/c70d2598-a1f9-465a-83bb-4ebd38eb74fa/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Each time you rerun the code, you need to repeat the following four steps:
+Jedes Mal, wenn Sie den Code erneut ausführen, müssen Sie die folgenden vier Schritte wiederholen:
 
-* Prior to uploading the code, ensure the switch is turned to the right.
+* Vor dem Hochladen des Codes stellen Sie sicher, dass der Schalter nach rechts gedreht ist.
 
     .. image:: img/camera_upload.png
 
-* Once the code has been successfully uploaded, switch to the left to initiate the ESP32 CAM.
-* Connect to the ``GalaxyRVR`` Network.
-* Connect and run the controller.
+* Nachdem der Code erfolgreich hochgeladen wurde, schalten Sie auf die linke Seite, um die ESP32 CAM zu starten.
+* Verbinden Sie sich mit dem Netzwerk ``GalaxyRVR``.
+* Verbinden Sie sich und führen Sie den Controller aus.
 
-Now, with a simple glide of the thumb on your ``Throttle`` widgets, you'll witness the Mars Rover in action, powering and pivoting with a renewed spirit. Let the exploration commence!
+Nun können Sie mit einer einfachen Bewegung Ihres Daumens auf den ``Throttle``-Widgets den Mars-Rover in Aktion sehen, wie er mit erneuertem Geist an Kraft gewinnt und sich dreht. Lasst die Erkundung beginnen!
 
-**Step 3: Visualizing Sensor Readings**
+**Schritt 3: Visualisierung von Sensorwerten**
 
-In our journey with the SunFounder Controller, we have been actively interacting with our Mars rover through control widgets, including sliders for adjusting the tilt and throttles for dictating the rover's movement. But what about harnessing the power of display widgets to paint a vivid picture of our rover's surroundings?
+Auf unserer Reise mit dem SunFounder Controller haben wir aktiv mit unserem Mars-Rover interagiert, unter anderem durch Steuerungs-Widgets wie Schieberegler zur Neigungsanpassung und Drosselklappen zur Bewegungssteuerung des Rovers. Aber wie steht es mit der Nutzung von Anzeige-Widgets, um ein lebendiges Bild von der Umgebung unseres Rovers zu zeichnen?
 
-Let's see how we can bring this to life by visualizing the values from the left and right infrared (IR) avoidance modules and the distance captured by the ultrasonic module. This real-time data will provide us with a clear snapshot of the rover's operating environment.
+Lassen Sie uns sehen, wie wir dies umsetzen können, indem wir die Werte von den linken und rechten Infrarot (IR)-Vermeidungsmodulen und die vom Ultraschallmodul erfasste Entfernung visualisieren. Diese Echtzeitdaten geben uns ein klares Bild von der Betriebsumgebung des Rovers.
 
-Here's how we can achieve this:
+So können wir das erreichen:
 
-#. Get started by adding three Number widgets to your SunFounder Controller. Don't forget, you can personalize their names and units using the settings button.
+#. Beginnen Sie damit, drei Nummern-Widgets zu Ihrem SunFounder Controller hinzuzufügen. Vergessen Sie nicht, Sie können deren Namen und Einheiten mit dem Einstellungsbutton personalisieren.
 
     .. image:: img/app/app_show.png
 
-#. Next, let's delve into the code. Start by bringing over the IR avoidance modules and ultrasonic module code snippets from our previous lessons.
+#. Als Nächstes tauchen wir in den Code ein. Starten Sie, indem Sie die Code-Schnipsel für die IR-Vermeidungsmodule und das Ultraschallmodul aus unseren vorherigen Lektionen übernehmen.
 
     .. code-block:: arduino
 
@@ -231,7 +230,7 @@ Here's how we can achieve this:
         }
 
 
-#. In the ``onReceive()`` function, extract the values from the avoidance modules and the ultrasonic sensor. Subsequently, update these values in the ``sendDoc[]`` dictionary. The ``N``, ``P``, and ``O`` keys correspond to the region codes of the three Number widgets you've added.
+#. In der Funktion ``onReceive()`` extrahieren Sie die Werte aus den Vermeidungsmodulen und dem Ultraschallsensor. Aktualisieren Sie anschließend diese Werte im Wörterbuch ``sendDoc[]``. Die Schlüssel ``N``, ``P`` und ``O`` entsprechen den Regionscodes der drei hinzugefügten Nummern-Widgets.
 
     .. code-block:: arduino
 
@@ -251,44 +250,26 @@ Here's how we can achieve this:
             aiCam.sendDoc["O"] = distance;
         }
 
-Here is the complete code:
+Hier ist der vollständige Code:
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/6c867007-a0e8-4f85-980d-ec1cd1a70969/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Once the code has been successfully uploaded, get your SunFounder Controller up and running. You'll be greeted with the real-time values of the avoidance modules and the distance detected by the ultrasonic sensor, painting a clear picture of the rover's immediate environment.
+Nachdem der Code erfolgreich hochgeladen wurde, starten Sie Ihren SunFounder Controller. Sie werden mit den Echtzeitwerten der Vermeidungsmodule und der vom Ultraschallsensor erfassten Entfernung begrüßt, was ein klares Bild von der unmittelbaren Umgebung des Rovers zeichnet.
 
 .. image:: img/app/app_show_ir_ultrasonic.png
 
-With this step behind you, you've successfully navigated the world of show widgets. Feel free to experiment with different widgets to display the information that you find interesting. Happy exploring!
+Mit diesem Schritt haben Sie die Welt der Anzeige-Widgets erfolgreich erkundet. Experimentieren Sie ruhig mit verschiedenen Widgets, um die Informationen anzuzeigen, die Sie interessant finden. Viel Spaß beim Erforschen!
 
-**Step 4: Reflection and Conclusion**
+**Schritt 4: Reflexion und Schlussfolgerung**
 
-In this lesson, we've forged a deeper understanding of the SunFounder Controller, grasping how we can utilize its widgets to not only steer our Mars rover but also monitor its environmental data in real time.
+In dieser Lektion haben wir ein tieferes Verständnis für den SunFounder Controller entwickelt und verstanden, wie wir seine Widgets nicht nur zur Steuerung unseres Mars-Rovers, sondern auch zur Überwachung seiner Umweltdaten in Echtzeit nutzen können.
 
-Now, here's a challenge for you:
+Nun, hier ist eine Herausforderung für Sie:
 
-How about adding some Switch widgets to your SunFounder Controller? With these switches activated, the Mars rover could switch between avoidance and follow modes. Or, why not use the switches to control the light strip – switching it on or off, or even changing its color?
+Wie wäre es, einige Schalter-Widgets zu Ihrem SunFounder Controller hinzuzufügen? Mit diesen aktivierten Schaltern könnte der Mars-Rover zwischen Vermeidungs- und Folgemodi umschalten. Oder nutzen Sie die Schalter zur Steuerung des Lichtstreifens – ihn ein- oder ausschalten oder sogar seine Farbe ändern?
 
-Do you have the confidence to take this on?
+Haben Sie das Vertrauen, diese Herausforderung anzunehmen?
 
-We're looking forward to seeing you conquer this challenge!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Wir freuen uns darauf, Sie diese Herausforderung meistern zu sehen!

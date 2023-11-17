@@ -1,122 +1,119 @@
-
-Lesson 6: Exploring the Obstacle Avoidance Module
+Lektion 6: Erkundung des Hindernisvermeidungsmoduls
 ==============================================================
 
-We're diving into the world of the Infrared Obstacle Avoidance Module. Tucked at the sides of our Mars Rover, these sensors act as the rover's "eyes," helping it dodge side obstacles and safely navigate the Martian landscape.
+Wir tauchen in die Welt des Infrarot-Hindernisvermeidungsmoduls ein. Versteckt an den Seiten unseres Mars Rovers, agieren diese Sensoren als die „Augen“ des Rovers und helfen ihm, seitliche Hindernisse zu umgehen und sicher durch die Marslandschaft zu navigieren.
 
-We'll learn how to integrate these modules with our rover, unravel the magic behind their functioning, and develop code to make our rover smartly sidestep any hurdles it comes across.
+Wir lernen, wie wir diese Module in unseren Rover integrieren, das Geheimnis ihrer Funktion entwirren und Code entwickeln, um unseren Rover geschickt um alle Hindernisse herumzuführen.
 
-Get ready to gear up our rover with some Martian obstacle-dodging intelligence! Let's get rolling!
+Machen wir uns bereit, unseren Rover mit ein wenig marsianischer Hindernisvermeidungsintelligenz auszustatten! Lasst uns loslegen!
 
 .. raw:: html
 
    <video width="600" loop autoplay muted>
       <source src="_static/video/car_ir1.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+      Ihr Browser unterstützt das Video-Tag nicht.
    </video>
 
 .. note::
 
-    If you are learning this course after fully assembling the GalaxyRVR, you need to move this switch to the right before uploading the code.
+    Wenn du diesen Kurs nach dem vollständigen Zusammenbau des GalaxyRVR lernst, musst du diesen Schalter nach rechts bewegen, bevor du den Code hochlädst.
 
     .. image:: img/camera_upload.png
         :width: 500
         :align: center
 
-Learning Objectives
+Kursziele
 ----------------------
 
-* Understand the working principle and application of the infrared obstacle avoidance module.
-* Learn to use Arduino to control the infrared obstacle avoidance module.
-* Practice designing and building an automatic obstacle avoidance system based on infrared obstacle avoidance.
+* Verstehe das Arbeitsprinzip und die Anwendung des Infrarot-Hindernisvermeidungsmoduls.
+* Lerne, wie man Arduino verwendet, um das Infrarot-Hindernisvermeidungsmodul zu steuern.
+* Übe das Design und den Bau eines automatischen Hindernisvermeidungssystems basierend auf der Infrarot-Hindernisvermeidung.
 
-Materials Needed
----------------------
+Kursmaterialien
+-----------------------
 
-* Obstacle Avoidance Modules
-* Basic tools and accessories (e.g. screwdriver, screws, wires etc.)
-* Mars Rover Model (Equipped with rocker-bogie system, main boards, motors)
-* USB Cable
+* Hindernisvermeidungsmodule
+* Grundwerkzeuge und Zubehör (z.B. Schraubendreher, Schrauben, Kabel usw.)
+* Mars Rover Modell (ausgestattet mit Rocker-Bogie-System, Hauptplatinen, Motoren)
+* USB-Kabel
 * Arduino IDE
 * Computer
 
-Steps
--------------
-**Step 1: Install the Obstacle Avoidance Module**
+Kursschritte
+--------------
+**Schritt 1: Installiere das Hindernisvermeidungsmodul**
 
-Now we will install the two obstacle avoidance modules onto the rover.
+Jetzt werden wir die beiden Hindernisvermeidungsmodule am Rover installieren.
 
 .. raw:: html
 
     <iframe width="600" height="400" src="https://www.youtube.com/embed/UWEj_ROYAt0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-The assembly steps were simple, weren't they? In the following steps, we will learn about the working principle of these modules, and how they help our Mars Rover to avoid obstacles. Stay tuned!
+Die Montageschritte waren einfach, nicht wahr? In den folgenden Schritten werden wir das Arbeitsprinzip dieser Module kennenlernen und erfahren, wie sie unserem Mars Rover helfen, Hindernisse zu vermeiden. Bleibt dran!
 
 
-**Step 2: Demystifying the Module**
+**Schritt 2: Entmystifizierung des Moduls**
 
-Meet the Infrared Obstacle Avoidance Module - our rover's smart sidekick. This little device is a pack of wonders. Let's take a tour:
+Triff das Infrarot-Hindernisvermeidungsmodul - der schlaue Begleiter unseres Rovers. Dieses kleine Gerät ist ein Wunderwerk. Lass uns eine Tour machen:
 
 .. image:: img/ir_avoid.png
     :width: 300
     :align: center
 
 
-Here are the pin definitions:
+Hier sind die Pin-Definitionen:
 
-* **GND**: This is like the module's anchor, connecting it to the ground or common point in the circuit.
-* **+**: Here's where the module gets its energy, needing a power supply of 3.3 to 5V DC.
-* **Out**: This is the module's communicator. By default, it stays high and only goes low when it spots an obstacle.
-* **EN**: Meet the module's controller. This **enable** pin decides when the module should work. By default, it is connected to GND, meaning the module is always on the job.
+* **GND**: Das ist wie der Anker des Moduls, das es mit dem Boden oder dem gemeinsamen Punkt im Schaltkreis verbindet.
+* **+**: Hier erhält das Modul seine Energie, benötigt eine Stromversorgung von 3,3 bis 5V DC.
+* **Out**: Das ist der Kommunikator des Moduls. Standardmäßig bleibt es hoch und wird nur niedrig, wenn es ein Hindernis erkennt.
+* **EN**: Treffe den Controller des Moduls. Dieser **Enable**-Pin entscheidet, wann das Modul arbeiten soll. Standardmäßig ist es mit GND verbunden, was bedeutet, dass das Modul immer im Einsatz ist.
 
 
-Curious about how this tiny module works? It's quite interesting! It uses a pair of IR components - a transmitter and a receiver. The transmitter is like the module's flashlight, emitting infrared light. 
-When an obstacle appears, the infrared light bounces back and gets caught by the receiver. The module then gives a low signal, alerting our rover of the obstacle.
+Bist du neugierig, wie dieses winzige Modul funktioniert? Es ist ziemlich interessant! Es verwendet ein Paar IR-Komponenten - einen Sender und einen Empfänger. Der Sender ist wie die Taschenlampe des Moduls und emittiert Infrarotlicht. 
+Wenn ein Hindernis auftaucht, wird das Infrarotlicht zurückgeworfen und vom Empfänger aufgefangen. Das Modul gibt dann ein niedriges Signal aus und warnt unseren Rover vor dem Hindernis.
 
 .. image:: img/ir_receive.png
     :align: center
 
-Our little module is quite robust, spotting obstacles within a range of 2-40cm and boasting excellent anti-interference abilities. 
-However, the color of objects does impact its sensing. Darker objects, especially black ones, are detected at a shorter range. 
-Against a white wall, the sensor is most efficient, sensing within the 2-30cm range.
+Unser kleines Modul ist ziemlich robust und erkennt Hindernisse in einem Bereich von 2-40 cm und verfügt über ausgezeichnete Störunterdrückungsfähigkeiten. 
+Allerdings wirkt sich die Farbe der Objekte auf die Sensorik aus. Dunklere Objekte, insbesondere schwarze, werden auf kürzere Distanz erkannt. 
+Gegen eine weiße Wand ist der Sensor am effizientesten und erkennt innerhalb eines Bereichs von 2-30 cm.
 
-
-The **EN** pin's low-level state activates the module, with the jumper cap securing the **EN** pin to the GND. If you wish to control the **EN** pin via code, the jumper cap needs to be removed.
+Der niedrige Zustand des **EN**-Pins aktiviert das Modul, wobei die Jumper-Kappe den **EN**-Pin mit dem GND verbindet. Wenn du den **EN**-Pin über Code steuern möchtest, muss die Jumper-Kappe entfernt werden.
 
 .. image:: img/ir_cap.png
     :width: 400
     :align: center
 
-There are two potentiometers on the module, one for adjusting the transmitting power and one for adjusting the transmitting frequency, and by adjusting these two potentiometers you can adjust its effective distance.
+Es gibt zwei Potentiometer auf dem Modul, eines zur Einstellung der Sendeleistung und eines zur Einstellung der Sendefrequenz, und durch Anpassen dieser beiden Potentiometer kannst du seine effektive Distanz anpassen.
 
 .. image:: img/ir_avoid_pot.png
     :width: 400
     :align: center 
 
-
-That's quite a bit about our little module. In the next step, we'll learn how to integrate it with our rover and control it using the Arduino. Stay tuned!
-
-
-**Step 3: Read from the 2 Modules**
-
-Just like curious space explorers, let's dive into the universe of codes and sensors!
+Das war einiges über unser kleines Modul. Im nächsten Schritt lernen wir, wie wir es in unseren Rover integrieren und mit dem Arduino steuern können. Bleibt dran!
 
 
-#. Our Mars Rover is equipped with two special "Alien-Eye" sensors, perched neatly on pins 7 (right) and 8 (left). These "Alien-Eye" sensors are actually our infrared obstacle avoidance modules, always vigilant to dodge any "space rocks" (obstacles) in our Rover's interstellar journey!
+**Schritt 3: Auslesen der 2 Module**
+
+Wie neugierige Weltraumforscher tauchen wir in das Universum von Codes und Sensoren ein!
+
+
+#. Unser Mars Rover ist mit zwei speziellen „Alien-Auge“-Sensoren ausgestattet, die ordentlich auf den Pins 7 (right) und 8 (left) angebracht sind. Diese „Alien-Auge“-Sensoren sind tatsächlich unsere Infrarot-Hindernisvermeidungsmodule, immer wachsam, um jegliche „Weltraumfelsen“ (Hindernisse) auf der interstellaren Reise unseres Rovers zu umgehen!
 
     .. image:: img/ir_shield.png
 
-#. Next, we'll need to communicate with our Rover using the universal language of Arduino code.
+#. Als Nächstes müssen wir mit unserem Rover in der universellen Sprache des Arduino-Codes kommunizieren.
 
 
-    First things first, let's give a unique name to each eye of the Rover. Let's call them ``IR_RIGHT`` and ``IR_LEFT``, this way we won't mix them up.
+    Zuerst geben wir jedem Auge des Rovers einen einzigartigen Namen. Wir nennen sie ``IR_RIGHT`` und ``IR_LEFT``, so verwechseln wir sie nicht.
 
         .. code-block:: arduino
 
             #define IR_RIGHT 7
             #define IR_LEFT 8
 
-    Now, we let our Rover know that these are its special eyes - they will feed information from the world outside into the Rover's electronic brain.
+    Jetzt lassen wir unseren Rover wissen, dass dies seine speziellen Augen sind - sie werden Informationen aus der Außenwelt in das elektronische Gehirn des Rovers übermitteln.
 
         .. code-block:: arduino
 
@@ -124,14 +121,14 @@ Just like curious space explorers, let's dive into the universe of codes and sen
             pinMode(IR_LEFT, INPUT);
 
 
-    To make sure our Rover shares its findings with us, we establish a secret line of communication, like spies in a sci-fi movie. This next line kicks off a serial conversation at the speed of 9600 bits per second - that's lightning fast chatter!
+    Um sicherzustellen, dass unser Rover seine Erkenntnisse mit uns teilt, richten wir eine geheime Kommunikationslinie ein, wie Spione in einem Sci-Fi-Film. Diese nächste Zeile startet ein serielles Gespräch mit einer Geschwindigkeit von 9600 Bits pro Sekunde - das ist blitzschneller Plauderei!
     
         .. code-block:: arduino
 
             Serial.begin(9600);
 
 
-    Now, our Rover scans its surroundings with its "Alien-Eyes" and relays the findings back to us. If it spots an obstacle, the value will be 0; if the path is clear, the value will be 1. It keeps sending these messages to us, keeping us in the loop.
+    Nun scannt unser Rover seine Umgebung mit seinen „Alien-Augen“ und leitet die Befunde an uns zurück. Wenn er ein Hindernis entdeckt, ist der Wert 0; wenn der Weg frei ist, ist der Wert 1. Er sendet uns diese Nachrichten ständig, um uns auf dem Laufenden zu halten.
 
         .. code-block:: arduino
 
@@ -143,27 +140,27 @@ Just like curious space explorers, let's dive into the universe of codes and sen
             Serial.println(leftValue);
 
 
-    Finally, the Rover pauses for a moment (about 200 milliseconds) after each transmission. This tiny break gives us the chance to interpret the Rover's message before it sends another one.
+    Schließlich pausiert der Rover für einen Moment (etwa 200 Millisekunden) nach jeder Übertragung. Diese kleine Pause gibt uns die Chance, die Nachricht des Rovers zu interpretieren, bevor er eine weitere sendet.
 
         .. code-block:: arduino
 
             delay(200);
 
-    Here is the complete code:
+    Hier ist der vollständige Code:
 
     .. raw:: html
         
         <iframe src=https://create.arduino.cc/editor/sunfounder01/98546821-5f4b-42ae-bc9f-e7ec15544c8b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-#. Once your code is ready, select the correct board and port, and beam up the code to your Mars Rover. Then, tune into our secret communication line (the Serial Monitor) by clicking on its icon in the top right corner.
+#. Sobald dein Code fertig ist, wähle das richtige Board und den Port aus und sende den Code an deinen Mars Rover. Dann stimme dich in unsere geheime Kommunikationslinie (den Seriellen Monitor) ein, indem du auf sein Symbol in der oberen rechten Ecke klickst.
 
     .. image:: img/ir_open_serial.png
 
-#. Before you start receiving the Rover's messages, make sure your secret communication line is tuned at the same speed (9600 baud) as your Rover. And there you have it - live updates from your Mars Rover!
+#. Bevor du die Nachrichten des Rovers empfängst, stelle sicher, dass deine geheime Kommunikationslinie mit derselben Geschwindigkeit (9600 Baud) wie dein Rover abgestimmt ist. Und da hast du es - Live-Updates von deinem Mars Rover!
 
     .. image:: img/ir_serial.png
 
-#. To put our system to the test, wave a "space rock" (your hand) in front of one of the sensors. You'll see the value flip to 0, and the corresponding LED on the module lights up. That's the Rover saying, "Look out, space rock on my right!"
+#. Um unser System auf die Probe zu stellen, winke mit einem „Weltraumfelsen“ (deiner Hand) vor einem der Sensoren. Du wirst sehen, wie der Wert auf 0 umschaltet, und die entsprechende LED auf dem Modul leuchtet auf. Das ist der Rover, der sagt: „Achtung, Weltraumfelsen auf meiner rechten Seite!“
 
     .. code-block::
 
@@ -174,63 +171,64 @@ Just like curious space explorers, let's dive into the universe of codes and sen
         Right IR: 0
         Left IR: 1
 
-By now, you've not just journeyed through space but also deciphered Martian! Can't wait to see what interstellar secrets we unveil in our next mission!
+Bis jetzt bist du nicht nur durch den Weltraum gereist, sondern hast auch Martianisch entschlüsselt! Ich kann es kaum erwarten zu sehen, welche interstellaren Geheimnisse wir in unserer nächsten Mission enthüllen!
 
-**Step 4: Adjusting the Detection Distance**
+**Schritt 4: Anpassen der Erkennungsdistanz**
 
-We have arrived at an essential step, which is to adjust the detection distances of our sensors based on our current environment. The factory settings may not be optimal.
+Wir sind nun bei einem wesentlichen Schritt angelangt: der Anpassung der Erkennungsdistanzen unserer Sensoren an unsere aktuelle Umgebung. Die Werkseinstellungen sind möglicherweise nicht optimal.
 
-If the detection distance of the two infrared modules is too short, the Mars Rover might collide with obstacles. If it's too far, the Rover might start turning while still a significant distance from an obstacle, potentially impacting its movement.
+Ist die Erkennungsdistanz der beiden Infrarotmodule zu kurz, könnte der Mars Rover mit Hindernissen kollidieren. Ist sie zu weit, könnte der Rover anfangen, sich zu drehen, obwohl er noch weit von einem Hindernis entfernt ist, was seine Bewegung beeinträchtigen könnte.
 
-Here's how you can make adjustments:
+So kannst du Anpassungen vornehmen:
 
 
-#. Start by adjusting the right obstacle avoidance module. During transportation, collisions may cause the transmitter and receiver on the infrared module to tilt. Therefore, you need to manually straighten them.
+#. Beginne mit der Anpassung des rechten Hindernisvermeidungsmoduls. Während des Transports können Stöße dazu führen, dass Sender und Empfänger auf dem Infrarotmodul kippen. Daher musst du sie manuell gerade richten.
 
     .. raw:: html
 
         <video width="600" loop autoplay muted>
             <source src="_static/video/ir_adjust1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            Ihr Browser unterstützt das Video-Tag nicht.
         </video>
 
-#. Place an obstacle about 20 cm directly in front of the right module. The box in which our Rover kit came is a good choice for this! Now, turn the potentiometer on the module until the indicator light on the module just lights up. Then, keep moving the obstacle back and forth to check if the indicator light comes on at the desired distance. If the light doesn't turn on at the correct distance or if it remains on without going out, you'll need to adjust the other potentiometer.
+#. Platziere ein Hindernis etwa 20 cm direkt vor dem rechten Modul. Die Box, in der unser Rover-Kit kam, ist eine gute Wahl dafür! Drehe nun das Potentiometer am Modul, bis die Anzeigeleuchte am Modul gerade aufleuchtet. Bewege dann das Hindernis hin und her, um zu überprüfen, ob die Anzeigeleuchte in der gewünschten Entfernung aufleuchtet. Leuchtet das Licht nicht in der richtigen Entfernung auf oder bleibt es ohne auszugehen an, musst du das andere Potentiometer einstellen.
 
     .. raw:: html
 
         <video width="600" loop autoplay muted>
             <source src="_static/video/ir_adjust2.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            Ihr Browser unterstützt das Video-Tag nicht.
         </video>
 
 
-#. Repeat the same process for another module.
+#. Wiederhole den gleichen Prozess für das andere Modul.
 
-Now that our sensors are fully prepared, let's embark on the next journey!
+Jetzt, da unsere Sensoren vollständig vorbereitet sind, lasst uns die nächste Reise beginnen!
 
-**Step 5: Design an Automatic Obstacle Avoidance System**
+**Schritt 5: Entwurf eines automatischen Hindernisvermeidungssystems**
 
-Now, let's take a big leap in our space exploration and make use of these messages from the Rover. 
-We're going to create an automatic obstacle avoidance system!
+Nun machen wir einen großen Sprung in unserer Weltraumforschung und nutzen diese Nachrichten vom Rover.
+Wir werden ein automatisches Hindernisvermeidungssystem erstellen!
 
-Here's our plan: If the right sensor detects an obstacle, the Rover will turn to the back right. If the left sensor detects an obstacle, the Rover will turn to the back left. If both sensors detect an obstacle, the Rover will move backward. If no obstacles are detected, the Rover will continue moving straight ahead.
+Hier ist unser Plan: Wenn der rechte Sensor ein Hindernis erkennt, wird der Rover nach hinten rechts abbiegen. Wenn der linke Sensor ein Hindernis erkennt, wird der Rover nach hinten links abbiegen. Wenn beide Sensoren ein Hindernis erkennen, wird der Rover rückwärts fahren. Werden keine Hindernisse erkannt, fährt der Rover geradeaus weiter.
 
-Let's visualize this in a flowchart to make it even more clear. Flowcharts are a great way to logically outline a plan, especially when it comes to programming!
+Visualisieren wir dies in einem Flussdiagramm, um es noch klarer zu machen. Flussdiagramme sind eine großartige Möglichkeit, einen Plan logisch zu skizzieren, besonders wenn es um Programmierung geht!
 
 .. image:: img/ir_flowchart.png
 
-Let's whisper this plan to our Rover in its language(Arduino code):
+Lassen Sie uns diesen Plan unserem Rover in seiner Sprache (Arduino-Code) zuflüstern:
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/af6539d4-7b4b-4e74-a04a-9fa069391d4d/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-In this code, we are using ``if...else`` statement in the ``loop()`` function.
+In diesem Code verwenden wir die ``if...else``-Anweisung in der Funktion ``loop()``.
 
-    The ``if...else`` statement is used to execute a block of code among two alternatives. 
-    However, when we need to choose among more than two alternatives, we use the ``if...else if...else`` statement.
+    Die ``if...else``-Anweisung wird verwendet, um einen Block von Code unter zwei Alternativen auszuführen. 
+    Wenn wir jedoch unter mehr als zwei Alternativen wählen müssen, verwenden wir die ``if...else if...else``-Anweisung.
 
-    The syntax of the ``if...else if...else`` statement is:
+    Die Syntax der ``if...else if...else``-Anweisung lautet:
+
 
     .. code-block:: arduino
 
@@ -247,31 +245,29 @@ In this code, we are using ``if...else`` statement in the ``loop()`` function.
         // code block 4
         }
     
-    Here,
+    Hier,
 
-    * If condition1 is true, code block 1 is executed.
-    * If condition1 is false, then condition2 is evaluated.
-    * If condition2 is true, code block 2 is executed.
-    * If condition2 is false, then condition3 is evaluated.
-    * If condition3 is true, code block 3 is executed.
-    * If condition3 is false, code block 4 is executed.
+    * Wenn Bedingung1 wahr ist, wird Codeblock 1 ausgeführt.
+    * Wenn Bedingung1 falsch ist, wird Bedingung2 ausgewertet.
+    * Wenn Bedingung2 wahr ist, wird Codeblock 2 ausgeführt.
+    * Wenn Bedingung2 falsch ist, wird Bedingung3 ausgewertet.
+    * Wenn Bedingung3 wahr ist, wird Codeblock 3 ausgeführt.
+    * Wenn Bedingung3 falsch ist, wird Codeblock 4 ausgeführt.
 
-Now that we've designed our automatic obstacle avoidance system, it's time for the exciting part - putting it to the test!
+Nun, da wir unser automatisches Hindernisvermeidungssystem entworfen haben, kommt der spannende Teil - wir setzen es auf die Probe!
 
-* You can observe if the Rover moves as you expected.
-* Or, place it in different lighting conditions to see how its movements change.
+* Beobachten Sie, ob sich der Rover so bewegt, wie Sie es erwartet haben.
+* Oder setzen Sie ihn verschiedenen Lichtverhältnissen aus, um zu sehen, wie sich seine Bewegungen ändern.
 
-By integrating science into our engineering project, we're becoming space detectives, solving the mysteries of our Rover's behavior. 
-This isn't just about correcting errors but optimizing performance, making our Rover the best it can be! Keep up the fantastic work, space detectives!
+Indem wir Wissenschaft in unser Ingenieurprojekt integrieren, werden wir zu Weltraumdetektiven, die die Geheimnisse des Verhaltens unseres Rovers lösen.
+Es geht nicht nur darum, Fehler zu korrigieren, sondern die Leistung zu optimieren, um unseren Rover bestmöglich zu machen! Macht weiter so, Weltraumdetektive!
 
+**Schritt 6: Reflexion und Zusammenfassung**
 
-**Step 6: Reflection and Summary**
+In der Testphase haben Sie vielleicht ein interessantes Verhalten unseres Mars-Rovers bemerkt: Während er geschickt Hindernissen zu seiner Linken und Rechten ausweicht, könnte er Schwierigkeiten haben, kleinere Hindernisse direkt vor ihm zu erkennen.
 
-In the testing phase, you might have noticed an interesting behavior of our Mars Rover: while it expertly avoids obstacles to its left and right, it might struggle to detect smaller obstacles straight ahead.
+Wie können wir diese Herausforderung meistern?
 
-How can we solve this challenge?
+Bleiben Sie dran für die nächste Lektion, in der wir unsere Entdeckungsreise in die faszinierende Welt der Programmierung, Sensoren und Hinderniserkennung fortsetzen.
 
-Stay tuned for the next lesson, where we'll continue our exploration into the fascinating world of coding, sensors, and obstacle detection.
-
-Remember, every challenge is an opportunity for learning and innovation. And as we continue our space exploration journey, there's so much more to discover and learn!
-
+Denken Sie daran, jede Herausforderung ist eine Gelegenheit zum Lernen und zur Innovation. Und während wir unsere Weltraumforschungsreise fortsetzen, gibt es noch so viel mehr zu entdecken und zu lernen!

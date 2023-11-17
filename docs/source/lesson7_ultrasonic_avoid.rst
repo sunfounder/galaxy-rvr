@@ -1,96 +1,97 @@
-Lesson 7: Enhancing Rover Navigation with Ultrasonic Module
-=============================================================
+Lektion 7: Verbesserung der Rover-Navigation mit Ultraschallmodul
+=====================================================================
 
-In our last adventure, we equipped our Mars Rover with "eyes" on its sides, creating a basic obstacle avoidance system. Yet, there's a blind spot right in front – a challenge we're ready to overcome!
 
-Today, in this lesson, we're going to give our Rover a new sense of "sight." We'll install an ultrasonic sensor module, acting as a pair of central eyes, which will help our rover detect obstacles directly ahead.
+In unserem letzten Abenteuer haben wir unseren Mars-Rover mit „Augen“ an seinen Seiten ausgestattet, wodurch wir ein grundlegendes Hindernisvermeidungssystem geschaffen haben. Doch gibt es einen toten Winkel direkt vorne – eine Herausforderung, die wir bereit sind zu meistern!
 
-We will delve into the fascinating mechanics of ultrasonic waves and explore how they enhance our Rover's ability to navigate complex terrains. With this addition, our Mars Rover will be more perceptive and agile, ready to embark on more ambitious exploratory missions.
+Heute, in dieser Lektion, werden wir unserem Rover einen neuen Sinn für „Sehen“ geben. Wir installieren ein Ultraschallsensormodul, das als ein Paar zentraler Augen fungiert, um unserem Rover zu helfen, Hindernisse direkt vor ihm zu erkennen.
 
-Join us as we take a step further into this exciting STEAM journey, making our Mars Rover even more adept at exploring the uncharted territories!
+Wir werden in die faszinierende Mechanik von Ultraschallwellen eintauchen und erforschen, wie sie die Fähigkeit unseres Rovers verbessern, komplexe Gelände zu navigieren. Mit dieser Ergänzung wird unser Mars-Rover wahrnehmungsfähiger und agiler sein, bereit für ambitioniertere Erkundungsmissionen.
+
+Begleiten Sie uns, wenn wir einen Schritt weiter in diese aufregende STEAM-Reise machen, und unseren Mars-Rover noch geschickter bei der Erkundung unbekannter Gebiete machen!
 
 
 .. raw:: html
 
    <video width="600" loop autoplay muted>
       <source src="_static/video/ultrasonic_avoid.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+      Ihr Browser unterstützt das Video-Tag nicht.
    </video>
 
 .. note::
 
-    If you are learning this course after fully assembling the GalaxyRVR, you need to move this switch to the right before uploading the code.
+    Wenn Sie diesen Kurs nach der vollständigen Montage des GalaxyRVR durchführen, müssen Sie diesen Schalter vor dem Hochladen des Codes nach rechts bewegen.
 
     .. image:: img/camera_upload.png
         :width: 500
         :align: center
 
 
-Course Objectives
+Kursziele
 --------------------------
 
-* Understand the principle of ultrasonic distance measurement.
-* Learn how to use Arduino and ultrasonic module for distance measurement.
-* Practice applying the ultrasonic module for obstacle avoidance on the Mars Rover model.
+* Verstehen Sie das Prinzip der Ultraschall-Entfernungsmessung.
+* Lernen Sie, wie man Arduino und Ultraschallmodul zur Entfernungsmessung verwendet.
+* Üben Sie die Anwendung des Ultraschallmoduls für die Hindernisvermeidung am Mars-Rover-Modell.
 
-Materials Needed
+Benötigte Materialien
 ---------------------
 
-* Ultrasonic Module
-* Basic tools and accessories (e.g. screwdriver, screws, wires etc.)
-* Mars Rover Model (Equipped with rocker-bogie system, main boards, motors, obstacle avoidance module)
-* USB Cable
+* Ultraschallmodul
+* Grundwerkzeuge und Zubehör (z. B. Schraubendreher, Schrauben, Kabel usw.)
+* Mars-Rover-Modell (ausgestattet mit Schaukel-Bogie-System, Hauptplatinen, Motoren, Hindernisvermeidungsmodul)
+* USB-Kabel
 * Arduino IDE
 * Computer
 
-Course Steps
+Kursschritte
 --------------------
-**Step 1: Assemble the Ultrasonic Sensor Module**
+**Schritt 1: Montieren Sie das Ultraschallsensormodul**
 
-Now that we've got our eyes set on equipping our Mars Rover with a powerful new sense of "sight", it's time to put together the ultrasonic sensor module.
+Nun, da wir uns darauf vorbereiten, unseren Mars-Rover mit einem neuen, leistungsstarken „Seh“-Sinn auszustatten, ist es an der Zeit, das Ultraschallsensormodul zusammenzusetzen.
 
 .. raw:: html
 
-  <iframe width="600" height="400" src="https://www.youtube.com/embed/LZasztI96po" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="600" height="400" src="https://www.youtube.com/embed/LZasztI96po" title="YouTube-Video-Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-And there we have it! Our Mars Rover now has a fully-assembled ultrasonic sensor module, ready to help it navigate like never before. Are you excited to see how it changes our Rover's obstacle detection abilities? Let's dive right into it!
+Und da haben wir es! Unser Mars-Rover hat nun ein vollständig montiertes Ultraschallsensormodul, bereit, ihm wie nie zuvor bei der Navigation zu helfen. Sind Sie gespannt, wie es die Hinderniserkennungsfähigkeiten unseres Rovers verändert? Lassen Sie uns direkt eintauchen!
 
 
-**Step 2: Exploring the Ultrasonic Module**
+**Schritt 2: Erkundung des Ultraschallmoduls**
 
-Let's get to know the HC-SR04, a powerful ultrasonic distance sensor. This tiny device can accurately measure distances from 2 cm up to 400 cm, all without touching a thing! Amazing, right? It's like having a superhero power! It can "see" the distances just by using sound waves, like how a bat navigates at night.
+Lernen wir den HC-SR04 kennen, einen leistungsstarken Ultraschall-Entfernungssensor. Dieses winzige Gerät kann Entfernungen von 2 cm bis zu 400 cm genau messen, und das alles ohne Berührung! Erstaunlich, nicht wahr? Es ist wie eine Superheldenkraft! Es kann die Entfernungen nur mithilfe von Schallwellen „sehen“, ähnlich wie eine Fledermaus bei Nacht navigiert.
 
-It uses four superpowers, or rather, four pins to do its magic:
+Es verwendet vier Superkräfte oder besser gesagt, vier Pins, um seine Magie zu wirken:
 
 .. image:: img/ultrasonic_pic.png
     :width: 400
     :align: center
 
-* **TRIG (Trigger Pulse Input)** - It's the start button for our superhero. It tells our superhero, "Hey, it's time to send out a super sonic wave!"
-* **ECHO (Echo Pulse Output)** - This is how our superhero listens to the echo of the sound wave it sent out.
-* **VCC** - Even superheroes need some energy. We connect it to a 5V power supply.
-* **GND** - It's the ground connection. Just like how superheroes need to stay connected to reality!
+* **TRIG (Trigger-Puls-Eingang)** - Es ist der Startknopf für unseren Superhelden. Es sagt unserem Superhelden: "Hey, es ist Zeit, eine supersonische Welle auszusenden!"
+* **ECHO (Echo-Puls-Ausgang)** - So hört unser Superheld das Echo der Schallwelle, die er ausgesendet hat.
+* **VCC** - Auch Superhelden brauchen Energie. Wir verbinden es mit einer 5V-Stromversorgung.
+* **GND** - Es ist die Erdverbindung. So wie Superhelden mit der Realität verbunden bleiben müssen!
 
-Imagine our superhero, the HC-SR04 Ultrasonic Sensor, playing a game of echo in the mountains.
+Stellen Sie sich unseren Superhelden, den HC-SR04 Ultraschallsensor, vor, wie er in den Bergen ein Echo-Spiel spielt.
 
 .. image:: img/ultrasonic_prin.jpg
     :width: 800
 
-* First, our superhero's brain, the MCU, says, "Ready, Set, Go!" by sending out a high-level signal for at least 10 microseconds to our superhero. This is like when we gather our energy before we yell into a valley.
-* On hearing "Go!", our superhero shouts out loud 8 times very quickly. This super-sonic shout is sent out at a speed of 40 kHz. The superhero also starts a stopwatch and keeps an ear out for any returning shouts.
-* If there is an obstacle in front, the shout will hit it and echo back. On hearing the echo, our superhero stops the stopwatch and notes the time. It also sends out a high-level signal to let the MCU know it heard an echo.
-* Lastly, to find out how far away the obstacle is, our superhero uses a simple formula. It takes the time it recorded on the stopwatch, divides it by 2, and multiplies it by the speed of sound (340m/s). The result is the distance to the obstacle!
+* Zunächst sagt das Gehirn unseres Superhelden, der MCU, „Ready, Set, Go!“, indem es ein Hochpegelsignal für mindestens 10 Mikrosekunden an unseren Superhelden sendet. Das ist so, als würden wir unsere Energie sammeln, bevor wir in ein Tal hineinrufen.
+* Auf das „Go!“ hin ruft unser Superheld achtmal sehr schnell laut heraus. Dieser supersonische Ruf wird mit einer Geschwindigkeit von 40 kHz ausgesendet. Der Superheld startet auch eine Stoppuhr und hält Ausschau nach zurückkehrenden Rufen.
+* Gibt es ein Hindernis vorne, trifft der Ruf darauf und hallt zurück. Beim Hören des Echos stoppt unser Superheld die Stoppuhr und notiert die Zeit. Er sendet auch ein Hochpegelsignal aus, um dem MCU mitzuteilen, dass er ein Echo gehört hat.
+* Zuletzt, um herauszufinden, wie weit das Hindernis entfernt ist, verwendet unser Superheld eine einfache Formel. Er nimmt die auf der Stoppuhr aufgezeichnete Zeit, teilt sie durch 2 und multipliziert sie mit der Schallgeschwindigkeit (340 m/s). Das Ergebnis ist die Entfernung zum Hindernis!
 
-That's how our superhero sensor can figure out if there's an obstacle in its path and how far away it is. Amazing, isn't it? Next, we'll learn how we can use this superhero power in our Mars Rover!
+So kann unser Superhelden-Sensor herausfinden, ob ein Hindernis auf seinem Weg ist und wie weit es entfernt ist. Erstaunlich, nicht wahr? Als Nächstes lernen wir, wie wir diese Superheldenkraft in unserem Mars-Rover einsetzen können!
 
 
-**Step 3: Coding Our Superhero Sensor**
+**Schritt 3: Programmierung unseres Superhelden-Sensors**
 
-Having assembled our superhero sensor and understood how it uses its superpowers, it's time to put those powers into action! Let's write an Arduino sketch to allow our ultrasonic sensor to measure distances and then show us those measurements.
+Nachdem wir unseren Superhelden-Sensor zusammengesetzt und verstanden haben, wie er seine Superkräfte einsetzt, ist es an der Zeit, diese Kräfte in Aktion zu setzen! Lassen wir einen Arduino-Sketch schreiben, der es unserem Ultraschallsensor ermöglicht, Entfernungen zu messen und uns diese Messungen anzuzeigen.
 
-Here are the key steps that our superhero sensor will follow:
+Hier sind die Schlüsselschritte, die unser Superhelden-Sensor befolgen wird:
 
-* We have connected both the TRIG and ECHO pins to pin 10 on the GalaxyRVR Shield. This allows us to control both signal transmission and reception of the ultrasonic module using a single Arduino pin.
+* Wir haben sowohl den TRIG- als auch den ECHO-Pin an Pin 10 auf dem GalaxyRVR Shield angeschlossen. Dies ermöglicht es uns, sowohl die Signalübertragung als auch den Empfang des Ultraschallmoduls mit einem einzigen Arduino-Pin zu steuern.
 
 .. image:: img/ultrasonic_shield.png
 
@@ -99,7 +100,7 @@ Here are the key steps that our superhero sensor will follow:
     // Define the pin for the ultrasonic module
     #define ULTRASONIC_PIN 10
 
-* **Preparation**: To start, we establish serial communication at a 9600 baud rate so we can see the superhero's measurements in our Serial Monitor.
+* **Vorbereitung**: Zuerst beginnen wir die serielle Kommunikation mit einer Baudrate von 9600, damit wir die Messungen unseres Superhelden in unserem Seriellen Monitor sehen können.
 
 .. code-block:: arduino
 
@@ -108,7 +109,7 @@ Here are the key steps that our superhero sensor will follow:
         Serial.begin(9600);
     }
 
-* **Shout Out!**: We set the ``ULTRASONIC_PIN`` as an ``OUTPUT`` pin to send a 10-microsecond pulse, which is like commanding our ultrasonic superhero to emit a powerful shout (ultrasonic sound waves)!
+* **Ruf raus!**: Wir setzen den ``ULTRASONIC_PIN`` als ``OUTPUT``-Pin, um einen 10-Mikrosekunden-Impuls zu senden, was so ist, als würden wir unseren Ultraschall-Superhelden befehlen, einen kraftvollen Ruf (Ultraschall-Schallwellen) auszustoßen!
 
 .. code-block:: arduino
 
@@ -131,21 +132,21 @@ Here are the key steps that our superhero sensor will follow:
 
 
 
-* **Wait and Listen**: Set the ``ULTRASONIC_PIN`` as INPUT. This way, our superhero sensor is now ready to listen for the echo of its shout. If there is an obstacle in front, the shout will hit it and echo back. On hearing the echo, our superhero stops the stopwatch and notes the time. It also sends out a high-level signal to let the MCU know it heard an echo.
+* **Warten und Lauschen**: Setzen Sie den ``ULTRASONIC_PIN`` als INPUT. Auf diese Weise ist unser Superhelden-Sensor nun bereit, auf das Echo seines Rufs zu lauschen. Wenn sich ein Hindernis vorne befindet, trifft der Ruf darauf und hallt zurück. Beim Hören des Echos stoppt unser Superheld die Stoppuhr und notiert die Zeit. Er sendet auch ein Hochpegelsignal aus, um dem MCU mitzuteilen, dass er ein Echo gehört hat.
 
 .. code-block:: arduino
 
     pinMode(ULTRASONIC_PIN, INPUT);
     float duration = pulseIn(ULTRASONIC_PIN, HIGH);
 
-* **Super Math**: With the echo returned, our sensor uses the speed of sound to calculate the distance to the object. We divide the total echo time by 2 because the time includes both the shout out and the wait for the echo.
+* **Super-Mathematik**: Mit dem zurückgekehrten Echo verwendet unser Sensor die Schallgeschwindigkeit, um die Entfernung zum Objekt zu berechnen. Wir teilen die Gesamt-Echodauer durch 2, da die Zeit sowohl den Ruf als auch das Warten auf das Echo umfasst.
 
 .. code-block:: arduino
 
     float distance = duration * 0.034 / 2;
 
 
-* **Report the Findings**: Our superhero sensor then reveals the result of its mission, printing the distance to the Serial Monitor for us to see.
+* **Ergebnisse melden**: Unser Superhelden-Sensor offenbart dann das Ergebnis seiner Mission und zeigt die Entfernung auf dem Seriellen Monitor an, damit wir sie sehen können.
 
 .. code-block:: arduino
 
@@ -154,23 +155,23 @@ Here are the key steps that our superhero sensor will follow:
     Serial.print(distance);
     Serial.println(" cm");
 
-* **Rest & Ready**: Every superhero needs a rest, so our sensor takes a short pause before the next mission. This allows the sensor to "reset" before we ask it to start another measurement.
+* **Ruhe & Bereitschaft**: Jeder Superheld braucht eine Pause, also macht unser Sensor eine kurze Pause vor der nächsten Mission. Dies ermöglicht es dem Sensor, sich "zurückzusetzen", bevor wir ihn bitten, eine weitere Messung zu starten.
 
 .. code-block:: arduino
 
     delay(200);
 
-Here's the complete code that turns our sensor into a superhero:
+Hier ist der vollständige Code, der unseren Sensor in einen Superhelden verwandelt:
 
 .. raw:: html
 
   <iframe src=https://create.arduino.cc/editor/sunfounder01/35bddbcf-145c-4e4f-b3ea-21e8210af4a6/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-**Step 4: Programming the Ultrasonic Module to Drive the Mars Rover**
+**Schritt 4: Programmierung des Ultraschallmoduls zur Steuerung des Mars-Rovers**
 
-Now that we've equipped our Mars Rover with an ultrasonic sensor module, it's time to program it to respond based on the sensor's measurements. 
+Jetzt, da wir unseren Mars-Rover mit einem Ultraschallsensormodul ausgestattet haben, ist es an der Zeit, ihn so zu programmieren, dass er basierend auf den Messungen des Sensors reagiert.
 
-* For easier reading, we have created a function called ``readSensorData()``. This function encapsulates all the code required to read the distance from the ultrasonic sensor.
+* Zur einfacheren Lesbarkeit haben wir eine Funktion namens ``readSensorData()`` erstellt. Diese Funktion umfasst den gesamten Code, der erforderlich ist, um die Entfernung vom Ultraschallsensor zu lesen.
 
   .. code-block:: arduino
 
@@ -204,13 +205,13 @@ Now that we've equipped our Mars Rover with an ultrasonic sensor module, it's ti
         return distance;
     }
 
-* In the ``loop()`` function, we call ``readSensorData()`` and stores its returned value in the ``distance`` variable.
+* In der ``loop()``-Funktion rufen wir ``readSensorData()`` auf und speichern den zurückgegebenen Wert in der Variable ``distance``.
 
   .. code-block:: arduino
 
     float distance = readSensorData();
 
-* Depending on this distance, the Rover will move forward, move backward, or stop.
+* Abhängig von dieser Distanz bewegt sich der Rover vorwärts, rückwärts oder hält an.
 
   .. code-block:: arduino
   
@@ -226,33 +227,33 @@ Now that we've equipped our Mars Rover with an ultrasonic sensor module, it's ti
       moveForward(150);
     }
 
-  * If the path is clear (the obstacle is more than 50 cm away), our Rover boldly moves forward.
-  * And if an obstacle is getting close (less than 50 cm but more than 15 cm away), our Rover will move forward at a lower speed.
-  * If an obstacle is too close for comfort (less than 15 cm away), the Mars rover will move backward and then turn to the left.
+  * Wenn der Weg frei ist (das Hindernis mehr als 50 cm entfernt ist), bewegt sich unser Rover mutig vorwärts.
+  * Und wenn ein Hindernis näher kommt (weniger als 50 cm, aber mehr als 15 cm entfernt), bewegt sich unser Rover mit geringerer Geschwindigkeit vorwärts.
+  * Wenn ein Hindernis zu nah für Komfort ist (weniger als 15 cm entfernt), bewegt sich der Mars-Rover rückwärts und dann nach links.
 
   .. image:: img/ultrasonic_flowchart.png
 
-Below is the complete code. You can upload this code to the R3 board and see if it achieves the desired effect. You can also modify the detection distance based on the actual environment to make this obstacle avoidance system more perfect.
+Unten finden Sie den kompletten Code. Sie können diesen Code auf das R3-Board hochladen und sehen, ob er den gewünschten Effekt erzielt. Sie können auch die Erkennungsdistanz basierend auf der tatsächlichen Umgebung anpassen, um dieses Hindernisvermeidungssystem zu perfektionieren.
 
 .. raw:: html
 
   <iframe src=https://create.arduino.cc/editor/sunfounder01/cded6408-1469-4289-b79b-7d445b56352b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-By leveraging these enhanced capabilities, the Mars Rover would be better equipped to identify potential obstacles in its path, measure distances accurately, and make informed decisions to navigate around them. This would significantly reduce the likelihood of collisions or other hazards that could hinder the rover's exploration mission.
+Indem wir diese verbesserten Fähigkeiten nutzen, wäre der Mars-Rover besser in der Lage, potenzielle Hindernisse auf seinem Weg zu identifizieren, Distanzen genau zu messen und fundierte Entscheidungen zu treffen, um sie zu umfahren. Dies würde die Wahrscheinlichkeit von Kollisionen oder anderen Gefahren, die die Erkundungsmission des Rovers behindern könnten, erheblich verringern.
 
-With its super-senses, the Mars Rover can operate with greater confidence and efficiency, enabling it to delve deeper into the mysteries of Mars and gather valuable scientific data for researchers back on Earth.
+Mit seinen Super-Sinnen kann der Mars-Rover mit größerem Vertrauen und Effizienz operieren, was ihm ermöglicht, tiefer in die Geheimnisse des Mars einzudringen und wertvolle wissenschaftliche Daten für die Forscher auf der Erde zu sammeln.
 
-**Step 5: Summary and Reflection**
+**Schritt 5: Zusammenfassung und Reflexion**
 
-In this lesson, we delved into the workings of ultrasonic waves and how to translate their return time to the sensor into measurable distance via coding.
+In dieser Lektion haben wir uns mit der Funktionsweise von Ultraschallwellen befasst und wie ihre Rückkehrzeit zum Sensor in messbare Entfernung durch Programmierung übersetzt wird.
 
-Subsequently, we leveraged ultrasonic waves to devise an obstacle-avoidance system. This particular system varies its responses based on the distance to the impending obstacle.
+Anschließend nutzten wir Ultraschallwellen, um ein Hindernisvermeidungssystem zu entwickeln. Dieses spezielle System variiert seine Reaktionen basierend auf der Entfernung zum bevorstehenden Hindernis.
 
-Now, let's prompt some introspection on this lesson through a handful of questions:
+Nun lassen Sie uns einige Fragen zur Reflexion über diese Lektion stellen:
 
-* How does an ultrasonic module detect distance? Can you elucidate the underlying concept?
-* How does the obstacle-avoidance system of this lesson differ from that of the previous one? What are their respective advantages and drawbacks?
-* Is it feasible to amalgamate these two obstacle-avoidance systems?
+* Wie erkennt ein Ultraschallmodul Entfernungen? Können Sie das zugrunde liegende Konzept erläutern?
+* Wie unterscheidet sich das Hindernisvermeidungssystem dieser Lektion von dem der vorherigen? Was sind ihre jeweiligen Vor- und Nachteile?
+* Ist es machbar, diese beiden Hindernisvermeidungssysteme zu kombinieren?
 
-Reflecting upon these queries will aid in solidifying our comprehension and prompt us to contemplate the application of these concepts to other projects. Looking forward to our next venture!
+Sich mit diesen Fragen auseinanderzusetzen wird helfen, unser Verständnis zu festigen und uns dazu anregen, über die Anwendung dieser Konzepte auf andere Projekte nachzudenken. Ich freue mich auf unser nächstes Abenteuer!
