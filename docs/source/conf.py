@@ -59,6 +59,7 @@ html_static_path = ['_static']
 
 html_js_files = [
     'https://ezblock.cc/readDocFile/custom.js',
+    './lang.js', # new
 ]
 html_css_files = [
     'https://ezblock.cc/readDocFile/custom.css',
@@ -88,6 +89,20 @@ rst_epilog = """
 # open link in a new window
 
 rst_epilog += """
+
+.. |link_german_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/galaxy-rvr/de/latest/" target="_blank">Deutsch Online-Kurs</a>
+
+.. |link_jp_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/galaxy-rvr/ja/latest/" target="_blank">日本語オンライン教材</a>
+
+.. |link_en_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/galaxy-rvr/en/latest/" target="_blank">English Online-tutorials</a>
+
+
 
 .. |link_esp32cam_schematic| raw:: html
 
