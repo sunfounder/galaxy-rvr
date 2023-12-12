@@ -12,7 +12,7 @@ GalaxyRVRの組み立てには、キットに印刷された組み立て説明�
 
     .. raw:: html
     
-        <a href="_static/pdf/z0112v10-a0001012-galaxyrvr.pdf" target="_blank">GalaxyRVR 組み立て説明書</a>
+        <a href="_static/pdf/z0112v11-a0001012-galaxyrvr.pdf" target="_blank">GalaxyRVR 組み立て説明書</a>
 
 印刷された組み立て説明書の理解が難しい場合は、代わりにステップバイステップの組み立てビデオをフォローすることができます。
 
