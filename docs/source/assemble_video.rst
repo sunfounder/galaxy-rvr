@@ -10,9 +10,7 @@ Assemble Video
 
 For the assembly of the GalaxyRVR, we provide printed assembly instructions in the kit. Here is the PDF version of it:
 
-    .. raw:: html
-    
-        <a href="_static/pdf/z0112v11-a0001012-galaxyrvr.pdf" target="_blank">GalaxyRVR Assembly Instructions</a>
+* :Download:`Component List and Assembly Instructions <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0112v11-a0001012-galaxyrvr.pdf>`
 
 If you are having difficulty understanding the printed assembly instructions, you can instead follow our step-by-step assembly video.
 
