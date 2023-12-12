@@ -50,7 +50,7 @@
 
 .. raw:: html
 
-  <iframe width="600" height="400" src="https://www.youtube.com/embed/LZasztI96po" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="600" height="400" src="https://www.youtube.com/embed/c_xWAVapGic?si=ovuxheXdGVpHopPa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 これで、火星ローバーは完全に組み立てられた超音波センサーモジュールを備え、これまでにないナビゲーションを実現できるようになりました。ローバーの障害物検出能力がどのように変化するか、見てみるのはワクワクしませんか？さっそく始めましょう！
 
