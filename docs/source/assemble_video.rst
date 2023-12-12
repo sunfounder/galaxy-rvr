@@ -10,9 +10,7 @@
 
 GalaxyRVRの組み立てには、キットに印刷された組み立て説明書が付属しています。こちらがそのPDF版です：
 
-    .. raw:: html
-    
-        <a href="_static/pdf/z0112v11-a0001012-galaxyrvr.pdf" target="_blank">GalaxyRVR 組み立て説明書</a>
+* :Download:`Component List and Assembly Instructions <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0112v11-a0001012-galaxyrvr.pdf>`
 
 印刷された組み立て説明書の理解が難しい場合は、代わりにステップバイステップの組み立てビデオをフォローすることができます。
 
