@@ -10,9 +10,7 @@ Montagevideo
 
 Für die Montage des GalaxyRVR bieten wir gedruckte Montageanleitungen im Kit an. Hier ist die PDF-Version davon:
 
-    .. raw:: html
-    
-        <a href="_static/pdf/z0112v11-a0001012-galaxyrvr.pdf" target="_blank">GalaxyRVR Montageanleitung</a>
+* :Download:`GalaxyRVR Montageanleitung <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0112v11-a0001012-galaxyrvr.pdf>`
 
 Wenn Sie Schwierigkeiten haben, die gedruckte Montageanleitung zu verstehen, können Sie stattdessen unserem schrittweisen Montagevideo folgen.
 
