@@ -51,7 +51,7 @@ Now that we've got our eyes set on equipping our Mars Rover with a powerful new 
 
 .. raw:: html
 
-  <iframe width="600" height="400" src="https://www.youtube.com/embed/LZasztI96po" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="600" height="400" src="https://www.youtube.com/embed/c_xWAVapGic?si=ovuxheXdGVpHopPa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 And there we have it! Our Mars Rover now has a fully-assembled ultrasonic sensor module, ready to help it navigate like never before. Are you excited to see how it changes our Rover's obstacle detection abilities? Let's dive right into it!
 

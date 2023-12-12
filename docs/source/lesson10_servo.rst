@@ -126,7 +126,7 @@ You're now ready to assemble the visual system of our Rover.
     
 .. raw:: html
 
-    <iframe width="600" height="400" src="https://www.youtube.com/embed/26q03wXD66U?si=6sG5FL0mA354QqrT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="600" height="400" src="https://www.youtube.com/embed/h43JVI3xLqE?si=Q7-RvRvZOusK7vPo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 **Step 5: Understanding the Limits of the Tilt Mechanism**
 
