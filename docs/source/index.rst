@@ -46,14 +46,6 @@ Der GalaxyRVR ist nicht nur ein Spielzeug, sondern ein Tor zum Mars, ein Bildung
     hardware/hardware
     faq
 
-**Über die Anzeigesprache**
-
-Dieses Dokument ist auch in anderen Sprachen verfügbar. Um die Anzeigesprache zu wechseln, klicken Sie bitte auf das **Read the Docs**-Symbol in der unteren linken Ecke der Seite.
-
-.. image:: img/translation.png
-    
-Wenn Sie Fragen haben, senden Sie bitte eine E-Mail an service@sunfounder.com, und wir werden so schnell wie möglich antworten.
-
 **Urheberrechtshinweis**
 
 Alle Inhalte, einschließlich aber nicht beschränkt auf Texte, Bilder und Code in diesem Handbuch, sind Eigentum der SunFounder Company. Sie sollten es nur für persönliches Studium, Untersuchungen, Vergnügen oder andere nicht-kommerzielle oder gemeinnützige Zwecke verwenden, unter Einhaltung der zugehörigen Vorschriften und Urheberrechtsgesetze, ohne die gesetzlichen Rechte des Autors und der relevanten Rechteinhaber zu verletzen. Für jede Einzelperson oder Organisation, die diese zu kommerziellen Zwecken ohne Erlaubnis nutzt, behält sich das Unternehmen das Recht vor, rechtliche Schritte einzuleiten.

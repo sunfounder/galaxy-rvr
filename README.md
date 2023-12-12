@@ -21,20 +21,13 @@ you're truly navigating the Red Planet. Its advanced obstacle avoidance module a
 
 <a id="update"></a>
 ## Update:
+2023-12-12:
+- Update the assembly videos for the ultrasonic module and the ESP32 CAM
+- Update the PDF assembly instructions.
+
 2023-11-17:
 - First release in German.
 
-2023-11-10:
-- Add the hardware introductions.
-
-2023-09-07:
-- Create a separate page for the assembly video.
-
-2023-09-04:
-- Modified the email and language display prompts on the homepage
-- Updated the operating steps on the play mode page
-- Added a prompt to toggle the switch to the right for course code courses.
-- Corrected some errors.
 
 <a id="trouble"></a>
 ## Trouble Shootings:

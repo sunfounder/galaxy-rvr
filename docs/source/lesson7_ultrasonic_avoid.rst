@@ -52,7 +52,7 @@ Nun, da wir uns darauf vorbereiten, unseren Mars-Rover mit einem neuen, leistung
 
 .. raw:: html
 
-  <iframe width="600" height="400" src="https://www.youtube.com/embed/LZasztI96po" title="YouTube-Video-Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="600" height="400" src="https://www.youtube.com/embed/c_xWAVapGic?si=ovuxheXdGVpHopPa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Und da haben wir es! Unser Mars-Rover hat nun ein vollständig montiertes Ultraschallsensormodul, bereit, ihm wie nie zuvor bei der Navigation zu helfen. Sind Sie gespannt, wie es die Hinderniserkennungsfähigkeiten unseres Rovers verändert? Lassen Sie uns direkt eintauchen!
 
