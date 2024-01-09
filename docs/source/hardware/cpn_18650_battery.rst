@@ -9,7 +9,7 @@
 * **Middle**: Zur Ausgleichung der Spannung zwischen den beiden Zellen und somit zum Schutz der Batterie.
 * **GND**: Negativer Batterieanschluss.
 
-Dies ist ein von SunFounder hergestelltes spezielles Batteriepaket, bestehend aus zwei 18650 Batterien mit einer Kapazität von 2200mAh. 
+Dies ist ein von SunFounder hergestelltes spezielles Batteriepaket, bestehend aus zwei 18650 Batterien mit einer Kapazität von 2000mAh. 
 Der Anschluss ist PH2.0-3P, der nach dem Einstecken in das Shield direkt aufgeladen werden kann.
 
 **Merkmale**
