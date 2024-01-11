@@ -10,7 +10,7 @@
 * **GND**: Negativer Batterieanschluss.
 
 Dies ist ein von SunFounder hergestelltes spezielles Batteriepaket, bestehend aus zwei 18650 Batterien mit einer Kapazität von 2000mAh. 
-Der Anschluss ist PH2.0-3P, der nach dem Einstecken in das Shield direkt aufgeladen werden kann.
+Der Anschluss ist XH2.54 3P, der nach dem Einstecken in das Shield direkt aufgeladen werden kann.
 
 **Merkmale**
 
@@ -19,5 +19,5 @@ Der Anschluss ist PH2.0-3P, der nach dem Einstecken in das Shield direkt aufgela
 * Batteriekapazität: 3.7V 2000mAh x 2
 * Batterielebensdauer: 90min
 * Ladezeit der Batterie: 130min
-* Anschluss: PH2.0, 3P
+* Anschluss: XH2.54 3P
 
