@@ -11,7 +11,7 @@
 
 
 This is a custom battery pack made by SunFounder consisting of two 18650 batteries with a capacity of 2000mAh. 
-The connector is PH2.0-3P, which can be charged directly after being inserted into the shield.
+The connector is XH2.54 3P, which can be charged directly after being inserted into the shield.
 
 
 **Features**
@@ -21,5 +21,5 @@ The connector is PH2.0-3P, which can be charged directly after being inserted in
 * Battery capacity: 3.7V 2000mAh x 2
 * Battery life: 90min
 * Battery charge time: 130min
-* Connector: PH2.0, 3P
+* Connector:XH2.54 3P
 
