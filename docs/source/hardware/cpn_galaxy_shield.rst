@@ -14,7 +14,7 @@ und die geschätzte Ladezeit beträgt 130 Minuten.
 
 **Pinbelegung**
 
-.. image:: img/zeus_car_shield_pinout.png
+.. image:: img/galaxyrvr_shield_pinout.png
 
 * Charge Port
     * Nach dem Einstecken in den 5V/2A USB-C-Port kann es zum Aufladen des Akkus für 130 Minuten verwendet werden.
@@ -30,6 +30,10 @@ und die geschätzte Ladezeit beträgt 130 Minuten.
     * **Charge Indicator**: Leuchtet rot, wenn das Shield über den USB-C-Port aufgeladen wird.
     * **Power Indicator**: Leuchtet grün, wenn der Netzschalter in der Position "ON" ist.
     * **Battery Indicator**: Zwei orangefarbene Anzeigen repräsentieren verschiedene Batteriestände. Sie blinken während des Ladens und gehen aus, wenn die Batterie aufgeladen werden muss.
+
+* Camera Servo
+    * Das Servo an der Kamera ist hier angeschlossen.
+    * Das braune Kabel wird mit "-" verbunden, das rote Kabel wird mit "+" verbunden und das gelbe Kabel wird mit Pin 6 verbunden.
 
 * Netzschalter
     * Auf ON schieben, um das GalaxyRVR einzuschalten.
@@ -68,7 +72,7 @@ und die geschätzte Ladezeit beträgt 130 Minuten.
 
 .. _shield_ultrasonic_pin:
 
-Ultrasonic Port
+SONAR
 --------------------
 
 Hier ist die Pinbelegung für den ZH1.5-4P Ultraschallanschluss, wobei die Trig- & Echo-Pins mit Pin 10 des Arduino-Boards verbunden sind.
@@ -77,7 +81,7 @@ Hier ist die Pinbelegung für den ZH1.5-4P Ultraschallanschluss, wobei die Trig-
 
 .. _shield_camera_pin:
 
-Camera Adapter Port
+CAMERA
 ----------------------
 
 Das Pin-Diagramm des Kameraadapter-Interfaces wird hier gezeigt, der Typ ist ZH1.5-7P.
@@ -89,7 +93,7 @@ Das Pin-Diagramm des Kameraadapter-Interfaces wird hier gezeigt, der Typ ist ZH1
 
 .. _shield_avoid_pin:
 
-Obstacle Avoidance Port
+LEFT/RIGHT IR
 ----------------------------------
 
 Hier ist die Pinbelegung des Hindernisvermeidungsanschlusses.
@@ -99,7 +103,7 @@ Hier ist die Pinbelegung des Hindernisvermeidungsanschlusses.
 
 .. _shield_strip_pin:
 
-RGB LED Strip Port
+RGB Strip
 -------------------------
 
 Unten ist das Pin-Diagramm der zwei parallel angeschlossenen RGB LED-Streifen, deren Pinbelegungen gleich sind.
