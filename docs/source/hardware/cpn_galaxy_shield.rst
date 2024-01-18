@@ -14,7 +14,7 @@ and the estimated charging time is 130 minutes.
 
 **Pinout**
 
-.. image:: img/zeus_car_shield_pinout.png
+.. image:: img/galaxyrvr_shield_pinout.png
 
 * Charge Port
     * After plugging into the 5V/2A USB-C port, it can be used to charge the battery for 130min.
