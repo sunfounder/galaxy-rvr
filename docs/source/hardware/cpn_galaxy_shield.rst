@@ -34,6 +34,10 @@ and the estimated charging time is 130 minutes.
 * Power Switch
     * Slide to ON to power on the GalaxyRVR.
 
+* Camera Servo
+    * The servo on the camera is connected here.
+    * The brown wire connects to "-", the red wire connects to "+", and the yellow wire connects to Pin 6.
+
 * :ref:`shield_motor_pin`
     * **Motor Port(Right)**: 3 motors can be connected, but all 3 motors are controlled by the same set of signal **pins 2 and 3**.
     * **Motor Port(Left)**: 3 motors can be connected, but all 3 motors are controlled by the same set of signal **pins 4 and 5**.
@@ -68,7 +72,7 @@ and the estimated charging time is 130 minutes.
 
 .. _shield_ultrasonic_pin:
 
-Ultrasonic Port
+SONAR
 --------------------
 
 This is the pinout for the ZH1.5-4P ultrasonic port, with the Trig & Echo pins connected to pin 10 of the Arduino board.
@@ -77,7 +81,7 @@ This is the pinout for the ZH1.5-4P ultrasonic port, with the Trig & Echo pins c
 
 .. _shield_camera_pin:
 
-Camera Adapter Port
+CAMERA
 ----------------------
 
 The camera adapter interface pin diagram is shown here, the type is ZH1.5-7P.
@@ -89,17 +93,17 @@ The camera adapter interface pin diagram is shown here, the type is ZH1.5-7P.
 
 .. _shield_avoid_pin:
 
-Obstacle Avoidance Port
+LEFT/RIGHT IR 
 ----------------------------
 
-This is the pinout of the obstacle avoidance port.
+These are the pins for the left and right obstacle avoidance modules.
 
 .. image:: img/ir_shield.png
 
 
 .. _shield_strip_pin:
 
-RGB LED Strip Port
+RGB Strip
 -------------------------
 
 Below is the pinout diagram of the two RGB LED Strip, they are connected in parallel and the pinouts are the same.
