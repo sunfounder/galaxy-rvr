@@ -15,6 +15,7 @@
     cpn_ultrasonic_module_xh
     cpn_ir_obstacle_module
     cpn_rgb_strip
+    cpn_servo
     cpn_tt_motor_xh
     cpn_solar_panel
     cpn_18650_battery

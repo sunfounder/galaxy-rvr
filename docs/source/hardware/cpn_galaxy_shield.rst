@@ -11,7 +11,7 @@ GalaxyRVRシールド
 
 **ピンアウト**
 
-.. image:: img/zeus_car_shield_pinout.png
+.. image:: img/galaxyrvr_shield_pinout.png
 
 * Charge Port
     * 5V/2AのUSB-Cポートに接続すると、130分でバッテリーを充電できます。
@@ -27,6 +27,10 @@ GalaxyRVRシールド
     * **Charge Indicator**: USB-Cポートを通じてシールドが充電されているときに赤く光ります。
     * **Power Indicator**: 電源スイッチが「ON」位置にあるときに緑色に光ります。
     * **Battery Indicator**: 2つのオレンジ色のインジケーターが異なるバッテリーレベルを表し、充電中に点滅し、バッテリーが充電を必要とするときに消えます。
+
+* Camera Servo
+    * カメラのサーボはここに接続されています。
+    * 茶色の線は "-" に接続され、赤い線は "+" に接続され、黄色の線はピン6に接続されています。
 
 * Power Switch
     * ONにスライドさせてGalaxyRVRを起動します。
@@ -65,7 +69,7 @@ GalaxyRVRシールド
 
 .. _shield_ultrasonic_pin:
 
-Ultrasonic Port
+SONAR
 --------------------
 
 こちらはZH1.5-4P超音波ポートのピンアウトで、TrigとEchoのピンがArduinoボードのピン10に接続されます。
@@ -74,7 +78,7 @@ Ultrasonic Port
 
 .. _shield_camera_pin:
 
-Camera Adapter Port
+CAMERA
 ----------------------
 
 こちらはカメラアダプターインターフェースのピン図で、タイプはZH1.5-7Pです。
@@ -86,7 +90,7 @@ Camera Adapter Port
 
 .. _shield_avoid_pin:
 
-Obstacle Avoidance Port
+LEFT/RIGHT IR
 ----------------------------
 
 こちらは障害物回避ポートのピンアウトです。
@@ -96,7 +100,7 @@ Obstacle Avoidance Port
 
 .. _shield_strip_pin:
 
-RGB LED Strip Port
+RGB Strip
 -------------------------
 
 以下は2つのRGB LEDストリップのピンアウト図で、並列接続され、ピンアウトは同じです。
