@@ -56,7 +56,7 @@ Have you ever watched a puppet show? If you have, you might have marveled at how
     :width: 200
     :align: center
 
-Servo motors are special type of motors that don’t just spin around and around like a wheel. Instead, they can move to a specific position and hold that position. Imagine if you're playing a game of Simon says, and Simon says, "Raise your arm to a 90-degree angle!" You can do it, right? That's because, like a servo, you can control exactly how much to move your arm.
+Servo motors are special type of motors that don't just spin around and around like a wheel. Instead, they can move to a specific position and hold that position. Imagine if you're playing a game of Simon says, and Simon says, "Raise your arm to a 90-degree angle!" You can do it, right? That's because, like a servo, you can control exactly how much to move your arm.
 
 .. image:: img/servo.png
     :align: center
