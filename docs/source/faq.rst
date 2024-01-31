@@ -32,12 +32,14 @@ If the following message keeps appearing after clicking the **Upload** button wh
 The ESP32-CAM and the Arduino board share the same RX (receive) and TX (transmit) pins. So, before you’re uploading code, you’ll need to first disconnect the ESP32-CAM to avoid any conflicts or potential issues.
 
     .. image:: img/camera_upload.png
-        :width: 600
+        :width: 500
+        :align: center
 
 After the code is successfully uploaded, if you need to use the ESP32 CAM, then you need to move the switch to the left to start the ESP32 CAM.
 
     .. image:: img/camera_run.png
-        :width: 600
+        :width: 500
+        :align: center
 
 .. _stt_android:
 
@@ -69,14 +71,20 @@ Now follow the steps below.
 #. Search ``google`` in Google Play, find the app shown below and install it.
 
     .. image:: img/google_voice.png
+        :width: 500
+        :align: center
 
 #. Connect your mobile device to the same Wi-Fi as you wrote in the code.
 
     .. image:: img/sta_wifi.png
+        :width: 500
+        :align: center
 
 #. Open the controller previously created in SunFounder Controller and connect it to ``GalaxyRVR`` through the |app_connect| button.
 
     .. image:: img/app/camera_connect.png
+        :width: 400
+        :align: center
 
 
 #. Tap and hold the **STT(J)** widget after clicking the |app_run| button. A prompt will appear indicating that it is listening. Say the following command to move the car.
@@ -93,3 +101,105 @@ Q4: About the ESP32 CAM Firmware
 ---------------------------------------------------
 
 Here is the firmeware link of ESP32 CAM: |link_ai_camera_firmware|
+
+Q5: How to Flash New Firmware to an ESP32 CAM?
+----------------------------------------------------
+The camera module comes pre-flashed from the factory. However, if you encounter a data corruption issue, you can re-flash it with new firmware using the Arduino IDE. Here's how:
+
+**1. Prepare the Programmer**
+
+#. First, get a programmer ready.
+
+    .. image:: img/esp32_cam_programmer.png
+        :width: 300
+        :align: center
+
+#. Insert the ESP32 CAM into the programmer and then plug the programmer into your computer.
+
+    .. image:: img/esp32_cam_usb.jpg
+        :width: 300
+        :align: center
+
+**2. Install the ESP32 Board**
+
+To program the ESP32 microcontroller, you must install the ESP32 board package in the Arduino IDE. Follow these steps:
+
+#. Go to **File** and select **Preferences** from the drop-down menu.
+
+    .. image:: img/install_esp321.png
+        :width: 500
+        :align: center
+
+#. In the **Preferences** window, find the **Additional Board Manager URLs** field. Click on it to enable the text box.
+
+    .. image:: img/install_esp322.png
+        :width: 500
+        :align: center
+
+#. Add this URL to the **Additional Board Manager URLs** field: https://espressif.github.io/arduino-esp32/package_esp32_index.json. This URL links to the package index file for ESP32 boards. Click **OK** to save the changes.
+
+    .. image:: img/install_esp323.png
+        :width: 500
+        :align: center
+
+#.  In the **Boards Manager** window, search for **ESP32**. Click the **Install** button to begin installation. This downloads and installs the ESP32 board package.
+
+    .. image:: img/install_esp324.png
+        :align: center
+
+**3. Install the Libraries**
+
+#. Install the ``WebSockets`` library from the **LIBRARY MANAGER**.
+
+    .. image:: img/esp32_cam_websockets.png
+        :width: 500
+        :align: center
+
+#. Follow the same steps to install the ``ArduinoJson`` library.
+
+    .. image:: img/esp32_cam_arduinojson.png
+        :width: 500
+        :align: center
+
+**3. Download and Upload Firmware**
+
+#. Download the firmware file.
+
+    * :download:`ai-camera-firmware <https://github.com/sunfounder/ai-camera-firmware/archive/refs/heads/main.zip>`
+
+#. Extract the downloaded firmware file and rename the extracted folder from ``ai-camera-firmware-main`` to ``ai-camera-firmware``.
+
+    .. image:: img/esp32_cam_change_name.png
+        :align: center
+
+#. Open ``ai-camera-firmware.ino`` with the Arduino IDE, which also opens the associated code files.
+
+    .. image:: img/esp32_cam_ino.png
+        :align: center
+
+#. Select **Board** -> **esp32** -> **ESP32 Dev Module**.
+
+    .. image:: img/esp32_cam_board.png
+        :width: 500
+        :align: center
+
+#. Choose the correct port.
+
+    .. image:: img/esp32_cam_port.png
+        :width: 400
+        :align: center
+
+#. Ensure to enable **PSRAM** and select **Huge APP** in the **Partition Scheme**.
+
+    .. image:: img/esp32_cam_psram.png
+        :width: 400
+        :align: center
+
+#. Finally, upload the firmware to the ESP32 CAM.
+
+    .. image:: img/esp32_cam_upload.png
+        :width: 500
+        :align: center
+
+#. After successful firmware upload, you can find more information at this link: https://github.com/sunfounder/ai-camera-firmware.
+
