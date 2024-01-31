@@ -94,3 +94,106 @@ Q4: ESP32 CAMファームウェアについて
 ---------------------------------------------------
 
 こちらはESP32 CAMのファームウェアリンクです：|link_ai_camera_firmware|
+
+
+Q5: ESP32 CAMに新しいファームウェアをフラッシュする方法
+--------------------------------------------------------
+
+カメラモジュールは通常工場出荷時にプリフラッシュされています。ただし、データの破損が発生した場合やファームウェアを更新する必要がある場合、Arduino IDEを使用して新しいファームウェアをフラッシュできます。以下がその方法です。
+
+**1. プログラマーの準備**
+
+#. まず、プログラマーを用意してください。
+
+    .. image:: img/esp32_cam_programmer.png
+        :width: 300
+        :align: center
+
+#. ESP32-CAMモジュールをプログラマーに挿入し、次にプログラマーをコンピューターに接続します。
+
+    .. image:: img/esp32_cam_usb.jpg
+        :width: 300
+        :align: center
+
+**2. ESP32ボードのインストール**
+
+ESP32マイクロコントローラーをプログラムするには、Arduino IDEにESP32ボードパッケージをインストールする必要があります。以下の手順に従ってください。
+
+#. **ファイル** に移動し、ドロップダウンメニューから **設定** を選択します。
+
+    .. image:: img/install_esp321.png
+        :width: 500
+        :align: center
+
+#. **設定** ウィンドウで、 **追加のボードマネージャーのURL** フィールドを見つけます。これを有効にするためにクリックしてテキストボックスを有効にします。
+
+    .. image:: img/install_esp322.png
+        :width: 500
+        :align: center
+
+#. 以下のURLを **追加のボードマネージャーのURL** フィールドに追加します: https://espressif.github.io/arduino-esp32/package_esp32_index.json。このURLはESP32ボードのパッケージインデックスファイルへのリンクです。変更を保存するために **OK** をクリックします。
+
+    .. image:: img/install_esp323.png
+        :width: 500
+        :align: center
+
+#. **ボードマネージャー** ウィンドウで **ESP32** を検索します。インストールを開始するために **インストール** ボタンをクリックします。これによりESP32ボードパッケージがダウンロードおよびインストールされます。
+
+    .. image:: img/install_esp324.png
+        :align: center
+
+**3. 必要なライブラリのインストール**
+
+#. **ライブラリマネージャー** から ``WebSockets`` ライブラリをインストールします。
+
+    .. image:: img/esp32_cam_websockets.png
+        :width: 500
+        :align: center
+
+#. 同じ手順で ``ArduinoJson`` ライブラリをインストールしてください。
+
+    .. image:: img/esp32_cam_arduinojson.png
+        :width: 500
+        :align: center
+
+**4. ファームウェアのダウンロードとアップロード**
+
+#. こちらからファームウェアファイルをダウンロードしてください。
+
+    * :download:`ai-camera-firmware <https://github.com/sunfounder/ai-camera-firmware/archive/refs/heads/main.zip>`
+
+#. ダウンロードしたファームウェアファイルを解凍し、抽出されたフォルダの名前を ``ai-camera-firmware-main`` から ``ai-camera-firmware`` に変更します。
+
+    .. image:: img/esp32_cam_change_name.png
+        :align: center
+
+#. Arduino IDEで ``ai-camera-firmware.ino`` ファイルを開きます。これにより関連するコードファイルも開かれます。
+
+    .. image:: img/esp32_cam_ino.png
+        :align: center
+
+#. **ボード** -> **esp32** -> **ESP32 Dev Module** を選択します。
+
+    .. image:: img/esp32_cam_board.png
+        :width: 500
+        :align: center
+
+#. 正しいポートを選択してください。
+
+    .. image:: img/esp32_cam_port.png
+        :width: 400
+        :align: center
+
+#. **PSRAM** を有効にし、 **Partition Scheme** で **Huge APP** を選択してください。
+
+    .. image:: img/esp32_cam_psram.png
+        :width: 400
+        :align: center
+
+#. 最後に、ファームウェアをESP32-CAMにアップロードします。
+
+    .. image:: img/esp32_cam_upload.png
+        :width: 500
+        :align: center
+
+#. ファームウェアのアップロードが成功したら、詳細情報は以下のリンクで確認できます: https://github.com/sunfounder/ai-camera-firmware。
