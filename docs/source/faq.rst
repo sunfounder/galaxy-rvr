@@ -94,3 +94,103 @@ Q4: Über die ESP32 CAM Firmware
 
 Hier ist der Firmware-Link des ESP32 CAM: |link_ai_camera_firmware|
 
+Q5: Wie wird eine neue Firmware auf einen ESP32 CAM geflasht?
+---------------------------------------------------------------
+Das Kameramodul wird normalerweise ab Werk mit vorinstallierter Firmware geliefert. Wenn Sie jedoch auf ein Problem mit Datenkorruption stoßen oder die Firmware aktualisieren müssen, können Sie dies mit der Arduino IDE tun. Hier ist, wie es gemacht wird:
+
+**1. Vorbereitung des Programmiergeräts**
+
+#. Zuerst benötigen Sie ein Programmiergerät.
+
+    .. image:: img/esp32_cam_programmer.png
+        :width: 300
+        :align: center
+
+#. Stecken Sie den ESP32-CAM in das Programmiergerät und schließen Sie dann das Programmiergerät an Ihren Computer an.
+
+    .. image:: img/esp32_cam_usb.jpg
+        :width: 300
+        :align: center
+
+**2. Installieren Sie das ESP32-Board**
+
+Um den ESP32-Mikrocontroller zu programmieren, müssen Sie das ESP32-Boardpaket in der Arduino IDE installieren. Befolgen Sie diese Schritte:
+
+#. Gehen Sie zu **Datei** und wählen Sie **Einstellungen** im Dropdown-Menü aus.
+
+    .. image:: img/install_esp321.png
+        :width: 500
+        :align: center
+
+#. In den **Einstellungen** finden Sie das Feld **Zusätzliche Board-Verwalter-URLs**. Klicken Sie darauf, um das Textfeld zu aktivieren.
+
+    .. image:: img/install_esp322.png
+        :width: 500
+        :align: center
+
+#. Fügen Sie die folgende URL in das Feld **Zusätzliche Board-Verwalter-URLs** ein: https://espressif.github.io/arduino-esp32/package_esp32_index.json. Diese URL verlinkt auf die Paketindexdatei für ESP32-Boards. Klicken Sie auf **OK**, um die Änderungen zu speichern.
+
+    .. image:: img/install_esp323.png
+        :width: 500
+        :align: center
+
+#. Im **Board-Verwalter** suchen Sie nach **ESP32**. Klicken Sie auf die Schaltfläche **Installieren**, um mit der Installation zu beginnen. Dadurch wird das ESP32-Boardpaket heruntergeladen und installiert.
+
+    .. image:: img/install_esp324.png
+        :align: center
+
+**3. Installieren Sie die erforderlichen Bibliotheken**
+
+#. Installieren Sie die ``WebSockets``-Bibliothek aus dem **BIBLIOTHEKSVERWALTER**.
+
+    .. image:: img/esp32_cam_websockets.png
+        :width: 500
+        :align: center
+
+#. Befolgen Sie die gleichen Schritte, um die ``ArduinoJson``-Bibliothek zu installieren.
+
+    .. image:: img/esp32_cam_arduinojson.png
+        :width: 500
+        :align: center
+
+**4. Firmware herunterladen und hochladen**
+
+#. Laden Sie die Firmware-Datei hier herunter.
+
+    * :download:`ai-camera-firmware <https://github.com/sunfounder/ai-camera-firmware/archive/refs/heads/main.zip>`
+
+#. Entpacken Sie die heruntergeladene Firmware-Datei und benennen Sie den extrahierten Ordner von ``ai-camera-firmware-main`` in ``ai-camera-firmware`` um.
+
+    .. image:: img/esp32_cam_change_name.png
+        :align: center
+
+#. Öffnen Sie die Datei ``ai-camera-firmware.ino`` mit der Arduino IDE, die auch die zugehörigen Code-Dateien öffnet.
+
+    .. image:: img/esp32_cam_ino.png
+        :align: center
+
+#. Wählen Sie **Board** -> **esp32** -> **ESP32 Dev Module** aus.
+
+    .. image:: img/esp32_cam_board.png
+        :width: 500
+        :align: center
+
+#. Wählen Sie den richtigen Anschluss aus.
+
+    .. image:: img/esp32_cam_port.png
+        :width: 400
+        :align: center
+
+#. Stellen Sie sicher, dass Sie **PSRAM** aktivieren und in der **Partitionsschema** die Option **Huge APP** auswählen.
+
+    .. image:: img/esp32_cam_psram.png
+        :width: 400
+        :align: center
+
+#. Schließlich laden Sie die Firmware auf den ESP32-CAM hoch.
+
+    .. image:: img/esp32_cam_upload.png
+        :width: 500
+        :align: center
+
+#. Nach erfolgreichem Hochladen der Firmware finden Sie weitere Informationen unter diesem Link: https://github.com/sunfounder/ai-camera-firmware.
