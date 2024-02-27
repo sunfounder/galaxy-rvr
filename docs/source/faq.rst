@@ -1,6 +1,8 @@
 FAQ
 ==============
 
+.. _install_lib:
+
 Q1: Kompilierungsfehler: SoftPWM.h: Datei oder Verzeichnis nicht gefunden?
 ---------------------------------------------------------------------------------
 Wenn die Meldung „Compilation error: SoftPWM.h: No such file or directory“ erscheint, bedeutet dies, dass die SoftPWM-Bibliothek nicht installiert ist.

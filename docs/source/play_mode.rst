@@ -23,7 +23,8 @@ Aber bevor Sie den Roten Planeten erkunden, stellen wir sicher, dass Sie voll au
     * Öffnen Sie dann die Datei ``galaxy-rvr.ino``, die sich im Verzeichnis ``galaxy-rvr-main\galaxy-rvr`` befindet.
     
     * Bewegen Sie den Schalter nach rechts und klicken Sie dann auf **Upload**.
-
+    * :ref:`install_lib`
+    
     .. image:: img/camera_upload.png
         :width: 400
         :align: center
