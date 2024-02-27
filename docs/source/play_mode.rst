@@ -23,6 +23,7 @@
     * 次に、 ``galaxy-rvr-main\galaxy-rvr`` ディレクトリにある ``galaxy-rvr.ino`` ファイルを開きます。
     
     * スイッチを右に移動し、 **Upload** をクリックします。
+    * :ref:`install_lib`
 
     .. image:: img/camera_upload.png
         :width: 400
