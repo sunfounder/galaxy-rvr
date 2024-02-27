@@ -23,6 +23,7 @@ But before you set off to explore the Red Planet, let's make sure you are fully 
     * Then, open the ``galaxy-rvr.ino`` file located in the ``galaxy-rvr-main\galaxy-rvr`` directory.
     
     * Move the switch to the right and then click **Upload**.
+    * :ref:`install_lib`
 
     .. image:: img/camera_upload.png
         :width: 400

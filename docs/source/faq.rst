@@ -1,6 +1,8 @@
 FAQ
 ==============
 
+.. _install_lib:
+
 Q1: Compilation error: SoftPWM.h: No such file or directory？
 ---------------------------------------------------------------------
 If you get a “Compilation error: SoftPWM.h: No such file or directory” prompt, it means you don’t have the SoftPWM library installed.
