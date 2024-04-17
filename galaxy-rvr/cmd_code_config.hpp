@@ -10,22 +10,18 @@
 #define MODE_OBSTACLE_FOLLOWING      1
 #define MODE_OBSTACLE_AVOIDANCE      2
 #define MODE_APP_CONTROL             3
-#define MODE_VOICE_CONTROL           4
-#define MODE_DISCONNECT              5
+#define MODE_COMPASS_CALIBRATION     8
 
 /** Set the color to match the mode */
-#define ERROR_COLOR RED
-#define WARN_COLOR ORANGE
+#define COLOR_ERROR RED
+#define COLOR_WARN ORANGE
 
-#define MODE_DISCONNECT_COLOR 0xFFFFFF
-#define MODE_NONE_COLOR 0xFFFFFF // white
-
-#define MODE_APP_CONTROL_COLOR              0xFFFFFF
+#define COLOR_STATE_IDLE                    WHITE
+#define COLOR_STATE_IR_REMOTE               GREEN_CYAN
+#define COLOR_STATE_APP                     MAGENTA
 
 #define MODE_OBSTACLE_FOLLOWING_COLOR       BLUE
 #define MODE_OBSTACLE_AVOIDANCE_COLOR       PURPLE
- 
-#define MODE_VOICE_CONTROL_COLOR       CYAN
 
 
 // State machine for almost all mode. State define see every function

@@ -24,80 +24,10 @@
            https://docs.sunfounder.com
 
 ********************************************************************/
-#define VERSION "1.1.0"
+#define VERSION "1.2.0"
 
-#include <Arduino.h>
-#include <SoftPWM.h>
-#include <string.h>
+#include "galaxy-rvr.h"
 
-
-#include "rgb.h"
-#include "soft_servo.h"
-#include "car_control.h"
-#include "ir_obstacle.h"
-#include "ultrasonic.h"
-#include "cmd_code_config.hpp"
-#include "SunFounder_AI_Camera.h"
-#include "battery.h"
-/*************************** Configure *******************************/
-/** @name Configure 
- * 
- */
-///@{
-/** Whether to enable Watchdog */
-#define WATCH_DOG 0
-#if WATCH_DOG
-  #include <avr/wdt.h>
-#endif
-
-/** Whether to enable TEST mode */
-#define TEST 0
-#if TEST
-  #include "test.h"
-#endif
-
-/** Whether to enable print Memory Used */
-#define MEM 0
-#if MEM
-  // https://github.com/mpflaga/Arduino-MemoryFree
-  #include <MemoryFree.h>
-  #include <pgmStrToRAM.h> // not needed for new way. but good to have for reference.
-#endif
-
-
-/** Configure Wifi mode, SSID, password*/
-#define WIFI_MODE WIFI_MODE_AP
-#define SSID "GalaxyRVR"
-#define PASSWORD "12345678"
-
-// #define WIFI_MODE WIFI_MODE_STA
-// #define SSID "xxxxxxxxxx"
-// #define PASSWORD "xxxxxxxxxx"
-
-/** Configure product name */
-#define NAME "GalaxyRVR"
-
-/** Configure product type */
-#define TYPE "GalaxyRVR"
-
-/** Configure websockets port
- * Sunfounder Controller APP fixed using port 8765
-*/
-#define PORT "8765"
-
-
-/** Configure the motors speed in different modes */
-#define OBSTACLE_AVOID_POWER 80
-#define OBSTACLE_FOLLOW_POWER 80
-#define VOICE_CONTROL_POWER 80
-
-/** Configure the follow distance of obstacle follow */
-#define FOLLOW_DISTANCE 20
-
-/** websocket communication headers */
-#define WS_HEADER "WS+"
-
-///@}
 
 /*********************** Global variables ****************************/
 /** Instantiate aicamera, a class for serial communication with ESP32-CAM */
@@ -106,19 +36,24 @@ AiCamera aiCam = AiCamera(NAME, TYPE);
 /* Config Camera Servo */
 SoftServo servo;
 
-#define SERVO_PIN 6
-#define SERVO_REVERSE false
+// current state
+uint8_t currentState = STATE_IDLE;
+// last state
+uint8_t lastState = 255;
+// obstacle power
+uint8_t obstaclePower = 0;
+// last mode
+uint8_t lastMode = 255;
+/* variables of motors and servo*/
+int8_t leftMotorPower = 0;
+int8_t rightMotorPower = 0;
+uint8_t servoAngle = 90;
 
 /* variables of voice control */
 char voice_buf_temp[20];
 int8_t current_voice_code = -1;
 int32_t voice_time = 0; // uint:s
 uint32_t voice_start_time = 0; // uint:s
-
-/* variables of motors and servo*/
-int8_t leftMotorPower = 0;
-int8_t rightMotorPower = 0;
-uint8_t servoAngle = 90;
 
 /* variables of rgb_blink when disconnected */
 uint32_t rgb_blink_interval = 500; // uint: ms
@@ -152,10 +87,8 @@ void setup() {
   servo.attach(SERVO_PIN);
   servo.write(90);
 
-#if !TEST
-  aiCam.begin(SSID, PASSWORD, WIFI_MODE, PORT);
-  aiCam.setOnReceived(onReceive);
-#endif
+  aiCam.begin(AP_SSID, AP_PASSWORD, PORT, false);
+  aiCam.setOnReceivedBinary(onReceive);
 
   while (millis() - m < 500) {  // Wait for peripherals to be ready
     delay(1);
@@ -180,30 +113,59 @@ void setup() {
  * - or modules test
  */
 void loop() {
-#if !TEST
+  if (lastState != currentState) {
+    Serial.print(F("State changed to "));
+    lastState = currentState;
+    switch (currentState) {
+      case STATE_IDLE: {
+        Serial.println(F("IDLE"));
+        rgbWrite(COLOR_STATE_IDLE);
+        carStop();
+        servoAngle = 90;
+        servo.write(servoAngle);
+        break;
+      }
+      case STATE_APP: {
+        Serial.println(F("APP"));
+        currentMode = MODE_APP_CONTROL;
+        rgbWrite(COLOR_STATE_APP);
+        break;
+      }
+      default:
+        break;
+    }
+  }
+
+  switch (currentState) {
+    case STATE_IDLE:
+      {
+        if (millis() - rgb_blink_start_time > rgb_blink_interval) {
+          rgb_blink_flag = !rgb_blink_flag;
+          rgb_blink_start_time = millis();
+        }
+        if (rgb_blink_flag) rgbWrite(COLOR_STATE_IDLE);
+        else rgbOff();
+        if (aiCam.ws_connected == true) {
+          currentState = STATE_APP;
+        }
+        break;
+      }
+    case STATE_APP:
+      {
+        handleSensorData();
+        if (aiCam.ws_connected == false) {
+          currentState = STATE_IDLE;
+        }
+        modeHandler();
+        break;
+      }
+    default:
+      break;
+  }
+
   // because the value in a is constantly updated
   // Note that the cycle interval of the "aiCam.loop()" should be less than 80ms to avoid data d
   aiCam.loop();
-  if (aiCam.ws_connected == false) {
-    currentMode = MODE_DISCONNECT;
-    int8_t current_voice_code = -1;
-    int8_t voice_time = 0;
-    if (currentMode != MODE_DISCONNECT) {
-      rgb_blink_start_time = 0;
-      rgb_blink_flag = 1;
-    }
-  } else {
-    if (currentMode == MODE_DISCONNECT) currentMode = MODE_NONE;
-  }
-  modeHandler();
-#else
-  /* Select the item to be tested, multiple selection allowed */
-  motors_test();
-  // rgb_test();
-  // ultrasonic_test();
-  // ir_obstacle_test();
-  // obstacleAvoidance();
-#endif
 
 #if WATCH_DOG
   wdt_reset(); /* Reset the watchdog */
@@ -223,47 +185,25 @@ void loop() {
  *  - MODE_NONE
  *  - MODE_OBSTACLE_FOLLOWING
  *  - MODE_OBSTACLE_AVOIDANCE
- *  - MODE_REMOTE_CONTROL
  *  - MODE_APP_CONTROL
  */
 void modeHandler() {
+  if (lastMode != currentMode) {
+    Serial.print(F("Mode Change: "));Serial.print(lastMode);Serial.print(F(" -> "));Serial.println(currentMode);
+    lastMode = currentMode;
+  }
   switch (currentMode) {
-    case MODE_NONE:
-      rgbWrite(MODE_NONE_COLOR);
-      carStop();
-      servoAngle = 90;
-      servo.write(servoAngle);
-      break;
-    case MODE_DISCONNECT:
-      if (millis() - rgb_blink_start_time > rgb_blink_interval) {
-        rgb_blink_flag = !rgb_blink_flag;
-        rgb_blink_start_time = millis();
-      }
-      if (rgb_blink_flag) rgbWrite(MODE_DISCONNECT_COLOR);
-      else rgbOff();
-      carStop();
-      servoAngle = 90;
-      servo.write(servoAngle);
-      break;
     case MODE_OBSTACLE_FOLLOWING:
-      rgbWrite(MODE_OBSTACLE_FOLLOWING_COLOR);
       servo.write(servoAngle);
       obstacleFollowing();
       break;
     case MODE_OBSTACLE_AVOIDANCE:
-      rgbWrite(MODE_OBSTACLE_AVOIDANCE_COLOR);
       servo.write(servoAngle);
       obstacleAvoidance();
       break;
     case MODE_APP_CONTROL:
-      rgbWrite(MODE_APP_CONTROL_COLOR);
       servo.write(servoAngle);
       carSetMotors(leftMotorPower, rightMotorPower);
-      break;
-    case MODE_VOICE_CONTROL:
-      rgbWrite(MODE_VOICE_CONTROL_COLOR);
-      servo.write(servoAngle);
-      voice_control();
       break;
     default:
       break;
@@ -334,128 +274,144 @@ void obstacleAvoidance() {
 }
 
 /**
- * voice control program
+ * websocket received data processing
  */
-void voice_control() {
-  if (voice_time == -1) {
-    voice_action(current_voice_code, VOICE_CONTROL_POWER);
-  } else {
-    if (millis() - voice_start_time <= voice_time) {
-      voice_action(current_voice_code, VOICE_CONTROL_POWER);
-    } else {
-      currentMode = MODE_NONE;
-      voice_start_time = 0;
-      current_voice_code = -1;
+void onReceive() {
+  Serial.print("onReceive:");
+  for (int i = 0; i < aiCam.recvBufferLength; i++) {
+    Serial.print(aiCam.recvBuffer[i], HEX);
+    Serial.print(" ");
+  }
+  Serial.println(" ");
+
+  for (int i = 0; i < aiCam.recvBufferLength; i++) {
+    uint8_t entityId = aiCam.recvBuffer[i];
+    switch (entityId) {
+      case 0x01:  // Car move
+        {
+          i += 1;
+          leftMotorPower = aiCam.recvBuffer[i];
+          i += 1;
+          rightMotorPower = aiCam.recvBuffer[i];
+          currentMode = MODE_APP_CONTROL;
+          break;
+        }
+      case 0x02:  // RGB control
+        {
+          i += 1;
+          uint8_t r = aiCam.recvBuffer[i];
+          i += 1;
+          uint8_t g = aiCam.recvBuffer[i];
+          i += 1;
+          uint8_t b = aiCam.recvBuffer[i];
+          // Serial.println(F("Set RGB: ("));Serial.print(r);
+          // Serial.print(F(", "));Serial.print(g);
+          // Serial.print(F(", "));Serial.print(b);Serial.println(")");
+          rgbWrite(r, g, b);
+          break;
+        }
+      case 0x03:  // Servo Angle
+        {
+          i += 1;
+          servoAngle = aiCam.recvBuffer[i];
+          // Serial.println(F("Servo Angle"));
+          // Serial.print(F("servoAngle:"));Serial.println(servoAngle);
+          break;
+        }
+      case 0x04:  // Front Light
+        {
+          i += 1;
+          if (aiCam.recvBuffer[i] == 1){
+            cam_lamp_status = true;
+            aiCam.lamp_on(5);  //turn on cam lamp, level 0 ~ 10 
+          } else{
+            cam_lamp_status = false;
+            aiCam.lamp_off();
+          }
+          break;
+        }
+      case 0x05:  // Obstacle mode
+        {
+          i += 1;
+          uint8_t state = aiCam.recvBuffer[i];
+          i += 1;
+          uint8_t mode = aiCam.recvBuffer[i];
+          i += 1;
+          obstaclePower = aiCam.recvBuffer[i];
+          // Serial.print(F("Obstacle "));
+          if (state) {
+            // Serial.print(F(" ON"));
+            if (mode == 0) {
+              // Serial.print(F(" avoidance"));
+              currentMode = MODE_OBSTACLE_AVOIDANCE;
+            } else {
+              // Serial.print(F(" following"));
+              currentMode = MODE_OBSTACLE_FOLLOWING;
+            }
+          } else {
+            // Serial.print(F(" OFF"));
+            currentMode = MODE_APP_CONTROL;
+          }
+          // Serial.print(F(" power:"));Serial.println(obstaclePower);
+          break;
+        }
     }
   }
 }
 
-/**
- * websocket received data processing
- */
-void onReceive() {
-  // --------------------- send data ---------------------
-  // battery voltage
-  // Serial.print(F("voltage:"));Serial.println(batteryGetVoltage());
-  aiCam.sendDoc["BV"] = batteryGetVoltage();
+void handleSensorData() {
+  uint8_t toSend[WS_BUFFER_SIZE];
+  int index = 0;
+  toSend[index] = WS_DATA_START_BIT;
 
-  // IR obstacle detection data
-  byte result = irObstacleRead();
-  aiCam.sendDoc["N"] = int(!bool(result & 0b00000010));  // left, clear:0
-  aiCam.sendDoc["P"] = int(!bool(result & 0b00000001));  // right, clear:0
+  // data length placeholder
+  index += 1;
+  toSend[index] = 0x00;
 
-  // ultrasonic
-  float usDistance = int(ultrasonicRead() * 100) / 100.0;  // round two decimal places
-  aiCam.sendDoc["O"] = usDistance;
+  // checksum placeholder
+  index += 1;
+  toSend[index] = 0x00;
 
-  // --------------------- get data ---------------------
-  // Stop
-  if (aiCam.getButton(REGION_I)) {
-    currentMode = MODE_NONE;
-    current_voice_code = -1;
-    voice_time = 0;
-    carStop();
-    return;
+  // UltraSonic
+  index += 1;
+  toSend[index] = 0x81;
+  uint16_t ultrasonicMM = ultrasonicRead() * 10.0;
+  uint8_t ultrasonicMMMSB = ultrasonicMM >> 8;
+  uint8_t ultrasonicMMLS = ultrasonicMM & 0xFF;
+  index += 1;
+  toSend[index] = ultrasonicMMMSB;
+  index += 1;
+  toSend[index] = ultrasonicMMLS;
+
+  // IR Obstacle
+  index += 1;
+  toSend[index] = 0x82;
+  uint8_t irObstacle = irObstacleRead();
+  index += 1;
+  toSend[index] = irObstacle;
+
+  // Battery Voltage
+  index += 1;
+  toSend[index] = 0x83;
+  uint8_t batteryVoltage = batteryGetVoltage() * 10;
+  index += 1;
+  toSend[index] = batteryVoltage;
+
+  // End bit
+  index += 1;
+  toSend[index] = WS_DATA_END_BIT;
+
+  uint8_t payloadLength = index + 1;
+
+  // Data length
+  toSend[1] = payloadLength - 4;
+
+  // Checksum
+  uint8_t checksum = 0;
+  for (int i = 0; i < payloadLength - 1; i++) {
+    checksum ^= toSend[i];
   }
+  toSend[2] = checksum;
 
-  // Mode select: obstacle following, obstacle avoidance
-  if (aiCam.getSwitch(REGION_E)) {
-    if (currentMode != MODE_OBSTACLE_AVOIDANCE) {
-      currentMode = MODE_OBSTACLE_AVOIDANCE;
-    }
-  } else if (aiCam.getSwitch(REGION_F)) {
-    if (currentMode != MODE_OBSTACLE_FOLLOWING) {
-      currentMode = MODE_OBSTACLE_FOLLOWING;
-    }
-  } else {
-    if (currentMode == MODE_OBSTACLE_FOLLOWING || currentMode == MODE_OBSTACLE_AVOIDANCE) {
-      currentMode = MODE_NONE;
-      carStop();
-      return;
-    }
-  }
-
-  // cam lamp
-  if (aiCam.getSwitch(REGION_M) && !cam_lamp_status) {
-    Serial.println("lamp on");
-    aiCam.lamp_on(5);  //turn on cam lamp, level 0 ~ 10 
-    cam_lamp_status = true;
-  } else if (!aiCam.getSwitch(REGION_M) && cam_lamp_status) {
-    Serial.println("lamp off");
-    aiCam.lamp_off();  // turn off cam lamp
-    cam_lamp_status = false;
-  }
-
-  // Speech control
-  if (currentMode != MODE_VOICE_CONTROL) {
-    current_voice_code = -1;
-    voice_time = 0;
-    voice_start_time = 0;
-    aiCam.sendDoc["J"] = 0;
-  }
-
-  int8_t code = -1;
-  voice_buf_temp[0] = 0;  // voice_buf_temp
-  aiCam.getSpeech(REGION_J, voice_buf_temp);
-  if (strlen(voice_buf_temp) > 0) {
-    aiCam.sendDoc["J"] = 1;
-    aiCam.sendData();
-    aiCam.sendDoc["J"] = 0;
-    code = text_2_cmd_code(voice_buf_temp);
-    if (code != -1) {
-      current_voice_code = code;
-      voice_time = voice_action_time[code];
-      voice_start_time = millis();
-    }
-  }
-
-  if (current_voice_code != -1) {
-    currentMode = MODE_VOICE_CONTROL;
-  }
-
-  // servo angle
-  int temp = aiCam.getSlider(REGION_D);
-  if (servoAngle != temp) {
-    if (currentMode == MODE_NONE || currentMode == MODE_DISCONNECT) {
-      currentMode = MODE_APP_CONTROL;
-    }
-    if (SERVO_REVERSE) {
-      temp = constrain(temp, 40, 180);
-      temp = 180 - temp;
-    } else {
-      temp = constrain(temp, 0, 140);
-    }
-    servoAngle = temp;
-  }
-
-  // throttle
-  int throttle_L = aiCam.getThrottle(REGION_K);
-  int throttle_R = aiCam.getThrottle(REGION_Q);
-  // Serial.print("throttle_L: "); Serial.print(throttle_L);
-  // Serial.print("throttle_R: "); Serial.println(throttle_R);
-  if (throttle_L != 0 || throttle_R != 0 || throttle_L != leftMotorPower || throttle_R != rightMotorPower) {
-    currentMode = MODE_APP_CONTROL;
-    leftMotorPower = throttle_L;
-    rightMotorPower = throttle_R;
-  }
+  aiCam.sendBinaryData(toSend, payloadLength);
 }
