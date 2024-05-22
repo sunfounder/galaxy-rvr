@@ -90,6 +90,10 @@ rst_epilog = """
 
 rst_epilog += """
 
+.. |link_sf_facebook| raw:: html
+
+    <a href="https://bit.ly/3WKQJjn" target="_blank">hier</a>
+
 .. |link_german_tutorials| raw:: html
 
     <a href="https://docs.sunfounder.com/projects/galaxy-rvr/de/latest/" target="_blank">Deutsch Online-Kurs</a>
