@@ -29,7 +29,7 @@ Get ready to gear up our rover with some Martian obstacle-dodging intelligence! 
 .. raw:: html
 
    <video width="600" loop autoplay muted>
-      <source src="_static/video/car_ir1.mp4" type="video/mp4">
+      <source src="./_static/video/car_ir1.mp4" type="video/mp4">
       Your browser does not support the video tag.
    </video>
 

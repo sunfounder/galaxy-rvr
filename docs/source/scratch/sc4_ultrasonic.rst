@@ -30,7 +30,7 @@ Join us as we take a step further into this exciting STEAM journey, making our M
 .. raw:: html
 
    <video width="600" loop autoplay muted>
-      <source src="_static/video/ultrasonic_avoid.mp4" type="video/mp4">
+      <source src="./_static/video/ultrasonic_avoid.mp4" type="video/mp4">
       Your browser does not support the video tag.
    </video>
 

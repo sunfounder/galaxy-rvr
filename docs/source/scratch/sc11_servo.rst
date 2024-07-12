@@ -30,7 +30,7 @@ So, buckle up, explorers, let's start our mission to equip our Rover with its ve
 .. raw:: html
 
     <video width="600" loop autoplay muted>
-        <source src="_static/video/servo_range.mp4" type="video/mp4">
+        <source src="./_static/video/servo_range.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
