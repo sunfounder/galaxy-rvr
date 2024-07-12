@@ -28,7 +28,7 @@ In this activity, we will combine the obstacle avoidance module with a stage to 
 .. raw:: html
 
    <video width="600" loop autoplay muted>
-      <source src="./_static/video/sc_animate_rock.wmv" type="video/wmv">
+      <source src="../_static/video/sc_animate_rock.wmv" type="video/wmv">
       Your browser does not support the video tag.
    </video>
 

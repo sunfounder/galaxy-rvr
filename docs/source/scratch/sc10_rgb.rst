@@ -27,7 +27,7 @@ Our goal in this lesson is to understand the principles of RGB LED strips, learn
 .. raw:: html
 
     <video width="600" loop autoplay muted>
-        <source src="./_static/video/car_rgb.mp4" type="video/mp4">
+        <source src="../_static/video/car_rgb.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 

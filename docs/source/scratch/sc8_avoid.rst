@@ -28,7 +28,7 @@ Combining these two gives us a reliable, efficient, and versatile obstacle avoid
 .. raw:: html
 
     <video width="600" loop autoplay muted>
-        <source src="./_static/video/ultrasonic_ir_avoid.mp4" type="video/mp4">
+        <source src="../_static/video/ultrasonic_ir_avoid.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 

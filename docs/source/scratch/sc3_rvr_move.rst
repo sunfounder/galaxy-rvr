@@ -28,7 +28,7 @@ It's a Martian adventure in our classroom. Let's get started!
 .. raw:: html
 
    <video width="600" loop autoplay muted>
-      <source src="./_static/video/car_move.mp4" type="video/mp4">
+      <source src="../_static/video/car_move.mp4" type="video/mp4">
       Your browser does not support the video tag.
    </video>
 
