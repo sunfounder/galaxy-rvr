@@ -22,6 +22,9 @@ In this thrilling journey, we'll dive into the setup of the Rover's camera syste
 This offers an even more interactive and engaging experience with our GalaxyRVR. Stay tuned for more adventures!
 
 
+.. image:: img/11_camera_image.png
+
+
 Learning Objectives
 -------------------------
 

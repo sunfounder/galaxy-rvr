@@ -26,7 +26,7 @@ In this activity, we will combine the module with a stage to create an interacti
 .. raw:: html
 
    <video width="600" loop autoplay muted>
-      <source src="../_static/video/sc_animate_jump.wmv" type="video/wmv">
+      <source src="../_static/video/sc_animate_jump.mp4" type="video/mp4">
       Your browser does not support the video tag.
    </video>
 

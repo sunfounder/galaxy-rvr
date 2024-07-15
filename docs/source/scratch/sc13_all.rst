@@ -50,7 +50,7 @@ For this part, repeat the steps from :ref:`camera_system`.
 
 Now, you can click the sprites to turn the camera and LED on or off, and use the arrow keys to move the GalaxyRVR.
 
-.. image:: img/11_camera_go_stage.png
+.. image:: img/13_camera_go_all2.png.png
     :align: center
 
 

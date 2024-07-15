@@ -18,6 +18,11 @@ Lesson 2: Getting Started with the Mammoth Coding APP
 Let's dive into the world of Mammoth Coding and create your first project! 
 For an optimal experience, it is recommended to use a device with a larger screen.
 
+
+
+
+
+
 Learning Objectives
 --------------------
 
@@ -188,6 +193,19 @@ Your First Example
 ----------------------------
 
 Let's create a simple animation using the APP to make GalaxyRVR move randomly.
+
+
+
+
+.. raw:: html
+
+   <video width="600" loop autoplay muted>
+      <source src="../_static/video/sc_animate_app.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+   </video>
+
+
+
 
 **1. Start with the yellow Events category.**
 
