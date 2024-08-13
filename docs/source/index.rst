@@ -60,7 +60,6 @@ The GalaxyRVR isn't just a toy, but a gateway to Mars, an educational tool, and 
     assemble_video
     play_mode
     course_mode
-    scratch/scratch_lesson
     hardware/hardware
     faq
 
