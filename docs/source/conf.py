@@ -164,4 +164,12 @@ rst_epilog += """
 
     <a href="https://github.com/sunfounder/ai-camera-firmware" target="_blank">ai-camera-firmware</a>
 
+.. |link_GalaxyRVR| raw:: html
+
+    <a href="https://www.sunfounder.com/products/sunfounder-galaxyrvr-mars-rover-kit?_pos=1&_sid=c7193042f&_ss=r" target="_blank">GalaxyRVRの購入リンク</a>
+
+.. |link_Mars_Rover_Kit| raw:: html
+
+    <a href="https://www.sunfounder.com/products/sunfounder-galaxyrvr-mars-rover-kit?_pos=1&_sid=c7193042f&_ss=r" target="_blank">GalaxyRVR</a>
+
 """

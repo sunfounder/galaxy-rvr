@@ -12,10 +12,12 @@
 
     👉 私たちと一緒に探索し、創造する準備はできていますか？[|link_sf_facebook|]をクリックして今すぐ参加しましょう！
 
-GalaxyRVR - SunFounder社の火星探査ローバーキット
+|link_Mars_Rover_Kit| - SunFounder社の火星探査ローバーキット
 ========================================================
 
-SunFounder GalaxyRVRをお選びいただき、ありがとうございます。
+* |link_GalaxyRVR|
+
+SunFounder |link_Mars_Rover_Kit|をお選びいただき、ありがとうございます。
 
 .. note::
     このドキュメントは以下の言語で利用可能です。
