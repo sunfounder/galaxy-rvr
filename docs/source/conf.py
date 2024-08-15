@@ -92,7 +92,8 @@ rst_epilog += """
 
 .. |link_sf_facebook| raw:: html
 
-    <a href="https://bit.ly/raphaelkit" target="_blank">hier</a>
+    <a href="https://bit.ly/raphaelkit" target="_blank">here</a>
+
 
 .. |link_german_tutorials| raw:: html
 
@@ -162,5 +163,13 @@ rst_epilog += """
 .. |link_ai_camera_firmware| raw:: html
 
     <a href="https://github.com/sunfounder/ai-camera-firmware" target="_blank">ai-camera-firmware</a>
+
+.. |link_GalaxyRVR| raw:: html
+
+    <a href="https://www.sunfounder.com/products/sunfounder-galaxyrvr-mars-rover-kit?_pos=1&_sid=c7193042f&_ss=r" target="_blank">Kauflink für Pironman V2.0</a>
+
+.. |link_Mars_Rover_Kit| raw:: html
+
+    <a href="https://www.sunfounder.com/products/sunfounder-galaxyrvr-mars-rover-kit?_pos=1&_sid=c7193042f&_ss=r" target="_blank">GalaxyRVR</a>
 
 """

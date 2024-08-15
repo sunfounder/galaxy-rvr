@@ -12,10 +12,12 @@
 
     👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-GalaxyRVR - SunFounder Mars Rover Kit
+|link_Mars_Rover_Kit| - SunFounder Mars Rover Kit
 ========================================================
 
-Danke, dass Sie sich für unser GalaxyRVR entschieden haben.
+* |link_GalaxyRVR|
+
+Danke, dass Sie sich für unser |link_Mars_Rover_Kit| entschieden haben.
 
 .. note::
     Dieses Dokument ist in den folgenden Sprachen verfügbar.
