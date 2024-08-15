@@ -166,7 +166,7 @@ rst_epilog += """
 
 .. |link_GalaxyRVR| raw:: html
 
-    <a href="https://www.sunfounder.com/products/sunfounder-galaxyrvr-mars-rover-kit?_pos=1&_sid=c7193042f&_ss=r" target="_blank">Kauflink für Pironman V2.0</a>
+    <a href="https://www.sunfounder.com/products/sunfounder-galaxyrvr-mars-rover-kit?_pos=1&_sid=c7193042f&_ss=r" target="_blank">Kauflink für GalaxyRVR</a>
 
 .. |link_Mars_Rover_Kit| raw:: html
 
