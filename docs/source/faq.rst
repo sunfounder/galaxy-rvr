@@ -28,13 +28,18 @@ Q1: Change AP mode to STA mode
 
 * Then, open the ``galaxy-rvr.ino`` file located in the ``galaxy-rvr-main\galaxy-rvr`` directory.
 
-* Move the switch to the right and then click **Upload**.
+* Comment out lines 69-71, uncomment lines 73-75, and change ``SSID`` and ``PASSWORD`` to your WLAN.
 
+.. image:: img/ap_sta.png
+    :align: center
+
+* Connect the Arduino and computer with a USB cable, and then turn the **upload** switch of the car to the upload end.
 
 .. image:: img/camera_upload.png
     :width: 400
     :align: center
 
+* Upload your code.
 
 .. _install_lib:
 
