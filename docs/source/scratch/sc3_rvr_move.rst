@@ -78,7 +78,7 @@ Uploading the Adapted Code
     .. raw:: html
 
         <video width="600" loop autoplay muted>
-            <source src="_static/video/play_start.mp4" type="video/mp4">
+            <source src="../_static/video/play_start.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
