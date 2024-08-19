@@ -125,7 +125,7 @@ c. Generate ten random rocks.
 d. These actions occur when the green flag is clicked.
 
 .. image:: img/5_animate_clone_flag.png    
-
+   :width: 200
 
 Now, this mini-game is complete.
 

@@ -3,11 +3,14 @@ Play with Scratch
 
 In addition to programming on the Arduino IDE, we can also use graphical programming.
 
-We recommend using Scratch for programming. However, the official Scratch currently only supports Raspberry Pi. To address this, we have developed Mammoth Coding, a graphical programming software based on Scratch 3, specifically for Arduino boards (Uno, Mega2560, and Nano).
+We recommend using Scratch for programming. 
+However, the official Scratch currently only supports Raspberry Pi. To address this, we have developed Mammoth Coding, 
+a graphical programming software based on Scratch 3, specifically for Arduino boards (Uno, Mega2560, and Nano).
 
-Mammoth Coding retains the basic functionalities of Scratch 3 while adding the capability to control various boards such as Arduino Uno, Mega, Nano, ESP32, Microbit, and STEAMPedia's custom boards. It allows you to use external sensors and robots to control the sprites on stage, providing robust hardware interaction capabilities.
+Mammoth Coding retains the basic functionalities of Scratch 3 while adding the capability to control various boards such as Arduino Uno, 
+Mega, Nano custom boards. It allows you to use external sensors and robots to control the sprites on stage, providing robust hardware interaction capabilities.
 
-Additionally, it includes AI and machine learning features, making it accessible even if you don't have much programming experience. You can learn and utilize these cutting-edge technologies with ease.
+Moreover, this app is easy to use even if you don't have much programming experience. You can learn and utilize these cutting-edge technologies with ease.
 
 Simply drag and drop Scratch coding blocks to create exciting games, animations, interactive projects, and even control robots exactly as you envision!
 
@@ -18,7 +21,7 @@ Let's embark on this journey of exploration now!
 These projects are the basic courses for controlling the GalaxyRVR with Mammoth Coding. They will guide you step by step on how to utilize GalaxyRVR.
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
 
     sc1_history.rst 

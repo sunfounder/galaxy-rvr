@@ -116,26 +116,32 @@ Exploring the Mars Rover Tilt System
 
 **Changing the Gimbal Angle**
 
-4. The GalaxyRVR's servo gimbal system is a refined single-degree-of-freedom structure, so you only need to control its "reset," "move up," and "move down" functions.
+1. The GalaxyRVR's servo gimbal system is a refined single-degree-of-freedom structure, so you only need to control its "reset," "move up," and "move down" functions.
 
-5. Now let's create its reset button. Drag a ``when this sprite clicked`` block.
+
+.. raw:: html
+
+   <br></br>
+
+
+2. Now let's create its reset button. Drag a ``when this sprite clicked`` block.
 
 .. image:: img/10_servo_when_click.png
 
-6. Embed a ``set servo angle to 90 degrees`` block to make the gimbal face forward.
+3. Embed a ``set servo angle to 90 degrees`` block to make the gimbal face forward.
 
 .. image:: img/10_servo_when_90.png
 
 
-7. Drag a ``when up arrow key pressed`` block.
+4. Drag a ``when up arrow key pressed`` block.
 
 .. image:: img/10_servo_when_up.png
 
-8. Decrease the servo angle when the up arrow key is pressed.
+5. Decrease the servo angle when the up arrow key is pressed.
 
 .. image:: img/10_servo_when_up2.png
 
-9. Similarly, add a down arrow key event to make the gimbal look down.
+6. Similarly, add a down arrow key event to make the gimbal look down.
 
 .. image:: img/10_servo_when_down.png
 
@@ -163,11 +169,12 @@ When we touch the arrow, we can drag the direction of the arrow sprite.
 3. A ``when this sprite clicked`` block is exactly what we need.
 
 .. image:: img/6_animate_when_touch.png
+    :width: 230
 
 4. Let the program repeat until we release it, meaning we no longer touch the sprite.
 
 .. image:: img/6_animate_repeat_touching.png
-
+    :width: 550
 
 3. Drag a ``point towards touch_position`` block to make the sprite face the touch position.
 
@@ -195,6 +202,14 @@ If you find it easy to slide your finger off the arrow sprite, you can increase 
 Servo-Related Blocks
 -------------------------------
 
+.. image:: img/block/servo_set_angle.png
 
-.. image:: img/10_servo_blocks.png
+This block is used to set the servo angle. The range is 0 to 180 degrees (however, due to structural limitations, the actual usable range is 0-135 degrees).
 
+.. image:: img/block/servo_increase_angle.png
+
+This block increases (or decreases) the servo angle. The value can be negative.
+
+.. image:: img/block/servo_value.png
+
+The current angle of the servo.

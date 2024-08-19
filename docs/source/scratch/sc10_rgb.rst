@@ -112,9 +112,10 @@ Next, let's create an interactive project to get familiar with the lighting func
 
 .. image:: img/9_animate_rgb_pick.png
 
-7. Hold down on the stage area. A magnifying glass will appear at your fingertip for color picking. Release it on the Ball sprite to pick its color for the display block.
+7. Hold down on the stage area. A magnifying glass will appear at your fingertip for color picking. 
+Release it on the Ball sprite to pick its color for the display block.
 
-.. image:: img/9_animate_rgb_pick_color.png
+.. image:: img/9_animate_rgb_pick_color_n.png
 
 8. Long press the Ball sprite on the stage to duplicate it.
 
@@ -210,5 +211,44 @@ Now, when you press the direction keys on the stage, the GalaxyRVR will move and
 RGB Module Related Blocks
 -------------------------------
 
-.. image:: img/9_rgb_blocks.png
+.. image:: img/block/rgb_display.png
 
+Illuminate the RGB strip under your GalaxyRVR with your chosen color. You can:
+
+    * Click on the color patch to select your desired color.
+
+.. image:: img/block/rgb_display_1s.png
+
+Illuminate the RGB strip under your GalaxyRVR with your chosen color for 1 second. You can:
+
+    * Click on the color patch to select your desired color.
+    * Modify the number to change the duration of the light display
+
+.. image:: img/block/rgb_display_RGB.png
+
+Illuminate the RGB strip under your GalaxyRVR with a color of your choice, using RGB values to alter the color (by adjusting the proportion of red, green, and blue primary lights, you can produce any color), which is very useful for projects involving color gradients. You can:
+
+    * Modify the R value to adjust the brightness of the red light, within a range of 0-255.
+    * Modify the G value to adjust the brightness of the green light, within a range of 0-255.
+    * Modify the B value to adjust the brightness of the blue light, within a range of 0-255.
+
+.. image:: img/block/rgb_display_RGB_1s.png
+
+Illuminate the RGB strip under your GalaxyRVR with a color of your choice for 1 second using RGB values. You can:
+
+    * Modify the R value to adjust the brightness of the red light, within a range of 0-255.
+    * Modify the G value to adjust the brightness of the green light, within a range of 0-255.
+    * Modify the B value to adjust the brightness of the blue light, within a range of 0-255.
+    * Modify the duration to change how long the light displays
+
+.. image:: img/block/rgb_set_brightness.png
+
+This block is used to set the brightness of the lights, with a range from 0 to 100.
+
+.. image:: img/block/rgb_increase_brightness.png
+
+This block increases (or decreases) the brightness of the lights. The value can be negative.
+
+.. image:: img/block/rgb_turn_on.png
+
+Turn off (or on) the RGB strip under your GalaxyRVR.

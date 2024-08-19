@@ -41,10 +41,9 @@ Course Materials
 * USB Cable
 * Computer
 
-Steps
------------
 
-**Step 1: Introduction to Arduino**
+Introduction to Arduino
+------------------------------------------
 
 You may have often heard the term "Arduino" in various contexts, but what exactly is it and why has it become so popular?
 
@@ -83,7 +82,8 @@ Get ready for an exciting learning journey!
 
 
 
-**Step 2: Getting to Know Your SunFounder R3 Board**
+Getting to Know Your SunFounder R3 Board
+------------------------------------------------------------------
 
 Inside your kit, you'll find a blue board, seemingly a tiny city filled with small metallic towers and pathways. But don't let it intimidate you! This is the SunFounder R3 development board, a kind of Arduino board that can be used to program and control a vast array of electronic devices and projects. 
 
@@ -109,7 +109,8 @@ Let's understand its key features in simple terms:
 
 With these basics, you'll be all set to begin your programming adventures with the SunFounder R3 board!
 
-**Step 3: Install Arduino IDE**
+Install Arduino IDE
+-----------------------------------------------
 
 Now that we understand what Arduino and the Arduino board are, it's time to start putting that knowledge to use. We're going to install the Arduino IDE, which is the software we'll use to program our Arduino board.
 
@@ -156,8 +157,8 @@ To get started, follow these steps:
 
     You can find a detailed tutorial on installing the Arduino IDE 2.0 on a Linux system here: |link_arduino_linux|.
     
-
-**Step 4: Discovering the Arduino Playground (IDE)**
+Discovering the Arduino Playground (IDE)
+----------------------------------------------------------------
 
 Let's imagine together that the Arduino IDE is a magical playground filled with tools and gadgets waiting for us to explore and play with. Up next, I will guide you to understand every corner of this playground.
 
@@ -179,7 +180,8 @@ Here's what you'll find in your playground:
 Now that we've gotten a glimpse of the playground, it's time to dive in and start creating!
 
 
-**Step 5: Upload Your First Sketch**
+Upload Your First Sketch
+-----------------------------------------------
 
 Alright, it's time to have some fun! We're going to make an LED blink - it's like saying "Hello, World!" in the world of Arduino.
 
@@ -214,7 +216,8 @@ Let's break it down:
 You've done a great job! You've just run your first Arduino program, making you a bona fide programmer! So what's next? We're just scratching the surface of what Arduino can do. Ready for the next challenge?
 
 
-**Step 6: Some Fun Arduino Programming Facts**
+Some Fun Arduino Programming Facts
+--------------------------------------------------------
 
 Time to uncover some cool secrets about Arduino programming!
 
@@ -285,7 +288,8 @@ Time to uncover some cool secrets about Arduino programming!
 Remember, we're not only coding for machines but also for humans, so let's make sure our code tells a clear and understandable story!
 
 
-**Step 7: Reflect and Improve**
+**Reflect and Improve**
+
 
 Taking a moment to reflect on our journey can provide us with insights that we might miss in the flurry of exploration. Ask yourself:
 

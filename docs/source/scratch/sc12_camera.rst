@@ -64,59 +64,73 @@ Exploring the Mars Rover Visual System
 1. Drag a ``turn camera ON`` block. Click it, and you'll see the background of the stage display the camera's feed.
 
 .. image:: img/11_camera_on.png
-    :align: center
+.. :align: center
 
 2. If you see the camera feed inverted, a ``set camera image orientation to inverted`` block can help you correct it.
 
 .. image:: img/11_camera_orientation.png
-    :align: center
+.. :align: center
 
 3. Drag a ``turn camera LED ON`` block. Click it, and the LED next to the GalaxyRVR camera will light up.
 
 .. image:: img/11_camera_led.png
-    :align: center
+.. :align: center
 
 **Click the Sprite to Turn On the Camera**
 
-4. Now that we know how to control the camera module, create four new sprites to control the camera and its LED. Adjust their sizes to make them look harmonious.
+1. Now that we know how to control the camera module, create four new sprites to control the camera and its LED. Adjust their sizes to make them look harmonious.
 
 .. image:: img/11_camera_4.png
-    :align: center
+.. :align: center
 
-5. Program each sprite: clicking sprite 1 will turn off the camera.
+2. Program each sprite: clicking ball 1 will turn off the camera.
 
 .. image:: img/11_camera_1sp.png
-    :align: center
+.. :align: center
 
-6. Clicking sprite 2 will turn on the camera and set the image orientation.
+3. Clicking ball 2 will turn on the camera and set the image orientation.
 
 .. image:: img/11_camera_2sp.png
-    :align: center
+.. :align: center
 
-7. Clicking sprite 3 will turn on the LED.
+4. Clicking ballon 3 will turn on the LED.
 
 .. image:: img/11_camera_3sp.png
-    :align: center
+.. :align: center
 
-8. Clicking sprite 4 will turn off the LED.
+5. Clicking ballon 4 will turn off the LED.
 
 .. image:: img/11_camera_4sp.png
-    :align: center
+.. :align: center
 
-9. To save space on the stage, stack each set of controls.
+6. To save space on the stage, stack each set of controls.
 
 .. image:: img/11_camera_fold.png
-    :align: center
+.. :align: center
 
-10. Add a ``go to back layer`` block for each sprite. When clicked, the sprite will move to the back layer, revealing the next sprite, creating a toggle effect.
+7. Add a ``go to back layer`` block for each sprite. When clicked, the sprite will move to the back layer, revealing the next sprite, creating a toggle effect.
 
 .. image:: img/11_camera_layer.png
-    :align: center
+.. :align: center
+
 
 
 Camera-Related Blocks
 -------------------------------
 
-.. image:: img/11_camera_blocks.png
-    :align: center
+.. image:: img/block/camera_turn.png
 
+Turn on (or off) the camera module. Once activated, the stage background will change to the camera view.
+
+.. image:: img/block/camera_led_turn.png
+
+Turn on (or off) the supplemental LED on the camera module.
+
+
+.. image:: img/block/camera_transp.png
+
+Set the opacity of the camera view.
+
+.. image:: img/block/camera_orientation.png
+
+Set the orientation of the camera view. You can use this block to flip the view.

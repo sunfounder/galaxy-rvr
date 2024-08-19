@@ -97,21 +97,56 @@ That's quite a bit about our little module. In the next step, we'll learn how to
 Infrared Obstacle Avoidance Module Detection Values
 ------------------------------------------------------------
 
-1. Power up the GalaxyRVR and wave your hand over the infrared obstacle avoidance modules on either side. You will see the second light illuminate when it is close to the module.
+1. Power up the GalaxyRVR.
 
-This indicates that it has detected an obstacle, in which case it sends a different signal to the main controller.
 
-2. Let's see what these two signals are. First, :ref:`app_connet`.
+.. raw:: html
 
-3. In the GalaxyRVR category, find the left IR status and right IR status blocks. These store the detection results of the IR modules. Make sure to check the boxes for these.
+   <br></br>
 
-.. image:: img/4_ir_statusblock.png
+2. We have arrived at an essential step, which is to adjust the detection distances of our sensors based on our current environment. The factory settings may not be optimal. If the detection distance of the two infrared modules is too short, the Mars Rover might collide with obstacles. If it's too far, the Rover might start turning while still a significant distance from an obstacle, potentially impacting its movement.
 
-4. The values will now be displayed on the stage.
+    Here's how you can make adjustments:
 
-.. image:: img/4_ir_statusvalue.png
+    a. Start by adjusting the right obstacle avoidance module. During transportation, collisions may cause the transmitter and receiver on the infrared module to tilt. Therefore, you need to manually straighten them.
 
-5. Move your hand close to the infrared obstacle avoidance modules to trigger detection and observe the value changes on the stage.
+        .. raw:: html
+
+            <video width="600" loop autoplay muted>
+                <source src="../_static/video/ir_adjust1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+    b. Place an obstacle about 20 cm directly in front of the right module. The box in which our Rover kit came is a good choice for this! Now, turn the potentiometer on the module until the indicator light on the module just lights up. Then, keep moving the obstacle back and forth to check if the indicator light comes on at the desired distance. If the light doesn't turn on at the correct distance or if it remains on without going out, you'll need to adjust the other potentiometer.
+
+        .. raw:: html
+
+            <video width="600" loop autoplay muted>
+                <source src="../_static/video/ir_adjust2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+
+    c. Repeat the same process for another module.
+
+
+
+3. Let's see what these two signals are. First, :ref:`app_connect`.
+
+.. raw:: html
+
+   <br></br>
+
+
+4. In the GalaxyRVR category, find the left IR status and right IR status blocks. These store the detection results of the IR modules. Make sure to check the boxes for these.
+
+    .. image:: img/4_ir_statusblock.png
+
+5. The values will now be displayed on the stage.
+
+    .. image:: img/4_ir_statusvalue.png
+
+6. Move your hand close to the infrared obstacle avoidance modules to trigger detection and observe the value changes on the stage.
 
 If the IR modules detect an obstacle, the value will be True; if no obstacle is detected, the value will be False.
 
@@ -152,6 +187,12 @@ We can utilize the infrared obstacle avoidance modules to make the GalaxyRVR aut
 
 7. Once you have assembled these blocks, try triggering the left infrared obstacle avoidance module with your hand. The GalaxyRVR will smartly turn right to avoid your hand.
 
+.. raw:: html
+
+   <br></br>
+
+
+
 8. Long-press these blocks to bring up a menu, where you can duplicate the code.
 
 .. image:: img/4_ir_duplicate.png
@@ -169,6 +210,12 @@ We can utilize the infrared obstacle avoidance modules to make the GalaxyRVR aut
 
 11. Now, the GalaxyRVR will turn left or right when obstacles are detected on either side. You can now test this by triggering both sensors with your hand to make the GalaxyRVR dodge left and right.
 
+
+.. raw:: html
+
+   <br></br>
+
+
 12. Add a forward block under each code block so that the GalaxyRVR continues to move forward after avoiding the obstacle.
 
 .. image:: img/4_ir_avoid_move.png
@@ -181,5 +228,30 @@ Now, click the green flag, and the GalaxyRVR will move forward continuously, tur
 Blocks Related to the IR Module
 ----------------------------------------
 
-.. image:: img/4_ir_block1.png
+.. image:: img/block/ir_when.png
+
+This is an event block triggered when the left IR sensor detects an obstacle. You can:
+
+    * Change "left" to "right" in the dropdown menu
+
+.. image:: img/block/ir_wait_until.png
+
+This block pauses the program until the left IR sensor no longer detects an obstacle, then continues. You can:
+
+    * Change "left" to "right" in the first dropdown menu
+    * Change "is not" to "is" in the second dropdown menu to operate under the opposite condition
+
+.. image:: img/block/ir_condition.png
+
+This is a conditional block that returns TRUE if the left IR sensor detects an obstacle, otherwise FALSE. It is commonly used in blocks requiring conditionals like ``if``. You can:
+
+    * Change "left" to "right" in the dropdown menu
+
+.. image:: img/block/ir_left_value.png
+
+This block displays whether the left IR sensor currently detects an obstacle.
+
+.. image:: img/block/ir_right_value.png
+
+This block displays whether the right IR sensor currently detects an obstacle.
 

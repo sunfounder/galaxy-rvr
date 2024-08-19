@@ -27,7 +27,7 @@ Learning Objectives
 --------------------
 
 * Understand the APP programming environment and basic operations.
-* Learn how to script events in sprites, use the forever loop, delay, and switch costumes.
+* Learn how to script events in sprites, use the green flag, repeat, glide, and switch costumes.
 * Create a simple animation simulating a Mars rover.
 
 
@@ -156,8 +156,8 @@ blocks in sequence (e.g., move and then rotate).
 .. note:: This is the basic programming process in the APP. Drag blocks from the left area, connect them together, and click them to make the stage sprite perform actions.
 
 
-Choosing a Sprite
---------------------------
+**Choosing a Sprite**
+
 
 In the lower right corner of the interface, 
 you’ll find the "choose a sprite" button. Tap it to see four pop-up options.
@@ -188,9 +188,11 @@ Tap "choose a sprite" to enter the asset library, which provides a variety of ma
 Find and select "GalaxyRVR".
 
 
+.. image:: img/2_sprite_rvr.png
+    :align: center
 
-Your First Example
-----------------------------
+**Your First Example**
+
 
 Let's create a simple animation using the APP to make GalaxyRVR move randomly.
 
@@ -211,7 +213,7 @@ Let's create a simple animation using the APP to make GalaxyRVR move randomly.
 
 While we've previously executed code by clicking blocks in the central area, most of the time our code should be triggered by events. Events act like guards, monitoring actions such as sprite clicks or key presses, and tell the program what to do when these events occur.
 
-Drag out the "when 🚩 clicked" block.
+Drag out the "when green flag clicked" block.
 
 .. image:: img/2_first_flag.png
 

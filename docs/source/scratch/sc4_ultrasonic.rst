@@ -135,8 +135,51 @@ We can use the infrared obstacle avoidance module to make the GalaxyRVR automati
 Now, place the GalaxyRVR on the ground, and it will continue moving forward until it encounters an obstacle directly ahead, at which point it will change direction.
 
 
+
+
 Blocks Related to the Ultrasonic Module
 -------------------------------------------------
 
-.. image:: img/6_ultrasonic_block1.png
+.. image:: /img/block/ultra_when.png
 
+This is an event block that is triggered when the ultrasonic sensor detects an obstacle closer than 15cm. You can:
+
+    * Change ``<`` to ``>`` in the dropdown menu
+    * Modify the number to adjust the threshold condition
+
+.. image:: /img/block/ultra_wait_until.png
+
+This block pauses the program until the ultrasonic sensor detects an obstacle further than 15cm, then continues the program. You can:
+
+    * Change ``<`` to ``>`` in the dropdown menu
+    * Modify the number to adjust the threshold condition
+
+.. image:: /img/block/ultra_condition.png
+
+This is a conditional block that returns TRUE if the distance detected by the ultrasonic sensor is indeed less than 15cm, otherwise FALSE. It is commonly used in blocks requiring conditionals like ``if``. You can:
+
+    * Change ``<`` to ``>`` in the dropdown menu
+    * Modify the number to adjust the threshold condition
+
+.. image:: /img/block/ultra_value.png
+
+This block displays the current distance measured by the ultrasonic sensor.
+
+
+
+
+Servo-Related Blocks
+-------------------------------
+
+.. image:: img/block/servo_set_angle.png
+
+This block is used to set the servo angle. The range is 0 to 180 degrees (however, due to structural limitations, the actual usable range is 0-135 degrees).
+
+.. image:: img/block/servo_increase_angle.png
+
+This block increases (or decreases) the servo angle. The value can be negative.
+
+
+.. image:: img/block/servo_value.png
+
+The current angle of the servo.

@@ -15,9 +15,30 @@
 FAQ
 ==============
 
+.. _ap_to_sta:
+
+Q1: Change AP mode to STA mode
+-------------------------------------------------
+
+* You will need to download the relevant code.
+
+    * :download:`GalaxyRVR Codes <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
+
+* Install IDE, then, install libraries ``SoftPWM`` and ``SunFounder AI Camera``. :ref:`install_lib` .
+
+* Then, open the ``galaxy-rvr.ino`` file located in the ``galaxy-rvr-main\galaxy-rvr`` directory.
+
+* Move the switch to the right and then click **Upload**.
+
+
+.. image:: img/camera_upload.png
+    :width: 400
+    :align: center
+
+
 .. _install_lib:
 
-Q1: Compilation error: SoftPWM.h: No such file or directory？
+Q2: Compilation error: SoftPWM.h: No such file or directory？
 ---------------------------------------------------------------------
 If you get a “Compilation error: SoftPWM.h: No such file or directory” prompt, it means you don’t have the SoftPWM library installed.
 
@@ -31,7 +52,7 @@ Please install the two required libraries ``SoftPWM`` and ``SunFounder AI Camera
         </video>
 
 
-Q2: avrdude: stk500_getsync() attempt 10 of 10: not in sync: resp=0x6e?
+Q3: avrdude: stk500_getsync() attempt 10 of 10: not in sync: resp=0x6e?
 -----------------------------------------------------------------------------
 If the following message keeps appearing after clicking the **Upload** button when the board and port have been selected correctly.
 
@@ -59,7 +80,7 @@ After the code is successfully uploaded, if you need to use the ESP32 CAM, then 
 
 .. _stt_android:
 
-Q3: How can I use the STT mode on my Android device?
+Q4: How can I use the STT mode on my Android device?
 ------------------------------------------------------------------------
 
 The STT mode requires the Android mobile device to be connected to the Internet and to install the Google service component.
@@ -113,12 +134,12 @@ Now follow the steps below.
     * ``left``: Let the rover turn left.
     * ``right``: Let the rover turn right.
 
-Q4: About the ESP32 CAM Firmware
+Q5: About the ESP32 CAM Firmware
 ---------------------------------------------------
 
 Here is the firmeware link of ESP32 CAM: |link_ai_camera_firmware|
 
-Q5: How to Flash New Firmware to an ESP32 CAM?
+Q6: How to Flash New Firmware to an ESP32 CAM?
 ----------------------------------------------------
 The camera module comes pre-flashed from the factory. However, if you encounter a data corruption issue, you can re-flash it with new firmware using the Arduino IDE. Here's how:
 

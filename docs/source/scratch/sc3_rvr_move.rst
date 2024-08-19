@@ -49,7 +49,6 @@ Materials
 * Computer
 
 
-
 Uploading the Basic Program to GalaxyRVR
 -------------------------------------------------
 
@@ -70,43 +69,43 @@ Download Arduino IDE
 
     .. image:: img/sp_005.png
 
+
 Uploading the Adapted Code
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Visit https://github.com/sunfounder/galaxy-rvr.git .
+1. Turn on the GalaxyRVR's power switch.
 
-2. Switch the branch to ``scratch``.
+    .. raw:: html
 
-.. image:: img/download_scratch_01.png
+        <video width="600" loop autoplay muted>
+            <source src="_static/video/play_start.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-4. Download the ZIP file.
+2. Connect the Arduino and computer with a USB cable, and then turn the **upload** switch of the car to the upload end.
 
-.. image:: img/download_scratch_02.png
+    .. image:: ../img/camera_upload.png
+        :width: 500
+        :align: center
 
-5. Extract the files.
+.. note:: It is the USB Type B port for connecting to Arduino, not the USB Type C port for charging.
 
-.. image:: img/download_scratch_03.png
+3. Open the downloaded galaxy-rvr-1.2.0 folder. (It has been downloaded and installed in the :ref:`update_firmware` section), double-click to run the ``update-arduino-firmware.bat`` script. A command prompt will open.
 
-6. Double-click to open the code.
+.. image:: ../img/firmware/updateFirmware.png
 
-.. image:: img/download_scratch_04.png
+4. In the command prompt, you will see a serial port list showing the serial ports that the computer is currently connected to. Enter the sequence number on the left side of the serial port list to select the serial port of the Arduino Uno. Press Enter to automatically upload.
 
-7. Download the SunFounder AI Camera library.
+.. image:: ../img/firmware/selectCOM.png
 
-.. image:: img/download_scratch_06.png
+5. After waiting for the upload to complete, you can unplug the USB cable.
 
-8. Connect the GalaxyRVR to your computer via USB.
+.. image:: ../img/firmware/UNOupdating.png
 
-9. Select the port and board. The number on your COMxx may vary.
+6. Turn the upload switch back and press the reset button, and the car is ready to use.
 
-.. image:: img/download_scratch_07.png
-
-10. Click here to upload the code.
-
-.. image:: img/download_scratch_08.png
 
 .. note:: This code enables the GalaxyRVR to respond to APP commands. You won’t need to upload any more code in the subsequent chapters that use the Mammoth Coding APP.
-
 
 
 .. _app_connect:
@@ -114,26 +113,39 @@ Uploading the Adapted Code
 Connecting the APP to GalaxyRVR
 -------------------------------------------
 
-1. Turn on the GalaxyRVR's power switch.
+1. To activate the ESP32 CAM, move the mode switch to the **Run** position, and press the **reset** button to reboot the R3 board. You will then observe a cyan light flashing on the bottom strip.
 
-2. After a moment, you'll see it flash red and purple, indicating it's broadcasting a hotspot signal.
+    .. raw:: html
 
-3. Connect your device with the Mammoth Coding APP to the GalaxyRVR's WiFi.
+        <video width="600" loop autoplay muted>
+            <source src="_static/video/play_reset.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-4. Open the APP. Click here.
+2. Connect your mobile device (e.g., phone, tablet) to the WiFi hotspot provided by GalaxyRVR. Generally, its SSID is ``GalaxyRVR`` and the password is ``12345678``.
+
+
+.. image:: ../img/firmware/SSID.png
+
+.. note:: The default connection mode is **AP mode**. After you've connected, there might be a prompt warning that there is no internet access on this network. If so, choose "Stay connected".
+
+    .. image:: ../img/app/camera_stay.png
+
+
+3. Open the APP. Click here.
 
 .. image:: img/connet_app_04.png
 
 
-5. Load the GalaxyRVR module.
+4. Load the GalaxyRVR module.
 
 .. image:: img/connet_app_05.png
 
-6. The APP will search for your robot.
+5. The APP will search for your robot.
 
 .. image:: img/connet_app_06.png
 
-7. Connect it.
+6. Connect it.
 
 .. note:: The breathing light on the GalaxyRVR can help indicate the connection status. Flashing yellow means no devices are connected. A steady blue light means it’s connected.
 
@@ -173,4 +185,56 @@ Press these direction keys and you'll be delighted to see you can directly contr
 Blocks Related to Movement
 -----------------------------
 
-.. image:: img/3_rvr_move_block.png
+.. image:: img/block/move_forward.png 
+..    :align: center
+
+After executing this block, the GalaxyRVR will move forward. You can:
+
+    * Change the parameter from the dropdown menu to turn left, turn right, or reverse.
+
+
+.. image:: img/block/move_set_speed.png 
+..    :align: center
+
+This block is used to set the moving speed of the GalaxyRVR. It does not initiate movement by itself.
+
+.. image:: img/block/move_forward_1s.png 
+..    :align: center
+
+After executing this block, the GalaxyRVR will move forward for 1 second. You can:
+    
+    * Change the parameter from the dropdown menu to turn left, turn right, or reverse.
+    * Adjust the number in the block to set the duration of GalaxyRVR’s movement.
+
+
+.. image:: img/block/move_forward_80.png 
+..    :align: center
+
+After executing this block, the GalaxyRVR will move forward at 80% speed. You can:
+    
+    * Change the parameter from the dropdown menu to turn left, turn right, or reverse.
+    * Modify the number in the block to adjust the speed of GalaxyRVR during this movement.
+
+.. image:: img/block/move_forward_80_1s.png 
+..    :align: center
+
+After executing this block, the GalaxyRVR will move forward at 80% speed for 1 second. You can:
+    
+    * Change the parameter from the dropdown menu to turn left, turn right, or reverse.
+    * Adjust the time in the block to set the duration of the movement.
+    * Modify the speed in the block to adjust the speed of GalaxyRVR during this movement.
+
+.. image:: img/block/move_lr_sp_1s.png 
+..    :align: center
+
+After executing this block, you can independently set the speeds of the GalaxyRVR's left and right wheels and move for the specified time. You can:
+    
+    * Modify the left speed to set the running speed of GalaxyRVR’s left wheel.
+    * Modify the right speed to set the running speed of GalaxyRVR’s right wheel.
+    * Adjust the time to determine the duration of the movement.
+
+.. image:: img/block/move_stop.png
+..    :align: center
+
+Stops the GalaxyRVR from moving.
+

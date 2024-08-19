@@ -69,6 +69,8 @@ Our enhanced Mars Rover will now navigate its surroundings using both ultrasonic
 4. Add distance detection using the ultrasonic sensor. Drag a ``when distance < 15 cm`` block.
 
 .. image:: img/7_avoid_when.png
+    :width: 800
+
 
 5. Similarly, drag a ``stop other scripts in sprite`` block to ensure the GalaxyRVR only responds to one sensor at a time.
 

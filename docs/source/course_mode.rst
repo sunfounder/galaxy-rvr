@@ -14,8 +14,8 @@
 
 .. _course_mode:
 
-Course Mode
-===============
+Play with Arduino
+================================
 
 Welcome to the Course Mode, a structured journey through 13 enlightening lessons. We kick off with a fascinating glimpse into the history of Mars rovers, setting the stage for our own rover assembly.
 
