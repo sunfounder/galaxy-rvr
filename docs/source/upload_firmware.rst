@@ -16,10 +16,14 @@
 .. _update_firmware:
 
 
-Updating the Firmware
+Updating the Firmware File
 ======================================
 
-Connect your mobile devices (such as phones or tablets) to the WiFi hotspot emitted by the GalaxyRVR. 
+1. Download the firmwarefile.
+
+    * :download:`GalaxyRVR Firmware File <https://github.com/sunfounder/galaxy-rvr/releases/download/1.2.0/galaxy-rvr-1.2.0.zip>`
+
+2. Connect your mobile devices (such as phones or tablets) to the WiFi hotspot emitted by the GalaxyRVR. 
 Typically, the SSID is ``GalaxyRVR``, and the password is ``12345678``.
 
 .. image:: img/firmware/SSID.png
@@ -28,28 +32,28 @@ Typically, the SSID is ``GalaxyRVR``, and the password is ``12345678``.
 
     .. image:: img/app/camera_stay.png
 
-6. Navigate to http://192.168.4.1 to access the ESP32 Cam firmware update interface.
+3. Navigate to http://192.168.4.1 to access the ESP32 Cam firmware update interface.
 
 .. image:: img/firmware/OTAUpdate.jpg
 
-7. Check the version number. If your version is above ``1.5.1``, no update is necessary (skip steps 8-12). Otherwise, an upgrade is required.
+4. Check the version number. If your version is above ``1.5.1``, no update is necessary (skip steps 5-9). Otherwise, an upgrade is required.
 
 .. image:: img/firmware/OTAversion.jpg
 
-8. Transfer the file ``ai-camera-firware.ino.1.5.1.bin`` to the device.
+5. Transfer the file ``ai-camera-firware.ino.1.5.1.bin`` to the device.
 
 .. image:: img/firmware/selectBin.png
 
-9. Return to the firmware update interface. Click to select the firmware.
+6. Return to the firmware update interface. Click to select the firmware.
 
 .. image:: img/firmware/OTASButton.jpg
 
-10. Select the ``ai-camera-firware.ino.1.5.1.bin`` file you just stored on your mobile device, then click upgrade.
+7. Select the ``ai-camera-firware.ino.1.5.1.bin`` file you just stored on your mobile device, then click upgrade.
 
 .. image:: img/firmware/OTASelect.jpg
 
-11. Wait for the firmware upgrade to complete. Once the current version number shows as 1.5.1, the upgrade is successful.
+8. Wait for the firmware upgrade to complete. Once the current version number shows as 1.5.1, the upgrade is successful.
 
 .. image:: img/firmware/OTAFinish.jpg
 
-12. Close the page.
+9. Close the page.

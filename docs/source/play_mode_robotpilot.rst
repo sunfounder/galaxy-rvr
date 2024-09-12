@@ -12,31 +12,32 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-.. _play_mode:
+.. _play_robopilot:
 
-Play Mode
+Play RoboPilot
 =========================
 
-Are you eager to kick-start your Martian journey right away? Our Play Mode is perfectly tailored for those of you who just can't wait to dive in. Equipped with factory-preloaded code, you can jump straight into the action after assembling your GalaxyRVR. Use the user-friendly SunFounder Controller app to explore its myriad of functions including first-person driving, switching between obstacle avoidance and follow modes, and even voice control.
+Are you eager to kick-start your Martian journey right away? 
+Our Play Mode is perfectly tailored for those of you who just can't wait to dive in. 
+Equipped with factory-preloaded code, you can jump straight into the action after assembling your GalaxyRVR. 
+Use the user-friendly RoboPilot app to explore its myriad of functions including first-person driving, 
+switching between obstacle avoidance and follow modes.
 
-.. raw:: html
-    
-    <video width="600" loop autoplay muted>
-        <source src="_static/video/play_mode.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
 
-But before you set off to explore the Red Planet, let's make sure you are fully equipped and ready for the adventure. Below is a Quick Guide to assist you in this exciting journey!
+.. image:: img/robopilot/rp1_inter.png
+
+But before you set off to explore the Red Planet, let's make sure you are fully equipped and ready for the adventure. 
+Below is a Quick Guide to assist you in this exciting journey!
 
 .. note::
 
     * If your R3 board has already been uploaded with other code, but you want to continue using Play Mode, you will need to download the relevant code.
 
-        * :download:`GalaxyRVR Codes <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
+        * :download:`GalaxyRVR Codes <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/scratch.zip>`
 
     * Install |link_download_arduino|, then :ref:`install_lib`
 
-    * Then, open the ``galaxy-rvr.ino`` file located in the ``galaxy-rvr-main\galaxy-rvr`` directory.
+    * Then, open the ``galaxy-rvr.ino`` file located in the ``galaxy-rvr-scratch\galaxy-rvr`` directory.
     
     .. note:: In the sample program, it will require you to connect your mobile device to the hotspot released by GalaxyRVR, which will prevent you from using external networks at the same time. You can :ref:`ap_to_sta`. After setting it to STA mode, as long as your device and GalaxyRVR are in the same WLAN, you can control GalaxyRVR.
 
@@ -71,8 +72,7 @@ Quick Guide
                 Your browser does not support the video tag.
             </video>
 
-#. Install `SunFounder Controller <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_ from **APP Store(iOS)** or **Google Play(Android)**.
-
+#. Install **RoboPilot** from **APP Store(iOS)** or **Google Play(Android)**.
 
 #. Connect to the ``GalaxyRVR`` Network.
 
@@ -87,65 +87,68 @@ Quick Guide
 
         .. image:: img/app/camera_stay.png
 
-    
+#. Open RoboPilot. Click 'Go into' to enter the control interface.
+
+.. image:: img/robopilot/rp1_inter.png
 
 
 
-#. Set up a controller.
+Remote Control
+----------------------------------------------
 
-    * To create a controller on SunFounder Controller, tap the **+** icon.
+Upon entering the control interface, you will see the following screen.
+The background shows the view captured by the GalaxyRVR's camera, with remote control widgets overlaid.
 
-        .. image:: img/app/app1.png
+.. image:: img/robopilot/rp2_page.png
 
-    * Preset controllers are available for some products, here we choose **GalaxyRVR**. Give it a name, or simply tap **Confirm**.
+Here are the controls:
 
-        .. image:: img/app/play_preset.jpg
-    
-    * Once inside, the app will automatically search for the GalaxyRVR. After a moment, you will see a prompt saying "Connected Successfully".
-
-        .. image:: img/app/auto_connect.jpg
-
-        .. note::
-
-            * If not connected, please confirm that your Wi-Fi is connected to ``GalaxyRVR``.
-            * You can also tap the |app_connect| button to connect manually. After a short wait, you should see ``GalaxyRVR(IP)`` appear. Tap on it to establish a connection.
-
-            .. image:: img/app/camera_connect.png
-                :width: 300
-                :align: center
+A. Back
+B. Settings: Here you can change the device name, WiFi settings, **adjust the camera angle**, and disconnect.
 
 
-    * Now, tap the |app_run| button enables you to view the live video feed from the camera and control the car using the provided widgets. 
+    .. image:: img/robopilot/rp3_setting.png
 
-        .. image:: img/app/play_run_view.jpg
+C. Battery level indicator
+D. Pause program
+E. Mode selection: Choose between obstacle and remote modes here. The default setting is Remote Mode.
 
-#. Let's now delve into the functions of each widget:
 
-        * **Servo(D)**: Controls the tilt mechanism of the Rover's camera, allowing you to observe a wider range.
+    .. image:: img/robopilot/rp4_mode.png
 
-        * :ref:`app_avoid`: Switches the Rover into obstacle avoidance mode. The factory-set detection distances for each obstacle avoidance module may differ. Manual adjustment is required.
+F. Obstacle monitor: This module is divided into three areas, with the left and right sides showing the results from the obstacle modules, and the central area displaying the ultrasonic sensor's findings.
+G. Color selector: Choose the lighting color for the chassis here.
 
-        * :ref:`app_follow`: Toggles the Rover into follow mode. The factory-set detection distances for each obstacle avoidance module may differ. Manual adjustment is required.
 
-        * **Stop(I)**: Immediately halts all Rover movements.
+    .. image:: img/robopilot/rp5_color.png
 
-        * :ref:`app_speech_control`: Press this widget to initiate voice recognition and make the Rover perform corresponding actions.
+H. Camera LED switch.
+I. Adjust the gimbal angle, ranging from 0-135°. At 0°, it looks up at the sky.
+J. Move the joystick to control the movement of GalaxyRVR. A gentle push will make the GalaxyRVR move slowly.
 
-        * **HeadLamp(M)**: To turn the LED on/off on the ESP32 CAM.
-        * **Throttle Widgets on K and Q**: The throttle widget in the K area controls the Rover's left motors, while the one in the Q area controls the right motors. Coordinating both widgets allows the GalaxyRVR to move in any direction.
 
-        * **Left IR(N)**: Displays the readings from the left obstacle avoidance module.
 
-        * **Ultrasonic(O)**: Shows the distance measured by the ultrasonic module.
+0bstacle Detect
+-------------------------------
 
-        * **Right IR(P)**: Displays the readings from the right obstacle avoidance module.
+When you switch to Obstacle, you will see the following interface.
+Again, the background displays the view from the GalaxyRVR's camera, overlaid with obstacle mode controls.
 
-.. _app_avoid:
 
-Avoid(E)
-------------------------
+.. image:: img/robopilot/rp6_avoid.png
 
-Tap the **Avoid(E)** widget to activate the obstacle avoidance mode.
+Here are the controls:
+
+A. Adjust the GalaxyRVR's speed.
+B. Switch between **Avoid** and **Follow** modes here.
+C. Start/stop the GalaxyRVR's automatic movement.
+D. Adjust the gimbal angle, ranging from 0-135°. At 0°, it looks up at the sky.
+E. Obstacle monitor: This module is divided into three areas, with the left and right sides showing the results from the obstacle modules, and the central area displaying the ultrasonic sensor's findings.
+
+
+**Avoid**
+
+.. Tap the **Avoid(E)** widget to activate the obstacle avoidance mode.
 
 Before enabling this mode, you may need to adjust the detection ranges of the sensors according to your current environment, as the factory settings may not be ideal for all situations.
 
@@ -175,56 +178,21 @@ Here's how you can fine-tune the settings:
 #. Repeat the same process for the other module.
 
 
-.. _app_follow:
+**Follow**
 
-Follow(F)
-------------
+If you haven't previously adjusted the detection distance of the obstacle avoidance modules, 
+you will need to follow the steps in **Avoid** first.
 
-When you're ready to activate follow mode, simply tap the **Follow(F)** widget. If you haven't previously adjusted the detection distance of the obstacle avoidance modules, you will need to follow the steps in :ref:`app_avoid` first.
-
-Once in follow mode, the GalaxyRVR will move towards an object in front of it or turn left or right to follow the object's movement.
-
-
-.. _app_speech_control:
-
-STT(J)
--------------------
-
-
-STT stands for Speech to Text. The SunFounder Controller app integrates with your mobile device's voice recognition engine. Hence, when you tap and hold the **STT(J)** widget on the SunFounder Controller and speak into your mobile device,
-
-Your device will capture your speech, convert it into text, and send it to the GalaxyRVR. If this text matches the pre-set commands in your code, the Rover will carry out the corresponding actions.
-
-The following are the commands currently preset in the code. Speak any of the following commands and observe how the GalaxyRVR responds.
-
-.. image:: img/app/play_speech.png
-    :width: 600
-
-* ``stop``: All movements of the rover can be stopped.
-* ``forward``: Let the rover move forward.
-* ``backward``: Let the rover move backward.
-* ``left``: Let the rover turn left.
-* ``right``: Let the rover turn right.
-
-
-.. note::
-
-    The STT (Speech to Text) function requires an internet connection and Google services on Android devices. However, this doesn't work with the pre-set AP (Access Point) mode on the GalaxyRVR. 
-    
-    In AP mode, the GalaxyRVR creates a local Wi-Fi network that your mobile device can connect to, but it does not provide internet access.
-    
-    To use the STT function on Android, switch the Rover's code from AP to STA mode as outlined in :ref:`stt_android`.
-
-.. note::
-
-    iOS devices, using an offline voice recognition engine, work fine in both AP and STA modes. 
-    
+Once in follow mode, 
+the GalaxyRVR will move towards an object in front of it or turn left or right to follow the object's movement.
 
 
 
+Re-connect
+-------------------------------
 
+If your network fails or disconnects, you will be directed to this page.
 
+.. image:: img/robopilot/rp7_reconnect.png
 
-
-
-
+At this point, please reset your network settings, then click on the IP corresponding to your GalaxyRVR to reconnect.
