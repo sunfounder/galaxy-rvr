@@ -16,7 +16,7 @@
 
 .. _rvr_move:
 
-Lesson 3: Remote Control Your GalaxyRVR
+Lesson 3 Remote Control Your GalaxyRVR
 ============================================
 
 In this lesson, we're bringing the Mars Rover to life!
@@ -148,6 +148,23 @@ Connecting the APP to GalaxyRVR
 6. Connect it.
 
 .. note:: The breathing light on the GalaxyRVR can help indicate the connection status. Flashing yellow means no devices are connected. A steady blue light means it’s connected.
+
+
+Re-connect APP
+-------------------------------------
+
+When your device is disconnected from GalaxyRVR, you will see this pop-up window appear in the interface. Click reconnect.
+
+.. image:: img/reconnect_0.png
+
+If you close the pop-up window, you can also reconnect by clicking this button in the GalaxyRVR category.
+
+.. image:: img/reconnect_1.png
+
+Find your GalaxyRVR and click connect.
+
+.. image:: img/reconnect_2.png
+
 
 Controlling the GalaxyRVR with the APP
 -----------------------------------------

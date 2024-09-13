@@ -39,7 +39,7 @@ Below is a Quick Guide to assist you in this exciting journey!
 
     * Then, open the ``galaxy-rvr.ino`` file located in the ``galaxy-rvr-scratch\galaxy-rvr`` directory.
     
-    .. note:: In the sample program, it will require you to connect your mobile device to the hotspot released by GalaxyRVR, which will prevent you from using external networks at the same time. You can :ref:`ap_to_sta`. After setting it to STA mode, as long as your device and GalaxyRVR are in the same WLAN, you can control GalaxyRVR.
+    * In the sample program, it will require you to connect your mobile device to the hotspot released by GalaxyRVR, which will prevent you from using external networks at the same time. You can :ref:`ap_to_sta`. After setting it to STA mode, as long as your device and GalaxyRVR are in the same WLAN, you can control GalaxyRVR.
 
     * Move the switch to the right and then click **Upload**.
 

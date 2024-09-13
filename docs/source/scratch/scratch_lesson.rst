@@ -16,6 +16,17 @@ Simply drag and drop Scratch coding blocks to create exciting games, animations,
 
 Let's embark on this journey of exploration now!
 
+
+Download the Code
+------------------------------------------
+
+Download the relevant code from the link below.
+
+    * :download:`GalaxyRVR Code File <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
+
+Or check out the code at `SunFounder GalaxyRVR Kit for Arduino - GitHub <https://github.com/sunfounder/galaxy-rvr/tree/main>`.
+
+
 **Basic Project**
 
 These projects are the basic courses for controlling the GalaxyRVR with Mammoth Coding. They will guide you step by step on how to utilize GalaxyRVR.
@@ -39,38 +50,17 @@ These projects are the basic courses for controlling the GalaxyRVR with Mammoth 
     sc13_all.rst
 
 
-.. **Fun Project**
+**Fun Project**
 
-.. The projects below are listed in order of programming difficulty. It is recommended to read these in sequence.
+Here are some fun projects that don't require the Galaxy RVR, but you can implement them here.
 
-.. Each project includes detailed steps on how to build the circuit and program it step by step to achieve the final result.
+.. toctree::
+    :maxdepth: 1
 
-.. Of course, you can also directly open the scripts to run them, but ensure you have downloaded the relevant materials from GitHub.
-
-
-.. .. toctree::
-..     :maxdepth: 1
-
-
-..     funny_project/1_table_lamp
-..     funny_project/2_breathing
-..     funny_project/3_colorful_ball
-..     funny_project/4_lcd1602
-..     funny_project/5_moving_mouse
-..     funny_project/6_doorbell
-..     funny_project/7_temperature
-..     funny_project/8_alarm_clock
-..     funny_project/9_dht11
-..     funny_project/10_pendulum
-..     funny_project/11_rotating_fan
-..     funny_project/12_light_ball
-..     funny_project/13_shooting
-..     funny_project/14_balloon
-..     funny_project/15_star_crossed
-..     funny_project/16_apple
-..     funny_project/17_parrot
-..     funny_project/18_brick
-..     funny_project/19_fish
-..     funny_project/20_tap_tile
-..     funny_project/21_protect_heart
-..     funny_project/22_dragon
+    funny/sc_fun_balloon.rst 
+    funny/sc_fun_flappy_parrot.rst    
+    funny/sc_fun_shooting.rst  
+    funny/sc_fun_eat_apple.rst 
+    funny/sc_fun_fish.rst 
+    funny/sc_fun_sensitive_ball.rst 
+    funny/sc_fun_tap_tile.rst

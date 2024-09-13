@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-Lesson 2: Getting Started with the Mammoth Coding APP
+Lesson 2 Getting Started with the Mammoth Coding APP
 ======================================================
 
 Let's dive into the world of Mammoth Coding and create your first project! 
@@ -33,6 +33,7 @@ Learning Objectives
 
 Materials
 -----------
+
 * Smartphone or tablet
 * Mammoth Coding APP
 

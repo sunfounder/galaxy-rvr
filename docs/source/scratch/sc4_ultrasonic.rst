@@ -140,28 +140,28 @@ Now, place the GalaxyRVR on the ground, and it will continue moving forward unti
 Blocks Related to the Ultrasonic Module
 -------------------------------------------------
 
-.. image:: /img/block/ultra_when.png
+.. image:: img/block/ultra_when.png
 
 This is an event block that is triggered when the ultrasonic sensor detects an obstacle closer than 15cm. You can:
 
     * Change ``<`` to ``>`` in the dropdown menu
     * Modify the number to adjust the threshold condition
 
-.. image:: /img/block/ultra_wait_until.png
+.. image:: img/block/ultra_wait_until.png
 
 This block pauses the program until the ultrasonic sensor detects an obstacle further than 15cm, then continues the program. You can:
 
     * Change ``<`` to ``>`` in the dropdown menu
     * Modify the number to adjust the threshold condition
 
-.. image:: /img/block/ultra_condition.png
+.. image:: img/block/ultra_condition.png
 
 This is a conditional block that returns TRUE if the distance detected by the ultrasonic sensor is indeed less than 15cm, otherwise FALSE. It is commonly used in blocks requiring conditionals like ``if``. You can:
 
     * Change ``<`` to ``>`` in the dropdown menu
     * Modify the number to adjust the threshold condition
 
-.. image:: /img/block/ultra_value.png
+.. image:: img/block/ultra_value.png
 
 This block displays the current distance measured by the ultrasonic sensor.
 
