@@ -1,26 +1,26 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté SunFounder pour les passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers du Raspberry Pi, d'Arduino et d'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprenez et partagez** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Soyez parmi les premiers à découvrir les nouvelles annonces de produits et obtenez des avant-premières.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions festives et cadeaux** : Participez à des concours et promotions festives.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 
-Lesson 6: Exploring the Obstacle Avoidance Module
+Leçon 6 : Explorer le Module d'Évitement d'Obstacles
 ==============================================================
 
-We're diving into the world of the Infrared Obstacle Avoidance Module. Tucked at the sides of our Mars Rover, these sensors act as the rover's "eyes," helping it dodge side obstacles and safely navigate the Martian landscape.
+Plongeons dans le monde du module d'évitement d'obstacles à infrarouge. Placés sur les côtés de notre rover martien, ces capteurs agissent comme les "yeux" du rover, l'aidant à éviter les obstacles latéraux et à naviguer en toute sécurité sur le paysage martien.
 
-We'll learn how to integrate these modules with our rover, unravel the magic behind their functioning, and develop code to make our rover smartly sidestep any hurdles it comes across.
+Nous allons apprendre à intégrer ces modules avec notre rover, découvrir le fonctionnement qui se cache derrière leur magie, et développer du code pour permettre à notre rover d'éviter intelligemment tous les obstacles qu'il rencontre.
 
-Get ready to gear up our rover with some Martian obstacle-dodging intelligence! Let's get rolling!
+Préparez-vous à équiper notre rover d'une intelligence martienne capable de déjouer les obstacles ! En avant !
 
 .. raw:: html
 
@@ -31,121 +31,118 @@ Get ready to gear up our rover with some Martian obstacle-dodging intelligence! 
 
 .. note::
 
-    If you are learning this course after fully assembling the GalaxyRVR, you need to move this switch to the right before uploading the code.
+    Si vous suivez ce cours après avoir entièrement assemblé le GalaxyRVR, vous devez déplacer cet interrupteur vers la droite avant de téléverser le code.
 
     .. image:: img/camera_upload.png
         :width: 500
         :align: center
 
-Learning Objectives
+Objectifs d'apprentissage
+---------------------------
+
+* Comprendre le principe de fonctionnement et l'application du module d'évitement d'obstacles à infrarouge.
+* Apprendre à utiliser Arduino pour contrôler le module d'évitement d'obstacles à infrarouge.
+* S'exercer à concevoir et construire un système d'évitement d'obstacles automatique basé sur l'infrarouge.
+
+
+Matériel nécessaire
 ----------------------
 
-* Understand the working principle and application of the infrared obstacle avoidance module.
-* Learn to use Arduino to control the infrared obstacle avoidance module.
-* Practice designing and building an automatic obstacle avoidance system based on infrared obstacle avoidance.
+* Modules d'évitement d'obstacles
+* Outils de base et accessoires (tournevis, vis, fils, etc.)
+* Modèle de Rover martien (équipé du système Rocker-Bogie, cartes principales, moteurs)
+* Câble USB
+* IDE Arduino
+* Ordinateur
 
-Materials Needed
----------------------
 
-* Obstacle Avoidance Modules
-* Basic tools and accessories (e.g. screwdriver, screws, wires etc.)
-* Mars Rover Model (Equipped with rocker-bogie system, main boards, motors)
-* USB Cable
-* Arduino IDE
-* Computer
+Étapes
+---------
 
-Steps
--------------
-**Step 1: Install the Obstacle Avoidance Module**
+**Étape 1 : Installer le Module d'Évitement d'Obstacles**
 
-Now we will install the two obstacle avoidance modules onto the rover.
+Nous allons maintenant installer les deux modules d'évitement d'obstacles sur le rover.
 
 .. raw:: html
 
     <iframe width="600" height="400" src="https://www.youtube.com/embed/UWEj_ROYAt0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-The assembly steps were simple, weren't they? In the following steps, we will learn about the working principle of these modules, and how they help our Mars Rover to avoid obstacles. Stay tuned!
+Les étapes d'assemblage étaient simples, n'est-ce pas ? Dans les prochaines étapes, nous allons découvrir le principe de fonctionnement de ces modules et comment ils aident notre rover martien à éviter les obstacles. Restez à l'écoute !
 
 
-**Step 2: Demystifying the Module**
+**Étape 2 : Démystifier le Module**
 
-Meet the Infrared Obstacle Avoidance Module - our rover's smart sidekick. This little device is a pack of wonders. Let's take a tour:
+Voici le module d'évitement d'obstacles à infrarouge - l'assistant intelligent de notre rover. Ce petit appareil est un concentré de technologies. Faisons un tour :
 
 .. image:: img/ir_avoid.png
     :width: 300
     :align: center
 
+Voici les définitions des broches :
 
-Here are the pin definitions:
+* **GND** : C'est comme l'ancre du module, le connectant à la masse ou au point commun dans le circuit.
+* **+** : C'est ici que le module reçoit son énergie, nécessitant une alimentation de 3,3 à 5V DC.
+* **Out** : C'est le communicateur du module. Par défaut, il reste en position haute et ne passe en basse que lorsqu'il détecte un obstacle.
+* **EN** : Voici le contrôleur du module. Cette broche d'**activation** décide quand le module doit fonctionner. Par défaut, elle est connectée à la masse (GND), ce qui signifie que le module est toujours en action.
 
-* **GND**: This is like the module's anchor, connecting it to the ground or common point in the circuit.
-* **+**: Here's where the module gets its energy, needing a power supply of 3.3 to 5V DC.
-* **Out**: This is the module's communicator. By default, it stays high and only goes low when it spots an obstacle.
-* **EN**: Meet the module's controller. This **enable** pin decides when the module should work. By default, it is connected to GND, meaning the module is always on the job.
-
-
-Curious about how this tiny module works? It's quite interesting! It uses a pair of IR components - a transmitter and a receiver. The transmitter is like the module's flashlight, emitting infrared light. 
-When an obstacle appears, the infrared light bounces back and gets caught by the receiver. The module then gives a low signal, alerting our rover of the obstacle.
+Curieux de savoir comment fonctionne ce petit module ? C'est plutôt fascinant ! 
+Il utilise une paire de composants infrarouges - un émetteur et un récepteur. 
+L'émetteur agit comme une lampe de poche du module, émettant de la lumière infrarouge. 
+Lorsque qu'un obstacle apparaît, la lumière infrarouge rebondit et est captée par le 
+récepteur. Le module envoie alors un signal bas, alertant notre rover de la présence d'un obstacle.
 
 .. image:: img/ir_receive.png
     :align: center
 
-Our little module is quite robust, spotting obstacles within a range of 2-40cm and boasting excellent anti-interference abilities. 
-However, the color of objects does impact its sensing. Darker objects, especially black ones, are detected at a shorter range. 
-Against a white wall, the sensor is most efficient, sensing within the 2-30cm range.
+Ce petit module est très performant, détectant les obstacles dans un rayon de 2 à 40 cm, et possède d'excellentes capacités anti-interférences. 
+Cependant, la couleur des objets influence sa détection. Les objets plus sombres, en particulier les noirs, sont détectés à une distance plus courte. 
+Face à un mur blanc, le capteur est plus efficace, avec une détection dans une plage de 2 à 30 cm.
 
-
-The **EN** pin's low-level state activates the module, with the jumper cap securing the **EN** pin to the GND. If you wish to control the **EN** pin via code, the jumper cap needs to be removed.
+La broche **EN** en position basse active le module, avec le capuchon de cavalier reliant la broche **EN** à la masse. Si vous souhaitez contrôler la broche **EN** via le code, le cavalier doit être retiré.
 
 .. image:: img/ir_cap.png
     :width: 400
     :align: center
 
-There are two potentiometers on the module, one for adjusting the transmitting power and one for adjusting the transmitting frequency, and by adjusting these two potentiometers you can adjust its effective distance.
+Le module possède deux potentiomètres, l'un pour ajuster la puissance d'émission et l'autre pour ajuster la fréquence d'émission. En ajustant ces deux potentiomètres, vous pouvez ajuster la distance de détection.
 
 .. image:: img/ir_avoid_pot.png
     :width: 400
     :align: center 
 
+C'est tout pour notre petit module. Dans la prochaine étape, nous apprendrons comment l'intégrer à notre rover et le contrôler à l'aide d'Arduino. Restez avec nous !
 
-That's quite a bit about our little module. In the next step, we'll learn how to integrate it with our rover and control it using the Arduino. Stay tuned!
+**Étape 3 : Lire les Données des 2 Modules**
 
+Comme des explorateurs curieux, plongeons dans l'univers des codes et des capteurs !
 
-**Step 3: Read from the 2 Modules**
-
-Just like curious space explorers, let's dive into the universe of codes and sensors!
-
-
-#. Our Mars Rover is equipped with two special "Alien-Eye" sensors, perched neatly on pins 7 (right) and 8 (left). These "Alien-Eye" sensors are actually our infrared obstacle avoidance modules, always vigilant to dodge any "space rocks" (obstacles) in our Rover's interstellar journey!
+#. Notre rover martien est équipé de deux capteurs spéciaux "Alien-Eye", fixés aux broches 7 (droite) et 8 (gauche). Ces capteurs sont en fait nos modules d'évitement d'obstacles à infrarouge, toujours vigilants pour éviter tout "rocher spatial" (obstacle) sur le parcours interstellaire de notre rover !
 
     .. image:: img/ir_shield.png
 
-#. Next, we'll need to communicate with our Rover using the universal language of Arduino code.
+#. Ensuite, nous devons communiquer avec notre rover en utilisant le langage universel du code Arduino.
 
-
-    First things first, let's give a unique name to each eye of the Rover. Let's call them ``IR_RIGHT`` and ``IR_LEFT``, this way we won't mix them up.
+    Commençons par donner un nom unique à chaque œil du rover. Appelons-les ``IR_DROIT`` et ``IR_GAUCHE``, pour ne pas les confondre.
 
         .. code-block:: arduino
 
             #define IR_RIGHT 7
             #define IR_LEFT 8
 
-    Now, we let our Rover know that these are its special eyes - they will feed information from the world outside into the Rover's electronic brain.
+    Ensuite, faisons savoir à notre rover que ce sont ses yeux spéciaux - ils transmettront des informations du monde extérieur au cerveau électronique du rover.
 
         .. code-block:: arduino
 
             pinMode(IR_RIGHT, INPUT);
             pinMode(IR_LEFT, INPUT);
 
+    Pour nous assurer que notre rover partage ses découvertes avec nous, nous établissons une ligne de communication secrète, comme des espions dans un film de science-fiction. Cette prochaine ligne lance une conversation série à la vitesse de 9600 bits par seconde - c'est une discussion ultra rapide !
 
-    To make sure our Rover shares its findings with us, we establish a secret line of communication, like spies in a sci-fi movie. This next line kicks off a serial conversation at the speed of 9600 bits per second - that's lightning fast chatter!
-    
         .. code-block:: arduino
 
             Serial.begin(9600);
 
-
-    Now, our Rover scans its surroundings with its "Alien-Eyes" and relays the findings back to us. If it spots an obstacle, the value will be 0; if the path is clear, the value will be 1. It keeps sending these messages to us, keeping us in the loop.
+    Maintenant, notre rover scanne ses environs avec ses "Alien-Eyes" et nous transmet ses découvertes. S'il détecte un obstacle, la valeur sera 0 ; si le chemin est dégagé, la valeur sera 1. Il continue d'envoyer ces messages, nous tenant informés.
 
         .. code-block:: arduino
 
@@ -156,28 +153,27 @@ Just like curious space explorers, let's dive into the universe of codes and sen
             Serial.print("Left IR: ");
             Serial.println(leftValue);
 
-
-    Finally, the Rover pauses for a moment (about 200 milliseconds) after each transmission. This tiny break gives us the chance to interpret the Rover's message before it sends another one.
+    Enfin, le rover marque une pause (environ 200 millisecondes) après chaque transmission. Cette petite pause nous donne le temps d'interpréter le message du rover avant qu'il n'envoie un autre.
 
         .. code-block:: arduino
 
             delay(200);
 
-    Here is the complete code:
+    Voici le code complet :
 
     .. raw:: html
         
         <iframe src=https://create.arduino.cc/editor/sunfounder01/98546821-5f4b-42ae-bc9f-e7ec15544c8b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-#. Once your code is ready, select the correct board and port, and beam up the code to your Mars Rover. Then, tune into our secret communication line (the Serial Monitor) by clicking on its icon in the top right corner.
+#. Une fois votre code prêt, sélectionnez la bonne carte et le bon port, et téléchargez le code vers votre rover martien. Ensuite, ouvrez la ligne de communication secrète (le moniteur série) en cliquant sur son icône en haut à droite.
 
     .. image:: img/ir_open_serial.png
 
-#. Before you start receiving the Rover's messages, make sure your secret communication line is tuned at the same speed (9600 baud) as your Rover. And there you have it - live updates from your Mars Rover!
+#. Avant de commencer à recevoir les messages du rover, assurez-vous que votre ligne de communication est réglée à la même vitesse (9600 bauds) que celle de votre rover. Et voilà - des mises à jour en direct de votre rover martien !
 
     .. image:: img/ir_serial.png
 
-#. To put our system to the test, wave a "space rock" (your hand) in front of one of the sensors. You'll see the value flip to 0, and the corresponding LED on the module lights up. That's the Rover saying, "Look out, space rock on my right!"
+#. Pour tester notre système, agitez un "rocher spatial" (votre main) devant l'un des capteurs. Vous verrez la valeur passer à 0, et la LED correspondante sur le module s'allume. Le rover dit alors : "Attention, rocher spatial à droite !"
 
     .. code-block::
 
@@ -188,18 +184,17 @@ Just like curious space explorers, let's dive into the universe of codes and sen
         Right IR: 0
         Left IR: 1
 
-By now, you've not just journeyed through space but also deciphered Martian! Can't wait to see what interstellar secrets we unveil in our next mission!
+Vous avez maintenant non seulement parcouru l'espace, mais aussi décrypté le langage martien ! Nous avons hâte de découvrir quels autres secrets interstellaires nous révélera notre prochaine mission !
 
-**Step 4: Adjusting the Detection Distance**
+**Étape 4 : Ajuster la Distance de Détection**
 
-We have arrived at an essential step, which is to adjust the detection distances of our sensors based on our current environment. The factory settings may not be optimal.
+Nous arrivons à une étape essentielle : ajuster les distances de détection de nos capteurs en fonction de l'environnement. Les réglages d'usine peuvent ne pas être optimaux.
 
-If the detection distance of the two infrared modules is too short, the Mars Rover might collide with obstacles. If it's too far, the Rover might start turning while still a significant distance from an obstacle, potentially impacting its movement.
+Si la distance de détection des deux modules infrarouges est trop courte, le rover pourrait percuter des obstacles. Si elle est trop longue, le rover pourrait commencer à tourner alors qu'il est encore loin d'un obstacle, ce qui pourrait affecter son déplacement.
 
-Here's how you can make adjustments:
+Voici comment procéder aux ajustements :
 
-
-#. Start by adjusting the right obstacle avoidance module. During transportation, collisions may cause the transmitter and receiver on the infrared module to tilt. Therefore, you need to manually straighten them.
+#. Commencez par ajuster le module d'évitement d'obstacles droit. Lors du transport, des collisions peuvent provoquer l'inclinaison de l'émetteur et du récepteur du module infrarouge. Vous devez donc les redresser manuellement.
 
     .. raw:: html
 
@@ -208,7 +203,7 @@ Here's how you can make adjustments:
             Your browser does not support the video tag.
         </video>
 
-#. Place an obstacle about 20 cm directly in front of the right module. The box in which our Rover kit came is a good choice for this! Now, turn the potentiometer on the module until the indicator light on the module just lights up. Then, keep moving the obstacle back and forth to check if the indicator light comes on at the desired distance. If the light doesn't turn on at the correct distance or if it remains on without going out, you'll need to adjust the other potentiometer.
+#. Placez un obstacle à environ 20 cm devant le module droit. La boîte dans laquelle se trouvait notre kit de rover est un bon choix ! Maintenant, tournez le potentiomètre sur le module jusqu'à ce que le voyant sur le module s'allume juste. Ensuite, déplacez l'obstacle d'avant en arrière pour vérifier si le voyant s'allume à la distance souhaitée. Si le voyant ne s'allume pas à la bonne distance ou reste allumé sans s'éteindre, vous devrez ajuster l'autre potentiomètre.
 
     .. raw:: html
 
@@ -217,34 +212,35 @@ Here's how you can make adjustments:
             Your browser does not support the video tag.
         </video>
 
+#. Répétez le même processus pour l'autre module.
 
-#. Repeat the same process for another module.
+Maintenant que nos capteurs sont pleinement opérationnels, passons à la prochaine étape de notre voyage !
 
-Now that our sensors are fully prepared, let's embark on the next journey!
+**Étape 5 : Concevoir un Système d'Évitement d'Obstacles Automatique**
 
-**Step 5: Design an Automatic Obstacle Avoidance System**
+Maintenant, faisons un grand bond dans notre exploration spatiale et utilisons les informations fournies par le rover. 
+Nous allons créer un système d'évitement d'obstacles automatique !
 
-Now, let's take a big leap in our space exploration and make use of these messages from the Rover. 
-We're going to create an automatic obstacle avoidance system!
+Voici notre plan : Si le capteur droit détecte un obstacle, le rover tournera vers l'arrière droit. Si le capteur gauche détecte un obstacle, le rover tournera vers l'arrière gauche. Si les deux capteurs détectent un obstacle, le rover reculera. Si aucun obstacle n'est détecté, le rover continuera tout droit.
 
-Here's our plan: If the right sensor detects an obstacle, the Rover will turn to the back right. If the left sensor detects an obstacle, the Rover will turn to the back left. If both sensors detect an obstacle, the Rover will move backward. If no obstacles are detected, the Rover will continue moving straight ahead.
-
-Let's visualize this in a flowchart to make it even more clear. Flowcharts are a great way to logically outline a plan, especially when it comes to programming!
+Visualisons cela dans un organigramme pour rendre tout cela encore plus clair. 
+Les organigrammes sont un excellent moyen de structurer un plan de manière logique, 
+surtout en programmation !
 
 .. image:: img/ir_flowchart.png
 
-Let's whisper this plan to our Rover in its language(Arduino code):
+Chuchotons ce plan à notre rover dans son langage (le code Arduino) :
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/af6539d4-7b4b-4e74-a04a-9fa069391d4d/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-In this code, we are using ``if...else`` statement in the ``loop()`` function.
+Dans ce code, nous utilisons l'instruction ``if...else`` dans la fonction ``loop()``.
 
-    The ``if...else`` statement is used to execute a block of code among two alternatives. 
-    However, when we need to choose among more than two alternatives, we use the ``if...else if...else`` statement.
+    L'instruction ``if...else`` est utilisée pour exécuter un bloc de code parmi deux alternatives. 
+    Cependant, lorsque nous devons choisir parmi plus de deux alternatives, nous utilisons l'instruction ``if...else if...else``.
 
-    The syntax of the ``if...else if...else`` statement is:
+    La syntaxe de l'instruction ``if...else if...else`` est :
 
     .. code-block:: arduino
 
@@ -270,22 +266,21 @@ In this code, we are using ``if...else`` statement in the ``loop()`` function.
     * If condition3 is true, code block 3 is executed.
     * If condition3 is false, code block 4 is executed.
 
-Now that we've designed our automatic obstacle avoidance system, it's time for the exciting part - putting it to the test!
+Maintenant que nous avons conçu notre système d'évitement d'obstacles automatique, passons à la partie la plus excitante - le test en conditions réelles !
 
-* You can observe if the Rover moves as you expected.
-* Or, place it in different lighting conditions to see how its movements change.
+* Observez si le rover se déplace comme vous l'avez prévu.
+* Ou placez-le dans différentes conditions d'éclairage pour voir comment ses mouvements changent.
 
-By integrating science into our engineering project, we're becoming space detectives, solving the mysteries of our Rover's behavior. 
-This isn't just about correcting errors but optimizing performance, making our Rover the best it can be! Keep up the fantastic work, space detectives!
+En intégrant la science à notre projet d'ingénierie, nous devenons des détectives de l'espace, résolvant les mystères du comportement de notre rover. 
+Il ne s'agit pas seulement de corriger des erreurs, mais d'optimiser la performance, en rendant notre rover aussi performant que possible ! Continuez votre excellent travail, détectives de l'espace !
 
 
-**Step 6: Reflection and Summary**
+**Étape 6 : Réflexion et Résumé**
 
-In the testing phase, you might have noticed an interesting behavior of our Mars Rover: while it expertly avoids obstacles to its left and right, it might struggle to detect smaller obstacles straight ahead.
+Pendant la phase de test, vous avez peut-être remarqué un comportement intéressant de notre rover martien : alors qu'il évite habilement les obstacles à sa gauche et à sa droite, il peut avoir des difficultés à détecter les petits obstacles situés directement devant lui.
 
-How can we solve this challenge?
+Comment pourrions-nous résoudre ce problème ?
 
-Stay tuned for the next lesson, where we'll continue our exploration into the fascinating world of coding, sensors, and obstacle detection.
+Restez à l'écoute pour la prochaine leçon, où nous continuerons à explorer le monde fascinant du codage, des capteurs et de la détection d'obstacles.
 
-Remember, every challenge is an opportunity for learning and innovation. And as we continue our space exploration journey, there's so much more to discover and learn!
-
+N'oubliez pas, chaque défi est une opportunité d'apprentissage et d'innovation. Et alors que nous poursuivons notre voyage d'exploration spatiale, il y a encore tellement plus à découvrir et à apprendre !

@@ -1,302 +1,293 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez-vous dans l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des conseils et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Soyez parmi les premiers à découvrir les nouvelles annonces de produits et à bénéficier d'aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions festives et concours** : Participez à des concours et à des promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
+Leçon 3 : Entrer dans le Monde de l'Arduino et du Codage
+==============================================================
 
-Lesson 3:  Entering the World of Arduino and Coding
-=====================================================
+Lors de notre précédente leçon, nous avons construit avec succès le système de suspension Rocker-Bogie. 
+Cependant, pour le rendre fonctionnel, nous devons lui fournir de l'énergie, une carte de contrôle et le programmer pour dicter ses mouvements.
 
-In our previous lesson, we successfully built the Rocker-Bogie Suspension System. 
-However, to make it functional, we need to provide it with power, a control board, and programming to dictate its movements.
-
-So in this lesson, we're going to get acquainted with the control board and the programming platform we'll be using.
+Dans cette leçon, nous allons nous familiariser avec la carte de contrôle et la plateforme de programmation que nous allons utiliser.
 
 .. image:: img/upload_blink.gif
 
-Course Objectives
----------------------
+Objectifs du cours
+----------------------
 
-* Understand the basic concepts and functions of Arduino.
-* Learn about SunFounder R3 Board.
-* Install Arduino IDE and get familiar with its interface.
-* Learn about basic syntax rules for Arduino programming.
+* Comprendre les concepts de base et les fonctions d'Arduino.
+* Découvrir la carte SunFounder R3.
+* Installer l'IDE Arduino et se familiariser avec son interface.
+* Apprendre les règles de base de la syntaxe de la programmation Arduino.
 
 
 
-Course Materials
+Matériel du cours
 --------------------
 
-* SunFounder R3 Board
-* Arduino IDE
-* USB Cable
-* Computer
+* Carte SunFounder R3
+* IDE Arduino
+* Câble USB
+* Ordinateur
 
-
-Introduction to Arduino
+Introduction à Arduino
 ------------------------------------------
 
-You may have often heard the term "Arduino" in various contexts, but what exactly is it and why has it become so popular?
+Vous avez peut-être souvent entendu le terme "Arduino" dans différents contextes, mais qu'est-ce que c'est exactement et pourquoi est-il devenu si populaire ?
 
-Arduino is an open-source electronics platform that is easy to use for both hardware and software applications. It's designed to make digital devices and interactive objects that can sense and control the physical world around them.
+Arduino est une plateforme électronique open-source facile à utiliser, tant pour les applications matérielles que logicielles. Elle est conçue pour créer des dispositifs numériques et des objets interactifs qui peuvent percevoir et contrôler le monde physique qui les entoure.
 
-Sure, let's break it down:
+Démystifions tout cela :
 
-* **Open-source**: Think of open-source like a community garden. Everyone can use it, everyone can contribute to it, and everyone can benefit from it. With open-source, both the designs of the physical parts (the hardware) and the programming instructions (the software) are shared freely. This means anyone can use them, improve them, or create their own versions. It's all about sharing and creativity!
+* **Open-source** : Imaginez l'open-source comme un jardin communautaire. Tout le monde peut l'utiliser, y contribuer et en bénéficier. Avec l'open-source, les conceptions des pièces physiques (le matériel) et les instructions de programmation (le logiciel) sont partagées librement. Cela signifie que chacun peut les utiliser, les améliorer ou créer ses propres versions. Il s'agit de partage et de créativité !
 
     .. image:: img/arduino_oscomm.png
         :width: 400
         :align: center
 
-* **Microcontroller**: A microcontroller is like the brain of the Arduino. It's a tiny computer that can run simple software. Although it's not as powerful as the computer you're using now, it's perfect for simple tasks like understanding messages from sensors or lighting up an LED (a small light).
+* **Microcontrôleur** : Un microcontrôleur est comme le cerveau de l'Arduino. C'est un petit ordinateur capable d'exécuter des logiciels simples. Bien qu'il ne soit pas aussi puissant que l'ordinateur que vous utilisez actuellement, il est parfait pour des tâches simples comme comprendre des messages provenant de capteurs ou allumer une LED (une petite lumière).
 
     .. image:: img/arduino_micro.jpg
         :width: 500
         :align: center
 
-* **Development Board**: Imagine the development board as the body that supports the brain. It's the board where the microcontroller sits and it contains other parts that help the microcontroller interact with the world. These parts include things like oscillators (that help with timing), voltage regulators (that control power levels), and connectors for power and data (like the plugs and switches in your house).
+* **Carte de développement** : Imaginez la carte de développement comme le corps qui soutient le cerveau. C'est la carte sur laquelle repose le microcontrôleur, et elle contient d'autres composants qui aident le microcontrôleur à interagir avec le monde. Ces composants incluent des oscillateurs (qui aident à la synchronisation), des régulateurs de tension (qui contrôlent les niveaux d'alimentation) et des connecteurs pour l'alimentation et les données (comme les prises et interrupteurs de votre maison).
 
     .. image:: img/arduino_board.png
         :width: 600
         :align: center
 
-* **Arduino IDE**: This is like the teaching classroom for your Arduino. It's a program that runs on your computer where you can write the instructions that tell your Arduino what to do. These instructions are written in a programming language based on C++. Once you've written your instructions, you can send them to the Arduino board using a USB cable, just like handing in your homework!
+* **IDE Arduino** : C'est un peu comme la salle de classe de votre Arduino. C'est un programme qui s'exécute sur votre ordinateur, où vous pouvez écrire les instructions qui diront à votre Arduino quoi faire. Ces instructions sont écrites dans un langage de programmation basé sur C++. Une fois que vous avez rédigé vos instructions, vous pouvez les envoyer à la carte Arduino via un câble USB, comme si vous rendiez vos devoirs !
 
     .. image:: img/arduino_ide_icon.png
         :width: 200
         :align: center
 
-Now that you understand these basic ideas, you're well on your way to becoming an Arduino expert!
+Maintenant que vous comprenez ces idées de base, vous êtes bien parti pour devenir un expert Arduino !
 
-Then we'll dive into some hands-on activities to get you acquainted with Arduino programming and engineering principles. 
-Get ready for an exciting learning journey!
+Ensuite, nous nous plongerons dans des activités pratiques pour vous familiariser avec la programmation Arduino et les principes d'ingénierie.
+Préparez-vous pour un parcours d'apprentissage passionnant !
 
-
-
-Getting to Know Your SunFounder R3 Board
+Familiarisation avec la carte SunFounder R3
 ------------------------------------------------------------------
 
-Inside your kit, you'll find a blue board, seemingly a tiny city filled with small metallic towers and pathways. But don't let it intimidate you! This is the SunFounder R3 development board, a kind of Arduino board that can be used to program and control a vast array of electronic devices and projects. 
+Dans votre kit, vous trouverez une carte bleue, ressemblant à une petite ville remplie de petites tours métalliques et de chemins. Mais ne vous laissez pas intimider ! Voici la carte de développement SunFounder R3, un type de carte Arduino qui peut être utilisé pour programmer et contrôler une vaste gamme de dispositifs électroniques et de projets.
 
-Let's understand its key features in simple terms:
+Comprenons ses caractéristiques clés en termes simples :
 
 .. image:: img/sf_r3.jpg
     :width: 800
 
-* **14 Digital Pins**: Think of these pins like little messengers. They can be programmed to send (output) or receive (input) simple "yes" or "no" messages to other parts of your Mars Rover. These messages are actually "on" or "off" signals that the board uses to control things like lights or motors. 
+* **14 broches numériques** : Considérez ces broches comme de petits messagers. Elles peuvent être programmées pour envoyer (sortie) ou recevoir (entrée) des messages simples de type "oui" ou "non" vers d'autres parties de votre Rover martien. Ces messages sont en fait des signaux "marche" ou "arrêt" que la carte utilise pour contrôler des éléments tels que les lumières ou les moteurs.
 
-    * Six of these special pins can even send messages in a kind of secret code called PWM (Pulse Width Modulation). This code can be used to control how bright a light is, how fast a motor spins, or even where a moving part positions itself.
+    * Six de ces broches spéciales peuvent même envoyer des messages dans un code spécial appelé PWM (modulation de largeur d'impulsion). Ce code peut être utilisé pour contrôler la luminosité d'une lumière, la vitesse d'un moteur ou même la position d'une pièce mobile.
 
 
-* **6 Analog Pins**: These pins are like the board's six special senses. They can read signals from different types of sensors (like a temperature sensor) and then translate these signals into a language that the board can understand and use in its programming.
+* **6 broches analogiques** : Ces broches sont comme les six sens spéciaux de la carte. Elles peuvent lire des signaux provenant de différents types de capteurs (comme un capteur de température) et les traduire dans un langage que la carte peut comprendre et utiliser dans sa programmation.
 
-* **USB Connection**: This is like the board's umbilical cord. You can use it to connect your board to your computer. This connection allows your computer to "teach" the board what to do by sending it a program you write.
+* **Connexion USB** : C'est comme le cordon ombilical de la carte. Vous pouvez l'utiliser pour connecter votre carte à votre ordinateur. Cette connexion permet à votre ordinateur de "former" la carte en lui envoyant un programme que vous avez écrit.
 
-* **Power Jack**: This is the board's food supply. You can connect a power supply, like a battery or an AC-to-DC adapter, to this jack to "feed" your board the electricity it needs to work.
+* **Prise d'alimentation** : C'est la source d'énergie de la carte. Vous pouvez connecter une alimentation, comme une batterie ou un adaptateur AC-DC, à cette prise pour "nourrir" votre carte avec l'électricité dont elle a besoin pour fonctionner.
 
-* **ICSP Header**: This is like a special entrance for programming the board. It can be used if you have an external programmer (a special device for "teaching" the board).
+* **En-tête ICSP** : C'est comme une entrée spéciale pour programmer la carte. Elle peut être utilisée si vous disposez d'un programmateur externe (un dispositif spécial pour "former" la carte).
 
-* **Reset Button**: If you press it, it's like telling the board to forget what it was just doing and start its program over from the beginning.
+* **Bouton de réinitialisation** : Si vous appuyez dessus, c'est comme dire à la carte d'oublier ce qu'elle faisait et de recommencer son programme depuis le début.
 
-With these basics, you'll be all set to begin your programming adventures with the SunFounder R3 board!
+Avec ces notions de base, vous êtes prêt à commencer vos aventures en programmation avec la carte SunFounder R3 !
 
-Install Arduino IDE
+Installer l'IDE Arduino
 -----------------------------------------------
 
-Now that we understand what Arduino and the Arduino board are, it's time to start putting that knowledge to use. We're going to install the Arduino IDE, which is the software we'll use to program our Arduino board.
+Maintenant que nous comprenons ce qu'est Arduino et à quoi sert la carte Arduino, il est temps de mettre ces connaissances en pratique. Nous allons installer l'IDE Arduino, qui est le logiciel que nous utiliserons pour programmer notre carte Arduino.
 
-The latest version of the Arduino IDE is version 2.0. It's packed with features and is super user-friendly. However, you should know that it does have some system requirements:
+La dernière version de l'IDE Arduino est la version 2.0. Elle est riche en fonctionnalités et très conviviale. Cependant, elle a quelques exigences système :
 
-    * Windows - Win 10 and newer, 64 bits
+    * Windows - Win 10 et versions plus récentes, 64 bits
     * Linux - 64 bits
-    * Mac OS X - Version 10.14: "Mojave" or newer, 64 bits
+    * Mac OS X - Version 10.14 : "Mojave" ou plus récente, 64 bits
 
-To get started, follow these steps:
+Pour commencer, suivez ces étapes :
 
-#. Vist |link_download_arduino| and download the IDE for your OS version.
+#. Rendez-vous sur |link_download_arduino| et téléchargez l'IDE pour votre version de système d'exploitation.
 
     .. image:: img/sp_001.png
 
-**For Windows users:**
+**Pour les utilisateurs de Windows :**
 
-    #. Once you've downloaded the file (it will be called something like ``arduino-ide_xxxx.exe``), double-click it to start the installation process.
+    #. Une fois que vous avez téléchargé le fichier (il sera nommé quelque chose comme ``arduino-ide_xxxx.exe``), double-cliquez dessus pour démarrer le processus d'installation.
 
-    #. You'll be shown the **License Agreement**. Take a moment to read through this, and if you agree to the terms, click "I Agree".
+    #. Vous verrez l'**Accord de licence**. Prenez un moment pour le lire et, si vous êtes d'accord avec les termes, cliquez sur "J'accepte".
 
         .. image:: img/sp_002.png
 
-    #. Next, you'll be asked to choose installation options. Leave these as they are and click "Next".
+    #. Ensuite, vous serez invité à choisir les options d'installation. Laissez-les telles qu'elles sont et cliquez sur "Suivant".
 
         .. image:: img/sp_003.png
 
-    #. Choose where you want to install the software. It's generally best to install it on a different drive than the one your system uses.
+    #. Choisissez où vous voulez installer le logiciel. Il est généralement préférable de l'installer sur un autre disque que celui utilisé par votre système.
 
         .. image:: img/sp_004.png
 
-    #. Click "Install" to start the installation. Once it's done, click "Finish". 
+    #. Cliquez sur "Installer" pour démarrer l'installation. Une fois terminée, cliquez sur "Terminer".
 
         .. image:: img/sp_005.png
 
-**For macOS users:**
+**Pour les utilisateurs de macOS :**
 
-    Double-click the downloaded file (which will be called something like ``arduino_ide_xxxx.dmg``). Follow the on-screen instructions to drag the **Arduino IDE** app into the **Applications** folder. After a few seconds, the Arduino IDE will be successfully installed.
+    Double-cliquez sur le fichier téléchargé (qui s'appellera quelque chose comme ``arduino_ide_xxxx.dmg``). Suivez les instructions à l'écran pour glisser l'application **Arduino IDE** dans le dossier **Applications**. Après quelques secondes, l'IDE Arduino sera installé avec succès.
 
     .. image:: img/macos_install_ide.png
         :width: 800
 
-**For Linux users:**
+**Pour les utilisateurs de Linux :**
 
-    You can find a detailed tutorial on installing the Arduino IDE 2.0 on a Linux system here: |link_arduino_linux|.
-    
-Discovering the Arduino Playground (IDE)
+    Vous pouvez trouver un tutoriel détaillé sur l'installation de l'IDE Arduino 2.0 sur un système Linux ici : |link_arduino_linux|.
+
+Découverte du terrain de jeu Arduino (IDE)
 ----------------------------------------------------------------
 
-Let's imagine together that the Arduino IDE is a magical playground filled with tools and gadgets waiting for us to explore and play with. Up next, I will guide you to understand every corner of this playground.
-
+Imaginons ensemble que l'IDE Arduino est un terrain de jeu magique rempli d'outils et de gadgets prêts à être explorés et utilisés. Je vais vous guider pour comprendre chaque recoin de ce terrain de jeu.
 
 .. image:: img/ide-2-overview.png
     :width: 800
 
-Here's what you'll find in your playground:
+Voici ce que vous trouverez dans votre terrain de jeu :
 
-* **Verify / Upload** - Imagine this as your magic elevator. It takes the code you've written and whisks it up into your Arduino board.
-* **Select Board & Port** - This is your treasure map. It automatically shows the Arduino boards you've plugged into your computer, and tells you their port number.
-* **Sketchbook** - This is your personal library. It's where all your sketches (programs) are stored on your computer. Plus, it can connect to the Arduino Cloud, so you can fetch your sketches from the online world too.
-* **Boards Manager** - Think of this as your toolkit. It's where you can find and install different packages for your Arduino.
-* **Library Manager** - This is your endless treasure chest. Thousands of libraries made by Arduino and its community are waiting for you here. Need a tool or material for your code? Dive in and find it!
-* **Debugger** - Imagine you had a superpower that let you test and debug your code in real time, finding and fixing problems as they happen. That's what this is!
-* **Search** - Think of this as your magnifying glass. It helps you search for keywords in your code.
-* **Open Serial Monitor** - This is like your communicator device. It opens a new tab that lets your computer and Arduino board send messages back and forth.
+* **Vérifier / Télécharger** - Imaginez ceci comme votre ascenseur magique. Il prend le code que vous avez écrit et l'envoie directement vers votre carte Arduino.
+* **Sélectionner la carte et le port** - C'est votre carte au trésor. Elle montre automatiquement les cartes Arduino que vous avez branchées à votre ordinateur et indique leur numéro de port.
+* **Sketchbook** - C'est votre bibliothèque personnelle. C'est là que tous vos sketches (programmes) sont stockés sur votre ordinateur. De plus, il peut se connecter au cloud Arduino, vous permettant de récupérer vos sketches depuis le monde en ligne.
+* **Gestionnaire de cartes** - Pensez à cela comme votre boîte à outils. C'est ici que vous pouvez trouver et installer différents packages pour votre Arduino.
+* **Gestionnaire de bibliothèques** - C'est votre coffre au trésor infini. Des milliers de bibliothèques créées par Arduino et sa communauté vous y attendent. Besoin d'un outil ou d'un matériel pour votre code ? Plongez-y et trouvez-le !
+* **Débogueur** - Imaginez avoir un super pouvoir qui vous permet de tester et de déboguer votre code en temps réel, en trouvant et en corrigeant les problèmes au fur et à mesure. C'est ce que fait cet outil !
+* **Recherche** - C'est votre loupe. Elle vous aide à rechercher des mots-clés dans votre code.
+* **Ouvrir le moniteur série** - C'est comme votre appareil de communication. Il ouvre un nouvel onglet qui permet à votre ordinateur et à la carte Arduino d'envoyer des messages en retour.
 
-Now that we've gotten a glimpse of the playground, it's time to dive in and start creating!
+Maintenant que nous avons eu un aperçu du terrain de jeu, il est temps de plonger et de commencer à créer !
 
-
-Upload Your First Sketch
+Téléchargez votre premier sketch
 -----------------------------------------------
 
-Alright, it's time to have some fun! We're going to make an LED blink - it's like saying "Hello, World!" in the world of Arduino.
+C'est parti pour s'amuser ! Nous allons faire clignoter une LED - c'est un peu comme dire "Hello, World!" dans le monde Arduino.
 
-Most Arduino boards have a built-in LED on pin 13, which makes this a good first experiment.
+La plupart des cartes Arduino ont une LED intégrée sur la broche 13, ce qui en fait une bonne première expérience.
 
 .. image:: img/1_led.jpg
     :width: 400
     :align: center
 
-Let's break it down:
+Décomposons cela :
 
-#. **Plug it in**: Connect your SunFounder R3 Board to your computer using a USB cable. This is how we're going to give our board power and send our program (also called a "sketch") to it. You might feel like you're just plugging in a computer gadget, but believe me, you're connecting to a world of possibilities!
+#. **Branchez la carte** : Connectez votre carte SunFounder R3 à votre ordinateur à l'aide d'un câble USB. C'est ainsi que nous allons alimenter notre carte et lui envoyer notre programme (aussi appelé "sketch"). Vous avez peut-être l'impression de simplement brancher un gadget informatique, mais croyez-moi, vous vous connectez à un monde de possibilités !
 
     .. image:: img/connect_board_pc.gif
 
-#. **Find the example sketch**: On the Arduino IDE, go to **File** -> **Examples** -> **Basic** -> **Blink**. What you see that pops up is a ready-to-use program that we're going to modify. It's like getting a ready-made cake that we're about to decorate!
+#. **Trouvez le sketch d'exemple** : Dans l'IDE Arduino, allez à **Fichier** -> **Exemples** -> **Basic** -> **Blink**. Ce qui s'affiche est un programme prêt à l'emploi que nous allons modifier. C'est un peu comme un gâteau déjà préparé que nous allons décorer !
 
     .. image:: img/open_blink.png
 
-#. **Understand the sketch**: Look at the code in this new window. It tells Arduino to turn on the built-in LED (which is on pin 13) for one second, then turn it off for one second, and then repeat. It's like sending Morse code, but with light!
+#. **Comprenez le sketch** : Regardez le code dans cette nouvelle fenêtre. Il dit à Arduino d'allumer la LED intégrée (qui est sur la broche 13) pendant une seconde, puis de l'éteindre pendant une seconde, et de répéter ce processus. C'est comme envoyer du code Morse, mais avec de la lumière !
 
     .. image:: img/led_blink.png
 
-#. **Upload the sketch**: Once you've selected the correct board and port, just click the upload button. It's as easy as sending a letter; you're delivering your instructions to the Arduino board! Most of the time, the system will automatically detect the board and port for you.
+#. **Téléchargez le sketch** : Une fois que vous avez sélectionné la bonne carte et le bon port, il vous suffit de cliquer sur le bouton de téléchargement. C'est aussi simple que d'envoyer une lettre ; vous transmettez vos instructions à la carte Arduino ! La plupart du temps, le système détecte automatiquement la carte et le port pour vous.
 
     .. image:: img/upload_blink.gif
 
-#. **Watch it work**: If all goes well, you'll see the LED on your Arduino board start to blink on and off. It's like your Arduino is winking at you!
+#. **Regardez-le fonctionner** : Si tout se passe bien, vous verrez la LED sur votre carte Arduino commencer à clignoter. C'est comme si votre Arduino vous faisait un clin d'œil !
 
     .. image:: img/blink_led.gif
 
-You've done a great job! You've just run your first Arduino program, making you a bona fide programmer! So what's next? We're just scratching the surface of what Arduino can do. Ready for the next challenge?
+Vous avez fait un excellent travail ! Vous venez de lancer votre premier programme Arduino, faisant de vous un véritable programmeur ! Alors, quelle est la suite ? Nous ne faisons que gratter la surface de ce qu'Arduino peut faire. Prêt pour le prochain défi ?
 
-
-Some Fun Arduino Programming Facts
+Quelques faits amusants sur la programmation Arduino
 --------------------------------------------------------
 
-Time to uncover some cool secrets about Arduino programming!
+Découvrons quelques secrets intéressants sur la programmation Arduino !
 
-* Code Magic: ``setup()`` and ``loop()``
+* Magie du code : ``setup()`` et ``loop()``
 
-    An Arduino sketch, or a piece of code, is like a two-act play:
+    Un sketch Arduino, ou un morceau de code, est comme une pièce de théâtre en deux actes :
 
-    * ``setup()``: This is Act 1, the opening scene. It only happens once, when your Arduino board first wakes up. It's used to set the stage by preparing things like pin modes and libraries.
-    * ``loop()``: After Act 1, we move onto Act 2 which repeats on a loop until the final curtain (which only happens if we turn off the power or hit the reset button!). This part of the code is like the main part of our play, where the action really happens.
+    * ``setup()`` : C'est l'acte 1, la scène d'ouverture. Il ne se produit qu'une seule fois, lorsque votre carte Arduino se réveille pour la première fois. Il est utilisé pour préparer la scène en configurant des éléments comme les modes de broches et les bibliothèques.
+    * ``loop()`` : Après l'acte 1, nous passons à l'acte 2, qui se répète en boucle jusqu'au rideau final (qui ne tombe que si nous coupons l'alimentation ou appuyons sur le bouton de réinitialisation !). Cette partie du code est comme la scène principale où l'action se déroule vraiment.
 
-    But remember, even if there's no magic (code) in the ``setup()`` or ``loop()``, we still need to keep them. They're like the stage - even an empty stage is still a stage.
+    Mais rappelez-vous, même s'il n'y a pas de magie (code) dans le ``setup()`` ou le ``loop()``, nous devons toujours les garder. Ils sont comme la scène - même une scène vide reste une scène.
 
     .. code-block:: arduino
     
         void setup() {
-            // initialize digital pin LED_BUILTIN as an output.
+            // initialiser la broche numérique LED_BUILTIN comme une sortie.
             pinMode(LED_BUILTIN, OUTPUT);
 
-            digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
-            delay(1000);                      // wait for a second
-            digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
-            delay(1000);                      // wait for a second
+            digitalWrite(LED_BUILTIN, HIGH);  // allumer la LED (HIGH est le niveau de tension)
+            delay(1000);                      // attendre une seconde
+            digitalWrite(LED_BUILTIN, LOW);   // éteindre la LED en passant la tension à LOW
+            delay(1000);                      // attendre une seconde
         }
 
-        // the loop function runs over and over again forever
+        // la fonction loop s'exécute en boucle à l'infini
         void loop() {
 
         }
 
-* Punctuation Marks in Coding
+* Signes de ponctuation en programmation
 
-    Just like in a storybook, Arduino uses special punctuation marks to make sense of the code:
+    Tout comme dans un livre, Arduino utilise des signes de ponctuation spéciaux pour donner du sens au code :
 
-    * ``Semicolons (;)``: These are like the full stops in a story. They tell the Arduino "Okay, I'm done with this action. What's next?"
-    * ``Curly Braces {}``: These are like the beginning and the end of a chapter. They wrap up pieces of code together, marking where a section starts and ends.
-    
-    If you happen to forget some of these punctuation marks, don't worry! The Arduino is like a friendly teacher who will check your work, point out where the mistakes are, and show you how to fix them. It's all part of the learning adventure!
+    * ``Points-virgules (;)`` : Ce sont comme les points dans une histoire. Ils disent à l'Arduino "D'accord, j'ai fini cette action. Quelle est la suite ?"
+    * ``Accolades {}`` : Ce sont comme le début et la fin d'un chapitre. Elles encadrent les morceaux de code ensemble, marquant où une section commence et se termine.
+
+    Si vous oubliez certains de ces signes de ponctuation, pas de panique ! L'Arduino est comme un professeur bienveillant qui vérifie votre travail, pointe les erreurs et vous montre comment les corriger. Tout cela fait partie de l'aventure d'apprentissage !
 
     .. image:: img/blink_error.gif
 
-* About the Functions
+* À propos des fonctions
 
-    Imagine these functions as magical spells. Each spell has a specific effect in our Arduino adventure:
+    Imaginez ces fonctions comme des sorts magiques. Chaque sort a un effet spécifique dans notre aventure Arduino :
 
-    * ``pinMode()``: This spell decides whether a pin is an INPUT or an OUTPUT. It's like deciding if a character in our story speaks (OUTPUT) or listens (INPUT).
-    * ``digitalWrite()``: This spell can turn a pin HIGH (on) or LOW (off), like switching a magic light on and off.
-    * ``delay()``: This spell makes the Arduino pause for a certain amount of time, like taking a short nap in the middle of our story.
-    
-    Just like a spell book, you can find all these spells and many more in the |link_arduino_web|. The more spells you know, the more exciting your Arduino adventures can be!
+    * ``pinMode()`` : Ce sort décide si une broche est en ENTRÉE ou en SORTIE. C'est comme décider si un personnage dans notre histoire parle (SORTIE) ou écoute (ENTRÉE).
+    * ``digitalWrite()`` : Ce sort peut mettre une broche en HIGH (activée) ou en LOW (désactivée), comme allumer ou éteindre une lumière magique.
+    * ``delay()`` : Ce sort fait faire une pause à l'Arduino pendant un certain temps, comme prendre une petite sieste au milieu de notre histoire.
 
-* Comments: Our Secret Messages
+    Tout comme dans un grimoire, vous pouvez trouver tous ces sorts et bien d'autres dans le |link_arduino_web|. Plus vous connaissez de sorts, plus vos aventures Arduino seront passionnantes !
 
-    We also have a secret language in coding, called ``comments``. These are messages that we can write in our code using ``//`` or ``/* */``. The magic part? The Arduino completely ignores them! It's a great place to leave notes for yourself or others to explain what the tricky parts of the code are doing.
+* Commentaires : Nos messages secrets
 
-* Code Readability: Making Code Friendly
+    Nous avons également un langage secret en programmation, appelé ``commentaires``. Ce sont des messages que nous pouvons écrire dans notre code en utilisant ``//`` ou ``/* */``. La partie magique ? L'Arduino les ignore complètement ! C'est un excellent endroit pour laisser des notes pour vous-même ou pour expliquer ce que font les parties délicates du code.
 
-    While you can write your code in any manner you want (for example, placing semicolons on a separate line won't cause any errors), it's important to keep in mind the readability of the code.
+* Lisibilité du code : Rendre le code convivial
+
+    Bien que vous puissiez écrire votre code comme bon vous semble (par exemple, placer des points-virgules sur une ligne séparée ne causera pas d'erreur), il est important de garder à l'esprit la lisibilité du code.
 
     .. image:: img/blink_noerror.gif
 
-    Just like writing a good story, the way we write code can make it either fun and easy or boring and difficult to read. Here are some ways to make your code more friendly:
+    Tout comme écrire une bonne histoire, la façon dont nous écrivons le code peut le rendre amusant et facile à lire, ou ennuyeux et difficile. Voici quelques conseils pour rendre votre code plus convivial :
 
-    * Use proper indentation to arrange your sentences into neat paragraphs. It helps the reader understand where one section ends and another begins.
-    * Use variable names that make sense. It's like calling a character by a fitting name in a story.
-    * Keep your functions small and simple, like short and sweet chapters in a book.
-    * Leave comments for the tricky parts. It's like leaving a footnote to explain a difficult word.
+    * Utilisez une indentation correcte pour organiser vos phrases en paragraphes soignés. Cela aide le lecteur à comprendre où une section se termine et où une autre commence.
+    * Utilisez des noms de variables explicites. C'est comme donner un nom approprié à un personnage dans une histoire.
+    * Gardez vos fonctions petites et simples, comme des chapitres courts et agréables dans un livre.
+    * Laissez des commentaires pour les parties délicates. C'est comme laisser une note de bas de page pour expliquer un mot difficile.
 
-Remember, we're not only coding for machines but also for humans, so let's make sure our code tells a clear and understandable story!
+Rappelez-vous, nous ne codons pas seulement pour les machines, mais aussi pour les humains, alors assurons-nous que notre code raconte une histoire claire et compréhensible !
 
+**Réfléchir et s'améliorer**
 
-**Reflect and Improve**
+Prendre un moment pour réfléchir à notre parcours peut nous donner des perspectives que nous pourrions manquer dans l'effervescence de l'exploration. Posez-vous ces questions :
 
+* Quelle a été la partie la plus intéressante de cette aventure Arduino ?
+* Avez-vous rencontré des défis en cours de route ? Comment les avez-vous surmontés ?
+* Pourriez-vous expliquer à un ami ce qu'est Arduino, ce que fait l'IDE Arduino ou comment exécuter du code Arduino ?
+* Comment décririez-vous votre première expérience de programmation Arduino ?
+* Qu'avez-vous envie d'apprendre de plus sur Arduino ?
 
-Taking a moment to reflect on our journey can provide us with insights that we might miss in the flurry of exploration. Ask yourself:
-
-* What was the most interesting part of this Arduino adventure?
-* Were there any challenges along the way? How did you overcome them?
-* Could you explain to a friend what Arduino is, what the Arduino IDE does, or how to run Arduino code?
-* How would you describe your first Arduino programming experience?
-* What more do you want to learn about Arduino?
-
-By thinking about these questions, you are deepening your understanding and preparing yourself for future explorations. Always remember, there's no "wrong" answer in reflection – it's your personal journey after all!
+En réfléchissant à ces questions, vous approfondissez votre compréhension et vous vous préparez pour de futures explorations. N'oubliez jamais qu'il n'y a pas de "mauvaises" réponses dans la réflexion – c'est votre voyage personnel après tout !

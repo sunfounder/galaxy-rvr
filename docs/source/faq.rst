@@ -1,53 +1,53 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez-vous dans l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et relevez les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprenez & Partagez** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux nouvelles annonces de produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des promotions et à des concours durant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 FAQ
 ==============
 
 .. _ap_to_sta:
 
-Q1: Change AP mode to STA mode
+Q1 : Passer du mode AP au mode STA
 -------------------------------------------------
 
-* You will need to download the relevant code.
+* Vous devez télécharger le code correspondant.
 
     * :download:`GalaxyRVR Codes <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
 
-* Install IDE, then, install libraries ``SoftPWM`` and ``SunFounder AI Camera``. :ref:`install_lib` .
+* Installez l'IDE, puis les bibliothèques ``SoftPWM`` et ``SunFounder AI Camera``. :ref:`install_lib` .
 
-* Then, open the ``galaxy-rvr.ino`` file located in the ``galaxy-rvr-main\galaxy-rvr`` directory.
+* Ensuite, ouvrez le fichier ``galaxy-rvr.ino`` situé dans le répertoire ``galaxy-rvr-main\galaxy-rvr``.
 
-* Comment out lines 69-71, uncomment lines 73-75, and change ``SSID`` and ``PASSWORD`` to your WLAN.
+* Commentez les lignes 69-71, décommentez les lignes 73-75 et changez les ``SSID`` et ``PASSWORD`` avec ceux de votre réseau WLAN.
 
 .. image:: img/ap_sta.png
     :align: center
 
-* Connect the Arduino and computer with a USB cable, and then turn the **upload** switch of the car to the upload end.
+* Connectez l'Arduino à votre ordinateur via un câble USB, puis basculez l'interrupteur **upload** de la voiture en mode téléchargement.
 
 .. image:: img/camera_upload.png
     :width: 400
     :align: center
 
-* Upload your code.
+* Téléchargez votre code.
 
 .. _install_lib:
 
-Q2: Compilation error: SoftPWM.h: No such file or directory？
----------------------------------------------------------------------
-If you get a “Compilation error: SoftPWM.h: No such file or directory” prompt, it means you don’t have the SoftPWM library installed.
+Q2 : Erreur de compilation : SoftPWM.h : Aucun fichier ou répertoire de ce type ?
+----------------------------------------------------------------------------------------
+Si vous obtenez une erreur de compilation : "SoftPWM.h: Aucun fichier ou répertoire de ce type", cela signifie que vous n'avez pas installé la bibliothèque SoftPWM.
 
-Please install the two required libraries ``SoftPWM`` and ``SunFounder AI Camera`` as shown.
+Veuillez installer les deux bibliothèques requises ``SoftPWM`` et ``SunFounder AI Camera`` comme indiqué.
 
     .. raw:: html
 
@@ -57,12 +57,12 @@ Please install the two required libraries ``SoftPWM`` and ``SunFounder AI Camera
         </video>
 
 
-Q3: avrdude: stk500_getsync() attempt 10 of 10: not in sync: resp=0x6e?
------------------------------------------------------------------------------
-If the following message keeps appearing after clicking the **Upload** button when the board and port have been selected correctly.
+Q3 : avrdude : stk500_getsync() tentative 10 sur 10 : pas en synchronisation : resp=0x6e ?
+------------------------------------------------------------------------------------------------
+Si ce message apparaît après avoir cliqué sur le bouton **Upload** alors que la carte et le port ont été sélectionnés correctement.
 
 .. code-block::
-    
+
     avrdude: stk500_recv(): programmer is not responding
     avrdude: stk500_getsync() attempt 1 of 10: not in sync: resp=0x00
     avrdude: stk500_recv(): programmer is not responding
@@ -71,13 +71,13 @@ If the following message keeps appearing after clicking the **Upload** button wh
     avrdude: stk500_getsync() attempt 3 of 10: not in sync: resp=0x00
     At this point, you need to make sure that the ESP32 CAM is unplugged.
 
-The ESP32-CAM and the Arduino board share the same RX (receive) and TX (transmit) pins. So, before you’re uploading code, you’ll need to first disconnect the ESP32-CAM to avoid any conflicts or potential issues.
+L'ESP32-CAM et la carte Arduino partagent les mêmes broches RX (réception) et TX (transmission). Donc, avant de télécharger le code, vous devez d'abord déconnecter l'ESP32-CAM pour éviter tout conflit ou problème potentiel.
 
     .. image:: img/camera_upload.png
         :width: 500
         :align: center
 
-After the code is successfully uploaded, if you need to use the ESP32 CAM, then you need to move the switch to the left to start the ESP32 CAM.
+Une fois le code téléchargé avec succès, si vous devez utiliser l'ESP32 CAM, déplacez l'interrupteur vers la gauche pour démarrer l'ESP32 CAM.
 
     .. image:: img/camera_run.png
         :width: 500
@@ -85,21 +85,21 @@ After the code is successfully uploaded, if you need to use the ESP32 CAM, then 
 
 .. _stt_android:
 
-Q4: How can I use the STT mode on my Android device?
+Q4 : Comment utiliser le mode STT sur mon appareil Android ?
 ------------------------------------------------------------------------
 
-The STT mode requires the Android mobile device to be connected to the Internet and to install the Google service component.
+Le mode STT nécessite que l'appareil mobile Android soit connecté à Internet et que le composant de service Google soit installé.
 
-Now follow the steps below.
+Suivez les étapes ci-dessous.
 
-#. Modify the AP mode of ``galaxy-rvr.ino`` file to STA mode.
+#. Modifiez le fichier ``galaxy-rvr.ino`` pour passer du mode AP au mode STA.
 
-    * Open the the ``galaxy-rvr.ino`` file located in the ``galaxy-rvr-main\galaxy-rvr`` directory. 
-    * Then comment out the AP mode related code. Uncomment the STA mode related code and fill in  the ``SSID`` and ``PASSWORD`` of your home Wi-Fi.
+    * Ouvrez le fichier ``galaxy-rvr.ino`` situé dans le répertoire ``galaxy-rvr-main\galaxy-rvr``.
+    * Commentez le code lié au mode AP. Décommentez le code du mode STA et renseignez les champs ``SSID`` et ``PASSWORD`` de votre réseau Wi-Fi domestique.
 
         .. code-block:: arduino
 
-            /** Configure Wifi mode, SSID, password*/
+            /** Configurer le mode Wifi, SSID, mot de passe*/
             // #define WIFI_MODE WIFI_MODE_AP
             // #define SSID "GalaxyRVR"
             // #define PASSWORD "12345678"
@@ -108,145 +108,125 @@ Now follow the steps below.
             #define SSID "xxxxxxxxxx"
             #define PASSWORD "xxxxxxxxxx"
 
-    * Save this code, select the correct board (Arduino Uno) and port, then click the **Upload** button to upload it to the R3 board.
+    * Enregistrez ce code, sélectionnez la bonne carte (Arduino Uno) et le bon port, puis cliquez sur le bouton **Upload** pour le téléverser sur la carte R3.
 
-#. Search ``google`` in Google Play, find the app shown below and install it.
+#. Recherchez ``google`` dans le Google Play Store, trouvez l'application ci-dessous et installez-la.
 
     .. image:: img/google_voice.png
         :width: 500
         :align: center
 
-#. Connect your mobile device to the same Wi-Fi as you wrote in the code.
+#. Connectez votre appareil mobile au même réseau Wi-Fi que celui configuré dans le code.
 
     .. image:: img/sta_wifi.png
         :width: 500
         :align: center
 
-#. Open the controller previously created in SunFounder Controller and connect it to ``GalaxyRVR`` through the |app_connect| button.
+#. Ouvrez le contrôleur précédemment créé dans SunFounder Controller et connectez-le à ``GalaxyRVR`` via le bouton |app_connect|.
 
     .. image:: img/app/camera_connect.png
         :width: 400
         :align: center
 
 
-#. Tap and hold the **STT(J)** widget after clicking the |app_run| button. A prompt will appear indicating that it is listening. Say the following command to move the car.
+#. Maintenez enfoncé le widget **STT(J)** après avoir cliqué sur le bouton |app_run|. Un message s'affichera indiquant qu'il écoute. Prononcez la commande suivante pour déplacer la voiture.
 
     .. image:: img/app/play_speech.png
 
-    * ``stop``: All movements of the rover can be stopped.
-    * ``forward``: Let the rover move forward.
-    * ``backward``: Let the rover move backward.
-    * ``left``: Let the rover turn left.
-    * ``right``: Let the rover turn right.
+    * ``stop`` : Arrêter tous les mouvements du rover.
+    * ``forward`` : Faire avancer le rover.
+    * ``backward`` : Faire reculer le rover.
+    * ``left`` : Faire tourner le rover à gauche.
+    * ``right`` : Faire tourner le rover à droite.
 
-Q5: About the ESP32 CAM Firmware
+Q5 : À propos du firmware ESP32 CAM
 ---------------------------------------------------
 
-Here is the firmeware link of ESP32 CAM: |link_ai_camera_firmware|
+Voici le lien vers le firmware de l'ESP32 CAM : |link_ai_camera_firmware|
+
+Q6 : Comment flasher un nouveau firmware sur une ESP32 CAM ?
+-----------------------------------------------------------------
+Le module caméra est préflashé en usine. Cependant, si vous rencontrez un problème de corruption de données, vous pouvez le reflasher avec un nouveau firmware en utilisant l'IDE Arduino. Voici comment procéder :
+
+**1. Préparer le programmeur**
+
+#. Tout d'abord, préparez un programmeur.
 
 
-
-.. ↓ this firmware only for sunfounder controller
-
-
-.. Q6: How to Flash New Firmware to an ESP32 CAM?
-.. ----------------------------------------------------
-.. The camera module comes pre-flashed from the factory. However, if you encounter a data corruption issue, you can re-flash it with new firmware using the Arduino IDE. Here's how:
+#. Insérez l'ESP32 CAM dans le programmeur puis branchez-le à votre ordinateur.
 
 .. **1. Prepare the Programmer**
 
-.. #. First, get a programmer ready.
+**2. Installer la carte ESP32**
 
-..     .. image:: img/esp32_cam_programmer.png
-..         :width: 300
-..         :align: center
+Pour programmer le microcontrôleur ESP32, vous devez installer le package de carte ESP32 dans l'IDE Arduino. Suivez ces étapes :
 
-.. #. Insert the ESP32 CAM into the programmer and then plug the programmer into your computer.
+#. Allez dans **Fichier** et sélectionnez **Préférences** dans le menu déroulant.
 
 ..     .. image:: img/esp32_cam_usb.jpg
 ..         :width: 300
 ..         :align: center
 
-.. **2. Install the ESP32 Board**
+#. Dans la fenêtre **Préférences**, trouvez le champ **URLs supplémentaires du gestionnaire de cartes**. Cliquez dessus pour activer la zone de texte.
 
 .. To program the ESP32 microcontroller, you must install the ESP32 board package in the Arduino IDE. Follow these steps:
 
-.. #. Go to **File** and select **Preferences** from the drop-down menu.
+#. Ajoutez cette URL dans le champ **URLs supplémentaires du gestionnaire de cartes** : https://espressif.github.io/arduino-esp32/package_esp32_index.json. Cette URL pointe vers le fichier d'index du package pour les cartes ESP32. Cliquez sur **OK** pour enregistrer les modifications.
 
 ..     .. image:: img/install_esp321.png
 ..         :width: 500
 ..         :align: center
 
-.. #. In the **Preferences** window, find the **Additional Board Manager URLs** field. Click on it to enable the text box.
+#.  Dans la fenêtre **Gestionnaire de cartes**, recherchez **ESP32**. Cliquez sur le bouton **Installer** pour commencer l'installation. Cela télécharge et installe le package de cartes ESP32.
 
 ..     .. image:: img/install_esp322.png
 ..         :width: 500
 ..         :align: center
 
-.. #. Add this URL to the **Additional Board Manager URLs** field: https://espressif.github.io/arduino-esp32/package_esp32_index.json. This URL links to the package index file for ESP32 boards. Click **OK** to save the changes.
+**3. Installer les bibliothèques**
 
-..     .. image:: img/install_esp323.png
-..         :width: 500
-..         :align: center
+#. Installez la bibliothèque ``WebSockets`` à partir du **Gestionnaire de bibliothèques**.
 
 .. #.  In the **Boards Manager** window, search for **ESP32**. Click the **Install** button to begin installation. This downloads and installs the ESP32 board package.
 
-..     .. image:: img/install_esp324.png
-..         :align: center
+#. Suivez les mêmes étapes pour installer la bibliothèque ``ArduinoJson``.
 
 .. **3. Install the Libraries**
 
-.. #. Install the ``WebSockets`` library from the **LIBRARY MANAGER**.
+**3. Télécharger et téléverser le firmware**
 
-..     .. image:: img/esp32_cam_websockets.png
-..         :width: 500
-..         :align: center
+#. Téléchargez le fichier du firmware.
 
 .. #. Follow the same steps to install the ``ArduinoJson`` library.
 
-..     .. image:: img/esp32_cam_arduinojson.png
-..         :width: 500
-..         :align: center
+#. Extrayez le fichier du firmware téléchargé et renommez le dossier extrait de ``ai-camera-firmware-main`` à ``ai-camera-firmware``.
 
 .. **3. Download and Upload Firmware**
 
-.. #. Download the firmware file.
+#. Ouvrez ``ai-camera-firmware.ino`` avec l'IDE Arduino, ce qui ouvrira également les fichiers de code associés.
 
 ..     * :download:`ai-camera-firmware <https://github.com/sunfounder/ai-camera-firmware/archive/refs/heads/main.zip>`
 
-.. #. Extract the downloaded firmware file and rename the extracted folder from ``ai-camera-firmware-main`` to ``ai-camera-firmware``.
+#. Sélectionnez **Carte** -> **esp32** -> **ESP32 Dev Module**.
 
 ..     .. image:: img/esp32_cam_change_name.png
 ..         :align: center
 
-.. #. Open ``ai-camera-firmware.ino`` with the Arduino IDE, which also opens the associated code files.
+#. Choisissez le bon port.
 
 ..     .. image:: img/esp32_cam_ino.png
 ..         :align: center
 
-.. #. Select **Board** -> **esp32** -> **ESP32 Dev Module**.
+#. Assurez-vous d'activer **PSRAM** et sélectionnez **Huge APP** dans le **Schéma de partitionnement**.
 
 ..     .. image:: img/esp32_cam_board.png
 ..         :width: 500
 ..         :align: center
 
-.. #. Choose the correct port.
+#. Enfin, téléversez le firmware sur l'ESP32 CAM.
 
 ..     .. image:: img/esp32_cam_port.png
 ..         :width: 400
 ..         :align: center
 
-.. #. Ensure to enable **PSRAM** and select **Huge APP** in the **Partition Scheme**.
-
-..     .. image:: img/esp32_cam_psram.png
-..         :width: 400
-..         :align: center
-
-.. #. Finally, upload the firmware to the ESP32 CAM.
-
-..     .. image:: img/esp32_cam_upload.png
-..         :width: 500
-..         :align: center
-
-.. #. After successful firmware upload, you can find more information at this link: https://github.com/sunfounder/ai-camera-firmware.
-
+#. Après un téléversement réussi du firmware, vous pouvez trouver plus d'informations sur ce lien : https://github.com/sunfounder/ai-camera-firmware.

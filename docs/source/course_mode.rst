@@ -1,25 +1,25 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez-vous plus profondément dans le monde de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprenez & Partagez** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux nouvelles annonces de produits et aux avant-goûts exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et cadeaux** : Participez à des concours et des promotions spéciales pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _course_mode:
 
-Play with Arduino
+Jouez avec Arduino
 ================================
 
-Welcome to the Course Mode, a structured journey through 13 enlightening lessons. We kick off with a fascinating glimpse into the history of Mars rovers, setting the stage for our own rover assembly.
+Bienvenue dans le Mode Cours, un parcours structuré à travers 13 leçons captivantes. Nous commençons par un aperçu fascinant de l’histoire des rovers martiens, qui prépare le terrain pour l’assemblage de notre propre rover.
 
-From the second lesson, we'll start getting hands-on. Each lesson spotlights a unique component crucial to our Mars rover. You'll not only understand its purpose and significance but also master its assembly and integration into the rover.
+Dès la deuxième leçon, nous passerons à la pratique. Chaque leçon met en lumière un composant unique essentiel à notre rover martien. Vous comprendrez non seulement son rôle et son importance, mais vous maîtriserez également son assemblage et son intégration au rover.
 
 .. raw:: html
 
@@ -28,9 +28,9 @@ From the second lesson, we'll start getting hands-on. Each lesson spotlights a u
       Your browser does not support the video tag.
    </video>
 
-Whether you are a novice eager to dive into the world of Mars rovers or an experienced hobbyist looking to hone your skills, these lessons are crafted to provide a comprehensive understanding of the mechanics, electronics, and software that bring our GalaxyRVR to life. By the end of the course, you'll not only have assembled your very own Mars rover, but you'll also possess the knowledge to troubleshoot, modify, and further experiment with your rover.
+Que vous soyez un débutant désireux de plonger dans l'univers des rovers martiens ou un hobbyiste expérimenté cherchant à perfectionner ses compétences, ces leçons sont conçues pour fournir une compréhension approfondie de la mécanique, de l'électronique et des logiciels qui donnent vie à notre GalaxyRVR. À la fin du cours, non seulement vous aurez assemblé votre propre rover martien, mais vous posséderez également les connaissances nécessaires pour le dépanner, le modifier et continuer à expérimenter avec lui.
 
-So, buckle up for an exciting journey into the world of Mars rovers! Dive in and start exploring the red planet from the comfort of your home.
+Alors, préparez-vous pour un voyage passionnant dans le monde des rovers martiens ! Plongez et commencez à explorer la planète rouge depuis le confort de votre domicile.
 
 
 Download the Code
@@ -60,3 +60,4 @@ Or check out the code at `SunFounder GalaxyRVR Kit for Arduino - GitHub <https:/
     lesson11_camera
     Lesson12_move_with_app
     lesson13_solar_panel
+

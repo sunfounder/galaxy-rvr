@@ -1,63 +1,61 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des conseils et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et à des aperçus privilégiés.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et des promotions durant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-IR Obstacle Avoidcance Module
-=======================================
+Module d'évitement d'obstacles infrarouge
+============================================
 
-This is an infrared obstacle avoidance module that can detect the presence of objects ahead. It is commonly used in robots, automation systems, and other intelligent devices. Its detection range is 2cm to 40cm, and objects of different colors have different levels of reflectivity. Therefore, the darker the object, the shorter the detection distance.
+Il s'agit d'un module d'évitement d'obstacles infrarouge capable de détecter la présence d'objets à proximité. Il est couramment utilisé dans les robots, les systèmes automatisés et d'autres dispositifs intelligents. Sa plage de détection est de 2 cm à 40 cm, et les objets de couleurs différentes ont des niveaux de réflectivité variés. Ainsi, plus l'objet est foncé, plus la distance de détection est courte.
 
 .. image:: img/ir_avoid.png
     :width: 400
     :align: center
 
-Here are the pin definitions:
+Voici les définitions des broches :
 
-* **GND**: Ground
-* **+**: Power supply, 3.3 ~ 5V DC.
-* **Out**: By default, it stays high and only goes low when it spots an obstacle.
-* **EN**: This **enable** pin decides when the module should work. By default, it is connected to GND, meaning the module is always on the job.
+* **GND** : Masse
+* **+** : Alimentation, 3,3 ~ 5V DC.
+* **Out** : Par défaut, le signal reste haut et ne passe au niveau bas qu'en présence d'un obstacle.
+* **EN** : Cette broche **enable** détermine quand le module doit fonctionner. Par défaut, elle est connectée à GND, ce qui signifie que le module est toujours activé.
 
+**Comment ça fonctionne ?**
 
-**How it works?**
-
-This module contains a pair of IR transmitting and receiving components. Basically, the transmitter emits infrared light, when the emitted infrared light encounters an obstacle, it is reflected back and received by the receiver. Upon detection, the indicator lights up. After circuit processing, it outputs a low level signal.
+Ce module contient une paire de composants émetteurs et récepteurs infrarouges. En principe, l'émetteur émet de la lumière infrarouge, qui est réfléchie lorsqu'elle rencontre un obstacle, puis captée par le récepteur. Lorsqu'une détection est faite, l'indicateur s'allume. Après traitement du signal, une sortie à bas niveau est générée.
 
 .. image:: img/ir_receive.png
     :width: 600
     :align: center
 
-
-The **EN** pin's low-level state activates the module, with the jumper cap securing the **EN** pin to the GND. To control the EN pin programmatically, remove the jumper cap.
+La broche **EN** active le module lorsqu'elle est en état bas, le cavalier fixant la broche **EN** à la masse. Pour contrôler la broche EN de manière programmatique, retirez le cavalier.
 
 .. image:: img/ir_cap.png
     :width: 400
     :align: center
 
-There are two potentiometers on the module, one for adjusting the transmitting power and one for adjusting the transmitting frequency, and by adjusting these two potentiometers you can adjust its effective distance.
+Le module est équipé de deux potentiomètres : l'un pour ajuster la puissance de transmission et l'autre pour ajuster la fréquence de transmission. En ajustant ces deux potentiomètres, vous pouvez modifier la distance de détection effective.
 
 .. image:: img/ir_avoid_pot.png
     :width: 400
     :align: center 
 
 
-**Adjust the detection distance**
+**Ajuster la distance de détection**
 
-The obstacle avoidance module's detection range must be precisely calibrated for optimal performance, as default factory settings may not align with specific requirements.
+La plage de détection du module d'évitement d'obstacles doit être calibrée avec précision pour des performances optimales, car les réglages d'usine par défaut peuvent ne pas correspondre aux besoins spécifiques.
 
-Calibration involves the following steps:
+La calibration implique les étapes suivantes :
 
-#. Alignment of the Module: Start with the right-hand side obstacle avoidance module. Transportation can occasionally displace the alignment of the module's infrared transmitter and receiver. They should be manually realigned to ensure accuracy.
+#. Alignement du module : Commencez par le module d'évitement d'obstacles de droite. Le transport peut parfois déplacer l'alignement de l'émetteur et du récepteur infrarouges du module. Ils doivent être réalignés manuellement pour garantir une détection précise.
 
     .. raw:: html
 
@@ -66,7 +64,7 @@ Calibration involves the following steps:
             Your browser does not support the video tag.
         </video>
 
-#. Place an obstacle about 20 cm directly in front of the right module. The box in which our Rover kit came is a good choice for this! Now, turn the potentiometer on the module until the indicator light on the module just lights up. Then, keep moving the obstacle back and forth to check if the indicator light comes on at the desired distance. If the light doesn't turn on at the correct distance or if it remains on without going out, you'll need to adjust the other potentiometer.
+#. Placez un obstacle à environ 20 cm directement devant le module droit. La boîte dans laquelle notre kit Rover est livré est un bon choix pour cela ! Tournez ensuite le potentiomètre sur le module jusqu'à ce que le voyant du module s'allume. Ensuite, déplacez l'obstacle d'avant en arrière pour vérifier si le voyant s'allume à la distance souhaitée. Si la lumière ne s'allume pas à la bonne distance ou si elle reste allumée sans s'éteindre, vous devrez ajuster l'autre potentiomètre.
 
     .. raw:: html
 
@@ -75,19 +73,19 @@ Calibration involves the following steps:
             Your browser does not support the video tag.
         </video>
 
+#. Répétez le même processus pour l'autre module.
 
-#. Repeat the same process for another module.
+**Caractéristiques**
 
-**Features**
+* tension de fonctionnement : 3,3 V à 5 V
+* sortie : numérique (marche/arrêt)
+* seuil de détection : ajustable par 2 potentiomètres
+* plage de détection : 2 à 40 cm
+* ajustement R5 : réglage de la fréquence à 38 kHz (déjà optimisé)
+* ajustement R6 : réglage du cycle de fonctionnement de la LED IR (déjà optimisé)
+* température de fonctionnement : -10 °C à +50 °C
+* angle effectif : 35°
+* interface d'E/S : interface à 4 fils (- / + / S / EN)
+* dimensions : 45 x 16 x 10 mm
+* poids : 9 g 
 
-* operating voltage: 3.3 V to 5 V
-* output: digital (on/off)
-* detection threshold: adjustable by 2 potentiometers
-* distance range: 2 to 40 cm
-* adjustment R5: frequency adjustment 38 kHz (already optimized)
-* adjustment R6: IR LED duty cycle adjustment (already optimized)
-* operating temperature: -10 °C to +50 °C
-* effective angle: 35°
-* I/O interface: 4 wire interface (- / + / S / EN)
-* dimensions: 45 x 16 x 10 mm
-* weight: 9 g 

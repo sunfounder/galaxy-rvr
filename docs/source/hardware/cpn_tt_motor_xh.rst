@@ -1,70 +1,65 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des conseils et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et à des aperçus privilégiés.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et des promotions durant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _cpn_tt_motor:
 
-TT Motor
+Moteur TT
 ==============
-
 
 .. image:: img/tt_motor_xh.jpg
     :width: 400
     :align: center
 
-This is a TT DC gear motor with a gear ratio of 1:120. It comes with two 250mm wires with an XH2.54-2P connector. It can be powered with 3VDC.
+Voici un moteur à engrenages TT DC avec un rapport de réduction de 1:120. Il est livré avec deux fils de 250 mm équipés d'un connecteur XH2.54-2P. Il peut être alimenté en 3VDC.
 
-**How Motors Work**
+**Comment fonctionnent les moteurs**
 
-A motor functions as the heart of a machine, transforming electrical energy into mechanical energy. This conversion brings to life various devices, from children's toys and household appliances to large vehicles.
+Un moteur fonctionne comme le cœur d'une machine, transformant l'énergie électrique en énergie mécanique. Cette conversion donne vie à divers appareils, des jouets pour enfants aux appareils ménagers, en passant par les gros véhicules.
 
-Here's the process: 
+Voici comment cela se passe :
 
-When electricity flows into a motor, it generates a magnetic field. This field interacts with other magnets within the motor, prompting it to spin. This spinning action, akin to a top whirling around, can then drive the movement of wheels, propellers, or other moving parts in a machine.
+Lorsque l'électricité circule dans un moteur, elle génère un champ magnétique. Ce champ interagit avec d'autres aimants à l'intérieur du moteur, le faisant tourner. Cette rotation, similaire à celle d'une toupie, permet ensuite de faire bouger des roues, des hélices ou d'autres pièces mobiles d'une machine.
 
 .. image:: img/motor_rotate.gif
     :align: center
 
-The TT Gear Motor is a specialized type of motor. It combines a standard motor with a series of gears, all housed within a durable plastic shell.
+Le moteur à engrenages TT est un type de moteur spécialisé. Il combine un moteur standard avec une série d'engrenages, le tout logé dans une coque en plastique robuste.
 
-As the motor spins, the gears effectively transmit this rotational motion to the wheels of our rover. The integration of gears is pivotal, as it amplifies torque. This increased torque capacity enables the motor to maneuver larger and heavier loads, an essential capability in various applications.
+Au fur et à mesure que le moteur tourne, les engrenages transmettent efficacement ce mouvement de rotation aux roues de notre rover. L'intégration des engrenages est essentielle, car elle amplifie le couple. Cette augmentation du couple permet au moteur de déplacer des charges plus grandes et plus lourdes, une capacité cruciale dans de nombreuses applications.
 
 .. image:: img/motor_internal.gif
     :align: center
     :width: 600
     
-**Features**
+**Caractéristiques**
 
-* Suggested Voltage 3V~4.5V DC
-* Number of Shafts: Single shaft
-* Gear Ratio: 1:120
-* No load current: 130mA
-* No load speed: 38rpm±8%rpm
-* Starting Voltage: 2V (max.) under no load
-* Output torque: 3V ≥1.2kgf.cm
-* Useful life: 70-120H
-* Direction of rotation: Bi-directions
-* Body Dimensions: 70 x 22.5 x 36.6mm
-* Wires: Gray and Black, 24AWG, 250mm
-* Connector: White, XH2.54-2P
-* Weight: 28.5g
+* Tension suggérée : 3V~4.5V DC
+* Nombre d'arbres : Arbre unique
+* Rapport de réduction : 1:120
+* Courant à vide : 130mA
+* Vitesse à vide : 38 tr/min ±8%
+* Tension de démarrage : 2V (max.) sans charge
+* Couple de sortie : 3V ≥1.2kgf.cm
+* Durée de vie utile : 70-120H
+* Sens de rotation : Bidirectionnel
+* Dimensions du corps : 70 x 22.5 x 36.6 mm
+* Fils : Gris et noir, 24AWG, 250mm
+* Connecteur : Blanc, XH2.54-2P
+* Poids : 28,5g
 
+**Schéma dimensionnel**
 
-
-**Dimensional Drawing**
-
-Unit: mm
+Unité : mm
 
 .. image:: img/motor_size.jpg
-
-

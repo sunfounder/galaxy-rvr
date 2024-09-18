@@ -1,31 +1,31 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions lors des fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 11 Servo and Tilt Mechanism
+Leçon 11 Mécanisme de Servo et d'Inclinaison
 ===============================================================
 
-Welcome back, young explorers! In today's adventure, we are going to delve into the fascinating world of the Mars Rover's visual system. Just like our eyes and neck work together to help us see and navigate our surroundings, our Rover too needs a similar system to navigate the treacherous Martian landscape. And that's exactly what we are going to build today!
+Bienvenue de nouveau, jeunes explorateurs ! Dans l'aventure d'aujourd'hui, nous allons plonger dans le fascinant système visuel du Rover martien. Tout comme nos yeux et notre cou travaillent ensemble pour nous aider à voir et à naviguer dans notre environnement, notre Rover a également besoin d'un système similaire pour traverser le dangereux paysage martien. Et c'est exactement ce que nous allons construire aujourd'hui !
 
-The visual system of our Rover has two main parts: a camera that acts as its "eyes", and a tilt mechanism that acts like a "neck", allowing it to look up and down. By the end of this lesson, we'll give our Rover the ability to "see" and "nod"!
+Le système visuel de notre Rover se compose de deux parties principales : une caméra qui agit comme ses "yeux" et un mécanisme d'inclinaison qui fonctionne comme un "cou", lui permettant de regarder vers le haut et vers le bas. À la fin de cette leçon, notre Rover aura la capacité de "voir" et de "hocher la tête" !
 
-First, we'll build the tilt mechanism - a device that will hold our Rover's camera and let it rotate vertically. It's like giving our Rover a neck, so it can nod its "head" or camera up and down!
+Tout d'abord, nous allons construire le mécanisme d'inclinaison - un dispositif qui tiendra la caméra de notre Rover et lui permettra de tourner verticalement. C'est comme donner à notre Rover un cou, pour qu'il puisse faire bouger sa "tête" ou sa caméra de haut en bas !
 
-Next, we'll learn about the servo, the tiny yet powerful "muscle" that moves our tilt mechanism. We'll understand how it works and how we can control it using Arduino programming.
+Ensuite, nous apprendrons à connaître le servo, le petit mais puissant "muscle" qui actionne notre mécanisme d'inclinaison. Nous comprendrons son fonctionnement et comment le contrôler en utilisant la programmation Arduino.
 
-Just as our neck muscles move our head so our eyes can get a better view, the servo will move the tilt mechanism so the Rover's camera can better survey the Martian landscape.
+Tout comme nos muscles du cou déplacent notre tête pour que nos yeux aient une meilleure vue, le servo déplacera le mécanisme d'inclinaison afin que la caméra du Rover puisse mieux explorer le paysage martien.
 
-So, buckle up, explorers, let's start our mission to equip our Rover with its very own visual system!
+Alors, préparez-vous, explorateurs, commençons notre mission pour équiper notre Rover de son propre système visuel !
 
 .. raw:: html
 
@@ -36,180 +36,170 @@ So, buckle up, explorers, let's start our mission to equip our Rover with its ve
 
 
 
-Learning Objectives
--------------------------
+Objectifs d'apprentissage
+------------------------------
 
-* Introduce the working principles of servo motors and their application in mechanical control.
-* Learn how to easily set servo angles using Mammoth Coding, achieving precise control.
-* Design interactive projects on the Mammoth Coding platform that enable physical interaction through servo motors.
+* Introduire les principes de fonctionnement des moteurs servo et leur application dans le contrôle mécanique.
+* Apprendre à régler facilement les angles des servos en utilisant Mammoth Coding, pour un contrôle précis.
+* Concevoir des projets interactifs sur la plateforme Mammoth Coding permettant une interaction physique à l'aide des moteurs servo.
 
 
-Materials
---------------------
+Matériel nécessaire
+-----------------------
 
-* Smartphone or tablet
-* Mammoth Coding APP
+* Smartphone ou tablette
+* Application Mammoth Coding
 * GalaxyRVR
 
-What is a Servo?
+Qu'est-ce qu'un Servo ?
 ----------------------------------------
 
-Have you ever watched a puppet show? If you have, you might have marveled at how the puppeteer can make the puppet's arms, legs, and head move so smoothly, just by pulling on some strings. In a way, servo motors are like our puppeteers.
+Avez-vous déjà assisté à un spectacle de marionnettes ? Si oui, vous avez peut-être été émerveillé de voir comment le marionnettiste peut faire bouger les bras, les jambes et la tête de la marionnette avec une telle fluidité, simplement en tirant sur quelques ficelles. D'une certaine manière, les moteurs servo sont comme nos marionnettistes.
 
 .. image:: ../img/puppet_show.png
     :width: 200
     :align: center
 
-Servo motors are special types of motors that don't just spin around like a wheel. Instead, they can move to a specific position and hold that position. Imagine if you're playing a game of Simon says, and Simon says, "Raise your arm to a 90-degree angle!" You can do it, right? That's because, like a servo, you can control exactly how much to move your arm.
+Les moteurs servo sont des types spéciaux de moteurs qui ne tournent pas simplement comme une roue. Au lieu de cela, ils peuvent se déplacer vers une position spécifique et maintenir cette position. Imaginez que vous jouez à "Simon dit", et Simon dit : "Lève ton bras à un angle de 90 degrés !" Vous pouvez le faire, n'est-ce pas ? C'est parce qu'à l'instar d'un servo, vous pouvez contrôler exactement combien vous devez déplacer votre bras.
 
 .. image:: ../img/servo.png
     :align: center
 
-* Brown Line: GND
-* Orange Line: Signal pin, connect to the PWM pin of the main board.
-* Red wire: VCC
+* Ligne brune : GND
+* Ligne orange : Broche de signal, connectée à la broche PWM de la carte principale.
+* Fil rouge : VCC
 
-Just like you can control your arms to move to specific positions, we can use servo motors to control the exact position of objects in our projects. In our Mars Rover, we will use a servo to control the up and down movement of our tilt mechanism, just like how you can nod your head up and down.
+Tout comme vous pouvez contrôler vos bras pour atteindre des positions spécifiques, nous pouvons utiliser des moteurs servo pour contrôler la position exacte des objets dans nos projets. Dans notre Rover martien, nous utiliserons un servo pour contrôler le mouvement de haut en bas de notre mécanisme d'inclinaison, tout comme vous pouvez hocher la tête de haut en bas.
 
-In the next step, we will go on a fascinating journey inside a servo motor to understand how it works. Excited? Let's go!
+À l'étape suivante, nous allons entreprendre un voyage fascinant à l'intérieur d'un moteur servo pour comprendre son fonctionnement. Prêt pour un peu de magie ? Allons-y !
 
-
-How does a Servo Work?
+Comment fonctionne un Servo ?
 -------------------------------------------
 
-So how does a servo work its magic? Let's go on an exciting journey inside a servo!
+Alors, comment un servo opère-t-il sa magie ? Partons en voyage captivant à l'intérieur d'un servo !
 
-If we were to peek inside a servo, we would see a few parts. At the heart of a servo is a regular motor, very similar to the motors that spin our Mars Rover's wheels. Wrapped around the motor, there is a big gear that is connected to a smaller gear on the motor shaft. This is how the motor's fast, circular motion gets transformed into slower but stronger motion.
+Si nous regardions à l'intérieur d'un servo, nous verrions plusieurs pièces. Au cœur d'un servo se trouve un moteur régulier, très similaire aux moteurs qui font tourner les roues de notre Rover martien. Enroulé autour du moteur, il y a un grand pignon qui est connecté à un petit pignon sur l'arbre du moteur. C'est ainsi que le mouvement circulaire rapide du moteur est transformé en un mouvement plus lent mais plus puissant.
 
 .. image:: ../img/servo_internal.png
     :align: center
 
-But that's not what makes a servo special. The magic happens in a tiny piece of electronics called a "potentiometer" and the "control circuitry". Here's how it works: when the servo moves, the potentiometer turns and changes its resistance. The control circuitry measures this change in resistance and knows exactly what position the servo is in. Clever, isn't it?
+Mais ce n'est pas ce qui rend un servo spécial. La magie se passe dans un petit composant électronique appelé "potentiomètre" et dans le "circuit de contrôle". Voici comment cela fonctionne : lorsque le servo se déplace, le potentiomètre tourne et change sa résistance. Le circuit de contrôle mesure ce changement de résistance et sait exactement dans quelle position se trouve le servo. C'est astucieux, non ?
 
-To control a servo, we send it a special kind of signal called a "pulse-width modulation" signal or PWM. By changing the width of these pulses, we can control exactly how much the servo moves and hold it in that position.
+Pour contrôler un servo, nous lui envoyons un type spécial de signal appelé "modulation de largeur d'impulsion" ou PWM. En modifiant la largeur de ces impulsions, nous pouvons contrôler exactement combien le servo se déplace et maintenir cette position.
 
-In the next step, we'll learn how to control a servo using an APP. Ready for some magic spells in the form of code? Let's go!
-
-
-
-Exploring the Mars Rover Tilt System
--------------------------------------------------
+À l'étape suivante, nous apprendrons à contrôler un servo en utilisant une application. Prêt pour quelques sorts sous forme de code ? Allons-y !
 
 
-**Setting the Gimbal Angle**
 
-1. Check the servo angle, and you can see the current angle on the stage.
+Exploration du Système d'Inclinaison du Rover Martien
+---------------------------------------------------------
+
+
+**Réglage de l'Angle du Cardan**
+
+1. Vérifiez l'angle du servo, et vous pouvez voir l'angle actuel sur la scène.
 
 .. image:: img/10_servo_angle.png
 
-2. Drag a ``set servo angle to 90 degrees`` block. Click it, and you'll see the GalaxyRVR face forward.
+2. Faites glisser un bloc ``réglage de l'angle du servo à 90 degrés``. Cliquez dessus, et vous verrez le GalaxyRVR faire face vers l'avant.
 
 .. image:: img/10_servo_set_angle.png
 
-
-3. Change the value to 45 and click it, you'll see the GalaxyRVR look up.
+3. Changez la valeur à 45 et cliquez dessus, vous verrez le GalaxyRVR regarder vers le haut.
 
 .. image:: img/10_servo_set_angle_45.png
 
-4. Through multiple trials, you'll discover that the GalaxyRVR's gimbal can move between 0 and 135 degrees. As the angle increases, the gimbal lowers.
+4. Après plusieurs essais, vous découvrirez que le cardan du GalaxyRVR peut se déplacer entre 0 et 135 degrés. À mesure que l'angle augmente, le cardan s'abaisse.
 
 
-**Changing the Gimbal Angle**
+**Changement de l'Angle du Cardan**
 
-1. The GalaxyRVR's servo gimbal system is a refined single-degree-of-freedom structure, so you only need to control its "reset," "move up," and "move down" functions.
-
+1. Le système de cardan du servo du GalaxyRVR est une structure à un seul degré de liberté, donc vous n'avez besoin de contrôler que ses fonctions "réinitialiser", "monter" et "descendre".
 
 .. raw:: html
 
    <br></br>
 
-
-2. Now let's create its reset button. Drag a ``when this sprite clicked`` block.
+2. Créons maintenant son bouton de réinitialisation. Faites glisser un bloc ``quand ce sprite est cliqué``.
 
 .. image:: img/10_servo_when_click.png
 
-3. Embed a ``set servo angle to 90 degrees`` block to make the gimbal face forward.
+3. Intégrez un bloc ``réglage de l'angle du servo à 90 degrés`` pour faire face le cardan vers l'avant.
 
 .. image:: img/10_servo_when_90.png
 
-
-4. Drag a ``when up arrow key pressed`` block.
+4. Faites glisser un bloc ``quand la touche fléchée vers le haut est pressée``.
 
 .. image:: img/10_servo_when_up.png
 
-5. Decrease the servo angle when the up arrow key is pressed.
+5. Diminuez l'angle du servo lorsque la touche fléchée vers le haut est pressée.
 
 .. image:: img/10_servo_when_up2.png
 
-6. Similarly, add a down arrow key event to make the gimbal look down.
+6. De même, ajoutez un événement pour la touche fléchée vers le bas pour faire regarder le cardan vers le bas.
 
 .. image:: img/10_servo_when_down.png
 
-Now, click the full-screen button to enlarge the stage. Click up and down to adjust the gimbal angle, and click the sprite to reset the angle.
-
+Maintenant, cliquez sur le bouton plein écran pour agrandir la scène. Cliquez sur haut et bas pour ajuster l'angle du cardan, et cliquez sur le sprite pour réinitialiser l'angle.
 
 .. _tilt_system:
 
-Touch the Stage Area to Adjust the Gimbal Angle
+Touchez la Zone de la Scène pour Ajuster l'Angle du Cardan
 -------------------------------------------------------------
 
-Next, we will use an arrow sprite to achieve smoother adjustments to the servo angle.
+Ensuite, nous utiliserons un sprite en forme de flèche pour obtenir des ajustements plus fluides de l'angle du servo.
 
-When we touch the arrow, we can drag the direction of the arrow sprite.
+Lorsque nous touchons la flèche, nous pouvons faire glisser la direction du sprite de flèche.
 
-1. Delete the original sprite.
+1. Supprimez le sprite d'origine.
 
 .. image:: img/6_animate_delete.png
 
-2. Add an Arrow sprite. We will set the gimbal direction based on its orientation.
+2. Ajoutez un sprite en forme de flèche. Nous allons définir la direction du cardan en fonction de son orientation.
 
 .. image:: img/10_servo_arrow.png
 
-
-3. A ``when this sprite clicked`` block is exactly what we need.
+3. Un bloc ``quand ce sprite est cliqué`` est exactement ce dont nous avons besoin.
 
 .. image:: img/6_animate_when_touch.png
     :width: 230
 
-4. Let the program repeat until we release it, meaning we no longer touch the sprite.
+4. Laissez le programme se répéter jusqu'à ce que nous le relâchions, c'est-à-dire que nous ne touchons plus le sprite.
 
 .. image:: img/6_animate_repeat_touching.png
     :width: 550
 
-3. Drag a ``point towards touch_position`` block to make the sprite face the touch position.
+5. Faites glisser un bloc ``pointer vers touch_position`` pour que le sprite fasse face à la position touchée.
 
 .. image:: img/10_servo_arrow_point_toward.png
 
-4. Drag a ``set servo angle to 90 degrees`` block and embed a ``direction`` block to align the gimbal angle with the arrow sprite's orientation. This way, when we change the arrow sprite's direction (i.e., touch the stage area), we can change the gimbal angle.
+6. Faites glisser un bloc ``réglage de l'angle du servo à 90 degrés`` et intégrez un bloc ``direction`` pour aligner l'angle du cardan avec l'orientation du sprite en flèche. De cette manière, lorsque nous modifions la direction du sprite en flèche (c'est-à-dire que nous touchons la zone de la scène), nous pouvons changer l'angle du cardan.
 
 .. image:: img/10_servo_arrow_angle_direction.png
 
-5. Add a limit check to ensure the arrow sprite's orientation does not exceed 135 degrees.
+7. Ajoutez une vérification de limite pour garantir que l'orientation du sprite en flèche ne dépasse pas 135 degrés.
 
 .. image:: img/10_servo_arrow_135.png
 
-
-6. Similarly, ensure its orientation does not go below 0 degrees.
+8. De même, assurez-vous que son orientation ne tombe pas en dessous de 0 degrés.
 
 .. image:: img/10_servo_arrow_0.png
 
+Touchez le sprite, et il changera de direction au fur et à mesure que vous faites glisser, modifiant l'angle du cardan.
 
-Touch the sprite, and it will change direction as you drag, altering the gimbal angle.
+Si vous trouvez qu'il est facile de faire glisser votre doigt hors du sprite en flèche, vous pouvez augmenter la taille du sprite en conséquence.
 
-If you find it easy to slide your finger off the arrow sprite, you can increase the sprite's size accordingly.
-
-
-Servo-Related Blocks
+Blocs liés au Servo
 -------------------------------
 
 .. image:: img/block/servo_set_angle.png
 
-This block is used to set the servo angle. The range is 0 to 180 degrees (however, due to structural limitations, the actual usable range is 0-135 degrees).
+Ce bloc est utilisé pour régler l'angle du servo. La plage est de 0 à 180 degrés (mais en raison des limitations structurelles, la plage réellement utilisable est de 0 à 135 degrés).
 
 .. image:: img/block/servo_increase_angle.png
 
-This block increases (or decreases) the servo angle. The value can be negative.
+Ce bloc augmente (ou diminue) l'angle du servo. La valeur peut être négative.
 
 .. image:: img/block/servo_value.png
 
-The current angle of the servo.
+L'angle actuel du servo.

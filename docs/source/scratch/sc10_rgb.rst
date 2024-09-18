@@ -1,28 +1,29 @@
+
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, et bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et surmontez les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions lors des fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 
-Lesson 10 Lighting the Way with RGB LED Strips
+Leçon 10 Illuminer le chemin avec des bandes LED RVB
 ===============================================================
 
-In our journey so far, we've transformed our Mars Rover into a smart explorer, capable of skillfully maneuvering around obstacles. It's become quite adept at navigating the Mars-like terrains we've set up for it.
+Au cours de notre exploration, nous avons transformé notre Rover martien en un explorateur intelligent, capable de contourner habilement les obstacles. Il est devenu très performant pour naviguer dans les terrains simulés de Mars que nous avons créés.
 
-But, what if we could add a bit of flair to its practicality? Let's give our Rover the ability to express itself through a spectacle of colors and light. We're talking about incorporating RGB LED strips - a cool feature that would allow our Rover to illuminate its path, even in the darkest conditions.
+Mais que diriez-vous d'ajouter une touche d'élégance à sa praticité ? Donnons à notre Rover la capacité de s'exprimer à travers un spectacle de couleurs et de lumières. En intégrant des bandes LED RVB, nous pourrions permettre à notre Rover d'illuminer son chemin, même dans les conditions les plus sombres.
 
-Picture this - the Rover leaves a trail of color-coded signals, making it easier for us to understand its moves. A green glow when it's on the go, a stern red when it halts, or a flashy yellow during those swift turns. It could even light up in an array of colors just for the sheer fun of it!
+Imaginez cela : le Rover laisse une traînée de signaux colorés, facilitant ainsi la compréhension de ses mouvements. Un éclat vert lorsqu'il avance, un rouge vif lorsqu'il s'arrête, ou un jaune clignotant pendant qu'il effectue des virages rapides. Il pourrait même s'illuminer en une multitude de couleurs, juste pour le plaisir !
 
-Our goal in this lesson is to understand the principles of RGB LED strips, learn to control their color and brightness, and then synchronize this with the Rover's movements. By the end, our Mars Rover will be more than a machine. It'll be a luminous, color-changing entity, leading the way in the vast Martian landscape!
+Notre objectif dans cette leçon est de comprendre les principes des bandes LED RVB, d'apprendre à contrôler leur couleur et leur luminosité, puis de synchroniser ces effets avec les mouvements du Rover. À la fin, notre Rover martien sera bien plus qu'une machine. Il deviendra un être lumineux et changeant de couleur, ouvrant la voie dans les vastes paysages martiens !
 
 .. raw:: html
 
@@ -31,224 +32,223 @@ Our goal in this lesson is to understand the principles of RGB LED strips, learn
         Your browser does not support the video tag.
     </video>
 
-Objective
+Objectif
 -------------
 
-* Introduce the working principles and programming control methods of RGB LED strips.
-* Utilize RGB LED strips with Mammoth Coding to achieve color control and simple lighting effects.
-* Create a Mammoth Coding project to simulate light changes in a Mars environment or signal lights for Mars exploration missions.
+* Introduire les principes de fonctionnement et les méthodes de contrôle des bandes LED RVB.
+* Utiliser les bandes LED RVB avec Mammoth Coding pour réaliser des contrôles de couleurs et des effets lumineux simples.
+* Créer un projet Mammoth Coding pour simuler des changements lumineux dans un environnement martien ou des feux de signalisation pour les missions d'exploration de Mars.
 
-Materials Needed
+Matériel nécessaire
 -------------------------
 
-* RGB LED strip and controller
-* Mammoth Coding APP
-* Computer or tablet
+* Bande LED RVB et contrôleur
+* Application Mammoth Coding
+* Ordinateur ou tablette
 
-Explore the Magic of Light with RGB LED Strips
+Découvrez la magie des bandes LED RVB
 -------------------------------------------------------------
 
-Do you remember the last time you saw a rainbow? How it made the sky colorful with seven vibrant hues? How would you like to create your own rainbow, right here in our little Martian rover? Let's dive into the magic of light with RGB LED strips!
+Vous vous souvenez de la dernière fois que vous avez vu un arc-en-ciel ? Comment il rendait le ciel coloré avec ses sept teintes vibrantes ? Que diriez-vous de créer votre propre arc-en-ciel, ici même dans notre petit Rover martien ? Plongeons dans la magie de la lumière avec les bandes LED RVB !
 
 .. image:: ../img/4_rgb_strip.jpg
 
-You might notice that our RGB LED Strip has four pins labeled as follows:
+Vous remarquerez peut-être que notre bande LED RVB comporte quatre broches, étiquetées comme suit :
 
-* **+5V**: This is the common "positive" end or the "anode" of the three tiny light bulbs (LEDs) inside our strip. It needs to connect to DC 5V, a kind of electric juice that powers our tiny bulbs!
-* **B**: This is the "negative" end or the "cathode" of the blue LED.
-* **R**: This is the "cathode" of the red LED.
-* **G**: This is the "cathode" of the green LED.
+* **+5V** : Il s'agit de l'extrémité commune "positive" ou de "l'anode" des trois petites ampoules (LED) à l'intérieur de notre bande. Elle doit être connectée à un courant continu de 5V pour alimenter nos petites ampoules !
+* **B** : C'est l'extrémité "négative" ou la "cathode" de la LED bleue.
+* **R** : C'est la cathode de la LED rouge.
+* **G** : C'est la cathode de la LED verte.
 
 .. image:: ../img/rgb_5050.jpg
 
-Do you remember the three primary colors - Red, Blue, and Green - that we learned in our art class? Just like an artist mixes these colors on his palette to create new shades, our strip contains 4 "5050" LEDs that can mix these primary colors to create virtually any color! Each "5050" LED is like a tiny art studio that houses these three colored bulbs.
+Vous vous souvenez des trois couleurs primaires - Rouge, Bleu et Vert - que nous avons apprises en cours d'art ? Tout comme un artiste mélange ces couleurs sur sa palette pour créer de nouvelles nuances, notre bande contient des LED "5050" qui peuvent mélanger ces couleurs primaires pour créer presque n'importe quelle couleur ! Chaque LED "5050" est comme un petit atelier d'art qui héberge ces trois ampoules colorées.
 
 .. image:: ../img/rgb_5050_sche.png
 
-These tiny art studios are then connected in a smart way on a flexible circuit board - kind of like a mini electric highway! The "positive" ends of all LEDs (anodes) are connected together, while the "negative" ends (cathodes) are connected to their corresponding color lanes (G to G, R to R, B to B).
+Ces petits ateliers d'art sont ensuite connectés de manière intelligente sur une carte de circuit flexible - un peu comme une autoroute électrique miniature ! Les extrémités "positives" de toutes les LED (anodes) sont connectées ensemble, tandis que les extrémités "négatives" (cathodes) sont reliées à leurs lignes de couleur correspondantes (G à G, R à R, B à B).
 
 .. image:: ../img/rgb_strip_sche.png
 
-And the coolest part? With our command, all the LEDs on this strip can change their colors at once! It's like having our own light orchestra at the tip of our fingers!
+Et la meilleure partie ? Sur commande, toutes les LED de cette bande peuvent changer de couleur en même temps ! C'est comme avoir notre propre orchestre de lumière au bout des doigts !
 
-Light Up the Show
+Illuminez le spectacle
 ------------------------------
 
-1. Let's try lighting up the GalaxyRVR with colors! Drag out a display color block.
+1. Essayons d'illuminer le GalaxyRVR avec des couleurs ! Faites glisser un bloc "afficher couleur".
 
 .. image:: img/9_rgb_block.png
 
-2. Choose your favorite color.
+2. Choisissez votre couleur préférée.
 
 .. image:: img/9_rgb_color.png
 
-3. Click it, and you'll see the GalaxyRVR light up in the corresponding color.
+3. Cliquez dessus, et vous verrez le GalaxyRVR s'illuminer dans la couleur correspondante.
 
-**Using the Stage to Control GalaxyRVR**
+**Utilisation de la scène pour contrôler GalaxyRVR**
 
-Next, let's create an interactive project to get familiar with the lighting functions of GalaxyRVR. We'll click on the stage sprite to change the color of the GalaxyRVR.
+Ensuite, créons un projet interactif pour nous familiariser avec les fonctions d'éclairage du GalaxyRVR. Nous cliquerons sur le sprite de la scène pour changer la couleur du GalaxyRVR.
 
-1. Delete the existing sprite.
+1. Supprimez le sprite existant.
 
 .. image:: img/6_animate_delete.png
 
-2. Choose a Ball sprite. The reason for choosing this sprite is that it has many costumes, each corresponding to a different color.
+2. Choisissez un sprite de balle. La raison de ce choix est qu'il a plusieurs costumes, chacun correspondant à une couleur différente.
 
 .. image:: img/9_animate_rgb_ball.png
 
-3. Drag a when this sprite clicked block, which triggers an action when the stage sprite is clicked.
+3. Faites glisser un bloc "quand ce sprite est cliqué", qui déclenche une action lorsque le sprite de la scène est cliqué.
 
 .. image:: img/9_animate_rgb_when.png
 
-4. Drag a display block to make the GalaxyRVR light up.
+4. Faites glisser un bloc "afficher" pour que le GalaxyRVR s'illumine.
 
 .. image:: img/9_animate_rgb_display.png
 
-5. If you're using a small screen device, click the eye button beside it to ensure the stage preview window is on the same interface.
+5. Si vous utilisez un appareil à écran de petite taille, cliquez sur le bouton œil à côté pour vous assurer que la fenêtre d'aperçu de la scène est sur la même interface.
 
 .. image:: img/9_animate_rgb_eye.png
 
-6. Click the color on the display block. At the bottom of the pop-up window, there is a color picker button. Click it.
+6. Cliquez sur la couleur dans le bloc d'affichage. En bas de la fenêtre contextuelle, il y a un bouton de sélection de couleur. Cliquez dessus.
 
 .. image:: img/9_animate_rgb_pick.png
 
-7. Hold down on the stage area. A magnifying glass will appear at your fingertip for color picking. 
-Release it on the Ball sprite to pick its color for the display block.
+7. Maintenez appuyé sur la zone de la scène. Une loupe apparaîtra à votre doigt pour sélectionner une couleur. 
+Relâchez-la sur le sprite de la balle pour choisir sa couleur pour le bloc d'affichage.
 
 .. image:: img/9_animate_rgb_pick_color_n.png
 
-8. Long press the Ball sprite on the stage to duplicate it.
+8. Appuyez longuement sur le sprite de la balle dans la scène pour le dupliquer.
 
 .. image:: img/9_animate_rgb_duplicate.png
 
-9. In the costumes interface, switch to the next color.
+9. Dans l'interface des costumes, passez à la couleur suivante.
 
 .. image:: img/9_animate_rgb_change_costume.png
 
-10. Return to the Code interface and pick the color to match the current sprite.
+10. Revenez à l'interface Code et sélectionnez la couleur pour correspondre au sprite actuel.
 
 .. image:: img/9_animate_rgb_pick_blue.png
 
-11. Repeat steps 8-10 until all five colors are set.
+11. Répétez les étapes 8 à 10 jusqu'à ce que toutes les cinq couleurs soient définies.
 
 .. image:: img/9_animate_rgb_ball5.png
 
-Now, you can click on the Ball sprite in the stage area to make the GalaxyRVR light up in different colors.
+Désormais, vous pouvez cliquer sur le sprite de la balle dans la zone de la scène pour faire s'illuminer le GalaxyRVR dans différentes couleurs.
 
 .. _rgb_move:
 
-GalaxyRVR Signal Lights in Action
+Feux de signalisation du GalaxyRVR en action
 ----------------------------------------------------------------
 
-**Directional Indicator Lights**
+**Feux de direction**
 
-Now that we know how to make the GalaxyRVR emit colors, let's combine this function with :ref:`rvr_move`.
+Maintenant que nous savons comment faire émettre des couleurs au GalaxyRVR, combinons cette fonction avec :ref:`rvr_move`.
 
-1. Create a new project.
+1. Créez un nouveau projet.
 
-2. First, set up the key event blocks and move blocks for the four directions.
+2. Tout d'abord, configurez les blocs d'événements de touches et les blocs de mouvement pour les quatre directions.
 
 .. image:: img/9_rgb_move.png
 
-3. Add color displays to each event: green for forward.
+3. Ajoutez des affichages de couleur à chaque événement : vert pour avancer.
 
 .. image:: img/9_rgb_green.png
 
-4. Yellow for turning left and right.
+4. Jaune pour tourner à gauche et à droite.
 
 .. image:: img/9_rgb_yellow.png
 
-5. Red for moving backward.
+5. Rouge pour reculer.
 
 .. image:: img/9_rgb_red.png
 
-Now, when you click the direction keys in the stage area, you'll see the GalaxyRVR move and light up in the corresponding color.
+Désormais, lorsque vous cliquerez sur les touches de direction dans la zone de la scène, vous verrez le GalaxyRVR se déplacer et s'illuminer dans la couleur correspondante.
 
-**Breathing Light**
+**Lumière de respiration**
 
-A breathing light is an effect where the light gradually brightens and dims, similar to the rhythm of breathing. Next, let's add a breathing light effect when the GalaxyRVR is stationary.
+Une lumière de respiration est un effet où la lumière s'intensifie et s'atténue progressivement, semblable au rythme de la respiration. Ajoutons cet effet lorsque le GalaxyRVR est à l'arrêt.
 
-1. Create a new broadcast message named stop. This will tell your program that the GalaxyRVR is in a stopped state.
+1. Créez un nouveau message de diffusion nommé "stop". Cela indiquera à votre programme que le GalaxyRVR est en état d'arrêt.
 
 .. image:: img/9_rgb_new_message.png
 
-.. note:: If your sprite has many actions to perform but needs to start certain actions at specific times or under certain conditions, the broadcast block can help you manage this. This way, your sprite can execute different actions in the desired order without cluttering the code, making it clearer and easier to understand.
+.. note:: Si votre sprite a de nombreuses actions à effectuer mais doit en commencer certaines à des moments précis ou dans des conditions spécifiques, le bloc de diffusion peut vous aider à gérer cela. De cette manière, votre sprite peut exécuter différentes actions dans l'ordre souhaité sans surcharger le code, le rendant plus clair et plus facile à comprendre.
 
-2. Add this broadcast after each directional key event.
+2. Ajoutez cette diffusion après chaque événement de touche directionnelle.
 
 .. image:: img/9_rgb_new_boardcast.png
 
-3. Drag out a when I receive [stop] block.
+3. Faites glisser un bloc "quand je reçois [stop]".
 
 .. image:: img/9_rgb_when_receive.png
 
-4. Set the brightness to 0%, starting our breathing light from 0 brightness.
+4. Réglez la luminosité à 0 %, en démarrant notre lumière de respiration à partir de 0 de luminosité.
 
 .. image:: img/9_rgb_set_bright.png
 
-5. Use a repeat 10 block to create a gradual change in brightness. Here, we use the blue light, increasing the brightness by 10% every 0.2 seconds.
+5. Utilisez un bloc "répéter 10 fois" pour créer un changement progressif de luminosité. Ici, nous utilisons la lumière bleue, en augmentant la luminosité de 10 % toutes les 0,2 secondes.
 
 .. image:: img/9_rgb_increase.png
 
-6. Follow it with a block to decrease the brightness by 10% every 0.2 seconds, completing one breathing cycle.
+6. Suivez-le avec un bloc pour diminuer la luminosité de 10 % toutes les 0,2 secondes, complétant ainsi un cycle de respiration.
 
 .. image:: img/9_rgb_decrease.png
 
-7. Broadcast stop again at the end to create a continuous breathing effect.
+7. Diffusez à nouveau "stop" à la fin pour créer un effet de respiration continue.
 
 .. image:: img/9_rgb_stopagain.png
 
-8. If you control the GalaxyRVR directly at this point, you may find the colors and brightness are out of sync. Therefore, add a stop other scripts in sprite block at the end of each key event.
+8. Si vous contrôlez directement le GalaxyRVR à ce stade, vous remarquerez peut-être que les couleurs et la luminosité ne sont pas synchronisées. Par conséquent, ajoutez un bloc "arrêter les autres scripts dans le sprite" à la fin de chaque événement de touche directionnelle.
 
 .. image:: img/9_rgb_stop.png
 
-9. Since the brightness changes in the stop event, reset the light brightness in each key event.
+9. Comme les changements de luminosité se produisent dans l'événement "stop", réinitialisez la luminosité de la lumière dans chaque événement de touche.
 
 .. image:: img/9_rgb_set_bright_each.png
 
-Now, when you press the direction keys on the stage, the GalaxyRVR will move and light up in the corresponding color. When you stop controlling it, it will remain stationary and slowly breathe light.
+Maintenant, lorsque vous appuierez sur les touches de direction sur la scène, le GalaxyRVR se déplacera et s'illuminera dans la couleur correspondante. Lorsqu'il s'arrêtera, il restera immobile et sa lumière "respirera" lentement.
 
-RGB Module Related Blocks
+Blocs liés au module RVB
 -------------------------------
 
 .. image:: img/block/rgb_display.png
 
-Illuminate the RGB strip under your GalaxyRVR with your chosen color. You can:
+Illuminez la bande RVB sous votre GalaxyRVR avec la couleur de votre choix. Vous pouvez :
 
-    * Click on the color patch to select your desired color.
+    * Cliquer sur le patch de couleur pour sélectionner la couleur désirée.
 
 .. image:: img/block/rgb_display_1s.png
 
-Illuminate the RGB strip under your GalaxyRVR with your chosen color for 1 second. You can:
+Illuminez la bande RVB sous votre GalaxyRVR avec la couleur de votre choix pendant 1 seconde. Vous pouvez :
 
-    * Click on the color patch to select your desired color.
-    * Modify the number to change the duration of the light display
+    * Cliquer sur le patch de couleur pour sélectionner la couleur désirée.
+    * Modifier le nombre pour changer la durée de l'affichage lumineux.
 
 .. image:: img/block/rgb_display_RGB.png
 
-Illuminate the RGB strip under your GalaxyRVR with a color of your choice, using RGB values to alter the color (by adjusting the proportion of red, green, and blue primary lights, you can produce any color), which is very useful for projects involving color gradients. You can:
+Illuminez la bande RVB sous votre GalaxyRVR avec une couleur de votre choix, en utilisant les valeurs RVB pour modifier la couleur (en ajustant la proportion des lumières rouges, vertes et bleues, vous pouvez produire n'importe quelle couleur), ce qui est très utile pour les projets impliquant des dégradés de couleurs. Vous pouvez :
 
-    * Modify the R value to adjust the brightness of the red light, within a range of 0-255.
-    * Modify the G value to adjust the brightness of the green light, within a range of 0-255.
-    * Modify the B value to adjust the brightness of the blue light, within a range of 0-255.
+    * Modifier la valeur R pour ajuster la luminosité de la lumière rouge, dans une plage de 0 à 255.
+    * Modifier la valeur G pour ajuster la luminosité de la lumière verte, dans une plage de 0 à 255.
+    * Modifier la valeur B pour ajuster la luminosité de la lumière bleue, dans une plage de 0 à 255.
 
 .. image:: img/block/rgb_display_RGB_1s.png
 
-Illuminate the RGB strip under your GalaxyRVR with a color of your choice for 1 second using RGB values. You can:
+Illuminez la bande RVB sous votre GalaxyRVR avec une couleur de votre choix pendant 1 seconde en utilisant les valeurs RVB. Vous pouvez :
 
-    * Modify the R value to adjust the brightness of the red light, within a range of 0-255.
-    * Modify the G value to adjust the brightness of the green light, within a range of 0-255.
-    * Modify the B value to adjust the brightness of the blue light, within a range of 0-255.
-    * Modify the duration to change how long the light displays
+    * Modifier la valeur R pour ajuster la luminosité de la lumière rouge, dans une plage de 0 à 255.
+    * Modifier la valeur G pour ajuster la luminosité de la lumière verte, dans une plage de 0 à 255.
+    * Modifier la durée pour changer la durée d'affichage de la lumière.
 
 .. image:: img/block/rgb_set_brightness.png
 
-This block is used to set the brightness of the lights, with a range from 0 to 100.
+Ce bloc est utilisé pour régler la luminosité des lumières, avec une plage de 0 à 100.
 
 .. image:: img/block/rgb_increase_brightness.png
 
-This block increases (or decreases) the brightness of the lights. The value can be negative.
+Ce bloc augmente (ou diminue) la luminosité des lumières. La valeur peut être négative.
 
 .. image:: img/block/rgb_turn_on.png
 
-Turn off (or on) the RGB strip under your GalaxyRVR.
+Allumez (ou éteignez) la bande RVB sous votre GalaxyRVR.

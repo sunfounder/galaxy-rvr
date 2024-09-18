@@ -1,39 +1,36 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des conseils et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et à des aperçus privilégiés.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et des promotions durant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-18650 Battery
+Batterie 18650
 =================
 
 .. image:: img/3pin_battery.jpg
     :width: 500
     :align: center
 
-* **VCC**: Battery positive terminal, here there are two sets of VCC and GND is to increase the current and reduce the resistance.
-* **Middle**: To balance the voltage between the two cells and thus protect the battery.
-* **GND**: Negative battery terminal.
+* **VCC** : Borne positive de la batterie, ici il y a deux ensembles de VCC et GND afin d'augmenter le courant et de réduire la résistance.
+* **Milieu** : Pour équilibrer la tension entre les deux cellules et ainsi protéger la batterie.
+* **GND** : Borne négative de la batterie.
 
+Il s'agit d'un pack batterie personnalisé fabriqué par SunFounder, composé de deux batteries 18650 d'une capacité de 2000mAh. 
+Le connecteur est un XH2.54 3P, qui peut être chargé directement après insertion dans le shield.
 
-This is a custom battery pack made by SunFounder consisting of two 18650 batteries with a capacity of 2000mAh. 
-The connector is XH2.54 3P, which can be charged directly after being inserted into the shield.
+**Caractéristiques**
 
-
-**Features**
-
-* Battery charge: 5V/2A
-* Battery output: 5V/5A
-* Battery capacity: 3.7V 2000mAh x 2
-* Battery life: 90min
-* Battery charge time: 130min
-* Connector:XH2.54 3P
-
+* Charge de la batterie : 5V/2A
+* Sortie de la batterie : 5V/5A
+* Capacité de la batterie : 3.7V 2000mAh x 2
+* Autonomie de la batterie : 90 minutes
+* Temps de charge de la batterie : 130 minutes
+* Connecteur : XH2.54 3P

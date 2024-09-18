@@ -1,28 +1,28 @@
+
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, et bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions lors des fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 
 
 
-Lesson 7 IR Obstacle Animate
+
+Leçon 7 Animation d'évitement d'obstacles IR
 =====================================================
 
-Previously, we used the Infrared Obstacle Avoidance Module to make GalaxyRVR automatically avoid obstacles, just like on a Mars exploration mission.
+Précédemment, nous avons utilisé le module d'évitement d'obstacles à infrarouge pour que GalaxyRVR évite automatiquement les obstacles, tout comme lors d'une mission d'exploration martienne.
 
-In this activity, we will combine the obstacle avoidance module with a stage to create an animation of a rover dodging rocks on Mars.
+Dans cette activité, nous allons combiner le module d'évitement d'obstacles avec une scène pour créer une animation d’un rover évitant des rochers sur Mars.
 
 
 .. raw:: html
@@ -34,103 +34,103 @@ In this activity, we will combine the obstacle avoidance module with a stage to 
 
 
 
-Learning Objectives
--------------------------
+Objectifs d'apprentissage
+-----------------------------
 
-* Gain a deeper understanding of the Infrared Obstacle Avoidance Module and its application in the Mars rover.
-* Learn how to read and apply data from the Infrared Obstacle Avoidance Module in Scratch.
-* Create a Mars exploration-themed obstacle avoidance game using the IR module and the Scratch stage.
+* Approfondir la compréhension du module d'évitement d'obstacles à infrarouge et de son application dans le rover martien.
+* Apprendre à lire et appliquer les données du module d'évitement d'obstacles à infrarouge dans Scratch.
+* Créer un jeu d'évitement d'obstacles sur le thème de l'exploration martienne en utilisant le module IR et la scène Scratch.
 
 
-Materials
------------
+Matériel
+--------------
 
-* Smartphone or tablet
-* Mammoth Coding APP
+* Smartphone ou tablette
+* Application Mammoth Coding
 * GalaxyRVR
 
 
-Creating the Animation
+Création de l'animation
 --------------------------------------
 
-1. First, we need a Mars-themed stage background. Click to select a backdrop.
+1. Tout d'abord, nous avons besoin d'un arrière-plan sur le thème de Mars. Cliquez pour sélectionner un décor.
 
 .. image:: img/5_animate_choose.png
 
-2. Choose the Mars background.
+2. Choisissez l'arrière-plan de Mars.
 
 .. image:: img/5_animate_mars.png
 
-3. Select the GalaxyRVR sprite from the library and adjust its size.
+3. Sélectionnez le sprite GalaxyRVR dans la bibliothèque et ajustez sa taille.
 
 .. image:: img/5_animate_rvr.png
 
-4. Select a rock sprite from the library and adjust its size.
+4. Sélectionnez un sprite de rocher dans la bibliothèque et ajustez sa taille.
 
 .. image:: img/5_animate_rock.png
 
 
-5. Next, let's program these two sprites:
+5. Ensuite, programmons ces deux sprites :
 
 
 
-**GalaxyRVR Sprite**
+**Sprite GalaxyRVR**
 
-The task for the GalaxyRVR sprite is to move slowly from the left side to the right side of the screen. If it touches a rock sprite, it will stop moving.
-During this process, we can trigger the two IR sensors on the physical rover with our hands. Triggering the right sensor makes the sprite move down a bit; triggering the left sensor makes it move up a bit.
+Le rôle du sprite GalaxyRVR est de se déplacer lentement de la gauche vers la droite de l'écran. S'il touche un rocher, il s'arrête de bouger.
+Pendant ce processus, nous pouvons déclencher les deux capteurs IR du rover physique avec nos mains. Déclencher le capteur droit fait descendre légèrement le sprite ; déclencher le capteur gauche le fait monter légèrement.
 
 
 
-a. When the green flag is clicked, it should appear on the far left of the screen. You can first move the sprite to the corresponding position on the stage, and the coordinate values of the block in the motion category will change accordingly.
+a. Lorsque le drapeau vert est cliqué, il doit apparaître à l'extrême gauche de l'écran. Vous pouvez d'abord déplacer le sprite à la position correspondante sur la scène, et les valeurs de coordonnées du bloc dans la catégorie mouvement changeront en conséquence.
 
 .. image:: img/5_animate_glide.png
 
-b. Place a forever block as the main loop.
+b. Placez un bloc "toujours" comme boucle principale.
 
 .. image:: img/5_animate_forever.png
 
-c. Drag a conditional block to check if it is touching the rock sprite.
+c. Faites glisser un bloc conditionnel pour vérifier s'il touche le sprite rocher.
 
 .. image:: img/5_animate_touching.png
 
-d. If it is not touching, it moves forward.
+d. S'il ne touche pas, il avance.
 
 .. image:: img/5_animate_moving.png
 
-e. If it touches, it stops and emits a shout.
+e. S'il touche, il s'arrête et pousse un cri.
 
 .. image:: img/5_animate_say.png
 
-f. Finally, add two events. When the left or right IR sensors detect an obstacle (your hand), the sprite moves up or down.
+f. Enfin, ajoutez deux événements. Lorsque les capteurs IR gauche ou droit détectent un obstacle (votre main), le sprite monte ou descend.
 
 .. image:: img/5_animate_y.png
 
 
-**Rocks Sprite**
+**Sprite Rocher**
 
-The task for the rock sprite is simpler. It can either stay in place, appear at random locations, or create multiple clones to increase the difficulty for the GalaxyRVR sprite.
+Le rôle du sprite rocher est plus simple. Il peut rester en place, apparaître à des endroits aléatoires ou créer plusieurs clones pour augmenter la difficulté pour le sprite GalaxyRVR.
 
-a. Create its clones.
+a. Créez ses clones.
 
 .. image:: img/5_animate_clone.png
 
-b. Then move to a random position. Combine these two blocks and click them. You'll notice new rocks appearing randomly on the stage.
+b. Ensuite, déplacez-le à une position aléatoire. Combinez ces deux blocs et cliquez dessus. Vous verrez de nouveaux rochers apparaître aléatoirement sur la scène.
 
 .. image:: img/5_animate_clone_move.png
 
-c. Generate ten random rocks.
+c. Générez dix rochers aléatoires.
 
 .. image:: img/5_animate_clone_10.png
 
-d. These actions occur when the green flag is clicked.
+d. Ces actions se déclenchent lorsque le drapeau vert est cliqué.
 
 .. image:: img/5_animate_clone_flag.png    
    :width: 200
 
-Now, this mini-game is complete.
+Maintenant, ce mini-jeu est complet.
 
-Connect GalaxyRVR to the APP (refer to :ref:`app_connet`) and click the green flag to start the game.
+Connectez GalaxyRVR à l'application (référez-vous à :ref:`app_connet`) et cliquez sur le drapeau vert pour démarrer le jeu.
 
-You will see many rocks randomly generated on the stage. Your task is to use your hands to trigger the two IR sensors,
-guiding GalaxyRVR to successfully reach the right side of the stage.
+Vous verrez de nombreux rochers générés aléatoirement sur la scène. Votre tâche est d'utiliser vos mains pour déclencher les deux capteurs IR,
+guidant GalaxyRVR pour qu'il atteigne avec succès le côté droit de la scène.
 

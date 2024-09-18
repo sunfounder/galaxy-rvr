@@ -1,66 +1,68 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des conseils et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et à des aperçus privilégiés.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et des promotions durant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 Servo
 ===========
 
-A servo is a specialized motor known for its precision in controlling specific angular positions. 
+Un servo est un moteur spécialisé, réputé pour sa précision dans le contrôle des positions angulaires spécifiques.
 
 .. image:: img/servo.png
     :align: center
 
-* **Brown Line**: GND
-* **Orange Line**: Signal pin, connect to the PWM pin of main board.
-* **Red wire**: VCC
+* **Fil marron** : GND
+* **Fil orange** : Broche de signal, à connecter à la broche PWM de la carte principale.
+* **Fil rouge** : VCC
 
-Unlike regular motors that spin continuously, a servo can move to a precise position and hold it accurately. It achieves this through a combination of gears, a potentiometer, and control circuitry. Servos are commonly used in various applications that require precise control over the position of objects or mechanisms.
+Contrairement aux moteurs classiques qui tournent en continu, un servo peut se déplacer vers une position précise et la maintenir avec exactitude. Il y parvient grâce à une combinaison d'engrenages, d'un potentiomètre et de circuits de commande. Les servos sont couramment utilisés dans de nombreuses applications nécessitant un contrôle précis des positions d'objets ou de mécanismes.
 
-**Features**
+**Caractéristiques**
 
-* **Motor Type**: Core motor
-* **Operating Voltage**: 4.8~6V DC
-* **Standby Current**: ≤4 mA
-* **Consumption Current(at 4.8V No Load)**: ≦50mA
-* **Consumption Current(at 6 V no load)**: ≦60mA
-* **Stall Current(at locked 4.8V)**: ≦550mA
-* **Stall Current(at locked 6V)**: ≦650mA
-* **Rated Torque**: 4.8V, ≥0.6 kgf·cm; 6V, ≥0.7 kgf·cm
-* **Max. Torque**: 4.8V, ≥1.4 kgf.cm; 6V, ≥1.6 kgf.cm
-* **No Load Speed**: 4.8V, ≦0.14sec/60°; 6V, ≦0.12sec/60°
-* **Note**: Torsion protection:≥0.9 kgf.cm;Power failure protection after 5 seconds of continuous
-* **Operating Temperature Range**: -10℃~+50℃
-* **Storage Temperature Range**: -20℃~+60℃
-* **Operating Humidity Range**: ≤ 90%RH
-* **Storage Humidity Range**: ≤ 90%RH
-* **Weight**: 10± 0.5g
-* **Material**: ABS
-* **Operating Angle**: 180°±10°(500~2500us)
-* **Mechanical Limit Angle**: 360°
-* **Left & Right Travelling Angle**: ≤ 6°
-* **Centering deviation**: ≤ 1°
-* **Back Lash**: ≤ 4 us
-* **Amplifier Type**: Digital
-* **Cable Materia**: Ф1.08,19 PVC
-* **Cable Length**: 245±5mm(Exsert without plugs)
-* **Connector Type**: JR2.54mm/3Pin
+* **Type de moteur** : Moteur à noyau
+* **Tension de fonctionnement** : 4.8~6V DC
+* **Courant de veille** : ≤4 mA
+* **Courant de consommation (à 4.8V sans charge)** : ≦50mA
+* **Courant de consommation (à 6V sans charge)** : ≦60mA
+* **Courant de blocage (à 4.8V bloqué)** : ≦550mA
+* **Courant de blocage (à 6V bloqué)** : ≦650mA
+* **Couple nominal** : 4.8V, ≥0.6 kgf·cm; 6V, ≥0.7 kgf·cm
+* **Couple max.** : 4.8V, ≥1.4 kgf.cm; 6V, ≥1.6 kgf.cm
+* **Vitesse sans charge** : 4.8V, ≦0.14sec/60°; 6V, ≦0.12sec/60°
+* **Remarque** : Protection contre la torsion : ≥0.9 kgf.cm; protection contre la panne après 5 secondes de surcharge continue.
+* **Plage de température de fonctionnement** : -10℃~+50℃
+* **Plage de température de stockage** : -20℃~+60℃
+* **Plage d'humidité de fonctionnement** : ≤ 90%RH
+* **Plage d'humidité de stockage** : ≤ 90%RH
+* **Poids** : 10± 0.5g
+* **Matériau** : ABS
+* **Angle de fonctionnement** : 180°±10° (500~2500us)
+* **Angle limite mécanique** : 360°
+* **Angle de déplacement gauche/droite** : ≤ 6°
+* **Déviation de centrage** : ≤ 1°
+* **Jeu** : ≤ 4 us
+* **Type d'amplificateur** : Numérique
+* **Matériau du câble** : Ф1.08,19 PVC
+* **Longueur du câble** : 245±5mm (sans connecteurs)
+* **Type de connecteur** : JR2.54mm/3Pin
 
-**Operating Principle**
+**Principe de fonctionnement**
 
-Inside a servo, essential components contribute to its unique functionality. At its core, a servo incorporates a conventional motor, this motor is intricately linked to a large gear, which in turn engages with a smaller gear on the motor shaft. This gearing arrangement efficiently converts the motor's rapid circular motion into slower yet potent movements.
+À l'intérieur d'un servo, plusieurs composants essentiels contribuent à son fonctionnement unique. Au cœur du servo se trouve un moteur classique, étroitement lié à un grand engrenage, qui s'engrène avec un plus petit sur l'arbre du moteur. Cet ensemble d'engrenages convertit efficacement le mouvement circulaire rapide du moteur en mouvements plus lents mais puissants.
 
 .. image:: img/servo_internal.png
 
-But the real magic happens within the servo, thanks to a minuscule electronic marvel known as a "potentiometer" and sophisticated "control circuitry." When the servo undergoes movement, the potentiometer rotates, altering its electrical resistance. The control circuitry detects and interprets this change in resistance with remarkable precision, thereby determining the servo's exact position. This is a testament to its ingenuity.
+Cependant, l'ingéniosité d'un servo réside dans ses composants électroniques, comme un petit dispositif appelé "potentiomètre" et des circuits de contrôle sophistiqués. Lorsque le servo se déplace, le potentiomètre tourne, modifiant ainsi sa résistance électrique. Les circuits de commande détectent et interprètent ce changement de résistance avec une grande précision, déterminant ainsi la position exacte du servo.
 
-In the realm of servo control, a unique signaling method called "pulse-width modulation" or PWM comes into play. By skillfully adjusting the width of these pulses, operators can command the servo to move with precision and maintain its position. This is the essence of servo motor technology, a realm where precision and control converge to enable an array of applications.
+
+Dans le domaine du contrôle des servos, une méthode de signalisation unique appelée "modulation de largeur d'impulsion" (PWM) est utilisée. En ajustant habilement la largeur de ces impulsions, les opérateurs peuvent commander le servo pour qu'il se déplace avec précision et qu'il maintienne sa position. C'est là tout l'intérêt de la technologie des servomoteurs, où précision et contrôle se rejoignent pour permettre de nombreuses applications.
+

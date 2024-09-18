@@ -1,34 +1,32 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des conseils et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et à des aperçus privilégiés.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et des promotions durant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Solar Panel
+Panneau solaire
 =======================
 
 .. image:: img/solar_panel.png
     :width: 400
     :align: center
 
-Solar panels are devices that convert sunlight into electricity. They are made up of photovoltaic (PV) cells, which are made of semiconductor materials such as silicon. When sunlight hits a PV cell, it knocks electrons loose from their atoms. These electrons flow through the cell, creating an electric current.
+Les panneaux solaires sont des dispositifs qui convertissent la lumière du soleil en électricité. Ils sont composés de cellules photovoltaïques (PV), fabriquées à partir de matériaux semi-conducteurs comme le silicium. Lorsque la lumière du soleil frappe une cellule PV, elle libère des électrons de leurs atomes. Ces électrons circulent à travers la cellule, générant un courant électrique.
 
-Solar panels can be used to generate electricity for a variety of purposes, including powering homes, businesses, and even entire communities. They are a clean and renewable source of energy that can help reduce our reliance on fossil fuels.
+Les panneaux solaires peuvent être utilisés pour produire de l'électricité dans de nombreuses applications, notamment pour alimenter des maisons, des entreprises et même des communautés entières. Ils constituent une source d'énergie propre et renouvelable qui contribue à réduire notre dépendance aux combustibles fossiles.
 
+**Caractéristiques**
 
-**Features**
-
-
-* Output power: 6V/660mA
-* Time to fully charge the battery: 7.2h (theoretical value, assuming strong sunlight)
-* Size: 170mm x 170mm
-* Wires: Gray and Black, 24AWG, 200mm
-* Connector: White, XH2.54-2P
+* Puissance de sortie : 6V/660mA
+* Temps de charge complète de la batterie : 7,2h (valeur théorique, sous fort ensoleillement)
+* Dimensions : 170mm x 170mm
+* Fils : Gris et noir, 24AWG, 200mm
+* Connecteur : Blanc, XH2.54-2P

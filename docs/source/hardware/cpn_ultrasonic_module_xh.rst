@@ -1,62 +1,58 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des conseils et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et à des aperçus privilégiés.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et des promotions durant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-
-Ultrasonic Module
+Module Ultrasonique
 ================================
 
 .. image:: img/ultrasonic_pic.png
     :width: 400
     :align: center
 
-* **TRIG**: Trigger Pulse Input
-* **ECHO**: Echo Pulse Output
-* **GND**: Ground
-* **VCC**: 5V Supply
+* **TRIG** : Entrée d'impulsion de déclenchement
+* **ECHO** : Sortie d'impulsion d'écho
+* **GND** : Masse
+* **VCC** : Alimentation 5V
 
-This is the HC-SR04 ultrasonic distance sensor, providing non-contact measurement from 2 cm to 400 cm with a range accuracy of up to 3 mm. Included on the module is an ultrasonic transmitter, a receiver and a control circuit.
+Voici le capteur de distance à ultrasons HC-SR04, qui fournit une mesure sans contact de 2 cm à 400 cm avec une précision allant jusqu'à 3 mm. Le module comprend un émetteur à ultrasons, un récepteur et un circuit de contrôle.
 
-You only need to connect 4 pins: VCC (power), Trig (trigger), Echo (receive) and GND (ground) to make it easy to use for your measurement projects.
+Vous n'avez besoin de connecter que 4 broches : VCC (alimentation), Trig (déclenchement), Echo (réception) et GND (masse), ce qui le rend facile à utiliser pour vos projets de mesure.
 
-**Features**
+**Caractéristiques**
 
-* Working Voltage: DC5V
-* Working Current: 16mA
-* Working Frequency: 40Hz
-* Max Range: 500cm
-* Min Range: 2cm
-* Trigger Input Signal: 10uS TTL pulse
-* Echo Output Signal: Input TTL lever signal and the range in proportion
-* Connector: XH2.54-4P
-* Dimension: 46x20.5x15 mm
+* Tension de fonctionnement : DC 5V
+* Courant de fonctionnement : 16mA
+* Fréquence de fonctionnement : 40Hz
+* Portée maximale : 500 cm
+* Portée minimale : 2 cm
+* Signal d'entrée de déclenchement : impulsion TTL de 10µS
+* Signal de sortie d'écho : signal de niveau TTL en proportion de la distance
+* Connecteur : XH2.54-4P
+* Dimensions : 46 x 20,5 x 15 mm
 
-**Principle**
+**Principe**
 
-The basic principles are as follows:
+Les principes de base sont les suivants :
 
-* Using IO trigger for at least 10us high level signal.
-* The module sends an 8 cycle burst of ultrasound at 40 kHz and detects whether a pulse signal is received.
-* Echo will output a high level if a signal is returned; the duration of the high level is the time from emission to return.
-* Distance = (high level time x velocity of sound (340M/S)) / 2
+* Utiliser un déclenchement IO pour générer un signal de niveau haut d'au moins 10µs.
+* Le module émet une rafale de 8 cycles d'ultrasons à 40 kHz et détecte si un signal de retour est reçu.
+* Echo émettra un niveau haut si un signal est renvoyé ; la durée du niveau haut correspond au temps écoulé entre l'émission et le retour.
+* Distance = (temps de niveau haut x vitesse du son (340M/S)) / 2
 
     .. image:: img/ultrasonic_prin.jpg
         :width: 800
 
+**Notes d'application**
 
-
-**Application Notes**
-
-* This module should not be connected under power up, if necessary, let the module's GND be connected first. Otherwise, it will affect the work of the module.
-* The area of the object to be measured should be at least 0.5 square meters and as flat as possible. Otherwise, it will affect results.
-
+* Ce module ne doit pas être branché sous tension, si nécessaire, veillez à ce que la masse (GND) soit connectée en premier. Sinon, cela pourrait affecter son fonctionnement.
+* La surface de l'objet à mesurer doit être d'au moins 0,5 mètre carré et aussi plane que possible. Sinon, les résultats seront affectés.
