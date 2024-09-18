@@ -1,14 +1,14 @@
 .. note::
 
-    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
+    Bonjour, et bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers du Raspberry Pi, d'Arduino et d'ESP32 avec d'autres passionnés.
 
     **Pourquoi nous rejoindre ?**
 
-    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager** : Échangez des conseils et des tutoriels pour améliorer vos compétences.
-    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et à des aperçus privilégiés.
-    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
-    - **Promotions festives et concours** : Participez à des concours et à des promotions pendant les fêtes.
+    - **Soutien d'experts** : Résolvez les problèmes après-vente et surmontez les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des conseils et des tutoriels pour perfectionner vos compétences.
+    - **Aperçus exclusifs** : Profitez d'annonces de nouveaux produits en avant-première et d'aperçus privilégiés.
+    - **Réductions spéciales** : Bénéficiez de remises exclusives sur nos dernières nouveautés.
+    - **Promotions festives et concours** : Participez à des concours et des promotions durant les fêtes.
 
     👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
@@ -19,7 +19,7 @@ Leçon 3 : Contrôler à distance votre GalaxyRVR
 
 Dans cette leçon, nous allons donner vie à notre Rover martien !
 
-En utilisant nos compétences en codage, nous guiderons notre Rover à travers des paysages martiens imaginés.
+Grâce à nos compétences en codage, nous allons guider notre Rover à travers des paysages martiens imaginaires.
 
 C'est une aventure martienne dans notre salle de classe. Allons-y !
 
@@ -56,8 +56,7 @@ Suivez ces étapes sur votre ordinateur :
 Télécharger l'IDE Arduino
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-
-#. Rendez-vous sur https://www.arduino.cc/en/software#future-version-of-the-arduino-ide .
+#. Rendez-vous sur https://www.arduino.cc/en/software#future-version-of-the-arduino-ide.
 
 #. Téléchargez l'IDE pour votre version du système d'exploitation.
 
@@ -141,8 +140,6 @@ Connexion de l'APP au GalaxyRVR
 
 .. note:: La lumière de respiration sur le GalaxyRVR peut indiquer l'état de la connexion. Un clignotement jaune signifie qu'aucun appareil n'est connecté. Une lumière bleue fixe signifie qu'il est connecté.
 
-<<<<<<< Updated upstream
-
 Re-connect APP
 -------------------------------------
 
@@ -158,11 +155,7 @@ Find your GalaxyRVR and click connect.
 
 .. image:: img/reconnect_2.png
 
-
-Controlling the GalaxyRVR with the APP
-=======
 Contrôler le GalaxyRVR avec l'APP
->>>>>>> Stashed changes
 -----------------------------------------
 
 1. Dans l'interface Code, vous trouverez la catégorie GalaxyRVR.
@@ -170,8 +163,8 @@ Contrôler le GalaxyRVR avec l'APP
 .. image:: img/3_rvr_catego.png
 
 2. Nous avons déjà utilisé le drapeau vert pour démarrer des programmes. 
-Pendant ce processus, vous remarquerez plusieurs blocs dans la catégorie Événements qui déclenchent l'exécution du code. 
-Trouvez le bloc ``quand la touche flèche haut pressée``.
+Pendant ce processus, vous remarquerez plusieurs blocs dans la catégorie 
+Événements qui déclenchent l'exécution du code. Trouvez le bloc ``quand la touche flèche haut pressée``.
 
 .. image:: img/3_rvr_when_arrow.png
 

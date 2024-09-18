@@ -34,7 +34,7 @@ En général, le SSID est ``GalaxyRVR`` et le mot de passe est ``12345678``.
 
 .. image:: img/firmware/OTAversion.jpg
 
-8. Transférez le fichier ``ai-camera-firware.ino.1.5.1.bin`` sur l'appareil.
+8. Transférez le fichier ``ai-camera-firmware.ino.1.5.1.bin`` sur l'appareil.
 
 .. image:: img/firmware/selectBin.png
 
@@ -42,7 +42,7 @@ En général, le SSID est ``GalaxyRVR`` et le mot de passe est ``12345678``.
 
 .. image:: img/firmware/OTASButton.jpg
 
-10. Sélectionnez le fichier ``ai-camera-firware.ino.1.5.1.bin`` que vous venez de stocker sur votre appareil mobile, puis cliquez sur "Mettre à jour".
+10. Sélectionnez le fichier ``ai-camera-firmware.ino.1.5.1.bin`` que vous venez de stocker sur votre appareil mobile, puis cliquez sur "Mettre à jour".
 
 .. image:: img/firmware/OTASelect.jpg
 
@@ -51,4 +51,3 @@ En général, le SSID est ``GalaxyRVR`` et le mot de passe est ``12345678``.
 .. image:: img/firmware/OTAFinish.jpg
 
 12. Fermez la page.
-

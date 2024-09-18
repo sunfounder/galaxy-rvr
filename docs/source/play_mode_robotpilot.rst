@@ -19,7 +19,6 @@ Mode Jeu
 
 Vous êtes impatient de commencer votre aventure martienne ? Le Mode Jeu est parfaitement conçu pour ceux qui veulent plonger directement dans l'action. Équipé d'un code préchargé en usine, vous pouvez immédiatement entrer dans le jeu après avoir assemblé votre GalaxyRVR. Utilisez l'application SunFounder Controller pour explorer ses multiples fonctions, y compris la conduite en vue à la première personne, le basculement entre les modes évitement d'obstacles et suivi, et même le contrôle vocal.
 
-
 Mais avant de vous lancer dans l'exploration de la planète rouge, assurez-vous d'être bien préparé. Voici un guide rapide pour vous accompagner dans cette aventure passionnante !
 
 .. note::
@@ -65,7 +64,6 @@ Guide rapide
 
 #. Installez `SunFounder Controller <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_ depuis l'**APP Store (iOS)** ou **Google Play (Android)**.
 
-
 #. Connectez-vous au réseau ``GalaxyRVR``.
 
     Pour une communication optimale entre votre appareil mobile et le Rover, vous devez les connecter au même réseau local (LAN) fourni par GalaxyRVR.
@@ -82,7 +80,7 @@ Guide rapide
 
     * Pour créer un contrôleur sur SunFounder Controller, appuyez sur l'icône **+**.
 
-.. image:: img/robopilot/rp2_page.png
+        .. image:: img/robopilot/rp2_page.png
 
     * Des contrôleurs prédéfinis sont disponibles pour certains produits. Ici, nous choisissons **GalaxyRVR**. Donnez-lui un nom ou appuyez simplement sur **Confirmer**.
 
@@ -127,7 +125,6 @@ E. Mode selection: Choose between obstacle and remote modes here. The default se
         * **Ultrason(O)** : Affiche la distance mesurée par le module ultrasonique.
 
         * **IR droit(P)** : Affiche les relevés du module d'évitement d'obstacles droit.
-
 
 Évitement(E)
 ------------------------
@@ -200,3 +197,4 @@ Voici les commandes actuellement prédéfinies dans le code. Prononcez l'une des
 .. note::
 
     Les appareils iOS, utilisant un moteur de reconnaissance vocale hors ligne, fonctionnent correctement à la fois en mode AP et STA.
+

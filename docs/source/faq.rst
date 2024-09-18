@@ -1,16 +1,16 @@
 .. note::
 
-    Bonjour et bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez-vous dans l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
+    Bonjour et bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
     **Pourquoi nous rejoindre ?**
 
     - **Support d'experts** : Résolvez les problèmes après-vente et relevez les défis techniques avec l'aide de notre communauté et de notre équipe.
     - **Apprenez & Partagez** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
-    - **Aperçus exclusifs** : Accédez en avant-première aux nouvelles annonces de produits et aux aperçus exclusifs.
-    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et à des aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos nouveaux produits.
     - **Promotions festives et concours** : Participez à des promotions et à des concours durant les fêtes.
 
-    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 FAQ
 ==============
@@ -24,11 +24,11 @@ Q1 : Passer du mode AP au mode STA
 
     * :download:`GalaxyRVR Codes <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
 
-* Installez l'IDE, puis les bibliothèques ``SoftPWM`` et ``SunFounder AI Camera``. :ref:`install_lib` .
+* Installez l'IDE, puis les bibliothèques ``SoftPWM`` et ``SunFounder AI Camera``. :ref:`install_lib`.
 
 * Ensuite, ouvrez le fichier ``galaxy-rvr.ino`` situé dans le répertoire ``galaxy-rvr-main\galaxy-rvr``.
 
-* Commentez les lignes 69-71, décommentez les lignes 73-75 et changez les ``SSID`` et ``PASSWORD`` avec ceux de votre réseau WLAN.
+* Commentez les lignes 69-71, décommentez les lignes 73-75 et remplacez les ``SSID`` et ``PASSWORD`` par ceux de votre réseau WLAN.
 
 .. image:: img/ap_sta.png
     :align: center
@@ -45,7 +45,7 @@ Q1 : Passer du mode AP au mode STA
 
 Q2 : Erreur de compilation : SoftPWM.h : Aucun fichier ou répertoire de ce type ?
 ----------------------------------------------------------------------------------------
-Si vous obtenez une erreur de compilation : "SoftPWM.h: Aucun fichier ou répertoire de ce type", cela signifie que vous n'avez pas installé la bibliothèque SoftPWM.
+Si vous obtenez une erreur de compilation : "SoftPWM.h : Aucun fichier ou répertoire de ce type", cela signifie que vous n'avez pas installé la bibliothèque SoftPWM.
 
 Veuillez installer les deux bibliothèques requises ``SoftPWM`` et ``SunFounder AI Camera`` comme indiqué.
 
@@ -55,7 +55,6 @@ Veuillez installer les deux bibliothèques requises ``SoftPWM`` et ``SunFounder 
             <source src="_static/video/install_softpwm.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-
 
 Q3 : avrdude : stk500_getsync() tentative 10 sur 10 : pas en synchronisation : resp=0x6e ?
 ------------------------------------------------------------------------------------------------
@@ -69,7 +68,7 @@ Si ce message apparaît après avoir cliqué sur le bouton **Upload** alors que 
     avrdude: stk500_getsync() attempt 2 of 10: not in sync: resp=0x00
     avrdude: stk500_recv(): programmer is not responding
     avrdude: stk500_getsync() attempt 3 of 10: not in sync: resp=0x00
-    At this point, you need to make sure that the ESP32 CAM is unplugged.
+    À ce stade, vous devez vous assurer que l'ESP32 CAM est déconnectée.
 
 L'ESP32-CAM et la carte Arduino partagent les mêmes broches RX (réception) et TX (transmission). Donc, avant de télécharger le code, vous devez d'abord déconnecter l'ESP32-CAM pour éviter tout conflit ou problème potentiel.
 
@@ -128,7 +127,6 @@ Suivez les étapes ci-dessous.
         :width: 400
         :align: center
 
-
 #. Maintenez enfoncé le widget **STT(J)** après avoir cliqué sur le bouton |app_run|. Un message s'affichera indiquant qu'il écoute. Prononcez la commande suivante pour déplacer la voiture.
 
     .. image:: img/app/play_speech.png
@@ -152,10 +150,7 @@ Le module caméra est préflashé en usine. Cependant, si vous rencontrez un pro
 
 #. Tout d'abord, préparez un programmeur.
 
-
 #. Insérez l'ESP32 CAM dans le programmeur puis branchez-le à votre ordinateur.
-
-.. **1. Prepare the Programmer**
 
 **2. Installer la carte ESP32**
 
@@ -163,70 +158,61 @@ Pour programmer le microcontrôleur ESP32, vous devez installer le package de ca
 
 #. Allez dans **Fichier** et sélectionnez **Préférences** dans le menu déroulant.
 
-..     .. image:: img/esp32_cam_usb.jpg
-..         :width: 300
-..         :align: center
+    .. image:: img/esp32_cam_usb.jpg
+        :width: 300
+        :align: center
 
 #. Dans la fenêtre **Préférences**, trouvez le champ **URLs supplémentaires du gestionnaire de cartes**. Cliquez dessus pour activer la zone de texte.
 
-.. To program the ESP32 microcontroller, you must install the ESP32 board package in the Arduino IDE. Follow these steps:
-
 #. Ajoutez cette URL dans le champ **URLs supplémentaires du gestionnaire de cartes** : https://espressif.github.io/arduino-esp32/package_esp32_index.json. Cette URL pointe vers le fichier d'index du package pour les cartes ESP32. Cliquez sur **OK** pour enregistrer les modifications.
 
-..     .. image:: img/install_esp321.png
-..         :width: 500
-..         :align: center
+    .. image:: img/install_esp321.png
+        :width: 500
+        :align: center
 
-#.  Dans la fenêtre **Gestionnaire de cartes**, recherchez **ESP32**. Cliquez sur le bouton **Installer** pour commencer l'installation. Cela télécharge et installe le package de cartes ESP32.
+#. Dans la fenêtre **Gestionnaire de cartes**, recherchez **ESP32**. Cliquez sur le bouton **Installer** pour commencer l'installation. Cela télécharge et installe le package de cartes ESP32.
 
-..     .. image:: img/install_esp322.png
-..         :width: 500
-..         :align: center
+    .. image:: img/install_esp322.png
+        :width: 500
+        :align: center
 
 **3. Installer les bibliothèques**
 
 #. Installez la bibliothèque ``WebSockets`` à partir du **Gestionnaire de bibliothèques**.
 
-.. #.  In the **Boards Manager** window, search for **ESP32**. Click the **Install** button to begin installation. This downloads and installs the ESP32 board package.
-
 #. Suivez les mêmes étapes pour installer la bibliothèque ``ArduinoJson``.
 
-.. **3. Install the Libraries**
-
-**3. Télécharger et téléverser le firmware**
+**4. Télécharger et téléverser le firmware**
 
 #. Téléchargez le fichier du firmware.
 
-.. #. Follow the same steps to install the ``ArduinoJson`` library.
-
 #. Extrayez le fichier du firmware téléchargé et renommez le dossier extrait de ``ai-camera-firmware-main`` à ``ai-camera-firmware``.
-
-.. **3. Download and Upload Firmware**
 
 #. Ouvrez ``ai-camera-firmware.ino`` avec l'IDE Arduino, ce qui ouvrira également les fichiers de code associés.
 
-..     * :download:`ai-camera-firmware <https://github.com/sunfounder/ai-camera-firmware/archive/refs/heads/main.zip>`
+    * :download:`ai-camera-firmware <https://github.com/sunfounder/ai-camera-firmware/archive/refs/heads/main.zip>`
 
 #. Sélectionnez **Carte** -> **esp32** -> **ESP32 Dev Module**.
 
-..     .. image:: img/esp32_cam_change_name.png
-..         :align: center
+    .. image:: img/esp32_cam_change_name.png
+        :align: center
 
 #. Choisissez le bon port.
 
-..     .. image:: img/esp32_cam_ino.png
-..         :align: center
+    .. image:: img/esp32_cam_ino.png
+        :align: center
 
 #. Assurez-vous d'activer **PSRAM** et sélectionnez **Huge APP** dans le **Schéma de partitionnement**.
 
-..     .. image:: img/esp32_cam_board.png
-..         :width: 500
-..         :align: center
+    .. image:: img/esp32_cam_board.png
+        :width: 500
+        :align: center
 
 #. Enfin, téléversez le firmware sur l'ESP32 CAM.
 
-..     .. image:: img/esp32_cam_port.png
-..         :width: 400
-..         :align: center
+    .. image:: img/esp32_cam_port.png
+        :width: 400
+        :align: center
 
 #. Après un téléversement réussi du firmware, vous pouvez trouver plus d'informations sur ce lien : https://github.com/sunfounder/ai-camera-firmware.
+
