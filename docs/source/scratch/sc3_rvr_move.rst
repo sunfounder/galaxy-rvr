@@ -1,29 +1,28 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos exclusivos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 
 .. _rvr_move:
 
-Lesson 3 Remote Control Your GalaxyRVR
-============================================
+Lección 3 Control remoto de tu GalaxyRVR
+==============================================
 
-In this lesson, we're bringing the Mars Rover to life!
+¡En esta lección, daremos vida al Mars Rover!
 
-Using our coding skills, we'll guide our Rover across imagined Martian landscapes.
+Usando nuestras habilidades de programación, guiaremos nuestro Rover a través de paisajes imaginarios de Marte.
 
-It's a Martian adventure in our classroom. Let's get started!
+Es una aventura marciana en nuestro salón de clases. ¡Empecemos!
 
 .. raw:: html
 
@@ -33,47 +32,47 @@ It's a Martian adventure in our classroom. Let's get started!
    </video>
 
 
-Learning Objectives
------------------------
+Objetivos de aprendizaje
+---------------------------
 
-* Guide students to download and upload the corresponding Arduino code to control the rover with the APP.
-* Learn to use the arrow keys in Mammoth Coding to control the rover's movements.
-* Implement basic movement controls for the rover: forward, backward, left turn, right turn.
+* Guiar a los estudiantes para descargar y cargar el código correspondiente en Arduino para controlar el rover con la APP.
+* Aprender a usar las teclas de flecha en Mammoth Coding para controlar los movimientos del rover.
+* Implementar controles básicos de movimiento para el rover: avanzar, retroceder, girar a la izquierda, girar a la derecha.
 
-Materials
--------------
+Materiales
+------------
 
-* Smartphone or tablet
-* Mammoth Coding APP
+* Teléfono inteligente o tableta
+* APP de Mammoth Coding
 * GalaxyRVR
-* Computer
+* Computadora
 
 
-Uploading the Basic Program to GalaxyRVR
--------------------------------------------------
+Subir el programa básico a GalaxyRVR
+---------------------------------------
 
-To control the GalaxyRVR with the APP, you need to upload a specific program using the Arduino IDE.
+Para controlar el GalaxyRVR con la APP, es necesario subir un programa específico utilizando Arduino IDE.
 
-Follow these steps on your computer:
+Sigue estos pasos en tu computadora:
 
-Download Arduino IDE
-^^^^^^^^^^^^^^^^^^^^^^^^
+Descargar Arduino IDE
+^^^^^^^^^^^^^^^^^^^^^
 
-#. Visit https://www.arduino.cc/en/software#future-version-of-the-arduino-ide .
+#. Visita https://www.arduino.cc/en/software#future-version-of-the-arduino-ide.
 
-#. Download the IDE for your OS version.
+#. Descarga el IDE para la versión de tu sistema operativo.
 
     .. image:: img/sp_001.png
 
-#. Install it.
+#. Instálalo.
 
     .. image:: img/sp_005.png
 
 
-Uploading the Adapted Code
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Cargar el código adaptado
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Turn on the GalaxyRVR's power switch.
+1. Enciende el interruptor de encendido del GalaxyRVR.
 
     .. raw:: html
 
@@ -82,38 +81,38 @@ Uploading the Adapted Code
             Your browser does not support the video tag.
         </video>
 
-2. Connect the Arduino and computer with a USB cable, and then turn the **upload** switch of the car to the upload end.
+2. Conecta el Arduino a la computadora con un cable USB, luego cambia el interruptor de **upload** del coche a la posición de carga.
 
     .. image:: ../img/camera_upload.png
         :width: 500
         :align: center
 
-.. note:: It is the USB Type B port for connecting to Arduino, not the USB Type C port for charging.
+.. note:: Es el puerto USB tipo B para conectarse a Arduino, no el puerto USB tipo C para cargar.
 
-3. Open the downloaded galaxy-rvr-1.2.0 folder. (It has been downloaded and installed in the :ref:`update_firmware` section), double-click to run the ``update-arduino-firmware.bat`` script. A command prompt will open.
+3. Abre la carpeta galaxy-rvr-1.2.0 que descargaste. (Ha sido descargada e instalada en la sección :ref:`update_firmware`), haz doble clic para ejecutar el script ``update-arduino-firmware.bat``. Se abrirá una ventana de comandos.
 
-.. image:: ../img/firmware/updateFirmware.png
+    .. image:: ../img/firmware/updateFirmware.png
 
-4. In the command prompt, you will see a serial port list showing the serial ports that the computer is currently connected to. Enter the sequence number on the left side of the serial port list to select the serial port of the Arduino Uno. Press Enter to automatically upload.
+4. En la ventana de comandos, verás una lista de puertos serie mostrando los puertos a los que la computadora está conectada. Introduce el número de la izquierda de la lista para seleccionar el puerto del Arduino Uno. Presiona Enter para subir automáticamente.
 
-.. image:: ../img/firmware/selectCOM.png
+    .. image:: ../img/firmware/selectCOM.png
 
-5. After waiting for the upload to complete, you can unplug the USB cable.
+5. Después de esperar a que se complete la carga, puedes desconectar el cable USB.
 
-.. image:: ../img/firmware/UNOupdating.png
+    .. image:: ../img/firmware/UNOupdating.png
 
-6. Turn the upload switch back and press the reset button, and the car is ready to use.
+6. Cambia el interruptor de carga nuevamente y presiona el botón de reinicio, y el coche estará listo para usar.
 
 
-.. note:: This code enables the GalaxyRVR to respond to APP commands. You won’t need to upload any more code in the subsequent chapters that use the Mammoth Coding APP.
+.. note:: Este código permite que el GalaxyRVR responda a los comandos de la APP. No necesitarás subir más código en los capítulos siguientes que usen la APP Mammoth Coding.
 
 
 .. _app_connect:
 
-Connecting the APP to GalaxyRVR
--------------------------------------------
+Conectar la APP a GalaxyRVR
+-------------------------------
 
-1. To activate the ESP32 CAM, move the mode switch to the **Run** position, and press the **reset** button to reboot the R3 board. You will then observe a cyan light flashing on the bottom strip.
+1. Para activar el ESP32 CAM, mueve el interruptor de modo a la posición **Run** y presiona el botón de **reset** para reiniciar la placa R3. Entonces observarás una luz cian parpadeando en la tira inferior.
 
     .. raw:: html
 
@@ -122,136 +121,134 @@ Connecting the APP to GalaxyRVR
             Your browser does not support the video tag.
         </video>
 
-2. Connect your mobile device (e.g., phone, tablet) to the WiFi hotspot provided by GalaxyRVR. Generally, its SSID is ``GalaxyRVR`` and the password is ``12345678``.
+2. Conecta tu dispositivo móvil (por ejemplo, teléfono, tableta) al punto de acceso WiFi proporcionado por GalaxyRVR. Generalmente, su SSID es ``GalaxyRVR`` y la contraseña es ``12345678``.
 
+    .. image:: ../img/firmware/SSID.png
 
-.. image:: ../img/firmware/SSID.png
-
-.. note:: The default connection mode is **AP mode**. After you've connected, there might be a prompt warning that there is no internet access on this network. If so, choose "Stay connected".
+.. note:: El modo de conexión predeterminado es **modo AP**. Después de conectarte, podría aparecer un aviso advirtiendo que no hay acceso a internet en esta red. Si es así, elige "Permanecer conectado".
 
     .. image:: ../img/app/camera_stay.png
 
 
-3. Open the APP. Click here.
+3. Abre la APP. Haz clic aquí.
 
-.. image:: img/connet_app_04.png
+    .. image:: img/connet_app_04.png
 
+4. Carga el módulo GalaxyRVR.
 
-4. Load the GalaxyRVR module.
+    .. image:: img/connet_app_05.png
 
-.. image:: img/connet_app_05.png
+5. La APP buscará tu robot.
 
-5. The APP will search for your robot.
+    .. image:: img/connet_app_06.png
 
-.. image:: img/connet_app_06.png
+6. Conéctalo.
 
-6. Connect it.
-
-.. note:: The breathing light on the GalaxyRVR can help indicate the connection status. Flashing yellow means no devices are connected. A steady blue light means it’s connected.
-
-
-Re-connect APP
--------------------------------------
-
-When your device is disconnected from GalaxyRVR, you will see this pop-up window appear in the interface. Click reconnect.
-
-.. image:: img/reconnect_0.png
-
-If you close the pop-up window, you can also reconnect by clicking this button in the GalaxyRVR category.
-
-.. image:: img/reconnect_1.png
-
-Find your GalaxyRVR and click connect.
-
-.. image:: img/reconnect_2.png
+.. note:: La luz de respiración en el GalaxyRVR puede ayudar a indicar el estado de conexión. Si parpadea en amarillo, significa que no hay dispositivos conectados. Si la luz es azul constante, significa que está conectado.
 
 
-Controlling the GalaxyRVR with the APP
------------------------------------------
+Reconectar la APP
+-------------------
 
-1. In the Code interface, you'll find the GalaxyRVR category.
+Cuando tu dispositivo se desconecta de GalaxyRVR, verás que aparece esta ventana emergente en la interfaz. Haz clic en reconectar.
 
-.. image:: img/3_rvr_catego.png
+    .. image:: img/reconnect_0.png
 
-2. We've previously used the green flag to start programs. 
-During this process, you'll notice several blocks in the Events category that trigger code execution. 
-Find the ``when up arrow key pressed`` block.
+Si cierras la ventana emergente, también puedes reconectar haciendo clic en este botón en la categoría GalaxyRVR.
 
-.. image:: img/3_rvr_when_arrow.png
+    .. image:: img/reconnect_1.png
 
-3. Drag out four of these blocks, one for each arrow key event (up, down, left, right).
+Encuentra tu GalaxyRVR y haz clic en conectar.
 
-.. image:: img/3_rvr_4_arrow.png
+    .. image:: img/reconnect_2.png
 
-.. note:: You can click the eye icon below the green flag to hide the stage area and gain more coding space.
 
-4. Complete the code blocks for these four events. When the up arrow is pressed, make the GalaxyRVR move forward; when the left arrow is pressed, make it turn left, etc.
+Controlar el GalaxyRVR con la APP
+-----------------------------------
 
-.. image:: img/3_rvr_4_dir.png
+1. En la interfaz de Código, encontrarás la categoría GalaxyRVR.
 
-5. Expand the stage by clicking this button.
+    .. image:: img/3_rvr_catego.png
 
-.. image:: img/3_rvr_stage.png
+2. Hemos usado la bandera verde para iniciar programas anteriormente. 
+Durante este proceso, notarás varios bloques en la categoría Eventos que activan la ejecución del código. 
+Encuentra el bloque ``cuando se presione la tecla flecha arriba``.
 
-6. You'll enter an interface with an enlarged stage and a set of direction keys.
+    .. image:: img/3_rvr_when_arrow.png
 
-.. image:: img/3_rvr_stage2.png
+3. Arrastra cuatro de estos bloques, uno para cada evento de tecla de flecha (arriba, abajo, izquierda, derecha).
 
-Press these direction keys and you'll be delighted to see you can directly control the GalaxyRVR.
+    .. image:: img/3_rvr_4_arrow.png
 
-Blocks Related to Movement
------------------------------
+.. note:: Puedes hacer clic en el icono de ojo debajo de la bandera verde para ocultar el área del escenario y obtener más espacio para programar.
+
+4. Completa los bloques de código para estos cuatro eventos. Cuando se presiona la flecha arriba, haz que el GalaxyRVR avance; cuando se presiona la flecha izquierda, haz que gire a la izquierda, etc.
+
+    .. image:: img/3_rvr_4_dir.png
+
+5. Expande el escenario haciendo clic en este botón.
+
+    .. image:: img/3_rvr_stage.png
+
+6. Entrarás en una interfaz con un escenario ampliado y un conjunto de teclas de dirección.
+
+    .. image:: img/3_rvr_stage2.png
+
+Presiona estas teclas de dirección y te encantará ver que puedes controlar directamente el GalaxyRVR.
+
+Bloques relacionados con el movimiento
+------------------------------------------
 
 .. image:: img/block/move_forward.png 
 ..    :align: center
 
-After executing this block, the GalaxyRVR will move forward. You can:
+Al ejecutar este bloque, el GalaxyRVR avanzará. Puedes:
 
-    * Change the parameter from the dropdown menu to turn left, turn right, or reverse.
+    * Cambiar el parámetro en el menú desplegable para girar a la izquierda, girar a la derecha o retroceder.
 
 
 .. image:: img/block/move_set_speed.png 
 ..    :align: center
 
-This block is used to set the moving speed of the GalaxyRVR. It does not initiate movement by itself.
+Este bloque se usa para establecer la velocidad de movimiento del GalaxyRVR. No inicia el movimiento por sí solo.
 
 .. image:: img/block/move_forward_1s.png 
 ..    :align: center
 
-After executing this block, the GalaxyRVR will move forward for 1 second. You can:
+Al ejecutar este bloque, el GalaxyRVR avanzará durante 1 segundo. Puedes:
     
-    * Change the parameter from the dropdown menu to turn left, turn right, or reverse.
-    * Adjust the number in the block to set the duration of GalaxyRVR’s movement.
+    * Cambiar el parámetro en el menú desplegable para girar a la izquierda, girar a la derecha o retroceder.
+    * Ajustar el número en el bloque para establecer la duración del movimiento del GalaxyRVR.
 
 
 .. image:: img/block/move_forward_80.png 
 ..    :align: center
 
-After executing this block, the GalaxyRVR will move forward at 80% speed. You can:
+Al ejecutar este bloque, el GalaxyRVR avanzará al 80% de velocidad. Puedes:
     
-    * Change the parameter from the dropdown menu to turn left, turn right, or reverse.
-    * Modify the number in the block to adjust the speed of GalaxyRVR during this movement.
+    * Cambiar el parámetro en el menú desplegable para girar a la izquierda, girar a la derecha o retroceder.
+    * Modificar el número en el bloque para ajustar la velocidad del GalaxyRVR durante este movimiento.
 
 .. image:: img/block/move_forward_80_1s.png 
 ..    :align: center
 
-After executing this block, the GalaxyRVR will move forward at 80% speed for 1 second. You can:
+Al ejecutar este bloque, el GalaxyRVR avanzará al 80% de velocidad durante 1 segundo. Puedes:
     
-    * Change the parameter from the dropdown menu to turn left, turn right, or reverse.
-    * Adjust the time in the block to set the duration of the movement.
-    * Modify the speed in the block to adjust the speed of GalaxyRVR during this movement.
+    * Cambiar el parámetro en el menú desplegable para girar a la izquierda, girar a la derecha o retroceder.
+    * Ajustar el tiempo en el bloque para establecer la duración del movimiento.
+    * Modificar la velocidad en el bloque para ajustar la velocidad del GalaxyRVR durante este movimiento.
 
 .. image:: img/block/move_lr_sp_1s.png 
 ..    :align: center
 
-After executing this block, you can independently set the speeds of the GalaxyRVR's left and right wheels and move for the specified time. You can:
+Al ejecutar este bloque, puedes establecer de forma independiente las velocidades de las ruedas izquierda y derecha del GalaxyRVR y moverte durante el tiempo especificado. Puedes:
     
-    * Modify the left speed to set the running speed of GalaxyRVR’s left wheel.
-    * Modify the right speed to set the running speed of GalaxyRVR’s right wheel.
-    * Adjust the time to determine the duration of the movement.
+    * Modificar la velocidad izquierda para establecer la velocidad de la rueda izquierda del GalaxyRVR.
+    * Modificar la velocidad derecha para establecer la velocidad de la rueda derecha del GalaxyRVR.
+    * Ajustar el tiempo para determinar la duración del movimiento.
 
 .. image:: img/block/move_stop.png
 ..    :align: center
 
-Stops the GalaxyRVR from moving.
+Detiene el movimiento del GalaxyRVR.
 

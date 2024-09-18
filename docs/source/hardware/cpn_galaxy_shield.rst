@@ -1,16 +1,16 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto con otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas post-venta y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprender y compartir**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas exclusivas**: Obtén acceso anticipado a los nuevos anuncios de productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? ¡Haz clic en [|link_sf_facebook|] y únete hoy mismo!
 
 GalaxyRVR Shield
 =========================
@@ -19,69 +19,66 @@ GalaxyRVR Shield
     :width: 500
     :align: center
 
-This is an all-in-one expansion board designed for Arduino by SunFounder, which contains various module ports 
-such as motor, RGB strip, obstacle avoidance, grayscale, ESP32 CAM and ultrasonic module. 
+Esta es una placa de expansión todo-en-uno diseñada para Arduino por SunFounder, que contiene varios puertos para módulos como motor, tira RGB, evasión de obstáculos, escala de grises, ESP32 CAM y módulo ultrasónico.
 
-This expansion board also has a built-in charging circuit, which can charge the battery with PH2.0-3P interface, 
-and the estimated charging time is 130 minutes.
+Esta placa de expansión también tiene un circuito de carga integrado, que puede cargar la batería con una interfaz PH2.0-3P, y el tiempo estimado de carga es de 130 minutos.
 
-
-**Pinout**
+**Distribución de Pines**
 
 .. image:: img/galaxyrvr_shield_pinout.png
 
-* Charge Port
-    * After plugging into the 5V/2A USB-C port, it can be used to charge the battery for 130min.
+* Puerto de carga:
+    * Después de conectar al puerto USB-C de 5V/2A, se puede usar para cargar la batería durante 130 minutos.
 
-* **Battery Port**: 
-    * 6.6V~8.4V PH2.0-3P power input.
-    * Powering the GalaxyRVR Shield and Arduino board at the same time.
+* **Puerto de batería**: 
+    * Entrada de alimentación de 6.6V~8.4V PH2.0-3P.
+    * Alimenta tanto la placa GalaxyRVR Shield como la placa Arduino al mismo tiempo.
 
-* Reset Button
-    * Press this button to reset the program on the Arduino board.
+* Botón de reinicio:
+    * Presiona este botón para reiniciar el programa en la placa Arduino.
 
-* Indicators
-    * **Charge Indicator**: Glows red when the shield is charging through the USB-C port.
-    * **Power Indicator**: Glows green when the power switch is in the "ON" position.
-    * **Battery Indicator**: Two orange indicators represent different battery levels. They flash during charging and turn off when the battery needs charging.
+* Indicadores:
+    * **Indicador de carga**: Se ilumina en rojo cuando la shield se está cargando a través del puerto USB-C.
+    * **Indicador de encendido**: Se ilumina en verde cuando el interruptor de encendido está en la posición "ON".
+    * **Indicador de batería**: Dos indicadores naranjas representan diferentes niveles de batería. Parpadean durante la carga y se apagan cuando la batería necesita ser recargada.
 
-* Power Switch
-    * Slide to ON to power on the GalaxyRVR.
+* Interruptor de encendido:
+    * Deslízalo a la posición ON para encender el GalaxyRVR.
 
-* Camera Servo
-    * The servo on the camera is connected here.
-    * The brown wire connects to "-", the red wire connects to "+", and the yellow wire connects to Pin 6.
+* Servo de la cámara:
+    * El servo de la cámara está conectado aquí.
+    * El cable marrón se conecta a "-", el cable rojo a "+" y el cable amarillo al Pin 6.
 
-* :ref:`shield_motor_pin`
-    * **Motor Port(Right)**: 3 motors can be connected, but all 3 motors are controlled by the same set of signal **pins 2 and 3**.
-    * **Motor Port(Left)**: 3 motors can be connected, but all 3 motors are controlled by the same set of signal **pins 4 and 5**.
-    * Port Type: XH2.54, 2P.
+* :ref:`shield_motor_pin`:
+    * **Puerto del motor (derecho)**: Se pueden conectar 3 motores, pero los 3 motores son controlados por el mismo conjunto de señales, **pines 2 y 3**.
+    * **Puerto del motor (izquierdo)**: Se pueden conectar 3 motores, pero los 3 motores son controlados por el mismo conjunto de señales, **pines 4 y 5**.
+    * Tipo de puerto: XH2.54, 2P.
 
-* :ref:`shield_strip_pin`
-    * For connecting 2 RGB LED Strips, the three pins of the strip are connected to **12, 13 and 11** respectively.
-    * Port Type: ZH1.5, 4P.
+* :ref:`shield_strip_pin`:
+    * Para conectar 2 tiras LED RGB, los tres pines de la tira están conectados a los pines **12, 13 y 11**, respectivamente.
+    * Tipo de puerto: ZH1.5, 4P.
 
-* :ref:`shield_avoid_pin`
-    * Used for connecting two IR obstacle avoidance modules.
-    * The **left obstacle avoidance module** is connected to **pin 8**, the **right obstacle avoidance module** is connected to **pin 7**.
-    * Port Type: ZH1.5, 3P.
+* :ref:`shield_avoid_pin`:
+    * Usado para conectar dos módulos infrarrojos de evasión de obstáculos.
+    * El **módulo de evasión izquierdo** se conecta al **pin 8** y el **módulo de evasión derecho** se conecta al **pin 7**.
+    * Tipo de puerto: ZH1.5, 3P.
 
-* :ref:`shield_camera_pin`
-    * The Camera Adapter Board port.
-    * Port Type: ZH1.5, 5P.
+* :ref:`shield_camera_pin`:
+    * El puerto de la placa adaptadora de la cámara.
+    * Tipo de puerto: ZH1.5, 5P.
 
-* :ref:`shield_ultrasonic_pin`
-    * To connect the ultrasonic module, both Trig & Echo pins are connected on **pin 10** of the Arduino board.
-    * Port Type: ZH1.5, 4P.
+* :ref:`shield_ultrasonic_pin`:
+    * Para conectar el módulo ultrasónico, los pines Trig y Echo están conectados al **pin 10** de la placa Arduino.
+    * Tipo de puerto: ZH1.5, 4P.
 
-* Mode Switch
-    * The ESP32-CAM and the Arduino board share the same RX (receive) and TX (transmit) pins. 
-    * So, when you're uploading code, you'll need to toggle this switch to the **right side** to disconnect the ESP32-CAM to avoid any conflicts or potential issues.
-    * When you need to use the camera, toggle this switch to the **left side** so that the ESP32-CAM can communicate with the Arduino board.
+* Interruptor de modo:
+    * El ESP32-CAM y la placa Arduino comparten los mismos pines RX (recibir) y TX (transmitir).
+    * Cuando cargues código, debes cambiar este interruptor a la **derecha** para desconectar el ESP32-CAM y evitar conflictos o problemas potenciales.
+    * Cuando necesites usar la cámara, cambia el interruptor a la **izquierda** para que el ESP32-CAM pueda comunicarse con la placa Arduino.
 
-* SOLAR
-    * This is the port for the solar panel, which can charge the battery when plugged into the solar panel.
-    * Port Type: XH2.54, 2P.
+* SOLAR:
+    * Este es el puerto para el panel solar, que puede cargar la batería cuando se conecta al panel solar.
+    * Tipo de puerto: XH2.54, 2P.
 
 
 .. _shield_ultrasonic_pin:
@@ -89,38 +86,38 @@ and the estimated charging time is 130 minutes.
 SONAR
 --------------------
 
-This is the pinout for the ZH1.5-4P ultrasonic port, with the Trig & Echo pins connected to pin 10 of the Arduino board.
+Esta es la distribución de pines para el puerto ultrasónico ZH1.5-4P, con los pines Trig y Echo conectados al pin 10 de la placa Arduino.
 
 .. image:: img/ultrasonic_shield.png
 
 .. _shield_camera_pin:
 
-CAMERA
+CÁMARA
 ----------------------
 
-The camera adapter interface pin diagram is shown here, the type is ZH1.5-7P.
+Aquí se muestra el diagrama de pines de la interfaz adaptadora de la cámara, el tipo es ZH1.5-7P.
 
-* TX and RX are used for ESP32 CAM.
+* TX y RX se utilizan para el ESP32 CAM.
 
 .. image:: img/camera_shield.png
 
 
 .. _shield_avoid_pin:
 
-LEFT/RIGHT IR 
+IR IZQUIERDO/DERECHO 
 ----------------------------
 
-These are the pins for the left and right obstacle avoidance modules.
+Estos son los pines para los módulos de evasión de obstáculos izquierdo y derecho.
 
 .. image:: img/ir_shield.png
 
 
 .. _shield_strip_pin:
 
-RGB Strip
+Tira RGB
 -------------------------
 
-Below is the pinout diagram of the two RGB LED Strip, they are connected in parallel and the pinouts are the same.
+A continuación se muestra el diagrama de pines de las dos tiras LED RGB, están conectadas en paralelo y los pines son los mismos.
 
 .. image:: img/rgb_shield.png
 
@@ -128,17 +125,11 @@ Below is the pinout diagram of the two RGB LED Strip, they are connected in para
 
 .. _shield_motor_pin:
 
-Motor Port
----------------
+Puerto de motor
+-------------------
 
-Here is the pinout of the 2 sets of motor ports.
-
+Aquí está el diagrama de pines de los 2 puertos de motor.
 
 .. image:: img/motor_shield.png
     :width: 600
     :align: center
-
-
-
-
-

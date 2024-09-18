@@ -1,25 +1,25 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprender y compartir**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos exclusivos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _sc_balloon:
 
-Extension 1 Inflating the Balloon
+Extensión 1 Inflar el Globo
 =========================================
 
-In this interactive project, we control a balloon's flight.
+En este proyecto interactivo, controlamos el vuelo de un globo.
 
-Upon clicking the green flag, the balloon will progressively inflate. If the balloon becomes too large, it will burst; if too small, it will fall. Your task is to block the left infrared module at the right moment to make it ascend.
+Al hacer clic en la bandera verde, el globo comenzará a inflarse progresivamente. Si el globo se hace demasiado grande, explotará; si es demasiado pequeño, caerá. Tu tarea es bloquear el módulo de infrarrojos izquierdo en el momento adecuado para hacerlo ascender.
 
 .. raw:: html
 
@@ -28,72 +28,70 @@ Upon clicking the green flag, the balloon will progressively inflate. If the bal
       Your browser does not support the video tag.
    </video>
 
-Below are the steps for implementing the project. It is advisable to follow these steps initially, and once familiar, you may alter the effects as desired.
+A continuación se detallan los pasos para implementar el proyecto. Es recomendable seguir estos pasos inicialmente y, una vez familiarizado, puedes modificar los efectos según lo desees.
 
-
-1. Add a Sprite and a Backdrop
+1. Añadir un Objeto y un Fondo
 ----------------------------------------
 
-* Remove the default sprite and click the **Choose a Sprite** button in the bottom-right corner of the sprite area. Then, select the **Balloon1** sprite.
+* Elimina el objeto predeterminado y haz clic en el botón **Elegir un Objeto** en la esquina inferior derecha del área de objetos. Luego, selecciona el objeto **Balloon1**.
 
   .. image:: img/balloon_choose_sprite.png
 
-* Add a **Boardwalk** backdrop or another backdrop of your choice through the **Choose a Backdrop** button.
+* Añade un fondo de **Boardwalk** u otro fondo de tu elección a través del botón **Elegir un Fondo**.
 
   .. image:: img/balloon_choose_backdrop.png
 
-2. Paint a Costume for the **Balloon1** Sprite
+2. Dibujar un Disfraz para el Objeto **Balloon1**
 -------------------------------------------------------
 
-Now, let's create an exploding effect costume for the balloon.
+Ahora, vamos a crear un disfraz con efecto de explosión para el globo.
 
-* Navigate to the **Costumes** tab for the **Balloon1** sprite, click the **Choose a Costume** button in the bottom left, and select **Paint** to open a blank **Costume**. Name it "boom".
+* Navega a la pestaña **Disfraces** del objeto **Balloon1**, haz clic en el botón **Elegir un Disfraz** en la esquina inferior izquierda y selecciona **Pintar** para abrir un **Disfraz** en blanco. Llámalo "boom".
 
   .. image:: img/balloon_set_ball1.png
 
-* Choose a color and use the **Brush** tool to draw a pattern.
+* Elige un color y usa la herramienta **Pincel** para dibujar un patrón.
 
   .. image:: img/balloon_set_ball2.png
     :width: 90%
 
-* Choose another color, select the **Fill** tool, and tap inside the pattern to fill it.
+* Escoge otro color, selecciona la herramienta **Relleno** y pulsa dentro del patrón para llenarlo.
 
   .. image:: img/balloon_set_ball3.png
     :width: 90%
 
-* Finally, add the text "BOOM" to complete the explosion effect costume.
+* Finalmente, añade el texto "BOOM" para completar el disfraz con efecto de explosión.
 
   .. image:: img/balloon_set_ball4.png
     :width: 90%
 
-3. Scripting the **Balloon** Sprite
+3. Programar el Objeto **Balloon**
 ------------------------------------------
 
-* Initialize the **Balloon1** sprite's position and size.
+* Inicializa la posición y el tamaño del objeto **Balloon1**.
 
   .. image:: img/balloon_script1.png
 
-* Gradually increase the size of the **Balloon** sprite.
+* Aumenta gradualmente el tamaño del objeto **Balloon**.
 
   .. image:: img/balloon_script2.png
 
-* At this point, block the left obstacle avoidance module to stop the **Balloon1** sprite from inflating further.
+* En este punto, bloquea el módulo de evitación de obstáculos izquierdo para evitar que el objeto **Balloon1** se siga inflando.
 
   .. image:: img/balloon_script3.png
 
-* Now, let the **Balloon1** sprite decide whether to ascend or descend based on its size.
+* Ahora, deja que el objeto **Balloon1** decida si ascender o descender en función de su tamaño.
 
-  * If the size is less than 90, it will descend (y-coordinate decreases).
-  * If the size is between 90 and 120, it will ascend (y-coordinate increases).
+  * Si el tamaño es menor de 90, descenderá (la coordenada y disminuirá).
+  * Si el tamaño está entre 90 y 120, ascenderá (la coordenada y aumentará).
 
   .. image:: img/balloon_script4.png
 
-* If you fail to block the left obstacle avoidance module, the balloon will continue to inflate until it exceeds a size of 120, at which point it will explode (switch to the explosion effect costume).
+* Si no bloqueas el módulo de evitación de obstáculos izquierdo, el globo seguirá inflándose hasta que supere un tamaño de 120, momento en el cual explotará (cambiará al disfraz con efecto de explosión).
 
   .. image:: img/balloon_script5.png
 
-Programming is complete. You can now click the green flag to run the script and see if it achieves the desired effect.
-
+La programación está completa. Ahora puedes hacer clic en la bandera verde para ejecutar el script y ver si logra el efecto deseado.
 
 .. raw:: html
 

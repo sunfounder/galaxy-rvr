@@ -1,47 +1,48 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? ¡Haz clic en [|link_sf_facebook|] y únete hoy!
+
 
 .. _play_robopilot:
 
-Play RoboPilot
-=========================
+Juega con RoboPilot
+======================
 
-Are you eager to kick-start your Martian journey right away? 
-Our Play Mode is perfectly tailored for those of you who just can't wait to dive in. 
-Equipped with factory-preloaded code, you can jump straight into the action after assembling your GalaxyRVR. 
-Use the user-friendly RoboPilot app to explore its myriad of functions including first-person driving, 
-switching between obstacle avoidance and follow modes.
+¿Estás ansioso por iniciar tu viaje a Marte de inmediato? 
+Nuestro Modo de Juego está perfectamente diseñado para aquellos que no pueden esperar para comenzar. 
+Con el código preinstalado de fábrica, puedes saltar directamente a la acción después de ensamblar tu GalaxyRVR. 
+Usa la app amigable RoboPilot para explorar sus múltiples funciones, incluida la conducción en primera persona, 
+cambiando entre los modos de evasión de obstáculos y seguimiento.
 
 
 .. image:: img/robopilot/rp1_inter.png
 
-But before you set off to explore the Red Planet, let's make sure you are fully equipped and ready for the adventure. 
-Below is a Quick Guide to assist you in this exciting journey!
+Pero antes de que te lances a explorar el Planeta Rojo, asegurémonos de que estás completamente preparado para la aventura. 
+A continuación, encontrarás una Guía Rápida que te asistirá en este emocionante viaje.
 
 .. note::
 
-    * If your R3 board has already been uploaded with other code, but you want to continue using Play Mode, you will need to download the relevant code.
+    * Si tu placa R3 ya tiene otro código cargado pero deseas seguir usando el Modo de Juego, necesitarás descargar el código relevante.
 
         * :download:`GalaxyRVR Codes <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/scratch.zip>`
 
-    * Install |link_download_arduino|, then :ref:`install_lib`
+    * Instala |link_download_arduino| y luego :ref:`install_lib`
 
-    * Then, open the ``galaxy-rvr.ino`` file located in the ``galaxy-rvr-scratch\galaxy-rvr`` directory.
+    * Luego, abre el archivo ``galaxy-rvr.ino`` ubicado en el directorio ``galaxy-rvr-scratch\galaxy-rvr``.
     
-    * In the sample program, it will require you to connect your mobile device to the hotspot released by GalaxyRVR, which will prevent you from using external networks at the same time. You can :ref:`ap_to_sta`. After setting it to STA mode, as long as your device and GalaxyRVR are in the same WLAN, you can control GalaxyRVR.
+    * En el programa de ejemplo, se te pedirá que conectes tu dispositivo móvil al punto de acceso emitido por GalaxyRVR, lo que te impedirá usar redes externas al mismo tiempo. Puedes :ref:`ap_to_sta`. Después de configurarlo en modo STA, siempre que tu dispositivo y el GalaxyRVR estén en la misma WLAN, podrás controlar el GalaxyRVR.
 
-    * Move the switch to the right and then click **Upload**.
+    * Mueve el interruptor a la derecha y luego haz clic en **Subir**.
 
 
     .. image:: img/camera_upload.png
@@ -49,12 +50,12 @@ Below is a Quick Guide to assist you in this exciting journey!
         :align: center
 
 
-Quick Guide
----------------------
+Guía rápida
+---------------
 
-#. Let's start the GalaxyRVR.
+#. Comencemos con el GalaxyRVR.
 
-    * The first time you use your GalaxyRVR, it is recommended that you plug in a Type-C USB cable to fully charge the battery first. Then turn the power on.
+    * La primera vez que uses tu GalaxyRVR, se recomienda conectar un cable USB Tipo-C para cargar completamente la batería. Luego, enciende el dispositivo.
     
         .. raw:: html
 
@@ -63,7 +64,7 @@ Quick Guide
                 Your browser does not support the video tag.
             </video>
 
-    * To activate the ESP32 CAM, move the mode switch to the **Run** position, and press the **reset** button to reboot the R3 board. You will then observe a cyan light flashing on the bottom strip.
+    * Para activar la ESP32 CAM, mueve el interruptor de modo a la posición **Run**, y presiona el botón de **reset** para reiniciar la placa R3. Verás entonces una luz cian parpadeando en la tira inferior.
 
         .. raw:: html
 
@@ -72,91 +73,90 @@ Quick Guide
                 Your browser does not support the video tag.
             </video>
 
-#. Install **RoboPilot** from **APP Store(iOS)** or **Google Play(Android)**.
+#. Instala **RoboPilot** desde **APP Store (iOS)** o **Google Play (Android)**.
 
-#. Connect to the ``GalaxyRVR`` Network.
+#. Conéctate a la red ``GalaxyRVR``.
 
-    For optimal communication between your mobile device and the Rover, you'll need to connect them to the same local area network (LAN) provided by GalaxyRVR.
+    Para una comunicación óptima entre tu dispositivo móvil y el Rover, tendrás que conectarlos a la misma red local (LAN) proporcionada por GalaxyRVR.
 
-
-    * Find ``GalaxyRVR`` on the list of available networks on your mobile device (tablet or smartphone), enter the password ``12345678``, and connect to it.
+    * Busca ``GalaxyRVR`` en la lista de redes disponibles en tu dispositivo móvil (tableta o smartphone), introduce la contraseña ``12345678`` y conéctate.
 
         .. image:: img/app/camera_lan.png
 
-    * The default connection mode is **AP mode**. After you've connected, there might be a prompt warning that there is no internet access on this network. If so, choose "Stay connected".
+    * El modo de conexión predeterminado es **modo AP**. Después de conectarte, podría aparecer un aviso advirtiendo que no hay acceso a Internet en esta red. Si es así, elige "Permanecer conectado".
 
         .. image:: img/app/camera_stay.png
 
-#. Open RoboPilot. Click 'Go into' to enter the control interface.
+#. Abre RoboPilot. Haz clic en 'Go into' para ingresar a la interfaz de control.
 
 .. image:: img/robopilot/rp1_inter.png
 
 
 
-Remote Control
-----------------------------------------------
+Control remoto
+-----------------
 
-Upon entering the control interface, you will see the following screen.
-The background shows the view captured by the GalaxyRVR's camera, with remote control widgets overlaid.
+Al entrar en la interfaz de control, verás la siguiente pantalla.
+El fondo muestra la vista capturada por la cámara de GalaxyRVR, con widgets de control superpuestos.
 
 .. image:: img/robopilot/rp2_page.png
 
-Here are the controls:
+Aquí están los controles:
 
-A. Back
-B. Settings: Here you can change the device name, WiFi settings, **adjust the camera angle**, and disconnect.
+A. Volver
+B. Configuración: Aquí puedes cambiar el nombre del dispositivo, la configuración de WiFi, **ajustar el ángulo de la cámara** y desconectar.
 
 
     .. image:: img/robopilot/rp3_setting.png
 
-C. Battery level indicator
-D. Pause program
-E. Mode selection: Choose between obstacle and remote modes here. The default setting is Remote Mode.
+C. Indicador de nivel de batería
+D. Pausar el programa
+E. Selección de modo: Aquí puedes elegir entre los modos de evitación de obstáculos y remoto. La configuración predeterminada es el Modo Remoto.
 
 
     .. image:: img/robopilot/rp4_mode.png
 
-F. Obstacle monitor: This module is divided into three areas, with the left and right sides showing the results from the obstacle modules, and the central area displaying the ultrasonic sensor's findings.
-G. Color selector: Choose the lighting color for the chassis here.
+F. Monitor de obstáculos: Este módulo está dividido en tres áreas, con los lados izquierdo y derecho mostrando los resultados de los módulos de obstáculos, y el área central mostrando las lecturas del sensor ultrasónico.
+G. Selector de color: Aquí puedes elegir el color de iluminación del chasis.
 
 
     .. image:: img/robopilot/rp5_color.png
 
-H. Camera LED switch.
-I. Adjust the gimbal angle, ranging from 0-135°. At 0°, it looks up at the sky.
-J. Move the joystick to control the movement of GalaxyRVR. A gentle push will make the GalaxyRVR move slowly.
+H. Interruptor de LED de la cámara.
+I. Ajustar el ángulo del gimbal, que varía de 0° a 135°. A 0°, mira hacia el cielo.
+J. Mueve el joystick para controlar el movimiento del GalaxyRVR. Un suave empuje hará que el GalaxyRVR se mueva lentamente.
 
 
 
-0bstacle Detect
--------------------------------
+Detección de obstáculos
+-------------------------
 
-When you switch to Obstacle, you will see the following interface.
-Again, the background displays the view from the GalaxyRVR's camera, overlaid with obstacle mode controls.
+Cuando cambies a modo Obstacle, verás la siguiente interfaz.
+De nuevo, el fondo muestra la vista desde la cámara del GalaxyRVR, con controles superpuestos del modo de obstáculos.
 
 
 .. image:: img/robopilot/rp6_avoid.png
 
-Here are the controls:
+Aquí están los controles:
 
-A. Adjust the GalaxyRVR's speed.
-B. Switch between **Avoid** and **Follow** modes here.
-C. Start/stop the GalaxyRVR's automatic movement.
-D. Adjust the gimbal angle, ranging from 0-135°. At 0°, it looks up at the sky.
-E. Obstacle monitor: This module is divided into three areas, with the left and right sides showing the results from the obstacle modules, and the central area displaying the ultrasonic sensor's findings.
+A. Ajustar la velocidad del GalaxyRVR.
+B. Cambiar entre los modos **Avoid** y **Follow**.
+C. Iniciar/detener el movimiento automático del GalaxyRVR.
+D. Ajustar el ángulo del gimbal, que varía de 0° a 135°. A 0°, mira hacia el cielo.
+E. Monitor de obstáculos: Este módulo está dividido en tres áreas, con los lados izquierdo y derecho mostrando los resultados de los módulos de obstáculos, y el área central mostrando las lecturas del sensor ultrasónico.
 
 
-**Avoid**
+**Avoid (Evasión de obstáculos)**
 
-.. Tap the **Avoid(E)** widget to activate the obstacle avoidance mode.
+.. Toca el widget **Avoid(E)** para activar el modo de evasión de obstáculos.
 
-Before enabling this mode, you may need to adjust the detection ranges of the sensors according to your current environment, as the factory settings may not be ideal for all situations.
+Antes de activar este modo, puede que necesites ajustar los rangos de detección de los sensores según tu entorno actual, ya que la configuración de fábrica podría no ser ideal para todas las situaciones.
 
-If the detection range of the two infrared modules is too short, the Mars Rover might bump into obstacles. Conversely, if the range is too long, the Rover might start swerving too far away from an obstacle, potentially disrupting its navigation.
+Si el rango de detección de los dos módulos de infrarrojos es demasiado corto, el Rover podría chocar con los obstáculos. Por el contrario, si el rango es demasiado largo, el Rover podría desviarse demasiado de un obstáculo, lo que podría interrumpir su navegación.
 
-Here's how you can fine-tune the settings:
+Así es como puedes ajustar los ajustes:
 
-#. Start by adjusting the right obstacle avoidance module. During transportation, collisions may cause the transmitter and receiver on the infrared module to tilt. Therefore, you need to manually straighten them.
+#. Comienza ajustando el módulo de evitación de obstáculos derecho. Durante el transporte, los golpes pueden hacer que el transmisor y receptor del módulo infrarrojo se inclinen. Por lo tanto, deberás enderezarlos manualmente.
 
     .. raw:: html
 
@@ -165,7 +165,7 @@ Here's how you can fine-tune the settings:
             Your browser does not support the video tag.
         </video>
 
-#. Place an obstacle about 20 cm directly in front of the right module. The box in which our Rover kit came is a good choice for this! Now, turn the potentiometer on the module until the indicator light on the module just lights up. Then, keep moving the obstacle back and forth to check if the indicator light comes on at the desired distance. If the light doesn't turn on at the correct distance or if it remains on without going out, you'll need to adjust the other potentiometer.
+#. Coloca un obstáculo a unos 20 cm directamente frente al módulo derecho. La caja en la que vino nuestro kit del Rover es una buena opción para esto. Ahora, gira el potenciómetro en el módulo hasta que la luz indicadora encienda. Luego, sigue moviendo el obstáculo hacia adelante y hacia atrás para comprobar si la luz indicadora se enciende a la distancia deseada. Si la luz no se enciende en la distancia correcta o si permanece encendida sin apagarse, deberás ajustar el otro potenciómetro.
 
     .. raw:: html
 
@@ -175,24 +175,25 @@ Here's how you can fine-tune the settings:
         </video>
 
 
-#. Repeat the same process for the other module.
+#. Repite el mismo proceso para el otro módulo.
 
 
-**Follow**
+**Follow (Seguimiento)**
 
-If you haven't previously adjusted the detection distance of the obstacle avoidance modules, 
-you will need to follow the steps in **Avoid** first.
+Si no has ajustado previamente la distancia de detección de los módulos de evitación de obstáculos, 
+deberás seguir los pasos en **Avoid** primero.
 
-Once in follow mode, 
-the GalaxyRVR will move towards an object in front of it or turn left or right to follow the object's movement.
+Una vez en el modo de seguimiento, 
+el GalaxyRVR se moverá hacia un objeto frente a él o girará a la izquierda o derecha para seguir el movimiento del objeto.
 
 
 
-Re-connect
--------------------------------
+Reconexión
+------------
 
-If your network fails or disconnects, you will be directed to this page.
+Si tu red falla o se desconecta, serás dirigido a esta página.
 
 .. image:: img/robopilot/rp7_reconnect.png
 
-At this point, please reset your network settings, then click on the IP corresponding to your GalaxyRVR to reconnect.
+En este punto, restablece la configuración de red y luego haz clic en la IP correspondiente a tu GalaxyRVR para reconectarte.
+

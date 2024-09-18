@@ -1,31 +1,28 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el fascinante mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Preestrenos exclusivos**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos exclusivos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 
-
-Lesson 4 Ultrasonic
+Lección 4 Ultrasonido
 ===========================
 
+En nuestra última aventura, equipamos nuestro Mars Rover con "ojos" en sus lados, creando un sistema básico de evasión de obstáculos. Sin embargo, hay un punto ciego justo al frente, ¡un reto que estamos listos para superar!
 
-In our last adventure, we equipped our Mars Rover with "eyes" on its sides, creating a basic obstacle avoidance system. Yet, there's a blind spot right in front – a challenge we're ready to overcome!
+Hoy, en esta lección, le daremos a nuestro Rover un nuevo sentido de "vista". Instalaremos un módulo sensor de ultrasonido, que actuará como un par de ojos centrales, ayudando a nuestro rover a detectar obstáculos directamente delante de él.
 
-Today, in this lesson, we're going to give our Rover a new sense of "sight." We'll install an ultrasonic sensor module, acting as a pair of central eyes, which will help our rover detect obstacles directly ahead.
+Profundizaremos en los fascinantes mecanismos de las ondas ultrasónicas y exploraremos cómo mejoran la capacidad de nuestro Rover para navegar en terrenos complejos. Con esta adición, nuestro Mars Rover será más perceptivo y ágil, listo para embarcarse en misiones de exploración más ambiciosas.
 
-We will delve into the fascinating mechanics of ultrasonic waves and explore how they enhance our Rover's ability to navigate complex terrains. With this addition, our Mars Rover will be more perceptive and agile, ready to embark on more ambitious exploratory missions.
-
-Join us as we take a step further into this exciting STEAM journey, making our Mars Rover even more adept at exploring the uncharted territories!
-
+¡Únete a nosotros mientras damos un paso más en este emocionante viaje STEAM, haciendo que nuestro Mars Rover sea aún más capaz de explorar territorios inexplorados!
 
 .. raw:: html
 
@@ -35,151 +32,151 @@ Join us as we take a step further into this exciting STEAM journey, making our M
    </video>
 
 
-Learning Objectives
--------------------------
+Objetivos de aprendizaje
+---------------------------
 
-* Understand the principle of ultrasonic distance measurement.
-* Learn how to use Mammoth Coding APP and ultrasonic module for distance measurement.
-* Practice applying the ultrasonic module for obstacle avoidance on the GalaxyRVR.
+* Comprender el principio de medición de distancia por ultrasonido.
+* Aprender a usar la APP Mammoth Coding y el módulo de ultrasonido para la medición de distancias.
+* Practicar la aplicación del módulo de ultrasonido para evitar obstáculos en el GalaxyRVR.
 
 
-Materials
------------
+Materiales
+-------------
 
-* Smartphone or tablet
-* Mammoth Coding APP
+* Teléfono inteligente o tableta
+* APP Mammoth Coding
 * GalaxyRVR
 
 
-Exploring the Ultrasonic Module
+Explorando el Módulo Ultrasonido
 --------------------------------------------
 
-Let's get to know the HC-SR04, a powerful ultrasonic distance sensor. This tiny device can accurately measure distances from 2 cm up to 400 cm, all without touching a thing! Amazing, right? It's like having a superhero power! It can "see" distances just by using sound waves, like how a bat navigates at night.
+Conozcamos el HC-SR04, un poderoso sensor de distancia ultrasónico. Este pequeño dispositivo puede medir con precisión distancias desde 2 cm hasta 400 cm, ¡sin tocar nada! Asombroso, ¿verdad? ¡Es como tener un superpoder! Puede "ver" distancias usando ondas sonoras, al igual que un murciélago navega por la noche.
 
-It uses four superpowers, or rather, four pins to do its magic:
+Utiliza cuatro superpoderes, o mejor dicho, cuatro pines para hacer su magia:
 
 .. image:: ../img/ultrasonic_pic.png
     :width: 400
     :align: center
 
-* **TRIG (Trigger Pulse Input)** - It's the start button for our superhero. It tells our superhero, "Hey, it's time to send out a super sonic wave!"
-* **ECHO (Echo Pulse Output)** - This is how our superhero listens to the echo of the sound wave it sent out.
-* **VCC** - Even superheroes need some energy. We connect it to a 5V power supply.
-* **GND** - It's the ground connection. Just like how superheroes need to stay connected to reality!
+* **TRIG (Entrada de pulso de disparo)** - Es el botón de inicio de nuestro superhéroe. Le dice: "¡Es hora de enviar una onda sónica!"
+* **ECHO (Salida de pulso de eco)** - Así es como nuestro superhéroe escucha el eco de la onda sonora que envió.
+* **VCC** - Incluso los superhéroes necesitan energía. Lo conectamos a una fuente de alimentación de 5V.
+* **GND** - Es la conexión a tierra. ¡Igual que los superhéroes necesitan mantenerse conectados a la realidad!
 
-Imagine our superhero, the HC-SR04 Ultrasonic Sensor, playing a game of echo in the mountains.
+Imagina a nuestro superhéroe, el Sensor Ultrasónico HC-SR04, jugando un juego de eco en las montañas.
 
 .. image:: ../img/ultrasonic_prin.jpg
     :width: 800
 
-* First, our superhero's brain, the MCU, says, "Ready, Set, Go!" by sending out a high-level signal for at least 10 microseconds to our superhero. This is like when we gather our energy before we yell into a valley.
-* On hearing "Go!", our superhero shouts out loud 8 times very quickly. This super-sonic shout is sent out at a speed of 40 kHz. The superhero also starts a stopwatch and keeps an ear out for any returning shouts.
-* If there is an obstacle in front, the shout will hit it and echo back. On hearing the echo, our superhero stops the stopwatch and notes the time. It also sends out a high-level signal to let the MCU know it heard an echo.
-* Lastly, to find out how far away the obstacle is, our superhero uses a simple formula. It takes the time it recorded on the stopwatch, divides it by 2, and multiplies it by the speed of sound (340m/s). The result is the distance to the obstacle!
+* Primero, el cerebro de nuestro superhéroe, el MCU, dice "¡Listo, prepárate, ya!" enviando una señal de alto nivel durante al menos 10 microsegundos. Es como cuando reunimos nuestra energía antes de gritar en un valle.
+* Al oír "¡Ya!", nuestro superhéroe grita fuerte 8 veces rápidamente. Este grito súper sónico se envía a una velocidad de 40 kHz. El superhéroe también inicia un cronómetro y espera el eco.
+* Si hay un obstáculo al frente, el grito chocará contra él y rebotará. Al escuchar el eco, nuestro superhéroe detiene el cronómetro y anota el tiempo. También envía una señal de alto nivel al MCU para avisar que ha escuchado el eco.
+* Finalmente, para averiguar qué tan lejos está el obstáculo, nuestro superhéroe usa una fórmula simple. Toma el tiempo registrado en el cronómetro, lo divide por 2 y lo multiplica por la velocidad del sonido (340m/s). ¡El resultado es la distancia al obstáculo!
 
-That's how our superhero sensor can figure out if there's an obstacle in its path and how far away it is. Amazing, isn't it? Next, we'll learn how we can use this superhero power in our Mars Rover!
-
-
+Así es como nuestro sensor superhéroe puede determinar si hay un obstáculo en su camino y a qué distancia se encuentra. Increíble, ¿verdad? A continuación, aprenderemos cómo podemos usar este superpoder en nuestro Mars Rover.
 
 
-Ultrasonic Distance Module Detection Values
-----------------------------------------------------------
 
-1. Let's see what the detection values of the ultrasonic distance module are. First, :ref:`app_connect` .
 
-2. Find the "distance in cm" block under the GalaxyRVR category. Check its checkbox.
+Valores de Detección del Módulo de Distancia Ultrasónico
+-----------------------------------------------------------
+
+1. Vamos a ver cuáles son los valores de detección del módulo de distancia ultrasónico. Primero, :ref:`app_connect`.
+
+2. Encuentra el bloque "distancia en cm" en la categoría GalaxyRVR. Marca su casilla.
 
 .. image:: img/6_ultrasonic_value.png
 
-3. This will display its value on the stage.
+3. Esto mostrará su valor en el escenario.
 
 .. image:: img/6_ultrasonic_value2.png
 
-4. Move your hand back and forth in front of the ultrasonic module, and you will see the distance between your hand and the module displayed on the stage. The unit is cm.
+4. Mueve tu mano hacia adelante y hacia atrás frente al módulo ultrasónico, y verás la distancia entre tu mano y el módulo mostrada en el escenario. La unidad es cm.
 
 
 
-Responding to the Ultrasonic Distance Module
---------------------------------------------------------------------
+Respondiendo al Módulo de Distancia Ultrasónico
+---------------------------------------------------
 
-We can use the infrared obstacle avoidance module to make the GalaxyRVR automatically avoid obstacles ahead.
+Podemos usar el módulo de evasión de obstáculos por infrarrojos para hacer que el GalaxyRVR evite automáticamente los obstáculos al frente.
 
-1. Drag in a small green flag block.
+1. Arrastra un bloque de bandera verde pequeña.
 
 .. image:: img/6_ultrasonic_flag.png
 
-2. Set the speed. Here we set the speed to 30%, so it's not too fast, making it easier to debug.
+2. Establece la velocidad. Aquí la configuramos al 30%, para que no sea demasiado rápido, facilitando la depuración.
 
 .. image:: img/6_ultrasonic_speed.png
 
-3. Place a forward block to keep it moving when there are no obstacles.
+3. Coloca un bloque de avanzar para mantenerlo en movimiento cuando no haya obstáculos.
 
 .. image:: img/6_ultrasonic_forward.png
 
-4. Find the ``when distance < 15 cm`` block.
+4. Encuentra el bloque ``when distance < 15 cm``.
 
 .. image:: img/6_ultrasonic_when.png
 
-5. When an obstacle is detected, the GalaxyRVR stops moving and reverses.
+5. Cuando se detecta un obstáculo, el GalaxyRVR deja de moverse y retrocede.
 
 .. image:: img/6_ultrasonic_backward.png
 
-6. Make a slight turn (either left or right).
+6. Gira ligeramente (a la izquierda o a la derecha).
 
 .. image:: img/6_ultrasonic_turn.png
 
-7. After completing the turn, move forward again.
+7. Después de completar el giro, avanza de nuevo.
 
 .. image:: img/6_ultrasonic_forward_again.png
 
-Now, place the GalaxyRVR on the ground, and it will continue moving forward until it encounters an obstacle directly ahead, at which point it will change direction.
+Ahora, coloca el GalaxyRVR en el suelo y continuará avanzando hasta que encuentre un obstáculo directamente al frente, momento en el que cambiará de dirección.
 
 
 
-
-Blocks Related to the Ultrasonic Module
--------------------------------------------------
+Bloques Relacionados con el Módulo Ultrasonido
+---------------------------------------------------
 
 .. image:: img/block/ultra_when.png
 
-This is an event block that is triggered when the ultrasonic sensor detects an obstacle closer than 15cm. You can:
+Este es un bloque de evento que se activa cuando el sensor ultrasónico detecta un obstáculo a menos de 15 cm. Puedes:
 
-    * Change ``<`` to ``>`` in the dropdown menu
-    * Modify the number to adjust the threshold condition
+    * Cambiar ``<`` por ``>`` en el menú desplegable
+    * Modificar el número para ajustar la condición del umbral
 
 .. image:: img/block/ultra_wait_until.png
 
-This block pauses the program until the ultrasonic sensor detects an obstacle further than 15cm, then continues the program. You can:
+Este bloque pausa el programa hasta que el sensor ultrasónico detecte un obstáculo a más de 15 cm, y luego continúa el programa. Puedes:
 
-    * Change ``<`` to ``>`` in the dropdown menu
-    * Modify the number to adjust the threshold condition
+    * Cambiar ``<`` por ``>`` en el menú desplegable
+    * Modificar el número para ajustar la condición del umbral
 
 .. image:: img/block/ultra_condition.png
 
-This is a conditional block that returns TRUE if the distance detected by the ultrasonic sensor is indeed less than 15cm, otherwise FALSE. It is commonly used in blocks requiring conditionals like ``if``. You can:
+Este es un bloque condicional que devuelve VERDADERO si la distancia detectada por el sensor ultrasónico es menor de 15 cm, de lo contrario FALSO. Se usa comúnmente en bloques condicionales como ``si``. Puedes:
 
-    * Change ``<`` to ``>`` in the dropdown menu
-    * Modify the number to adjust the threshold condition
+    * Cambiar ``<`` por ``>`` en el menú desplegable
+    * Modificar el número para ajustar la condición del umbral
 
 .. image:: img/block/ultra_value.png
 
-This block displays the current distance measured by the ultrasonic sensor.
+Este bloque muestra la distancia actual medida por el sensor ultrasónico.
 
 
 
 
-Servo-Related Blocks
--------------------------------
+Bloques Relacionados con el Servo
+--------------------------------------
 
 .. image:: img/block/servo_set_angle.png
 
-This block is used to set the servo angle. The range is 0 to 180 degrees (however, due to structural limitations, the actual usable range is 0-135 degrees).
+Este bloque se utiliza para establecer el ángulo del servo. El rango es de 0 a 180 grados (sin embargo, debido a limitaciones estructurales, el rango utilizable real es de 0 a 135 grados).
 
 .. image:: img/block/servo_increase_angle.png
 
-This block increases (or decreases) the servo angle. The value can be negative.
+Este bloque incrementa (o disminuye) el ángulo del servo. El valor puede ser negativo.
 
 
 .. image:: img/block/servo_value.png
 
-The current angle of the servo.
+El ángulo actual del servo.
+

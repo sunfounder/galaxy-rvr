@@ -1,52 +1,52 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas post-venta y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprender y compartir**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas exclusivas**: Accede anticipadamente a los anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? ¡Haz clic en [|link_sf_facebook|] y únete hoy mismo!
 
-Camera Adapter Board
-=====================
+Placa Adaptadora de Cámara
+=================================
 
 .. image:: img/cam_adapter_board.jpg
     :width: 500
     :align: center
 
-* **RST**: Used to reset the ESP32-CAM.
-* **SCL**: Serial data pin for QMC6310
-* **SDA**: Serial clock pin of the QMC6310
-* **RXD**: The RXD of ESP32-CAM, you need to upload code to ESP32-CAM through these two serial pins, RXD and TXD.
-* **TXD**: TXD of ESP32-CAM
-* **5V**: 5V DC Supply Input
-* **GND**: Ground Input
+* **RST**: Se utiliza para reiniciar el ESP32-CAM.
+* **SCL**: Pin de datos en serie para el QMC6310.
+* **SDA**: Pin de reloj en serie del QMC6310.
+* **RXD**: RXD del ESP32-CAM, necesario para cargar el código a través de estos dos pines seriales, RXD y TXD.
+* **TXD**: TXD del ESP32-CAM.
+* **5V**: Entrada de alimentación de 5V DC.
+* **GND**: Entrada de tierra.
 
-The Camera Adapter Board, as the name implies, is an expansion board for the ESP-32 CAM, used to expand the ESP32-CAM so that it can be secured to the robot, and can be easily wired.
+La Placa Adaptadora de Cámara, como su nombre lo indica, es una placa de expansión para el ESP32-CAM, diseñada para asegurar el ESP32-CAM al robot y facilitar su cableado.
 
 .. image:: img/cam_adapter_esp32cam.png
     :width: 400
     :align: center
 
-Also because the geomagnetic chip QMC6310 is susceptible to interference from motors, we put it on this camera adapter board to keep it as far away from the motors as possible.
+Además, debido a que el chip geomagnético QMC6310 es susceptible a interferencias de los motores, lo colocamos en esta placa adaptadora para mantenerlo lo más alejado posible de los motores.
 
 .. image:: img/cam_adapter_qmc6310.png
     :width: 400
     :align: center
 
-**Features**
+**Características**
 
-* Working voltage: 5V
-* Interface Model: ZH1.5, 7P
-* Dimension: 40mm x 27mm x 15mm
-* Communication protocol: UART and I2C
+* Voltaje de funcionamiento: 5V
+* Modelo de interfaz: ZH1.5, 7P
+* Dimensiones: 40mm x 27mm x 15mm
+* Protocolo de comunicación: UART e I2C
 
-**Documents**
+**Documentos**
 
 * PCB
 
@@ -56,17 +56,17 @@ Also because the geomagnetic chip QMC6310 is susceptible to interference from mo
 .. image:: img/cam_adap_pcb_top.png
     :width: 300
 
-* Schematic
+* Esquemático
 
 .. image:: img/cam_adapter_sche.png
 
 
-**About QMC6310**
+**Acerca del QMC6310**
 
-The QMC6310 is a three-axis magnetic sensor, which integrates magnetic sensors and signal condition ASIC into one silicon chip. This Land Grid Array package (LGA) is targeted for applications such as e-compass, map rotation, gaming and personal navigation in mobile and wearable devices. 
+El QMC6310 es un sensor magnético de tres ejes, que integra sensores magnéticos y un ASIC de acondicionamiento de señales en un solo chip de silicio. Este paquete Land Grid Array (LGA) está diseñado para aplicaciones como brújula electrónica, rotación de mapas, juegos y navegación personal en dispositivos móviles y portátiles.
 
-The QMC6310 is based on state-of-the-art, high resolution, magneto-resistive technology. Along with the custom-designed 16-bit ADC ASIC, it offers the advantages of low noise, high accuracy, low power consumption, offset cancellation and temperature compensations. QMC6310 enables 1° to 2° compass heading accuracy. The I²C serial bus allows for easy interface. 
+El QMC6310 está basado en tecnología magnetoresistiva de alta resolución y última generación. Junto con el ASIC ADC personalizado de 16 bits, ofrece ventajas como bajo ruido, alta precisión, bajo consumo de energía, cancelación de offset y compensaciones de temperatura. El QMC6310 permite una precisión de rumbo de brújula de 1° a 2°. El bus serie I²C facilita su interfaz.
 
-The QMC6310 is in a 1.2x1.2x0.53mm3 surface mount 8-pin LGA package.
+El QMC6310 viene en un paquete LGA de montaje en superficie de 8 pines de 1.2x1.2x0.53mm3.
 
 * |link_qmc6310_datasheet|

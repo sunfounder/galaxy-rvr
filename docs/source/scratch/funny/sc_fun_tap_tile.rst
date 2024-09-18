@@ -1,25 +1,25 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprender y compartir**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos exclusivos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _sc_tap_tile:
 
-Extension 7 Tap on The Black Tile
+Extensión 7 Toca el Azulejo Negro
 ==========================================
 
-Many of you are familiar with the popular mobile game where players tap on the black tiles to score points while avoiding the white tiles. We're bringing this addictive challenge using two obstacle avoidance modules. When your hand is blocked over one of the IR modules, a tap is registered on the stage.
+Muchos de ustedes están familiarizados con el popular juego móvil donde los jugadores deben tocar los azulejos negros para ganar puntos mientras evitan los azulejos blancos. Estamos trayendo este adictivo desafío usando dos módulos de evitación de obstáculos. Cuando tu mano bloquea uno de los módulos IR, se registra un toque en el escenario.
 
-If a tap lands on a black tile, you score a point; tapping a white tile deducts a point. Players must decide quickly whether to tap over the left or right IR module based on the position of the black tiles.
+Si el toque cae sobre un azulejo negro, ganas un punto; si tocas un azulejo blanco, se te resta un punto. Los jugadores deben decidir rápidamente si tocar sobre el módulo IR izquierdo o derecho según la posición de los azulejos negros.
 
 .. raw:: html
 
@@ -28,154 +28,151 @@ If a tap lands on a black tile, you score a point; tapping a white tile deducts 
       Your browser does not support the video tag.
    </video>
 
-Below are the steps for implementing the project. It is recommended to follow these steps initially, and once familiar, you may modify the effects as desired.
+A continuación se detallan los pasos para implementar el proyecto. Se recomienda seguir estos pasos inicialmente, y una vez familiarizado, puedes modificar los efectos a tu gusto.
 
-1. Paint a **Tile** sprite
------------------------------------
+1. Pinta un sprite de **Azulejo**
+------------------------------------
 
-A **Tile** sprite is used to achieve the effect of alternating black and white tiles moving downward; in the cell phone version of this game, there are generally 4 columns, here we only do two columns.
+Un sprite de **Azulejo** se usa para lograr el efecto de alternar azulejos blancos y negros que se mueven hacia abajo; en la versión de este juego para teléfonos móviles, generalmente hay 4 columnas, aquí solo usamos dos.
 
-
-* Delete the default sprite, tap on the **Add Sprite** icon, select **Paint**.
+* Elimina el sprite predeterminado, toca el ícono de **Añadir Sprite**, selecciona **Pintar**.
 
   .. image:: img/tile_paint_tile1.png
 
-* Next, go to the **Costumes** page and use the **Rectangle** tool to draw a rectangle with a gray border and white fill.
+* Luego, ve a la página de **Disfraces** y usa la herramienta **Rectángulo** para dibujar un rectángulo con un borde gris y un relleno blanco.
 
   .. image:: img/tile_paint_tile2.png
     :width: 90%
 
-* Select the rectangle and click **Copy** -> **Paste** to make an identical rectangle, then move the two rectangles to a flush position.
+* Selecciona el rectángulo y haz clic en **Copiar** -> **Pegar** para hacer un rectángulo idéntico, luego mueve los dos rectángulos a una posición alineada.
 
   .. image:: img/tile_paint_tile3.png
     :width: 90%
 
-* Select one of the rectangles and choose a fill color of black.
+* Selecciona uno de los rectángulos y elige un color de relleno negro.
 
   .. image:: img/tile_paint_tile4.png
     :width: 90%
 
-* Now select both rectangles and move them so that their center points match the center of the canvas.
+* Ahora selecciona ambos rectángulos y muévelos para que sus puntos centrales coincidan con el centro del lienzo.
 
   .. image:: img/tile_paint_tile5.png
     :width: 90%
 
-* Duplicate costume1, alternating the fill colors of the two rectangles. For example, the fill color of costume1 is white on the left and black on the right, and the fill color of costume2 is black on the left and white on the right.
+* Duplica el disfraz1, alternando los colores de relleno de los dos rectángulos. Por ejemplo, el color de relleno del disfraz1 es blanco a la izquierda y negro a la derecha, y el color de relleno del disfraz2 es negro a la izquierda y blanco a la derecha.
 
   .. image:: img/tile_paint_tile6.png
     :width: 90%
 
-* Return to the **Code** page and set the sprite's name to **Tile**.
+* Regresa a la página de **Código** y asigna al sprite el nombre **Azulejo**.
 
   .. image:: img/tile_paint_tile7.png
 
-2. Scripting the **Tile** sprite
--------------------------------------
+2. Programando el sprite **Azulejo**
+----------------------------------------
 
-* First, set the initial position of the **Tile** sprite so that it is at the top of the stage.
+* Primero, ajusta la posición inicial del sprite **Azulejo** para que esté en la parte superior del escenario.
 
   .. image:: img/tile_script_tile1.png
 
-* Create a variable - **blocks** and give it an initial value to determine the number of times the **Tile** sprite will appear. Use the [repeat until] block to make the variable **blocks** gradually decrease until **blocks** is 0. During this time, have the sprite **Tile** randomly switch its costume. After clicking on the green flag, you will see the **Tile** sprite on the stage quickly switch costumes.
+* Crea una variable - **bloques** y asígnale un valor inicial para determinar cuántas veces aparecerá el sprite **Azulejo**. Usa el bloque [repetir hasta] para hacer que la variable **bloques** disminuya gradualmente hasta que **bloques** sea 0. Durante este tiempo, haz que el sprite **Azulejo** cambie aleatoriamente su disfraz. Después de hacer clic en la bandera verde, verás que el sprite **Azulejo** en el escenario cambia rápidamente de disfraz.
 
   .. image:: img/tile_script_tile2.png
 
-* Create clones of the **Tile** sprite while the variable **blocks** is decreasing, and stop the script from running when blocks is 0. Two [wait () seconds] blocks are used here, the first to limit the interval between **Tile's** clones and the second is to let the variable blocks decrease to 0 without stopping the program immediately, giving the last tile sprite enough time to move.
+* Crea clones del sprite **Azulejo** mientras la variable **bloques** disminuye, y detén el script cuando **bloques** llegue a 0. Se usan dos bloques [esperar () segundos] aquí, el primero para limitar el intervalo entre los clones de **Azulejo** y el segundo para permitir que la variable **bloques** disminuya a 0 sin detener el programa de inmediato, dando tiempo suficiente al último sprite de azulejo para moverse.
 
   .. image:: img/tile_script_tile3.png
 
-* Now script the clone of the **Tile** sprite to move down slowly and delete it when it reaches the bottom of the stage. The change in the y coordinate affects the drop speed, the larger the value, the faster the drop speed.
+* Ahora programa el clon del sprite **Azulejo** para que se mueva hacia abajo lentamente y se elimine cuando llegue al fondo del escenario. El cambio en la coordenada y afecta la velocidad de caída, cuanto mayor sea el valor, más rápida será la caída.
 
   .. image:: img/tile_script_tile4.png
 
-* Hide the body and show the clone.
+* Oculta el cuerpo y muestra el clon.
 
   .. image:: img/tile_script_tile5.png
 
-3. Scripting the backdrop
+3. Programando el fondo
 -------------------------------
 
-In the backdrop, read the values of the 2 IR modules and make the corresponding actions.
+En el fondo, lee los valores de los 2 módulos IR y realiza las acciones correspondientes.
 
-* When the green flag is clicked, set the variable **count** to 0.
+* Cuando se hace clic en la bandera verde, ajusta la variable **cuenta** a 0.
 
   .. image:: img/tile_script_backdrop.png
     :width: 90%
 
-* If the left IR obstacle avoidance module senses your hand, broadcast a message - **left**. 
+* Si el módulo IR izquierdo detecta tu mano, transmite un mensaje - **izquierda**. 
 
   .. image:: img/tile_script_backdrop1.png
 
-
-* If the right IR avoidance module senses your hand, broadcast a message - **right**.
+* Si el módulo IR derecho detecta tu mano, transmite un mensaje - **derecha**.
 
   .. image:: img/tile_script_backdrop2.png
 
 
-4. Paint **Left IR** sprite
------------------------------
-A **Left IR** sprite is used to achieve the click effect; when the left IR module senses your hand, it will send a message - **left** to **Left IR** sprite, letting it start working. If it touches the black tile on the stage, the score will be increased by 1, otherwise, the score will be decreased by 1.
+4. Pinta el sprite **IR Izquierda**
+-------------------------------------
 
+Un sprite **IR Izquierda** se usa para lograr el efecto de clic; cuando el módulo IR izquierdo detecta tu mano, enviará un mensaje - **izquierda** al sprite **IR Izquierda**, permitiéndole comenzar a funcionar. Si toca el azulejo negro en el escenario, la puntuación aumentará en 1, de lo contrario, disminuirá en 1.
 
-* Again, tap on the **Add Sprite** icon and select **Paint**.
+* Nuevamente, toca el ícono de **Añadir Sprite** y selecciona **Pintar**.
 
   .. image:: img/tile_paint_ir1.png
 
-* Go to the **Costumes** page, select the fill color (any color out of black and white) and draw a circle.
+* Ve a la página de **Disfraces**, selecciona el color de relleno (cualquier color que no sea negro o blanco) y dibuja un círculo.
 
   .. image:: img/tile_paint_ir2.png
 
-* Return to the **Code** page and change the sprite's name to **Left IR**.
+* Regresa a la página de **Código** y cambia el nombre del sprite a **IR Izquierda**.
 
   .. image:: img/tile_paint_ir3.png
 
-5. Scripting the **Left IR** sprite
-------------------------------------------
+5. Programando el sprite **IR Izquierda**
+---------------------------------------------
 
-* Now start scripting the **Left IR** sprite. When the green flag is clicked, first hide the sprite.
+* Ahora comienza a programar el sprite **IR Izquierda**. Cuando se hace clic en la bandera verde, primero oculta el sprite.
 
   .. image:: img/tile_script_ir1.png
 
-* When the message - **left** is received (the IR receiver module on the left detects an obstacle), show the sprite, set its size to 100%, and then shrink it at intervals of 10 using a [Repeat] block before hiding it again. This gives the sprite an effect of expanding and contracting.
+* Cuando se recibe el mensaje - **izquierda** (el módulo receptor IR en el lado izquierdo detecta un obstáculo), muestra el sprite, ajusta su tamaño al 100%, y luego lo reduce en intervalos de 10 usando un bloque [Repetir] antes de ocultarlo nuevamente. Esto le da al sprite un efecto de expansión y contracción.
 
   .. image:: img/tile_script_ir2.png
 
-* Then determine if the black block of the **Tile** sprite is touched, and if it is, let the variable **count** increase by 1, otherwise decrease by 1.
+* Luego determina si el bloque negro del sprite **Azulejo** es tocado, y si lo es, deja que la variable **cuenta** aumente en 1, de lo contrario, disminuye en 1.
   
   .. image:: img/tile_script_ir3.png
 
 .. note::
 
-    You need to make the **Tile** sprite appear on the stage, and then absorb the color of the black block in the **Tile** sprite.
+    Necesitas hacer que el sprite **Azulejo** aparezca en el escenario y luego absorber el color del bloque negro en el sprite **Azulejo**.
 
     .. image:: img/tile_script_ir4.png
 
-6. **Right IR** sprite
--------------------------------------
-The function of **Right IR** sprite is basically the same as **Left IR**, except that it receives **Right** information.
+6. Sprite **IR Derecha**
+-----------------------------------
+La función del sprite **IR Derecha** es básicamente la misma que la de **IR Izquierda**, excepto que recibe el mensaje **derecha**.
 
-
-* Now duplicate the **Left IR** sprite and change the sprite's name to **Right IR**.
+* Ahora duplica el sprite **IR Izquierda** y cambia el nombre del sprite a **IR Derecha**.
 
   .. image:: img/tile_paint_ir4.png
 
-* Then change the received message to - **right**.
+* Luego cambia el mensaje recibido a - **derecha**.
 
     .. image:: img/tile_script_ir5.png
 
-7. Running the Script
+7. Ejecutando el Script
 ---------------------------------
 
-* Now adjust the positions and sizes of the three sprites.
+* Ahora ajusta las posiciones y tamaños de los tres sprites.
 
-  * Drag the **Tile** sprite to the bottom of the stage and set its x position to 0.
-  * Move the **Left IR** sprite into the left frame. You need to go to the **Costumes** page to reduce the sprite's size to only 50% of the frame's size.
-  * Similarly, move the **Right IR** sprite into the right frame. You need to go to the **Costumes** page to reduce the sprite's size to only 50% of the frame's size.
-  * Make sure that the **Left IR** and **Right IR** sprites are above the **Tile** sprite.
+  * Arrastra el sprite **Azulejo** al fondo del escenario y ajusta su posición en x a 0.
+  * Mueve el sprite **IR Izquierda** al marco izquierdo. Necesitas ir a la página de **Disfraces** para reducir el tamaño del sprite al 50% del tamaño del marco.
+  * De manera similar, mueve el sprite **IR Derecha** al marco derecho. Necesitas ir a la página de **Disfraces** para reducir el tamaño del sprite al 50% del tamaño del marco.
+  * Asegúrate de que los sprites **IR Izquierda** y **IR Derecha** estén sobre el sprite **Azulejo**.
 
   .. image:: img/tile_paint_ir5.png
 
-* Now all the scripting is done, and you can click on the green flag to run the script.
+* Ahora toda la programación está lista, y puedes hacer clic en la bandera verde para ejecutar el script.
 
   .. raw:: html
 
@@ -183,3 +180,4 @@ The function of **Right IR** sprite is basically the same as **Left IR**, except
         <source src="../_static/video/sc_tap_black_tile.mp4"  type="video/mp4">
         Your browser does not support the video tag.
     </video>
+

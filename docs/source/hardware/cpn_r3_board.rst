@@ -1,20 +1,20 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprender y compartir**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _cpn_uno:
 
-SunFounder R3 Board
+Placa SunFounder R3
 ===========================
 
 .. image:: img/uno_r3.jpg
@@ -23,36 +23,35 @@ SunFounder R3 Board
 
 .. note::
 
-    The SunFounder R3 board is a mainboard with almost the same functions as the `Arduino Uno <https://store.arduino.cc/products/arduino-uno-rev3/>`_, and the two boards can be used interchangeably.
+    La placa SunFounder R3 es una placa principal con funciones casi idénticas a las del `Arduino Uno <https://store.arduino.cc/products/arduino-uno-rev3/>`_, y ambas pueden usarse de manera intercambiable.
 
-SunFounder R3 board is a microcontroller board based on the ATmega328P (`datasheet <http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf>`_). It has 14 digital input/output pins (of which 6 can be used as PWM outputs), 6 analog inputs, a 16 MHz ceramic resonator (CSTCE16M0V53-R0), a USB connection, a power jack, an ICSP header and a reset button. It contains everything needed to support the microcontroller; simply connect it to a computer with a USB cable or power it with a AC-to-DC adapter or battery to get started.
+La placa SunFounder R3 es una placa controladora basada en el ATmega328P (`hoja de datos <http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf>`_). Tiene 14 pines digitales de entrada/salida (de los cuales 6 pueden usarse como salidas PWM), 6 entradas analógicas, un resonador cerámico de 16 MHz (CSTCE16M0V53-R0), una conexión USB, un conector de alimentación, un cabezal ICSP y un botón de reinicio. Contiene todo lo necesario para soportar el microcontrolador; simplemente conéctala a una computadora con un cable USB o aliméntala con un adaptador de CA a CC o una batería para comenzar.
 
-**Technical Parameters**
+**Parámetros técnicos**
 
 .. image:: img/uno.jpg
     :align: center
 
-* MICROCONTROLLER: ATmega328P
-* OPERATING VOLTAGE: 5V
-* INPUT VOLTAGE (RECOMMENDED): 7-12V
-* INPUT VOLTAGE (LIMIT): 6-20V
-* DIGITAL I/O PINS: 14 (0-13, of which 6 provide PWM output(3, 5, 6, 9-11))
-* PWM DIGITAL I/O PINS: 6 (3, 5, 6, 9-11)
-* ANALOG INPUT PINS: 6 (A0-A5)
-* DC CURRENT PER I/O PIN: 20 mA
-* DC CURRENT FOR 3.3V PIN: 50 mA
-* FLASH MEMORY: 32 KB (ATmega328P) of which 0.5 KB used by bootloader
+* MICROCONTROLADOR: ATmega328P
+* VOLTAJE DE OPERACIÓN: 5V
+* VOLTAJE DE ENTRADA (RECOMENDADO): 7-12V
+* VOLTAJE DE ENTRADA (LÍMITE): 6-20V
+* PINES DIGITALES I/O: 14 (0-13, de los cuales 6 proporcionan salida PWM (3, 5, 6, 9-11))
+* PINES DIGITALES PWM: 6 (3, 5, 6, 9-11)
+* PINES DE ENTRADA ANALÓGICA: 6 (A0-A5)
+* CORRIENTE DC POR PIN I/O: 20 mA
+* CORRIENTE DC PARA PIN DE 3.3V: 50 mA
+* MEMORIA FLASH: 32 KB (ATmega328P), de los cuales 0.5 KB son usados por el gestor de arranque
 * SRAM: 2 KB (ATmega328P)
 * EEPROM: 1 KB (ATmega328P)
-* CLOCK SPEED: 16 MHz
+* VELOCIDAD DE RELOJ: 16 MHz
 * LED_BUILTIN: 13
-* LENGTH: 68.6 mm
-* WIDTH: 53.4 mm
-* WEIGHT: 25 g
-* I2C Port: A4(SDA), A5(SCL)
+* LONGITUD: 68.6 mm
+* ANCHO: 53.4 mm
+* PESO: 25 g
+* Puerto I2C: A4(SDA), A5(SCL)
 
-
-**What's More**
+**Más información**
 
 * `Arduino IDE <https://www.arduino.cc/en/software>`_
 * `Arduino Programming Language Reference <https://www.arduino.cc/reference/en/>`_

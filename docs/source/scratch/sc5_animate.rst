@@ -1,26 +1,24 @@
-
-
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el fascinante mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Preestrenos exclusivos**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos exclusivos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo!
 
 
-Lesson 5 Interactive Animation
+Lección 5 Animación interactiva
 ===============================================
 
-Previously, we used the ultrasonic module to make GalaxyRVR automatically avoid obstacles in its path.
+En nuestra actividad anterior, utilizamos el módulo ultrasónico para hacer que el GalaxyRVR evitara automáticamente los obstáculos en su camino.
 
-In this activity, we will combine the module with a stage to create an interactive animation of a rover joyfully traversing the surface of Mars.
+En esta actividad, combinaremos el módulo con un escenario para crear una animación interactiva de un rover atravesando alegremente la superficie de Marte.
 
 
 .. raw:: html
@@ -32,38 +30,38 @@ In this activity, we will combine the module with a stage to create an interacti
 
 
 
-Learning Objectives
--------------------------
+Objetivos de aprendizaje
+----------------------------
 
-* Learn how to draw sprites and edit backgrounds.
-* Understand basic programming concepts such as event listeners and loop structures.
-* Get familiar with the APP programming environment and basic operations to create a simple animation simulating a Mars rover.
+* Aprender a dibujar sprites y editar fondos.
+* Comprender conceptos básicos de programación como los escuchadores de eventos y las estructuras de bucles.
+* Familiarizarse con el entorno de programación de la APP y las operaciones básicas para crear una animación simple que simule un rover en Marte.
 
-Materials
------------
+Materiales
+--------------
 
-* Smartphone or tablet
-* Mammoth Coding APP
+* Teléfono inteligente o tableta
+* APP Mammoth Coding
 * GalaxyRVR
 
 
-Adding New Sprites
+Añadir nuevos sprites
 ----------------------------
 
-Delete the sprite you don't need.
+Elimina el sprite que no necesitas.
 
 .. image:: img/6_animate_delete.png
 ..   :align: left
 
 
 
-In the bottom right corner of the interface, you will see the "choose a sprite" button. Tap it to reveal four pull-up options.
+En la esquina inferior derecha de la interfaz, verás el botón "elegir un sprite". Toca para ver cuatro opciones desplegables.
 
 
 .. image:: img/2_create_sp.png
 ..  :align: left
 
-For smaller screens, you might need to navigate to a different screen to see this button.
+En pantallas más pequeñas, es posible que debas navegar a otra pantalla para ver este botón.
 
 
 .. image:: img/2_create_sp0.png
@@ -71,24 +69,24 @@ For smaller screens, you might need to navigate to a different screen to see thi
 
 
 
-The four options are:
+Las cuatro opciones son:
 
-* **Upload Sprite** : Load a sprite from your device storage.
-* **Surprise** : Randomly select a sprite from the library.
-* **Paint** : Draw a sprite.
-* **Choose a Sprite** : Open the library to choose a sprite.
+* **Subir Sprite** : Cargar un sprite desde el almacenamiento de tu dispositivo.
+* **Sorpresa** : Seleccionar un sprite al azar de la biblioteca.
+* **Pintar** : Dibujar un sprite.
+* **Elegir un Sprite** : Abrir la biblioteca para elegir un sprite.
 
-Next, we will use **Choose a Sprite** to select a sprite and **Paint** to draw a sprite.
+A continuación, utilizaremos **Elegir un Sprite** para seleccionar un sprite y **Pintar** para dibujar uno.
 
 
-**Choose a Sprite**
+**Elegir un Sprite**
 
-Click "choose a sprite" (magnifier icon) to enter the library, which provides a wealth of resources for your stage.
+Haz clic en "elegir un sprite" (icono de lupa) para entrar en la biblioteca, que proporciona una gran cantidad de recursos para tu escenario.
 
 .. image:: img/2_sp_list.png
 .. :align: left
 
-Find and select GalaxyRVR from the library.
+Busca y selecciona GalaxyRVR en la biblioteca.
 
 .. image:: img/2_sprite_rvr.png
 .. :align: left
@@ -96,62 +94,62 @@ Find and select GalaxyRVR from the library.
 
 
 
-**Paint a New Sprite**
+**Pintar un nuevo sprite**
 
-We are going to create a "Mars" sprite, but unfortunately, there is no suitable resource in the library.
+Vamos a crear un sprite de "Marte", pero desafortunadamente no hay un recurso adecuado en la biblioteca.
 
-Therefore, we will select **Paint** (brush icon) and draw one ourselves.
+Por lo tanto, seleccionaremos **Pintar** (icono de pincel) y lo dibujaremos nosotros mismos.
 
 .. image:: img/2_create_custom.png
 .. :align: left
 
-First, use the circle tool to draw a circle representing the planet.
+Primero, usa la herramienta de círculo para dibujar un círculo que represente el planeta.
 
 .. image:: img/2_create_custom1.png
 .. :align: left
 
-Then, use the pointer tool to move the circle so that it aligns with the center of the canvas.
-This step is crucial because the coordinates, direction, and movements of your sprite are based on its center point.
+Luego, utiliza la herramienta de puntero para mover el círculo de manera que quede alineado con el centro del lienzo.
+Este paso es crucial porque las coordenadas, dirección y movimientos de tu sprite se basan en su punto central.
 
 .. image:: img/2_create_custom2.png
 .. :align: left
 
-Use the paint bucket tool to color the planet red.
+Usa la herramienta de balde de pintura para colorear el planeta de rojo.
 
 .. image:: img/2_create_custom3.png
 .. :align: left
 
-Next, select the brush tool, increase its size, and choose a suitable color from the fill options to add texture to Mars.
+A continuación, selecciona la herramienta de pincel, aumenta su tamaño y elige un color adecuado de las opciones de relleno para añadir textura a Marte.
 
 .. image:: img/2_create_custom_pen.png
 .. :align: left
 
-If you find the color unsuitable after painting, you can change the fill color and use the paint bucket tool to fill the shape again.
+Si después de pintar el color no es adecuado, puedes cambiar el color de relleno y utilizar la herramienta de balde de pintura para volver a llenar la forma.
 
 .. image:: img/2_create_custom5.png
 .. :align: left
 
-Select the brush again, set the size to 2, and change the color to black. Use your creativity to add craters and details to Mars.
+Selecciona nuevamente el pincel, ajusta el tamaño a 2 y cambia el color a negro. Usa tu creatividad para añadir cráteres y detalles a Marte.
 
 .. image:: img/2_create_custom6.png
 .. :align: left
 
-Using the Paint Bucket Tool, choose an appropriate color to fill these craters.
+Con la herramienta de balde de pintura, elige un color adecuado para rellenar estos cráteres.
 
 .. image:: img/2_create_custom7.png
 .. :align: left
 
-Once finished, switch back to the Code interface. Your Mars sprite is now complete.
+Una vez que hayas terminado, vuelve a la interfaz de Código. Tu sprite de Marte está listo.
 
 .. image:: img/2_create_custom8.png
 .. :align: left
 
-For smaller screens, switch back to the Code interface by clicking here.
+Para pantallas más pequeñas, regresa a la interfaz de Código haciendo clic aquí.
 
 .. image:: img/2_create_custom8.1.png
 .. :align: left
 
-You will see the Mars sprite on the stage. Don't forget to rename it.
+Verás el sprite de Marte en el escenario. No olvides renombrarlo.
 
 .. image:: img/2_create_custom9.png
 .. :align: left
@@ -159,144 +157,141 @@ You will see the Mars sprite on the stage. Don't forget to rename it.
 
 
 
+**Escenario**
 
-**Stage**
+Haz clic en fondos. El fondo actual es blanco; necesitamos oscurecerlo para simular el cielo nocturno.
 
-
-Click on backdrops. The current backdrop is white; we need to make it darker to simulate the night sky.
-
-1. Click on the Backdrops of the stage.
+1. Haz clic en Fondos del escenario.
 
 .. image:: img/6_jump_backdrop.png
 .. :align: left
 
-2. Enter the Backdrops interface.
+2. Entra en la interfaz de Fondos.
 
 .. image:: img/6_jump_backdrop_page.png
 .. :align: left
 
-2. Draw a rectangle.
+2. Dibuja un rectángulo.
 
 .. image:: img/6_jump_rect.png
 .. :align: left
 
-3. Use the paint bucket to fill it with a dark color.
+3. Usa el balde de pintura para llenarlo con un color oscuro.
 
 .. image:: img/6_jump_fill.png
 .. :align: left
 
-4. Use the brush tool to add some stars.
+4. Utiliza la herramienta de pincel para añadir algunas estrellas.
 
 .. image:: img/6_jump_paint.png
 .. :align: left
 
 
 
-Creating the Animation
--------------------------------
+Crear la animación
+----------------------
+
+Ahora que tenemos Marte y GalaxyRVR, y sabemos cómo animar sprites, vamos a crear una animación en la que el GalaxyRVR se mueva sobre Marte.
+Podemos hacer que el sprite parezca moverse haciendo que Marte gire en la dirección opuesta, creando el efecto de que GalaxyRVR se desplaza por su superficie.
 
 
-Now that we have Mars and GalaxyRVR, and we know how to animate sprites, let's create an animation of GalaxyRVR moving on Mars.
-We can make the sprite appear to move by rotating Mars in the opposite direction, creating the effect of GalaxyRVR moving across its surface.
+Ajusta el tamaño y posición de los sprites, 
+establece las coordenadas del sprite GalaxyRVR en 0,0, y colócalo sobre Marte.
 
-
-Adjust the size and position of the sprites, 
-set the coordinates of the GalaxyRVR sprite to 0,0, and place it on Mars.
-
-And set the position and size of the Mars sprite so that the GalaxyRVR sprite just "stands" on it.
+Y ajusta la posición y el tamaño del sprite Marte de manera que el sprite GalaxyRVR "se pose" sobre él.
 
 .. image:: img/6_jump_place.png
 .. :align: left
 
 
-**Mars Sprite**
+**Sprite Marte**
 
 .. image:: img/6_ssp_mars.png
     :align: left
 
-Select the Mars sprite. Its task is to rotate counterclockwise, creating the illusion that GalaxyRVR is moving forward.
+Selecciona el sprite Marte. Su tarea es girar en sentido antihorario, creando la ilusión de que el GalaxyRVR se mueve hacia adelante.
 
 
 .. raw:: html
 
    <br></br>
 
-1. Drag a green flag block. All animation starts with the green flag.
+1. Arrastra un bloque de bandera verde. Toda animación comienza con la bandera verde.
 
 .. image:: img/6_jump_mar_flag.png
 .. :align: left
 
-2. Drag a ``forever`` block to keep the animation running continuously.
+2. Arrastra un bloque ``por siempre`` para mantener la animación en funcionamiento de forma continua.
 
 .. image:: img/6_jump_mar_forever.png
 .. :align: left
 
-3. Drag a ``turn`` block and a ``wait`` block to make Mars rotate continuously.
+3. Arrastra un bloque ``girar`` y un bloque ``esperar`` para que Marte gire de manera continua.
 
 .. image:: img/6_jump_mar_turn.png
 .. :align: left
 
 
-Now click the green flag, and you will see Mars rotating counterclockwise.
+Ahora haz clic en la bandera verde, y verás a Marte girar en sentido antihorario.
 
 
 
-**GalaxyRVR Sprite**
+**Sprite GalaxyRVR**
 
 .. image:: img/6_ssp_rvr.png
     :align: left
 
 
-Select the GalaxyRVR sprite. Its task is to animate as if it’s moving, even though it isn’t actually moving.
+Selecciona el sprite GalaxyRVR. Su tarea es animarse como si se estuviera moviendo, aunque en realidad no lo esté.
 
 .. raw:: html
 
    <br></br>
 
-1. Drag a green flag block. All animation starts with the green flag.
+1. Arrastra un bloque de bandera verde. Toda animación comienza con la bandera verde.
 
 .. image:: img/6_jump_mar_flag.png
 .. :align: left
 
 
-2. Drag a ``forever`` block to keep the animation running continuously.
+2. Arrastra un bloque ``por siempre`` para mantener la animación en funcionamiento de forma continua.
 
 .. image:: img/6_jump_mar_forever.png
 .. :align: left
 
-3. Drag a ``next costume`` block and a ``wait`` block to make GalaxyRVR continuously animate.
+3. Arrastra un bloque ``siguiente disfraz`` y un bloque ``esperar`` para que GalaxyRVR se anime de forma continua.
 
 .. image:: img/6_jump_mar_next.png
 .. :align: left
 
-**Adding More Fun**
+
+**Añadiendo más diversión**
 
 .. image:: img/6_ssp_rvr.png
     :align: left
 
-We can add interactivity to this animation by using the ultrasonic module 
-to make the GalaxyRVR sprite jump to avoid obstacles.
+Podemos añadir interactividad a esta animación utilizando el módulo ultrasónico 
+para hacer que el sprite GalaxyRVR salte para evitar obstáculos.
 
-Please continue programming in GalaxyRVR sprite.
+Por favor, continúa programando en el sprite GalaxyRVR.
 
 
-
-1. Drag a ``when distance`` block. This will trigger when the ultrasonic module detects an obstacle (e.g., your hand).
+1. Arrastra un bloque ``cuando la distancia``. Este se activará cuando el módulo ultrasónico detecte un obstáculo (por ejemplo, tu mano).
 
 .. image:: img/6_jump_when.png
 .. :align: left
 
-2. Drag two ``glide`` blocks and change the y-value of the first one to make the sprite jump up and then come down, creating a jumping effect.
+2. Arrastra dos bloques ``deslizar`` y cambia el valor de y en el primero para hacer que el sprite salte hacia arriba y luego baje, creando un efecto de salto.
 
 .. image:: img/6_jump_glide.png
 .. :align: left
 
 
-3. The complete code for the GalaxyRVR sprite should look like this:
+3. El código completo para el sprite GalaxyRVR debería verse así:
 
 .. image:: img/6_jump_mar_rvr_all.png
 .. :align: left
 
 
-Now, click the green flag to start the animation. Simulate an obstacle by placing your hand in front of the ultrasonic module, and the GalaxyRVR sprite will jump to avoid it.
+Ahora, haz clic en la bandera verde para iniciar la animación. Simula un obstáculo colocando tu mano frente al módulo ultrasónico, y el sprite GalaxyRVR saltará para evitarlo.
 

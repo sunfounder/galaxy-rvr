@@ -1,39 +1,35 @@
-Play with Scratch
-============================
+Juega con Scratch
+====================
 
-In addition to programming on the Arduino IDE, we can also use graphical programming.
+Además de programar en el IDE de Arduino, también podemos usar programación gráfica.
 
-We recommend using Scratch for programming. 
-However, the official Scratch currently only supports Raspberry Pi. To address this, we have developed Mammoth Coding, 
-a graphical programming software based on Scratch 3, specifically for Arduino boards (Uno, Mega2560, and Nano).
+Recomendamos usar Scratch para programar. Sin embargo, la versión oficial de Scratch solo es compatible con Raspberry Pi. Para resolver esto, hemos desarrollado Mammoth Coding, un software de programación gráfica basado en Scratch 3, específicamente para placas Arduino (Uno, Mega2560 y Nano).
 
-Mammoth Coding retains the basic functionalities of Scratch 3 while adding the capability to control various boards such as Arduino Uno, 
-Mega, Nano custom boards. It allows you to use external sensors and robots to control the sprites on stage, providing robust hardware interaction capabilities.
+Mammoth Coding conserva las funcionalidades básicas de Scratch 3, añadiendo la capacidad de controlar varias placas como Arduino Uno, Mega, y Nano personalizadas. Permite usar sensores externos y robots para controlar los sprites en el escenario, proporcionando amplias capacidades de interacción con hardware.
 
-Moreover, this app is easy to use even if you don't have much programming experience. You can learn and utilize these cutting-edge technologies with ease.
+Además, esta aplicación es fácil de usar incluso si no tienes mucha experiencia en programación. Puedes aprender y utilizar estas tecnologías de vanguardia con facilidad.
 
-Simply drag and drop Scratch coding blocks to create exciting games, animations, interactive projects, and even control robots exactly as you envision!
+¡Simplemente arrastra y suelta los bloques de código de Scratch para crear emocionantes juegos, animaciones, proyectos interactivos e incluso controlar robots tal como los imaginas!
 
-Let's embark on this journey of exploration now!
+¡Empecemos ahora este viaje de exploración!
 
 
-Download the Code
-------------------------------------------
+Descargar el Código
+-----------------------
 
-Download the relevant code from the link below.
+Descarga el código relevante desde el siguiente enlace:
 
     * :download:`GalaxyRVR Code File <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
 
-Or check out the code at `SunFounder GalaxyRVR Kit for Arduino - GitHub <https://github.com/sunfounder/galaxy-rvr/tree/main>`.
+O revisa el código en `SunFounder GalaxyRVR Kit for Arduino - GitHub <https://github.com/sunfounder/galaxy-rvr/tree/main>`.
 
 
-**Basic Project**
+**Proyecto Básico**
 
-These projects are the basic courses for controlling the GalaxyRVR with Mammoth Coding. They will guide you step by step on how to utilize GalaxyRVR.
+Estos proyectos son los cursos básicos para controlar el GalaxyRVR con Mammoth Coding. Te guiarán paso a paso sobre cómo utilizar el GalaxyRVR.
 
 .. toctree::
     :maxdepth: 1
-
 
     sc1_history.rst 
     sc2_app.rst 
@@ -50,9 +46,9 @@ These projects are the basic courses for controlling the GalaxyRVR with Mammoth 
     sc13_all.rst
 
 
-**Fun Project**
+**Proyecto Divertido**
 
-Here are some fun projects that don't require the Galaxy RVR, but you can implement them here.
+Aquí hay algunos proyectos divertidos que no requieren el GalaxyRVR, pero que puedes implementar igualmente.
 
 .. toctree::
     :maxdepth: 1

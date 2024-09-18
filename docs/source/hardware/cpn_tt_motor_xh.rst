@@ -1,70 +1,65 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprender y compartir**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos exclusivos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _cpn_tt_motor:
 
-TT Motor
+Motor TT
 ==============
-
 
 .. image:: img/tt_motor_xh.jpg
     :width: 400
     :align: center
 
-This is a TT DC gear motor with a gear ratio of 1:120. It comes with two 250mm wires with an XH2.54-2P connector. It can be powered with 3VDC.
+Este es un motor TT de engranajes DC con una relación de 1:120. Viene con dos cables de 250mm y un conector XH2.54-2P. Puede ser alimentado con 3VDC.
 
-**How Motors Work**
+**¿Cómo funcionan los motores?**
 
-A motor functions as the heart of a machine, transforming electrical energy into mechanical energy. This conversion brings to life various devices, from children's toys and household appliances to large vehicles.
+Un motor actúa como el corazón de una máquina, transformando la energía eléctrica en energía mecánica. Esta conversión da vida a diversos dispositivos, desde juguetes infantiles y electrodomésticos hasta grandes vehículos.
 
-Here's the process: 
+Así es como funciona el proceso:
 
-When electricity flows into a motor, it generates a magnetic field. This field interacts with other magnets within the motor, prompting it to spin. This spinning action, akin to a top whirling around, can then drive the movement of wheels, propellers, or other moving parts in a machine.
+Cuando la electricidad fluye a través de un motor, genera un campo magnético. Este campo interactúa con otros imanes dentro del motor, lo que provoca que gire. Esta acción de giro, similar a un trompo en movimiento, puede luego impulsar el movimiento de ruedas, hélices u otras partes móviles de una máquina.
 
 .. image:: img/motor_rotate.gif
     :align: center
 
-The TT Gear Motor is a specialized type of motor. It combines a standard motor with a series of gears, all housed within a durable plastic shell.
+El Motor TT es un tipo especializado de motor. Combina un motor estándar con una serie de engranajes, todos alojados dentro de una carcasa de plástico duradera.
 
-As the motor spins, the gears effectively transmit this rotational motion to the wheels of our rover. The integration of gears is pivotal, as it amplifies torque. This increased torque capacity enables the motor to maneuver larger and heavier loads, an essential capability in various applications.
+A medida que el motor gira, los engranajes transmiten eficazmente este movimiento rotacional a las ruedas de nuestro rover. La integración de los engranajes es crucial, ya que amplifica el torque. Esta mayor capacidad de torque permite al motor maniobrar cargas más grandes y pesadas, una capacidad esencial en diversas aplicaciones.
 
 .. image:: img/motor_internal.gif
     :align: center
     :width: 600
     
-**Features**
+**Características**
 
-* Suggested Voltage 3V~4.5V DC
-* Number of Shafts: Single shaft
-* Gear Ratio: 1:120
-* No load current: 130mA
-* No load speed: 38rpm±8%rpm
-* Starting Voltage: 2V (max.) under no load
-* Output torque: 3V ≥1.2kgf.cm
-* Useful life: 70-120H
-* Direction of rotation: Bi-directions
-* Body Dimensions: 70 x 22.5 x 36.6mm
-* Wires: Gray and Black, 24AWG, 250mm
-* Connector: White, XH2.54-2P
-* Weight: 28.5g
+* Voltaje sugerido: 3V~4.5V DC
+* Número de ejes: Un solo eje
+* Relación de engranaje: 1:120
+* Corriente sin carga: 130mA
+* Velocidad sin carga: 38rpm±8%rpm
+* Voltaje de arranque: 2V (máx.) sin carga
+* Torque de salida: 3V ≥1.2kgf.cm
+* Vida útil: 70-120H
+* Dirección de rotación: Bidireccional
+* Dimensiones del cuerpo: 70 x 22.5 x 36.6mm
+* Cables: Gris y Negro, 24AWG, 250mm
+* Conector: Blanco, XH2.54-2P
+* Peso: 28.5g
 
+**Dibujo dimensional**
 
-
-**Dimensional Drawing**
-
-Unit: mm
+Unidad: mm
 
 .. image:: img/motor_size.jpg
-
-

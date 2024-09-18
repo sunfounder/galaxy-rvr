@@ -1,25 +1,25 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprender y compartir**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos exclusivos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _sc_parrot:
 
-Extension 2 Flappy Parrot
+Extensión 2 Loro Volador
 ==============================
 
-In this project, we utilize an ultrasonic module to play a flappy parrot game.
+En este proyecto, utilizamos un módulo ultrasónico para jugar al juego del loro volador.
 
-After starting the script, the green bamboo (Paddle) will move from right to left at a random height. To control the parrot, place your hand above the ultrasonic module. If the distance between your hand and the module is less than 10cm, the parrot will ascend; otherwise, it will descend. You must manage this distance carefully to help the Parrot navigate past the green bamboo. Contact with the bamboo ends the game.
+Después de iniciar el script, el bambú verde (Paddle) se moverá de derecha a izquierda a una altura aleatoria. Para controlar al loro, coloca tu mano sobre el módulo ultrasónico. Si la distancia entre tu mano y el módulo es menor a 10 cm, el loro ascenderá; de lo contrario, descenderá. Debes gestionar esta distancia con cuidado para ayudar al loro a pasar el bambú verde. El contacto con el bambú terminará el juego.
 
 .. raw:: html
 
@@ -28,69 +28,68 @@ After starting the script, the green bamboo (Paddle) will move from right to lef
       Your browser does not support the video tag.
    </video>
 
-Below are the steps for implementing the project. It is recommended to follow these steps initially, and once familiar, you may alter the effects as desired.
+A continuación se muestran los pasos para implementar el proyecto. Se recomienda seguir estos pasos inicialmente, y una vez familiarizado, puedes alterar los efectos como desees.
 
-1. Add Sprites
+1. Añadir sprites
 ---------------------------
 
-* Delete the default sprite and use the **Choose a Sprite** button to add the **Parrot** sprite. Set its size to 50% and position it on the bottom left corner.
+* Elimina el sprite predeterminado y utiliza el botón **Elegir un Sprite** para agregar el sprite de **Loro**. Ajusta su tamaño al 50% y colócalo en la esquina inferior izquierda.
 
   .. image:: img/parrot_choose_parrot.png
 
-* Add the **Paddle** sprite, set its size to 150%, rotate it to 180 degrees, and position it in the top right corner.
+* Agrega el sprite de **Paddle**, ajusta su tamaño al 150%, gíralo a 180 grados y colócalo en la esquina superior derecha.
 
   .. image:: img/parrot_choose_paddle.png
  
-* Navigate to the **Costumes** page of the **Paddle** sprite, select the **Paddle** on the canvas, and then click the **Outline** tool.
+* Navega a la página de **Disfraces** del sprite **Paddle**, selecciona el **Paddle** en el lienzo, y luego haz clic en la herramienta **Contorno**.
 
   .. image:: img/parrot_set_parrot1.png
     :width: 90%
 
-* Change the outline effect to full fill mode and use the removal tool to eliminate it.
+* Cambia el efecto de contorno a modo de relleno completo y usa la herramienta de eliminación para quitarlo.
 
   .. image:: img/parrot_set_parrot2.png
     :width: 90%
 
-2. Scripting for the **Parrot** Sprite
+2. Programación del sprite **Loro**
 ---------------------------------------------
 
-Script the **Parrot** sprite to simulate its flight, with altitude adjustments based on the ultrasonic module's detection distance.
+Programa el sprite **Loro** para simular su vuelo, ajustando la altitud en función de la distancia detectada por el módulo ultrasónico.
 
-* When the green flag is clicked, switch the costume every 0.2 seconds to maintain the appearance of flight.
+* Al hacer clic en la bandera verde, cambia el disfraz cada 0.2 segundos para mantener la apariencia de vuelo.
 
   .. image:: img/parrot_script_parrot1.png
 
-* If the ultrasonic detection distance is less than 10cm, increase the y-coordinate by 50, causing the **Parrot** to ascend. Otherwise, decrease the y-coordinate by 40, causing the **Parrot** to descend.
+* Si la distancia detectada por el ultrasónico es menor a 10 cm, aumenta la coordenada y en 50, haciendo que el **Loro** ascienda. De lo contrario, disminuye la coordenada y en 40, haciendo que el **Loro** descienda.
 
   .. image:: img/parrot_script_parrot3.png
 
-* If the **Parrot** sprite makes contact with the **Paddle** sprite, the game ends, and the script ceases execution.
+* Si el sprite **Loro** entra en contacto con el sprite **Paddle**, el juego termina y el script deja de ejecutarse.
 
   .. image:: img/parrot_script_parrot4.png
 
-3. Scripting for the **Paddle** Sprite
+3. Programación del sprite **Paddle**
 -----------------------------------------------
 
-Script the **Paddle** sprite to appear randomly on stage.
+Programa el sprite **Paddle** para que aparezca aleatoriamente en el escenario.
 
-* Hide the **Paddle** sprite when the green flag is clicked and simultaneously create a clone of itself. The [`create clone of <https://en.scratch-wiki.info/wiki/Create_Clone_of_()_(block)>`_] block controls this cloning process.
+* Oculta el sprite **Paddle** cuando se haga clic en la bandera verde y simultáneamente crea un clon de sí mismo. El bloque [`crear clon de <https://en.scratch-wiki.info/wiki/Create_Clone_of_()_(block)>`_] controla este proceso de clonación.
 
   .. image:: img/parrot_script_paddle1.png
 
-* Set the clone's position with the x-coordinate at 220 (rightmost) and the y-coordinate randomly between (-125 to 125).
+* Establece la posición del clon con la coordenada x en 220 (extremo derecho) y la coordenada y aleatoriamente entre (-125 y 125).
 
   .. image:: img/parrot_script_paddle2.png
 
-* Use the [repeat] block to gradually decrease its x-coordinate, making the clone move slowly from right to left until it disappears.
+* Usa el bloque [repetir] para disminuir gradualmente su coordenada x, haciendo que el clon se mueva lentamente de derecha a izquierda hasta que desaparezca.
 
   .. image:: img/parrot_script_paddle3.png
 
-* Re-clone a new **Paddle** sprite and delete the previous clone.
+* Clona de nuevo un nuevo sprite **Paddle** y elimina el clon anterior.
 
   .. image:: img/parrot_script_paddle4.png
 
-Programming is complete. You can now click the green flag to run the script and see if it achieves the desired effect.
-
+La programación está completa. Ahora puedes hacer clic en la bandera verde para ejecutar el script y ver si logra el efecto deseado.
 
 .. raw:: html
 

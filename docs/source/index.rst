@@ -1,59 +1,60 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 con otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previsualizaciones exclusivas**: Obtén acceso anticipado a nuevos productos y adelantos exclusivos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-|link_Mars_Rover_Kit| - SunFounder Mars Rover Kit
+|link_Mars_Rover_Kit| - Kit SunFounder Mars Rover
 ========================================================
 
 * |link_GalaxyRVR|
 
-Thanks for choosing our |link_Mars_Rover_Kit|.
+Gracias por elegir nuestro |link_Mars_Rover_Kit|.
 
 .. note::
-    This document is available in the following languages.
+    Este documento está disponible en los siguientes idiomas:
 
         * |link_german_tutorials|
         * |link_jp_tutorials|
         * |link_en_tutorials|
+        * |link_fr_tutorials|
+        * |link_es_tutorials|
+        * |link_it_tutorials|
     
-    Please click on the respective links to access the document in your preferred language.
+    Haz clic en los enlaces correspondientes para acceder al documento en tu idioma preferido.
 
 
-Imagine piloting a rover on the desolate terrain of Mars, exploring alien landscapes and confronting the unknown. Sounds like a dream for NASA engineers, right?
+Imagina pilotar un rover en el desolado terreno de Marte, explorando paisajes alienígenas y enfrentando lo desconocido. Suena como el sueño de los ingenieros de la NASA, ¿verdad?
 
-Not anymore.
+Ya no más.
 
-Welcome to the world of the GalaxyRVR, a Mars Rover kit from SunFounder, designed to bring interplanetary exploration right into your living room.
+Bienvenido al mundo del GalaxyRVR, un kit de rover marciano de SunFounder, diseñado para llevar la exploración interplanetaria directamente a tu sala de estar.
 
 .. image:: img/galaxyRVR.jpg
     :width: 600
     :align: center
 
-Built upon the same universal rocker-bogie system employed by NASA's real Mars rovers, GalaxyRVR is capable of traversing all kinds of terrains – be it rocky mountains, sandy beaches, or grassy fields. The suspension system ensures smooth mobility, making the alien world of Mars feel just like home.
+Basado en el mismo sistema de suspensión rocker-bogie universal utilizado por los verdaderos rovers de Marte de la NASA, GalaxyRVR es capaz de atravesar todo tipo de terrenos, ya sean montañas rocosas, playas arenosas o campos cubiertos de césped. Su sistema de suspensión asegura una movilidad fluida, haciendo que el mundo alienígena de Marte se sienta como en casa.
 
-Equipped with a high-definition camera module, GalaxyRVR offers a first-person view, providing an immersive piloting experience as if 
-you're truly navigating the Red Planet. Its advanced obstacle avoidance module and ultrasonic module ensure it can dodge obstacles, embodying a spirit of autonomy and resilience.
+Equipado con un módulo de cámara de alta definición, el GalaxyRVR ofrece una vista en primera persona, brindando una experiencia de pilotaje inmersiva como si realmente estuvieras navegando por el Planeta Rojo. Su avanzado módulo de evitación de obstáculos y el módulo ultrasónico aseguran que pueda esquivar obstáculos, encarnando un espíritu de autonomía y resistencia.
 
-**Delve into the Cosmos: The Courses**
+**Adéntrate en el Cosmos: Los Cursos**
 
-* :ref:`play_mode`: Want a quick start? Play Mode is designed for those who can't wait to start their Martian journey. With factory-preloaded code, simply assemble your GalaxyRVR and control it using the convenient app to explore its multitude of functions.
+* :ref:`play_mode`: ¿Quieres comenzar rápidamente? El Modo de Juego está diseñado para aquellos que no pueden esperar para comenzar su viaje marciano. Con el código precargado de fábrica, simplemente ensambla tu GalaxyRVR y contrólalo usando la conveniente aplicación para explorar sus múltiples funciones.
 
-* :ref:`course_mode`: Intrigued by the underlying technology? Course Mode is for those who want to delve deeper. Understand the principles behind the GalaxyRVR's design, learn to code, and empower your rover with a variety of exciting features.
+* :ref:`course_mode`: ¿Te intriga la tecnología subyacente? El Modo de Curso es para aquellos que desean profundizar. Comprende los principios detrás del diseño del GalaxyRVR, aprende a programar y dota a tu rover de una variedad de emocionantes características.
 
-This documentation is your guide to exploring the intricacies of GalaxyRVR. It includes detailed assembly instructions, programming guides, and insights into the working principles of a Mars Rover, all aimed to stimulate your curiosity and foster creativity.
+Esta documentación es tu guía para explorar las complejidades del GalaxyRVR. Incluye instrucciones detalladas de ensamblaje, guías de programación y conocimientos sobre los principios de funcionamiento de un Rover Marciano, todo con el objetivo de estimular tu curiosidad y fomentar la creatividad.
 
-The GalaxyRVR isn't just a toy, but a gateway to Mars, an educational tool, and a catalyst for limitless imagination. Start your cosmic journey today with GalaxyRVR, and let your world become an extension of Mars.
-
+El GalaxyRVR no es solo un juguete, sino una puerta de entrada a Marte, una herramienta educativa y un catalizador para la imaginación sin límites. Comienza hoy tu viaje cósmico con GalaxyRVR y deja que tu mundo se convierta en una extensión de Marte.
 
 .. toctree::
     :maxdepth: 2
@@ -65,7 +66,7 @@ The GalaxyRVR isn't just a toy, but a gateway to Mars, an educational tool, and 
     hardware/hardware
     faq
 
-**Copyright Notice**
+**Aviso de Derechos de Autor**
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
+Todos los contenidos, incluidos, entre otros, textos, imágenes y códigos en este manual, son propiedad de SunFounder Company. Debes utilizarlos únicamente para estudio personal, investigación, disfrute u otros fines no comerciales o sin ánimo de lucro, bajo las regulaciones y leyes de derechos de autor aplicables, sin infringir los derechos legales del autor y los titulares de derechos relevantes. Para cualquier individuo u organización que utilice estos contenidos con fines de lucro comercial sin permiso, la Compañía se reserva el derecho de emprender acciones legales.
 
