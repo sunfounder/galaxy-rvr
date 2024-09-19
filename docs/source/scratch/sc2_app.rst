@@ -1,204 +1,187 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme agli altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti e agli sneak peek.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-Lesson 2 Getting Started with the Mammoth Coding APP
+Lezione 2 Iniziamo con l'APP Mammoth Coding
 ======================================================
 
-Let's dive into the world of Mammoth Coding and create your first project! 
-For an optimal experience, it is recommended to use a device with a larger screen.
+Immergiamoci nel mondo di Mammoth Coding e creiamo il tuo primo progetto! 
+Per un'esperienza ottimale, si consiglia di utilizzare un dispositivo con uno schermo più grande.
 
 
 
 
 
 
-Learning Objectives
---------------------
+Obiettivi di Apprendimento
+------------------------------------
 
-* Understand the APP programming environment and basic operations.
-* Learn how to script events in sprites, use the green flag, repeat, glide, and switch costumes.
-* Create a simple animation simulating a Mars rover.
+* Comprendere l'ambiente di programmazione dell'APP e le operazioni di base.
+* Imparare a programmare eventi nei personaggi, utilizzare la bandiera verde, ripetere, scorrere e cambiare costumi.
+* Creare una semplice animazione simulando un rover marziano.
 
+Materiali
+--------------
 
-Materials
------------
+* Smartphone o tablet
+* APP Mammoth Coding
 
-* Smartphone or tablet
-* Mammoth Coding APP
+Installazione dell'APP Mammoth Coding
+------------------------------------------
 
-
-
-Installing the Mammoth Coding APP
---------------------------------------
-
-
-First, search for Mammoth Coding on Google Play or the Apple Store and download it.
+Per prima cosa, cerca Mammoth Coding su Google Play o nell'Apple Store e scaricala.
 
 .. image:: img/mammoth_download.jpg
     :align: center
 
-
-Understanding the Mammoth Coding APP Interface
+Comprendere l'Interfaccia dell'APP Mammoth Coding
 ------------------------------------------------------------
 
-Mammoth Coding is designed to be fun, educational, and easy to learn. 
-It provides tools for creating interactive stories, games, art, 
-simulations, and more using block-based coding. 
-It also includes its own drawing and sound editors.
+Mammoth Coding è progettato per essere divertente, educativo e facile da imparare. 
+Fornisce strumenti per creare storie interattive, giochi, arte, simulazioni e altro ancora utilizzando la programmazione a blocchi. 
+Include anche editor di disegno e suoni integrati.
 
-Here is what the interface looks like:
+Ecco come appare l'interfaccia:
 
 .. image:: img/2_app_ui_001.png
     :align: center
 
-For smaller screen devices, the interface looks like this:
+Per dispositivi con schermo più piccolo, l'interfaccia appare così:
 
 .. image:: img/2_app_ui_002.png
     :align: center
 
 
-**Top Section**
+**Sezione Superiore**
 
-The top section of Mammoth Coding includes several basic options.
+La sezione superiore di Mammoth Coding include diverse opzioni di base.
 
 .. image:: img/2_app_ui_1.png
     :align: center
 
-* The first option from the left is the language setting, allowing you to choose different programming languages.
-* The second option is the file menu, where you can create new files, load local files, and save the current file.
-* The third option is for renaming your project.
+* La prima opzione a sinistra è l'impostazione della lingua, che ti consente di scegliere diverse lingue di programmazione.
+* La seconda opzione è il menu file, dove puoi creare nuovi file, caricare file locali e salvare il file corrente.
+* La terza opzione è per rinominare il tuo progetto.
 
+**Navigazione**
 
-**Navigation**
-
-
-Just below the top section is the navigation bar, 
-which allows you to switch between the Code, Costumes, 
-and Sounds editing pages.
+Subito sotto la sezione superiore c'è la barra di navigazione, 
+che consente di passare tra le pagine di Codice, Costumi 
+e Suoni.
 
 .. image:: img/2_app_ui_3.png
     :align: center
 
-On smaller screens, the navigation bar appears at the top.
+Su schermi più piccoli, la barra di navigazione si trova nella parte superiore.
 
 .. image:: img/2_app_ui_2.png
     :align: center
 
-The options are Code, Costumes, Sounds, and Stage. 
-The Stage page is actually the right-hand side of the interface on larger screens, 
-separated out on smaller devices to avoid clutter.
+Le opzioni sono Codice, Costumi, Suoni e Palcoscenico. 
+La pagina Palcoscenico si trova a destra dell'interfaccia su schermi più grandi, 
+separata su dispositivi più piccoli per evitare confusione.
 
 .. image:: img/2_app_ui_4.png
     :align: center
 
-
-**Code**
+**Codice**
 
 .. image:: img/2_app_ui_code.png
     :align: center
 
-The Code (and Stage) page is where most of your programming 
-activities will take place.
+La pagina Codice (e Palcoscenico) è dove avverranno la maggior parte delle attività di programmazione.
 
-**Costumes**
+**Costumi**
 
 .. image:: img/2_app_ui_custom.png
     :align: center
 
-The Costumes page is used to edit sprites and backdrops, 
-providing visual elements for your programs.
+La pagina Costumi è utilizzata per modificare personaggi e scenari, 
+fornendo elementi visivi per i tuoi programmi.
 
-**Sounds**
+**Suoni**
 
 .. image:: img/2_app_ui_sound.png
     :align: center
 
-The Sounds page handles audio, providing multimedia elements for your programs.
+La pagina Suoni gestisce l'audio, offrendo elementi multimediali per i tuoi programmi.
 
-First Time Using the Mammoth Coding APP
+Primo Utilizzo dell'APP Mammoth Coding
 ------------------------------------------------
 
-Drag a block to the center area.
+Trascina un blocco nell'area centrale.
 
 .. image:: img/2_drag.png
     :align: center
 
-Click the block and observe what happens.
+Clicca sul blocco e osserva cosa succede.
 
 .. image:: img/2_click.png
     :align: center
 
-You'll see the sprite in the center of the stage move a bit. 
-If you keep clicking the block, it will continue to move.
+Vedrai il personaggio al centro del palcoscenico muoversi un po'. 
+Se continui a cliccare sul blocco, il personaggio continuerà a muoversi.
 
 .. image:: img/2_show.png
     :align: center
 
-Notice how the shapes of these blocks suggest that they can be connected, 
-similar to LEGO bricks. When you connect the blocks, 
-the sprite on the stage will execute the connected code 
-blocks in sequence (e.g., move and then rotate).
+Noterai come la forma di questi blocchi suggerisce che possono essere collegati, 
+simile ai mattoncini LEGO. Quando colleghi i blocchi, 
+il personaggio sul palcoscenico eseguirà i blocchi di codice collegati 
+in sequenza (es., spostati e poi ruota).
 
 .. image:: img/2_click2.png
     :align: center
 
 
-.. note:: This is the basic programming process in the APP. Drag blocks from the left area, connect them together, and click them to make the stage sprite perform actions.
+.. note:: Questo è il processo base di programmazione nell'APP. Trascina i blocchi dall'area a sinistra, collegali e cliccali per far eseguire azioni al personaggio sul palcoscenico.
 
 
-**Choosing a Sprite**
+
+**Scegliere un Personaggio**
 
 
-In the lower right corner of the interface, 
-you’ll find the "choose a sprite" button. Tap it to see four pop-up options.
-
+Nell'angolo in basso a destra dell'interfaccia, 
+troverai il pulsante "scegli un personaggio". Toccalo per vedere quattro opzioni a comparsa.
 
 .. image:: img/2_create_sp.png
     :align: center
 
-On smaller screens, you need to navigate to see this button.
+Su schermi più piccoli, dovrai navigare per vedere questo pulsante.
 
 .. image:: img/2_create_sp0.png
     :align: center
 
+Le quattro opzioni sono:
 
-The four options are:
+* **Carica Personaggio**: Carica un personaggio dall'archivio del tuo dispositivo.
+* **Sorpresa**: Seleziona un personaggio casuale dalla libreria di asset.
+* **Disegna**: Disegna un personaggio.
+* **Scegli un Personaggio**: Apri la libreria di asset per scegliere un personaggio.
 
-* **Upload Sprite**: Load a sprite from your device's storage.
-* **Surprise**: Select a random sprite from the asset library.
-* **Paint**: Draw a sprite.
-* **Choose a Sprite**: Open the asset library to choose a sprite.
-
-Tap "choose a sprite" to enter the asset library, which provides a variety of materials for your stage.
+Tocca "scegli un personaggio" per entrare nella libreria di asset, che offre una varietà di materiali per il tuo palcoscenico.
 
 .. image:: img/2_sp_list.png
     :align: center
 
-
-Find and select "GalaxyRVR".
-
+Trova e seleziona "GalaxyRVR".
 
 .. image:: img/2_sprite_rvr.png
     :align: center
 
-**Your First Example**
+**Il Tuo Primo Esempio**
 
-
-Let's create a simple animation using the APP to make GalaxyRVR move randomly.
-
-
-
+Creiamo una semplice animazione utilizzando l'APP per far muovere casualmente GalaxyRVR.
 
 .. raw:: html
 
@@ -207,43 +190,41 @@ Let's create a simple animation using the APP to make GalaxyRVR move randomly.
       Your browser does not support the video tag.
    </video>
 
+**1. Inizia con la categoria gialla Eventi.**
 
+Mentre abbiamo eseguito il codice cliccando sui blocchi nell'area centrale, la maggior parte delle volte il nostro codice deve essere attivato da eventi. Gli eventi agiscono come sentinelle, monitorando azioni come clic sui personaggi o pressione di tasti, e dicono al programma cosa fare quando si verificano questi eventi.
 
-
-**1. Start with the yellow Events category.**
-
-While we've previously executed code by clicking blocks in the central area, most of the time our code should be triggered by events. Events act like guards, monitoring actions such as sprite clicks or key presses, and tell the program what to do when these events occur.
-
-Drag out the "when green flag clicked" block.
+Trascina il blocco "quando si clicca la bandiera verde".
 
 .. image:: img/2_first_flag.png
 
-The green flag acts like a starter's gun, representing the beginning of the program. This block triggers when you click the green flag next to the stage, starting all characters and code.
+La bandiera verde funziona come lo starter, rappresentando l'inizio del programma. Questo blocco si attiva quando clicchi sulla bandiera verde accanto al palcoscenico, avviando tutti i personaggi e il codice.
 
-**2. The Control category is the program's conductor.**
+**2. La categoria Controllo è il direttore del programma.**
 
-These blocks help control the program's flow, deciding when and how often actions should occur.
+Questi blocchi aiutano a controllare il flusso del programma, decidendo quando e quante volte le azioni devono verificarsi.
 
-Drag out a "repeat 10" block and attach it below the green flag block.
+Trascina un blocco "ripeti 10" e collegalo sotto il blocco della bandiera verde.
 
 .. image:: img/2_first_repeat.png
 
-This means that after you click the green flag, something will happen ten times.
+Questo significa che dopo aver cliccato la bandiera verde, qualcosa accadrà dieci volte.
 
-**3. The Motion category provides instructions for the stage's actors (sprites).**
+**3. La categoria Movimento fornisce istruzioni agli attori del palcoscenico (personaggi).**
 
-Drag out a "glide 1 secs to random position" block and nest it inside the "repeat 10" block.
+Trascina un blocco "scivola per 1 sec a posizione casuale" e inseriscilo all'interno del blocco "ripeti 10".
 
 .. image:: img/2_first_glide.png
 
-This will make your sprite glide to a random position.
+Questo farà scivolare il tuo personaggio verso una posizione casuale.
 
-**4. The Looks category adds animation and visual interest to your characters.**
+**4. La categoria Aspetto aggiunge animazione e interesse visivo ai tuoi personaggi.**
 
-Drag out a "next costume" block and place it inside the "repeat 10" block.
+Trascina un blocco "passa al costume successivo" e posizionalo all'interno del blocco "ripeti 10".
 
 .. image:: img/2_first_custom.png
 
-This makes your sprite change costumes with each action, making it look like it’s walking.
+Questo farà cambiare costume al tuo personaggio ad ogni azione, facendo sembrare che stia camminando.
 
-Now, click the green flag next to the stage and watch your GalaxyRVR move around randomly.
+
+Ora, clicca sulla bandiera verde accanto al palcoscenico e guarda il tuo GalaxyRVR muoversi casualmente.

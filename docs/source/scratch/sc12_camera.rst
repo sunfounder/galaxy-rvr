@@ -1,136 +1,136 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara & Condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Accedi in anticipo agli annunci dei nuovi prodotti e alle anticipazioni.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e Giveaway Festivi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-Lesson 12 Camera System
+
+
+Lezione 12 Sistema della Fotocamera
 ================================================
 
-Welcome back, young explorers! In the last lesson, we equipped our GalaxyRVR with the ability to "nod" using a tilt mechanism. Now, it's time to give our Rover "eyes" - the camera!
+Bentornati, giovani esploratori! Nella scorsa lezione, abbiamo dotato il nostro GalaxyRVR della capacità di "annuire" grazie a un meccanismo di inclinazione. Ora è il momento di dare al nostro Rover gli "occhi" – la fotocamera!
 
-In this thrilling journey, we'll dive into the setup of the Rover's camera system. You'll learn how to relay the visuals captured by the Rover's camera to the APP, so you can see exactly what the Rover sees in real-time. Imagine the excitement of experiencing the Martian landscape from the Rover's perspective!
+In questo emozionante viaggio, ci immergeremo nell'installazione del sistema della fotocamera del Rover. Imparerai come trasmettere le immagini catturate dalla fotocamera del Rover all'APP, così da poter vedere in tempo reale ciò che vede il Rover. Immagina l'emozione di esplorare il paesaggio marziano dal punto di vista del Rover!
 
-This offers an even more interactive and engaging experience with our GalaxyRVR. Stay tuned for more adventures!
+Questa funzione offre un'esperienza ancora più interattiva e coinvolgente con il nostro GalaxyRVR. Restate sintonizzati per altre avventure!
 
 
 .. image:: img/11_camera_image.png
 
 
-Learning Objectives
--------------------------
+Obiettivi di apprendimento
+------------------------------
 
-* Learn how to accurately see everything the Mars Rover sees in real-time.
-* Understand how to combine camera input and servo control to enhance project interactivity.
+* Imparare a vedere con precisione tutto ciò che vede il Mars Rover in tempo reale.
+* Capire come combinare l'input della fotocamera e il controllo del servo per migliorare l'interattività del progetto.
 
 
-Materials
------------
+Materiali
+-------------
 
-* Smartphone or tablet
-* Mammoth Coding APP
+* Smartphone o tablet
+* APP Mammoth Coding
 * GalaxyRVR
 
 
-Introduction to ESP32 CAM
+Introduzione all'ESP32 CAM
 -------------------------------------------------------
 
-In our previous adventure, we equipped our Mars Rover with a pair of "eyes" by integrating the ESP32 CAM. Today, we're going to learn more about it and actually make it "see."
+Nella nostra precedente avventura, abbiamo dotato il Mars Rover di una coppia di "occhi" integrando l'ESP32 CAM. Oggi, approfondiremo il suo funzionamento e lo faremo "vedere" realmente.
 
 .. image:: ../img/esp32_cam.png
     :width: 400
     :align: center
 
-The ESP32 CAM, acting like the eyes of our Rover, is a small yet powerful module. Not only does it integrate Wi-Fi and Bluetooth functionalities, but it also comes with a compact camera. This camera helps our Rover capture images of its surroundings.
+L'ESP32 CAM, che funge da occhi del nostro Rover, è un piccolo ma potente modulo. Non solo integra funzionalità Wi-Fi e Bluetooth, ma dispone anche di una fotocamera compatta che aiuta il nostro Rover a catturare immagini dell'ambiente circostante.
 
-Just like we use our eyes to observe our environment, the ESP32 CAM can "see" what lies ahead for the Rover, then send these visual data to our smartphone or computer. This allows us to see everything the Rover sees in real-time!
+Proprio come usiamo i nostri occhi per osservare il mondo, l'ESP32 CAM può "vedere" ciò che si trova davanti al Rover e inviare questi dati visivi al nostro smartphone o computer, permettendoci di vedere tutto in tempo reale!
 
-It's as if we're piloting the Rover directly, observing not just the Rover itself, but also the world it explores! Incredible, isn't it? So, let's dive deeper into it...
+È come se stessimo pilotando direttamente il Rover, osservando non solo il Rover stesso, ma anche il mondo che esplora! Incredibile, vero? Allora, esploriamolo più a fondo...
 
 
 .. _camera_system:
 
-Exploring the Mars Rover Visual System
+Esploriamo il Sistema Visivo del Rover Marziano
 ----------------------------------------------------
 
-1. Drag a ``turn camera ON`` block. Click it, and you'll see the background of the stage display the camera's feed.
+1. Trascina un blocco ``accendi la fotocamera``. Cliccalo e vedrai lo sfondo del palcoscenico mostrare il feed della fotocamera.
 
 .. image:: img/11_camera_on.png
 .. :align: center
 
-2. If you see the camera feed inverted, a ``set camera image orientation to inverted`` block can help you correct it.
+2. Se il feed della fotocamera appare invertito, un blocco ``imposta orientamento immagine fotocamera su invertito`` può aiutarti a correggerlo.
 
 .. image:: img/11_camera_orientation.png
 .. :align: center
 
-3. Drag a ``turn camera LED ON`` block. Click it, and the LED next to the GalaxyRVR camera will light up.
+3. Trascina un blocco ``accendi LED fotocamera``. Cliccalo e il LED accanto alla fotocamera del GalaxyRVR si illuminerà.
 
 .. image:: img/11_camera_led.png
 .. :align: center
 
-**Click the Sprite to Turn On the Camera**
+**Clicca sullo Sprite per Accendere la Fotocamera**
 
-1. Now that we know how to control the camera module, create four new sprites to control the camera and its LED. Adjust their sizes to make them look harmonious.
+1. Ora che sappiamo come controllare il modulo della fotocamera, crea quattro nuovi sprite per controllare la fotocamera e il suo LED. Regola le loro dimensioni per renderli armoniosi.
 
 .. image:: img/11_camera_4.png
 .. :align: center
 
-2. Program each sprite: clicking ball 1 will turn off the camera.
+2. Programma ogni sprite: cliccando su ball 1 si spegnerà la fotocamera.
 
 .. image:: img/11_camera_1sp.png
 .. :align: center
 
-3. Clicking ball 2 will turn on the camera and set the image orientation.
+3. Cliccando su ball 2 si accenderà la fotocamera e si imposterà l'orientamento dell'immagine.
 
 .. image:: img/11_camera_2sp.png
 .. :align: center
 
-4. Clicking ballon 3 will turn on the LED.
+4. Cliccando su ball 3 si accenderà il LED.
 
 .. image:: img/11_camera_3sp.png
 .. :align: center
 
-5. Clicking ballon 4 will turn off the LED.
+5. Cliccando su ball 4 si spegnerà il LED.
 
 .. image:: img/11_camera_4sp.png
 .. :align: center
 
-6. To save space on the stage, stack each set of controls.
+6. Per risparmiare spazio sul palcoscenico, impila ogni serie di controlli.
 
 .. image:: img/11_camera_fold.png
 .. :align: center
 
-7. Add a ``go to back layer`` block for each sprite. When clicked, the sprite will move to the back layer, revealing the next sprite, creating a toggle effect.
+7. Aggiungi un blocco ``vai al livello posteriore`` per ogni sprite. Quando viene cliccato, lo sprite si sposterà al livello posteriore, rivelando lo sprite successivo, creando un effetto di alternanza.
 
 .. image:: img/11_camera_layer.png
 .. :align: center
 
 
-
-Camera-Related Blocks
--------------------------------
+Blocchi Relativi alla Fotocamera
+------------------------------------
 
 .. image:: img/block/camera_turn.png
 
-Turn on (or off) the camera module. Once activated, the stage background will change to the camera view.
+Accendi (o spegni) il modulo fotocamera. Una volta attivato, lo sfondo del palcoscenico cambierà per mostrare la visuale della fotocamera.
 
 .. image:: img/block/camera_led_turn.png
 
-Turn on (or off) the supplemental LED on the camera module.
-
+Accendi (o spegni) il LED supplementare sul modulo fotocamera.
 
 .. image:: img/block/camera_transp.png
 
-Set the opacity of the camera view.
+Imposta l'opacità della visuale della fotocamera.
 
 .. image:: img/block/camera_orientation.png
 
-Set the orientation of the camera view. You can use this block to flip the view.
+Imposta l'orientamento della visuale della fotocamera. Puoi usare questo blocco per capovolgere l'immagine.

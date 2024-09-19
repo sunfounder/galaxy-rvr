@@ -1,21 +1,21 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme agli altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti e agli sneak peek.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-Extension 6 Distance Sensitive Ball
+Estensione 6 Pallina Sensibile alla Distanza
 ===========================================================
 
-In this project, we utilize an ultrasonic module to control the vertical movement of a ball on the stage. When you click the green flag, place your hand above the ultrasonic module. The ball will ascend if the distance between your hand and the module is less than 15 cm; otherwise, it will descend. When the ball makes contact with a line, it triggers a delightful sound and activates twinkling starlight effects.
+In questo progetto, utilizziamo un modulo ultrasonico per controllare il movimento verticale di una pallina sulla scena. Quando clicchi sulla bandiera verde, posiziona la tua mano sopra il modulo ultrasonico. La pallina salirà se la distanza tra la tua mano e il modulo è inferiore a 15 cm; altrimenti, scenderà. Quando la pallina tocca una linea, si attiva un suono piacevole e si innescano effetti di stelle scintillanti.
 
 .. raw:: html
 
@@ -24,104 +24,103 @@ In this project, we utilize an ultrasonic module to control the vertical movemen
       Your browser does not support the video tag.
    </video>
 
-Follow these steps to set up the project, and feel free to tweak the effects to your liking once you're accustomed to how it works.
+Segui questi passaggi per configurare il progetto, e sentiti libero di modificare gli effetti a tuo piacimento una volta che hai familiarizzato con il funzionamento.
 
-1. Select Sprites
---------------------------
+1. Seleziona gli Sprite
+---------------------------
 
-* Remove the default sprite and select the **Ball**, **Bowl**, and **Star** sprites.
+* Rimuovi lo sprite predefinito e seleziona gli sprite **Pallina**, **Ciotola** e **Stella**.
 
   .. image:: img/ball_choose_sprite.png
 
-* Position the **Bowl** sprite at the center bottom of the stage and increase its size.
+* Posiziona lo sprite **Ciotola** al centro inferiore della scena e aumentane la dimensione.
 
   .. image:: img/ball_set_bowl.png
 
-* Place the **Ball** sprite directly above the **Bowl** sprite, setting its direction to 0 to allow vertical movement.
+* Posiziona lo sprite **Pallina** direttamente sopra lo sprite **Ciotola**, impostando la sua direzione a 0 per consentire il movimento verticale.
 
   .. image:: img/ball_set_ball.png
 
-* Adjust the **Star** sprite’s size and set its direction to 180 to ensure it falls downward. This can be altered to different angles if preferred.
+* Regola la dimensione dello sprite **Stella** e imposta la sua direzione a 180 per farlo cadere verso il basso. Puoi modificarlo ad angoli diversi se preferisci.
 
   .. image:: img/ball_set_star.png
 
-* Add the **Stars** backdrop for added ambiance.
+* Aggiungi lo sfondo **Stelle** per creare un'atmosfera suggestiva.
 
   .. image:: img/ball_select_backdrop.png
 
-2. Draw a **Line** Sprite
--------------------------------
+2. Disegna uno Sprite **Linea**
+-----------------------------------
 
-* Now add a **Line** sprite.
+* Ora aggiungi uno sprite **Linea**.
 
   .. image:: img/ball_select_line.png
 
-* Navigate to the **Costumes** page of the **Line** sprite.
+* Vai alla pagina **Costumi** dello sprite **Linea**.
 
   .. image:: img/ball_open_cos.png
     :width: 90%
 
-* Slightly reduce the width of the red line on the canvas, duplicate it four times, and align these lines.
+* Riduci leggermente la larghezza della linea rossa sul canvas, duplicala quattro volte e allinea queste linee.
 
   .. image:: img/ball_copy_line.png
     :width: 90%
 
-* Color each line differently. Select a line, use the **Fill** tool, and pick a color.
+* Colora ciascuna linea in modo diverso. Seleziona una linea, usa lo strumento **Riempi** e scegli un colore.
 
   .. image:: img/ball_set_bk_color.png
     :width: 90%
 
-* Apply this method to color all lines accordingly.
+* Applica questo metodo per colorare tutte le linee di conseguenza.
 
   .. image:: img/ball_select_line_color.png
     :width: 90%
 
-* Return to the **Code** page and position the **Line** sprite at the top of the stage.
+* Torna alla pagina **Codice** e posiziona lo sprite **Linea** nella parte superiore della scena.
 
   .. image:: img/ball_line_position.png
 
-3. Scripting the **Ball** Sprite
--------------------------------------
+3. Script per lo Sprite **Pallina**
+--------------------------------------
 
-Here, we script the **Ball** sprite to move up or down based on the distance detected by the ultrasonic module, with a movement constraint to simulate landing on the **Bowl** sprite.
+Qui scriviamo lo script per lo sprite **Pallina** per muoversi su o giù in base alla distanza rilevata dal modulo ultrasonico, con un vincolo di movimento per simulare l'atterraggio sulla sprite **Ciotola**.
 
-* When the green flag is clicked, set the initial position of the **Ball** sprite.
+* Quando si clicca sulla bandiera verde, imposta la posizione iniziale dello sprite **Pallina**.
 
   .. image:: img/ball_script_ball1.png
 
-* Use an [if else] block to check if the distance is less than 15. If true, move the **Ball** sprite up by 10 steps, given its direction is set to 0.
+* Usa un blocco [se altrimenti] per verificare se la distanza è inferiore a 15. Se è vero, sposta lo sprite **Pallina** verso l'alto di 10 passi, dato che la sua direzione è impostata su 0.
 
   .. image:: img/ball_script_ball3.png
 
-* Otherwise, let the **Ball** sprite fall, limiting its Y coordinate to a minimum of -100, adjustable to appear as though it’s landing on the **Bowl** sprite.
+* Altrimenti, fai cadere lo sprite **Pallina**, limitando la sua coordinata Y a un minimo di -100, regolabile per far sembrare che atterri sulla sprite **Ciotola**.
 
   .. image:: img/ball_script_ball4.png
 
-* Script interaction where the **Ball** sprite, upon touching the **Line** sprite, records its Y position to the variable **ball_coor** and broadcasts a **bling** message.
+* Scrivi un'interazione in cui lo sprite **Pallina**, quando tocca lo sprite **Linea**, registra la sua posizione Y nella variabile **ball_coor** e invia un messaggio **bling**.
 
   .. image:: img/ball_script_ball5.png
 
-4. Scripting the **Star** Sprite
-------------------------------------
+4. Script per lo Sprite **Stella**
+-------------------------------------
 
-* Initially hide the **Star** sprite when the green flag is clicked. Upon receiving the **Bling** message, clone the **Star** sprite.
+* Inizialmente nascondi lo sprite **Stella** quando si clicca sulla bandiera verde. Al ricevimento del messaggio **Bling**, clona lo sprite **Stella**.
 
   .. image:: img/ball_script_star1.png
 
-* Set the clone's position and sound effects to synchronize with the **Ball** sprite's position.
+* Imposta la posizione e gli effetti sonori del clone in modo che si sincronizzino con la posizione dello sprite **Pallina**.
 
   .. image:: img/ball_script_star2.png
 
-* Allow it to rotate between -80 to 80 degrees randomly.
+* Consenti di ruotare tra -80 e 80 gradi in modo casuale.
 
   .. image:: img/ball_script_star3.png
 
-* Adjust the appearance and behavior of the **Star** sprite as needed to enhance the visual effect.
+* Regola l'aspetto e il comportamento dello sprite **Stella** come necessario per migliorare l'effetto visivo.
 
   .. image:: img/ball_script_star4.png
 
-Programming is complete. Click the green flag to run the script and see if it meets your expectations.
-
+La programmazione è completata. Clicca sulla bandiera verde per eseguire lo script e verificare se soddisfa le tue aspettative.
 
 .. raw:: html
 

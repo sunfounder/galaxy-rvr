@@ -1,59 +1,58 @@
-
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni l'accesso anticipato agli annunci di nuovi prodotti e alle anteprime.
+    - **Sconti speciali**: Goditi sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi!
+
 
 .. _update_firmware:
 
-
-Updating the Firmware File
+Aggiornamento del file firmware
 ======================================
 
-1. Download the firmwarefile.
+1. Scarica il file del firmware.
 
     * :download:`GalaxyRVR Firmware File <https://github.com/sunfounder/galaxy-rvr/releases/download/1.2.0/galaxy-rvr-1.2.0.zip>`
 
-2. Connect your mobile devices (such as phones or tablets) to the WiFi hotspot emitted by the GalaxyRVR. 
-Typically, the SSID is ``GalaxyRVR``, and the password is ``12345678``.
-
+2. Collega i tuoi dispositivi mobili (come smartphone o tablet) all'hotspot WiFi emesso dal GalaxyRVR. 
+Tipicamente, l'SSID è ``GalaxyRVR`` e la password è ``12345678``.
 .. image:: img/firmware/SSID.png
 
-.. note:: The default connection mode is **AP mode**. After connecting, you may receive a warning that there is no internet access on this network. If so, opt to "Stay connected".
+.. note:: La modalità di connessione predefinita è **modalità AP**. Dopo aver effettuato la connessione, potresti ricevere un avviso che indica l'assenza di accesso a internet su questa rete. Se accade, scegli "Rimani connesso".
 
     .. image:: img/app/camera_stay.png
 
-3. Navigate to http://192.168.4.1 to access the ESP32 Cam firmware update interface.
+3. Vai su http://192.168.4.1 per accedere all'interfaccia di aggiornamento del firmware ESP32 Cam.
 
 .. image:: img/firmware/OTAUpdate.jpg
 
-4. Check the version number. If your version is above ``1.5.1``, no update is necessary (skip steps 5-9). Otherwise, an upgrade is required.
+4. Controlla il numero di versione. Se la tua versione è superiore a ``1.5.1``, non è necessario alcun aggiornamento (salta i passaggi 5-9). Altrimenti, è richiesto un aggiornamento.
 
 .. image:: img/firmware/OTAversion.jpg
 
-5. Transfer the file ``ai-camera-firware.ino.1.5.1.bin`` to the device.
+5. Trasferisci il file ``ai-camera-firmware.ino.1.5.1.bin`` sul dispositivo.
 
 .. image:: img/firmware/selectBin.png
 
-6. Return to the firmware update interface. Click to select the firmware.
+6. Torna all'interfaccia di aggiornamento del firmware. Clicca per selezionare il firmware.
 
 .. image:: img/firmware/OTASButton.jpg
 
-7. Select the ``ai-camera-firware.ino.1.5.1.bin`` file you just stored on your mobile device, then click upgrade.
+7. Seleziona il file ``ai-camera-firmware.ino.1.5.1.bin`` che hai appena salvato sul tuo dispositivo mobile, poi clicca su aggiorna.
 
 .. image:: img/firmware/OTASelect.jpg
 
-8. Wait for the firmware upgrade to complete. Once the current version number shows as 1.5.1, the upgrade is successful.
+8. Attendi che l'aggiornamento del firmware sia completato. Quando il numero di versione corrente visualizza 1.5.1, l'aggiornamento è avvenuto con successo.
 
 .. image:: img/firmware/OTAFinish.jpg
 
-9. Close the page.
+9. Chiudi la pagina.
+

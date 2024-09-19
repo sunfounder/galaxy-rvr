@@ -1,24 +1,24 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di appassionati di SunFounder Raspberry Pi, Arduino ed ESP32 su Facebook! Approfondisci il mondo di Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e anteprime.
+    - **Sconti esclusivi**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a giveaway e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 
-Extension 4 Eat Apple
+Estensione 4 Mangia la Mela
 ===========================
 
-In this project, we use an infrared obstacle avoidance module to guide the Beetle sprite to an apple.
+In questo progetto, utilizziamo un modulo di evitamento ostacoli a infrarossi per guidare lo sprite Coleottero verso una mela.
 
-After clicking the green flag, swiftly pass your hand over the left obstacle avoidance module (block and quickly remove your hand from in front of the module) to initiate Beetle's rotation. Once it aligns properly, sweep your hand over the module again to move Beetle forward, ensuring it avoids the black lines on the map. If adjustments or turns are necessary, swipe your hand over the module again to rotate Beetle to the desired angle. Repeat these steps until the Beetle sprite reaches the apple.
+Dopo aver cliccato sulla bandiera verde, passa rapidamente la mano sopra il modulo di evitamento ostacoli sinistro (blocca e rimuovi velocemente la mano di fronte al modulo) per avviare la rotazione del Coleottero. Una volta allineato correttamente, passa di nuovo la mano sopra il modulo per far avanzare il Coleottero, assicurandoti che eviti le linee nere sulla mappa. Se sono necessari aggiustamenti o curve, passa nuovamente la mano sopra il modulo per ruotare il Coleottero all'angolo desiderato. Ripeti questi passaggi fino a che lo sprite Coleottero raggiunge la mela.
 
 .. raw:: html
 
@@ -27,117 +27,117 @@ After clicking the green flag, swiftly pass your hand over the left obstacle avo
       Your browser does not support the video tag.
    </video>
 
-Below are the steps for implementing the project. It's recommended to follow these initially, and once familiar, you may modify the effects as you wish.
+Di seguito sono riportati i passaggi per implementare il progetto. Si consiglia di seguirli inizialmente, e una volta acquisita familiarità, potrai modificare gli effetti come desideri.
 
-1. Draw the **Maze** Backdrop
--------------------------------------
+1. Disegna lo sfondo **Labirinto**
+----------------------------------------
 
-Here, we will draw a map backdrop with a red apple on it.
+Qui disegneremo uno sfondo della mappa con una mela rossa.
 
-* First, select a blank backdrop.
+* Per prima cosa, seleziona uno sfondo vuoto.
 
   .. image:: img/apple_click_backdrop.png
 
-* Click **Backdrops** to start drawing the map backdrop. First, rename the backdrop to **Maze**.
+* Clicca su **Sfondi** per iniziare a disegnare lo sfondo della mappa. Prima, rinomina lo sfondo in **Labirinto**.
 
   .. image:: img/apple_open_backdrop.png
 
-* Use the **Line** tool, set the color to black, width to 4, and start drawing the map. You can design your map based on your ideas; it doesn't have to be like mine.
+* Usa lo strumento **Linea**, imposta il colore su nero, la larghezza su 4 e inizia a disegnare la mappa. Puoi progettare la tua mappa in base alle tue idee; non deve essere necessariamente come la mia.
 
   .. image:: img/apple_paint_bk_maze2.png
     :width: 90%
 
-* Now, draw an apple. Using the **Circle** tool, draw an ellipse or circle in red with no outline.
+* Ora, disegna una mela. Usando lo strumento **Cerchio**, disegna un'ellisse o un cerchio rosso senza contorno.
 
   .. image:: img/apple_paint_bk_maze3.png
 
   .. note::
 
-    You can remove the outline by clicking the **Outline** window and then using the **Remove** tool.
+    Puoi rimuovere il contorno cliccando sulla finestra **Contorno** e poi usando lo strumento **Rimuovi**.
 
     .. image:: img/apple_paint_bk_maze4.png
 
-* Select the **Brush** tool and choose a color and width to finish drawing the apple.
+* Seleziona lo strumento **Pennello** e scegli un colore e una larghezza per completare il disegno della mela.
 
   .. image:: img/apple_paint_bk_maze5.png
 
-2. Draw the **Win** Backdrop
----------------------------------
+2. Disegna lo sfondo **Vittoria**
+------------------------------------
 
-Now start drawing; refer to the steps below, or draw your backdrop based on your creativity, ensuring it represents a victory.
+Ora inizia a disegnare; segui i passaggi sottostanti o disegna uno sfondo basato sulla tua creatività, assicurandoti che rappresenti una vittoria.
 
-* Click the button to add a new backdrop at the bottom, select **Paint**, and name this backdrop **Win**.
+* Clicca sul pulsante per aggiungere un nuovo sfondo in basso, seleziona **Disegna** e nomina questo sfondo **Vittoria**.
 
   .. image:: img/apple_paint_bk_win.png
 
-* Using the **Circle** tool, draw an ellipse in red with no outline.
+* Usando lo strumento **Cerchio**, disegna un'ellisse in rosso senza contorno.
 
   .. image:: img/apple_paint_bk_win2.png
     :width: 90%
 
-* Then, use the **Text** tool to write "WIN!". Set the font color to black and adjust the size and position of the text.
+* Poi, usa lo strumento **Testo** per scrivere "WIN!". Imposta il colore del carattere su nero e regola la dimensione e la posizione del testo.
 
   .. image:: img/apple_paint_bk_cus2.png
     :width: 90%
 
-3. Scripting for the **Maze** Backdrop
---------------------------------------
+3. Programmazione per lo sfondo **Labirinto**
+-------------------------------------------------
 
-Ensure the backdrop is switched to **Maze** every time the game starts.
+Assicurati che lo sfondo sia impostato su **Labirinto** ogni volta che inizia il gioco.
 
 .. image:: img/apple_switch_backdrop.png
   :width: 90%
 
-4. Select the **Beetle** Sprite
------------------------------------------
+4. Seleziona lo sprite **Coleottero**
+----------------------------------------
 
-* Delete the default sprite and select the **Beetle** sprite.
+* Elimina lo sprite predefinito e seleziona lo sprite **Coleottero**.
 
   .. image:: img/apple_choose_sprite.png
 
-* Place the **Beetle** sprite at the entrance of the **Maze** backdrop, noting the x, y coordinate values at this point, and resize the sprite to 40%.
+* Posiziona lo sprite **Coleottero** all'ingresso dello sfondo **Labirinto**, annotando i valori delle coordinate x e y in questo punto, e ridimensiona lo sprite al 40%.
 
   .. image:: img/apple_place_sprite.png
 
-5. Scripting for the **Beetle** Sprite
------------------------------------------------
+5. Programmazione per lo sprite **Coleottero**
+-------------------------------------------------
 
-Now, write a script for the **Beetle** sprite to move forward and change direction under the control of the left obstacle avoidance module.
+Ora, scrivi uno script per lo sprite **Coleottero** in modo che possa muoversi in avanti e cambiare direzione sotto il controllo del modulo di evitamento ostacoli sinistro.
 
-* When the green flag is clicked, set the **Beetle** angle to 90, and the position to (-124, -113), or use the coordinate values of your placement.
+* Quando viene cliccata la bandiera verde, imposta l'angolo del **Coleottero** su 90 e la posizione su (-124, -113), o usa i valori delle coordinate del tuo posizionamento.
 
   .. image:: img/apple_point_in.png
     :width: 90%
 
-* Create the variable **flag** and set its initial value to -1.
+* Crea la variabile **flag** e imposta il suo valore iniziale su -1.
 
   .. image:: img/apple_vable_flag.png
 
-Next, within the [forever] block, use four [if] blocks to manage different scenarios.
+Successivamente, all'interno del blocco [per sempre], utilizza quattro blocchi [se] per gestire diversi scenari.
 
-* If the left infrared is blocked, use the [`mod <https://en.scratch-wiki.info/wiki/Boolean_Block>`_] block to toggle the variable **flag** between 0 and 1 (alternating between 0 for this press and 1 for the next).
+* Se l'infrarosso sinistro è bloccato, usa il blocco [`mod <https://en.scratch-wiki.info/wiki/Boolean_Block>`_] per alternare la variabile **flag** tra 0 e 1 (alternando tra 0 per questa pressione e 1 per la successiva).
 
    .. image:: img/apple_read_ir.png
 
-* If the flag is 0 (left infrared is blocked), let the **Beetle** sprite turn clockwise. If the flag is 1 (left infrared is blocked again), the **Beetle** moves forward. Otherwise, it continues turning clockwise.
+* Se la variabile flag è 0 (l'infrarosso sinistro è bloccato), fai ruotare lo sprite **Coleottero** in senso orario. Se la variabile flag è 1 (l'infrarosso sinistro è bloccato di nuovo), il **Coleottero** si muove in avanti. Altrimenti, continua a ruotare in senso orario.
 
   .. image:: img/apple_read_flag.png
 
-* If the **Beetle** sprite touches black (the black line on the **Maze** backdrop), the game ends, and the script stops running.
+* Se lo sprite **Coleottero** tocca il nero (la linea nera sullo sfondo **Labirinto**), il gioco termina e lo script si arresta.
 
   .. image:: img/apple_touch_black1.png
 
   .. note::
     
-    Click on the color area in the [Touch color] block and select the eyedropper tool to pick up the color of the black line on the stage. If you choose a random black, this [Touch color] block will not function correctly.
+    Clicca sull'area colore nel blocco [Tocca colore] e seleziona lo strumento contagocce per prelevare il colore della linea nera sul palco. Se scegli un nero casuale, questo blocco [Tocca colore] non funzionerà correttamente.
 
     .. image:: img/apple_touch_black.png
 
-* If the Beetle touches red (also use the straw tool to pick up the red color of the apple), the backdrop switches to **Win**, indicating the game is successful, and the script stops running.
+* Se il Coleottero tocca il rosso (utilizza anche lo strumento contagocce per prelevare il colore rosso della mela), lo sfondo cambia su **Vittoria**, indicando che il gioco è stato completato con successo, e lo script si arresta.
 
   .. image:: img/apple_touch_red.png
 
-Programming complete, you can now click the green flag to run the script and see if it achieves the desired effect.
+Programmazione completata, ora puoi cliccare sulla bandiera verde per eseguire lo script e verificare se ottieni l'effetto desiderato.
 
 
   .. raw:: html

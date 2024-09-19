@@ -1,73 +1,75 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara & Condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Accedi in anticipo agli annunci dei nuovi prodotti e alle anticipazioni.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e Giveaway Festivi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-Lesson 13 Realtime Control
+
+
+Lezione 13 Controllo in Tempo Reale
 =======================================
 
-We have now explored most of the features of the GalaxyRVR. 
-To complete our journey and transform the GalaxyRVR into a fully functional robot, 
-we need to combine the three main parts we've covered.
+Abbiamo esplorato la maggior parte delle funzionalità del GalaxyRVR. 
+Per completare il nostro viaggio e trasformare il GalaxyRVR in un robot completamente funzionale, 
+dobbiamo combinare le tre parti principali che abbiamo trattato.
 
 
-    * :ref:`camera_system` : This part includes the camera and LED control features.
+    * :ref:`camera_system` : Questa parte include le funzioni di controllo della fotocamera e del LED.
 
-    * :ref:`rgb_move` : This section includes movement and lighting effects.
+    * :ref:`rgb_move` : Questa sezione riguarda il movimento e gli effetti luminosi.
 
-    * :ref:`tilt_system` : This part involves adjusting the direction of the camera gimbal.
+    * :ref:`tilt_system` : Questa parte include la regolazione della direzione del giunto cardanico della fotocamera.
 
-Put it all together and you can click the sprites to turn the camera and LED on or off, and use the arrow keys to move the GalaxyRVR.
+Metti tutto insieme e puoi cliccare sugli sprite per accendere o spegnere la fotocamera e il LED, e usare le frecce direzionali per muovere il GalaxyRVR.
 
 .. image:: img/13_camera_go_all2.png
 
 
-**Camera System**
+**Sistema della Fotocamera**
 ------------------------------------
 
 
-For this part, repeat the steps from :ref:`camera_system`.
+Per questa parte, ripeti i passaggi della sezione :ref:`camera_system`.
 
-1. create four new sprites to control the camera and its LED. Adjust their sizes to make them look harmonious.
+1. Crea quattro nuovi sprite per controllare la fotocamera e il suo LED. Regola le dimensioni per renderli armoniosi.
 
 .. image:: img/11_camera_4.png
 .. :align: center
 
-2. Program each sprite: clicking ball 1 will turn off the camera.
+2. Programma ogni sprite: cliccando su ball 1 spegnerai la fotocamera.
 
 .. image:: img/11_camera_1sp.png
 .. :align: center
 
-3. Clicking ball 2 will turn on the camera and set the image orientation.
+3. Cliccando su ball 2 accenderai la fotocamera e imposterai l'orientamento dell'immagine.
 
 .. image:: img/11_camera_2sp.png
 .. :align: center
 
-4. Clicking ballon 3 will turn on the LED.
+4. Cliccando su ball 3 accenderai il LED.
 
 .. image:: img/11_camera_3sp.png
 .. :align: center
 
-5. Clicking ballon 4 will turn off the LED.
+5. Cliccando su ball 4 spegnerai il LED.
 
 .. image:: img/11_camera_4sp.png
 .. :align: center
 
-6. To save space on the stage, stack each set of controls.
+6. Per risparmiare spazio sul palcoscenico, impila ciascun set di controlli.
 
 .. image:: img/11_camera_fold.png
 .. :align: center
 
-7. Add a ``go to back layer`` block for each sprite. When clicked, the sprite will move to the back layer, revealing the next sprite, creating a toggle effect.
+7. Aggiungi un blocco ``vai al livello posteriore`` per ogni sprite. Quando viene cliccato, lo sprite si sposterà al livello posteriore, rivelando lo sprite successivo, creando un effetto toggle.
 
 .. image:: img/11_camera_layer.png
 .. :align: center
@@ -75,89 +77,82 @@ For this part, repeat the steps from :ref:`camera_system`.
 
 
 
-**Move & RGB System**
+**Sistema di Movimento e RGB**
 ----------------------------------
 
 
 
-Let's enhance the movement functionalities. We have already coded these in the :ref:`rgb_move` section.
+Potenzia le funzionalità di movimento. Abbiamo già programmato questi comandi nella sezione :ref:`rgb_move`.
 
-We recommend placing these code blocks in the Backdrops. This way, modifying the sprite's code won't affect this functionality.
+Ti consigliamo di posizionare questi blocchi di codice nei Backdrop. In questo modo, modificare il codice dello sprite non influenzerà questa funzionalità.
 
 .. image:: img/13.ccc_code_in_stage.png
 
-1. Let GalaxyRVR turn on the green light when moving forward.
+1. Fai accendere la luce verde del GalaxyRVR quando si muove in avanti.
 
 .. image:: img/13.ccc_light_forward.png
 
 
-2. Let GalaxyRVR turn on the red light when moving backward.
+2. Fai accendere la luce rossa del GalaxyRVR quando si muove all'indietro.
 
 .. image:: img/13.ccc_light_left_right.png
 
-3. Let GalaxyRVR turn on the yellow light when turning left or right.
+3. Fai accendere la luce gialla del GalaxyRVR quando gira a sinistra o a destra.
 
 .. image:: img/13.ccc_light_backfwd.png
 
-4. Let GalaxyRVR turn on the breathing light when not moving.
+4. Fai accendere la luce "respirante" quando il GalaxyRVR non si muove.
 
 .. image:: img/13.ccc_light_breath.png
 
-Finally, your code should be as follows. 
-Please note that these codes should be written in Backdrops.
+Infine, il tuo codice dovrebbe apparire come segue. 
+Nota che questi codici devono essere scritti nei Backdrop.
 
 .. image:: img/11_camera_backdrops.png
 
 
 
-**Tilt System**
-------------------------
+**Sistema di Inclinazione**
+----------------------------------
 
 
-This part is the same as the :ref:`tilt_system`. Simply repeat the steps.
+Questa parte è uguale a quella della sezione :ref:`tilt_system`. Ripeti semplicemente i passaggi.
 
-1. Add an Arrow sprite. We will set the gimbal direction based on its orientation.
+1. Aggiungi uno sprite a forma di Freccia. Imposteremo la direzione del giunto cardanico in base all'orientamento della freccia.
 
 .. image:: img/10_servo_arrow.png
 
 
-2. A ``when this sprite clicked`` block is exactly what we need.
+2. Un blocco ``quando questo sprite viene cliccato`` è esattamente ciò di cui abbiamo bisogno.
 
 .. image:: img/6_animate_when_touch.png
     :width: 230
 
 
-3. Let the program repeat until we release it, meaning we no longer touch the sprite.
+3. Fai ripetere il programma finché non rilasciamo lo sprite, ovvero finché non smettiamo di toccarlo.
 
 .. image:: img/6_animate_repeat_touching.png
     :width: 550
 
-4. Drag a ``point towards touch_position`` block to make the sprite face the touch position.
+4. Trascina un blocco ``punta verso la posizione toccata`` per far sì che lo sprite si orienti verso la posizione toccata.
 
 .. image:: img/10_servo_arrow_point_toward.png
 
-5. Drag a ``set servo angle to 90 degrees`` block and embed a ``direction`` block to align the gimbal angle with the arrow sprite's orientation. This way, when we change the arrow sprite's direction (i.e., touch the stage area), we can change the gimbal angle.
+5. Trascina un blocco ``imposta angolo servo a 90 gradi`` e incorpora un blocco ``direzione`` per allineare l'angolo del giunto cardanico all'orientamento dello sprite freccia. In questo modo, quando cambiamo la direzione dello sprite freccia (ovvero tocchiamo l'area del palcoscenico), possiamo modificare l'angolo del giunto cardanico.
 
 .. image:: img/10_servo_arrow_angle_direction.png
 
-6. Add a limit check to ensure the arrow sprite's orientation does not exceed 135 degrees.
+6. Aggiungi un controllo di limite per garantire che l'orientamento dello sprite freccia non superi i 135 gradi.
 
 .. image:: img/10_servo_arrow_135.png
 
 
-7. Similarly, ensure its orientation does not go below 0 degrees.
+7. Allo stesso modo, garantisci che l'orientamento non vada al di sotto di 0 gradi.
 
 .. image:: img/10_servo_arrow_0.png
 
 
-Touch the sprite, and it will change direction as you drag, altering the gimbal angle.
+Tocca lo sprite e cambierà direzione mentre lo trascini, modificando l'angolo del giunto cardanico.
 
-If you find it easy to slide your finger off the arrow sprite, you can increase the sprite's size accordingly.
-
-
-
-
-
-
-
+Se trovi difficile mantenere il dito sulla freccia, puoi aumentare la dimensione dello sprite di conseguenza.
 

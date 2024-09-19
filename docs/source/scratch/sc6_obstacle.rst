@@ -1,30 +1,30 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme agli altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti e agli sneak peek.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 
 
 .. _ir_obstacle:
 
 
-Lesson 6 IR Obstacle
+Lezione 6 Ostacolo IR
 ===========================
 
-We're diving into the world of the Infrared Obstacle Avoidance Module. Tucked at the sides of our Mars Rover, these sensors act as the rover's "eyes," helping it dodge side obstacles and safely navigate the Martian landscape.
+Oggi esploreremo il mondo del Modulo di Evasione Ostacoli a Infrarossi. Questi sensori, posizionati ai lati del nostro Rover marziano, fungono da "occhi", aiutando il rover a evitare ostacoli laterali e a navigare in sicurezza nel paesaggio marziano.
 
-We'll learn how to integrate these modules with our rover, unravel the magic behind their functioning, and develop code to make our rover smartly sidestep any hurdles it comes across.
+Impareremo come integrare questi moduli nel nostro rover, scopriremo la loro logica di funzionamento e svilupperemo del codice per fare in modo che il rover eviti intelligentemente ogni ostacolo che incontra.
 
-Get ready to gear up our rover with some Martian obstacle-dodging intelligence! Let's get rolling!
+Preparati a dotare il nostro rover di intelligenza marziana per schivare gli ostacoli! Partiamo!
 
 .. raw:: html
 
@@ -33,82 +33,83 @@ Get ready to gear up our rover with some Martian obstacle-dodging intelligence! 
       Your browser does not support the video tag.
    </video>
 
-Learning Objectives
--------------------------
+Obiettivi di Apprendimento
+---------------------------------
 
-* Understand the working principles of the Infrared Obstacle Avoidance Module and its application in the Mars rover.
-* Learn how to read and apply data from the Infrared Obstacle Avoidance Module in Scratch.
-* Create a Mars exploration-themed obstacle avoidance game using the IR module and the Scratch stage.
+* Comprendere i principi di funzionamento del Modulo di Evasione Ostacoli a Infrarossi e la sua applicazione nel rover marziano.
+* Imparare a leggere e applicare i dati del Modulo di Evasione Ostacoli a Infrarossi in Scratch.
+* Creare un gioco a tema esplorazione marziana usando il modulo IR e il palcoscenico di Scratch.
 
 
-Materials
------------
+Materiali
+------------
 
-* Smartphone or tablet
-* Mammoth Coding APP
+* Smartphone o tablet
+* APP Mammoth Coding
 * GalaxyRVR
 
-Demystifying the Module
--------------------------------------
 
-Meet the Infrared Obstacle Avoidance Module - our rover's smart sidekick. This little device is a pack of wonders. Let's take a tour:
+Svelare il Modulo
+---------------------
+
+Presentiamo il Modulo di Evasione Ostacoli a Infrarossi - il compagno intelligente del nostro rover. Questo piccolo dispositivo è una meraviglia. Facciamo un tour:
 
 .. image:: ../img/ir_avoid.png
     :width: 300
     :align: center
 
 
-Here are the pin definitions:
+Ecco la definizione dei pin:
 
-* **GND**: This is like the module's anchor, connecting it to the ground or common point in the circuit.
-* **+**: Here's where the module gets its energy, needing a power supply of 3.3 to 5V DC.
-* **Out**: This is the module's communicator. By default, it stays high and only goes low when it spots an obstacle.
-* **EN**: Meet the module's controller. This **enable** pin decides when the module should work. By default, it is connected to GND, meaning the module is always on the job.
+* **GND**: È come l'ancora del modulo, collegandolo a terra o a un punto comune nel circuito.
+* **+**: Qui il modulo riceve energia, richiedendo una tensione di alimentazione di 3.3-5V DC.
+* **Out**: È il comunicatore del modulo. Di default, rimane alto e va basso solo quando rileva un ostacolo.
+* **EN**: Questo è il controllore del modulo. Il pin **enable** decide quando il modulo deve funzionare. Di default, è collegato a GND, il che significa che il modulo è sempre attivo.
 
 
-Curious about how this tiny module works? It's quite interesting! It uses a pair of IR components - a transmitter and a receiver. The transmitter is like the module's flashlight, emitting infrared light. 
-When an obstacle appears, the infrared light bounces back and gets caught by the receiver. The module then gives a low signal, alerting our rover of the obstacle.
+Curioso di sapere come funziona questo piccolo modulo? È piuttosto interessante! Utilizza una coppia di componenti IR - un trasmettitore e un ricevitore. Il trasmettitore è come una torcia, emettendo luce a infrarossi.
+Quando compare un ostacolo, la luce infrarossa rimbalza e viene catturata dal ricevitore. Il modulo poi invia un segnale basso, avvisando il nostro rover della presenza di un ostacolo.
 
 .. image:: ../img/ir_receive.png
     :align: center
 
-Our little module is quite robust, spotting obstacles within a range of 2-40cm and boasting excellent anti-interference abilities. 
-However, the color of objects does impact its sensing. Darker objects, especially black ones, are detected at a shorter range. 
-Against a white wall, the sensor is most efficient, sensing within the 2-30cm range.
+Questo modulo è piuttosto robusto, rilevando ostacoli a una distanza di 2-40 cm e vantando eccellenti capacità anti-interferenza.
+Tuttavia, il colore degli oggetti influisce sulla sua sensibilità. Gli oggetti più scuri, in particolare quelli neri, vengono rilevati a distanze più brevi.
+Su un muro bianco, il sensore è più efficiente, rilevando ostacoli in un raggio di 2-30 cm.
 
 
-The **EN** pin's low-level state activates the module, with the jumper cap securing the **EN** pin to the GND. If you wish to control the **EN** pin via code, the jumper cap needs to be removed.
+Il pin **EN** attiva il modulo quando è a livello basso, con il ponticello che collega il pin **EN** a GND. Se desideri controllare il pin **EN** via codice, dovrai rimuovere il ponticello.
 
 .. image:: ../img/ir_cap.png
     :width: 400
     :align: center
 
-There are two potentiometers on the module, one for adjusting the transmitting power and one for adjusting the transmitting frequency, and by adjusting these two potentiometers you can adjust its effective distance.
+Il modulo ha due potenziometri, uno per regolare la potenza di trasmissione e uno per regolare la frequenza di trasmissione. Regolando questi due potenziometri puoi modificare la distanza effettiva di rilevamento.
 
 .. image:: ../img/ir_avoid_pot.png
     :width: 400
-    :align: center 
+    :align: center
 
 
-That's quite a bit about our little module. In the next step, we'll learn how to integrate it with our rover and control it using the Arduino. Stay tuned!
+Ecco tutto sul nostro piccolo modulo. Nel prossimo passaggio, impareremo come integrarlo con il nostro rover e controllarlo tramite Arduino. Resta sintonizzato!
 
 
 
-Infrared Obstacle Avoidance Module Detection Values
-------------------------------------------------------------
+Valori di Rilevamento del Modulo IR
+--------------------------------------------
 
-1. Power up the GalaxyRVR.
+1. Accendi il GalaxyRVR.
 
 
 .. raw:: html
 
    <br></br>
 
-2. We have arrived at an essential step, which is to adjust the detection distances of our sensors based on our current environment. The factory settings may not be optimal. If the detection distance of the two infrared modules is too short, the Mars Rover might collide with obstacles. If it's too far, the Rover might start turning while still a significant distance from an obstacle, potentially impacting its movement.
+2. Abbiamo raggiunto un passaggio essenziale: regolare la distanza di rilevamento dei nostri sensori in base all'ambiente attuale. Le impostazioni di fabbrica potrebbero non essere ottimali. Se la distanza di rilevamento dei due moduli a infrarossi è troppo breve, il Rover marziano potrebbe scontrarsi con gli ostacoli. Se è troppo lunga, il Rover potrebbe iniziare a girare quando è ancora lontano dall'ostacolo, influenzando potenzialmente il suo movimento.
 
-    Here's how you can make adjustments:
+    Ecco come effettuare le regolazioni:
 
-    a. Start by adjusting the right obstacle avoidance module. During transportation, collisions may cause the transmitter and receiver on the infrared module to tilt. Therefore, you need to manually straighten them.
+    a. Inizia regolando il modulo di evitamento degli ostacoli destro. Durante il trasporto, le collisioni potrebbero aver inclinato il trasmettitore e il ricevitore del modulo a infrarossi. Pertanto, è necessario raddrizzarli manualmente.
 
         .. raw:: html
 
@@ -117,7 +118,7 @@ Infrared Obstacle Avoidance Module Detection Values
                 Your browser does not support the video tag.
             </video>
 
-    b. Place an obstacle about 20 cm directly in front of the right module. The box in which our Rover kit came is a good choice for this! Now, turn the potentiometer on the module until the indicator light on the module just lights up. Then, keep moving the obstacle back and forth to check if the indicator light comes on at the desired distance. If the light doesn't turn on at the correct distance or if it remains on without going out, you'll need to adjust the other potentiometer.
+    b. Posiziona un ostacolo a circa 20 cm direttamente di fronte al modulo destro. La scatola in cui era contenuto il nostro kit Rover è una buona scelta! Ora, gira il potenziometro sul modulo finché la spia sul modulo non si accende. Poi, continua a spostare l'ostacolo avanti e indietro per controllare se la spia si accende alla distanza desiderata. Se la luce non si accende alla distanza corretta o se rimane accesa senza spegnersi, dovrai regolare l'altro potenziometro.
 
         .. raw:: html
 
@@ -126,132 +127,130 @@ Infrared Obstacle Avoidance Module Detection Values
                 Your browser does not support the video tag.
             </video>
 
-
-    c. Repeat the same process for another module.
-
+    c. Ripeti lo stesso processo per l'altro modulo.
 
 
-3. Let's see what these two signals are. First, :ref:`app_connect`.
+
+3. Vediamo quali sono questi due segnali. Prima, :ref:`app_connect`.
 
 .. raw:: html
 
    <br></br>
 
 
-4. In the GalaxyRVR category, find the left IR status and right IR status blocks. These store the detection results of the IR modules. Make sure to check the boxes for these.
+4. Nella categoria GalaxyRVR, trova i blocchi di stato IR sinistro e IR destro. Questi memorizzano i risultati di rilevamento dei moduli IR. Assicurati di selezionare le caselle per questi blocchi.
 
     .. image:: img/4_ir_statusblock.png
 
-5. The values will now be displayed on the stage.
+5. I valori saranno ora visualizzati sul palcoscenico.
 
     .. image:: img/4_ir_statusvalue.png
 
-6. Move your hand close to the infrared obstacle avoidance modules to trigger detection and observe the value changes on the stage.
+6. Avvicina la mano ai moduli a infrarossi per attivare il rilevamento e osserva i cambiamenti dei valori sul palcoscenico.
 
-If the IR modules detect an obstacle, the value will be True; if no obstacle is detected, the value will be False.
-
-
-
-Responding to the Infrared Obstacle Avoidance Module
--------------------------------------------------------------
-
-We can utilize the infrared obstacle avoidance modules to make the GalaxyRVR automatically dodge obstacles on both sides.
+Se i moduli IR rilevano un ostacolo, il valore sarà True; se non rilevano nulla, il valore sarà False.
 
 
-1. Drag in a green flag block
+
+Rispondere al Modulo di Evasione Ostacoli a Infrarossi
+----------------------------------------------------------
+
+Possiamo utilizzare i moduli di evitamento ostacoli a infrarossi per fare in modo che il GalaxyRVR schivi automaticamente gli ostacoli sui lati.
+
+
+1. Trascina un blocco con la bandiera verde
 
 .. image:: img/4_ir_start.png
 
-2. Set the speed. Here we set the speed to 30%, so it isn't too fast, making it easier to debug.
+2. Imposta la velocità. Qui la impostiamo al 30%, così da non essere troppo veloce, rendendo più facile il debug.
 
 .. image:: img/4_ir_speed.png
 
 
-3. Find the ``when left IR is blocked`` block.
+3. Trova il blocco ``quando IR sinistro è bloccato``.
 
 .. image:: img/4_ir_when_blocked.png
 
-4. When the left side detects an obstacle, the GalaxyRVR should turn right.
+4. Quando il lato sinistro rileva un ostacolo, il GalaxyRVR dovrebbe girare a destra.
 
 .. image:: img/4_ir_turn_right.png
 
-5. Keep turning right until the left side no longer detects the obstacle.
+5. Continua a girare a destra finché il lato sinistro non rileva più l'ostacolo.
 
 .. image:: img/4_ir_wait_until.png
 
 
-6. Stop moving.
+6. Ferma il movimento.
 
 .. image:: img/4_ir_stop.png
 
 
-7. Once you have assembled these blocks, try triggering the left infrared obstacle avoidance module with your hand. The GalaxyRVR will smartly turn right to avoid your hand.
+7. Una volta assemblati questi blocchi, prova a attivare il modulo di evitamento ostacoli a infrarossi sinistro con la mano. Il GalaxyRVR girerà intelligentemente a destra per evitare la tua mano.
 
 .. raw:: html
 
    <br></br>
 
 
-
-8. Long-press these blocks to bring up a menu, where you can duplicate the code.
+8. Tieni premuti questi blocchi per far apparire un menu, da cui puoi duplicare il codice.
 
 .. image:: img/4_ir_duplicate.png
 
-9. In the duplicated code, swap the left and right sides.
+9. Nel codice duplicato, scambia i lati sinistro e destro.
 
 .. image:: img/4_ir_left_right.png
 
-10. You will notice that if both IR events are triggered simultaneously, the behavior may become erratic. To prevent this, the "stop other scripts in sprite" block will come in handy. It ensures that only one sensor event is responded to at a time.
+10. Noterai che se entrambi gli eventi IR vengono attivati contemporaneamente, il comportamento potrebbe diventare irregolare. Per prevenire questo, il blocco "ferma altri script nello sprite" sarà utile. Garantisce che venga risposto a un solo evento sensoriale alla volta.
 
 .. image:: img/4_ir_stop_script.png
 
-.. note:: The stop scripts block and blocks with time parameters (e.g., forward for 1 sec) can conflict in some cases, so avoid using them together when possible.
+.. note:: Il blocco ferma script e i blocchi con parametri temporali (es., avanti per 1 sec) possono entrare in conflitto in alcuni casi, quindi evita di usarli insieme quando possibile.
 
 
-11. Now, the GalaxyRVR will turn left or right when obstacles are detected on either side. You can now test this by triggering both sensors with your hand to make the GalaxyRVR dodge left and right.
-
+11. Ora, il GalaxyRVR girerà a sinistra o a destra quando rileva ostacoli su entrambi i lati. Puoi testarlo attivando entrambi i sensori con la mano per far schivare il GalaxyRVR a sinistra e a destra.
 
 .. raw:: html
 
    <br></br>
 
 
-12. Add a forward block under each code block so that the GalaxyRVR continues to move forward after avoiding the obstacle.
+12. Aggiungi un blocco avanti sotto ciascun blocco di codice in modo che il GalaxyRVR continui a muoversi in avanti dopo aver evitato l'ostacolo.
 
 .. image:: img/4_ir_avoid_move.png
 
 
-Now, click the green flag, and the GalaxyRVR will move forward continuously, turning to avoid obstacles and resuming its path after avoiding them.
+Ora, clicca sulla bandiera verde e il GalaxyRVR si muoverà continuamente in avanti, girando per evitare gli ostacoli e riprendendo il percorso dopo averli schivati.
 
 
 
-Blocks Related to the IR Module
-----------------------------------------
+Blocchi Relativi al Modulo IR
+-------------------------------------
 
 .. image:: img/block/ir_when.png
 
-This is an event block triggered when the left IR sensor detects an obstacle. You can:
+Questo è un blocco evento che si attiva quando il sensore IR sinistro rileva un ostacolo. Puoi:
 
-    * Change "left" to "right" in the dropdown menu
+    * Cambiare "sinistro" in "destro" nel menu a tendina
 
 .. image:: img/block/ir_wait_until.png
 
-This block pauses the program until the left IR sensor no longer detects an obstacle, then continues. You can:
+Questo blocco sospende il programma finché il sensore IR sinistro non rileva più un ostacolo, poi continua. Puoi:
 
-    * Change "left" to "right" in the first dropdown menu
-    * Change "is not" to "is" in the second dropdown menu to operate under the opposite condition
+    * Cambiare "sinistro" in "destro" nel primo menu a tendina
+    * Cambiare "non è" in "è" nel secondo menu a tendina per operare in base alla condizione opposta
 
 .. image:: img/block/ir_condition.png
 
-This is a conditional block that returns TRUE if the left IR sensor detects an obstacle, otherwise FALSE. It is commonly used in blocks requiring conditionals like ``if``. You can:
+Questo è un blocco condizionale che restituisce TRUE se il sensore IR sinistro rileva un ostacolo, altrimenti FALSE. È comunemente usato in blocchi condizionali come ``se``. Puoi:
 
-    * Change "left" to "right" in the dropdown menu
+    * Cambiare "sinistro" in "destro" nel menu a tendina
 
 .. image:: img/block/ir_left_value.png
 
-This block displays whether the left IR sensor currently detects an obstacle.
+Questo blocco visualizza se il sensore IR sinistro rileva attualmente un ostacolo.
 
 .. image:: img/block/ir_right_value.png
 
-This block displays whether the right IR sensor currently detects an obstacle.
+Questo blocco visualizza se il sensore IR destro rileva attualmente un ostacolo.
+
 

@@ -1,155 +1,155 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci Raspberry Pi, Arduino e ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto da esperti**: Risolvi problemi tecnici e post-vendita con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotto e anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e giveaway festivi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 
-Lesson 13: Investigating the Mars Rover Energy System
+Lezione 13: Esplorare il sistema energetico del Mars Rover
 =================================================================
 
-Welcome to the final lesson of our Mars rover exploration journey. This time, we are going to delve into the heart of the rover - its energy system.
+Benvenuto all'ultima lezione del nostro viaggio di esplorazione con il Mars Rover. 
+Questa volta, ci addentreremo nel cuore del rover: il suo sistema energetico.
 
-When we think about exploring distant planets like Mars, one of the most crucial aspects to consider is energy. 
-How do these rovers power themselves in such harsh and remote environments? 
-In this lesson, we'll explore this fascinating topic and learn how rovers, like our Mars rover model, harness and manage energy.
+Quando si pensa all'esplorazione di pianeti lontani come Marte, uno degli aspetti 
+più critici da considerare è l'energia. Come si alimentano questi rover in ambienti 
+così ostili e remoti? In questa lezione, esploreremo questo affascinante tema e 
+scopriremo come i rover, incluso il nostro modello di Mars Rover, raccolgono e gestiscono l'energia.
 
-We'll investigate the working principles of battery and solar panel and even get our hands-on practice in installing and 
-using these power sources on our rover model. Furthermore, we'll take our skills a notch higher by using Arduino to monitor 
-the battery level.
+Esamineremo i principi di funzionamento della batteria e del pannello solare e metteremo 
+in pratica l'installazione e l'uso di queste fonti di energia sul nostro modello di rover. 
+Inoltre, porteremo le nostre competenze a un livello superiore utilizzando Arduino per 
+monitorare il livello della batteria.
 
-By the end of the lesson, we'll be able to display these vital energy statistics right on our APP, 
-allowing us to have a real-time understanding of our rover's energy status. Ready to power up our exploration? Let's get started!
+Alla fine della lezione, saremo in grado di visualizzare queste importanti statistiche 
+energetiche direttamente sulla nostra APP, permettendoci di monitorare in tempo reale lo 
+stato energetico del rover. Pronti a dare energia alla nostra esplorazione? Iniziamo!
 
 .. image:: img/solar_panel.jpg
     :width: 600
     :align: center
 
-Learning Goals
------------------------
+Obiettivi di apprendimento
+---------------------------------
 
-* Understand the working principles of batterry and solar panel.
-* Practice installing the solar panel on the Mars rover model.
-* Learn how to use Arduino to monitor battery level and the charging status of solar panel.
-* Display battery level on the APP.
+* Comprendere i principi di funzionamento della batteria e del pannello solare.
+* Praticare l'installazione del pannello solare sul modello di Mars Rover.
+* Imparare a utilizzare Arduino per monitorare il livello della batteria e lo stato di carica del pannello solare.
+* Visualizzare il livello della batteria sull'APP.
 
-Materials needed
+Materiali necessari
 ------------------------
 
-* Mars Rover model (equipped with all components, except for solar panel and bottom plate)
-* Solar panel and bottom plate
+* Modello di Mars Rover (dotato di tutti i componenti, eccetto il pannello solare e la piastra inferiore)
+* Pannello solare e piastra inferiore
 * Arduino IDE
 * Computer
-* Tablet or smartphone with SunFounder Controller app installed
+* Tablet o smartphone con l'app SunFounder Controller installata
 
 
 
-Course Steps
+Passaggi del corso
 ----------------------
 
-**Step1: Introduction to the Mars Rover's Energy System**
+**Step 1: Introduzione al sistema energetico del Mars Rover**
 
-Just as our bodies need a constant supply of energy to function, our Mars Rover needs a way to store and generate power for its exploration missions. Imagine the Rover's energy system like the heart in our bodies. Just as our hearts pump blood to all parts of our body, supplying necessary oxygen and nutrients, the Rover's energy system keeps energy flowing to every part of the Rover, ensuring it can perform its tasks smoothly.
+Proprio come il nostro corpo ha bisogno di un apporto costante di energia per funzionare, anche il nostro Mars Rover ha bisogno di un modo per immagazzinare e generare energia per le sue missioni esplorative. Immagina il sistema energetico del Rover come il cuore del nostro corpo. Proprio come il cuore pompa il sangue a tutte le parti del corpo, fornendo ossigeno e nutrienti, il sistema energetico del Rover mantiene l'energia che scorre in ogni parte del rover, garantendo che possa svolgere le sue funzioni senza intoppi.
 
-The main components of this energy system are the batteries and the solar panels, working in tandem to ensure the Rover can operate at all times, day or night.
+I componenti principali di questo sistema energetico sono le batterie e i pannelli solari, che lavorano insieme per garantire che il Rover possa operare in qualsiasi momento, sia di giorno che di notte.
 
-The role of the batteries in the Rover's energy system is similar to the role of energy storage in our bodies. Just as we need to store energy for use when active, the Rover needs a way to store energy for its exploration missions. The energy stored in the batteries is continuously dispatched to various parts of the Rover, allowing it to carry out its tasks systematically.
+Il ruolo delle batterie nel sistema energetico del Rover è simile a quello dell'accumulo di energia nel nostro corpo. Proprio come dobbiamo immagazzinare energia per le attività, il Rover ha bisogno di un modo per accumulare energia per le sue missioni esplorative. L'energia immagazzinata nelle batterie viene continuamente distribuita a varie parti del Rover, consentendogli di svolgere i suoi compiti in modo efficiente.
 
 .. image:: img/battery_galaxyrvr.png
     :width: 600
     :align: center
 
-But what happens when the energy in the batteries runs out? How does it replenish its energy stores? This is where the solar panels come into play.
+Ma cosa succede quando l'energia delle batterie si esaurisce? Come si ricaricano? È qui che entrano in gioco i pannelli solari.
 
-Much like trees absorb sunlight for photosynthesis to create food, our Mars Rover uses solar panels to harness energy from the Sun, converting it into electricity that is stored in the batteries for use. Each solar panel is made up of many smaller solar cells. These cells are composed of a material that can convert light into electricity – a process called the photovoltaic effect. When sunlight hits the cells, they generate an electric current that can be used immediately or stored in the Rover's batteries for later use.
+Proprio come gli alberi assorbono la luce solare per la fotosintesi e producono nutrimento, il nostro Mars Rover utilizza i pannelli solari per catturare l'energia del Sole, convertendola in elettricità che viene immagazzinata nelle batterie per un uso successivo. Ogni pannello solare è composto da molte piccole celle solari. Queste celle sono realizzate in un materiale che può convertire la luce in elettricità, attraverso un processo chiamato effetto fotovoltaico. Quando la luce solare colpisce le celle, esse generano una corrente elettrica che può essere utilizzata immediatamente o immagazzinata nelle batterie del Rover per un utilizzo futuro.
 
 .. image:: img/solar_panel_gala.png
     :width: 600
     :align: center
 
-However, harnessing solar energy on Mars is not as easy as it sounds. Dust storms can reduce the amount of sunlight reaching the panels, and the weaker Martian sunlight (compared to Earth's) means that the panels generate less power than they would here at home. Despite these challenges, solar power is still the most practical and efficient way of powering our Mars Rover.
+Tuttavia, sfruttare l'energia solare su Marte non è così semplice come sembra. Le tempeste di polvere possono ridurre la quantità di luce solare che raggiunge i pannelli e la luce solare marziana, più debole rispetto a quella terrestre, significa che i pannelli generano meno energia di quanto farebbero sulla Terra. Nonostante queste sfide, l'energia solare rimane il metodo più pratico ed efficiente per alimentare il nostro Mars Rover.
 
-But how do we know when the solar panels are doing their job and when the batteries are getting low on power? This is where our Arduino comes in. In the next section, we will learn how to use Arduino to monitor the charging and discharging of the Rover's batteries.
+Ma come facciamo a sapere quando i pannelli solari stanno facendo il loro lavoro e quando le batterie si stanno scaricando? Qui entra in gioco Arduino. Nella prossima sezione, impareremo a utilizzare Arduino per monitorare la carica e la scarica delle batterie del Rover.
 
 
-**Step 2: Mounting the Solar Panel on the Mars Rover**
+**Step 2: Installazione del pannello solare sul Mars Rover**
 
-Before we begin this step, we need to have our Mars Rover model, a solar panel, and the cables necessary to connect the solar panel to the Rover's power system.
+Prima di iniziare questo passaggio, dobbiamo avere il nostro modello di Mars Rover, un pannello solare e i cavi necessari per collegare il pannello al sistema di alimentazione del Rover.
 
-This is a process that allows us to put theory into practice and truly appreciate the charm of Science, Technology, Engineering, and Mathematics (STEM) education. Let's get started!
+Questo è un processo che ci permette di mettere in pratica la teoria e di apprezzare davvero il fascino dell'educazione STEM (Scienza, Tecnologia, Ingegneria e Matematica). Iniziamo!
 
 .. raw:: html
 
     <iframe width="600" height="400" src="https://www.youtube.com/embed/-Vj-dcniFrA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-**Step 3: Programming to Monitor Battery Voltage and Charge**
+**Step 3: Programmazione per monitorare la tensione e la carica della batteria**
 
-Now that we have installed the solar panels on our Mars Rover model, the next step is to monitor the voltage and charge of the battery through programming. 
-
+Ora che abbiamo installato i pannelli solari sul nostro modello di Mars Rover, il passaggio successivo è monitorare la tensione e la carica della batteria attraverso la programmazione.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/2e85e234-9575-4a1f-982b-2f9aba8e3156/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+Questo codice crea efficacemente un semplice monitor della batteria, particolarmente utile in applicazioni come il Mars Rover, dove la gestione dell'energia è cruciale. Ti permetterà di monitorare lo stato della batteria, aiutandoti a capire quando il Rover deve essere ricaricato o quando è necessario pianificare attività che consumano energia.
 
-This code effectively creates a simple battery monitor, which is particularly useful in applications like the Mars Rover where power management is crucial. It will allow you to monitor the state of the battery, helping you understand when the Rover needs to be recharged or when power-consuming tasks should be scheduled.
+Esaminiamo ora le varie parti di questo codice:
 
-Sure, let's break down the different parts of this code:
-
-*  This line is defining ``BATTERY_PIN`` as the analog pin A3, which is where the battery voltage will be read from.
+* Questa riga definisce ``BATTERY_PIN`` come il pin analogico A3, da cui verrà letta la tensione della batteria.
 
     .. code-block:: arduino
 
         #define BATTERY_PIN A3
 
-* This function calculates the battery's voltage. It first reads the analog value from ``BATTERY_PIN``, then converts it into voltage. Because the Arduino's analog-to-digital converter (ADC) operates on a scale of 0-1023, we divide the raw reading by 1023. We then multiply by 5 (the reference voltage of the Arduino) and by 2 (assuming a voltage divider of 2), to convert this to a voltage reading.
+* Questa funzione calcola la tensione della batteria. Prima legge il valore analogico da ``BATTERY_PIN``, quindi lo converte in tensione. Poiché il convertitore analogico-digitale (ADC) di Arduino funziona su una scala da 0 a 1023, dividiamo la lettura grezza per 1023. Moltiplichiamo poi per 5 (la tensione di riferimento di Arduino) e per 2 (presumendo un divisore di tensione 2:1) per convertire il valore in tensione.
 
     .. code-block:: arduino
         :emphasize-lines: 5
 
         float batteryGetVoltage() {
-            // Reads the analog value from the battery pin
+            // Legge il valore analogico dal pin della batteria
             int adcValue = analogRead(BATTERY_PIN);
-            // Converts the analog value to voltage
+            // Converte il valore analogico in tensione
             float adcVoltage = adcValue / 1023.0 * 5 * 2;
-            // Rounds the voltage to two decimal places
+            // Arrotonda la tensione a due cifre decimali
             float batteryVoltage = int(adcVoltage * 100) / 100.0;
             return batteryVoltage;
         }
     
 
-    The raw ADC reading from the Arduino's analog-to-digital converter is divided by 1023 to convert it into a fraction, then multiplied by 5 to translate it into voltage, as Arduino uses a reference voltage of 5 volts.
+    La lettura ADC grezza viene divisa per 1023 per convertirla in una frazione, quindi moltiplicata per 5 per tradurla in tensione, poiché Arduino utilizza una tensione di riferimento di 5 volt.
 
-    However, because the battery voltage higher than Arduino's maximum input voltage, a resistor is used to protect the Arduino. Therefore, we multiply the ADC voltage by 2 to counteract the effect of the resistor and obtain the correct battery voltage.
+    Tuttavia, poiché la tensione della batteria è superiore alla tensione massima in ingresso di Arduino, viene utilizzato un resistore per proteggere Arduino. Pertanto, moltiplichiamo la tensione dell'ADC per 2 per compensare l'effetto del resistore e ottenere la tensione corretta della batteria.
 
-* This function calculates the battery's percentage of charge based on its voltage. It uses the ``map`` function to ``map`` the voltage value (ranging from 6.6 to 8.4 volts) to a percentage (ranging from 0 to 100).
+* Questa funzione calcola la percentuale di carica della batteria in base alla sua tensione. Usa la funzione ``map`` per mappare il valore di tensione (compreso tra 6.6 e 8.4 volt) in una percentuale (da 0 a 100).
 
     .. code-block:: arduino
 
         uint8_t batteryGetPercentage() {
-            float voltage = batteryGetVoltage();  // Gets the battery voltage
-            // Maps the voltage to a percentage.
+            float voltage = batteryGetVoltage();  // Ottiene la tensione della batteria
+            // Mappa la tensione in una percentuale.
             int16_t temp = map(voltage, 6.6, 8.4, 0, 100);
-            // Ensures the percentage is between 0 and 100
+            // Garantisce che la percentuale sia compresa tra 0 e 100
             uint8_t percentage = max(min(temp, 100), 0);
             return percentage;
         }
 
-**Step 4: Putting the Mars Rover's Energy System to the Test: Indoor and Outdoor Runs**
+**Passo 4: Mettere alla prova il sistema energetico del Mars Rover: test indoor e outdoor**
 
-Having coded our battery monitoring system, it's now time to set the Mars Rover into action. 
-Begin by charging the Rover to full capacity, and plan for two 30-minute exploratory missions - one indoors, 
-and another outdoors in the sunlight. Record the initial battery level before each mission, 
-and compare it with the battery percentage at the end of each test. 
-The following table serves as a useful template to keep track of your findings:
+Ora che abbiamo programmato il sistema di monitoraggio della batteria, è il momento di mettere in azione il Mars Rover. 
+Inizia caricando completamente il Rover e pianifica due missioni esplorative di 30 minuti ciascuna: una in ambiente chiuso e un'altra all'aperto, sotto la luce solare. Registra il livello iniziale della batteria prima di ogni missione e confrontalo con la percentuale di batteria alla fine di ogni test. 
+La seguente tabella serve come modello utile per registrare i tuoi risultati:
 
 
 
@@ -158,93 +158,89 @@ The following table serves as a useful template to keep track of your findings:
    :header-rows: 1
 
    * - 
-     - Sun Shine
-     - In Room
-   * - Start Battery Percentage
-     -
-     - 
-   * - End Battery Percentage
+     - Sotto il sole
+     - In casa
+   * - Percentuale di batteria iniziale
      - 
      - 
+   * - Percentuale di batteria finale
+     - 
+     - 
 
-Observe the difference in the battery levels following each test. Did the Rover's battery last longer when it was basking in 
-outdoor sunlight? What conclusions can we draw about the efficacy of the solar panel from this observation?
+Osserva le differenze nei livelli di batteria dopo ogni test. La batteria del Rover è durata di più quando era esposta alla luce solare? Quali conclusioni possiamo trarre sull'efficacia del pannello solare da queste osservazioni?
 
-Understanding these variances will help us better comprehend how solar energy can effectively power a Mars Rover, 
-even in remote, harsh environments such as those found on the Martian surface.
+Comprendere queste variazioni ci aiuterà a capire meglio come l'energia solare possa alimentare efficacemente un Mars Rover, anche in ambienti remoti e ostili come quelli presenti sulla superficie marziana.
 
-**Step 5: Display the Battery Level on the App**
+**Passo 5: Visualizzare il livello della batteria nell'app**
 
-Naturally, it's impractical to repeatedly upload new code to the Mars Rover just to check the remaining battery level. That could be quite inconvenient.
+Naturalmente, sarebbe poco pratico caricare nuovo codice sul Mars Rover ogni volta che desideri controllare il livello di batteria rimanente. Potrebbe essere piuttosto scomodo.
 
-Instead, we can send the battery level to an app, allowing us to easily monitor how much playtime is left while we're having fun!
+Invece, possiamo inviare il livello della batteria a un'app, permettendoci di monitorare facilmente quanto tempo di gioco rimane mentre ci divertiamo!
 
-From previous lessons, we've learned that when we want to shown data on the SunFounder Controller or control the Mars Rover using widgets, we need to add these widgets first.
+Dalle lezioni precedenti, abbiamo appreso che, quando vogliamo visualizzare dei dati nel SunFounder Controller o controllare il Mars Rover utilizzando i widget, dobbiamo prima aggiungere questi widget.
 
-However, the battery level display is a special widget. It has a dedicated key (``BV``), and its display isn't located in the areas labeled from A to Q. Instead, it's represented by a battery icon in the top-right corner.
+Tuttavia, il widget per la visualizzazione del livello della batteria è speciale. Ha una chiave dedicata (``BV``), e la sua visualizzazione non è collocata nelle aree contrassegnate da A a Q. Invece, è rappresentata da un'icona della batteria nell'angolo in alto a destra.
 
-Here's how we include it in our code:
+Ecco come includerlo nel nostro codice:
 
 .. code-block:: Arduino
 
     ...
-    // This pin reads the voltage of the battery
+    // Questo pin legge la tensione della batteria
     #define BATTERY_PIN A3
     ...
 
     void setup() {
         ...
-        // Sets the battery pin as an input
+        // Imposta il pin della batteria come input
         pinMode(BATTERY_PIN, INPUT);
     }
 
-
-    // Function to execute when data is received from the Controller
+    // Funzione da eseguire quando vengono ricevuti dati dal Controller
     void onReceive() {
         ...
-        //show battery voltage
+        // mostra la tensione della batteria
         aiCam.sendDoc["BV"] = batteryGetVoltage();
     }   
 
     ...
 
-    // This function reads the battery voltage
+    // Questa funzione legge la tensione della batteria
     float batteryGetVoltage() {
-        // Reads the analog value from the battery pin
+        // Legge il valore analogico dal pin della batteria
         int adcValue = analogRead(BATTERY_PIN);
-        // Converts the analog value to voltage
+        // Converte il valore analogico in tensione
         float adcVoltage = adcValue / 1023.0 * 5 * 2;
-        // Rounds the voltage to two decimal places
+        // Arrotonda la tensione a due cifre decimali
         float batteryVoltage = int(adcVoltage * 100) / 100.0;
         return batteryVoltage;
     }
 
-Please find the full code attached:
-
+Trova il codice completo qui:
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/8b6e0dbd-6fcc-45ac-8408-e8aa706a4bf3/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After successfully uploading the code, get your SunFounder Controller up and running. You'll see the battery level shown in the top-right corner.
+Dopo aver caricato con successo il codice, avvia il SunFounder Controller. Vedrai il livello della batteria mostrato nell'angolo in alto a destra.
 
 .. image:: img/battery_icon.png
 
-By completing this step, we've mastered the Mars Rover's energy system and gained the ability to monitor its power levels in real-time.
+Completando questo passaggio, avremo padroneggiato il sistema energetico del Mars Rover e acquisito la capacità di monitorare in tempo reale i suoi livelli di energia.
 
-Now that we have learned how to harness the sun's power to operate the Mars Rover effectively, we can start planning more extensive explorations of our backyard or even venture into more challenging terrains!
+Ora che abbiamo imparato come sfruttare l'energia del sole per far funzionare efficacemente il Mars Rover, possiamo iniziare a pianificare esplorazioni più ampie del nostro giardino o persino avventurarci in terreni più impegnativi!
 
-**Step 6: Reflection**
+**Passo 6: Riflessione**
 
-Throughout this lesson, we've focused on understanding the crucial role of the energy system in the Mars Rover, and the mechanisms to monitor the Rover's remaining energy. The solar panel-based energy system not only powers the Rover but also underlines the importance of renewable energy sources in space exploration.
+Durante questa lezione, ci siamo concentrati sulla comprensione del ruolo cruciale del sistema energetico nel Mars Rover e dei meccanismi per monitorare l'energia rimanente del Rover. Il sistema energetico basato su pannelli solari non solo alimenta il Rover, ma sottolinea anche l'importanza delle fonti di energia rinnovabile nell'esplorazione spaziale.
 
-With the knowledge you have now, think about the real-life implications of this system. Consider the challenges that a solar energy system might encounter on Mars. How might extreme temperatures, dust storms, or long periods of darkness affect the energy supply? What solutions could you propose to tackle these obstacles?
+Con le conoscenze acquisite, pensa alle implicazioni reali di questo sistema. Considera le sfide che un sistema solare potrebbe affrontare su Marte. Come potrebbero le temperature estreme, le tempeste di polvere o lunghi periodi di oscurità influire sull'approvvigionamento energetico? Quali soluzioni potresti proporre per affrontare questi ostacoli?
 
-**Step 7: Looking Forward**
+**Passo 7: Guardando avanti**
 
-Now that we've given our Mars Rover the ability to move, it's time to let it start its exploration journey! You can let it wander in various terrains mimicking the Mars environment.
+Ora che abbiamo dato al nostro Mars Rover la capacità di muoversi, è tempo di lasciarlo iniziare il suo viaggio esplorativo! Puoi lasciarlo vagare su diversi terreni che imitano l'ambiente marziano.
 
-For instance, you can let it climb over a heap of stones.
+Ad esempio, puoi farlo arrampicare su una pila di pietre.
 
 .. raw:: html
 
@@ -253,7 +249,7 @@ For instance, you can let it climb over a heap of stones.
       Your browser does not support the video tag.
    </video>
 
-Or let it navigate through a thick grassy patch.
+Oppure fargli attraversare un fitto tratto erboso.
 
 .. raw:: html
 
@@ -262,7 +258,7 @@ Or let it navigate through a thick grassy patch.
       Your browser does not support the video tag.
    </video>
 
-Or set it on a course on a gravel terrain full of stones.
+O impostare un percorso su un terreno ghiaioso pieno di pietre.
 
 .. raw:: html
 
@@ -271,7 +267,7 @@ Or set it on a course on a gravel terrain full of stones.
       Your browser does not support the video tag.
    </video>
 
-However, please note that if the obstacle is too high, the rover might not be able to climb over it.
+Tuttavia, nota che se l'ostacolo è troppo alto, il rover potrebbe non riuscire a superarlo.
 
 .. raw:: html
 
@@ -280,6 +276,6 @@ However, please note that if the obstacle is too high, the rover might not be ab
       Your browser does not support the video tag.
    </video>
 
-These varied terrains present unique challenges for the rover, just as they would for a real Mars Rover. As you watch your rover try to overcome these obstacles, you're experiencing a small part of what scientists and engineers at NASA do when they send rovers to Mars!
+Questi terreni variati presentano sfide uniche per il rover, proprio come farebbero per un vero Mars Rover. Mentre guardi il tuo rover cercare di superare questi ostacoli, stai vivendo una piccola parte di ciò che scienziati e ingegneri della NASA sperimentano quando inviano rover su Marte!
 
-As we conclude our Mars Rover lessons, it's important to reflect on what we've learned. We hope this journey has not only expanded your knowledge and skills but also sparked curiosity and a desire to explore. Whether your Rover roams in your backyard or across the vast expanse of your imagination, the discoveries you make along the way are sure to be extraordinary.
+Concludendo le nostre lezioni sul Mars Rover, è importante riflettere su ciò che abbiamo appreso. Speriamo che questo viaggio non solo abbia ampliato le tue conoscenze e competenze, ma abbia anche acceso curiosità e voglia di esplorare. Che il tuo Rover vaghi nel tuo giardino o attraverso l'immensa distesa della tua immaginazione, le scoperte che farai lungo la strada saranno sicuramente straordinarie.

@@ -1,53 +1,53 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime.
+    - **Sconti speciali**: Goditi sconti esclusivi sui nostri nuovi prodotti.
+    - **Promozioni festive e giveaway**: Partecipa a promozioni festive e concorsi a premi.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 FAQ
 ==============
 
 .. _ap_to_sta:
 
-Q1: Change AP mode to STA mode
+Q1: Cambiare la modalità AP in modalità STA
 -------------------------------------------------
 
-* You will need to download the relevant code.
+* È necessario scaricare il codice pertinente.
 
     * :download:`GalaxyRVR Codes <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
 
-* Install IDE, then, install libraries ``SoftPWM`` and ``SunFounder AI Camera``. :ref:`install_lib` .
+* Installa IDE, quindi installa le librerie ``SoftPWM`` e ``SunFounder AI Camera``. :ref:`install_lib` .
 
-* Then, open the ``galaxy-rvr.ino`` file located in the ``galaxy-rvr-main\galaxy-rvr`` directory.
+* Poi, apri il file ``galaxy-rvr.ino`` situato nella directory ``galaxy-rvr-main\galaxy-rvr``.
 
-* Comment out lines 69-71, uncomment lines 73-75, and change ``SSID`` and ``PASSWORD`` to your WLAN.
+* Commenta le righe 69-71, decommenta le righe 73-75 e cambia ``SSID`` e ``PASSWORD`` con i dati della tua WLAN.
 
 .. image:: img/ap_sta.png
     :align: center
 
-* Connect the Arduino and computer with a USB cable, and then turn the **upload** switch of the car to the upload end.
+* Collega l'Arduino e il computer con un cavo USB, poi sposta l'interruttore **upload** del rover in posizione di upload.
 
 .. image:: img/camera_upload.png
     :width: 400
     :align: center
 
-* Upload your code.
+* Carica il codice.
 
 .. _install_lib:
 
-Q2: Compilation error: SoftPWM.h: No such file or directory？
----------------------------------------------------------------------
-If you get a “Compilation error: SoftPWM.h: No such file or directory” prompt, it means you don’t have the SoftPWM library installed.
+Q2: Errore di compilazione: SoftPWM.h: File o directory inesistente？
+-------------------------------------------------------------------------
+Se ricevi il messaggio "Errore di compilazione: SoftPWM.h: File o directory inesistente", significa che non hai installato la libreria SoftPWM.
 
-Please install the two required libraries ``SoftPWM`` and ``SunFounder AI Camera`` as shown.
+Installa le due librerie richieste ``SoftPWM`` e ``SunFounder AI Camera`` come mostrato.
 
     .. raw:: html
 
@@ -57,12 +57,12 @@ Please install the two required libraries ``SoftPWM`` and ``SunFounder AI Camera
         </video>
 
 
-Q3: avrdude: stk500_getsync() attempt 10 of 10: not in sync: resp=0x6e?
------------------------------------------------------------------------------
-If the following message keeps appearing after clicking the **Upload** button when the board and port have been selected correctly.
+Q3: avrdude: stk500_getsync() tentativo 10 di 10: non in sincronia: resp=0x6e?
+---------------------------------------------------------------------------------
+Se compare il seguente messaggio dopo aver cliccato il pulsante **Upload**, anche se la scheda e la porta sono state selezionate correttamente:
 
 .. code-block::
-    
+
     avrdude: stk500_recv(): programmer is not responding
     avrdude: stk500_getsync() attempt 1 of 10: not in sync: resp=0x00
     avrdude: stk500_recv(): programmer is not responding
@@ -71,13 +71,13 @@ If the following message keeps appearing after clicking the **Upload** button wh
     avrdude: stk500_getsync() attempt 3 of 10: not in sync: resp=0x00
     At this point, you need to make sure that the ESP32 CAM is unplugged.
 
-The ESP32-CAM and the Arduino board share the same RX (receive) and TX (transmit) pins. So, before you’re uploading code, you’ll need to first disconnect the ESP32-CAM to avoid any conflicts or potential issues.
+L'ESP32-CAM e la scheda Arduino condividono gli stessi pin RX (ricezione) e TX (trasmissione). Pertanto, prima di caricare il codice, dovrai scollegare l'ESP32-CAM per evitare conflitti o potenziali problemi.
 
     .. image:: img/camera_upload.png
         :width: 500
         :align: center
 
-After the code is successfully uploaded, if you need to use the ESP32 CAM, then you need to move the switch to the left to start the ESP32 CAM.
+Dopo aver caricato correttamente il codice, se hai bisogno di utilizzare l'ESP32 CAM, sposta l'interruttore a sinistra per avviare l'ESP32 CAM.
 
     .. image:: img/camera_run.png
         :width: 500
@@ -85,21 +85,21 @@ After the code is successfully uploaded, if you need to use the ESP32 CAM, then 
 
 .. _stt_android:
 
-Q4: How can I use the STT mode on my Android device?
+Q4: Come posso utilizzare la modalità STT sul mio dispositivo Android?
 ------------------------------------------------------------------------
 
-The STT mode requires the Android mobile device to be connected to the Internet and to install the Google service component.
+La modalità STT richiede che il dispositivo mobile Android sia connesso a Internet e che sia installato il componente Google.
 
-Now follow the steps below.
+Segui i passaggi qui sotto.
 
-#. Modify the AP mode of ``galaxy-rvr.ino`` file to STA mode.
+#. Modifica la modalità AP del file ``galaxy-rvr.ino`` in modalità STA.
 
-    * Open the the ``galaxy-rvr.ino`` file located in the ``galaxy-rvr-main\galaxy-rvr`` directory. 
-    * Then comment out the AP mode related code. Uncomment the STA mode related code and fill in  the ``SSID`` and ``PASSWORD`` of your home Wi-Fi.
+    * Apri il file ``galaxy-rvr.ino`` situato nella directory ``galaxy-rvr-main\galaxy-rvr``. 
+    * Poi commenta il codice relativo alla modalità AP. Decommenta il codice relativo alla modalità STA e inserisci ``SSID`` e ``PASSWORD`` del tuo Wi-Fi domestico.
 
         .. code-block:: arduino
 
-            /** Configure Wifi mode, SSID, password*/
+            /** Configura modalità Wifi, SSID, password */
             // #define WIFI_MODE WIFI_MODE_AP
             // #define SSID "GalaxyRVR"
             // #define PASSWORD "12345678"
@@ -108,42 +108,41 @@ Now follow the steps below.
             #define SSID "xxxxxxxxxx"
             #define PASSWORD "xxxxxxxxxx"
 
-    * Save this code, select the correct board (Arduino Uno) and port, then click the **Upload** button to upload it to the R3 board.
+    * Salva il codice, seleziona la scheda corretta (Arduino Uno) e la porta, poi clicca il pulsante **Upload** per caricarlo sulla scheda R3.
 
-#. Search ``google`` in Google Play, find the app shown below and install it.
+#. Cerca ``google`` su Google Play, trova l'app mostrata qui sotto e installala.
 
     .. image:: img/google_voice.png
         :width: 500
         :align: center
 
-#. Connect your mobile device to the same Wi-Fi as you wrote in the code.
+#. Collega il tuo dispositivo mobile alla stessa rete Wi-Fi che hai configurato nel codice.
 
     .. image:: img/sta_wifi.png
         :width: 500
         :align: center
 
-#. Open the controller previously created in SunFounder Controller and connect it to ``GalaxyRVR`` through the |app_connect| button.
+#. Apri il controller precedentemente creato in SunFounder Controller e collegalo a ``GalaxyRVR`` tramite il pulsante |app_connect|.
 
     .. image:: img/app/camera_connect.png
         :width: 400
         :align: center
 
 
-#. Tap and hold the **STT(J)** widget after clicking the |app_run| button. A prompt will appear indicating that it is listening. Say the following command to move the car.
+#. Tocca e tieni premuto il widget **STT(J)** dopo aver cliccato il pulsante |app_run|. Apparirà un messaggio che indica che sta ascoltando. Pronuncia i seguenti comandi per muovere il rover.
 
     .. image:: img/app/play_speech.png
 
-    * ``stop``: All movements of the rover can be stopped.
-    * ``forward``: Let the rover move forward.
-    * ``backward``: Let the rover move backward.
-    * ``left``: Let the rover turn left.
-    * ``right``: Let the rover turn right.
+    * ``stop``: Tutti i movimenti del rover verranno fermati.
+    * ``forward``: Il rover avanzerà.
+    * ``backward``: Il rover si muoverà all'indietro.
+    * ``left``: Il rover girerà a sinistra.
+    * ``right``: Il rover girerà a destra.
 
-Q5: About the ESP32 CAM Firmware
+Q5: Informazioni sul firmware dell'ESP32 CAM
 ---------------------------------------------------
 
-Here is the firmeware link of ESP32 CAM: |link_ai_camera_firmware|
-
+Ecco il link per il firmware dell'ESP32 CAM: |link_ai_camera_firmware|
 
 
 .. ↓ this firmware only for sunfounder controller
@@ -249,4 +248,6 @@ Here is the firmeware link of ESP32 CAM: |link_ai_camera_firmware|
 ..         :align: center
 
 .. #. After successful firmware upload, you can find more information at this link: https://github.com/sunfounder/ai-camera-firmware.
+
+
 

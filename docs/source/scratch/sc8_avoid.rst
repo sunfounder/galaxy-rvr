@@ -1,29 +1,30 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme agli altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti e agli sneak peek.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
+
 
 
 .. _ir_ultra_avoid:
 
 
-Lesson 8 Advanced Obstacle Avoidance
+Lezione 8 Evasione Avanzata degli Ostacoli
 ==================================================
 
-The obstacle avoidance module, as the name suggests, helps our Rover avoid obstacles. It detects obstacles by transmitting an infrared signal and then receiving the signal reflected back from the object. If there is an obstacle in front of the module, the infrared signal is reflected back, and the module detects it.
+Il modulo di evitamento ostacoli, come suggerisce il nome, aiuta il nostro Rover a evitare gli ostacoli. Rileva gli ostacoli trasmettendo un segnale a infrarossi e ricevendo il segnale riflesso dall'oggetto. Se c'è un ostacolo davanti al modulo, il segnale a infrarossi viene riflesso indietro e il modulo lo rileva.
 
-Now, adding an ultrasonic sensor to the mix improves this system. Ultrasonic sensors measure distance by sending out a sound wave at a specific frequency and listening for that sound wave to bounce back. By recording the elapsed time between the sound wave being generated and the sound wave bouncing back, it is possible to calculate the distance between the sensor and the object.
+Ora, aggiungendo un sensore a ultrasuoni al sistema, miglioriamo questa funzionalità. I sensori a ultrasuoni misurano la distanza inviando un'onda sonora a una frequenza specifica e ascoltando il ritorno dell'onda riflessa. Registrando il tempo trascorso tra la generazione dell'onda sonora e il suo ritorno, è possibile calcolare la distanza tra il sensore e l'oggetto.
 
-Combining these two gives us a reliable, efficient, and versatile obstacle avoidance system!
+Combinando questi due sistemi, otteniamo un sistema di evitamento degli ostacoli affidabile, efficiente e versatile!
 
 .. raw:: html
 
@@ -32,61 +33,60 @@ Combining these two gives us a reliable, efficient, and versatile obstacle avoid
         Your browser does not support the video tag.
     </video>
 
-Learning Objectives
--------------------------
+Obiettivi di Apprendimento
+---------------------------------
 
-* Combine ultrasonic and infrared obstacle avoidance modules to enable the basic obstacle avoidance function of the Mars Rover model.
-* Learn how to program the Mars Rover model to automatically sense and avoid obstacles.
+* Combinare i moduli di evitamento ostacoli a ultrasuoni e infrarossi per abilitare la funzione base di evitamento degli ostacoli nel modello di Rover marziano.
+* Imparare a programmare il modello di Rover marziano per rilevare e evitare automaticamente gli ostacoli.
 
 
-Materials
------------
+Materiali
+-------------
 
-* Smartphone or tablet
-* Mammoth Coding APP
+* Smartphone o tablet
+* APP Mammoth Coding
 * GalaxyRVR
 
-Constructing Advanced Obstacle Avoidance Systems
------------------------------------------------------------
 
-In previous lessons, we learned the basics of using infrared sensors for obstacle avoidance. We also explored the principles of ultrasonic modules. Now, we will put all these parts together to build an advanced obstacle avoidance system!
+Costruzione di Sistemi Avanzati di Evasione Ostacoli
+-------------------------------------------------------
 
-Our enhanced Mars Rover will now navigate its surroundings using both ultrasonic and infrared sensors.
+Nelle lezioni precedenti, abbiamo imparato le basi dell'uso dei sensori a infrarossi per l'evitamento degli ostacoli. Abbiamo anche esplorato i principi dei moduli a ultrasuoni. Ora metteremo insieme tutti questi elementi per costruire un sistema di evitamento ostacoli avanzato!
 
-1. We can use the code block from :ref:`ir_obstacle` as a template. Open it from your saved projects.
+Il nostro Rover marziano potenziato navigherà nei suoi dintorni utilizzando sia sensori a ultrasuoni che a infrarossi.
 
+1. Possiamo utilizzare il blocco di codice della lezione :ref:`ir_obstacle` come modello. Aprilo dai tuoi progetti salvati.
 
 .. image:: img/7_avoid_open.png
 
-2. Then, save it as a copy.
+2. Poi, salvalo come copia.
 
 .. image:: img/7_avoid_save_copy.png
 
-3. Rename the project and save it.
+3. Rinomina il progetto e salvalo.
 
 .. image:: img/7_avoid_save_rename.png
 
-4. Add distance detection using the ultrasonic sensor. Drag a ``when distance < 15 cm`` block.
+4. Aggiungi il rilevamento della distanza utilizzando il sensore a ultrasuoni. Trascina un blocco ``quando distanza < 15 cm``.
 
 .. image:: img/7_avoid_when.png
     :width: 800
 
-
-5. Similarly, drag a ``stop other scripts in sprite`` block to ensure the GalaxyRVR only responds to one sensor at a time.
+5. Allo stesso modo, trascina un blocco ``ferma altri script nello sprite`` per assicurarti che il GalaxyRVR risponda solo a un sensore alla volta.
 
 .. image:: img/7_avoid_stop.png
 
-6. Move backward until reaching a safe distance.
+6. Muoviti all'indietro fino a raggiungere una distanza di sicurezza.
 
 .. image:: img/7_avoid_backward.png
 
-7. Turn for one second (either left or right).
+7. Gira per un secondo (a sinistra o a destra).
 
 .. image:: img/7_avoid_turn.png
 
-8. Move forward again.
+8. Procedi di nuovo in avanti.
 
 .. image:: img/7_avoid_go.png
 
-Now, the IR sensors on both sides and the ultrasonic sensor in the front will work together to form a powerful obstacle avoidance system, ensuring the GalaxyRVR does not collide with any obstacles during its missions.
+Ora, i sensori IR su entrambi i lati e il sensore a ultrasuoni anteriore lavoreranno insieme per formare un potente sistema di evitamento ostacoli, garantendo che il GalaxyRVR non si scontri con alcun ostacolo durante le sue missioni.
 

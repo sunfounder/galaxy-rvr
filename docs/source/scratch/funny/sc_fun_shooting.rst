@@ -1,26 +1,25 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme agli altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti e agli sneak peek.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _sc_shooting:
 
-Extension 3 Shooting
+Estensione 3 Tiro a Segno
 ====================================
 
-Ever watched those thrilling shooting games on TV, where contestants expertly target the bullseye to rack up points? Now, you can experience the same adrenaline rush right here in Scratch! In our interactive shooting game, you'll use the Crosshair sprite to aim and hit as close to the bullseye as possible, maximizing your score with each precise shot.
+Hai mai guardato quei giochi di tiro emozionanti in TV, dove i concorrenti mirano abilmente al bersaglio per accumulare punti? Ora puoi provare la stessa adrenalina qui su Scratch! Nel nostro gioco interattivo di tiro, utilizzerai lo sprite del Mirino per mirare e colpire il più vicino possibile al centro, massimizzando il punteggio con ogni tiro preciso.
 
-To begin, click the green flag. You'll control your shots using the innovative Obstacle Avoidance module. Ready to test your aim and reflexes? Let’s see how you score!
-
+Per iniziare, clicca sulla bandiera verde. Controllerai i tuoi tiri usando il modulo innovativo di Evitamento Ostacoli. Pronto a mettere alla prova la tua mira e i tuoi riflessi? Vediamo quanto riesci a segnare!
 
 .. raw:: html
 
@@ -29,103 +28,102 @@ To begin, click the green flag. You'll control your shots using the innovative O
       Your browser does not support the video tag.
    </video>
 
-Below are the steps for implementing the project. It is recommended to follow these steps initially, and once familiar, you may modify the effects as desired.
+Di seguito trovi i passaggi per implementare il progetto. Si consiglia di seguirli inizialmente e, una volta acquisita familiarità, puoi modificare gli effetti a tuo piacimento.
 
-1. Paint the **Crosshair** sprite
+1. Dipingi lo Sprite **Mirino**
 ----------------------------------------------
 
-* Delete the default sprite, select the **Sprite** button, and click **Paint**.
+* Elimina lo sprite predefinito, seleziona il pulsante **Sprite** e clicca su **Dipingi**.
 
   .. image:: img/shooting_paint_cross.png
 
-* Proceed to the **Costumes** page. Use the **Circle** tool, remove the fill color, and set the outline's color and width.
+* Vai alla pagina **Costumi**. Usa lo strumento **Cerchio**, rimuovi il colore di riempimento e imposta il colore e la larghezza del contorno.
 
   .. image:: img/shooting_paint_cross1.png
 
-* Draw a circle with the **Circle** tool. After drawing, use the **Select** tool to align the circle's center with the canvas's center.
+* Disegna un cerchio con lo strumento **Cerchio**. Dopo averlo disegnato, usa lo strumento **Seleziona** per allineare il centro del cerchio con il centro del canvas.
 
   .. image:: img/shooting_paint_cross2.png
 
-* With the **Line** tool, draw a cross inside the circle.
+* Con lo strumento **Linea**, disegna una croce all'interno del cerchio.
 
   .. image:: img/shooting_paint_cross3.png
 
-* Finally, return to the **Code** page and rename the sprite to “Crosshair”.
+* Infine, torna alla pagina **Codice** e rinomina lo sprite in "Mirino".
 
   .. image:: img/shooting_paint_cross4.png
 
-2. Paint the **Target** sprite
+2. Dipingi lo Sprite **Bersaglio**
 ----------------------------------------
 
-* Similarly, select the **Sprite** button and click **Paint**.
+* Allo stesso modo, seleziona il pulsante **Sprite** e clicca su **Dipingi**.
 
   .. image:: img/shooting_paint_target1.png
 
-* Enter the **Costumes** page. Use the **Circle** tool, select a black color, remove the Outline, and paint a large circle.
+* Accedi alla pagina **Costumi**. Usa lo strumento **Cerchio**, seleziona un colore nero, rimuovi il contorno e dipingi un cerchio grande.
 
   .. image:: img/shooting_paint_target3.png
     :width: 90%
 
-* Draw additional circles using the same method, each in a different color. Adjust the position of overlapping circles using the **Forward** or **Backward** tool to ensure all circles' origins align with the canvas's center.
+* Disegna cerchi aggiuntivi con lo stesso metodo, ciascuno di un colore diverso. Regola la posizione dei cerchi sovrapposti usando lo strumento **Porta avanti** o **Porta indietro** per allineare tutti i cerchi al centro del canvas.
 
   .. image:: img/shooting_paint_target4.png
     :width: 90%
 
-* Return to the **Code** page and rename this sprite "Target".
+* Torna alla pagina **Codice** e rinomina questo sprite in "Bersaglio".
 
   .. image:: img/shooting_paint_target5.png
 
-3. Add a backdrop
+3. Aggiungi uno sfondo
 --------------------------
 
-* Add a suitable backdrop that is preferably less colorful and does not match the colors of the **Target** sprite. I have chosen the **Wall1** backdrop.
+* Aggiungi uno sfondo adeguato, preferibilmente meno colorato e che non corrisponda ai colori dello sprite **Bersaglio**. Ho scelto lo sfondo **Muro1**.
 
   .. image:: img/shooting_choose_backdrop.png
 
-* Adjust the positions and sizes of the **Target** and **Crosshair** sprites.
+* Regola le posizioni e le dimensioni degli sprite **Bersaglio** e **Mirino**.
 
   .. note::
 
-    * Ensure the **Crosshair** sprite is layered above the **Target** sprite by moving the **Target** sprite first and then the **Crosshair**.
-    * The **Crosshair** should be smaller than the space between the color rings of the **Target** sprite.
+    * Assicurati che lo sprite **Mirino** sia stratificato sopra lo sprite **Bersaglio** spostando prima lo sprite **Bersaglio** e poi il **Mirino**.
+    * Il **Mirino** dovrebbe essere più piccolo dello spazio tra gli anelli colorati dello sprite **Bersaglio**.
 
   .. image:: img/shooting_choose_backdrop1.png
   
-4. Script the **Crosshair** sprite
+4. Script per lo Sprite **Mirino**
 ---------------------------------------
 
-* Randomize the position and size of the **Crosshair** sprite, allowing it to move unpredictably.
+* Randomizza la posizione e la dimensione dello sprite **Mirino**, permettendogli di muoversi in modo imprevedibile.
 
   .. image:: img/shooting_script_cross.png
 
-* When the left obstacle avoidance module is blocked, a message is broadcast - shooting.
+* Quando il modulo di evitamento ostacoli a sinistra è bloccato, viene inviato un messaggio - tiro.
 
   .. image:: img/shooting_script_cross1.png
 
-* When the **shooting** message is received, the sprite stops moving and gradually shrinks, simulating the shooting of a bullet.
+* Quando viene ricevuto il messaggio **tiro**, lo sprite smette di muoversi e si riduce gradualmente, simulando il tiro di un proiettile.
 
   .. image:: img/shooting_script_cross2.png
 
-* Use the [Touch color ()] block to determine the shot's position.
+* Usa il blocco [Touch color ()] per determinare la posizione del colpo.
 
   .. image:: img/shooting_script_cross3.png
     :width: 90%
 
-* Report a score of 10 if the shot lands inside the yellow circle.
+* Riporta un punteggio di 10 se il colpo cade all'interno del cerchio giallo.
 
   .. image:: img/shooting_script_cross4.png
 
-* Report a score of 9 if the shot lands inside the red circle. Similarly, use the [Touch color ()] block to match the color of the red circle.
+* Riporta un punteggio di 9 se il colpo cade all'interno del cerchio rosso. Usa allo stesso modo il blocco [Touch color ()] per corrispondere al colore del cerchio rosso.
 
   .. image:: img/shooting_script_cross5.png
     :width: 90%
 
-* Use the same method to confirm the bullet's landing. If it does not land on the **Target** sprite, it indicates a miss.
+* Usa lo stesso metodo per confermare il punto di atterraggio del proiettile. Se non atterra sullo sprite **Bersaglio**, indica che il colpo è mancato.
 
   .. image:: img/shooting_script_cross6.png
 
-Programming is complete. You can now click the green flag to run the script and see if it achieves the desired effect.
-
+La programmazione è completata. Ora puoi cliccare sulla bandiera verde per eseguire lo script e verificare se ottieni l'effetto desiderato.
 
 .. raw:: html
 

@@ -1,25 +1,24 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di appassionati di SunFounder Raspberry Pi, Arduino ed ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato ai nuovi annunci di prodotti e alle anteprime.
+    - **Sconti esclusivi**: Godi di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a giveaway e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti subito!
 
-.. _sh_fishing:
 
-Extension 5 Fishing
+Estensione 5 Pesca
 ===========================
 
-Dive into our interactive fishing game, utilizing the left obstacle avoidance module for an engaging experience.
+Immergiti nel nostro gioco interattivo di pesca, utilizzando il modulo di evitamento ostacoli sinistro per un'esperienza coinvolgente.
 
-When the script is active, fish will swim back and forth across the stage. To catch a fish, you must block the left obstacle avoidance module just as the fish is about to pass the hook. The game automatically records the number of fish you catch.
+Quando lo script è attivo, i pesci nuoteranno avanti e indietro sul palco. Per catturare un pesce, devi bloccare il modulo di evitamento ostacoli sinistro proprio quando il pesce sta per passare vicino all'amo. Il gioco registra automaticamente il numero di pesci che catturi.
 
 .. raw:: html
 
@@ -28,91 +27,91 @@ When the script is active, fish will swim back and forth across the stage. To ca
       Your browser does not support the video tag.
    </video>
 
-Follow these initial steps to set up the project, and feel free to customize the effects once you are familiar with the setup.
+Segui questi passaggi iniziali per configurare il progetto, e sentiti libero di personalizzare gli effetti una volta che avrai familiarità con l'impostazione.
 
-1. Add Background and Sprites
+1. Aggiungi Sfondo e Sprite
 ------------------------------------
 
-First, select an **Underwater** backdrop, then add a **Fish** sprite and let it swim across the stage.
+Per prima cosa, seleziona uno sfondo **Sottomarino**, poi aggiungi uno sprite **Pesce** e fallo nuotare sul palco.
 
-* Use the **Choose a Backdrop** button to select an **Underwater** backdrop.
+* Usa il pulsante **Scegli uno Sfondo** per selezionare uno sfondo **Sottomarino**.
 
   .. image:: img/fish_choose_backdrop.png
 
-* Delete the original sprite, then select the **Fish** sprite.
+* Elimina lo sprite originale, quindi seleziona lo sprite **Pesce**.
 
   .. image:: img/fish_choose_fish.png
 
-* Adjust the size and position of the **Fish** sprite.
+* Regola la dimensione e la posizione dello sprite **Pesce**.
 
   .. image:: img/fish_set_fish.png
 
-2. Draw a **Fishhook** Sprite
+2. Disegna uno Sprite **Amo**
 -------------------------------------
 
-Next, create a **Fishhook** sprite, which you will control via the left obstacle avoidance module to start fishing.
+Successivamente, crea uno sprite **Amo**, che controllerai tramite il modulo di evitamento ostacoli sinistro per iniziare la pesca.
 
-* Add the **Glow-J** sprite via **Choose a Sprite** and rename it "Fishhook".
+* Aggiungi lo sprite **Glow-J** tramite **Scegli uno Sprite** e rinominalo "Amo".
 
   .. image:: img/fish_choose_j.png
 
-* Navigate to the **Costumes** page of the **Glow-J** sprite, rename it **Fishhook**, select the internal white 'J', and change its color to red.
+* Vai alla pagina **Costumi** dello sprite **Glow-J**, rinominalo **Amo**, seleziona la parte interna bianca della 'J' e cambia il colore in rosso.
 
   .. image:: img/fish_set_j1.png
     :width: 90%
 
-* Remove the outer cyan fill and reduce its width. Ensure the top of the hook aligns with the center point.
+* Rimuovi il riempimento esterno ciano e riduci la sua larghezza. Assicurati che la parte superiore dell'amo sia allineata con il punto centrale.
 
   .. image:: img/fish_set_j2.png
 
-* Use the **Line tool** to draw a line extending upward from the center point, extending out of the stage.
+* Usa lo **Strumento Linea** per disegnare una linea che si estende verso l'alto dal punto centrale, uscendo dal palco.
 
   .. image:: img/fish_set_j3.png
 
-3. Scripting for the **Fish** Sprite
----------------------------------------
+3. Programmazione per lo Sprite **Pesce**
+---------------------------------------------
 
-The **Fish** sprite should move left and right on the stage, and when it interacts with the **Fishhook** sprite in the fishing state, it should shrink, move to a specific position, then disappear, followed by the spawning of a new **Fish** sprite.
+Lo sprite **Pesce** deve muoversi a sinistra e a destra sul palco, e quando interagisce con lo sprite **Amo** durante lo stato di pesca, deve ridursi, spostarsi in una posizione specifica, poi scomparire, seguito dalla comparsa di un nuovo sprite **Pesce**.
 
-* Create a variable **score** to store the number of fish caught, hide this sprite, and clone it.
+* Crea una variabile **punteggio** per memorizzare il numero di pesci catturati, nascondi questo sprite e clonalo.
 
   .. image:: img/fish_script_fish1.png
 
-* Display the clone of the **Fish** sprite, switch its costume, and set the initial position.
+* Visualizza il clone dello sprite **Pesce**, cambia il suo costume e imposta la posizione iniziale.
 
   .. image:: img/fish_script_fish2.png
 
-* Enable the clone of the **Fish** sprite to move left and right and bounce back when touching the stage's edge.
+* Fai in modo che il clone dello sprite **Pesce** si muova a sinistra e a destra e rimbalzi quando tocca il bordo del palco.
 
   .. image:: img/fish_script_fish3.png
 
-* If the clone of the **Fish** sprite touches the **Fishhook** sprite in the fishing state (when it turns red).
+* Se il clone dello sprite **Pesce** tocca lo sprite **Amo** durante lo stato di pesca (quando diventa rosso).
 
   .. image:: img/fish_script_fish4.png
     :width: 90%
 
-* Increase the score (variable score) by 1, show a scoring animation (shrinks by 40%, quickly moves to the scoreboard's position and disappears). Simultaneously, create a new fish (a new **Fish** sprite clone) and continue the game.
+* Aumenta il punteggio (variabile punteggio) di 1, mostra un'animazione di punteggio (si riduce del 40%, si sposta rapidamente alla posizione del tabellone dei punteggi e scompare). Contemporaneamente, crea un nuovo pesce (un nuovo clone dello sprite **Pesce**) e continua il gioco.
 
   .. image:: img/fish_script_fish5.png
 
-4. Scripting for the **Fishhook** Sprite
+4. Programmazione per lo Sprite **Amo**
 ---------------------------------------------
 
-The **Fishhook** sprite generally stays underwater in a yellow state. When your hand blocks the left-side infrared module, it changes to the fishing state (red) and moves above the stage.
+Lo sprite **Amo** generalmente rimane sott'acqua in uno stato giallo. Quando la tua mano blocca il modulo a infrarossi sul lato sinistro, cambia nello stato di pesca (rosso) e si muove sopra il palco.
 
-* When the green flag is clicked, set the sprite's color effect to 30 (yellow) and set its initial position.
+* Quando viene cliccata la bandiera verde, imposta l'effetto colore dello sprite su 30 (giallo) e la sua posizione iniziale.
 
   .. image:: img/fish_script_hook1.png
 
-* When your hand blocks the left-side infrared module, set the color effect to 0 (red, initiating the fishing state), wait for 0.1 seconds, then move the **Fishhook** sprite to the top of the stage.
+* Quando la tua mano blocca il modulo a infrarossi sul lato sinistro, imposta l'effetto colore su 0 (rosso, avviando lo stato di pesca), attendi 0,1 secondi, poi sposta lo sprite **Amo** in cima al palco.
 
   .. image:: img/fish_script_hook2.png
 
-* After removing your hand, let the **Fishhook** return to its initial position.
+* Dopo aver rimosso la mano, fai tornare l'**Amo** alla sua posizione iniziale.
 
   .. image:: img/fish_script_hook3.png
 
-Once you've completed programming, click the green flag to run the script and see if it achieves the desired effect.
+Una volta completata la programmazione, clicca sulla bandiera verde per eseguire lo script e vedere se ottieni l'effetto desiderato.
 
 .. raw:: html
 
@@ -120,5 +119,4 @@ Once you've completed programming, click the green flag to run the script and se
       <source src="../_static/video/sc_fishing.mp4"  type="video/mp4">
       Your browser does not support the video tag.
    </video>
-
 

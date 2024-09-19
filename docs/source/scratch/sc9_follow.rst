@@ -1,72 +1,71 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme agli altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti e agli sneak peek.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 
-Lesson 9 Mars Exploration Partner
+
+
+Lezione 9 Partner di Esplorazione su Marte
 ====================================================
 
+Ora che il nostro Rover è in grado di evitare gli ostacoli, lo potenziamo ulteriormente facendolo seguire gli oggetti. Il nostro obiettivo è modificare il codice esistente in modo che il Rover si muova verso un oggetto in movimento.
 
-With our Rover now capable of avoiding obstacles, let's enhance it further by making it follow objects. Our goal is to modify our existing code to make the Rover move towards a moving object.
+Ti sei mai chiesto quali sono le differenze tra un sistema di inseguimento e un sistema di evitamento degli ostacoli?
 
-Ever wondered about the differences between a following system and an obstacle avoidance system?
-
-The key here is that in a following system, we want our Rover to move in response to detected objects, while in an obstacle avoidance system, we're looking to steer clear of detected objects.
-
-
-Learning Objectives
--------------------------
-
-* Combine ultrasonic and infrared obstacle avoidance modules to implement the following functionality in the Mars rover model.
-* Learn how to program the Mars rover model to automatically follow a target.
+La differenza chiave è che in un sistema di inseguimento vogliamo che il Rover si muova in risposta agli oggetti rilevati, mentre in un sistema di evitamento, stiamo cercando di allontanarci dagli oggetti rilevati.
 
 
-Materials
------------
+Obiettivi di Apprendimento
+-----------------------------
 
-* Smartphone or tablet
-* Mammoth Coding APP
+* Combinare i moduli di evitamento ostacoli a ultrasuoni e infrarossi per implementare la funzionalità di inseguimento nel modello di Rover marziano.
+* Imparare a programmare il modello di Rover marziano per seguire automaticamente un obiettivo.
+
+
+Materiali
+------------
+
+* Smartphone o tablet
+* APP Mammoth Coding
 * GalaxyRVR
 
 
-Coding the Intelligent Following System
+Programmare il Sistema di Inseguimento Intelligente
 -------------------------------------------------------
 
-1. Use the code block from :ref:`ir_ultra_avoid` as a template and open it from the saved project.
+1. Utilizza il blocco di codice della lezione :ref:`ir_ultra_avoid` come modello e aprilo dal progetto salvato.
 
 .. image:: img/8_follow_open.png
 
-2. Then, save it as a copy.
+2. Poi, salvalo come una copia.
 
 .. image:: img/8_follow_save_copy.png
 
-3. Rename the project and save it.
+3. Rinomina il progetto e salvalo.
 
 .. image:: img/8_follow_save_rename.png
 
-4. First, remove the forward block at the end of each code block, as the rover should stop after each sensor event.
+4. Per prima cosa, rimuovi il blocco avanti alla fine di ciascun blocco di codice, poiché il Rover dovrebbe fermarsi dopo ogni evento sensoriale.
 
 .. image:: img/8_follow_save_remove_forward.png
 
-5. Next, modify the turning directions of the two IR events, as the GalaxyRVR needs to follow the direction of the target.
+5. Successivamente, modifica le direzioni di svolta dei due eventi IR, poiché il GalaxyRVR deve seguire la direzione dell'obiettivo.
 
 .. image:: img/8_follow_save_re_turn.png
 
-6. Finally, modify the ultrasonic sensor events. Instead of backing up to a safe distance and turning, it should now move forward until the target moves out of range.
+6. Infine, modifica gli eventi del sensore a ultrasuoni. Invece di arretrare a una distanza di sicurezza e girare, ora dovrebbe avanzare finché l'obiettivo non esce dal raggio d'azione.
 
 .. image:: img/8_follow_save_re_ultra.png
 
-Now, the GalaxyRVR will move along with your steps. When you are beside it, it will turn to face you. If you are in front of it, it will move towards you. If it cannot detect you, it will stay still.
+Ora, il GalaxyRVR seguirà i tuoi passi. Quando sei accanto a lui, si girerà per fronteggiarti. Se sei davanti, si muoverà verso di te. Se non riesce a rilevarti, rimarrà fermo.
 

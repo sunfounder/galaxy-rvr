@@ -1,25 +1,25 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella comunità di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme a noi.
 
-    **Why Join?**
+    **Perché unirsi a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto tecnico**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Accedi in anteprima ai nuovi annunci sui prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e Giveaway Festivi**: Partecipa a promozioni festive e concorsi a premi.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto per esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi!
 
-Lesson 5: Unleashing Mars Rover Mobility
+Lezione 5: Sbloccare la Mobilità del Mars Rover
 ======================================================
 
-Get ready, young explorers! We've mastered controlling motors, now we're taking those skills to the red planet. In this lesson, we're bringing the Mars Rover to life!
+Preparati, giovani esploratori! Abbiamo imparato a controllare i motori, ora porteremo queste competenze sul pianeta rosso. In questa lezione daremo vita al nostro Mars Rover!
 
-We'll learn how to assemble the motors into the Rocker-Bogie suspension system system and then, using our coding skills, we'll guide our Rover across imagined Martian landscapes.
+Impareremo come assemblare i motori nel sistema di sospensione Rocker-Bogie e poi, utilizzando le nostre abilità di programmazione, guideremo il nostro Rover attraverso immaginari paesaggi marziani.
 
-It's a Martian adventure in our classroom. Let's get started!
+È un'avventura marziana nella nostra aula. Iniziamo!
 
 .. raw:: html
 
@@ -30,214 +30,211 @@ It's a Martian adventure in our classroom. Let's get started!
 
 .. note::
 
-    If you are learning this course after fully assembling the GalaxyRVR, you need to move this switch to the right before uploading the code.
+    Se stai seguendo questo corso dopo aver assemblato completamente il GalaxyRVR, devi spostare questo interruttore verso destra prima di caricare il codice.
 
     .. image:: img/camera_upload.png
         :width: 500
         :align: center
 
-Learning Objectives
----------------------------
+Obiettivi di Apprendimento
+-------------------------------
 
-* Understand how to assemble the motors into the Mars Rover's Rocker-Bogie suspension system.
-* Learn to use Arduino to control the motion of the Mars Rover.
-* Practice writing a program to control the Mars Rover's motion on different terrains.
+* Comprendere come assemblare i motori nel sistema di sospensione Rocker-Bogie del Mars Rover.
+* Imparare a usare Arduino per controllare il movimento del Mars Rover.
+* Praticare la scrittura di un programma per controllare il movimento del Mars Rover su terreni diversi.
 
-Materials needed
+Materiali necessari
 --------------------------
 * SunFounder R3 Board
 * TT Motors
 * GalaxyRVR Shield
-* Battery
-* Mars Rover Model (Equipped with Rocker-Bogie System)
-* Basic tools and accessories (e.g. screwdriver, screws, etc.)
-* USB Cable
+* Batteria
+* Modello Mars Rover (con sistema Rocker-Bogie)
+* Strumenti e accessori di base (es. cacciavite, viti, ecc.)
+* Cavo USB
 * Arduino IDE
 * Computer
 
-Steps
+Passaggi
 --------------
 
-**Step 1: Assembling the Rover Components**
+**Passo 1: Assemblare i Componenti del Rover**
 
-In this step, we will assemble the battery, R3 board, GalaxyRVR Shield, motors, and wheels onto the pre-assembled rocker-bogie system. This will bring the GalaxyRVR to a runnable state.
+In questo passaggio assembleremo la batteria, la scheda R3, il GalaxyRVR Shield, i motori e le ruote sul sistema Rocker-Bogie preassemblato. In questo modo il GalaxyRVR sarà pronto per essere utilizzato.
 
 .. raw:: html
 
     <iframe width="600" height="400" src="https://www.youtube.com/embed/lu8K26MY96s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-Congratulations! We've successfully built our very own rover, and it's ready to start exploring. Let's get moving!
+Congratulazioni! Abbiamo costruito con successo il nostro rover, ed è pronto per iniziare l'esplorazione. Mettiamolo in movimento!
 
-**Step 2: Set the Rover in Motion**
+**Passo 2: Mettere in Movimento il Rover**
 
-Now it's time to breathe life into our creation and send it off on its maiden voyage. 
-But how do we communicate with our rover? How do we tell it where to go and what to do? 
-That's where our coding skills come into play!
+Ora è il momento di dare vita alla nostra creazione e lanciarla nella sua prima missione.
+Ma come comunichiamo con il nostro rover? Come gli diciamo dove andare e cosa fare?
+È qui che entrano in gioco le nostre abilità di programmazione!
 
-In the real world, if we want a car to move forward, we push the accelerator, and both wheels start spinning. 
-The wheels on the right side turn clockwise, while those on the left side turn counterclockwise.
+Nel mondo reale, se vogliamo che un'auto si muova in avanti, premiamo l'acceleratore e le due ruote iniziano a girare. Le ruote sul lato destro ruotano in senso orario, mentre quelle sul lato sinistro ruotano in senso antiorario.
 
 .. image:: img/move_car.gif
     :align: center
 
-Imagine you're sitting in the driver's seat, the world whizzing past you as you cruise along the open road - that's exactly the experience we're going to give our rover.
+Immagina di essere seduto al posto di guida, il mondo che sfreccia intorno a te mentre percorri la strada – è esattamente l'esperienza che daremo al nostro rover.
 
-Now, let's translate that experience into the language our rover understands - code!
+Ora, traduciamo questa esperienza nel linguaggio che il nostro rover comprende: il codice!
 
     .. code-block:: arduino
 
         #include <SoftPWM.h>
 
-        // Define the pins of motors 
+        // Definire i pin dei motori 
         const int in1 = 2;
         const int in2 = 3;
         const int in3 = 4;
         const int in4 = 5;
 
         void setup() {
-            // Initialize SoftPWM
+            // Inizializzare SoftPWM
             SoftPWMBegin();
         }
 
         void loop() {
-            // Set the left motors rotate counterclockwise
-            SoftPWMSet(in1, 255);  // Full speed
+            // Impostare i motori di sinistra per ruotare in senso antiorario
+            SoftPWMSet(in1, 255);  // Velocità massima
             SoftPWMSet(in2, 0);    // Stop
             
-            // Set the right motors rotate clockwise
+            // Impostare i motori di destra per ruotare in senso orario
             SoftPWMSet(in3, 0);    // Stop
-            SoftPWMSet(in4, 255);  // Full speed
-            
+            SoftPWMSet(in4, 255);  // Velocità massima
         }
 
-In this code, we're speaking to our rover, telling it exactly what to do. 
-With the ``SoftPWMSet()`` function, we're acting like the car's accelerator and brakes, 
-controlling the speed and direction of each motor. 
-We tell the left motors to spin counterclockwise and the right motors to spin clockwise, and just like that, our rover moves forward!
+In questo codice stiamo comunicando al nostro rover cosa fare. 
+Con la funzione ``SoftPWMSet()``, agiamo come l'acceleratore e il freno dell'auto, 
+controllando la velocità e la direzione di ciascun motore. 
+Diciamo ai motori di sinistra di girare in senso antiorario e a quelli di destra di girare in senso orario, e così il nostro rover si muove in avanti!
 
-Absolutely, the concept of reversing the rover is straightforward once you understand how to move it forward.
-To make the rover move backward, we just need to reverse the direction of rotation of each motor. 
+Ovviamente, il concetto di invertire il rover è semplice una volta che capisci come farlo muovere in avanti. Per farlo muovere all'indietro, basta invertire la direzione di rotazione di ciascun motore.
 
-Here's how we'd do that in code, we do just the opposite. The right wheels should now rotate counterclockwise, and the left wheels should rotate clockwise.
+Ecco come lo faremmo nel codice, facendo esattamente l'opposto. Le ruote di destra dovrebbero ora ruotare in senso antiorario e quelle di sinistra in senso orario.
 
 .. code-block:: arduino
     :emphasize-lines: 16,17,20,21
 
     #include <SoftPWM.h>
 
-    // Define the pins of motors 
+    // Definire i pin dei motori 
     const int in1 = 2;
     const int in2 = 3;
     const int in3 = 4;
     const int in4 = 5;
 
     void setup() {
-        // Initialize SoftPWM
+        // Inizializzare SoftPWM
         SoftPWMBegin();
     }
 
     void loop() {
-        // Set the left motors to rotate clockwise
+        // Impostare i motori di sinistra per ruotare in senso orario
         SoftPWMSet(in1, 0);    // Stop
-        SoftPWMSet(in2, 255);  // Full speed
+        SoftPWMSet(in2, 255);  // Velocità massima
 
-        // Set the right motors to rotate counterclockwise
-        SoftPWMSet(in3, 255);  // Full speed
+        // Impostare i motori di destra per ruotare in senso antiorario
+        SoftPWMSet(in3, 255);  // Velocità massima
         SoftPWMSet(in4, 0);    // Stop
-        
     }
 
-In this code, we use ``SoftPWMSet()`` to tell the left motors to rotate clockwise and the right motors to rotate counterclockwise.
+In questo codice utilizziamo ``SoftPWMSet()`` per dire ai motori di sinistra di ruotare in senso orario e a quelli di destra di ruotare in senso antiorario.
 
-Isn't it fascinating that we can control our rover's journey simply with code? The next time you're in a car, take a moment to think about the journey of your rover, exploring the world one rotation at a time. Stay tuned, because our rover's journey is just beginning!
+Non è affascinante come possiamo controllare il viaggio del nostro rover semplicemente con il codice? La prossima volta che ti trovi in un'auto, prendi un momento per pensare al viaggio del tuo rover, esplorando il mondo una rotazione alla volta. Resta sintonizzato, perché il viaggio del nostro rover è appena iniziato!
 
-**Step 3: Making the Rover Move in Other Directions**
+**Passo 3: Far Muovere il Rover in Altre Direzioni**
 
-Now that we know how to move our Mars Rover forward and backward, what if we want it to turn left or right?
+Ora che sappiamo come far muovere il nostro Mars Rover avanti e indietro, cosa succede se vogliamo farlo girare a sinistra o a destra?
 
-Just as in real life driving, there are two main ways for a car to turn left.
+Proprio come nella guida reale, ci sono due modi principali per far girare un'auto a sinistra.
 
-* The first way is by having the wheels on the left side rotate slower than the ones on the right. This difference in speed will make the rover turn towards the left.
-* The second way is by making both left and right motors rotate in the same direction (clockwise in this case), which will make the rover spin to the left on its axis.
+* Il primo modo è fare in modo che le ruote sul lato sinistro ruotino più lentamente rispetto a quelle sul lato destro. Questa differenza di velocità farà girare il rover verso sinistra.
+* Il secondo modo è far ruotare entrambi i motori di sinistra e destra nella stessa direzione (in senso orario in questo caso), facendo ruotare il rover su se stesso.
 
-Let's see how we can implement both ways in code:
+Vediamo come possiamo implementare entrambi i metodi nel codice:
 
-**Method 1: Different speeds on each side**
+**Metodo 1: Velocità diverse su ciascun lato**
 
 .. code-block:: arduino
     :emphasize-lines: 16,17,20,21
 
     #include <SoftPWM.h>
 
-    // Define the pins of motors 
+    // Definire i pin dei motori 
     const int in1 = 2;
     const int in2 = 3;
     const int in3 = 4;
     const int in4 = 5;
 
     void setup() {
-        // Initialize SoftPWM
+        // Inizializzare SoftPWM
         SoftPWMBegin();
     }
 
     void loop() {
-        // Set the left motors rotate counterclockwise in low speed
+        // Impostare i motori di sinistra per ruotare in senso antiorario a bassa velocità
         SoftPWMSet(in1, 40);
         SoftPWMSet(in2, 0);
 
-        // Set the right motors rotate clockwise in higher speed
+        // Impostare i motori di destra per ruotare in senso orario a velocità più alta
         SoftPWMSet(in3, 0);
         SoftPWMSet(in4, 200);
 
-        delay(2000);  // Last for 2 seconds
+        delay(2000);  // Durata di 2 secondi
     }
 
-In this code, we have decreased the speed of the left motors while keeping the right motors at a higher speed. This will make the rover turn towards the left.
+In questo codice, abbiamo ridotto la velocità dei motori di sinistra mantenendo i motori di destra a una velocità più alta. Questo farà girare il rover verso sinistra.
 
-**Method 2: Rotating all motors in the same direction**
+**Metodo 2: Far ruotare tutti i motori nella stessa direzione**
 
 .. code-block:: arduino
     :emphasize-lines: 16,17,18,19
 
     #include <SoftPWM.h>
 
-    // Define the motor pins
+    // Definire i pin dei motori 
     const int in1 = 2;
     const int in2 = 3;
     const int in3 = 4;
     const int in4 = 5;
 
     void setup() {
-        // Initialize SoftPWM
+        // Inizializzare SoftPWM
         SoftPWMBegin();
     }
 
     void loop() {
-        // Set all motors to rotate clockwise
+        // Impostare tutti i motori per ruotare in senso orario
         SoftPWMSet(in1, 0);
         SoftPWMSet(in2, 255);
         SoftPWMSet(in3, 0);
         SoftPWMSet(in4, 255);
     }
 
-In this code, we set all motors to rotate clockwise. The rover will spin around its own axis and the direction will change to the left.
+In questo codice, impostiamo tutti i motori per ruotare in senso orario. Il rover ruoterà su se stesso e cambierà direzione verso sinistra.
 
-For making the rover turn right, the concepts are the same but the directions are reversed. Can you figure out how to do it?
+Per far girare il rover a destra, i concetti sono gli stessi ma le direzioni sono invertite. Riesci a capire come farlo?
 
-**Step 4: Moving in All Directions**
+**Passo 4: Muoversi in Tutte le Direzioni**
 
-As we develop more functionalities for our Mars Rover, our code could become quite long and messy. In programming, it's a good practice to keep your code organized and maintainable. One way to achieve this is by creating separate functions for separate tasks.
+Man mano che sviluppiamo più funzionalità per il nostro Mars Rover, il nostro codice potrebbe diventare piuttosto lungo e disordinato. In programmazione, è una buona pratica mantenere il codice organizzato e gestibile. Un modo per farlo è creare funzioni separate per ogni compito.
 
-In this case, we can create separate functions for each direction the rover can move. This not only makes our code easier to understand but also allows us to re-use these functions anywhere in our program without having to re-write the same lines of code.
+In questo caso, possiamo creare funzioni separate per ogni direzione in cui il rover può muoversi. Ciò non solo rende il nostro codice più facile da capire, ma ci consente anche di riutilizzare queste funzioni in qualsiasi parte del programma senza dover riscrivere le stesse righe di codice.
 
-Let's see how we can do this:
+Vediamo come possiamo farlo:
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/90c13522-9757-4212-b250-63ffbc790fd3/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-With this structure, our main loop remains simple and easy to follow. We can clearly see that the rover moves forward, then backward, 
-then turns left and right, and finally stops. 
+Con questa struttura, il nostro loop principale rimane semplice e facile da seguire. 
+Possiamo vedere chiaramente che il rover si muove in avanti, poi indietro, poi gira 
+a sinistra e a destra, e infine si ferma.
 
 .. raw:: html
 
@@ -246,14 +243,14 @@ then turns left and right, and finally stops.
       Your browser does not support the video tag.
    </video>
 
-The details of how each of these actions is achieved are hidden away in separate functions. This is a key aspect of good programming practices known as abstraction.
+I dettagli di come ciascuna di queste azioni viene eseguita sono nascosti in funzioni separate. Questo è un aspetto fondamentale delle buone pratiche di programmazione, noto come astrazione.
 
-**Step 5: Sharing and Reflection**
+**Passo 5: Condivisione e Riflessione**
 
-Congratulations on completing this exploration journey with the Mars Rover! This is a practical application of your knowledge of science and engineering, and you did a fantastic job!
+Congratulazioni per aver completato questo viaggio di esplorazione con il Mars Rover! Questa è un'applicazione pratica delle tue conoscenze scientifiche e ingegneristiche, e hai fatto un lavoro fantastico!
 
-Now, you can share how your rover overcomes various terrain obstacles. You could film your rover navigating different terrains, or show off your rover to your friends.
+Ora puoi condividere come il tuo rover supera vari ostacoli sul terreno. Potresti filmare il tuo rover che naviga su terreni diversi o mostrare il tuo rover ai tuoi amici.
 
-Reflecting on your learning process is also very important. What have you learned during this process? Did any new ideas or creative thoughts emerge? What have you gained in controlling motors and programming?
+Riflettere sul tuo processo di apprendimento è anche molto importante. Cosa hai imparato durante questo processo? Ti sono venute nuove idee o pensieri creativi? Cosa hai acquisito nel controllare i motori e nella programmazione?
 
-You can continue to explore, discover new knowledge, and constantly improve yourself. Keep it up, future scientists and engineers!
+Puoi continuare a esplorare, scoprire nuove conoscenze e migliorarti costantemente. Continua così, futuri scienziati e ingegneri!
