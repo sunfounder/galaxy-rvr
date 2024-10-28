@@ -75,7 +75,7 @@ The top section of Mammoth Coding includes several basic options.
 .. image:: img/2_app_ui_1.png
     :align: center
 
-* The first option from the left is the language setting, allowing you to choose different programming languages.
+* The first option from the left is the language setting, allowing you to choose different languages.
 * The second option is the file menu, where you can create new files, load local files, and save the current file.
 * The third option is for renaming your project.
 
