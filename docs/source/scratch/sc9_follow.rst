@@ -1,72 +1,71 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder Raspberry Pi & Arduino & ESP32 爱好者社区！在这里，你可以与其他爱好者一起深入探索 Raspberry Pi、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：在售后问题和技术挑战上，得到社区和团队的帮助。
+    - **学习与分享**：交流技巧和教程，共同提升技能。
+    - **独家预览**：抢先体验新产品的发布和预告。
+    - **专属折扣**：享受最新产品的独家折扣。
+    - **节日促销与赠品**：参与赠品活动和节日促销。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-
+    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 今天就加入我们吧！
 
 
-Lesson 9 Mars Exploration Partner
+
+
+第九课 火星探索伙伴
 ====================================================
 
+现在我们的火星车已经能够避开障碍物，接下来让我们进一步增强它的功能，让它能够跟随物体移动。我们的目标是修改现有代码，使火星车能够朝着移动的物体前进。
 
-With our Rover now capable of avoiding obstacles, let's enhance it further by making it follow objects. Our goal is to modify our existing code to make the Rover move towards a moving object.
+你是否曾经想过，跟随系统和避障系统有什么不同？
 
-Ever wondered about the differences between a following system and an obstacle avoidance system?
-
-The key here is that in a following system, we want our Rover to move in response to detected objects, while in an obstacle avoidance system, we're looking to steer clear of detected objects.
+关键在于，跟随系统要求火星车根据检测到的物体进行移动，而避障系统则是希望火星车避开检测到的物体。
 
 
-Learning Objectives
+
+学习目标
 -------------------------
 
-* Combine ultrasonic and infrared obstacle avoidance modules to implement the following functionality in the Mars rover model.
-* Learn how to program the Mars rover model to automatically follow a target.
+* 将超声波和红外避障模块结合，实现在火星车模型中的跟随功能。
+* 学习如何编程，使火星车模型自动跟随目标。
 
 
-Materials
+所需材料
 -----------
 
-* Smartphone or tablet
-* Mammoth Coding APP
+* 智能手机或平板电脑
+* Mammoth Coding 应用
 * GalaxyRVR
 
 
-Coding the Intelligent Following System
+编写智能跟随系统代码
 -------------------------------------------------------
 
-1. Use the code block from :ref:`ir_ultra_avoid` as a template and open it from the saved project.
+1. 使用 :ref:`ir_ultra_avoid` 中的代码块作为模板，并从保存的项目中打开它。
 
 .. image:: img/8_follow_open.png
 
-2. Then, save it as a copy.
+2. 然后，将其保存为副本。
 
 .. image:: img/8_follow_save_copy.png
 
-3. Rename the project and save it.
+3. 重命名项目并保存。
 
 .. image:: img/8_follow_save_rename.png
 
-4. First, remove the forward block at the end of each code block, as the rover should stop after each sensor event.
+4. 首先，移除每个代码块末尾的“向前”块，因为火星车在每次传感器事件后应该停止。
 
 .. image:: img/8_follow_save_remove_forward.png
 
-5. Next, modify the turning directions of the two IR events, as the GalaxyRVR needs to follow the direction of the target.
+5. 接下来，修改两个红外传感器事件的转向方向，因为火星车需要跟随目标的方向。
 
 .. image:: img/8_follow_save_re_turn.png
 
-6. Finally, modify the ultrasonic sensor events. Instead of backing up to a safe distance and turning, it should now move forward until the target moves out of range.
+6. 最后，修改超声波传感器事件。现在，它应该继续向前移动，直到目标超出范围，而不是向后移动至安全距离并转向。
 
 .. image:: img/8_follow_save_re_ultra.png
 
-Now, the GalaxyRVR will move along with your steps. When you are beside it, it will turn to face you. If you are in front of it, it will move towards you. If it cannot detect you, it will stay still.
-
+现在，GalaxyRVR 将会跟随你的步伐。当你站在它旁边时，它会转向面对你。如果你站在它前面，它会朝你移动。如果它无法检测到你，它将保持静止。

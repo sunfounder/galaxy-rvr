@@ -1,52 +1,52 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与其他爱好者一起，深入探索树莓派、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：通过社区和团队的帮助解决售后问题和技术挑战。
+    - **学习与分享**：交流技巧和教程，提升你的技能。
+    - **独家预览**：提前体验新产品发布和独家内容。
+    - **专属折扣**：享受最新产品的专属优惠。
+    - **节庆促销与赠品**：参与节日促销和赠品活动。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 即刻加入！
 
-Assemble Video
+组装视频
 =========================
 
-**Overview**
+**概述**
 
-If you want to learn while assembling the various components, you can refer to :ref:`course_mode`. In Course Mode, each lesson comes with assembly videos, component principles, and related test code, allowing you to learn as you go. So, you can skip this chapter.
+如果你想在组装各个组件的同时进行学习，可以参考 :ref:`course_mode`。在课程模式下，每一课都配有组装视频、组件原理和相关的测试代码，帮助你边学边做。因此，如果你希望直接开始组装，可以跳过这一章节。
 
-If you want to quickly assemble and start playing, you can watch the assembly video first. After completing the assembly, proceed to :ref:`play_mode` to learn about the app installation and connection. Then, you can use the app to control the GalaxyRVR.
+如果你想快速完成组装并开始使用，可以先观看组装视频。完成组装后，继续前往 :ref:`play_mode` 了解应用程序的安装和连接。然后，你就可以通过应用程序控制 GalaxyRVR。
 
-**Videos**
+**视频**
 
-* For the assembly of the GalaxyRVR, we provide printed assembly instructions in the kit. Here is the PDF version of it:
+* 对于 GalaxyRVR 的组装，我们在套件中提供了打印版的组装说明。以下是该说明的 PDF 版本：
 
-    * :Download:`Component List and Assembly Instructions <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0112v11-a0001012-galaxyrvr.pdf>`
+    * :Download:`组件清单和组装说明 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0112v11-a0001012-galaxyrvr.pdf>`
 
-* If you are having difficulty understanding the printed assembly instructions, you can instead follow our step-by-step assembly video.
+* 如果你在理解打印版组装说明时遇到困难，可以按照我们的逐步组装视频进行操作。
 
     .. note::
-      
-        * The assembly videos are in a series of 7. 
-        * You can check out other videos from the playlist in the upper-right corner, or let it play automatically.
+
+        * 组装视频共有 7 集。
+        * 你可以在右上角查看播放列表中的其他视频，或者让它自动播放。
 
     .. raw:: html
 
         <iframe width="600" height="400" src="https://www.youtube.com/embed/videoseries?list=PLwWF-ICTWmB62DgzmHWZwilt0Le4vGFry" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-**Tips**
+**提示**
 
-* When inserting the ESP32 CAM into the Camera Adapter, be aware of its orientation. It should align properly with the ESP32 Adapter.
+* 在将 ESP32 CAM 插入相机适配器时，请注意其方向。确保其与 ESP32 适配器正确对齐。
     
     .. image:: img/esp32_cam_direction.png
         :width: 300
         :align: center
 
-* After assembly, you can secure the motor wires to the plate using cable ties to prevent them from getting tangled in the wheels.
+* 组装完成后，你可以使用扎带将电机电缆固定在底板上，避免电缆与车轮发生缠绕。
 
     .. raw:: html
 

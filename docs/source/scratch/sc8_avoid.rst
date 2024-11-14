@@ -1,29 +1,28 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder Raspberry Pi & Arduino & ESP32 爱好者社区！在这里，你可以与其他爱好者一起更深入地探讨 Raspberry Pi、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：在售后问题和技术挑战上，得到社区和团队的帮助。
+    - **学习与分享**：交流技巧和教程，共同提升技能。
+    - **独家预览**：抢先体验新产品的发布和预告。
+    - **专属折扣**：享受最新产品的独家折扣。
+    - **节日促销与赠品**：参与赠品活动和节日促销。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
+    👉 准备好和我们一起探索与创造了吗？点击 [|link_sf_facebook|] 今天就加入我们吧！
 
 .. _ir_ultra_avoid:
 
 
-Lesson 8 Advanced Obstacle Avoidance
+第八课 高级避障
 ==================================================
 
-The obstacle avoidance module, as the name suggests, helps our Rover avoid obstacles. It detects obstacles by transmitting an infrared signal and then receiving the signal reflected back from the object. If there is an obstacle in front of the module, the infrared signal is reflected back, and the module detects it.
+正如名字所示，避障模块帮助我们的火星车避免障碍物。它通过发射红外信号并接收从物体反射回来的信号来检测障碍物。如果模块前方有障碍物，红外信号会被反射回来，模块就能检测到。
 
-Now, adding an ultrasonic sensor to the mix improves this system. Ultrasonic sensors measure distance by sending out a sound wave at a specific frequency and listening for that sound wave to bounce back. By recording the elapsed time between the sound wave being generated and the sound wave bouncing back, it is possible to calculate the distance between the sensor and the object.
+现在，我们加入了超声波传感器来增强这个系统。超声波传感器通过发射特定频率的声波并监听声波的反射来测量距离。通过记录声波发射与反射之间的时间差，我们可以计算出传感器与物体之间的距离。
 
-Combining these two gives us a reliable, efficient, and versatile obstacle avoidance system!
+将这两种传感器结合起来，我们就得到了一个可靠、高效且多功能的避障系统！
 
 .. raw:: html
 
@@ -32,61 +31,58 @@ Combining these two gives us a reliable, efficient, and versatile obstacle avoid
         Your browser does not support the video tag.
     </video>
 
-Learning Objectives
+学习目标
 -------------------------
 
-* Combine ultrasonic and infrared obstacle avoidance modules to enable the basic obstacle avoidance function of the Mars Rover model.
-* Learn how to program the Mars Rover model to automatically sense and avoid obstacles.
+* 将超声波和红外避障模块结合，实现火星车模型的基本避障功能。
+* 学习如何编程使火星车模型自动感知并避开障碍物。
 
 
-Materials
+所需材料
 -----------
 
-* Smartphone or tablet
-* Mammoth Coding APP
+* 智能手机或平板电脑
+* Mammoth Coding 应用
 * GalaxyRVR
 
-Constructing Advanced Obstacle Avoidance Systems
+构建高级避障系统
 -----------------------------------------------------------
 
-In previous lessons, we learned the basics of using infrared sensors for obstacle avoidance. We also explored the principles of ultrasonic modules. Now, we will put all these parts together to build an advanced obstacle avoidance system!
+在之前的课程中，我们学习了如何使用红外传感器进行避障的基础知识，并了解了超声波模块的工作原理。现在，我们将把这些部分整合起来，构建一个高级避障系统！
 
-Our enhanced Mars Rover will now navigate its surroundings using both ultrasonic and infrared sensors.
+我们的增强版火星车将利用超声波和红外传感器来导航并避开周围的障碍物。
 
-1. We can use the code block from :ref:`ir_obstacle` as a template. Open it from your saved projects.
-
+1. 我们可以使用 :ref:`ir_obstacle` 中的代码块作为模板，打开你保存的项目。
 
 .. image:: img/7_avoid_open.png
 
-2. Then, save it as a copy.
+2. 然后，将其保存为副本。
 
 .. image:: img/7_avoid_save_copy.png
 
-3. Rename the project and save it.
+3. 重命名项目并保存。
 
 .. image:: img/7_avoid_save_rename.png
 
-4. Add distance detection using the ultrasonic sensor. Drag a ``when distance < 15 cm`` block.
+4. 使用超声波传感器添加距离检测。拖动一个 ``when distance < 15 cm`` 模块。
 
 .. image:: img/7_avoid_when.png
     :width: 800
 
-
-5. Similarly, drag a ``stop other scripts in sprite`` block to ensure the GalaxyRVR only responds to one sensor at a time.
+5. 同样，拖动一个 ``stop other scripts in sprite`` 模块，以确保 GalaxyRVR 每次只响应一个传感器。
 
 .. image:: img/7_avoid_stop.png
 
-6. Move backward until reaching a safe distance.
+6. 向后移动，直到达到安全距离。
 
 .. image:: img/7_avoid_backward.png
 
-7. Turn for one second (either left or right).
+7. 转动一秒钟（可以选择左转或右转）。
 
 .. image:: img/7_avoid_turn.png
 
-8. Move forward again.
+8. 再次向前移动。
 
 .. image:: img/7_avoid_go.png
 
-Now, the IR sensors on both sides and the ultrasonic sensor in the front will work together to form a powerful obstacle avoidance system, ensuring the GalaxyRVR does not collide with any obstacles during its missions.
-
+现在，两个侧面的红外传感器和前方的超声波传感器将协同工作，形成一个强大的避障系统，确保 GalaxyRVR 在执行任务时不会与障碍物发生碰撞。

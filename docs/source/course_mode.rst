@@ -1,25 +1,25 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与其他爱好者一起，深入探索树莓派、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：通过社区和团队的帮助解决售后问题和技术挑战。
+    - **学习与分享**：交流技巧和教程，提升你的技能。
+    - **独家预览**：提前体验新产品发布和独家内容。
+    - **专属折扣**：享受最新产品的专属优惠。
+    - **节庆促销与赠品**：参与节日促销和赠品活动。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 即刻加入！
 
 .. _course_mode:
 
-Play with Arduino
+与 Arduino 一起玩
 ================================
 
-Welcome to the Course Mode, a structured journey through 13 enlightening lessons. We kick off with a fascinating glimpse into the history of Mars rovers, setting the stage for our own rover assembly.
+欢迎来到课程模式，这是一个通过 13 课引人入胜的旅程。在第一课中，我们将一窥火星漫游车的历史，为我们自己的漫游车组装奠定基础。
 
-From the second lesson, we'll start getting hands-on. Each lesson spotlights a unique component crucial to our Mars rover. You'll not only understand its purpose and significance but also master its assembly and integration into the rover.
+从第二课开始，我们将进入实践环节。每一课都聚焦于火星漫游车中的一个关键组件。你不仅会理解每个组件的用途和重要性，还将掌握其组装方法，并将其集成到漫游车中。
 
 .. raw:: html
 
@@ -28,21 +28,18 @@ From the second lesson, we'll start getting hands-on. Each lesson spotlights a u
       Your browser does not support the video tag.
    </video>
 
-Whether you are a novice eager to dive into the world of Mars rovers or an experienced hobbyist looking to hone your skills, these lessons are crafted to provide a comprehensive understanding of the mechanics, electronics, and software that bring our GalaxyRVR to life. By the end of the course, you'll not only have assembled your very own Mars rover, but you'll also possess the knowledge to troubleshoot, modify, and further experiment with your rover.
+无论你是一个渴望进入火星漫游车世界的新手，还是一个经验丰富的爱好者，希望提升技能，这些课程都旨在全面解析 GalaxyRVR 背后的机械原理、电子技术和软件系统。通过本课程的学习，除了完成你自己的火星漫游车组装外，你还将掌握故障排除、修改和进一步实验的知识。
 
-So, buckle up for an exciting journey into the world of Mars rovers! Dive in and start exploring the red planet from the comfort of your home.
+所以，系好安全带，准备好迎接一场火星漫游车的精彩旅程吧！从家里舒适的环境中开始，探索红色星球！
 
-
-Download the Code
+下载代码
 ------------------------------------------
 
-Download the relevant code from the link below.
+从下面的链接下载相关代码。
 
-    * :download:`GalaxyRVR Code File <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
+    * :download:`GalaxyRVR 代码文件 <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
 
-Or check out the code at `SunFounder GalaxyRVR Kit for Arduino - GitHub <https://github.com/sunfounder/galaxy-rvr/tree/main>`.
-
-
+或者查看 `SunFounder GalaxyRVR Kit for Arduino - GitHub <https://github.com/sunfounder/galaxy-rvr/tree/main>` 中的代码。
 
 .. toctree::
     :maxdepth: 1

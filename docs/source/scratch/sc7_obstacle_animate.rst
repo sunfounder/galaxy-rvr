@@ -1,29 +1,28 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 Facebook 上的 SunFounder Raspberry Pi & Arduino & ESP32 爱好者社区！和其他爱好者一起深入探讨 Raspberry Pi、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：在售后问题和技术难题上获得我们社区和团队的帮助。
+    - **学习与分享**：交流技巧和教程，提升你的技能。
+    - **独家预览**：抢先体验新产品的发布和预告。
+    - **专属折扣**：享受最新产品的独家折扣。
+    - **节日促销与赠品**：参与赠品活动和节日促销。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-
+    👉 准备好和我们一起探索和创造了吗？点击 [|link_sf_facebook|] 今天就加入我们吧！
 
 
 
 
-Lesson 7 IR Obstacle Animate
+
+
+第七课 红外避障动画
 =====================================================
 
-Previously, we used the Infrared Obstacle Avoidance Module to make GalaxyRVR automatically avoid obstacles, just like on a Mars exploration mission.
+在之前的课程中，我们使用了红外避障模块让 GalaxyRVR 自动避开障碍物，就像执行火星探索任务一样。
 
-In this activity, we will combine the obstacle avoidance module with a stage to create an animation of a rover dodging rocks on Mars.
-
+在本次活动中，我们将把避障模块与舞台结合，制作一个火星车在火星上躲避岩石的动画。
 
 .. raw:: html
 
@@ -34,103 +33,100 @@ In this activity, we will combine the obstacle avoidance module with a stage to 
 
 
 
-Learning Objectives
+学习目标
 -------------------------
 
-* Gain a deeper understanding of the Infrared Obstacle Avoidance Module and its application in the Mars rover.
-* Learn how to read and apply data from the Infrared Obstacle Avoidance Module in Scratch.
-* Create a Mars exploration-themed obstacle avoidance game using the IR module and the Scratch stage.
+* 更深入地了解红外避障模块及其在火星车中的应用。
+* 学会如何在 Scratch 中读取和应用红外避障模块的数据。
+* 使用红外模块和 Scratch 舞台，创建一个火星探索主题的避障游戏。
 
 
-Materials
+所需材料
 -----------
 
-* Smartphone or tablet
-* Mammoth Coding APP
+* 智能手机或平板电脑
+* Mammoth Coding 应用
 * GalaxyRVR
 
 
-Creating the Animation
+创建动画
 --------------------------------------
 
-1. First, we need a Mars-themed stage background. Click to select a backdrop.
+1. 首先，我们需要一个火星主题的背景。点击选择一个背景。
 
 .. image:: img/5_animate_choose.png
 
-2. Choose the Mars background.
+2. 选择火星背景。
 
 .. image:: img/5_animate_mars.png
 
-3. Select the GalaxyRVR sprite from the library and adjust its size.
+3. 从资源库中选择 GalaxyRVR 精灵并调整其大小。
 
 .. image:: img/5_animate_rvr.png
 
-4. Select a rock sprite from the library and adjust its size.
+4. 从资源库中选择一个岩石精灵并调整其大小。
 
 .. image:: img/5_animate_rock.png
 
-
-5. Next, let's program these two sprites:
-
-
-
-**GalaxyRVR Sprite**
-
-The task for the GalaxyRVR sprite is to move slowly from the left side to the right side of the screen. If it touches a rock sprite, it will stop moving.
-During this process, we can trigger the two IR sensors on the physical rover with our hands. Triggering the right sensor makes the sprite move down a bit; triggering the left sensor makes it move up a bit.
+5. 接下来，我们来编程这两个精灵：
 
 
 
-a. When the green flag is clicked, it should appear on the far left of the screen. You can first move the sprite to the corresponding position on the stage, and the coordinate values of the block in the motion category will change accordingly.
+**GalaxyRVR 精灵**
+
+GalaxyRVR 精灵的任务是从屏幕的左侧缓慢移动到右侧。如果它碰到岩石精灵，它将停止移动。
+在这个过程中，我们可以用手触发实际火星车上的两个红外传感器。触发右侧传感器会让精灵向下移动一点；触发左侧传感器会让精灵向上移动一点。
+
+
+
+a. 当点击绿色旗帜时，精灵应出现在屏幕的最左侧。你可以先将精灵移到舞台上的相应位置，动作类中的坐标值会随之改变。
 
 .. image:: img/5_animate_glide.png
 
-b. Place a forever block as the main loop.
+b. 放置一个 forever 模块作为主循环。
 
 .. image:: img/5_animate_forever.png
 
-c. Drag a conditional block to check if it is touching the rock sprite.
+c. 拖入一个条件判断模块，检查是否触碰到岩石精灵。
 
 .. image:: img/5_animate_touching.png
 
-d. If it is not touching, it moves forward.
+d. 如果没有触碰到，它继续向前移动。
 
 .. image:: img/5_animate_moving.png
 
-e. If it touches, it stops and emits a shout.
+e. 如果触碰到岩石，它停止并发出喊叫声。
 
 .. image:: img/5_animate_say.png
 
-f. Finally, add two events. When the left or right IR sensors detect an obstacle (your hand), the sprite moves up or down.
+f. 最后，添加两个事件。当左侧或右侧红外传感器检测到障碍物（你的手）时，精灵向上或向下移动。
 
 .. image:: img/5_animate_y.png
 
 
-**Rocks Sprite**
+**岩石精灵**
 
-The task for the rock sprite is simpler. It can either stay in place, appear at random locations, or create multiple clones to increase the difficulty for the GalaxyRVR sprite.
+岩石精灵的任务相对简单。它可以保持在原地，随机出现在不同位置，或者通过克隆多个岩石来增加 GalaxyRVR 精灵的难度。
 
-a. Create its clones.
+a. 创建岩石精灵的克隆。
 
 .. image:: img/5_animate_clone.png
 
-b. Then move to a random position. Combine these two blocks and click them. You'll notice new rocks appearing randomly on the stage.
+b. 然后将克隆移动到一个随机位置。将这两个模块组合并点击，你会看到新的岩石在舞台上随机出现。
 
 .. image:: img/5_animate_clone_move.png
 
-c. Generate ten random rocks.
+c. 生成十个随机位置的岩石。
 
 .. image:: img/5_animate_clone_10.png
 
-d. These actions occur when the green flag is clicked.
+d. 这些动作发生在点击绿色旗帜时。
 
 .. image:: img/5_animate_clone_flag.png    
    :width: 200
 
-Now, this mini-game is complete.
+现在，这个小游戏完成了。
 
-Connect GalaxyRVR to the APP (refer to :ref:`app_connet`) and click the green flag to start the game.
+将 GalaxyRVR 连接到 APP（参见 :ref:`app_connet`），点击绿色旗帜开始游戏。
 
-You will see many rocks randomly generated on the stage. Your task is to use your hands to trigger the two IR sensors,
-guiding GalaxyRVR to successfully reach the right side of the stage.
-
+你会看到许多岩石随机生成在舞台上。你的任务是用手触发两个红外传感器，指导 GalaxyRVR 成功到达舞台的右侧。

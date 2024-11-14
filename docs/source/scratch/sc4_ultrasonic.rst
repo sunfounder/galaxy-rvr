@@ -1,31 +1,29 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！在这里，你可以与其他爱好者一起深入探索树莓派、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么要加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：通过社区和团队的帮助，解决售后问题和技术挑战。
+    - **学习与分享**：交流技巧和教程，提升自己的技术水平。
+    - **独家预览**：抢先体验新产品发布和独家内容。
+    - **专属折扣**：享受最新产品的专属优惠。
+    - **节日促销与赠品**：参与赠品活动和节日促销。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 立即加入！
 
 
 
-Lesson 4 Ultrasonic
+第四课 超声波
 ===========================
 
+在上一次的冒险中，我们给火星探测车装备了两侧的“眼睛”，搭建了一个基本的避障系统。但是，它正前方还有一个盲区——这也是我们今天要解决的挑战！
 
-In our last adventure, we equipped our Mars Rover with "eyes" on its sides, creating a basic obstacle avoidance system. Yet, there's a blind spot right in front – a challenge we're ready to overcome!
+今天，在这节课中，我们将赋予我们的探测车新的“视觉”能力。我们将安装一个超声波传感器模块，作为探测车的“中央眼睛”，帮助探测车感知正前方的障碍物。
 
-Today, in this lesson, we're going to give our Rover a new sense of "sight." We'll install an ultrasonic sensor module, acting as a pair of central eyes, which will help our rover detect obstacles directly ahead.
+我们将深入了解超声波的工作原理，并探索它如何增强探测车在复杂地形中的导航能力。通过这个新模块，我们的火星探测车将变得更加灵敏和灵活，准备迎接更加复杂的探索任务。
 
-We will delve into the fascinating mechanics of ultrasonic waves and explore how they enhance our Rover's ability to navigate complex terrains. With this addition, our Mars Rover will be more perceptive and agile, ready to embark on more ambitious exploratory missions.
-
-Join us as we take a step further into this exciting STEAM journey, making our Mars Rover even more adept at exploring the uncharted territories!
-
+加入我们，一起踏上这段激动人心的STEAM之旅，让我们的火星探测车更擅长探索未知领域吧！
 
 .. raw:: html
 
@@ -35,151 +33,150 @@ Join us as we take a step further into this exciting STEAM journey, making our M
    </video>
 
 
-Learning Objectives
+学习目标
 -------------------------
 
-* Understand the principle of ultrasonic distance measurement.
-* Learn how to use Mammoth Coding APP and ultrasonic module for distance measurement.
-* Practice applying the ultrasonic module for obstacle avoidance on the GalaxyRVR.
+* 理解超声波测距原理。
+* 学习如何使用 Mammoth 编程 APP 和超声波模块进行距离测量。
+* 实践应用超声波模块进行 GalaxyRVR 的避障操作。
 
 
-Materials
+所需材料
 -----------
 
-* Smartphone or tablet
-* Mammoth Coding APP
+* 智能手机或平板电脑
+* Mammoth 编程 APP
 * GalaxyRVR
 
 
-Exploring the Ultrasonic Module
+探索超声波模块
 --------------------------------------------
 
-Let's get to know the HC-SR04, a powerful ultrasonic distance sensor. This tiny device can accurately measure distances from 2 cm up to 400 cm, all without touching a thing! Amazing, right? It's like having a superhero power! It can "see" distances just by using sound waves, like how a bat navigates at night.
+让我们来认识一下 HC-SR04，这款强大的超声波测距传感器。这是一个小巧的设备，能够精确测量从 2 cm 到 400 cm 的距离，而且完全不需要接触物体！是不是很神奇？就像拥有一种超级能力！它能通过声波“看到”距离，就像蝙蝠夜间导航一样。
 
-It uses four superpowers, or rather, four pins to do its magic:
+它通过四个引脚，或者说四个“超能力”来完成它的任务：
 
 .. image:: ../img/ultrasonic_pic.png
     :width: 400
     :align: center
 
-* **TRIG (Trigger Pulse Input)** - It's the start button for our superhero. It tells our superhero, "Hey, it's time to send out a super sonic wave!"
-* **ECHO (Echo Pulse Output)** - This is how our superhero listens to the echo of the sound wave it sent out.
-* **VCC** - Even superheroes need some energy. We connect it to a 5V power supply.
-* **GND** - It's the ground connection. Just like how superheroes need to stay connected to reality!
+* **TRIG（触发脉冲输入）** - 它是超级英雄的启动按钮，告诉它：“嘿，是时候发射超声波啦！”
+* **ECHO（回声脉冲输出）** - 这是超级英雄接收回声的方式。
+* **VCC** - 即使是超级英雄也需要能量，我们将其连接到 5V 电源。
+* **GND** - 这是地线连接，就像超级英雄需要保持与现实世界的联系！
 
-Imagine our superhero, the HC-SR04 Ultrasonic Sensor, playing a game of echo in the mountains.
+想象一下我们的超级英雄 HC-SR04 超声波传感器在山谷中玩回声游戏。
 
 .. image:: ../img/ultrasonic_prin.jpg
     :width: 800
 
-* First, our superhero's brain, the MCU, says, "Ready, Set, Go!" by sending out a high-level signal for at least 10 microseconds to our superhero. This is like when we gather our energy before we yell into a valley.
-* On hearing "Go!", our superhero shouts out loud 8 times very quickly. This super-sonic shout is sent out at a speed of 40 kHz. The superhero also starts a stopwatch and keeps an ear out for any returning shouts.
-* If there is an obstacle in front, the shout will hit it and echo back. On hearing the echo, our superhero stops the stopwatch and notes the time. It also sends out a high-level signal to let the MCU know it heard an echo.
-* Lastly, to find out how far away the obstacle is, our superhero uses a simple formula. It takes the time it recorded on the stopwatch, divides it by 2, and multiplies it by the speed of sound (340m/s). The result is the distance to the obstacle!
+* 首先，超级英雄的大脑 MCU 通过发送至少 10 微秒的高电平信号开始：“准备好，开始！”
+* 听到“开始”信号后，超级英雄会迅速发出 8 次超声波，频率为 40 kHz。它同时启动秒表，准备监听任何回响。
+* 如果正前方有障碍物，超声波会撞到它并反弹回来。当超级英雄听到回声时，它停止秒表并记录下时间，同时向 MCU 发送一个高电平信号，告知它已收到回声。
+* 最后，为了计算障碍物的距离，超级英雄会用一个简单的公式：将记录的时间除以 2，再乘以声音的传播速度（340m/s）。最终得到的就是障碍物的距离！
 
-That's how our superhero sensor can figure out if there's an obstacle in its path and how far away it is. Amazing, isn't it? Next, we'll learn how we can use this superhero power in our Mars Rover!
-
-
+这就是我们的超级英雄传感器如何计算路径上是否有障碍物，并且能确定它们距离有多远。是不是很神奇？接下来，我们将学习如何在火星探测车中使用这个超级能力！
 
 
-Ultrasonic Distance Module Detection Values
+
+
+超声波测距模块检测值
 ----------------------------------------------------------
 
-1. Let's see what the detection values of the ultrasonic distance module are. First, :ref:`app_connect` .
+1. 首先， :ref:`app_connect` 。
 
-2. Find the "distance in cm" block under the GalaxyRVR category. Check its checkbox.
+2. 找到 GalaxyRVR 类别下的 “距离（厘米）” 块，勾选它。
 
 .. image:: img/6_ultrasonic_value.png
 
-3. This will display its value on the stage.
+3. 这将把测得的值显示在舞台上。
 
 .. image:: img/6_ultrasonic_value2.png
 
-4. Move your hand back and forth in front of the ultrasonic module, and you will see the distance between your hand and the module displayed on the stage. The unit is cm.
+4. 将手在超声波模块前后移动，你会看到你手与模块之间的距离显示在舞台上，单位为厘米。
 
 
 
-Responding to the Ultrasonic Distance Module
+响应超声波测距模块
 --------------------------------------------------------------------
 
-We can use the infrared obstacle avoidance module to make the GalaxyRVR automatically avoid obstacles ahead.
+我们可以利用红外避障模块让 GalaxyRVR 自动避开前方的障碍物。
 
-1. Drag in a small green flag block.
+1. 拖动一个绿色旗帜块。
 
 .. image:: img/6_ultrasonic_flag.png
 
-2. Set the speed. Here we set the speed to 30%, so it's not too fast, making it easier to debug.
+2. 设置移动速度。这里我们将速度设置为 30%，这样可以避免过快，有助于调试。
 
 .. image:: img/6_ultrasonic_speed.png
 
-3. Place a forward block to keep it moving when there are no obstacles.
+3. 放置一个前进块，以便在没有障碍物时继续前进。
 
 .. image:: img/6_ultrasonic_forward.png
 
-4. Find the ``when distance < 15 cm`` block.
+4. 找到 ``当距离 < 15 cm`` 块。
 
 .. image:: img/6_ultrasonic_when.png
 
-5. When an obstacle is detected, the GalaxyRVR stops moving and reverses.
+5. 当探测到障碍物时，GalaxyRVR 停止移动并倒退。
 
 .. image:: img/6_ultrasonic_backward.png
 
-6. Make a slight turn (either left or right).
+6. 做一个小的转向（左转或右转）。
 
 .. image:: img/6_ultrasonic_turn.png
 
-7. After completing the turn, move forward again.
+7. 完成转向后，再次前进。
 
 .. image:: img/6_ultrasonic_forward_again.png
 
-Now, place the GalaxyRVR on the ground, and it will continue moving forward until it encounters an obstacle directly ahead, at which point it will change direction.
+现在，将 GalaxyRVR 放在地面上，它将继续前进，直到遇到正前方的障碍物，此时它将改变方向。
 
 
 
 
-Blocks Related to the Ultrasonic Module
+与超声波模块相关的代码块
 -------------------------------------------------
 
 .. image:: img/block/ultra_when.png
 
-This is an event block that is triggered when the ultrasonic sensor detects an obstacle closer than 15cm. You can:
+这是一个事件块，当超声波传感器检测到障碍物距离小于 15cm 时触发。你可以：
 
-    * Change ``<`` to ``>`` in the dropdown menu
-    * Modify the number to adjust the threshold condition
+    * 在下拉菜单中将 ``<`` 改为 ``>``。
+    * 修改数字来调整阈值条件。
 
 .. image:: img/block/ultra_wait_until.png
 
-This block pauses the program until the ultrasonic sensor detects an obstacle further than 15cm, then continues the program. You can:
+这个代码块会暂停程序，直到超声波传感器检测到障碍物距离大于 15cm，然后继续程序。你可以：
 
-    * Change ``<`` to ``>`` in the dropdown menu
-    * Modify the number to adjust the threshold condition
+    * 在下拉菜单中将 ``<`` 改为 ``>``。
+    * 修改数字来调整阈值条件。
 
 .. image:: img/block/ultra_condition.png
 
-This is a conditional block that returns TRUE if the distance detected by the ultrasonic sensor is indeed less than 15cm, otherwise FALSE. It is commonly used in blocks requiring conditionals like ``if``. You can:
+这是一个条件块，如果超声波传感器检测到的距离小于 15cm，则返回 TRUE，否则返回 FALSE。它通常用于像 ``if`` 这样的条件语句块中。你可以：
 
-    * Change ``<`` to ``>`` in the dropdown menu
-    * Modify the number to adjust the threshold condition
+    * 在下拉菜单中将 ``<`` 改为 ``>``。
+    * 修改数字来调整阈值条件。
 
 .. image:: img/block/ultra_value.png
 
-This block displays the current distance measured by the ultrasonic sensor.
+这个代码块会显示当前超声波传感器测量的距离。
 
 
 
 
-Servo-Related Blocks
+与舵机相关的代码块
 -------------------------------
 
 .. image:: img/block/servo_set_angle.png
 
-This block is used to set the servo angle. The range is 0 to 180 degrees (however, due to structural limitations, the actual usable range is 0-135 degrees).
+这个代码块用于设置舵机角度，范围是 0 到 180 度（但由于结构限制，实际可用范围是 0 到 135 度）。
 
 .. image:: img/block/servo_increase_angle.png
 
-This block increases (or decreases) the servo angle. The value can be negative.
-
+这个代码块用于增加（或减少）舵机角度，值可以是负数。
 
 .. image:: img/block/servo_value.png
 
-The current angle of the servo.
+显示舵机当前的角度。

@@ -1,23 +1,23 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与其他爱好者一起，深入探索树莓派、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：通过社区和团队的帮助解决售后问题和技术挑战。
+    - **学习与分享**：交流技巧和教程，提升你的技能。
+    - **独家预览**：提前体验新产品发布和独家内容。
+    - **专属折扣**：享受最新产品的专属优惠。
+    - **节庆促销与赠品**：参与节日促销和赠品活动。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 即刻加入！
 
-Hardware
+硬件
 ==================
 
-When you are writing code, you may need to know how each module works or the role of each pin, then please see this chapter.
+在编写代码时，您可能需要了解每个模块的工作原理或每个引脚的功能，请参考本章节。
 
-In this chapter you will find a description of each module's function, technical parameters and working principle.
+本章节将为您介绍每个模块的功能、技术参数以及工作原理。
 
 .. toctree::
     :maxdepth: 2

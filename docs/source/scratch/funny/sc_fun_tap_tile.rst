@@ -1,25 +1,26 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与其他爱好者一起，深入探索树莓派、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：通过社区和团队的帮助解决售后问题和技术挑战。
+    - **学习与分享**：交流技巧和教程，提升你的技能。
+    - **独家预览**：提前体验新产品发布和独家内容。
+    - **专属折扣**：享受最新产品的专属优惠。
+    - **节庆促销与赠品**：参与节日促销和赠品活动。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 即刻加入！
 
 .. _sc_tap_tile:
 
-Extension 7 Tap on The Black Tile
+
+扩展项目 7：点击黑色方块
 ==========================================
 
-Many of you are familiar with the popular mobile game where players tap on the black tiles to score points while avoiding the white tiles. We're bringing this addictive challenge using two obstacle avoidance modules. When your hand is blocked over one of the IR modules, a tap is registered on the stage.
+许多人都玩过一款流行的手机游戏，玩家需要点击黑色方块来得分，同时避免点击白色方块。我们将通过两个避障模块来实现这一富有挑战性的游戏。当你的手挡住其中一个红外模块时，游戏舞台上会注册一次点击。
 
-If a tap lands on a black tile, you score a point; tapping a white tile deducts a point. Players must decide quickly whether to tap over the left or right IR module based on the position of the black tiles.
+如果点击的是黑色方块，你将得分；如果点击的是白色方块，得分会减少。玩家必须快速判断，选择点击左侧或右侧的红外模块，依据黑色方块的位置来决定。
 
 .. raw:: html
 
@@ -28,154 +29,152 @@ If a tap lands on a black tile, you score a point; tapping a white tile deducts 
       Your browser does not support the video tag.
    </video>
 
-Below are the steps for implementing the project. It is recommended to follow these steps initially, and once familiar, you may modify the effects as desired.
+以下是实现该项目的步骤。建议初次按照这些步骤进行，熟悉后可以根据需要调整效果。
 
-1. Paint a **Tile** sprite
+1. 绘制 **方块** 角色
 -----------------------------------
 
-A **Tile** sprite is used to achieve the effect of alternating black and white tiles moving downward; in the cell phone version of this game, there are generally 4 columns, here we only do two columns.
+**方块** 角色用于实现黑白方块交替向下移动的效果。在手机版本的该游戏中，通常有4列方块，这里我们只实现两列。
 
-
-* Delete the default sprite, tap on the **Add Sprite** icon, select **Paint**.
+* 删除默认角色，点击 **添加角色** 图标，选择 **画画**。
 
   .. image:: img/tile_paint_tile1.png
 
-* Next, go to the **Costumes** page and use the **Rectangle** tool to draw a rectangle with a gray border and white fill.
+* 接下来，进入 **造型** 页面，使用 **矩形** 工具绘制一个灰色边框、白色填充的矩形。
 
   .. image:: img/tile_paint_tile2.png
     :width: 90%
 
-* Select the rectangle and click **Copy** -> **Paste** to make an identical rectangle, then move the two rectangles to a flush position.
+* 选中矩形，点击 **复制** -> **粘贴**，生成一个相同的矩形，然后将这两个矩形移动到对齐的位置。
 
   .. image:: img/tile_paint_tile3.png
     :width: 90%
 
-* Select one of the rectangles and choose a fill color of black.
+* 选中其中一个矩形，设置填充颜色为黑色。
 
   .. image:: img/tile_paint_tile4.png
     :width: 90%
 
-* Now select both rectangles and move them so that their center points match the center of the canvas.
+* 现在选中这两个矩形，调整它们的位置，使它们的中心对齐到画布的中心。
 
   .. image:: img/tile_paint_tile5.png
     :width: 90%
 
-* Duplicate costume1, alternating the fill colors of the two rectangles. For example, the fill color of costume1 is white on the left and black on the right, and the fill color of costume2 is black on the left and white on the right.
+* 复制造型1，交替改变两个矩形的填充颜色。例如，造型1的左边是白色，右边是黑色；造型2的左边是黑色，右边是白色。
 
   .. image:: img/tile_paint_tile6.png
     :width: 90%
 
-* Return to the **Code** page and set the sprite's name to **Tile**.
+* 返回到 **代码** 页面，并将该角色命名为 **方块**。
 
   .. image:: img/tile_paint_tile7.png
 
-2. Scripting the **Tile** sprite
+2. 为 **方块** 角色编写脚本
 -------------------------------------
 
-* First, set the initial position of the **Tile** sprite so that it is at the top of the stage.
+* 首先，设置 **方块** 角色的初始位置，使其位于舞台顶部。
 
   .. image:: img/tile_script_tile1.png
 
-* Create a variable - **blocks** and give it an initial value to determine the number of times the **Tile** sprite will appear. Use the [repeat until] block to make the variable **blocks** gradually decrease until **blocks** is 0. During this time, have the sprite **Tile** randomly switch its costume. After clicking on the green flag, you will see the **Tile** sprite on the stage quickly switch costumes.
+* 创建一个变量 **blocks**，并为其设置初始值，用来决定 **方块** 角色出现的次数。使用 [repeat until] 块让 **blocks** 逐渐减少，直到 **blocks** 为 0。在此过程中，让 **方块** 角色随机切换造型。点击绿色旗帜后，你会看到 **方块** 角色在舞台上快速切换造型。
 
   .. image:: img/tile_script_tile2.png
 
-* Create clones of the **Tile** sprite while the variable **blocks** is decreasing, and stop the script from running when blocks is 0. Two [wait () seconds] blocks are used here, the first to limit the interval between **Tile's** clones and the second is to let the variable blocks decrease to 0 without stopping the program immediately, giving the last tile sprite enough time to move.
+* 在 **blocks** 减少的同时，创建 **方块** 角色的克隆，并在 **blocks** 为 0 时停止脚本的执行。这里使用了两个 [wait () seconds] 块，第一个用来控制 **方块** 克隆的间隔，第二个则是为了让 **blocks** 变量逐渐减少到 0，而不会立刻停止程序，给最后一个 **方块** 角色足够的时间下落。
 
   .. image:: img/tile_script_tile3.png
 
-* Now script the clone of the **Tile** sprite to move down slowly and delete it when it reaches the bottom of the stage. The change in the y coordinate affects the drop speed, the larger the value, the faster the drop speed.
+* 现在，为 **方块** 角色的克隆编写脚本，使其缓慢向下移动，并在到达舞台底部时删除克隆。y 坐标的变化决定下落速度，值越大，下落速度越快。
 
   .. image:: img/tile_script_tile4.png
 
-* Hide the body and show the clone.
+* 隐藏原始角色，并显示克隆。
 
   .. image:: img/tile_script_tile5.png
 
-3. Scripting the backdrop
+3. 为背景编写脚本
 -------------------------------
 
-In the backdrop, read the values of the 2 IR modules and make the corresponding actions.
+在背景中读取两个红外模块的数值，并做出相应的动作。
 
-* When the green flag is clicked, set the variable **count** to 0.
+* 当点击绿色旗帜时，设置变量 **count** 为 0。
 
   .. image:: img/tile_script_backdrop.png
     :width: 90%
 
-* If the left IR obstacle avoidance module senses your hand, broadcast a message - **left**. 
+* 如果左侧红外避障模块检测到你的手，广播消息 **left**。
 
   .. image:: img/tile_script_backdrop1.png
 
-
-* If the right IR avoidance module senses your hand, broadcast a message - **right**.
+* 如果右侧红外避障模块检测到你的手，广播消息 **right**。
 
   .. image:: img/tile_script_backdrop2.png
 
-
-4. Paint **Left IR** sprite
+4. 绘制 **左红外** 角色
 -----------------------------
-A **Left IR** sprite is used to achieve the click effect; when the left IR module senses your hand, it will send a message - **left** to **Left IR** sprite, letting it start working. If it touches the black tile on the stage, the score will be increased by 1, otherwise, the score will be decreased by 1.
+
+**左红外** 角色用于实现点击效果；当左侧红外模块检测到你的手时，它会向 **左红外** 角色发送消息 **left**，让其开始工作。如果它触碰到舞台上的黑色方块，得分会增加 1 分，否则得分减少 1 分。
 
 
-* Again, tap on the **Add Sprite** icon and select **Paint**.
+* 再次点击 **添加角色** 图标，选择 **画画**。
 
   .. image:: img/tile_paint_ir1.png
 
-* Go to the **Costumes** page, select the fill color (any color out of black and white) and draw a circle.
+* 进入 **造型** 页面，选择填充颜色（选择任意非黑色或白色的颜色），绘制一个圆形。
 
   .. image:: img/tile_paint_ir2.png
 
-* Return to the **Code** page and change the sprite's name to **Left IR**.
+* 返回 **代码** 页面，并将角色命名为 **左红外**。
 
   .. image:: img/tile_paint_ir3.png
 
-5. Scripting the **Left IR** sprite
+5. 为 **左红外** 角色编写脚本
 ------------------------------------------
 
-* Now start scripting the **Left IR** sprite. When the green flag is clicked, first hide the sprite.
+* 现在开始为 **左红外** 角色编写脚本。当点击绿色旗帜时，首先隐藏该角色。
 
   .. image:: img/tile_script_ir1.png
 
-* When the message - **left** is received (the IR receiver module on the left detects an obstacle), show the sprite, set its size to 100%, and then shrink it at intervals of 10 using a [Repeat] block before hiding it again. This gives the sprite an effect of expanding and contracting.
+* 当接收到消息 **left** 时（左侧红外模块检测到障碍物），显示该角色，设置其大小为 100%，然后使用 [重复] 块每隔 10% 缩小一次，最后再次隐藏该角色。这将给角色一个扩展和收缩的效果。
 
   .. image:: img/tile_script_ir2.png
 
-* Then determine if the black block of the **Tile** sprite is touched, and if it is, let the variable **count** increase by 1, otherwise decrease by 1.
-  
+* 然后判断是否触碰到 **方块** 角色的黑色方块，如果触碰到，变量 **count** 增加 1，否则减少 1。
+
   .. image:: img/tile_script_ir3.png
 
 .. note::
 
-    You need to make the **Tile** sprite appear on the stage, and then absorb the color of the black block in the **Tile** sprite.
+    你需要让 **方块** 角色出现在舞台上，然后吸收 **方块** 角色中的黑色方块的颜色。
 
     .. image:: img/tile_script_ir4.png
 
-6. **Right IR** sprite
+6. **右红外** 角色
 -------------------------------------
-The function of **Right IR** sprite is basically the same as **Left IR**, except that it receives **Right** information.
 
+**右红外** 角色的功能基本与 **左红外** 相同，只不过它接收 **right** 信息。
 
-* Now duplicate the **Left IR** sprite and change the sprite's name to **Right IR**.
+* 现在复制 **左红外** 角色，并将其名称更改为 **右红外**。
 
   .. image:: img/tile_paint_ir4.png
 
-* Then change the received message to - **right**.
+* 然后将接收到的消息改为 **right**。
 
     .. image:: img/tile_script_ir5.png
 
-7. Running the Script
+7. 运行脚本
 ---------------------------------
 
-* Now adjust the positions and sizes of the three sprites.
+* 现在调整三个角色的位置和大小。
 
-  * Drag the **Tile** sprite to the bottom of the stage and set its x position to 0.
-  * Move the **Left IR** sprite into the left frame. You need to go to the **Costumes** page to reduce the sprite's size to only 50% of the frame's size.
-  * Similarly, move the **Right IR** sprite into the right frame. You need to go to the **Costumes** page to reduce the sprite's size to only 50% of the frame's size.
-  * Make sure that the **Left IR** and **Right IR** sprites are above the **Tile** sprite.
+  * 将 **方块** 角色拖到舞台底部，设置其 x 坐标为 0。
+  * 将 **左红外** 角色移入左框架，并将角色大小缩小至框架大小的 50%。
+  * 同样，将 **右红外** 角色移入右框架，并将角色大小缩小至框架大小的 50%。
+  * 确保 **左红外** 和 **右红外** 角色位于 **方块** 角色之上。
 
   .. image:: img/tile_paint_ir5.png
 
-* Now all the scripting is done, and you can click on the green flag to run the script.
+* 现在所有脚本已完成，你可以点击绿色旗帜运行脚本。
 
   .. raw:: html
 

@@ -1,117 +1,113 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与其他爱好者一起，深入探索树莓派、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：通过我们的社区和团队，解决售后问题和技术挑战。
+    - **学习与分享**：交流技巧和教程，提升你的技能。
+    - **独家预览**：提前体验新产品发布和独家内容。
+    - **专属折扣**：享受最新产品的专属优惠。
+    - **节庆促销与赠品**：参与节日促销和赠品活动。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 即刻加入！
 
-Lesson 2 Understanding and Making Rocker-Bogie System
+第二课 了解并制作摇臂-摆臂系统
 ============================================================
-In our previous lesson, we learned about the Mars rovers and their basic structure. One interesting aspect that we notice 
-when looking at the evolution of Mars rovers is the consistency in their suspension system. 
-Despite the advancement in technology, all the rovers from Sojourner to Perseverance have been 
-designed using a similar type of suspension system known as the Rocker-Bogie system.
 
-But why stick with the Rocker-Bogie system, you might wonder? What benefits does this particular design offer for Mars exploration?
+在上一课中，我们学习了火星漫游车及其基本结构。当我们观察火星漫游车的演变时，
+一个有趣的现象是它们的悬挂系统的一致性。尽管技术不断进步，但从“旅行者号”到“毅力号”，
+所有的火星漫游车都采用了相似的悬挂系统——摇臂-摆臂系统。
+
+那么，为什么所有漫游车都采用摇臂-摆臂系统呢？这个设计对于火星探索究竟有什么独特的优势呢？
 
 .. image:: img/rocker_bogie_pic.webp
 
+在今天的课程中，我们将深入了解摇臂-摆臂系统背后的科学与工程原理，并动手制作一个模型。
 
-In today's lesson, we're going to dig deeper into the science and engineering behind the Rocker-Bogie system, then build one.
+让我们踏上这段激动人心的工程之旅吧！
 
-Let's embark on this exciting engineering journey!
 
-Learning Objectives
+学习目标
 ----------------------
 
-* Understand the design principle of the Rocker-Bogie suspension system and its advantages.
-* Learn how to design and make a basic model of the Rocker-Bogie suspension system.
-* Apply basic principles of physics to explain how the Rocker-Bogie suspension system overcomes complex terrains.
+* 了解摇臂-摆臂悬挂系统的设计原理及其优点。
+* 学会如何设计并制作一个基本的摇臂-摆臂悬挂系统模型。
+* 运用基本的物理原理解释摇臂-摆臂悬挂系统如何应对复杂地形。
 
-Materials
+材料
 -------------
-* Blueprints and reference materials (such as NASA Mars Rover design drawings and videos on how the Rocker-Bogie suspension system works)
-* Mars Rover structure kit
-* Basic tools and accessories (e.g. screwdriver, screws, etc.)
+* 蓝图和参考资料（如NASA火星漫游车设计图纸和摇臂-摆臂悬挂系统工作原理视频）
+* 火星漫游车结构套件
+* 基本工具和配件（如螺丝刀、螺丝等）
 
-Steps
+步骤
 --------------
 
-**Step 1: Unraveling the Rocker-Bogie System**
+**步骤 1: 揭开摇臂-摆臂系统的面纱**
 
-The Rocker-Bogie system is like a mountain goat of mechanics - designed to keep all wheels of the rover grounded while it navigates over rough and rocky terrains. It's specially built for handling Mars' unpredictable landscape, including steep inclines and sizable boulders. This system skips springs and instead leverages the geometry of its six wheels and their interactions to conquer tricky terrain. It's a shining example of how clever mechanical design can surmount environmental hurdles.
+摇臂-摆臂系统就像是机械界的山羊——它的设计旨在确保漫游车的所有轮子都能保持接地，同时能够在崎岖不平的地形上行驶。它专门为应对火星那种不可预测的地形而设计，包括陡坡和大石块。这个系统没有使用弹簧，而是通过六个轮子及其相互作用的几何结构来克服复杂的地形。这是一个巧妙的机械设计范例，展示了如何克服自然环境中的障碍。
 
-Let's dive into the two main parts of this system - the "rocker" and the "bogie".
+让我们来看看这个系统的两个主要部分——“摇臂”和“摆臂”。
 
 .. image:: img/rocker_bogie.png
 
-* The "rocker" part of the system is like the two large limbs on either side of the rover's body. These limbs, or rockers, connect to each other and the rover's body, or chassis, through a mechanism called a differential. Just like two legs walking, the rockers rotate in opposite directions relative to the chassis, making sure that most of the wheels keep in contact with the ground. The body of the rover maintains the average angle of both rockers. One end of a rocker connects to a wheel, while the other end connects to the bogie.
+* 系统中的“摇臂”部分就像是漫游车两侧的大腿，这些摇臂通过一个称为差速器的机构连接在一起并与车身相连。就像两条腿行走一样，摇臂相对于车身会朝相反的方向旋转，从而确保大部分轮子都能与地面保持接触。漫游车的车身维持着两个摇臂的平均角度。每个摇臂的一端连接着一个轮子，另一端连接着摆臂。
 
-* The "bogie" part of the system is like a mini-limbed creature attached to the rocker. It's a smaller linkage system that pivots in the middle to the rocker and has a wheel at both ends.
+* 系统中的“摆臂”部分就像是附着在摇臂上的一个迷你四肢生物。它是一个较小的联动系统，摆臂的中心与摇臂连接，并在两端各有一个轮子。
 
-With this basic understanding, let's hop to the next step of our adventure.
+了解了这些基本原理后，我们将进入下一步。
 
 
-**Step 2: Seeing the System in Action**
+**步骤 2: 观看系统的实际操作**
 
-Below is a GIF that showcases the unique features of the Rocker-Bogie suspension system and illustrates how it enables Mars rovers to navigate the challenging Martian terrain.
+以下是一个GIF，展示了摇臂-摆臂悬挂系统的独特功能，并说明它如何帮助火星漫游车穿越火星上充满挑战的地形。
 
 .. image:: img/rocker_bogie.gif
     :align: center
 
-After watching the gif, let's have a discussion! Think about these questions:
+观看完这个GIF后，我们来进行讨论！思考以下问题：
 
-* Why do you think the Rocker-Bogie suspension system is suitable for Mars exploration?
-* Can you describe how the Rocker-Bogie system works in your own words?
-* What are the key features of the Rocker-Bogie system that help the rovers to negotiate rough terrain?
+* 为什么你认为摇臂-摆臂悬挂系统适合火星探索？
+* 你能用自己的话描述摇臂-摆臂系统是如何运作的吗？
+* 摇臂-摆臂系统有哪些关键特性帮助漫游车在崎岖的地形上顺利行驶？
 
-Feel free to share your thoughts and insights about the Rocker-Bogie suspension system.
+欢迎分享你对摇臂-摆臂悬挂系统的看法和见解。
 
-**Step 3: Building it**
+**步骤 3: 开始制作**
 
-Now that we've learned about the Rocker-Bogie system, it's time to build our own.
+现在我们已经了解了摇臂-摆臂系统，接下来是动手制作我们的摇臂-摆臂悬挂系统。
 
-Materials you need:
+所需材料：
 
-* GalaxyRVR Kit
-* Basic tools like screwdriver and wrench
-* Follow the steps provided in the assembly instructions of the GalaxyRVR Kit to construct the suspension system of the Rover.
+* GalaxyRVR 套件
+* 螺丝刀、扳手等基本工具
+* 按照 GalaxyRVR 套件中的组装说明，构建漫游车的悬挂系统。
 
 .. raw:: html
 
     <iframe width="600" height="400" src="https://www.youtube.com/embed/a1xtgDUEvR0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
-Please note that patience and precision are essential here, make sure you correctly place every piece and secure it tightly.
+请注意，耐心和精确非常重要，确保每个部件都正确放置并紧固。
 
-In the meantime, discuss with your peers about the design and function of each component you are assembling. 
-This will not only help in understanding the design but also its practical application in Mars exploration.
+在此过程中，可以与同学讨论每个部件的设计和功能。这样不仅有助于理解设计，还能帮助你更好地理解其在火星探索中的实际应用。
+
+记住，如果在组装或测试过程中遇到任何问题，不必担心。这都是工程过程的一部分！排除问题是我们学习和创新的方式。
 
 
-Remember, don't worry if you encounter any issues during the assembly or testing. 
-This is all part of the engineering process! Troubleshooting problems is how we learn and innovate.
+**步骤 4: 总结与反思**
 
-**Step 4: Summary and Reflection**
-
-During the assembly of the suspension system, did you notice that all the moving parts utilize self-locking nuts? Have you ever wondered why?
-
+在组装悬挂系统时，你有没有注意到所有活动部件都使用了自锁螺母？你是否想过为什么？
 
 .. image:: img/self_locking_nuts.webp
     :align: center
 
-Self-locking nuts are a type of fastener that includes a rubber ring inside a regular nut. This design ensures that the assembled parts won't easily loosen and fall off due to vibrations during movement.
+自锁螺母是一种带有橡胶环的普通螺母。这个设计确保了在移动过程中，部件不会因为振动而松动或脱落。
 
-In addition, it also ensures that the parts can rotate within a certain range.
+此外，它还确保了部件在一定范围内能够自由旋转。
 
-So during assembly, you need to tighten the screw and self-locking nut with a socket and screwdriver first, then loosen it a bit. This ensures that there's room for free rotation between the parts without them being too loose.
-
+因此，在组装时，你需要先用套筒和螺丝刀将螺钉和自锁螺母拧紧，然后稍微松开一点。这确保了部件之间有足够的自由旋转空间，但又不会太松。
 
 .. raw:: html
 
@@ -120,8 +116,6 @@ So during assembly, you need to tighten the screw and self-locking nut with a so
         Your browser does not support the video tag.
    </video>
 
-In this lesson, we not only learned about the Rocker-Bogie System but also built one ourselves. Furthermore, we can manually simulate how it allows the Mars Rover to move smoothly over various rough terrains.
+在本节课中，我们不仅学习了摇臂-摆臂系统，还亲手制作了一个模型。通过这个实践，我们可以模拟火星漫游车如何在各种崎岖的地形上平稳行驶。
 
-Armed with this knowledge and experience, we are now better equipped to venture deeper into the unknown realms of Martian exploration. Let's continue to unravel the mysteries of the red planet.
-
-
+凭借这些知识和经验，我们现在更有信心深入探索火星的未知领域。让我们继续揭开红色星球的神秘面纱。

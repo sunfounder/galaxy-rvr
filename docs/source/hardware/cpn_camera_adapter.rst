@@ -1,52 +1,53 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与其他爱好者一起，深入探索树莓派、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：通过社区和团队的帮助解决售后问题和技术挑战。
+    - **学习与分享**：交换技巧和教程，提升你的技能。
+    - **独家预览**：提前体验新产品发布和独家内容。
+    - **专属折扣**：享受最新产品的专属优惠。
+    - **节庆促销与赠品**：参与节日促销和赠品活动。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 即刻加入！
 
-Camera Adapter Board
-=====================
+
+相机适配板
+========================
 
 .. image:: img/cam_adapter_board.jpg
     :width: 500
     :align: center
 
-* **RST**: Used to reset the ESP32-CAM.
-* **SCL**: Serial data pin for QMC6310
-* **SDA**: Serial clock pin of the QMC6310
-* **RXD**: The RXD of ESP32-CAM, you need to upload code to ESP32-CAM through these two serial pins, RXD and TXD.
-* **TXD**: TXD of ESP32-CAM
-* **5V**: 5V DC Supply Input
-* **GND**: Ground Input
+* **RST**：用于重置 ESP32-CAM。
+* **SCL**：QMC6310 的串行数据引脚。
+* **SDA**：QMC6310 的串行时钟引脚。
+* **RXD**：ESP32-CAM 的 RXD 引脚，通过这两个串行引脚 RXD 和 TXD，你可以上传代码到 ESP32-CAM。
+* **TXD**：ESP32-CAM 的 TXD 引脚。
+* **5V**：5V DC 电源输入。
+* **GND**：接地输入。
 
-The Camera Adapter Board, as the name implies, is an expansion board for the ESP-32 CAM, used to expand the ESP32-CAM so that it can be secured to the robot, and can be easily wired.
+如其名称所示，Camera Adapter Board 是一款为 ESP-32 CAM 设计的扩展板，用于将 ESP32-CAM 固定到机器人上，且便于接线。
 
 .. image:: img/cam_adapter_esp32cam.png
     :width: 400
     :align: center
 
-Also because the geomagnetic chip QMC6310 is susceptible to interference from motors, we put it on this camera adapter board to keep it as far away from the motors as possible.
+由于地磁传感器 QMC6310 容易受到电机干扰，我们将其放置在此摄像头适配器板上，以最大限度地远离电机。
 
 .. image:: img/cam_adapter_qmc6310.png
     :width: 400
     :align: center
 
-**Features**
+**特点**
 
-* Working voltage: 5V
-* Interface Model: ZH1.5, 7P
-* Dimension: 40mm x 27mm x 15mm
-* Communication protocol: UART and I2C
+* 工作电压：5V
+* 接口类型：ZH1.5，7P
+* 尺寸：40mm x 27mm x 15mm
+* 通信协议：UART 和 I2C
 
-**Documents**
+**文档**
 
 * PCB
 
@@ -56,17 +57,16 @@ Also because the geomagnetic chip QMC6310 is susceptible to interference from mo
 .. image:: img/cam_adap_pcb_top.png
     :width: 300
 
-* Schematic
+* 原理图
 
 .. image:: img/cam_adapter_sche.png
 
+**关于 QMC6310**
 
-**About QMC6310**
+QMC6310 是一款三轴磁传感器，将磁传感器和信号调理 ASIC 集成到一颗硅芯片中。该 Land Grid Array (LGA) 封装适用于电子罗盘、地图旋转、游戏以及移动和可穿戴设备中的个人导航应用。
 
-The QMC6310 is a three-axis magnetic sensor, which integrates magnetic sensors and signal condition ASIC into one silicon chip. This Land Grid Array package (LGA) is targeted for applications such as e-compass, map rotation, gaming and personal navigation in mobile and wearable devices. 
+QMC6310 基于先进的高分辨率磁阻技术，并结合定制设计的 16 位 ADC ASIC，具有低噪声、高精度、低功耗、偏移校正和温度补偿等优点。QMC6310 提供 1° 到 2° 的罗盘航向精度。I²C 串行总线使得接口连接更加简便。
 
-The QMC6310 is based on state-of-the-art, high resolution, magneto-resistive technology. Along with the custom-designed 16-bit ADC ASIC, it offers the advantages of low noise, high accuracy, low power consumption, offset cancellation and temperature compensations. QMC6310 enables 1° to 2° compass heading accuracy. The I²C serial bus allows for easy interface. 
-
-The QMC6310 is in a 1.2x1.2x0.53mm3 surface mount 8-pin LGA package.
+QMC6310 采用 1.2x1.2x0.53mm³ 的表面贴装 8 针 LGA 封装。
 
 * |link_qmc6310_datasheet|

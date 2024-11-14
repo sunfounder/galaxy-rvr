@@ -1,61 +1,60 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与其他爱好者一起，深入探索树莓派、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：通过我们的社区和团队，解决售后问题和技术挑战。
+    - **学习与分享**：交流技巧和教程，提升你的技能。
+    - **独家预览**：提前体验新产品发布和独家内容。
+    - **专属折扣**：享受最新产品的专属优惠。
+    - **节庆促销与赠品**：参与节日促销和赠品活动。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 即刻加入！
 
-|link_Mars_Rover_Kit| - SunFounder Mars Rover Kit
+|link_Mars_Rover_Kit| - SunFounder 火星漫游车套件
 ========================================================
 
 * |link_GalaxyRVR|
 
-Thanks for choosing our |link_Mars_Rover_Kit|.
+感谢您选择我们的 |link_Mars_Rover_Kit|。
 
-.. note::
-    This document is available in the following languages.
+.. note:: 
+    本文档提供以下语言版本。
 
         * |link_german_tutorials|
         * |link_jp_tutorials|
         * |link_en_tutorials|
+        * |link_ch_tutorials|
     
-    Please click on the respective links to access the document in your preferred language.
+    请点击相应链接以访问您偏好的语言版本。
 
 
-Imagine piloting a rover on the desolate terrain of Mars, exploring alien landscapes and confronting the unknown. Sounds like a dream for NASA engineers, right?
+想象一下，驾驶漫游车在火星荒凉的地形上，探索外星景观并面对未知的挑战。这听起来像是 NASA 工程师的梦想，对吧？
 
-Not anymore.
+但现在，不再是梦想。
 
-Welcome to the world of the GalaxyRVR, a Mars Rover kit from SunFounder, designed to bring interplanetary exploration right into your living room.
+欢迎来到 GalaxyRVR 的世界，这是 SunFounder 推出的火星漫游车套件，旨在将行星际探索带入您的客厅。
 
 .. image:: img/galaxyRVR.jpg
     :width: 600
     :align: center
 
-Built upon the same universal rocker-bogie system employed by NASA's real Mars rovers, GalaxyRVR is capable of traversing all kinds of terrains – be it rocky mountains, sandy beaches, or grassy fields. The suspension system ensures smooth mobility, making the alien world of Mars feel just like home.
+GalaxyRVR 基于 NASA 真实火星漫游车所采用的通用摇臂悬挂系统，能够在各种地形上自由穿行——无论是岩石山脉、沙滩还是草地。其悬挂系统确保了平稳的移动，让火星的外星世界仿佛就在家门口。
 
-Equipped with a high-definition camera module, GalaxyRVR offers a first-person view, providing an immersive piloting experience as if 
-you're truly navigating the Red Planet. Its advanced obstacle avoidance module and ultrasonic module ensure it can dodge obstacles, embodying a spirit of autonomy and resilience.
+配备高清摄像头模块，GalaxyRVR 提供了第一视角，带来身临其境的驾驶体验，让你仿佛真正在操控红色星球。其先进的避障模块和超声波模块确保了漫游车能避开障碍，展现出自主和坚韧的精神。
 
-**Delve into the Cosmos: The Courses**
+**探索宇宙：课程介绍**
 
-* :ref:`play_mode`: Want a quick start? Play Mode is designed for those who can't wait to start their Martian journey. With factory-preloaded code, simply assemble your GalaxyRVR and control it using the convenient app to explore its multitude of functions.
+* :ref:`play_mode`: 想要快速上手？“游戏模式”专为那些迫不及待开始火星之旅的人设计。通过预装的工厂代码，简单组装 GalaxyRVR，并使用便捷的应用程序控制，探索其众多功能。
 
-* :ref:`course_mode`: Intrigued by the underlying technology? Course Mode is for those who want to delve deeper. Understand the principles behind the GalaxyRVR's design, learn to code, and empower your rover with a variety of exciting features.
+* :ref:`course_mode`: 对底层技术感兴趣？“课程模式”适合那些想深入了解的人。了解 GalaxyRVR 设计背后的原理，学习编程，为你的漫游车赋予更多有趣的功能。
 
-This documentation is your guide to exploring the intricacies of GalaxyRVR. It includes detailed assembly instructions, programming guides, and insights into the working principles of a Mars Rover, all aimed to stimulate your curiosity and foster creativity.
+本文档将引导你深入了解 GalaxyRVR 的细节。它包含了详细的组装说明、编程指南以及火星漫游车工作原理的见解，旨在激发你的好奇心并培养你的创造力。
 
-The GalaxyRVR isn't just a toy, but a gateway to Mars, an educational tool, and a catalyst for limitless imagination. Start your cosmic journey today with GalaxyRVR, and let your world become an extension of Mars.
+GalaxyRVR 不仅仅是一个玩具，更是通向火星的门户，是一款教育工具，是无限想象力的催化剂。从今天开始，踏上你的宇宙之旅，让你的世界成为火星的延伸。
 
-
-.. toctree::
+.. toctree:: 
     :maxdepth: 2
 
     About this Kit <self>
@@ -65,7 +64,6 @@ The GalaxyRVR isn't just a toy, but a gateway to Mars, an educational tool, and 
     hardware/hardware
     faq
 
-**Copyright Notice**
+**版权声明**
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
-
+本手册中的所有内容，包括但不限于文字、图片和代码，均由 SunFounder 公司拥有。你只能在相关法规和版权法的框架下，出于个人学习、研究、娱乐或其他非商业性目的使用这些内容，且不得侵犯作者和相关权利人的合法权益。对于任何未经授权用于商业盈利的个人或组织，公司保留采取法律行动的权利。

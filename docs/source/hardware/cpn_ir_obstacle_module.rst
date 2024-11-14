@@ -1,63 +1,61 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与其他爱好者一起，深入探索树莓派、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：通过社区和团队的帮助解决售后问题和技术挑战。
+    - **学习与分享**：交流技巧和教程，提升你的技能。
+    - **独家预览**：提前体验新产品发布和独家内容。
+    - **专属折扣**：享受最新产品的专属优惠。
+    - **节庆促销与赠品**：参与节日促销和赠品活动。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 即刻加入！
 
-IR Obstacle Avoidcance Module
+红外避障模块
 =======================================
 
-This is an infrared obstacle avoidance module that can detect the presence of objects ahead. It is commonly used in robots, automation systems, and other intelligent devices. Its detection range is 2cm to 40cm, and objects of different colors have different levels of reflectivity. Therefore, the darker the object, the shorter the detection distance.
+这是一个红外避障模块，可以检测前方是否有物体。它常用于机器人、自动化系统以及其他智能设备中。其检测范围为 2cm 至 40cm，不同颜色的物体具有不同的反射率。因此，物体越暗，检测距离越短。
 
 .. image:: img/ir_avoid.png
     :width: 400
     :align: center
 
-Here are the pin definitions:
+以下是引脚定义：
 
-* **GND**: Ground
-* **+**: Power supply, 3.3 ~ 5V DC.
-* **Out**: By default, it stays high and only goes low when it spots an obstacle.
-* **EN**: This **enable** pin decides when the module should work. By default, it is connected to GND, meaning the module is always on the job.
+* **GND**：地线
+* **+**：电源输入，支持 3.3V 至 5V DC。
+* **Out**：默认保持高电平，仅在检测到障碍物时输出低电平。
+* **EN**：此 **使能** 引脚决定模块的工作状态。默认连接至 GND，表示模块始终处于工作状态。
 
+**工作原理**
 
-**How it works?**
-
-This module contains a pair of IR transmitting and receiving components. Basically, the transmitter emits infrared light, when the emitted infrared light encounters an obstacle, it is reflected back and received by the receiver. Upon detection, the indicator lights up. After circuit processing, it outputs a low level signal.
+该模块包含一对红外发射和接收元件。发射器发射红外光，当红外光遇到障碍物时，会反射回来并被接收器接收。检测到障碍物时，指示灯会亮起。经过电路处理后，模块输出低电平信号。
 
 .. image:: img/ir_receive.png
     :width: 600
     :align: center
 
-
-The **EN** pin's low-level state activates the module, with the jumper cap securing the **EN** pin to the GND. To control the EN pin programmatically, remove the jumper cap.
+**EN** 引脚的低电平状态激活模块，跳线帽将 **EN** 引脚连接到 GND。若要通过程序控制 EN 引脚，请拆除跳线帽。
 
 .. image:: img/ir_cap.png
     :width: 400
     :align: center
 
-There are two potentiometers on the module, one for adjusting the transmitting power and one for adjusting the transmitting frequency, and by adjusting these two potentiometers you can adjust its effective distance.
+模块上有两个可调电位器，一个用于调整发射功率，另一个用于调整发射频率。通过调节这两个电位器，可以调整模块的有效检测距离。
 
 .. image:: img/ir_avoid_pot.png
     :width: 400
-    :align: center 
+    :align: center
 
 
-**Adjust the detection distance**
+**调整检测距离**
 
-The obstacle avoidance module's detection range must be precisely calibrated for optimal performance, as default factory settings may not align with specific requirements.
+为了获得最佳性能，避障模块的检测范围需要精确校准，因为默认的工厂设置可能不符合特定需求。
 
-Calibration involves the following steps:
+校准过程包括以下步骤：
 
-#. Alignment of the Module: Start with the right-hand side obstacle avoidance module. Transportation can occasionally displace the alignment of the module's infrared transmitter and receiver. They should be manually realigned to ensure accuracy.
+#. 对准模块：首先调整右侧的避障模块。运输过程中，模块的红外发射器和接收器可能会发生偏移。需要手动重新对准，确保其准确性。
 
     .. raw:: html
 
@@ -66,7 +64,7 @@ Calibration involves the following steps:
             Your browser does not support the video tag.
         </video>
 
-#. Place an obstacle about 20 cm directly in front of the right module. The box in which our Rover kit came is a good choice for this! Now, turn the potentiometer on the module until the indicator light on the module just lights up. Then, keep moving the obstacle back and forth to check if the indicator light comes on at the desired distance. If the light doesn't turn on at the correct distance or if it remains on without going out, you'll need to adjust the other potentiometer.
+#. 在右侧模块前方约 20 厘米处放置一个障碍物。我们的 Rover 套件包装盒非常适合用于此测试！然后，旋转模块上的电位器，直到模块上的指示灯刚刚亮起。接着，反复移动障碍物，检查指示灯是否在所需的距离处亮起。如果指示灯没有在正确的距离亮起，或者在到达目标距离后一直亮着，可能需要调整另一个电位器。
 
     .. raw:: html
 
@@ -75,19 +73,18 @@ Calibration involves the following steps:
             Your browser does not support the video tag.
         </video>
 
+#. 对另一个模块重复相同的过程。
 
-#. Repeat the same process for another module.
+**特点**
 
-**Features**
-
-* operating voltage: 3.3 V to 5 V
-* output: digital (on/off)
-* detection threshold: adjustable by 2 potentiometers
-* distance range: 2 to 40 cm
-* adjustment R5: frequency adjustment 38 kHz (already optimized)
-* adjustment R6: IR LED duty cycle adjustment (already optimized)
-* operating temperature: -10 °C to +50 °C
-* effective angle: 35°
-* I/O interface: 4 wire interface (- / + / S / EN)
-* dimensions: 45 x 16 x 10 mm
-* weight: 9 g 
+* 工作电压：3.3V 至 5V
+* 输出类型：数字（开/关）
+* 检测阈值：可通过两个电位器调节
+* 检测范围：2 至 40 厘米
+* 调整 R5：频率调节 38 kHz（已优化）
+* 调整 R6：红外 LED 占空比调节（已优化）
+* 工作温度：-10°C 至 +50°C
+* 有效角度：35°
+* I/O 接口：四线接口（- / + / S / EN）
+* 尺寸：45 x 16 x 10 毫米
+* 重量：9 克

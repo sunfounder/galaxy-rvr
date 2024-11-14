@@ -1,178 +1,179 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与其他爱好者一起深入探索树莓派、Arduino 和 ESP32 的世界。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：通过我们的社区和团队，解决售后问题和技术难题。
+    - **学习与分享**：交流技巧和教程，提升你的技能。
+    - **独家预览**：提前获取新产品发布和抢先体验。
+    - **专属折扣**：享受最新产品的独家折扣。
+    - **节日促销和赠品**：参与赠品活动和节日促销。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好和我们一起探索和创造了吗？点击 [|link_sf_facebook|] 立即加入！
 
-Lesson 11: Exploring the Mars Rover Visual System - Camera and Real-time Control
-==================================================================================
+第十一课 探索火星漫游车视觉系统 - 摄像头与实时控制
+=======================================================
 
-Welcome back, young explorers! In the last lesson, we equipped our Mars Rover with the ability to "nod" using a tilt mechanism. Now, it's time to give our Rover "eyes" - the camera!
+欢迎回来，年轻的探险者们！在上一课中，我们为火星漫游车安装了“点头”功能，通过倾斜机制让它能够“点头”。今天，我们将为我们的漫游车装上“眼睛”——摄像头！
 
-In this thrilling journey, we'll dive into the setup of the Rover's camera system. You'll learn how to relay the visuals captured by the Rover's camera to a web page, so you can see exactly what the Rover sees, in real time. Imagine the excitement of experiencing the Martian landscape from the Rover's perspective!
+在这次激动人心的旅程中，我们将深入了解火星漫游车摄像头系统的设置。你将学会如何将漫游车摄像头捕捉到的影像传输到网页上，这样你就可以实时看到漫游车所看到的景象。想象一下，从漫游车的视角体验火星的景色，这将是多么兴奋的体验！
 
-The excitement continues as we also introduce the SunFounder Controller app. This application allows us to get a live feed of the Rover's view as it navigates around, and we can control the tilt mechanism directly from our smartphones or tablets. It's like having a remote control with a built-in screen! 
+更令人兴奋的是，我们还将介绍 SunFounder Controller 应用程序。这个应用程序可以让我们实时查看漫游车的视角，同时还能直接通过手机或平板控制倾斜机制。就像一个内置屏幕的遥控器一样！
 
-This offers an even more interactive and engaging experience with our Rover. Stay tuned for more adventures!
+这将为我们的漫游车带来更加互动和引人入胜的体验。敬请期待更多的冒险！
 
     .. image:: img/app/camera_view_app.png
 
-Learning Goals
-------------------
-* Understand how to establish a WiFi connection with the ESP32 CAM.
-* Learn how to see exactly what the Rover sees, in real time.
-* Learn how to use the SunFounder Controller app to create a virtual remote and control the Mars Rover.
+学习目标
+-------------------
 
-Materials needed
-------------------------
+* 理解如何与 ESP32 CAM 建立 Wi-Fi 连接。
+* 学习如何实时查看火星漫游车所看到的景象。
+* 学习如何使用 SunFounder Controller 应用创建虚拟遥控器，控制火星漫游车。
 
-* Mars Rover model (equipped with all components)
+
+所需材料
+-----------------------
+
+* 火星漫游车模型（已配备所有组件）
 * Arduino IDE
-* Computer
-* Tablet or smartphone with SunFounder Controller app installed
+* 电脑
+* 安装了 SunFounder Controller 应用的平板或智能手机
 
-Course Steps
-----------------------
+课程步骤
+------------------
 
-**Step 1: Introduction to ESP32 CAM**
+**步骤1：了解 ESP32 CAM**
 
-In our previous adventure, we have equipped our Mars Rover with a pair of "eyes" by integrating the ESP32 CAM. Today, we're going to learn more about it and actually make it "see".
+在之前的冒险中，我们通过集成 ESP32 CAM 为火星漫游车装上了一对“眼睛”。
+今天，我们将进一步了解它，并让它“看见”！
 
 .. image:: img/esp32_cam.png
     :width: 400
     :align: center
 
-The ESP32 CAM, acting like the eyes of our Rover, is a small yet powerful module. Not only does it integrate Wi-Fi and Bluetooth functionalities, it also comes with a compact camera. This camera helps our Rover capture images of its surroundings.
+ESP32 CAM 就像我们漫游车的“眼睛”，它是一个小巧却功能强大的模块。它不仅集成了 Wi-Fi 和蓝牙功能，还配备了一个紧凑的摄像头，帮助我们的漫游车捕捉周围环境的图像。
 
-Just like we use our eyes to observe our environment, the ESP32 CAM can "see" what lies ahead for the Rover, then send these visual data to our smartphone or computer. This allows us to see everything the Rover sees in real-time!
+就像我们用眼睛观察周围的环境一样，ESP32 CAM 可以“看到”漫游车前方的景象，并将这些视觉数据发送到我们的手机或电脑。这样，我们就能实时看到漫游车所看到的一切！
 
-It's as if we're piloting the Rover directly, observing not just the Rover itself, but also the world it explores! Incredible, isn't it? So, let's dive deeper into it...
+就像我们亲自操控漫游车一样，不仅能看到漫游车本身，还能看到它所探索的世界！是不是很不可思议？让我们深入了解它……
 
 
-**Step 2: Programming the Rover's Camera and Viewing the Feed**
+**步骤2：编程火星漫游车的摄像头并查看影像**
 
-After fitting the ESP32-CAM to our Rover, we now need to breathe life into it. 
-To do so, we will use the Arduino IDE to write a program that will control the camera, allow it to connect to WiFi, 
-and stream the visuals it captures. 
+安装好 ESP32-CAM 后，我们需要让它发挥作用。
+为了做到这一点，我们将使用 Arduino IDE 编写一个程序来控制摄像头，连接 Wi-Fi，并将捕获的影像进行直播。
 
-Here's how we can do it:
+下面是具体的操作步骤：
 
-#. Install the ``SunFounder AI Camera`` library.
+#. 安装 ``SunFounder AI Camera`` 库。
 
-    * Open the Arduino IDE's **Library Manager**, search for "SunFounder Camera", and click **INSTALL**.
+    * 打开 Arduino IDE 的 **库管理器**，搜索“SunFounder Camera”，点击 **安装**。
 
         .. image:: img/camera_install_lib.png
 
-    * A pop-up window will appear for the installation of library dependencies. Click **INSTALL ALL** and wait for the process to complete.
+    * 弹出窗口将出现，安装库的依赖项。点击 **安装所有**，等待安装过程完成。
 
         .. image:: img/camera_install_lib1.png
 
-#. In the Arduino IDE, input the following code.
+#. 在 Arduino IDE 中输入以下代码。
 
-    Regarding the variables ``NAME``, ``TYPE``, and ``PORT`` in the code, let's not delve into them at this point. They will come into play in our next step. Just keep in mind that these variables will be important in our upcoming journey to establish a real-time video feed from our Mars Rover.
+    关于代码中的 ``NAME``、 ``TYPE`` 和 ``PORT`` 变量，暂时不深入讨论。它们将在接下来的步骤中派上用场。请记住，这些变量将在我们建立火星漫游车实时视频流的过程中发挥重要作用。
 
     .. raw:: html
 
         <iframe src=https://create.arduino.cc/editor/sunfounder01/06b648e4-23e8-4b28-accd-aac171069116/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-    Notice we have two connection modes in the code - **AP** mode and **STA** mode. You can decide which one to use based on your specific needs.
+    注意，代码中有两种连接模式—— **AP 模式** 和 **STA 模式** 。你可以根据自己的需求选择适合的模式。
 
-    * **AP Mode**: In this mode, the Rover creates a hotspot (named as ``GalaxyRVR`` in our code). This allows any device like a mobile phone, tablet, or laptop to connect to this network. This is especially useful when you want to control the Rover remotely under any circumstances. However, note that this would make your device temporarily unable to connect to the Internet.
+    * **AP 模式**：在这种模式下，漫游车创建一个热点（在我们的代码中命名为 ``GalaxyRVR``）。任何设备，如手机、平板或笔记本，都可以连接到这个网络。这在你需要远程控制漫游车时非常有用。不过，请注意，这会导致你的设备暂时无法连接到互联网。
 
         .. code-block:: arduino
 
-        // AP Mode
+        // AP 模式
         #define WIFI_MODE WIFI_MODE_AP
         #define SSID "GalaxyRVR"
         #define PASSWORD "12345678"
 
-    * **STA Mode**: In this mode, the Rover connects to your home WiFi network. Remember that your controlling device (like a mobile phone or tablet) should also be connected to the same WiFi network. This mode allows your device to keep its regular internet access while controlling the Rover, but limits the Rover's operational range to your WiFi coverage area.
+    * **STA 模式**：在这种模式下，漫游车连接到你的家庭 Wi-Fi 网络。记得你的控制设备（如手机或平板）也需要连接到相同的 Wi-Fi 网络。这种模式下，你的设备可以保持正常的互联网连接，同时控制漫游车，但漫游车的操作范围将受限于 Wi-Fi 覆盖范围。
 
         .. code-block:: arduino
 
-            // STA Mode
+            // STA 模式
             #define WIFI_MODE WIFI_MODE_STA
             #define SSID "YOUR SSID"
             #define PASSWORD "YOUR PASSWORD"
 
-#. Upload the code to our Rover and bring our ESP32 CAM to life!
+#. 将代码上传到火星漫游车并启动 ESP32 CAM！
 
-    * The ESP32-CAM and the Arduino board share the same RX (receive) and TX (transmit) pins. So, before uploading the code, you’ll need to first release the ESP32-CAM by slide this switch to right side to avoid any conflicts or potential issues.
+    * ESP32-CAM 和 Arduino 板共享相同的 RX（接收）和 TX（传输）引脚。因此，在上传代码之前，你需要先通过将开关滑动到右侧来释放 ESP32-CAM，避免任何冲突或潜在问题。
 
         .. image:: img/camera_upload.png
             :width: 600
 
-    * Once the code has been uploaded successfully, switch it back to the left side to start the ESP32 CAM.
+    * 代码上传成功后，切换回左侧以启动 ESP32 CAM。
 
         .. note::
-            This step and the previous one are required every time you re-upload the code.
+            每次重新上传代码时，都会需要完成这一步和前一步。
 
         .. image:: img/camera_run.png
             :width: 600
-        
-    * Open the **Serial Monitor** and set the baud rate to 115200. If no information appears, press the **Reset button** on the GalaxyRVR shield to run the code again. You should see an IP address in the serial monitor output. This is the address your Rover's camera is broadcasting to.
+
+    * 打开 **串口监视器**，并将波特率设置为 115200。如果没有显示任何信息，请按下 **重置按钮**，重新运行代码。你应该会看到串口监视器输出一个 IP 地址。这是你漫游车摄像头正在广播的地址。
 
         .. image:: img/camera_serial.png
 
-
-    * Now, it's time to actually see what our Rover sees! Open up a web browser - we recommend Google Chrome - and enter the URL you see in the Serial Monitor, in the format ``http://ip:9000/mjpg``.
+    * 现在，是时候真正看到火星漫游车所看到的景象了！打开一个网页浏览器——我们推荐使用 Google Chrome——在地址栏中输入串口监视器中显示的 URL，格式为 ``http://ip:9000/mjpg``。
 
         .. image:: img/camera_view.png
 
-And voila! You should now be able to see the live feed from your Rover's camera. Isn't it amazing to think that you are viewing Mars (or maybe just your living room) from the Rover's perspective? Just like a real Mars Rover scientist!
+好啦！现在你应该能够看到来自漫游车摄像头的实时视频流了。想想看，你正在以漫游车的视角观察火星（或者也许是你的客厅）！就像真正的火星漫游车科学家一样！
 
-Remember, this is just the beginning. There is so much more to explore and learn. In our next step, we will explore how to control our Rover while viewing the live camera feed. Exciting, isn't it? Onwards, explorers!
-
-
-**Step 3: Controlling and Viewing the Camera Feed Using the App**
-
-Ever wished you could view the Mars Rover's visual feed right on your smartphone while also being able to control its tilt mechanism? 
-Now you can! With the help of the SunFounder Controller app, you'll be able to do exactly that. Follow the steps below:
+记住，这只是一个开始。接下来，我们将继续探索如何在查看实时摄像头画面的同时控制火星漫游车。激动人心吧？探险者们，继续前进！
 
 
-#. Install  from **APP Store(iOS)** or **Google Play(Android)**.
+**步骤 3：使用应用控制并查看摄像头画面**
 
-#. Create a controller.
+你是否曾希望能够在智能手机上查看火星漫游车的视觉画面，同时还能够控制它的倾斜机制？  
+现在，你可以实现这一目标了！借助 SunFounder Controller 应用，你将能够做到这一切。请按照以下步骤操作：
 
-    * To add a controller on SunFounder Controller, click the **+** icon.
+
+#. 从 **APP Store(iOS)** 或 **Google Play(Android)** 下载并安装应用。
+
+#. 创建一个控制器。
+
+    * 在 SunFounder Controller 应用中，点击 **+** 图标以添加一个新的控制器。
 
         .. image:: img/app/app1.png
 
-    * Choose the **Blank** preset, select either **Dual** or **Single Stick** according to your preference. Give your new controller a name and click **Confirm**.
+    * 选择 **Blank** 预设，按照你的喜好选择 **Dual** 或 **Single Stick**，给新的控制器命名，然后点击 **确认**。
 
         .. image:: img/app/camera_controller.png
 
-    * You are now inside the controller. Click the **+** icon in the D section, then select Slider from the popup menu.
+    * 现在你已进入控制器设置界面。在 D 区域点击 **+** 图标，然后从弹出的菜单中选择 “Slider”。
 
-    .. image:: img/app/camera_add_slider.png
+        .. image:: img/app/camera_add_slider.png
 
-    * This Slider widget is designed to control the tilt mechanism. As we learned in the previous lesson, its range is from 0 to 140. Therefore, we will set these as the minimum and maximum values for our Slider widget.
+    * 这个滑动条控件将用来控制倾斜机制。正如我们在前一课中学到的，它的范围是从 0 到 140。因此，我们将这些值设置为滑动条的最小值和最大值。
 
         .. image:: img/app/camera_slider_set.png
     
-    * Click the |app_save| button in the upper right corner to save this controller.
-    
-#. Let's write a code to capture the value of the slider:
+    * 点击右上角的 |app_save| 按钮保存控制器设置。
 
-    * Based on the previous code, let's switch to AP mode, where you can set the SSID and PASSWORD to whatever you prefer.
+#. 编写代码以捕获滑动条的值：
+
+    * 基于之前的代码，我们将切换到 AP 模式，在该模式下你可以设置 SSID 和密码为你所需的任何值。
     
     .. code-block:: arduino
     
-        // AP Mode
+        // AP 模式
         #define WIFI_MODE WIFI_MODE_AP
         #define SSID "GalaxyRVR"
         #define PASSWORD "12345678"
 
-    * Next, we add an ``onReceive()`` function to receive values from the SunFounder Controller and print these values in the Serial Monitor. We use the ``getSlider()`` function to get the value of the **slider** widget. I added a **slider** widget in Region D, but if you added it in a different region, you need to change ``REGION_D`` to your region.
+    * 接下来，我们添加一个 ``onReceive()`` 函数，用于接收来自 SunFounder Controller 的值并将这些值打印到串口监视器中。我们使用 ``getSlider()`` 函数来获取 **Slider** 控件的值。我在 D 区域添加了一个滑动条控件，但如果你添加到了其他区域，需要将 ``REGION_D`` 更改为你的区域。
 
         .. code-block::
 
@@ -184,28 +185,28 @@ Now you can! With the help of the SunFounder Controller app, you'll be able to d
 
             void setup() {
                 ...
-                // Set the function to execute when data is received
+                // 设置数据接收时执行的函数
                 aiCam.setOnReceived(onReceive);
                 ...
             }
 
-    * Here is the complete code:
+    * 以下是完整代码：
 
         .. raw:: html
 
             <iframe src=https://create.arduino.cc/editor/sunfounder01/b914aa48-85e7-4682-b420-89961cc761ca/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
     
-    * Before uploading the code, make sure the switch is turned to the right. 
+    * 在上传代码之前，确保开关已切换到右侧。
 
         .. image:: img/camera_upload.png
             :width: 600
 
-    * After the code is successfully uploaded, move the switch to the left to start the ESP32 CAM.
+    * 代码上传成功后，切换回左侧以启动 ESP32 CAM。
 
         .. image:: img/camera_run.png
             :width: 600
 
-    * When you see the following information in the Serial Monitor, you can move on to the next step.
+    * 当你在串口监视器中看到以下信息时，就可以继续进行下一步了。
 
         .. code-block:: arduino
         
@@ -218,34 +219,33 @@ Now you can! With the help of the SunFounder Controller app, you'll be able to d
             Video streamer started on http://192.168.4.1:9000/mjpg
             WS+null
 
-#.  Connect to the ``GalaxyRVR`` Network.
+#. 连接到 ``GalaxyRVR`` 网络。
 
-    At this point, you should connect your mobile device to the local area network (LAN) provided by the GalaxyRVR. 
-    By doing this, both your mobile device and the Rover will be on the same network, enabling smooth communication 
-    between the applications on your mobile device and the Rover.
+    此时，你应该将移动设备连接到 GalaxyRVR 提供的局域网 (LAN) 网络。
+    通过这种方式，你的移动设备和漫游车将处于同一网络中，从而实现应用和漫游车之间的顺畅通信。
 
-    * Find ``GalaxyRVR`` on the list of available networks on your mobile device (tablet or smartphone), enter the password ``12345678``, and connect to it.
+    * 在移动设备（平板或智能手机）上的可用网络列表中找到 ``GalaxyRVR``，输入密码 ``12345678``，然后连接。
 
         .. image:: img/app/camera_lan.png
 
-    * The default connection mode is **AP mode**. After you connect, there may be a prompt warning you that there is no Internet access on this WLAN network, please choose to continue the connection.
+    * 默认连接模式为 **AP 模式**。连接后，可能会弹出提示，警告你该 WLAN 网络没有互联网连接，请选择继续连接。
 
         .. image:: img/app/camera_stay.png
 
-#. Connect and Activate the Controller.
+#. 连接并激活控制器。
 
-    * Now, return to the controller you created earlier (in my case, it's named "camera"). Use the |app_connect| button to link the SunFounder Controller to the Rover and establish a line of communication. After a brief wait, ``GalaxyRVR(IP)`` (the name you assigned in the code with ``#define NAME "GalaxyRVR"``) will appear. Click on it to establish a connection. 
+    * 现在，返回到你之前创建的控制器（在我的例子中，控制器名为“camera”）。使用 |app_connect| 按钮将 SunFounder Controller 与漫游车连接，建立通信连接。稍等片刻， ``GalaxyRVR(IP)`` （你在代码中通过 ``#define NAME "GalaxyRVR"`` 定义的名称）会显示出来。点击它以建立连接。
 
         .. image:: img/app/camera_connect.png
 
         .. note::
-            Please verify that your Wi-Fi is connected to ``GalaxyRVR`` if you don't see the above message after some time.
+            如果长时间没有看到上述信息，请确认你的 Wi-Fi 是否已连接到 ``GalaxyRVR``。
 
-    * Once you see the "Connected Successfully" message, press the |app_run| button. This will bring up the camera's live footage on the app.
+    * 一旦看到“连接成功”的信息，点击 |app_run| 按钮。这将会在应用中显示摄像头的实时画面。
 
         .. image:: img/app/camera_view_app.png
 
-    * Now, move the slider and open Arduino IDE's serial monitor simultaneously. You should see similar data like below.
+    * 现在，移动滑动条并同时打开 Arduino IDE 的串口监视器。你应该会看到如下类似的数据：
 
         .. code-block:: 
     
@@ -257,65 +257,62 @@ Now you can! With the help of the SunFounder Controller app, you'll be able to d
             WS+null
 
 
-#. Let the Slider control the tilt mechanism.
+#. 让滑动条控制倾斜机制。
 
-    Now that we know the values transmitted by the slider widget, we can directly use these values to rotate the servo.
-     Therefore, based on the previous code, add the following lines to initialize the servo and write the slider's value to the servo.
-
+    现在我们已经知道滑动条控件传输的值，可以直接使用这些值来旋转舵机。
+    因此，在之前的代码基础上，添加以下几行代码来初始化舵机，并将滑动条的值写入舵机。
 
     .. code-block::
 
         ...
         #include <Servo.h>
 
-        Servo myServo;  // create a servo object
-        myServo.write(int(sliderD));  // control the servo to move to the current angle
+        Servo myServo;  // 创建舵机对象
+        myServo.write(int(sliderD));  // 控制舵机转动到当前角度
 
         ...
 
         void onReceive() {
             ...
-            myServo.write(int(sliderD));  // control the servo to move to the current angle
+            myServo.write(int(sliderD));  // 控制舵机转动到当前角度
         }
 
         void setup() {
             ...
-            myServo.attach(6);  // attaches the servo on pin 6
+            myServo.attach(6);  // 将舵机连接到 6 号引脚
             ...
         }
 
-    Here is the complete code:
-    
+    以下是完整的代码：
+
     .. raw:: html
     
         <iframe src=https://create.arduino.cc/editor/sunfounder01/b737352b-2509-4967-8147-1fd6bdc7d19d/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-    Upload the above code to the GalaxyRVR, repeat steps 4 and 5 above, reconnect to the ``GalaxyRVR`` LAN and re-run in the 
-    SunFounder Controller, then you can slide the slider to control the rover's tilt mechanism.
+    将上述代码上传到 GalaxyRVR，重复步骤 4 和 5，重新连接到 ``GalaxyRVR`` LAN 网络，并重新在 SunFounder Controller 中运行，你就可以通过滑动滑动条来控制漫游车的倾斜机制了。
 
-Now you've successfully learned to implement the SunFounder Controller and how to use the slider widget to control servo movements. This process will allow you to interact with your GalaxyRVR in a more intuitive and direct way. 
+现在，你已经成功学习了如何实现 SunFounder Controller 并使用滑动条控件来控制舵机的运动。这个过程将让你以更直观、更直接的方式与 GalaxyRVR 进行互动。
 
 
-**Step 4: Reflection and Summary**
+**步骤 4：反思与总结**
 
-Using the SunFounder Controller to operate your Mars Rover may seem a bit complicated at first. Every time you modify your code, you'll need to repeat the following steps:
+使用 SunFounder Controller 操控你的火星漫游车，初看起来可能有些复杂。每次修改代码时，你都需要重复以下步骤：
 
-* Prior to uploading the code, ensure the switch is turned to the right.
+* 在上传代码之前，确保开关切换到右侧。
 
     .. image:: img/camera_upload.png
         :width: 600
 
-* Once the code has been successfully uploaded, switch to the left to initiate the ESP32 CAM.
-* Connect to the ``GalaxyRVR`` Network.
-* Connect and run the controller.
+* 代码上传成功后，切换回左侧以启动 ESP32 CAM。
+* 连接到 ``GalaxyRVR`` 网络。
+* 连接并运行控制器。
 
-Though these steps might seem tedious, they are crucial for the process. After repeating them a few times, you'll become more familiar and comfortable with the procedure.
+虽然这些步骤看起来有些繁琐，但它们对整个过程至关重要。经过几次重复操作后，你会变得更加熟悉和得心应手。
 
+现在我们已经完成了本课的内容，让我们通过一些问题来反思一下我们学到的知识：
 
-Now that we've finished this lesson, let's reflect on what we've learned through some questions:
+* 在创建新控制器的过程中，你遇到了许多不同类型的控件。你是否考虑过它们各自的功能是什么？
+* 是否可以使用其他控件来控制倾斜机制？
+* 甚至直接控制火星漫游车的运动？
 
-* In the process of creating a new controller, you've encountered many different types of blocks. Have you considered what their individual functions might be?
-* Is it possible to use other widgets to control the tilt mechanism?
-* Or even directly control the Mars Rover's movements?
-
-Let's anticipate our exploration of these questions in the next lesson!
+让我们在下一课中继续探索这些问题吧！

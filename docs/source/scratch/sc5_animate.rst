@@ -1,27 +1,24 @@
+.. note:: 
+
+    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！在这里，你可以与其他爱好者一起深入探索树莓派、Arduino 和 ESP32。
+
+    **为什么要加入？**
+
+    - **专家支持**：通过社区和团队的帮助，解决售后问题和技术挑战。
+    - **学习与分享**：交流技巧和教程，提升自己的技术水平。
+    - **独家预览**：抢先体验新产品发布和独家内容。
+    - **专属折扣**：享受最新产品的专属优惠。
+    - **节日促销与赠品**：参与赠品活动和节日促销。
+
+    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 立即加入！
 
 
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-
-Lesson 5 Interactive Animation
+第五课 互动动画
 ===============================================
 
-Previously, we used the ultrasonic module to make GalaxyRVR automatically avoid obstacles in its path.
+之前，我们利用超声波模块使 GalaxyRVR 能够自动避开路径中的障碍物。
 
-In this activity, we will combine the module with a stage to create an interactive animation of a rover joyfully traversing the surface of Mars.
-
+在本次活动中，我们将结合模块和舞台，创建一个互动动画，展示火星探测车愉快地穿越火星表面的场景。
 
 .. raw:: html
 
@@ -32,63 +29,61 @@ In this activity, we will combine the module with a stage to create an interacti
 
 
 
-Learning Objectives
+学习目标
 -------------------------
 
-* Learn how to draw sprites and edit backgrounds.
-* Understand basic programming concepts such as event listeners and loop structures.
-* Get familiar with the APP programming environment and basic operations to create a simple animation simulating a Mars rover.
+* 学习如何绘制角色和编辑背景。
+* 理解基本的编程概念，如事件监听器和循环结构。
+* 熟悉 APP 编程环境和基本操作，创建一个简单的模拟火星探测车动画。
 
-Materials
+所需材料
 -----------
 
-* Smartphone or tablet
-* Mammoth Coding APP
+* 智能手机或平板电脑
+* Mammoth 编程 APP
 * GalaxyRVR
 
 
-Adding New Sprites
+添加新角色
 ----------------------------
 
-Delete the sprite you don't need.
+删除不需要的角色。
 
 .. image:: img/6_animate_delete.png
 ..   :align: left
 
 
 
-In the bottom right corner of the interface, you will see the "choose a sprite" button. Tap it to reveal four pull-up options.
-
+在界面右下角，你会看到“选择角色”按钮。点击它，会弹出四个选项。
 
 .. image:: img/2_create_sp.png
 ..  :align: left
 
-For smaller screens, you might need to navigate to a different screen to see this button.
-
+对于较小的屏幕，可能需要切换到其他屏幕才能看到此按钮。
 
 .. image:: img/2_create_sp0.png
 ..  :align: left
 
 
 
-The four options are:
+四个选项分别是：
 
-* **Upload Sprite** : Load a sprite from your device storage.
-* **Surprise** : Randomly select a sprite from the library.
-* **Paint** : Draw a sprite.
-* **Choose a Sprite** : Open the library to choose a sprite.
-
-Next, we will use **Choose a Sprite** to select a sprite and **Paint** to draw a sprite.
+* **上传角色**：从设备存储中加载角色。
+* **惊喜**：从角色库中随机选择一个角色。
+* **绘制**：自己绘制一个角色。
+* **选择角色**：打开库选择一个角色。
 
 
-**Choose a Sprite**
+接下来，我们将使用 **选择角色** 选择一个角色，并使用 **绘制** 绘制一个角色。
 
-Click "choose a sprite" (magnifier icon) to enter the library, which provides a wealth of resources for your stage.
+**选择角色**
+
+点击“选择角色”（放大镜图标）进入角色库，在这里你可以找到丰富的资源来装饰你的舞台。
 
 .. image:: img/2_sp_list.png
 .. :align: left
 
-Find and select GalaxyRVR from the library.
+在库中找到并选择 GalaxyRVR。
 
 .. image:: img/2_sprite_rvr.png
 .. :align: left
@@ -96,62 +91,61 @@ Find and select GalaxyRVR from the library.
 
 
 
-**Paint a New Sprite**
+**绘制新角色**
 
-We are going to create a "Mars" sprite, but unfortunately, there is no suitable resource in the library.
+我们打算绘制一个“火星”角色，但库中没有合适的资源。
 
-Therefore, we will select **Paint** (brush icon) and draw one ourselves.
+因此，我们将选择 **绘制** （画笔图标），自己来绘制一个。
 
 .. image:: img/2_create_custom.png
 .. :align: left
 
-First, use the circle tool to draw a circle representing the planet.
+首先，使用圆形工具绘制一个代表火星的圆形。
 
 .. image:: img/2_create_custom1.png
 .. :align: left
 
-Then, use the pointer tool to move the circle so that it aligns with the center of the canvas.
-This step is crucial because the coordinates, direction, and movements of your sprite are based on its center point.
+然后，使用指针工具移动圆形，使其居中于画布。这一步非常关键，因为角色的坐标、方向和运动都是基于其中心点的。
 
 .. image:: img/2_create_custom2.png
 .. :align: left
 
-Use the paint bucket tool to color the planet red.
+使用油漆桶工具将火星涂成红色。
 
 .. image:: img/2_create_custom3.png
 .. :align: left
 
-Next, select the brush tool, increase its size, and choose a suitable color from the fill options to add texture to Mars.
+接着，选择画笔工具，增大笔刷的大小，从填充选项中选择合适的颜色，给火星添加纹理。
 
 .. image:: img/2_create_custom_pen.png
 .. :align: left
 
-If you find the color unsuitable after painting, you can change the fill color and use the paint bucket tool to fill the shape again.
+如果你觉得颜色不合适，可以修改填充颜色，并再次使用油漆桶工具重新填充形状。
 
 .. image:: img/2_create_custom5.png
 .. :align: left
 
-Select the brush again, set the size to 2, and change the color to black. Use your creativity to add craters and details to Mars.
+再选一次画笔工具，设置大小为 2，颜色改为黑色。发挥创意，给火星添加陨石坑和细节。
 
 .. image:: img/2_create_custom6.png
 .. :align: left
 
-Using the Paint Bucket Tool, choose an appropriate color to fill these craters.
+使用油漆桶工具，为这些陨石坑选择合适的颜色填充。
 
 .. image:: img/2_create_custom7.png
 .. :align: left
 
-Once finished, switch back to the Code interface. Your Mars sprite is now complete.
+完成后，返回到代码界面。你的火星角色已经完成。
 
 .. image:: img/2_create_custom8.png
 .. :align: left
 
-For smaller screens, switch back to the Code interface by clicking here.
+对于较小的屏幕，点击此处返回代码界面。
 
 .. image:: img/2_create_custom8.1.png
 .. :align: left
 
-You will see the Mars sprite on the stage. Don't forget to rename it.
+你将在舞台上看到火星角色，别忘了为它命名。
 
 .. image:: img/2_create_custom9.png
 .. :align: left
@@ -160,143 +154,130 @@ You will see the Mars sprite on the stage. Don't forget to rename it.
 
 
 
-**Stage**
+**舞台背景**
 
 
-Click on backdrops. The current backdrop is white; we need to make it darker to simulate the night sky.
+点击背景。当前背景为白色，我们需要将其调暗，以模拟夜空。
 
-1. Click on the Backdrops of the stage.
+1. 点击舞台的背景。
 
 .. image:: img/6_jump_backdrop.png
 .. :align: left
 
-2. Enter the Backdrops interface.
+2. 进入背景界面。
 
 .. image:: img/6_jump_backdrop_page.png
 .. :align: left
 
-2. Draw a rectangle.
+3. 绘制一个矩形。
 
 .. image:: img/6_jump_rect.png
 .. :align: left
 
-3. Use the paint bucket to fill it with a dark color.
+4. 使用油漆桶工具填充深色。
 
 .. image:: img/6_jump_fill.png
 .. :align: left
 
-4. Use the brush tool to add some stars.
+5. 使用画笔工具添加一些星星。
 
 .. image:: img/6_jump_paint.png
 .. :align: left
 
 
 
-Creating the Animation
+创建动画
 -------------------------------
 
 
-Now that we have Mars and GalaxyRVR, and we know how to animate sprites, let's create an animation of GalaxyRVR moving on Mars.
-We can make the sprite appear to move by rotating Mars in the opposite direction, creating the effect of GalaxyRVR moving across its surface.
+现在我们已经有了火星和 GalaxyRVR，并且了解了如何给角色添加动画。接下来，我们将创建一个 GalaxyRVR 在火星上移动的动画。
 
+我们可以通过让火星角色逆时针旋转，制造出 GalaxyRVR 在火星表面移动的效果。
 
-Adjust the size and position of the sprites, 
-set the coordinates of the GalaxyRVR sprite to 0,0, and place it on Mars.
+调整角色的大小和位置，将 GalaxyRVR 的坐标设置为 (0, 0)，并将其放置在火星上。
 
-And set the position and size of the Mars sprite so that the GalaxyRVR sprite just "stands" on it.
+同时调整火星角色的位置和大小，让 GalaxyRVR 角色“站”在火星上。
 
 .. image:: img/6_jump_place.png
 .. :align: left
 
-
-**Mars Sprite**
+**火星角色**
 
 .. image:: img/6_ssp_mars.png
     :align: left
 
-Select the Mars sprite. Its task is to rotate counterclockwise, creating the illusion that GalaxyRVR is moving forward.
-
+选择火星角色。它的任务是逆时针旋转，制造出 GalaxyRVR 向前移动的错觉。
 
 .. raw:: html
 
    <br></br>
 
-1. Drag a green flag block. All animation starts with the green flag.
+1. 拖动一个绿色旗帜块。所有动画都从绿色旗帜开始。
 
 .. image:: img/6_jump_mar_flag.png
 .. :align: left
 
-2. Drag a ``forever`` block to keep the animation running continuously.
+2. 拖动一个 ``forever`` 块，使动画持续运行。
 
 .. image:: img/6_jump_mar_forever.png
 .. :align: left
 
-3. Drag a ``turn`` block and a ``wait`` block to make Mars rotate continuously.
+3. 拖动一个 ``turn`` 块和一个 ``wait`` 块，使火星角色持续旋转。
 
 .. image:: img/6_jump_mar_turn.png
 .. :align: left
 
 
-Now click the green flag, and you will see Mars rotating counterclockwise.
+现在点击绿色旗帜，你将看到火星逆时针旋转。
 
-
-
-**GalaxyRVR Sprite**
+**GalaxyRVR 角色**
 
 .. image:: img/6_ssp_rvr.png
     :align: left
 
-
-Select the GalaxyRVR sprite. Its task is to animate as if it’s moving, even though it isn’t actually moving.
+选择 GalaxyRVR 角色。它的任务是像在移动一样进行动画，尽管它实际上并没有移动。
 
 .. raw:: html
 
    <br></br>
 
-1. Drag a green flag block. All animation starts with the green flag.
+1. 拖动一个绿色旗帜块。所有动画都从绿色旗帜开始。
 
 .. image:: img/6_jump_mar_flag.png
 .. :align: left
 
-
-2. Drag a ``forever`` block to keep the animation running continuously.
+2. 拖动一个 ``forever`` 块，使动画持续运行。
 
 .. image:: img/6_jump_mar_forever.png
 .. :align: left
 
-3. Drag a ``next costume`` block and a ``wait`` block to make GalaxyRVR continuously animate.
+3. 拖动一个 ``next costume`` 块和一个 ``wait`` 块，使 GalaxyRVR 持续进行动画。
 
 .. image:: img/6_jump_mar_next.png
 .. :align: left
 
-**Adding More Fun**
+**增加更多乐趣**
 
 .. image:: img/6_ssp_rvr.png
     :align: left
 
-We can add interactivity to this animation by using the ultrasonic module 
-to make the GalaxyRVR sprite jump to avoid obstacles.
+我们可以通过使用超声波模块为动画增加互动性，让 GalaxyRVR 角色跳跃以避开障碍物。
 
-Please continue programming in GalaxyRVR sprite.
+请继续在 GalaxyRVR 角色中编程。
 
-
-
-1. Drag a ``when distance`` block. This will trigger when the ultrasonic module detects an obstacle (e.g., your hand).
+1. 拖动一个 ``when distance`` 块。当超声波模块检测到障碍物（例如你的手）时，将触发该块。
 
 .. image:: img/6_jump_when.png
 .. :align: left
 
-2. Drag two ``glide`` blocks and change the y-value of the first one to make the sprite jump up and then come down, creating a jumping effect.
+2. 拖动两个 ``glide`` 块，并改变第一个块的 y 值，使角色跳起来然后再下来，创造跳跃效果。
 
 .. image:: img/6_jump_glide.png
 .. :align: left
 
-
-3. The complete code for the GalaxyRVR sprite should look like this:
+3. GalaxyRVR 角色的完整代码应该如下所示：
 
 .. image:: img/6_jump_mar_rvr_all.png
 .. :align: left
 
-
-Now, click the green flag to start the animation. Simulate an obstacle by placing your hand in front of the ultrasonic module, and the GalaxyRVR sprite will jump to avoid it.
-
+现在，点击绿色旗帜开始动画。通过将手放在超声波模块前方模拟障碍物，GalaxyRVR 角色将跳跃避开它。

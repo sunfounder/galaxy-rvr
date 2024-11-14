@@ -1,31 +1,32 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder Raspberry Pi、Arduino 和 ESP32 爱好者社区！在这里，你可以与其他爱好者一起深入探索 Raspberry Pi、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：在售后问题和技术挑战上，得到社区和团队的帮助。
+    - **学习与分享**：交流技巧和教程，共同提升技能。
+    - **独家预览**：抢先体验新产品的发布和预告。
+    - **专属折扣**：享受最新产品的独家折扣。
+    - **节日促销与赠品**：参与赠品活动和节日促销。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 今天就加入我们吧！
 
-Lesson 11 Servo and Tilt Mechanism
+
+第十一课 舵机与倾斜机制
 ===============================================================
 
-Welcome back, young explorers! In today's adventure, we are going to delve into the fascinating world of the Mars Rover's visual system. Just like our eyes and neck work together to help us see and navigate our surroundings, our Rover too needs a similar system to navigate the treacherous Martian landscape. And that's exactly what we are going to build today!
+欢迎回来，年轻的探险者们！在今天的冒险中，我们将深入了解火星车的视觉系统。就像我们的眼睛和脖子一起帮助我们看清周围的环境并进行导航一样，我们的火星车也需要一个类似的系统来应对险恶的火星地形。而这正是我们今天要构建的内容！
 
-The visual system of our Rover has two main parts: a camera that acts as its "eyes", and a tilt mechanism that acts like a "neck", allowing it to look up and down. By the end of this lesson, we'll give our Rover the ability to "see" and "nod"!
+火星车的视觉系统主要有两个部分：一个作为“眼睛”的摄像头和一个作为“脖子”的倾斜机制，后者能让摄像头上下移动。通过本课的学习，我们将使火星车具备“看”和“点头”的能力！
 
-First, we'll build the tilt mechanism - a device that will hold our Rover's camera and let it rotate vertically. It's like giving our Rover a neck, so it can nod its "head" or camera up and down!
+首先，我们将构建倾斜机制——一个支撑火星车摄像头的装置，让它能够上下旋转。就像给火星车装上脖子，让它能像人类一样点头！  
 
-Next, we'll learn about the servo, the tiny yet powerful "muscle" that moves our tilt mechanism. We'll understand how it works and how we can control it using Arduino programming.
+接下来，我们将了解舵机，这个微小但强大的“肌肉”，它将控制倾斜机制的运动。我们将学习它的工作原理，并通过 Arduino 编程来控制它。
 
-Just as our neck muscles move our head so our eyes can get a better view, the servo will move the tilt mechanism so the Rover's camera can better survey the Martian landscape.
+就像我们的脖部肌肉帮助头部转动，让眼睛看到更好的视野一样，舵机将推动倾斜机制，让火星车的摄像头更好地观察火星地形。
 
-So, buckle up, explorers, let's start our mission to equip our Rover with its very own visual system!
+所以，系好安全带，探险者们，准备好开始我们的任务，给火星车配备它自己的视觉系统吧！
 
 .. raw:: html
 
@@ -36,180 +37,172 @@ So, buckle up, explorers, let's start our mission to equip our Rover with its ve
 
 
 
-Learning Objectives
+学习目标
 -------------------------
 
-* Introduce the working principles of servo motors and their application in mechanical control.
-* Learn how to easily set servo angles using Mammoth Coding, achieving precise control.
-* Design interactive projects on the Mammoth Coding platform that enable physical interaction through servo motors.
+* 介绍舵机的工作原理及其在机械控制中的应用。
+* 学习如何使用 Mammoth Coding 设置舵机角度，实现精确控制。
+* 设计在 Mammoth Coding 平台上的互动项目，通过舵机实现物理交互。
 
 
-Materials
+所需材料
 --------------------
 
-* Smartphone or tablet
-* Mammoth Coding APP
+* 智能手机或平板电脑
+* Mammoth Coding 应用
 * GalaxyRVR
 
-What is a Servo?
+舵机是什么？
 ----------------------------------------
 
-Have you ever watched a puppet show? If you have, you might have marveled at how the puppeteer can make the puppet's arms, legs, and head move so smoothly, just by pulling on some strings. In a way, servo motors are like our puppeteers.
+你是否曾看过木偶剧？如果看过，你一定会惊叹木偶师如何通过拉动几根线，就能让木偶的手臂、腿和头部如此流畅地动起来。某种程度上，舵机就像是我们的木偶师。
 
 .. image:: ../img/puppet_show.png
     :width: 200
     :align: center
 
-Servo motors are special types of motors that don't just spin around like a wheel. Instead, they can move to a specific position and hold that position. Imagine if you're playing a game of Simon says, and Simon says, "Raise your arm to a 90-degree angle!" You can do it, right? That's because, like a servo, you can control exactly how much to move your arm.
+舵机是一种特殊的电机，它并不像普通电机那样只会旋转。相反，它可以移动到一个特定的位置，并保持在那个位置。想象一下你正在玩“西蒙说”游戏，当西蒙说：“把手臂抬到 90 度角！”你能做到，对吗？这就像舵机一样，你可以精确控制手臂的运动。
 
 .. image:: ../img/servo.png
     :align: center
 
-* Brown Line: GND
-* Orange Line: Signal pin, connect to the PWM pin of the main board.
-* Red wire: VCC
-
-Just like you can control your arms to move to specific positions, we can use servo motors to control the exact position of objects in our projects. In our Mars Rover, we will use a servo to control the up and down movement of our tilt mechanism, just like how you can nod your head up and down.
-
-In the next step, we will go on a fascinating journey inside a servo motor to understand how it works. Excited? Let's go!
+* 棕色线：GND
+* 橙色线：信号引脚，连接到主板的 PWM 引脚。
+* 红色线：VCC
 
 
-How does a Servo Work?
+就像你可以控制手臂的移动一样，我们也可以使用舵机控制项目中物体的精确位置。在我们的火星车中，我们将使用舵机控制倾斜机制的上下运动，就像你能让头部上下点头一样。
+
+接下来的步骤中，我们将深入了解舵机内部，看看它是如何工作的。准备好了吗？我们出发！
+
+舵机如何工作？
 -------------------------------------------
 
-So how does a servo work its magic? Let's go on an exciting journey inside a servo!
+那么，舵机是如何发挥它的魔力的呢？让我们一起进入舵机的内部，去探索它的奥秘吧！
 
-If we were to peek inside a servo, we would see a few parts. At the heart of a servo is a regular motor, very similar to the motors that spin our Mars Rover's wheels. Wrapped around the motor, there is a big gear that is connected to a smaller gear on the motor shaft. This is how the motor's fast, circular motion gets transformed into slower but stronger motion.
+如果我们从舵机的内部窥视，就会看到几个主要部件。在舵机的核心是一个普通的电机，类似于驱动火星车轮子的电机。电机外面包裹着一个大齿轮，这个大齿轮与电机轴上的一个小齿轮相连。这种结构将电机快速的圆周运动转化为较慢但更强劲的运动。
 
 .. image:: ../img/servo_internal.png
     :align: center
 
-But that's not what makes a servo special. The magic happens in a tiny piece of electronics called a "potentiometer" and the "control circuitry". Here's how it works: when the servo moves, the potentiometer turns and changes its resistance. The control circuitry measures this change in resistance and knows exactly what position the servo is in. Clever, isn't it?
+但这并不是舵机特别之处。舵机的魔力来源于一个小小的电子元件——“电位器”和“控制电路”。它是如何工作的呢？当舵机运动时，电位器会转动并改变其电阻值。控制电路会测量这个电阻的变化，从而精确知道舵机的当前角度。聪明吧？
 
-To control a servo, we send it a special kind of signal called a "pulse-width modulation" signal or PWM. By changing the width of these pulses, we can control exactly how much the servo moves and hold it in that position.
+为了控制舵机，我们向它发送一种特殊的信号，叫做“脉宽调制”信号（PWM）。通过改变这些脉冲的宽度，我们可以精确控制舵机的角度，并让它保持在那个位置。
 
-In the next step, we'll learn how to control a servo using an APP. Ready for some magic spells in the form of code? Let's go!
+接下来的步骤中，我们将学习如何使用 APP 来控制舵机。准备好用代码施展魔法了吗？我们出发！
 
 
 
-Exploring the Mars Rover Tilt System
+探索火星车的倾斜系统
 -------------------------------------------------
 
+**设置云台角度**
 
-**Setting the Gimbal Angle**
-
-1. Check the servo angle, and you can see the current angle on the stage.
+1. 检查舵机的角度，你可以看到舞台上显示的当前角度。
 
 .. image:: img/10_servo_angle.png
 
-2. Drag a ``set servo angle to 90 degrees`` block. Click it, and you'll see the GalaxyRVR face forward.
+2. 拖出一个“设置舵机角度为 90 度”块。点击它，你会看到 GalaxyRVR 面向前方。
 
 .. image:: img/10_servo_set_angle.png
 
-
-3. Change the value to 45 and click it, you'll see the GalaxyRVR look up.
+3. 将角度改为 45 度，再点击，你会看到 GalaxyRVR 向上看。
 
 .. image:: img/10_servo_set_angle_45.png
 
-4. Through multiple trials, you'll discover that the GalaxyRVR's gimbal can move between 0 and 135 degrees. As the angle increases, the gimbal lowers.
+4. 通过多次实验，你会发现 GalaxyRVR 的云台可以在 0 到 135 度之间移动。随着角度的增加，云台会降低。
 
 
-**Changing the Gimbal Angle**
+**改变云台角度**
 
-1. The GalaxyRVR's servo gimbal system is a refined single-degree-of-freedom structure, so you only need to control its "reset," "move up," and "move down" functions.
-
+1. GalaxyRVR 的舵机云台系统是一个精巧的单自由度结构，因此你只需要控制它的“复位”，“向上”和“向下”功能。
 
 .. raw:: html
 
    <br></br>
 
-
-2. Now let's create its reset button. Drag a ``when this sprite clicked`` block.
+2. 现在让我们创建一个复位按钮。拖出一个 ``当这个精灵被点击`` 块。
 
 .. image:: img/10_servo_when_click.png
 
-3. Embed a ``set servo angle to 90 degrees`` block to make the gimbal face forward.
+3. 插入一个 ``设置舵机角度为 90 度`` 块，让云台正对前方。
 
 .. image:: img/10_servo_when_90.png
 
-
-4. Drag a ``when up arrow key pressed`` block.
+4. 拖出一个 ``当上箭头键被按下`` 块。
 
 .. image:: img/10_servo_when_up.png
 
-5. Decrease the servo angle when the up arrow key is pressed.
+5. 当按下上箭头时，减少舵机角度。
 
 .. image:: img/10_servo_when_up2.png
 
-6. Similarly, add a down arrow key event to make the gimbal look down.
+6. 同样，添加一个下箭头键事件，使云台向下看。
 
 .. image:: img/10_servo_when_down.png
 
-Now, click the full-screen button to enlarge the stage. Click up and down to adjust the gimbal angle, and click the sprite to reset the angle.
-
+现在，点击全屏按钮放大舞台区域，点击上箭头和下箭头来调整云台角度，点击精灵来复位角度。
 
 .. _tilt_system:
 
-Touch the Stage Area to Adjust the Gimbal Angle
--------------------------------------------------------------
+触摸舞台区域来调整云台角度
+-----------------------------------------------------------
 
-Next, we will use an arrow sprite to achieve smoother adjustments to the servo angle.
+接下来，我们将使用箭头精灵来实现更加流畅的舵机角度调整。
 
-When we touch the arrow, we can drag the direction of the arrow sprite.
+当我们触摸箭头时，可以拖动箭头精灵的方向。
 
-1. Delete the original sprite.
+1. 删除原来的精灵。
 
 .. image:: img/6_animate_delete.png
 
-2. Add an Arrow sprite. We will set the gimbal direction based on its orientation.
+2. 添加一个箭头精灵。我们将根据箭头的方向来设置云台的角度。
 
 .. image:: img/10_servo_arrow.png
 
-
-3. A ``when this sprite clicked`` block is exactly what we need.
+3. 我们需要的正是一个 ``当这个精灵被点击`` 块。
 
 .. image:: img/6_animate_when_touch.png
     :width: 230
 
-4. Let the program repeat until we release it, meaning we no longer touch the sprite.
+4. 让程序在触摸精灵时重复执行，直到我们松开它，表示不再触摸该精灵。
 
 .. image:: img/6_animate_repeat_touching.png
     :width: 550
 
-3. Drag a ``point towards touch_position`` block to make the sprite face the touch position.
+3. 拖出一个 ``指向触摸位置`` 块，使精灵指向触摸位置。
 
 .. image:: img/10_servo_arrow_point_toward.png
 
-4. Drag a ``set servo angle to 90 degrees`` block and embed a ``direction`` block to align the gimbal angle with the arrow sprite's orientation. This way, when we change the arrow sprite's direction (i.e., touch the stage area), we can change the gimbal angle.
+4. 拖出一个 ``设置舵机角度为 90 度`` 块，并嵌入一个 ``方向`` 块，使云台角度与箭头精灵的方向对齐。这样，当我们改变箭头精灵的方向（即触摸舞台区域）时，就可以改变云台角度。
 
 .. image:: img/10_servo_arrow_angle_direction.png
 
-5. Add a limit check to ensure the arrow sprite's orientation does not exceed 135 degrees.
+5. 添加限制检查，确保箭头精灵的方向不超过 135 度。
 
 .. image:: img/10_servo_arrow_135.png
 
-
-6. Similarly, ensure its orientation does not go below 0 degrees.
+6. 同样，确保其方向不低于 0 度。
 
 .. image:: img/10_servo_arrow_0.png
 
 
-Touch the sprite, and it will change direction as you drag, altering the gimbal angle.
+触摸精灵时，它将随着拖动改变方向，进而改变云台角度。
 
-If you find it easy to slide your finger off the arrow sprite, you can increase the sprite's size accordingly.
+如果你觉得很容易滑动手指脱离箭头精灵，可以适当增大精灵的尺寸。
 
 
-Servo-Related Blocks
+舵机相关的代码块
 -------------------------------
 
 .. image:: img/block/servo_set_angle.png
 
-This block is used to set the servo angle. The range is 0 to 180 degrees (however, due to structural limitations, the actual usable range is 0-135 degrees).
+此块用于设置舵机角度，范围是 0 到 180 度（但由于结构限制，实际可用的范围是 0 到 135 度）。
 
 .. image:: img/block/servo_increase_angle.png
 
-This block increases (or decreases) the servo angle. The value can be negative.
+此块用于增加（或减少）舵机角度，数值可以为负数。
 
 .. image:: img/block/servo_value.png
 
-The current angle of the servo.
+显示舵机的当前角度。

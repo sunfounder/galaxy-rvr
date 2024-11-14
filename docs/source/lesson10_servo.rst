@@ -1,38 +1,35 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入SunFounder Raspberry Pi、Arduino和ESP32爱好者社区！与其他爱好者一起深入探索Raspberry Pi、Arduino和ESP32的世界。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：在售后问题和技术挑战中，得到我们社区和团队的帮助。
+    - **学习与分享**：交流技巧和教程，提升你的技能。
+    - **独家预览**：抢先体验新产品的发布和预览。
+    - **特别折扣**：享受我们最新产品的专属折扣。
+    - **节日促销与赠品**：参与赠品活动和节庆促销。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击[|link_sf_facebook|]，今天就加入我们吧！
 
 
-Lesson 10: Exploring the Mars Rover Visual System - Servo and Tilt Mechanism
-===================================================================================
+第十课 探索火星漫游车的视觉系统——伺服电机与倾斜机构
+================================================================
 
-Welcome back, young explorers! In today's adventure, we are going to delve into the fascinating world of the Mars Rover's visual system. 
-Just like our eyes and neck work together to help us see and navigate our surroundings, our Rover too needs a similar system to 
-navigate the treacherous Martian landscape. And that's exactly what we are going to build today!
+欢迎回来，年轻的探险者们！在今天的冒险中，我们将深入探索火星漫游车的视觉系统。
+就像我们的大脑依赖眼睛和脖子来帮助我们观察和导航一样，我们的火星漫游车也需要类似的系统来穿越险恶的火星地形。
+今天，我们将构建的正是这样的系统！
 
-The visual system of our Rover has two main parts: a camera that acts as its "eyes", and a tilt mechanism that acts like a "neck", 
-allowing it to look up and down. By the end of this lesson, we'll give our Rover the ability to "see" and "nod"!
+火星漫游车的视觉系统主要包括两个部分：一个作为“眼睛”的摄像头和一个作为“脖子”的倾斜机构，使其可以上下移动。
+通过这节课的学习，我们将赋予我们的漫游车“看”与“点头”的能力！
 
-First, we'll build the tilt mechanism - a device that will hold our Rover's camera and let it rotate vertically. 
-It's like giving our Rover a neck, so it can nod its "head" or camera up and down!
+首先，我们将构建倾斜机构——一个能让摄像头上下旋转的装置，就像给我们的火星漫游车装上了脖子，使其能够上下点头。
 
-Next, we'll learn about the servo, the tiny yet powerful "muscle" that moves our tilt mechanism. 
-We'll understand how it works and how we can control it using Arduino programming.
+接下来，我们将了解伺服电机——这个微小而强大的“肌肉”，它驱动倾斜机构的运动。我们将探讨伺服电机的工作原理，并学习如何通过Arduino编程来控制它。
 
-Just as our neck muscles move our head so our eyes can get a better view, the servo will move the tilt mechanism so the Rover's 
-camera can better survey the Martian landscape.
+就像我们的脖部肌肉控制头部的运动，让眼睛获得更好的视野，伺服电机也将控制倾斜机构的运动，使火星漫游车的摄像头能够更好地观察火星地貌。
 
-So, buckle up, explorers, let's start our mission to equip our Rover with its very own visual system!
+所以，探险者们，请系好安全带，让我们开始为火星漫游车装备专属视觉系统的任务吧！
 
 .. raw:: html
 
@@ -42,97 +39,97 @@ So, buckle up, explorers, let's start our mission to equip our Rover with its ve
     </video>
 
 
-Objective
-----------------
+目标
+-------
 
-* Practice installing and operating the tilt mechanism on the Mars Rover model.
-* Understand the principles of operation and application of servo.
-* Learn how to control servo movement through Arduino programming.
+* 练习在火星漫游车模型上安装并操作倾斜机构。
+* 理解伺服电机的工作原理及应用。
+* 学习如何通过Arduino编程控制伺服电机的运动。
 
-Materials
----------------
+所需材料
+----------
 
-* Arduino UNO development board
-* Servo
-* Gimbal and camera
-* Mars Rover model (already equipped with TT motor, suspension system, ultrasonic and infrared obstacle avoidance modules, RGB LED strip)
+* Arduino UNO开发板
+* 伺服电机
+* 云台与摄像头
+* 火星漫游车模型（已配备TT电机、悬挂系统、超声波和红外避障模块、RGB LED灯带）
 * Arduino IDE
-* Computer
+* 电脑
 
-Steps
------------
+步骤
+------
 
-**Step 1: What is a Servo?**
+**步骤1：什么是伺服电机？**
 
-Have you ever watched a puppet show? If you have, you might have marveled at how the puppeteer can make the puppet's arms, legs, and head move so smoothly, just by pulling on some strings. In a way, servo motors are like our puppeteers.
+你是否曾看过木偶剧？如果看过，你一定会惊叹于木偶师如何仅凭拉动几根线就能让木偶的手臂、腿部和头部如此灵活地移动。从某种意义上说，伺服电机就像我们的木偶师。
 
 .. image:: img/puppet_show.png
     :width: 200
     :align: center
 
-Servo motors are special type of motors that don't just spin around and around like a wheel. Instead, they can move to a specific position and hold that position. Imagine if you're playing a game of Simon says, and Simon says, "Raise your arm to a 90-degree angle!" You can do it, right? That's because, like a servo, you can control exactly how much to move your arm.
+伺服电机是一种特殊类型的电机，不像轮子那样不停地旋转。相反，伺服电机可以移动到特定的位置并保持在那里。想象一下，你在玩“西蒙说”的游戏，西蒙说：“将你的手臂抬到90度！”你能做到吗？这就像伺服电机一样，你可以精确地控制手臂移动的角度。
 
 .. image:: img/servo.png
     :align: center
 
-* Brown Line: GND
-* Orange Line: Signal pin, connect to the PWM pin of main board.
-* Red wire: VCC
+* 棕色线：GND
+* 橙色线：信号引脚，连接到主板的PWM引脚。
+* 红色线：VCC
 
-Just like you can control your arms to move to specific positions, we can use servo motors to control the exact position of objects in our projects. In our Mars Rover, we will use a servo to control the up and down movement of our tilt mechanism, just like how you can nod your head up and down.
+就像你可以控制手臂达到特定的位置一样，我们也可以用伺服电机控制项目中物体的精确位置。在火星漫游车中，我们将使用伺服电机来控制倾斜机构的上下运动，就像你点头时控制头部的上下运动一样。
 
-In the next step, we will go on a fascinating journey inside a servo motor to understand how it works. Excited? Let's go!
+接下来的步骤中，我们将深入探讨伺服电机的内部结构，看看它是如何工作的。准备好了吗？让我们出发吧！
 
-**Step 2: How does a Servo Work?**
+**步骤2：伺服电机是如何工作的？**
 
-So how does a servo work its magic? Let's go on an exciting journey inside a servo!
+那么，伺服电机是如何发挥魔力的呢？让我们一起深入伺服电机，揭开它的奥秘！
 
-If we were to peek inside a servo, we would see a few parts. At the heart of a servo is a regular motor, very similar to the motors that spin our Mars Rover's wheels. Wrapped around the motor, there is a big gear that is connected to a smaller gear on the motor shaft. This is how the motor's fast, circular motion gets transformed into slower but stronger motion.
+如果我们透过伺服电机的外壳，我们会看到几个重要的部件。伺服电机的核心是一台普通电机，类似于驱动火星漫游车车轮的电机。在这个电机上，有一只大齿轮与电机轴上的小齿轮连接，这样电机的快速旋转就能转化为较慢但更强大的运动。
 
 .. image:: img/servo_internal.png
     :align: center
 
-But that's not what makes a servo special. The magic happens in a tiny piece of electronics called a "potentiometer" and the "control circuitry". Here's how it works: when the servo moves, the potentiometer turns and changes its resistance. The control circuitry measures this change in resistance and knows exactly what position the servo is in. Clever, isn't it?
+但这并不是伺服电机特别的地方。伺服电机的魔力在于一个小小的电子元件——“电位器”和“控制电路”。当伺服电机移动时，电位器会旋转并改变其电阻，而控制电路则通过测量电阻的变化，准确地知道伺服电机的当前角度。很聪明，对吧？
 
-To control a servo, we send it a special kind of signal called a "pulse-width modulation" signal or PWM. By changing the width of these pulses, we can control exactly how much the servo moves and hold it in that position.
+为了控制伺服电机，我们向它发送一种特殊的信号——脉宽调制信号（PWM）。通过改变这些脉冲的宽度，我们可以精确控制伺服电机的运动，并让它保持在指定的位置。
 
-In the next step, we'll learn how to control a servo using an Arduino. Ready for some magic spells in the form of code? Let's go!
+接下来，我们将学习如何使用Arduino来控制伺服电机。准备好用代码施展魔法了吗？出发！
 
-**Step 3: Controlling a Servo using Arduino**
+**步骤3：通过Arduino控制伺服电机**
 
-Alright, explorers, now that we know how a servo works, let's learn how to control it using our magic wand, the Arduino!
+好了，探险者们，现在我们知道了伺服电机的工作原理，接下来让我们学会如何用我们的魔法棒——Arduino来控制伺服电机！
 
-Controlling a servo is like giving it directions. Remember the pulse-width modulation (PWM) signals we mentioned earlier? We are going to use those to tell the servo where to move.
+控制伺服电机就像给它指路。记住我们之前提到的脉宽调制（PWM）信号吗？我们将使用这些信号告诉伺服电机去哪里。
 
-Luckily, Arduino makes this task easy for us with a built-in library called ``Servo``. With this library, we can create a ``Servo`` object, attach a pin to it (the pin that our servo is connected to), and then use a simple command, ``write()``, to set the angle.
+幸运的是，Arduino为我们提供了一个方便的内置库—— ``Servo`` 。通过这个库，我们可以创建一个 ``Servo`` 对象，指定与之连接的引脚，然后使用简单的 ``write()`` 命令来设置角度。
 
-Here's a snippet of what the code looks like:
+以下是代码示例：
 
 .. code-block:: arduino
 
     #include <Servo.h> 
 
-    Servo myServo;  // create a servo object
+    Servo myServo;  // 创建伺服电机对象
 
     void setup() {
-        myServo.attach(6);  // attaches the servo on pin 6
+        myServo.attach(6);  // 将伺服电机连接到引脚6
     }
 
     void loop() {
-        myServo.write(90);  // tell servo to go to 90 degrees
+        myServo.write(90);  // 告诉伺服电机移动到90度
     }
 
-In this code, ``myServo`` is our Servo object, ``attach(6)`` tells the Arduino that our servo is connected to pin 6, and ``write(90)`` tells the servo to move to 90 degrees.
+在这段代码中， ``myServo`` 是我们的伺服电机对象， ``attach(6)`` 表示将伺服电机连接到引脚6， ``write(90)`` 则告诉伺服电机转动到90度。
 
-Great job, explorers! You've just learned how to control a servo motor with Arduino. You can experiment with different angles too! 
+做得好，探险者们！你们已经学会了如何通过Arduino控制伺服电机。你们也可以尝试不同的角度！
 
-**Step 4: Assemble the Visual System**
+**步骤4：组装视觉系统**
 
-You're now ready to assemble the visual system of our Rover.
+现在，你们准备好组装火星漫游车的视觉系统了。
 
 .. note::
 
-    * When inserting the ESP32 CAM into the Camera Adapter, be aware of its orientation. It should align properly with the ESP32 Adapter.
+    * 在将ESP32 CAM插入摄像头适配器时，请注意其方向。确保它与ESP32适配器正确对接。
 
     .. image:: img/esp32_cam_direction.png
         :width: 300
@@ -142,29 +139,30 @@ You're now ready to assemble the visual system of our Rover.
 
     <iframe width="600" height="400" src="https://www.youtube.com/embed/h43JVI3xLqE?si=Q7-RvRvZOusK7vPo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-**Step 5: Understanding the Limits of the Tilt Mechanism**
 
-Even though servo is designed to rotate between 0 and 180 degrees, you may notice that it stops responding beyond a certain point (let's say after 150 degrees). Have you ever wondered why this happens? Let's explore this mystery together in our next adventure!
+**步骤5：理解倾斜机构的运动限制**
 
 
-Can you imagine a bird trying to bend its neck too much that it hits its own body and can't move any further? Our Rover's tilt mechanism faces a similar situation. As the servo moves the mechanism downwards, it can bump into the body of our Rover and can't go beyond a certain angle.
+尽管伺服电机的设计允许其在0到180度之间旋转，但你可能会发现，当旋转角度超过某个临界值（比如150度）时，它会停止响应。你有没有想过为什么会这样？让我们在接下来的冒险中一起探索这个谜团吧！
 
-If we try to force it to move beyond this point by writing an unreachable angle in our code, our little servo birdie can get stuck and even damage itself! We don't want that to happen, do we? So, let's understand its movement limitations with a little experiment.
+你能想象一只鸟试图把脖子扭得太过，结果撞到自己的身体，无法再转动吗？我们的火星漫游车的倾斜机构也面临着类似的问题。当伺服电机使倾斜机构向下运动时，它可能会碰到火星漫游车的车身，导致无法继续运动。
 
-We use a for loop to rotate the servo from 0 to 180 degrees while keeping a note of the angle in the Serial Monitor.
+如果我们在代码中写下一个无法到达的角度，强行让伺服电机转动，可能会导致伺服电机卡住，甚至损坏自己！我们可不希望发生这种情况，对吧？所以，让我们通过一个小实验来了解伺服电机的运动限制。
+
+我们将使用一个for循环，让伺服电机从0到180度旋转，并在串口监视器中记录下每个角度。
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/848c7a3a-16b2-4a7e-8d66-bb91848bc6d9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-* The ESP32-CAM and the Arduino board share the same RX (receive) and TX (transmit) pins. So, before uploading the code, you'll need to first release the ESP32-CAM by slide this switch to right side to avoid any conflicts or potential issues.
+* ESP32-CAM和Arduino板共享相同的RX（接收）和TX（传输）引脚。因此，在上传代码之前，需要先通过将开关滑动到右侧来释放ESP32-CAM，避免任何冲突或潜在问题。
 
     .. image:: img/camera_upload.png
         :width: 600
 
-* After we upload this code, open the **Serial Monitor**. If no information appears, press the **Reset button** on the GalaxyRVR shield to run the code again. 
+* 上传代码后，打开 **串口监视器** 。如果没有显示任何信息，请按下 **重置按钮** ，重新运行代码。
 
-* You will see the servo rotate, and the Serial Monitor will display the angle. 
+* 你将看到伺服电机开始旋转，串口监视器将显示当前角度。
 
 .. image:: img/servo_range.png
 
@@ -175,17 +173,17 @@ We use a for loop to rotate the servo from 0 to 180 degrees while keeping a note
         Your browser does not support the video tag.
     </video>
     
-On my Rover, the tilt mechanism could go up to around 140° before it hit the body of the Rover and couldn't go any further.
+在我的火星漫游车上，倾斜机构能够旋转到大约140度，然后就会碰到车身，无法继续旋转。
 
-So, explorers, always remember to respect the limits of your rover to keep it safe and functioning!
+所以，探险者们，请时刻记住要尊重火星漫游车的运动极限，确保它的安全和正常运行！
 
 
-**Step 6: Sharing and Reflection**
+**步骤6：分享与反思**
 
-Well done, explorers! Today, you've not only built a tilt mechanism for your Rover but also understood how to control a servo to move it around. That's a big step forward in our Mars Rover mission.
+做得好，探险者们！今天，你们不仅为火星漫游车构建了倾斜机构，还学会了如何控制伺服电机来驱动它。这是我们火星漫游车任务中的一大进步。
 
-Now, let's share our experiences and reflect on what we've learned. 
+现在，让我们分享一下自己的经验，并回顾我们学到的内容。
 
-Did you encounter any challenges while setting up the tilt mechanism or programming the servo? How did you overcome them?
+在设置倾斜机构或编写伺服电机控制代码时，你们遇到过哪些挑战？是如何克服这些挑战的？
 
-Remember, every challenge we overcome makes us smarter and our Rover better. So don't hesitate to share your stories, ideas, and solutions. You never know, your innovative solution might help a fellow explorer in their journey!
+记住，每一次挑战的克服都会让我们变得更加聪明，也会让我们的火星漫游车变得更加优秀。所以，不要犹豫，快来分享你的故事、想法和解决方案吧。你永远不知道，你的创新解决方案可能会帮助到其他探险者！

@@ -1,25 +1,25 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与其他爱好者一起，深入探索树莓派、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：通过社区和团队的帮助解决售后问题和技术挑战。
+    - **学习与分享**：交流技巧和教程，提升你的技能。
+    - **独家预览**：提前体验新产品发布和独家内容。
+    - **专属折扣**：享受最新产品的专属优惠。
+    - **节庆促销与赠品**：参与节日促销和赠品活动。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 即刻加入！
 
 .. _sh_fishing:
 
-Extension 5 Fishing
+扩展项目 5：钓鱼
 ===========================
 
-Dive into our interactive fishing game, utilizing the left obstacle avoidance module for an engaging experience.
+进入我们的互动钓鱼游戏，利用左侧避障模块，体验充满乐趣的钓鱼过程。
 
-When the script is active, fish will swim back and forth across the stage. To catch a fish, you must block the left obstacle avoidance module just as the fish is about to pass the hook. The game automatically records the number of fish you catch.
+当脚本启动后，鱼将在舞台上来回游动。要捕获一条鱼，你必须在鱼快经过钩子时，遮挡左侧的红外避障模块。游戏会自动记录你捕获的鱼的数量。
 
 .. raw:: html
 
@@ -28,91 +28,91 @@ When the script is active, fish will swim back and forth across the stage. To ca
       Your browser does not support the video tag.
    </video>
 
-Follow these initial steps to set up the project, and feel free to customize the effects once you are familiar with the setup.
+按照以下初步步骤设置项目，熟悉后你可以根据需要自定义效果。
 
-1. Add Background and Sprites
+1. 添加背景和角色
 ------------------------------------
 
-First, select an **Underwater** backdrop, then add a **Fish** sprite and let it swim across the stage.
+首先，选择一个 **水下** 背景，然后添加一个 **鱼** 角色，让它在舞台上游动。
 
-* Use the **Choose a Backdrop** button to select an **Underwater** backdrop.
+* 使用 **选择背景** 按钮选择 **水下** 背景。
 
   .. image:: img/fish_choose_backdrop.png
 
-* Delete the original sprite, then select the **Fish** sprite.
+* 删除默认角色，选择 **鱼** 角色。
 
   .. image:: img/fish_choose_fish.png
 
-* Adjust the size and position of the **Fish** sprite.
+* 调整 **鱼** 角色的大小和位置。
 
   .. image:: img/fish_set_fish.png
 
-2. Draw a **Fishhook** Sprite
+2. 绘制 **鱼钩** 角色
 -------------------------------------
 
-Next, create a **Fishhook** sprite, which you will control via the left obstacle avoidance module to start fishing.
+接下来，创建一个 **鱼钩** 角色，你可以通过左侧红外避障模块控制它来开始钓鱼。
 
-* Add the **Glow-J** sprite via **Choose a Sprite** and rename it "Fishhook".
+* 通过 **选择角色** 按钮添加 **Glow-J** 角色，并将其重命名为 "Fishhook"。
 
   .. image:: img/fish_choose_j.png
 
-* Navigate to the **Costumes** page of the **Glow-J** sprite, rename it **Fishhook**, select the internal white 'J', and change its color to red.
+* 转到 **Glow-J** 角色的 **造型** 页面，将其重命名为 **Fishhook**，选择内部的白色 'J'，并将其颜色改为红色。
 
   .. image:: img/fish_set_j1.png
     :width: 90%
 
-* Remove the outer cyan fill and reduce its width. Ensure the top of the hook aligns with the center point.
+* 去除外部青色填充，并缩小其宽度，确保钩子的顶部对准中心点。
 
   .. image:: img/fish_set_j2.png
 
-* Use the **Line tool** to draw a line extending upward from the center point, extending out of the stage.
+* 使用 **线条工具** 从中心点向上绘制一条线，延伸至舞台外部。
 
   .. image:: img/fish_set_j3.png
 
-3. Scripting for the **Fish** Sprite
+3. 为 **鱼** 角色编写脚本
 ---------------------------------------
 
-The **Fish** sprite should move left and right on the stage, and when it interacts with the **Fishhook** sprite in the fishing state, it should shrink, move to a specific position, then disappear, followed by the spawning of a new **Fish** sprite.
+**鱼** 角色应该在舞台上左右移动，当它与 **鱼钩** 角色发生交互时（钓鱼状态下），它会缩小，移动到指定位置，然后消失，之后会生成一个新的 **鱼** 角色。
 
-* Create a variable **score** to store the number of fish caught, hide this sprite, and clone it.
+* 创建一个变量 **score** 来存储捕获的鱼的数量，隐藏该角色并克隆它。
 
   .. image:: img/fish_script_fish1.png
 
-* Display the clone of the **Fish** sprite, switch its costume, and set the initial position.
+* 显示 **鱼** 角色的克隆，切换其造型并设置初始位置。
 
   .. image:: img/fish_script_fish2.png
 
-* Enable the clone of the **Fish** sprite to move left and right and bounce back when touching the stage's edge.
+* 使 **鱼** 角色的克隆左右移动，并在接触舞台边缘时反弹。
 
   .. image:: img/fish_script_fish3.png
 
-* If the clone of the **Fish** sprite touches the **Fishhook** sprite in the fishing state (when it turns red).
+* 如果 **鱼** 角色的克隆与 **鱼钩** 角色发生碰撞（钓鱼状态下，颜色变为红色）。
 
   .. image:: img/fish_script_fish4.png
     :width: 90%
 
-* Increase the score (variable score) by 1, show a scoring animation (shrinks by 40%, quickly moves to the scoreboard's position and disappears). Simultaneously, create a new fish (a new **Fish** sprite clone) and continue the game.
+* 增加 **score**（捕获鱼的数量）变量值 1，显示一个得分动画（缩小 40%，迅速移动到记分板位置并消失）。同时，创建一个新的鱼（新的 **鱼** 角色克隆）并继续游戏。
 
   .. image:: img/fish_script_fish5.png
 
-4. Scripting for the **Fishhook** Sprite
+4. 为 **鱼钩** 角色编写脚本
 ---------------------------------------------
 
-The **Fishhook** sprite generally stays underwater in a yellow state. When your hand blocks the left-side infrared module, it changes to the fishing state (red) and moves above the stage.
+**鱼钩** 角色通常处于水下的黄色状态。当你的手遮挡左侧红外模块时，它会变为钓鱼状态（红色），并移动到舞台上方。
 
-* When the green flag is clicked, set the sprite's color effect to 30 (yellow) and set its initial position.
+* 点击绿色旗帜时，将角色的颜色效果设置为 30（黄色），并设置其初始位置。
 
   .. image:: img/fish_script_hook1.png
 
-* When your hand blocks the left-side infrared module, set the color effect to 0 (red, initiating the fishing state), wait for 0.1 seconds, then move the **Fishhook** sprite to the top of the stage.
+* 当你的手遮挡左侧红外模块时，将颜色效果设置为 0（红色，进入钓鱼状态），等待 0.1 秒后，将 **鱼钩** 角色移动到舞台顶部。
 
   .. image:: img/fish_script_hook2.png
 
-* After removing your hand, let the **Fishhook** return to its initial position.
+* 移开手后，让 **鱼钩** 返回初始位置。
 
   .. image:: img/fish_script_hook3.png
 
-Once you've completed programming, click the green flag to run the script and see if it achieves the desired effect.
+编程完成后，点击绿色旗帜运行脚本，看看是否达到了预期效果。
 
 .. raw:: html
 

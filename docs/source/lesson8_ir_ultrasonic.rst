@@ -1,139 +1,134 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入SunFounder Raspberry Pi、Arduino与ESP32爱好者社区！与志同道合的朋友们一起深入探讨Raspberry Pi、Arduino和ESP32的世界。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：在社区和团队的帮助下解决售后问题和技术挑战。
+    - **学习与分享**：交流技巧与教程，提升你的技能。
+    - **独家预览**：抢先体验新品发布和抢先预告。
+    - **专属折扣**：享受我们最新产品的独家折扣。
+    - **节日促销和赠品**：参与赠品活动和节日促销。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击[|link_sf_facebook|]，立即加入！
 
-Lesson 8 Advanced Obstacle Avoidance and Intelligent Following System
-=======================================================================
+第八课 高级避障与智能跟随系统
+=======================================================
 
-In today's lesson, we're going to push our STEAM skills a step further. We'll combine an obstacle avoidance module 
-with an ultrasonic sensor to create an advanced obstacle avoidance system. 
-We'll also implement an intelligent following system to our Rover.
+在今天的课程中，我们将进一步提升我们的STEAM技能。我们将结合避障模块与超声波传感器，创建一个更为高级的避障系统。同时，我们还将为火星漫游车实现一个智能跟随系统。
 
-By the end of this lesson, our Mars Rover will not only be able to avoid obstacles in its path
-but also follow moving objects. Imagine having a mini robotic pet following you around! 
-Exciting, isn't it? So let's get started.
+在本课结束时，我们的火星漫游车将不仅能够避开路径中的障碍物，还能跟随移动的物体。试想一下，一只迷你机器人宠物在你周围跟随！是不是很激动人心？那我们就开始吧。
 
 .. raw:: html
 
     <video width="600" loop autoplay muted>
         <source src="_static/video/ultrasonic_ir_avoid.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        您的浏览器不支持视频标签。
     </video>
 
 .. note::
 
-    If you are learning this course after fully assembling the GalaxyRVR, you need to move this switch to the right before uploading the code.
+    如果您在完成银河漫游车组装后学习本课程，在上传代码之前需要将开关移至右侧。
 
     .. image:: img/camera_upload.png
         :width: 500
         :align: center
 
-Course Objectives
+课程目标
 --------------------------
-* Learn how to combine obstacle avoidance modules with an ultrasonic module for improved navigation.
-* Understand the principles and functionalities behind an advanced obstacle avoidance system.
-* Learn how to implement an intelligent following system in the Mars Rover.
 
-Course Materials
-------------------------
+* 学习如何将避障模块与超声波模块结合，以提升导航能力。
+* 理解高级避障系统背后的原理和功能。
+* 学习如何在火星漫游车上实现智能跟随系统。
 
-* Mars Rover model (the one we built in previous lessons)
-* USB Cable
+所需材料
+---------------------
+
+* 火星漫游车模型（我们在之前课程中已组装完成）
+* USB线
 * Arduino IDE
-* Computer
-* And of course, your creative mind!
+* 计算机
+* 当然，还有你的创造力！
 
-Course Steps
+课程步骤
 --------------------
 
-**Step 1: Understanding the Concept**
+**步骤1：理解概念**
 
-The obstacle avoidance module, as the name suggests, helps our Rover avoid obstacles. 
-It detects obstacles by transmitting an infrared signal and then receiving the signal 
-reflected back from the object. If there is an obstacle in front of the module, 
-the infrared signal is reflected back, and the module detects it.
+顾名思义，避障模块帮助我们的火星漫游车避开障碍物。
+它通过发射红外信号并接收从物体反射回来的信号来检测障碍物。
+如果模块前方有障碍物，红外信号就会被反射回来，模块便能检测到。
 
-Now, adding an ultrasonic sensor to the mix improves this system. Ultrasonic sensors measure distance by 
-sending out a sound wave at a specific frequency and listening for that sound wave to bounce back. 
-By recording the elapsed time between the sound wave being generated and the sound wave bouncing back, 
-it is possible to calculate the distance between the sensor and the object.
+现在，加入超声波传感器可以进一步提升这一系统。
+超声波传感器通过发射特定频率的声波并监听回波，测量与物体之间的距离。
+通过记录声波发射到回波返回之间的时间差，我们可以计算出传感器与物体之间的距离。
 
-Combining these two gives us a reliable, efficient, and versatile obstacle avoidance system!
+将这两者结合起来，我们就拥有了一个可靠、高效且多功能的避障系统！
 
 
-**Step 2: Constructing Advanced Obstacle Avoidance Systems**
+**步骤2：构建高级避障系统**
 
-In our previous lessons, we've learned the basics of obstacle avoidance using infrared sensors. We've also explored how an ultrasonic module works. Now, we are going to bring all these pieces together and build an advanced obstacle avoidance system!
+在之前的课程中，我们学习了如何使用红外传感器进行基本的避障操作，也了解了超声波模块的工作原理。
+现在，我们将把这些知识整合起来，构建一个高级的避障系统！
 
-Our enhanced Mars Rover will now use both ultrasonic and infrared sensors to navigate its surroundings.
+我们改进后的火星漫游车将同时使用超声波和红外传感器来导航其周围环境。
 
-Let's envision how the infrared and ultrasonic modules should work together. To help clarify our logic, let's use a flowchart. Learning how to create flowcharts is an invaluable step in our coding journey as it can help you clarify your thoughts and systematically outline your plan.
+我们来设想一下红外传感器和超声波模块如何协同工作。为了帮助我们理清逻辑，使用流程图会更直观。学习如何绘制流程图是编程过程中的一个重要步骤，它能帮助你理顺思路，并系统化地规划方案。
 
 .. image:: img/ultrasonic_ir_avoid_flowchart.png
     :width: 800
 
-Now let's turn this flowchart into actual code to bring our Rover to life.
+现在，让我们将这个流程图转化为实际代码，让我们的火星漫游车动起来。
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/53d72ee5-a4c8-4524-92f8-4b0f4760c015/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-Note that the ``handleForwardMovement()`` function is where we've integrated the behavior of the ultrasonic sensor. We read the distance data from the sensor and based on this data, we decide the movement of the Rover.
+请注意， ``handleForwardMovement()`` 函数中已整合了超声波传感器的行为。我们从传感器读取距离数据，并根据这个数据决定火星漫游车的运动。
 
 
-After uploading the code to your R3 board, it's time to test the system.
-Make sure the Rover can detect and avoid obstacles efficiently. 
-Remember, you may need to adjust the detection distance in the code based on your actual environment to perfect the system.
+在将代码上传到R3板后，开始测试系统。确保火星漫游车能够有效地检测并避开障碍物。
+记住，你可能需要根据实际环境调整代码中的检测距离，以使系统更加完善。
 
-**Step 3: Coding the Intelligent Following System**
 
-With our Rover now capable of avoiding obstacles, let's enhance it further by making it follow objects. Our goal is to modify our existing code to make the Rover move towards a moving object.
+**步骤3：编写智能跟随系统代码**
 
-Ever wondered about the differences between a following system and an obstacle avoidance system?
+现在我们的火星漫游车已经具备了避障能力，接下来我们将进一步改进它，使其能够跟随物体。我们的目标是修改现有代码，让火星漫游车能够向移动物体靠近。
 
-The key here is that in a following system, we want our Rover to move in response to detected objects, while in an obstacle avoidance system, we're looking to steer clear of detected objects.
+你有没有想过，跟随系统和避障系统之间有什么不同？
 
-Let's visualize the desired workflow:
+关键在于，跟随系统要求我们的火星漫游车对检测到的物体做出反应，而避障系统则是为了避免障碍物。
+
+让我们来设想一下理想的工作流程：
 
 .. image:: img/ultrasonic_ir_follow_flowchart.png
 
-* If the ultrasonic sensor detects an object within 5-30 cm, our Rover should move towards it.
-* If the left IR sensor detects an object, our Rover should take a left turn.
-* If the right IR sensor detects an object, our Rover should take a right turn.
-* In all other cases, our Rover should remain stationary.
+* 如果超声波传感器检测到物体距离在5-30厘米之间，火星漫游车应朝着物体移动。
+* 如果左侧红外传感器检测到物体，火星漫游车应向左转。
+* 如果右侧红外传感器检测到物体，火星漫游车应向右转。
+* 在其他情况下，火星漫游车应保持静止。
 
-Now, it's time for us to complete the code.
+现在，我们开始编写代码。
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/75662c17-4b0a-4494-b18b-089cc2b32311/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Once the code is completed, test if the Rover follows your movements.
+完成代码后，测试火星漫游车是否能跟随你的动作。
 
-As we did with the obstacle avoidance system, it will be crucial to test our following system and troubleshoot any issues that may arise. Ready to start?
+与避障系统相似，测试智能跟随系统并解决可能出现的问题也至关重要。准备好开始了吗？
 
 
-**Step 4: Summary and Reflection**
+**步骤4：总结与反思**
 
-Today, you've accomplished something amazing. You combined different modules and concepts to create an advanced obstacle avoidance and following system for your Mars Rover. Remember, learning does not end here - keep exploring, innovating, and applying your newfound skills to other projects.
+今天，你完成了一项了不起的任务。你将不同的模块和概念结合起来，成功创建了一个高级避障和跟随系统。记住，学习永无止境——继续探索、创新，并将你新学到的技能应用到其他项目中。
 
-Remember to always reflect on your learning process. Think about the following:
+在学习过程中，反思是非常重要的。请思考以下问题：
 
-* Why do you think we prioritized the obstacle avoidance module before the ultrasonic sensor in our obstacle avoidance system, and vice versa in the following system?
-* How would the outcome differ if we were to swap the order in which these modules are checked in the code?
+* 为什么我们在避障系统中先使用了避障模块，而在跟随系统中则是先使用超声波传感器？
+* 如果我们交换这些模块在代码中的检查顺序，会产生什么不同的效果？
 
-Challenges and problems are an integral part of the STEAM learning process, offering valuable opportunities for improvement. Don't shy away from troubleshooting - it's a powerful learning tool in itself!
+挑战和问题是STEAM学习过程的一部分，它们为我们的进步提供了宝贵的机会。不要畏惧故障排除——它本身就是一种强大的学习工具！
 
-As you continue on your journey, know that every obstacle you overcome brings you one step closer to mastering your STEAM skills. Keep going and enjoy the journey!
-
+在你继续前进的旅程中，记住，每一个克服的障碍都让你离掌握STEAM技能更近一步。继续前行，享受这段旅程吧！

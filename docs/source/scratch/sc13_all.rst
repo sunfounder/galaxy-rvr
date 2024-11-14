@@ -1,163 +1,148 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder Raspberry Pi、Arduino 和 ESP32 爱好者社区！在这里，你可以与其他爱好者一起深入探索 Raspberry Pi、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：在售后问题和技术挑战上，得到社区和团队的帮助。
+    - **学习与分享**：交流技巧和教程，共同提升技能。
+    - **独家预览**：抢先体验新产品的发布和预告。
+    - **专属折扣**：享受最新产品的独家折扣。
+    - **节日促销与赠品**：参与赠品活动和节日促销。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 今天就加入我们吧！
 
-Lesson 13 Realtime Control
+
+第十三课 实时控制
 =======================================
 
-We have now explored most of the features of the GalaxyRVR. 
-To complete our journey and transform the GalaxyRVR into a fully functional robot, 
-we need to combine the three main parts we've covered.
+我们已经探索了大部分 GalaxyRVR 的功能。
+为了完成我们的旅程并将 GalaxyRVR 转变为一台完全功能的机器人，我们需要将之前讲解的三个主要部分结合起来。
 
 
-    * :ref:`camera_system` : This part includes the camera and LED control features.
+    * :ref:`camera_system` ：包括摄像头和 LED 控制功能。
 
-    * :ref:`rgb_move` : This section includes movement and lighting effects.
+    * :ref:`rgb_move` ：包括移动和灯光效果。
 
-    * :ref:`tilt_system` : This part involves adjusting the direction of the camera gimbal.
+    * :ref:`tilt_system` ：涉及调整摄像头云台的方向。
 
-Put it all together and you can click the sprites to turn the camera and LED on or off, and use the arrow keys to move the GalaxyRVR.
+将这些功能整合在一起后，你可以点击精灵来开启或关闭摄像头和 LED，并使用箭头键来移动 GalaxyRVR。
 
 .. image:: img/13_camera_go_all2.png
 
 
-**Camera System**
+**摄像头系统**
 ------------------------------------
 
 
-For this part, repeat the steps from :ref:`camera_system`.
+对于这一部分，请重复 :ref:`camera_system` 中的步骤。
 
-1. create four new sprites to control the camera and its LED. Adjust their sizes to make them look harmonious.
+1. 创建四个新的精灵来控制摄像头及其 LED。调整它们的大小，使它们看起来协调。
 
 .. image:: img/11_camera_4.png
 .. :align: center
 
-2. Program each sprite: clicking ball 1 will turn off the camera.
+2. 为每个精灵编程：点击球体 1 会关闭摄像头。
 
 .. image:: img/11_camera_1sp.png
 .. :align: center
 
-3. Clicking ball 2 will turn on the camera and set the image orientation.
+3. 点击球体 2 会开启摄像头并设置图像方向。
 
 .. image:: img/11_camera_2sp.png
 .. :align: center
 
-4. Clicking ballon 3 will turn on the LED.
+4. 点击气球 3 会开启 LED。
 
 .. image:: img/11_camera_3sp.png
 .. :align: center
 
-5. Clicking ballon 4 will turn off the LED.
+5. 点击气球 4 会关闭 LED。
 
 .. image:: img/11_camera_4sp.png
 .. :align: center
 
-6. To save space on the stage, stack each set of controls.
+6. 为了节省舞台空间，将每组控制块叠放起来。
 
 .. image:: img/11_camera_fold.png
 .. :align: center
 
-7. Add a ``go to back layer`` block for each sprite. When clicked, the sprite will move to the back layer, revealing the next sprite, creating a toggle effect.
+7. 为每个精灵添加一个“去往后层”块。点击时，精灵将移动到后层，显示下一个精灵，从而创建切换效果。
 
 .. image:: img/11_camera_layer.png
 .. :align: center
 
 
-
-
-**Move & RGB System**
+**移动与 RGB 系统**
 ----------------------------------
 
 
+让我们增强移动功能。我们已经在 :ref:`rgb_move` 部分中编写了这些代码。
 
-Let's enhance the movement functionalities. We have already coded these in the :ref:`rgb_move` section.
-
-We recommend placing these code blocks in the Backdrops. This way, modifying the sprite's code won't affect this functionality.
+建议将这些代码块放在背景中。这样修改精灵的代码就不会影响这个功能。
 
 .. image:: img/13.ccc_code_in_stage.png
 
-1. Let GalaxyRVR turn on the green light when moving forward.
+1. 让 GalaxyRVR 在前进时开启绿色灯光。
 
 .. image:: img/13.ccc_light_forward.png
 
-
-2. Let GalaxyRVR turn on the red light when moving backward.
+2. 让 GalaxyRVR 在后退时开启红色灯光。
 
 .. image:: img/13.ccc_light_left_right.png
 
-3. Let GalaxyRVR turn on the yellow light when turning left or right.
+3. 让 GalaxyRVR 在左转或右转时开启黄色灯光。
 
 .. image:: img/13.ccc_light_backfwd.png
 
-4. Let GalaxyRVR turn on the breathing light when not moving.
+4. 让 GalaxyRVR 在停止移动时开启呼吸灯。
 
 .. image:: img/13.ccc_light_breath.png
 
-Finally, your code should be as follows. 
-Please note that these codes should be written in Backdrops.
+最后，您的代码应该如下所示。请注意，这些代码应写在背景中。
 
 .. image:: img/11_camera_backdrops.png
 
 
 
-**Tilt System**
+
+
+**倾斜系统**
 ------------------------
 
 
-This part is the same as the :ref:`tilt_system`. Simply repeat the steps.
+这一部分与 :ref:`tilt_system` 相同。只需重复步骤即可。
 
-1. Add an Arrow sprite. We will set the gimbal direction based on its orientation.
+1. 添加一个箭头精灵。我们将根据箭头精灵的方向来设置云台的方向。
 
 .. image:: img/10_servo_arrow.png
 
-
-2. A ``when this sprite clicked`` block is exactly what we need.
+2. 一个 ``当此精灵被点击`` 块正是我们所需要的。
 
 .. image:: img/6_animate_when_touch.png
     :width: 230
 
-
-3. Let the program repeat until we release it, meaning we no longer touch the sprite.
+3. 让程序重复执行，直到我们松开精灵，即不再触摸它。
 
 .. image:: img/6_animate_repeat_touching.png
     :width: 550
 
-4. Drag a ``point towards touch_position`` block to make the sprite face the touch position.
+4. 拖动一个 ``指向触摸位置`` 块，让精灵朝向触摸位置。
 
 .. image:: img/10_servo_arrow_point_toward.png
 
-5. Drag a ``set servo angle to 90 degrees`` block and embed a ``direction`` block to align the gimbal angle with the arrow sprite's orientation. This way, when we change the arrow sprite's direction (i.e., touch the stage area), we can change the gimbal angle.
+5. 拖动一个 ``将舵机角度设为 90 度`` 块，并嵌入一个 ``方向`` 块，使云台角度与箭头精灵的方向对齐。这样，当我们改变箭头精灵的方向（即触摸舞台区域）时，就能改变云台的角度。
 
 .. image:: img/10_servo_arrow_angle_direction.png
 
-6. Add a limit check to ensure the arrow sprite's orientation does not exceed 135 degrees.
+6. 添加限制检查，确保箭头精灵的方向不超过 135 度。
 
 .. image:: img/10_servo_arrow_135.png
 
-
-7. Similarly, ensure its orientation does not go below 0 degrees.
+7. 同样，确保它的方向不低于 0 度。
 
 .. image:: img/10_servo_arrow_0.png
 
+触摸精灵时，它会随着拖动而改变方向，从而调整云台角度。
 
-Touch the sprite, and it will change direction as you drag, altering the gimbal angle.
-
-If you find it easy to slide your finger off the arrow sprite, you can increase the sprite's size accordingly.
-
-
-
-
-
-
-
-
+如果你发现很容易滑出箭头精灵，可以适当增大精灵的大小。

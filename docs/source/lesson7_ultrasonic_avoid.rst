@@ -1,28 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入SunFounder Raspberry Pi、Arduino与ESP32爱好者社区！与志同道合的朋友们一起深入探讨Raspberry Pi、Arduino和ESP32的世界。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：在社区和团队的帮助下解决售后问题和技术挑战。
+    - **学习与分享**：交流技巧与教程，提升你的技能。
+    - **独家预览**：抢先体验新品发布和抢先预告。
+    - **专属折扣**：享受我们最新产品的独家折扣。
+    - **节日促销和赠品**：参与赠品活动和节日促销。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击[|link_sf_facebook|]，立即加入！
 
-Lesson 7: Enhancing Rover Navigation with Ultrasonic Module
+第七课 使用超声波模块增强漫游车导航
 =============================================================
 
-In our last adventure, we equipped our Mars Rover with "eyes" on its sides, creating a basic obstacle avoidance system. Yet, there's a blind spot right in front – a challenge we're ready to overcome!
+在上一次的冒险中，我们为火星漫游车装备了“侧眼”，构建了一个基本的避障系统。然而，正前方仍然存在盲点——这是我们即将克服的挑战！
 
-Today, in this lesson, we're going to give our Rover a new sense of "sight." We'll install an ultrasonic sensor module, acting as a pair of central eyes, which will help our rover detect obstacles directly ahead.
+今天，在本课程中，我们将赋予漫游车新的“视力”。我们将安装一个超声波传感器模块，作为一对“中央眼睛”，帮助我们的漫游车检测正前方的障碍物。
 
-We will delve into the fascinating mechanics of ultrasonic waves and explore how they enhance our Rover's ability to navigate complex terrains. With this addition, our Mars Rover will be more perceptive and agile, ready to embark on more ambitious exploratory missions.
+我们将深入探讨超声波的工作原理，了解它如何增强漫游车在复杂地形中的导航能力。有了这个新模块，我们的火星漫游车将变得更加敏锐和灵活，准备开展更加雄心勃勃的探险任务。
 
-Join us as we take a step further into this exciting STEAM journey, making our Mars Rover even more adept at exploring the uncharted territories!
-
+跟随我们一起迈进这个激动人心的STEAM之旅，让我们的火星漫游车在探索未知领域时变得更加得心应手！
 
 .. raw:: html
 
@@ -33,240 +32,239 @@ Join us as we take a step further into this exciting STEAM journey, making our M
 
 .. note::
 
-    If you are learning this course after fully assembling the GalaxyRVR, you need to move this switch to the right before uploading the code.
+    如果你是在完成银河漫游车的组装后学习本课程，需要在上传代码之前将开关移至右侧。
 
     .. image:: img/camera_upload.png
         :width: 500
         :align: center
 
 
-Course Objectives
+课程目标
 --------------------------
 
-* Understand the principle of ultrasonic distance measurement.
-* Learn how to use Arduino and ultrasonic module for distance measurement.
-* Practice applying the ultrasonic module for obstacle avoidance on the Mars Rover model.
+* 理解超声波距离测量原理。
+* 学习如何使用Arduino和超声波模块进行距离测量。
+* 实践应用超声波模块进行火星漫游车的避障操作。
 
-Materials Needed
+所需材料
 ---------------------
 
-* Ultrasonic Module
-* Basic tools and accessories (e.g. screwdriver, screws, wires etc.)
-* Mars Rover Model (Equipped with rocker-bogie system, main boards, motors, obstacle avoidance module)
-* USB Cable
+* 超声波模块
+* 基本工具和配件（如螺丝刀、螺丝、导线等）
+* 火星漫游车模型（配有摇杆-博基系统、主板、电机、避障模块）
+* USB线
 * Arduino IDE
-* Computer
+* 计算机
 
-Course Steps
+课程步骤
 --------------------
-**Step 1: Assemble the Ultrasonic Sensor Module**
 
-Now that we've got our eyes set on equipping our Mars Rover with a powerful new sense of "sight", it's time to put together the ultrasonic sensor module.
+**步骤1：组装超声波传感器模块**
+
+现在我们已经准备好为火星漫游车增添一项强大的“视力”，是时候将超声波传感器模块组装起来了。
 
 .. raw:: html
 
   <iframe width="600" height="400" src="https://www.youtube.com/embed/c_xWAVapGic?si=ovuxheXdGVpHopPa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-And there we have it! Our Mars Rover now has a fully-assembled ultrasonic sensor module, ready to help it navigate like never before. Are you excited to see how it changes our Rover's obstacle detection abilities? Let's dive right into it!
+好了！我们的火星漫游车现在已经装配好了完整的超声波传感器模块，准备帮助它以前所未有的方式进行导航。你是不是已经迫不及待想看看它如何提升漫游车的障碍物检测能力呢？让我们深入了解吧！
 
 
-**Step 2: Exploring the Ultrasonic Module**
+**步骤2：了解超声波模块**
 
-Let's get to know the HC-SR04, a powerful ultrasonic distance sensor. This tiny device can accurately measure distances from 2 cm up to 400 cm, all without touching a thing! Amazing, right? It's like having a superhero power! It can "see" the distances just by using sound waves, like how a bat navigates at night.
+让我们一起来认识一下HC-SR04这款强大的超声波距离传感器。这个小巧的设备能够精确地测量从2厘米到400厘米的距离，全程无需接触！是不是很神奇？它就像拥有了一种超级能力！通过超声波，它能够“看见”距离，就像蝙蝠在夜间通过回声进行导航一样。
 
-It uses four superpowers, or rather, four pins to do its magic:
+它的“超能力”来源于四个引脚：
 
 .. image:: img/ultrasonic_pic.png
     :width: 400
     :align: center
 
-* **TRIG (Trigger Pulse Input)** - It's the start button for our superhero. It tells our superhero, "Hey, it's time to send out a super sonic wave!"
-* **ECHO (Echo Pulse Output)** - This is how our superhero listens to the echo of the sound wave it sent out.
-* **VCC** - Even superheroes need some energy. We connect it to a 5V power supply.
-* **GND** - It's the ground connection. Just like how superheroes need to stay connected to reality!
+* **TRIG（触发脉冲输入）** - 这是我们的超级英雄的启动按钮，告诉它：“嘿，准备发射超声波啦！”
+* **ECHO（回波脉冲输出）** - 这是我们的超级英雄用来听回波的方式。
+* **VCC** - 就像超级英雄也需要能量一样，我们将它连接到5V电源。
+* **GND** - 这是接地引脚，就像超级英雄需要保持与现实的连接！
 
-Imagine our superhero, the HC-SR04 Ultrasonic Sensor, playing a game of echo in the mountains.
+想象一下我们的超级英雄——HC-SR04超声波传感器，正在山谷中玩回声游戏。
 
 .. image:: img/ultrasonic_prin.jpg
     :width: 800
 
-* First, our superhero's brain, the MCU, says, "Ready, Set, Go!" by sending out a high-level signal for at least 10 microseconds to our superhero. This is like when we gather our energy before we yell into a valley.
-* On hearing "Go!", our superhero shouts out loud 8 times very quickly. This super-sonic shout is sent out at a speed of 40 kHz. The superhero also starts a stopwatch and keeps an ear out for any returning shouts.
-* If there is an obstacle in front, the shout will hit it and echo back. On hearing the echo, our superhero stops the stopwatch and notes the time. It also sends out a high-level signal to let the MCU know it heard an echo.
-* Lastly, to find out how far away the obstacle is, our superhero uses a simple formula. It takes the time it recorded on the stopwatch, divides it by 2, and multiplies it by the speed of sound (340m/s). The result is the distance to the obstacle!
+* 首先，超级英雄的大脑——微控制器（MCU）发出“准备，开始！”的信号，向它发出一个高电平信号，持续至少10微秒。这就像我们在大喊之前聚集能量。
+* 听到“开始！”信号后，超级英雄会快速发出8次超声波。这些超声波以40kHz的速度发射出去，同时启动计时器，准备接收回波。
+* 如果前方有障碍物，超声波会撞到它并反射回来。听到回波后，超级英雄会停止计时并记录下时间，同时发出一个高电平信号告诉MCU它收到了回波。
+* 最后，超级英雄用一个简单的公式来计算障碍物的距离。它将记录的时间除以2，再乘以声音的传播速度（340米/秒）。这样就得到了障碍物的距离！
 
-That's how our superhero sensor can figure out if there's an obstacle in its path and how far away it is. Amazing, isn't it? Next, we'll learn how we can use this superhero power in our Mars Rover!
+这就是我们的超级英雄传感器如何判断路径上是否有障碍物以及它的距离。是不是很棒？接下来，我们将学习如何将这个超级能力应用到我们的火星漫游车上！
 
+**步骤3：编写代码控制超级英雄传感器**
 
-**Step 3: Coding Our Superhero Sensor**
+现在我们已经组装好了超级英雄传感器，并了解了它如何使用超能力，是时候让这些能力付诸实践了！我们将编写Arduino代码，让超声波传感器测量距离并输出结果。
 
-Having assembled our superhero sensor and understood how it uses its superpowers, it's time to put those powers into action! Let's write an Arduino sketch to allow our ultrasonic sensor to measure distances and then show us those measurements.
+我们的超级英雄传感器将按照以下步骤执行：
 
-Here are the key steps that our superhero sensor will follow:
-
-* We have connected both the TRIG and ECHO pins to pin 10 on the GalaxyRVR Shield. This allows us to control both signal transmission and reception of the ultrasonic module using a single Arduino pin.
+* 我们将TRIG和ECHO引脚都连接到GalaxyRVR扩展板上的第10号引脚。这样，我们就可以通过一个Arduino引脚控制信号的发送和接收。
 
 .. image:: img/ultrasonic_shield.png
 
 .. code-block:: arduino
 
-    // Define the pin for the ultrasonic module
+    // 定义超声波模块引脚
     #define ULTRASONIC_PIN 10
 
-* **Preparation**: To start, we establish serial communication at a 9600 baud rate so we can see the superhero's measurements in our Serial Monitor.
+* **准备**：首先，我们在9600波特率下建立串行通信，以便在串行监视器中查看超级英雄的测量结果。
 
 .. code-block:: arduino
 
     void setup() {
-        // Start the serial communication
+        // 启动串行通信
         Serial.begin(9600);
     }
 
-* **Shout Out!**: We set the ``ULTRASONIC_PIN`` as an ``OUTPUT`` pin to send a 10-microsecond pulse, which is like commanding our ultrasonic superhero to emit a powerful shout (ultrasonic sound waves)!
+* **发出信号！**：我们将 ``ULTRASONIC_PIN`` 设置为 ``OUTPUT`` 引脚，发送一个10微秒的脉冲，命令我们的超声波超级英雄发射强大的超声波（声波）！
 
 .. code-block:: arduino
 
-    // A 4ms delay is required, otherwise the reading may be 0
+    // 必须延迟4ms，否则读取结果可能为0
     delay(4);
 
-    //Set to OUTPUT to send signal
+    // 设置为OUTPUT发送信号
     pinMode(ULTRASONIC_PIN, OUTPUT);
 
-    // Clear the trigger pin
+    // 清除触发引脚
     digitalWrite(ULTRASONIC_PIN, LOW);
     delayMicroseconds(2);
 
-    // Trigger the sensor by sending a high pulse for 10us
+    // 触发传感器，发送高脉冲，持续10微秒
     digitalWrite(ULTRASONIC_PIN, HIGH);
     delayMicroseconds(10);
 
-    // Set the trigger pin back to low
+    // 将触发引脚设置为低电平
     digitalWrite(ULTRASONIC_PIN, LOW);
 
 
-
-* **Wait and Listen**: Set the ``ULTRASONIC_PIN`` as INPUT. This way, our superhero sensor is now ready to listen for the echo of its shout. If there is an obstacle in front, the shout will hit it and echo back. On hearing the echo, our superhero stops the stopwatch and notes the time. It also sends out a high-level signal to let the MCU know it heard an echo.
+* **等待与倾听**：接下来，将 ``ULTRASONIC_PIN`` 设置为输入。这时，超级英雄传感器准备好听回波了。如果前方有障碍物，回波就会响起。超级英雄会记录时间并发出高电平信号告知MCU它收到了回波。
 
 .. code-block:: arduino
 
     pinMode(ULTRASONIC_PIN, INPUT);
     float duration = pulseIn(ULTRASONIC_PIN, HIGH);
 
-* **Super Math**: With the echo returned, our sensor uses the speed of sound to calculate the distance to the object. We divide the total echo time by 2 because the time includes both the shout out and the wait for the echo.
+* **超强数学**：回波返回后，传感器通过声音速度计算障碍物的距离。由于回波时间包括了声波的发射和接收，我们需要将回波时间除以2。
 
 .. code-block:: arduino
 
     float distance = duration * 0.034 / 2;
 
-
-* **Report the Findings**: Our superhero sensor then reveals the result of its mission, printing the distance to the Serial Monitor for us to see.
+* **报告结果**：超级英雄传感器将把测量结果打印到串行监视器，让我们看到距离。
 
 .. code-block:: arduino
 
-    // Print the distance to the serial monitor
+    // 打印距离到串行监视器
     Serial.print("The distance is: ");
     Serial.print(distance);
     Serial.println(" cm");
 
-* **Rest & Ready**: Every superhero needs a rest, so our sensor takes a short pause before the next mission. This allows the sensor to "reset" before we ask it to start another measurement.
+* **休息与准备**：每个超级英雄都需要休息，所以传感器会暂停片刻，准备好迎接下一个任务。
 
 .. code-block:: arduino
 
     delay(200);
 
-Here's the complete code that turns our sensor into a superhero:
+这段完整代码将把我们的传感器转变成一个超级英雄：
 
 .. raw:: html
 
   <iframe src=https://create.arduino.cc/editor/sunfounder01/35bddbcf-145c-4e4f-b3ea-21e8210af4a6/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-**Step 4: Programming the Ultrasonic Module to Drive the Mars Rover**
+**步骤4：编程超声波模块控制火星漫游车**
 
-Now that we've equipped our Mars Rover with an ultrasonic sensor module, it's time to program it to respond based on the sensor's measurements. 
+现在我们已经为火星漫游车配备了超声波传感器模块，是时候编程使它根据传感器的测量结果做出反应。
 
-* For easier reading, we have created a function called ``readSensorData()``. This function encapsulates all the code required to read the distance from the ultrasonic sensor.
+* 为了方便读取，我们创建了一个名为 ``readSensorData()`` 的函数。这个函数封装了读取超声波传感器数据所需的所有代码。
 
   .. code-block:: arduino
 
     float readSensorData() {
-        // A 4ms delay is required, otherwise the reading may be 0
+        // 必须延迟4ms，否则读取结果可能为0
         delay(4);
       
-        //Set to OUTPUT to send signal
+        // 设置为OUTPUT发送信号
         pinMode(ULTRASONIC_PIN, OUTPUT);
       
-        // Clear the trigger pin
+        // 清除触发引脚
         digitalWrite(ULTRASONIC_PIN, LOW);
         delayMicroseconds(2);
       
-        // Trigger the sensor by sending a high pulse for 10us
+        // 触发传感器，发送高脉冲，持续10微秒
         digitalWrite(ULTRASONIC_PIN, HIGH);
         delayMicroseconds(10);
       
-        // Set the trigger pin back to low
+        // 将触发引脚设置为低电平
         digitalWrite(ULTRASONIC_PIN, LOW);
       
-        //Set to INPUT to read
+        // 设置为INPUT读取
         pinMode(ULTRASONIC_PIN, INPUT);
       
-        // pulseIn returns the duration of the pulse on the pin
+        // pulseIn返回脉冲的持续时间
         float duration = pulseIn(ULTRASONIC_PIN, HIGH);
       
-        // Calculate the distance (in cm) based on the speed of sound (340 m/s or 0.034 cm/us)
+        // 根据声音速度计算距离（单位为cm）
         float distance = duration * 0.034 / 2;
       
         return distance;
     }
 
-* In the ``loop()`` function, we call ``readSensorData()`` and stores its returned value in the ``distance`` variable.
+* 在 ``loop()`` 函数中，我们调用 ``readSensorData()`` 并将返回值存储在 ``distance`` 变量中。
 
   .. code-block:: arduino
 
     float distance = readSensorData();
 
-* Depending on this distance, the Rover will move forward, move backward, or stop.
+* 根据距离，漫游车将决定前进、后退或停止。
 
   .. code-block:: arduino
   
-    // Control rover based on distance reading
-    if (distance > 50) {  // If it's safe to move forward
+    // 根据距离控制漫游车
+    if (distance > 50) {  // 如果前方足够安全
       moveForward(200);
-    } else if (distance < 15) {  // If there's an obstacle close
+    } else if (distance < 15) {  // 如果障碍物太近
       moveBackward(200);
-      delay(500);  // Wait for a while before attempting to turn
+      delay(500);  // 等待片刻再尝试转弯
       backLeft(150);
       delay(1000);
-    } else {  // For distances in between, proceed with caution
+    } else {  // 对于中等距离，谨慎前进
       moveForward(150);
     }
 
-  * If the path is clear (the obstacle is more than 50 cm away), our Rover boldly moves forward.
-  * And if an obstacle is getting close (less than 50 cm but more than 15 cm away), our Rover will move forward at a lower speed.
-  * If an obstacle is too close for comfort (less than 15 cm away), the Mars rover will move backward and then turn to the left.
+  * 如果路径清晰（障碍物超过50cm），我们的漫游车将大胆前进。
+  * 如果障碍物较近（距离在50cm到15cm之间），漫游车将以较低速度前进。
+  * 如果障碍物非常接近（小于15cm），火星漫游车将后退，并向左转。
 
   .. image:: img/ultrasonic_flowchart.png
 
-Below is the complete code. You can upload this code to the R3 board and see if it achieves the desired effect. You can also modify the detection distance based on the actual environment to make this obstacle avoidance system more perfect.
+以下是完整代码，你可以将其上传到R3板上，查看是否达到了预期效果。你还可以根据实际环境调整检测距离，使避障系统更加完美。
 
 .. raw:: html
 
   <iframe src=https://create.arduino.cc/editor/sunfounder01/cded6408-1469-4289-b79b-7d445b56352b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-By leveraging these enhanced capabilities, the Mars Rover would be better equipped to identify potential obstacles in its path, measure distances accurately, and make informed decisions to navigate around them. This would significantly reduce the likelihood of collisions or other hazards that could hinder the rover's exploration mission.
+通过增强这些能力，火星漫游车将更好地识别路径中的障碍物，精确测量距离，并做出明智的决策来绕过障碍。这将大大降低碰撞或其他可能影响漫游车探索任务的危险。
 
-With its super-senses, the Mars Rover can operate with greater confidence and efficiency, enabling it to delve deeper into the mysteries of Mars and gather valuable scientific data for researchers back on Earth.
 
-**Step 5: Summary and Reflection**
+凭借超感官能力，火星漫游车可以更加自信和高效地操作，深入探索火星的奥秘，并为地球上的研究人员收集宝贵的科学数据。
 
-In this lesson, we delved into the workings of ultrasonic waves and how to translate their return time to the sensor into measurable distance via coding.
+**步骤5：总结与反思**
 
-Subsequently, we leveraged ultrasonic waves to devise an obstacle-avoidance system. This particular system varies its responses based on the distance to the impending obstacle.
+在本课中，我们深入了解了超声波波的工作原理，以及如何通过编码将回波时间转化为可测量的距离。
 
-Now, let's prompt some introspection on this lesson through a handful of questions:
+接着，我们利用超声波波动设计了避障系统。这个系统会根据即将到来的障碍物距离来调整反应。
 
-* How does an ultrasonic module detect distance? Can you elucidate the underlying concept?
-* How does the obstacle-avoidance system of this lesson differ from that of the previous one? What are their respective advantages and drawbacks?
-* Is it feasible to amalgamate these two obstacle-avoidance systems?
+现在，让我们通过几个问题来反思一下本课内容：
 
-Reflecting upon these queries will aid in solidifying our comprehension and prompt us to contemplate the application of these concepts to other projects. Looking forward to our next venture!
+* 超声波模块如何检测距离？能否阐述其基本原理？
+* 本课的避障系统与前一个系统有何不同？各自的优缺点是什么？
+* 是否可以将这两种避障系统结合起来？
+
+思考这些问题将帮助我们巩固理解，并促使我们将这些概念应用到其他项目中。期待我们下次的冒险！

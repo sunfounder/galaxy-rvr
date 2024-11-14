@@ -1,62 +1,59 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与其他爱好者一起，深入探索树莓派、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：通过社区和团队的帮助解决售后问题和技术挑战。
+    - **学习与分享**：交流技巧和教程，提升你的技能。
+    - **独家预览**：提前体验新产品发布和独家内容。
+    - **专属折扣**：享受最新产品的专属优惠。
+    - **节庆促销与赠品**：参与节日促销和赠品活动。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 即刻加入！
 
 
-Ultrasonic Module
+超声波模块
 ================================
 
 .. image:: img/ultrasonic_pic.png
     :width: 400
     :align: center
 
-* **TRIG**: Trigger Pulse Input
-* **ECHO**: Echo Pulse Output
-* **GND**: Ground
-* **VCC**: 5V Supply
+* **TRIG**：触发脉冲输入
+* **ECHO**：回声脉冲输出
+* **GND**：地
+* **VCC**：5V 电源
 
-This is the HC-SR04 ultrasonic distance sensor, providing non-contact measurement from 2 cm to 400 cm with a range accuracy of up to 3 mm. Included on the module is an ultrasonic transmitter, a receiver and a control circuit.
+这是 HC-SR04 超声波测距传感器，能够提供从 2 cm 到 400 cm 的非接触式测量，测量精度可达 3 mm。模块上集成了超声波发射器、接收器和控制电路。
 
-You only need to connect 4 pins: VCC (power), Trig (trigger), Echo (receive) and GND (ground) to make it easy to use for your measurement projects.
+只需连接 4 个引脚：VCC（电源）、Trig（触发）、Echo（接收）和 GND（地），即可轻松用于测量项目。
 
-**Features**
+**特性**
 
-* Working Voltage: DC5V
-* Working Current: 16mA
-* Working Frequency: 40Hz
-* Max Range: 500cm
-* Min Range: 2cm
-* Trigger Input Signal: 10uS TTL pulse
-* Echo Output Signal: Input TTL lever signal and the range in proportion
-* Connector: XH2.54-4P
-* Dimension: 46x20.5x15 mm
+* 工作电压：DC5V
+* 工作电流：16mA
+* 工作频率：40Hz
+* 最大测量范围：500cm
+* 最小测量范围：2cm
+* 触发输入信号：10uS TTL 脉冲
+* 回声输出信号：输入 TTL 电平信号，测量范围与信号成比例
+* 连接器：XH2.54-4P
+* 尺寸：46x20.5x15 mm
 
-**Principle**
+**工作原理**
 
-The basic principles are as follows:
+基本原理如下：
 
-* Using IO trigger for at least 10us high level signal.
-* The module sends an 8 cycle burst of ultrasound at 40 kHz and detects whether a pulse signal is received.
-* Echo will output a high level if a signal is returned; the duration of the high level is the time from emission to return.
-* Distance = (high level time x velocity of sound (340M/S)) / 2
+* 使用 IO 触发至少 10us 高电平信号。
+* 模块发射 8 个周期的 40kHz 超声波脉冲，并检测是否有回波信号。
+* 如果收到回波信号，Echo 输出高电平；高电平的持续时间是从发射到接收的时间。
+* 距离 = （高电平时间 x 声音速度（340M/S））/ 2
 
     .. image:: img/ultrasonic_prin.jpg
         :width: 800
 
+**使用说明**
 
-
-**Application Notes**
-
-* This module should not be connected under power up, if necessary, let the module's GND be connected first. Otherwise, it will affect the work of the module.
-* The area of the object to be measured should be at least 0.5 square meters and as flat as possible. Otherwise, it will affect results.
-
+* 模块在通电时不应直接连接，如有需要，建议先连接模块的 GND，否则可能会影响模块的正常工作。
+* 被测物体的面积应至少为 0.5 平方米，并尽可能平整，否则可能会影响测量结果。

@@ -1,21 +1,21 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与其他爱好者一起，深入探索树莓派、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：通过社区和团队的帮助解决售后问题和技术挑战。
+    - **学习与分享**：交流技巧和教程，提升你的技能。
+    - **独家预览**：提前体验新产品发布和独家内容。
+    - **专属折扣**：享受最新产品的专属优惠。
+    - **节庆促销与赠品**：参与节日促销和赠品活动。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 即刻加入！
 
-Extension 6 Distance Sensitive Ball
+扩展项目 6：距离敏感的球
 ===========================================================
 
-In this project, we utilize an ultrasonic module to control the vertical movement of a ball on the stage. When you click the green flag, place your hand above the ultrasonic module. The ball will ascend if the distance between your hand and the module is less than 15 cm; otherwise, it will descend. When the ball makes contact with a line, it triggers a delightful sound and activates twinkling starlight effects.
+在这个项目中，我们利用超声波模块来控制舞台上球的垂直移动。当你点击绿色旗帜时，将手放在超声波模块上方。如果手与模块之间的距离小于 15 厘米，球将上升；否则，球会下降。当球与某条线接触时，会触发悦耳的音效并激活闪烁的星光效果。
 
 .. raw:: html
 
@@ -24,104 +24,103 @@ In this project, we utilize an ultrasonic module to control the vertical movemen
       Your browser does not support the video tag.
    </video>
 
-Follow these steps to set up the project, and feel free to tweak the effects to your liking once you're accustomed to how it works.
+以下是设置项目的步骤。初次设置时，建议按照这些步骤进行，熟悉之后，你可以根据自己的需求调整效果。
 
-1. Select Sprites
+1. 选择角色
 --------------------------
 
-* Remove the default sprite and select the **Ball**, **Bowl**, and **Star** sprites.
+* 删除默认角色，并选择 **球**、**碗** 和 **星星** 角色。
 
   .. image:: img/ball_choose_sprite.png
 
-* Position the **Bowl** sprite at the center bottom of the stage and increase its size.
+* 将 **碗** 角色放置在舞台底部中央，并调整其大小。
 
   .. image:: img/ball_set_bowl.png
 
-* Place the **Ball** sprite directly above the **Bowl** sprite, setting its direction to 0 to allow vertical movement.
+* 将 **球** 角色放置在 **碗** 角色正上方，设置其方向为 0，使其可以垂直移动。
 
   .. image:: img/ball_set_ball.png
 
-* Adjust the **Star** sprite’s size and set its direction to 180 to ensure it falls downward. This can be altered to different angles if preferred.
+* 调整 **星星** 角色的大小，并将其方向设置为 180，确保它能向下掉落。如果需要，也可以调整为其他角度。
 
   .. image:: img/ball_set_star.png
 
-* Add the **Stars** backdrop for added ambiance.
+* 添加 **星空** 背景，以增强氛围效果。
 
   .. image:: img/ball_select_backdrop.png
 
-2. Draw a **Line** Sprite
+2. 绘制 **线条** 角色
 -------------------------------
 
-* Now add a **Line** sprite.
+* 现在添加一个 **线条** 角色。
 
   .. image:: img/ball_select_line.png
 
-* Navigate to the **Costumes** page of the **Line** sprite.
+* 转到 **线条** 角色的 **造型** 页面。
 
   .. image:: img/ball_open_cos.png
     :width: 90%
 
-* Slightly reduce the width of the red line on the canvas, duplicate it four times, and align these lines.
+* 稍微缩小画布上红色线条的宽度，复制四次，并对齐这些线条。
 
   .. image:: img/ball_copy_line.png
     :width: 90%
 
-* Color each line differently. Select a line, use the **Fill** tool, and pick a color.
+* 为每条线条设置不同的颜色。选择一条线，使用 **填充** 工具并挑选颜色。
 
   .. image:: img/ball_set_bk_color.png
     :width: 90%
 
-* Apply this method to color all lines accordingly.
+* 使用相同方法给所有线条上色。
 
   .. image:: img/ball_select_line_color.png
     :width: 90%
 
-* Return to the **Code** page and position the **Line** sprite at the top of the stage.
+* 返回到 **代码** 页面，并将 **线条** 角色放置在舞台的顶部。
 
   .. image:: img/ball_line_position.png
 
-3. Scripting the **Ball** Sprite
+3. 为 **球** 角色编写脚本
 -------------------------------------
 
-Here, we script the **Ball** sprite to move up or down based on the distance detected by the ultrasonic module, with a movement constraint to simulate landing on the **Bowl** sprite.
+在这里，我们为 **球** 角色编写脚本，让其根据超声波模块检测到的距离上下移动，并限制其移动范围以模拟落到 **碗** 角色上的效果。
 
-* When the green flag is clicked, set the initial position of the **Ball** sprite.
+* 点击绿色旗帜时，设置 **球** 角色的初始位置。
 
   .. image:: img/ball_script_ball1.png
 
-* Use an [if else] block to check if the distance is less than 15. If true, move the **Ball** sprite up by 10 steps, given its direction is set to 0.
+* 使用 [if else] 块判断距离是否小于 15。如果距离符合条件，将 **球** 角色向上移动 10 步，前提是其方向设置为 0。
 
   .. image:: img/ball_script_ball3.png
 
-* Otherwise, let the **Ball** sprite fall, limiting its Y coordinate to a minimum of -100, adjustable to appear as though it’s landing on the **Bowl** sprite.
+* 否则，让 **球** 角色下落，并将其 Y 坐标限制为最小值 -100，可以调整以模拟落入 **碗** 角色的效果。
 
   .. image:: img/ball_script_ball4.png
 
-* Script interaction where the **Ball** sprite, upon touching the **Line** sprite, records its Y position to the variable **ball_coor** and broadcasts a **bling** message.
+* 编写脚本，使得 **球** 角色在接触到 **线条** 角色时，记录其 Y 坐标到变量 **ball_coor** 并广播一个 **bling** 消息。
 
   .. image:: img/ball_script_ball5.png
 
-4. Scripting the **Star** Sprite
+4. 为 **星星** 角色编写脚本
 ------------------------------------
 
-* Initially hide the **Star** sprite when the green flag is clicked. Upon receiving the **Bling** message, clone the **Star** sprite.
+* 在点击绿色旗帜时隐藏 **星星** 角色。当收到 **bling** 消息时，克隆 **星星** 角色。
 
   .. image:: img/ball_script_star1.png
 
-* Set the clone's position and sound effects to synchronize with the **Ball** sprite's position.
+* 设置克隆角色的位置和音效，使其与 **球** 角色的位置同步。
 
   .. image:: img/ball_script_star2.png
 
-* Allow it to rotate between -80 to 80 degrees randomly.
+* 让 **星星** 角色在 -80 到 80 度之间随机旋转。
 
   .. image:: img/ball_script_star3.png
 
-* Adjust the appearance and behavior of the **Star** sprite as needed to enhance the visual effect.
+* 根据需要调整 **星星** 角色的外观和行为，以增强视觉效果。
 
   .. image:: img/ball_script_star4.png
 
-Programming is complete. Click the green flag to run the script and see if it meets your expectations.
-
+编程完成后，点击绿色旗帜运行脚本，查看是否达到了预期效果。
 
 .. raw:: html
 

@@ -1,26 +1,26 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder Raspberry Pi、Arduino 和 ESP32 爱好者社区！与其他爱好者一起深入探索 Raspberry Pi、Arduino 和 ESP32 的奥秘。
 
-    **Why Join?**
+    **为什么要加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：通过社区和团队的帮助，解决售后问题和技术难题。
+    - **学习与分享**：交流技巧和教程，提升你的技能。
+    - **独家预览**：提前获得新品发布和预告片。
+    - **特别折扣**：享受我们最新产品的独家优惠。
+    - **节日促销和赠品**：参与赠品活动和节日促销。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好和我们一起探索与创造了吗？点击 [|link_sf_facebook|] 今天就加入吧！
 
 
-Lesson 6: Exploring the Obstacle Avoidance Module
+第六课 探索避障模块
 ==============================================================
 
-We're diving into the world of the Infrared Obstacle Avoidance Module. Tucked at the sides of our Mars Rover, these sensors act as the rover's "eyes," helping it dodge side obstacles and safely navigate the Martian landscape.
+我们将深入了解红外避障模块。这个小巧的传感器安装在火星车两侧，充当火星车的“眼睛”，帮助它避开侧面障碍，安全穿越火星地形。
 
-We'll learn how to integrate these modules with our rover, unravel the magic behind their functioning, and develop code to make our rover smartly sidestep any hurdles it comes across.
+我们将学习如何将这些模块与火星车集成，揭开它们的工作原理，并编写代码让我们的火星车聪明地避开障碍。
 
-Get ready to gear up our rover with some Martian obstacle-dodging intelligence! Let's get rolling!
+准备好让火星车拥有避障智能了吗？让我们开始吧！
 
 .. raw:: html
 
@@ -31,121 +31,119 @@ Get ready to gear up our rover with some Martian obstacle-dodging intelligence! 
 
 .. note::
 
-    If you are learning this course after fully assembling the GalaxyRVR, you need to move this switch to the right before uploading the code.
+    如果你是在完全组装好 GalaxyRVR 后学习本课程，请在上传代码前，将开关切换到右侧。
 
     .. image:: img/camera_upload.png
         :width: 500
         :align: center
 
-Learning Objectives
+学习目标
 ----------------------
 
-* Understand the working principle and application of the infrared obstacle avoidance module.
-* Learn to use Arduino to control the infrared obstacle avoidance module.
-* Practice designing and building an automatic obstacle avoidance system based on infrared obstacle avoidance.
+* 理解红外避障模块的工作原理和应用。
+* 学习如何使用 Arduino 控制红外避障模块。
+* 实践设计并构建基于红外避障的自动避障系统。
 
-Materials Needed
+所需材料
 ---------------------
 
-* Obstacle Avoidance Modules
-* Basic tools and accessories (e.g. screwdriver, screws, wires etc.)
-* Mars Rover Model (Equipped with rocker-bogie system, main boards, motors)
-* USB Cable
+* 避障模块
+* 基本工具和配件（如螺丝刀、螺丝、电线等）
+* 火星车模型（配有摇臂-摆臂系统、主板、电机）
+* USB 数据线
 * Arduino IDE
-* Computer
+* 电脑
 
-Steps
+步骤
 -------------
-**Step 1: Install the Obstacle Avoidance Module**
 
-Now we will install the two obstacle avoidance modules onto the rover.
+**步骤 1：安装避障模块**
+
+现在，我们将把两个避障模块安装到火星车上。
 
 .. raw:: html
 
     <iframe width="600" height="400" src="https://www.youtube.com/embed/UWEj_ROYAt0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-The assembly steps were simple, weren't they? In the following steps, we will learn about the working principle of these modules, and how they help our Mars Rover to avoid obstacles. Stay tuned!
+组装步骤很简单，对吧？接下来，我们将学习这些模块的工作原理，以及它们如何帮助火星车避开障碍。敬请期待！
 
 
-**Step 2: Demystifying the Module**
+**步骤 2：揭开模块的神秘面纱**
 
-Meet the Infrared Obstacle Avoidance Module - our rover's smart sidekick. This little device is a pack of wonders. Let's take a tour:
+介绍一下红外避障模块——我们火星车的智能“小助手”。这个小设备充满了神奇的功能，让我们一起来看看：
 
 .. image:: img/ir_avoid.png
     :width: 300
     :align: center
 
 
-Here are the pin definitions:
+模块的引脚定义如下：
 
-* **GND**: This is like the module's anchor, connecting it to the ground or common point in the circuit.
-* **+**: Here's where the module gets its energy, needing a power supply of 3.3 to 5V DC.
-* **Out**: This is the module's communicator. By default, it stays high and only goes low when it spots an obstacle.
-* **EN**: Meet the module's controller. This **enable** pin decides when the module should work. By default, it is connected to GND, meaning the module is always on the job.
+* **GND**：这是模块的地线，连接电路中的共同点。
+* **+**：为模块提供电源，电压要求在 3.3V 到 5V 之间。
+* **Out**：这是模块的输出信号引脚。默认情况下，它保持高电平，只有当模块检测到障碍物时才会变为低电平。
+* **EN**：这是模块的使能引脚，决定模块是否启用。默认连接到 GND，表示模块始终处于工作状态。
 
-
-Curious about how this tiny module works? It's quite interesting! It uses a pair of IR components - a transmitter and a receiver. The transmitter is like the module's flashlight, emitting infrared light. 
-When an obstacle appears, the infrared light bounces back and gets caught by the receiver. The module then gives a low signal, alerting our rover of the obstacle.
+想知道这个小模块是如何工作的？其实非常有趣！
+它使用了一对红外元件——一个发射器和一个接收器。
+发射器像手电筒一样发射红外光。当障碍物出现时，红外光反射回来并被接收器捕捉到。
+模块随后发出低电平信号，提醒火星车前方有障碍。
 
 .. image:: img/ir_receive.png
     :align: center
 
-Our little module is quite robust, spotting obstacles within a range of 2-40cm and boasting excellent anti-interference abilities. 
-However, the color of objects does impact its sensing. Darker objects, especially black ones, are detected at a shorter range. 
-Against a white wall, the sensor is most efficient, sensing within the 2-30cm range.
+这个小模块非常强大，能够在 2 到 40 厘米的范围内检测障碍物，并且具有很强的抗干扰能力。
+然而，物体的颜色会影响传感器的检测效果。
+特别是黑色物体，检测范围较短；而在白色墙面前，传感器的检测效果最佳，能够在 2 到 30 厘米的范围内准确工作。
 
 
-The **EN** pin's low-level state activates the module, with the jumper cap securing the **EN** pin to the GND. If you wish to control the **EN** pin via code, the jumper cap needs to be removed.
+**EN** 引脚的低电平状态会激活模块，通过跳线帽将 **EN** 引脚与 GND 连接。如果你希望通过代码控制 **EN** 引脚，需要移除跳线帽。
 
 .. image:: img/ir_cap.png
     :width: 400
     :align: center
 
-There are two potentiometers on the module, one for adjusting the transmitting power and one for adjusting the transmitting frequency, and by adjusting these two potentiometers you can adjust its effective distance.
+模块上有两个电位器，一个用来调节发射功率，另一个用来调节发射频率。通过调整这两个电位器，你可以改变模块的有效检测距离。
 
 .. image:: img/ir_avoid_pot.png
     :width: 400
-    :align: center 
+    :align: center
+
+关于我们的小模块就讲到这里。在下一步中，我们将学习如何将它与火星车集成，并使用 Arduino 来控制它。敬请期待！
 
 
-That's quite a bit about our little module. In the next step, we'll learn how to integrate it with our rover and control it using the Arduino. Stay tuned!
+**步骤 3：读取两个模块的数据**
+
+就像好奇的太空探险家一样，让我们进入代码和传感器的世界吧！
 
 
-**Step 3: Read from the 2 Modules**
-
-Just like curious space explorers, let's dive into the universe of codes and sensors!
-
-
-#. Our Mars Rover is equipped with two special "Alien-Eye" sensors, perched neatly on pins 7 (right) and 8 (left). These "Alien-Eye" sensors are actually our infrared obstacle avoidance modules, always vigilant to dodge any "space rocks" (obstacles) in our Rover's interstellar journey!
+#. 我们的火星车配备了两个特殊的“外星眼”传感器，分别安装在第 7 引脚（右侧）和第 8 引脚（左侧）。这些“外星眼”传感器实际上就是红外避障模块，它们时刻警惕，帮助火星车避开任何“太空岩石”（障碍物）。
 
     .. image:: img/ir_shield.png
 
-#. Next, we'll need to communicate with our Rover using the universal language of Arduino code.
+#. 接下来，我们将使用 Arduino 代码来与火星车通信。
 
-
-    First things first, let's give a unique name to each eye of the Rover. Let's call them ``IR_RIGHT`` and ``IR_LEFT``, this way we won't mix them up.
+    首先，为了避免混淆，我们给火星车的左右两个“眼睛”起个名字，分别叫做 ``IR_RIGHT`` 和 ``IR_LEFT``。
 
         .. code-block:: arduino
 
             #define IR_RIGHT 7
             #define IR_LEFT 8
 
-    Now, we let our Rover know that these are its special eyes - they will feed information from the world outside into the Rover's electronic brain.
+    然后，告诉火星车这两个引脚是它的特别“眼睛”，它们将向火星车的大脑传输外界信息。
 
         .. code-block:: arduino
 
             pinMode(IR_RIGHT, INPUT);
             pinMode(IR_LEFT, INPUT);
 
+    为了确保火星车能够把它的发现传递给我们，我们建立了一条秘密通信线，就像科幻电影中的间谍一样。这一行代码开启了一个串行通信，传输速度为 9600 波特率——这可是闪电般的快讯！
 
-    To make sure our Rover shares its findings with us, we establish a secret line of communication, like spies in a sci-fi movie. This next line kicks off a serial conversation at the speed of 9600 bits per second - that's lightning fast chatter!
-    
         .. code-block:: arduino
 
             Serial.begin(9600);
 
-
-    Now, our Rover scans its surroundings with its "Alien-Eyes" and relays the findings back to us. If it spots an obstacle, the value will be 0; if the path is clear, the value will be 1. It keeps sending these messages to us, keeping us in the loop.
+    现在，火星车开始用“外星眼”扫描周围的环境，并将结果传送给我们。如果检测到障碍物，返回的值为 0；如果路径畅通，返回的值为 1。它会持续发送这些信息，保持我们在循环中。
 
         .. code-block:: arduino
 
@@ -157,27 +155,27 @@ Just like curious space explorers, let's dive into the universe of codes and sen
             Serial.println(leftValue);
 
 
-    Finally, the Rover pauses for a moment (about 200 milliseconds) after each transmission. This tiny break gives us the chance to interpret the Rover's message before it sends another one.
+    最后，每次传输后，火星车会稍作停顿（大约 200 毫秒），以便我们解读它传送的信息，然后再发送下一个数据。
 
         .. code-block:: arduino
 
             delay(200);
 
-    Here is the complete code:
+    完整代码如下：
 
     .. raw:: html
         
         <iframe src=https://create.arduino.cc/editor/sunfounder01/98546821-5f4b-42ae-bc9f-e7ec15544c8b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-#. Once your code is ready, select the correct board and port, and beam up the code to your Mars Rover. Then, tune into our secret communication line (the Serial Monitor) by clicking on its icon in the top right corner.
+#. 代码上传完成后，选择正确的板子和端口，将代码上传到火星车中。然后，点击串口监视器图标，查看火星车的实时信息。
 
     .. image:: img/ir_open_serial.png
 
-#. Before you start receiving the Rover's messages, make sure your secret communication line is tuned at the same speed (9600 baud) as your Rover. And there you have it - live updates from your Mars Rover!
+#. 在接收火星车信息之前，请确保串口监视器的波特率设置为 9600，与火星车保持一致。现在，你就可以看到火星车的实时更新了！
 
     .. image:: img/ir_serial.png
 
-#. To put our system to the test, wave a "space rock" (your hand) in front of one of the sensors. You'll see the value flip to 0, and the corresponding LED on the module lights up. That's the Rover saying, "Look out, space rock on my right!"
+#. 为了测试我们的系统，可以在传感器前挥动一个“太空岩石”（比如你的手）。你会看到返回的值变为 0，同时对应的 LED 灯亮起。这就是火星车发出的“警告，右侧有障碍物！”信号。
 
     .. code-block::
 
@@ -188,18 +186,17 @@ Just like curious space explorers, let's dive into the universe of codes and sen
         Right IR: 0
         Left IR: 1
 
-By now, you've not just journeyed through space but also deciphered Martian! Can't wait to see what interstellar secrets we unveil in our next mission!
+到现在，你不仅仅是进行了一次太空之旅，还解读了火星语言！迫不及待想知道接下来会揭开哪些星际奥秘吗？
 
-**Step 4: Adjusting the Detection Distance**
+**步骤 4：调整检测距离**
 
-We have arrived at an essential step, which is to adjust the detection distances of our sensors based on our current environment. The factory settings may not be optimal.
+我们来到了一个关键步骤，需要根据当前的环境调整传感器的检测距离。出厂设置可能并不适合所有情况。
 
-If the detection distance of the two infrared modules is too short, the Mars Rover might collide with obstacles. If it's too far, the Rover might start turning while still a significant distance from an obstacle, potentially impacting its movement.
+如果两个红外模块的检测距离过短，火星车可能会与障碍物碰撞；如果距离过远，火星车可能在距离障碍物较远时就开始转向，从而影响其运动。
 
-Here's how you can make adjustments:
+你可以通过以下方式进行调整：
 
-
-#. Start by adjusting the right obstacle avoidance module. During transportation, collisions may cause the transmitter and receiver on the infrared module to tilt. Therefore, you need to manually straighten them.
+1. 先调整右侧的避障模块。在运输过程中，模块上的发射器和接收器可能会被碰撞造成倾斜，因此你需要手动调整它们，使其保持水平。
 
     .. raw:: html
 
@@ -208,7 +205,7 @@ Here's how you can make adjustments:
             Your browser does not support the video tag.
         </video>
 
-#. Place an obstacle about 20 cm directly in front of the right module. The box in which our Rover kit came is a good choice for this! Now, turn the potentiometer on the module until the indicator light on the module just lights up. Then, keep moving the obstacle back and forth to check if the indicator light comes on at the desired distance. If the light doesn't turn on at the correct distance or if it remains on without going out, you'll need to adjust the other potentiometer.
+2. 在右侧模块前放置一个大约 20 厘米的障碍物，可以使用火星车包装盒进行测试。接着，调整模块上的电位器，直到模块的指示灯刚刚亮起。然后，不断移动障碍物，检查指示灯是否在预定的距离内亮起。如果灯光没有在正确的距离内亮起，或者一直亮着不熄灭，可能需要调整另一个电位器。
 
     .. raw:: html
 
@@ -218,33 +215,32 @@ Here's how you can make adjustments:
         </video>
 
 
-#. Repeat the same process for another module.
+3. 对另一个模块重复相同的调整过程。
 
-Now that our sensors are fully prepared, let's embark on the next journey!
+现在我们的传感器已经准备就绪，接下来我们开始下一步的旅程！
 
-**Step 5: Design an Automatic Obstacle Avoidance System**
+**步骤 5：设计自动避障系统**
 
-Now, let's take a big leap in our space exploration and make use of these messages from the Rover. 
-We're going to create an automatic obstacle avoidance system!
+接下来，让我们在太空探索的过程中，利用这些来自火星车的信息，设计一个自动避障系统！
 
-Here's our plan: If the right sensor detects an obstacle, the Rover will turn to the back right. If the left sensor detects an obstacle, the Rover will turn to the back left. If both sensors detect an obstacle, the Rover will move backward. If no obstacles are detected, the Rover will continue moving straight ahead.
+我们的计划是：如果右侧传感器检测到障碍物，火星车将向右后方转；如果左侧传感器检测到障碍物，火星车将向左后方转；如果两个传感器都检测到障碍物，火星车将向后移动；如果没有检测到障碍物，火星车将继续前进。
 
-Let's visualize this in a flowchart to make it even more clear. Flowcharts are a great way to logically outline a plan, especially when it comes to programming!
+让我们用流程图来可视化这个计划。流程图是一种很好的逻辑规划工具，尤其适合编程！
 
 .. image:: img/ir_flowchart.png
 
-Let's whisper this plan to our Rover in its language(Arduino code):
+现在，让我们通过 Arduino 代码向火星车传达这个计划：
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/af6539d4-7b4b-4e74-a04a-9fa069391d4d/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-In this code, we are using ``if...else`` statement in the ``loop()`` function.
+在这段代码中，我们在 ``loop()`` 函数中使用了 ``if...else`` 语句。
 
-    The ``if...else`` statement is used to execute a block of code among two alternatives. 
-    However, when we need to choose among more than two alternatives, we use the ``if...else if...else`` statement.
+    ``if...else`` 语句用于在两个选项之间执行代码块。
+    如果需要选择多个选项，我们则使用 ``if...else if...else`` 语句。
 
-    The syntax of the ``if...else if...else`` statement is:
+    语法格式为：
 
     .. code-block:: arduino
 
@@ -260,32 +256,32 @@ In this code, we are using ``if...else`` statement in the ``loop()`` function.
         else {
         // code block 4
         }
-    
-    Here,
 
-    * If condition1 is true, code block 1 is executed.
-    * If condition1 is false, then condition2 is evaluated.
-    * If condition2 is true, code block 2 is executed.
-    * If condition2 is false, then condition3 is evaluated.
-    * If condition3 is true, code block 3 is executed.
-    * If condition3 is false, code block 4 is executed.
+    这里，
 
-Now that we've designed our automatic obstacle avoidance system, it's time for the exciting part - putting it to the test!
+    * 如果 condition1 为真，执行代码块 1；
+    * 如果 condition1 为假，则检查 condition2；
+    * 如果 condition2 为真，执行代码块 2；
+    * 如果 condition2 为假，则检查 condition3；
+    * 如果 condition3 为真，执行代码块 3；
+    * 如果 condition3 为假，执行代码块 4。
 
-* You can observe if the Rover moves as you expected.
-* Or, place it in different lighting conditions to see how its movements change.
+现在，我们的自动避障系统设计完成，接下来是激动人心的部分——测试它！
 
-By integrating science into our engineering project, we're becoming space detectives, solving the mysteries of our Rover's behavior. 
-This isn't just about correcting errors but optimizing performance, making our Rover the best it can be! Keep up the fantastic work, space detectives!
+* 你可以观察火星车是否按预期移动。
+* 你也可以将其放置在不同的光照条件下，看看它的运动变化。
+
+通过将科学融入到工程项目中，我们已经成为太空侦探，解开了火星车行为背后的谜团。
+这里不仅仅是在修正错误，而是在优化性能，让我们的火星车变得更完美！继续加油，太空侦探们！
 
 
-**Step 6: Reflection and Summary**
 
-In the testing phase, you might have noticed an interesting behavior of our Mars Rover: while it expertly avoids obstacles to its left and right, it might struggle to detect smaller obstacles straight ahead.
+**步骤 6：反思与总结**
 
-How can we solve this challenge?
+在测试阶段，你可能会注意到火星车有一个有趣的表现：它能够巧妙地避开左右两侧的障碍，但对于正前方的较小障碍物，它可能会感知较为困难。
 
-Stay tuned for the next lesson, where we'll continue our exploration into the fascinating world of coding, sensors, and obstacle detection.
+我们该如何解决这个问题呢？
 
-Remember, every challenge is an opportunity for learning and innovation. And as we continue our space exploration journey, there's so much more to discover and learn!
+敬请期待下一课，我们将继续探索编码、传感器和避障检测的精彩世界。
 
+记住，每一个挑战都是学习和创新的机会。在继续我们的太空探索之旅时，还有许多奥秘等待着我们去发现和学习！

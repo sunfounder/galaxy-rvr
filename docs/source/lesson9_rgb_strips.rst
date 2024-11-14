@@ -1,28 +1,28 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入SunFounder Raspberry Pi、Arduino和ESP32爱好者社区！与其他爱好者一起深入探索Raspberry Pi、Arduino和ESP32的世界。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：在售后问题和技术挑战中，得到我们社区和团队的帮助。
+    - **学习与分享**：交流技巧和教程，提升你的技能。
+    - **独家预览**：抢先体验新产品的发布和预览。
+    - **特别折扣**：享受我们最新产品的专属折扣。
+    - **节日促销与赠品**：参与赠品活动和节庆促销。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击[|link_sf_facebook|]，今天就加入我们吧！
 
 
-Lesson 9: Lighting the Way with RGB LED Strips
+第九课 用RGB LED灯带照亮前方
 ============================================================
 
-In our journey so far, we've transformed our Mars Rover into a smart explorer, capable of skilfully manoeuvring around obstacles. It's become quite adept at navigating the Mars-like terrains we've set up for it.
+在我们之前的学习中，我们已经将火星漫游车改造成了一台智能探险者，能够熟练地绕过障碍物。它已经能够很好地在我们为它设置的类似火星的地形中行驶。
 
-But, what if we could add a bit of flair to its practicality? Let's give our Rover the ability to express itself through a spectacle of colors and light. We're talking about incorporating RGB LED strips - a cool feature that would allow our Rover to illuminate its path, even in the darkest conditions.
+但是，假如我们能为它增添一些色彩，如何让它既实用又充满个性呢？让我们赋予火星漫游车通过色彩和光线表达自我的能力。我们将使用RGB LED灯带，这个酷炫的功能能够让我们的漫游车在最黑暗的环境中也能照亮前方。
 
-Picture this - the Rover leaves a trail of color-coded signals, making it easier for us to understand its moves. A green glow when it's on the go, a stern red when it halts, or a flashy yellow during those swift turns. It could even light up in an array of colors just for the sheer fun of it!
+想象一下，漫游车留下的将是彩色编码的信号，让我们更容易理解它的动作。前进时是绿色光芒，停止时是严肃的红色，急转弯时则是闪烁的黄色。甚至可以根据需要显示各种颜色，仅仅是为了好玩！
 
-Our goal in this lesson is to understand the principles of RGB LED strips, learn to control their color and brightness, and then synchronize this with the Rover's movements. By the end, our Mars Rover will be more than a machine. It'll be a luminous, color-changing entity, leading the way in the vast Martian landscape!
+本课的目标是了解RGB LED灯带的工作原理，学习如何控制它们的颜色和亮度，然后将这些控制与漫游车的运动同步。到课程结束时，我们的火星漫游车将不仅仅是一个机器，它将成为一个光彩夺目的、不断变化颜色的存在，指引着我们在广阔的火星地貌中前行！
 
 .. raw:: html
 
@@ -33,166 +33,161 @@ Our goal in this lesson is to understand the principles of RGB LED strips, learn
 
 .. note::
 
-    If you are learning this course after fully assembling the GalaxyRVR, you need to move this switch to the right before uploading the code.
+    如果你在完全组装好GalaxyRVR后学习本课程，在上传代码之前需要将开关移到右侧。
 
     .. image:: img/camera_upload.png
         :width: 500
         :align: center
 
-Objective
+目标
 -------------
 
-* Understand the working principles and applications of RGB LED strips.
-* Learn how to use Arduino programming to control the color and brightness of RGB LED strips.
-* Practice installing and using RGB LED strips on the Mars Rover model as indicators.
+* 了解RGB LED灯带的工作原理及应用。
+* 学习如何使用Arduino编程控制RGB LED灯带的颜色和亮度。
+* 练习在火星漫游车模型上安装和使用RGB LED灯带作为指示灯。
 
-Materials Needed
+
+所需材料
 -------------------------
-
-* RGB LED Strips (each strip has 8 RGB LEDs, a total of two strips)
-* Basic tools and accessories (e.g. screwdriver, screws, wires etc.)
-* Mars Rover Model (Equipped with rocker-bogie system, main boards, motors, obstacle avoidance module, ultrasonic module)
-* USB Cable
+* RGB LED灯带（每条灯带包含8颗RGB LED，总共两条）
+* 基本工具和配件（如螺丝刀、螺丝、导线等）
+* 火星漫游车模型（配备摇杆系统、主板、电机、障碍物避让模块、超声波模块）
+* USB数据线
 * Arduino IDE
-* Computer
+* 电脑
 
-Course Steps
+课程步骤
 ------------------
-**Step 1: Install the RGB LED Strips on the Mars Rover**
+**步骤1：安装RGB LED灯带到火星漫游车上**
 
-Now, fix the two RGB light strips to the bottom sides of the car. They are controlled by a single set of pins, so there is no need to differentiate during the wiring process.
+首先，将两条RGB灯带固定在火星漫游车的底部两侧。它们由一组引脚控制，因此在布线过程中无需区分。
 
 .. raw:: html
 
     <iframe width="600" height="400" src="https://www.youtube.com/embed/v4YGjNwPOJE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-**Step 2: Explore the Magic of Light with RGB LED Strips**
+**步骤2：探索RGB LED灯带的光彩魔力**
 
-Do you remember the last time you saw a rainbow? How it made the sky colorful with seven vibrant hues? How would you like to create your own rainbow, right here in our little Martian rover? Let's dive into the magic of light with RGB LED strips!
+你还记得上次看到彩虹是什么样的吗？那七种鲜艳的颜色如何装点了天空？你想不想在我们的火星漫游车上也创造出自己的彩虹？让我们通过RGB LED灯带来探索光的魔力吧！
 
 .. image:: img/4_rgb_strip.jpg
 
-You might notice that our RGB LED Strip has four pins labeled as follows:
+你会注意到，我们的RGB LED灯带有四个引脚，分别标注如下：
 
-* **+5V**: This is the common "positive" end or the "anode" of the three tiny light bulbs (LEDs) inside our strip. It needs to connect to DC 5V, a kind of electric juice that powers our tiny bulbs!
-* **B**: This is the "negative" end or the "cathode" of the blue LED.
-* **R**: This is the "cathode" of the red LED.
-* **G**: This is the "cathode" of the green LED.
+* **+5V**：这是三颗小灯泡（LED）中的“正极”或“阳极”。它需要连接到DC 5V电源，为小灯泡提供电能。
+* **B**：这是蓝色LED的“负极”或“阴极”。
+* **R**：这是红色LED的“负极”或“阴极”。
+* **G**：这是绿色LED的“负极”或“阴极”。
 
 .. image:: img/rgb_5050.jpg
 
-Do you remember the three primary colors - Red, Blue, and Green - that we learned in our art class? Just like an artist mixes these colors on his palette to create new shades, our strip contains 4 "5050" LEDs that can mix these primary colors to create virtually any color! Each "5050" LED is like a tiny art studio that houses these three colored bulbs.
+你还记得在美术课上学过的三种原色——红、绿、蓝吗？就像艺术家在调色板上混合这些颜色以创造新的色调一样，我们的灯带包含了四颗“5050”LED，可以通过混合这些原色来创造几乎任何颜色！每颗“5050”LED就像一个小型艺术工作室，里面装有这三种彩色灯泡。
 
 .. image:: img/rgb_5050_sche.png
 
-These tiny art studios are then connected in a smart way on a flexible circuit board - kind of like a mini electric highway! The "positive" ends of all LEDs (anodes) are connected together, while the "negative" ends (cathodes) are connected to their corresponding color lanes (G to G, R to R, B to B).
+这些小小的艺术工作室通过灵活的电路板智能连接——就像一条迷你的电气高速公路！所有LED的“正极”（阳极）连接在一起，而“负极”（阴极）则分别连接到相应的颜色通道（G接G，R接R，B接B）。
 
 .. image:: img/rgb_strip_sche.png
 
-And the coolest part? With our command, all the LEDs on this strip can change their colors at once! It's like having our own light orchestra at the tip of our fingers!
+最酷的部分是，凭借我们的命令，这条灯带上的所有LED灯可以同时改变颜色！就像拥有一个随时可用的灯光乐团！
 
-So let's get ready to play some light music! In our next step, we'll learn how to control these LEDs to display the colors we want. It will be like conducting a symphony of light!
+接下来，我们就开始让灯带“奏响”灯光交响乐吧！在下一步中，我们将学习如何控制这些LED灯带，展示我们想要的颜色。
 
 
-**Step 3: Light Up the Show - Coding to Control the RGB LED Strips**
+**步骤3：点亮秀场 - 编程控制RGB LED灯带**
 
-We've stepped into the realm of colors, it's time to bring our Mars Rover to life. Brace yourself to paint the darkness with a spectrum of colors using RGB LED strips. Think of this as a chance to transform your Mars Rover into a mobile disco party!
+我们已经踏入了色彩的世界，现在是时候让我们的火星漫游车焕发光彩。准备好用RGB LED灯带为黑暗的环境涂上一抹色彩吧！把它当作是将火星漫游车变成一场移动迪斯科派对的机会！
 
-* Before we dive into the fun part, let's understand that even though we have two LED strips, they are both controlled by the same set of pins. Think of it as having two dazzling dancers moving in perfect synchronization!
+* 在开始编程之前，我们要明白，虽然我们有两条LED灯带，但它们都由同一组引脚控制。可以把它想象成两位舞者的完美同步表演！
 
     .. image:: img/rgb_shield.png
 
-* It's time to summon our coding magic. We're going to initiate our pins with the Arduino code.
+* 现在是时候召唤编程魔法了。我们将通过Arduino代码来初始化这些引脚。
 
     .. code-block:: arduino
 
         #include <SoftPWM.h>
 
-        // Define the pin numbers for the RGB strips
+        // 定义RGB灯带的引脚号
         const int bluePin = 11;
         const int redPin = 12;
         const int greenPin = 13;
 
-* With our pins in place, we'll now use the ``SoftPWMSet()`` function to control these pins. To make the RGB strip display red, we turn the red LED on and switch off the others.
+* 引脚设置好后，我们将使用 ``SoftPWMSet()`` 函数来控制这些引脚。为了让RGB灯带显示红色，我们只需开启红色LED，关闭其他颜色。
 
     .. code-block:: arduino
 
         void setup() {
-            // Initialize software-based PWM on all pins
+            // 在所有引脚上初始化软件PWM
             SoftPWMBegin();
         }
 
         void loop() {
-            // Set the color to red by turning the red LED on and the others off
-            SoftPWMSet(redPin, 255); // 255 is the maximum brightness
-            SoftPWMSet(greenPin, 0); // 0 is off
-            SoftPWMSet(bluePin, 0);  // 0 is off
-            delay(1000); // Wait for 1 second
+            // 通过开启红色LED并关闭其他LED来显示红色
+            SoftPWMSet(redPin, 255); // 255是最大亮度
+            SoftPWMSet(greenPin, 0); // 0为关闭
+            SoftPWMSet(bluePin, 0);  // 0为关闭
+            delay(1000); // 等待1秒
         }
 
-In the above code, we've only demonstrated how to display a single color. 
+在上述代码中，我们只展示了如何显示单一颜色。
 
-If we were to showcase a variety of colors using this method, the code could become quite cumbersome. Therefore, to make our code more concise and maintainable, we can create a function to assign PWM values to the three pins. Then, within the ``loop()``, we can easily set a multitude of colors.
+如果我们希望展示多种颜色，代码可能会变得非常繁琐。因此，为了让代码更加简洁和可维护，我们可以创建一个函数，方便地为三个引脚分配PWM值。然后在``loop()``函数中，我们可以轻松地设置各种颜色。
 
 .. raw:: html
 
   <iframe src=https://create.arduino.cc/editor/sunfounder01/cac90501-04c1-44c2-a1d7-4f863e50f186/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-
-After uploading the code to your R3 board, you may find that the orange and yellow colors seem a bit off. 
-This is because the red LED on the strip is relatively dim compared to the other two LEDs. 
-Thus, you'll need to introduce offset values in your code to correct this color discrepancy.
+上传代码到R3板后，你可能会发现橙色和黄色看起来有点不对劲。 
+这是因为灯带上的红色LED相比其他两个LED较暗。
+因此，你需要在代码中引入偏移值来修正这种颜色偏差。
 
 .. raw:: html
 
   <iframe src=https://create.arduino.cc/editor/sunfounder01/60ec867f-5637-44bd-b72d-4709fc4f5349/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-Now, the RGB LED strip should be able to display the correct colors. If you still notice discrepancies, you can manually adjust the values of ``R_OFFSET``, ``G_OFFSET``, and ``B_OFFSET``.
+现在，RGB LED灯带应该能够显示正确的颜色。如果你仍然发现偏差，可以手动调整 ``R_OFFSET`` 、 ``G_OFFSET`` 和 ``B_OFFSET`` 的值。
 
-Feel free to experiment and display any color of your choosing on the LED strip. All you need to do is fill in the RGB values for the color you want.
+现在你可以自由地尝试并在LED灯带上显示任何你想要的颜色了。只需要输入RGB值，设定你所需的颜色。
 
-Here's a tip: You can use the Paint tool on your computer to determine the RGB values of your desired color.
+这里有个小贴士：你可以使用电脑上的画图工具来确定你想要的颜色的RGB值。
 
 .. image:: img/rgb_paint.png
 
-Now that we've mastered the art of color-setting, in the next step, we'll integrate these dazzling displays with the movements of the Mars Rover. Exciting times ahead!
+既然我们已经掌握了颜色设置的艺术，接下来，我们将把这些光彩夺目的显示效果与火星漫游车的运动结合起来。接下来会更加激动人心！
 
-**Step 4: Move the Rover with Color Indication**
+**步骤4：通过颜色指示控制漫游车的运动**
 
-Now, we'll add color indications to the movements of the Mars Rover. For instance, we can use green for forward, red for backward, and yellow for turning left or right.
+现在，我们将在火星漫游车的运动中加入颜色指示。例如，可以使用绿色表示前进，红色表示后退，黄色表示左转或右转。
 
-To do this, we will add a control mechanism in our code that sets the color of the LED strip based on the Rover's movement. This will involve modifying our Rover control code to include our color control functions.
+为此，我们将在代码中加入控制机制，根据漫游车的运动设置LED灯带的颜色。这将涉及修改我们漫游车的控制代码，增加颜色控制函数。
 
-Let's see an example of how we can do this:
+下面是一个如何操作的示例：
 
 .. raw:: html
 
   <iframe src=https://create.arduino.cc/editor/sunfounder01/5412eebe-75b8-4f98-a348-f0889e8a7fde/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+在 ``loop()`` 函数中，我们通过调用不同的函数命令漫游车执行一系列动作。
+每个动作都有对应的颜色显示——绿色表示前进，红色表示后退，黄色表示转弯。
+通过 ``setColor()`` 函数，我们控制了RGB色道的亮度，展示了每种颜色。
 
-Within the ``loop()`` function, we commanded the Rover to perform a series of actions by calling different functions. 
-Each action had its corresponding color display - green for moving forward, red for moving backward, and yellow for turning. 
-This color display feature was brought to life using the ``setColor()`` function, which manipulated the brightness of 
-each RGB color channel.
+在停止动作时，我们加入了一个有趣的元素——红色和蓝色灯光的呼吸效果。
+通过在 ``stopMove()`` 函数中周期性地调整红色和蓝色通道的亮度，LED灯带在停止时展现了红蓝交替的动态视觉效果。
 
-For the stop action, we introduced an engaging element - a breathing effect with a red and blue light. 
-This was achieved by cyclically adjusting the brightness of the red and blue channels within the ``stopMove()`` function. 
-As such, upon stopping, the LED strip transitioned colors between red and blue, creating a dynamic visual effect.
+现在，我们的火星漫游车拥有了自己的绚丽色彩效果，留下了色彩编码的信号，每个信号代表着不同的动作。
 
-Now, our Mars Rover now possesses its own vibrant color effects, leaving behind a trail of color-coded signals, each representing a 
-unique movement. 
-
-Through this project, we've discovered how STEAM subjects can amalgamate to breathe life into an 
-otherwise ordinary machine, turning it into a vibrant, interactive, and fun learning tool.
+通过这个项目，我们发现，STEAM学科可以融合在一起，为一台普通的机器注入生命，将其转变成一个充满活力、互动性强且富有趣味的学习工具。
 
 
-**Step 5: Summary and Reflection**
 
-In today's lesson, we delved into the world of RGB LED strips, exploring how to manipulate them to display a vivid array of colors. These brilliant hues breathed new life into our Mars Rover, transforming it from a mere machine into a vibrant spectacle.
+**步骤5：总结与反思**
 
-Now, I invite you to ponder - If it was you in the driver's seat, how would you utilize these colors to enhance your Mars Rover? What unique effects would you want it to exhibit?
+今天的课程中，我们深入探索了RGB LED灯带的世界，学习了如何操控它们展示多彩的颜色。这些光辉灿烂的色彩为我们的火星漫游车注入了新的生命，将它从一台普通的机器转变为一个光彩夺目的奇观。
 
-Moreover, through the process, I hope you had a hands-on understanding of how diverse STEAM concepts can be interwoven in an engaging project, providing you with a broader perspective of its practical applications. 
+现在，我邀请你思考一下——如果你坐在驾驶座上，你会如何利用这些颜色来增强你的火星漫游车？你希望它展示哪些独特的效果？
 
-See you in our next exciting adventure!
+此外，通过这个过程，我希望你对如何将STEAM概念交织在一起有了更直观的理解，帮助你拓宽其实际应用的视野。
+
+我们下次冒险再见！

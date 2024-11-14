@@ -1,30 +1,28 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 Facebook 上的 SunFounder Raspberry Pi & Arduino & ESP32 爱好者社区！和其他爱好者一起深入探讨 Raspberry Pi、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：在售后问题和技术难题上获得我们社区和团队的帮助。
+    - **学习与分享**：交流技巧和教程，提升你的技能。
+    - **独家预览**：抢先体验新产品的发布和预告。
+    - **专属折扣**：享受最新产品的独家折扣。
+    - **节日促销与赠品**：参与赠品活动和节日促销。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
+    👉 准备好和我们一起探索和创造了吗？点击 [|link_sf_facebook|] 今天就加入我们吧！
 
 
 .. _ir_obstacle:
 
-
-Lesson 6 IR Obstacle
+第六课 红外避障模块
 ===========================
 
-We're diving into the world of the Infrared Obstacle Avoidance Module. Tucked at the sides of our Mars Rover, these sensors act as the rover's "eyes," helping it dodge side obstacles and safely navigate the Martian landscape.
+我们将深入了解红外避障模块。在我们的火星车两侧，这些传感器就像火星车的“眼睛”，帮助它避开侧面障碍物，安全地穿越火星地貌。
 
-We'll learn how to integrate these modules with our rover, unravel the magic behind their functioning, and develop code to make our rover smartly sidestep any hurdles it comes across.
+我们将学习如何将这些模块集成到火星车中，解密它们的工作原理，并编写代码让火星车智能地避开它遇到的障碍物。
 
-Get ready to gear up our rover with some Martian obstacle-dodging intelligence! Let's get rolling!
+准备好为火星车添加一些避障智慧了吗？让我们开始吧！
 
 .. raw:: html
 
@@ -33,82 +31,79 @@ Get ready to gear up our rover with some Martian obstacle-dodging intelligence! 
       Your browser does not support the video tag.
    </video>
 
-Learning Objectives
+学习目标
 -------------------------
 
-* Understand the working principles of the Infrared Obstacle Avoidance Module and its application in the Mars rover.
-* Learn how to read and apply data from the Infrared Obstacle Avoidance Module in Scratch.
-* Create a Mars exploration-themed obstacle avoidance game using the IR module and the Scratch stage.
+* 了解红外避障模块的工作原理及其在火星车中的应用。
+* 学会在 Scratch 中读取和应用红外避障模块的数据。
+* 使用红外模块和 Scratch 舞台，创建一个火星探索主题的避障游戏。
 
 
-Materials
+所需材料
 -----------
 
-* Smartphone or tablet
-* Mammoth Coding APP
+* 智能手机或平板电脑
+* Mammoth Coding 应用
 * GalaxyRVR
 
-Demystifying the Module
+解密模块
 -------------------------------------
 
-Meet the Infrared Obstacle Avoidance Module - our rover's smart sidekick. This little device is a pack of wonders. Let's take a tour:
+认识一下红外避障模块——我们的火星车智能助手。这小小的设备充满了惊喜，让我们一起了解一下：
 
 .. image:: ../img/ir_avoid.png
     :width: 300
     :align: center
 
+下面是各个引脚的定义：
 
-Here are the pin definitions:
-
-* **GND**: This is like the module's anchor, connecting it to the ground or common point in the circuit.
-* **+**: Here's where the module gets its energy, needing a power supply of 3.3 to 5V DC.
-* **Out**: This is the module's communicator. By default, it stays high and only goes low when it spots an obstacle.
-* **EN**: Meet the module's controller. This **enable** pin decides when the module should work. By default, it is connected to GND, meaning the module is always on the job.
+* **GND**：这是模块的地线，将其与电路中的公共点连接。
+* **+**：模块的电源输入端，需要3.3V至5V的直流电压。
+* **Out**：这是模块的输出端。默认情况下，输出高电平，只有在检测到障碍物时才会变为低电平。
+* **EN**：这是模块的启用引脚，控制模块的工作状态。默认情况下，EN 引脚连接到 GND，意味着模块始终处于开启状态。
 
 
-Curious about how this tiny module works? It's quite interesting! It uses a pair of IR components - a transmitter and a receiver. The transmitter is like the module's flashlight, emitting infrared light. 
-When an obstacle appears, the infrared light bounces back and gets caught by the receiver. The module then gives a low signal, alerting our rover of the obstacle.
+想知道这个小模块如何工作的？它使用了一对红外组件——一个发射器和一个接收器。
+发射器就像模块的手电筒，发出红外光。当有障碍物出现时，红外光会反射回来并被接收器接收到。
+模块随后输出低电平信号，提醒我们的火星车有障碍物。
 
 .. image:: ../img/ir_receive.png
     :align: center
 
-Our little module is quite robust, spotting obstacles within a range of 2-40cm and boasting excellent anti-interference abilities. 
-However, the color of objects does impact its sensing. Darker objects, especially black ones, are detected at a shorter range. 
-Against a white wall, the sensor is most efficient, sensing within the 2-30cm range.
+这个小小的模块非常耐用，能够在2至40厘米的范围内检测障碍物，并且具有出色的抗干扰能力。
+然而，物体的颜色会影响其检测效果。较深色的物体，尤其是黑色物体，会在较短的距离内被检测到。
+白色墙壁上的感应效果最佳，通常可以在2至30厘米的范围内进行有效检测。
 
-
-The **EN** pin's low-level state activates the module, with the jumper cap securing the **EN** pin to the GND. If you wish to control the **EN** pin via code, the jumper cap needs to be removed.
+**EN** 引脚的低电平状态激活模块，跳线帽将 **EN** 引脚连接到 GND。如果你想通过代码控制 **EN** 引脚，需要移除跳线帽。
 
 .. image:: ../img/ir_cap.png
     :width: 400
     :align: center
 
-There are two potentiometers on the module, one for adjusting the transmitting power and one for adjusting the transmitting frequency, and by adjusting these two potentiometers you can adjust its effective distance.
+模块上有两个电位器，一个用于调整发射功率，另一个用于调整发射频率。通过调整这两个电位器，你可以调整其有效检测距离。
 
 .. image:: ../img/ir_avoid_pot.png
     :width: 400
-    :align: center 
+    :align: center
+
+到目前为止，我们已经了解了不少关于这个小模块的信息。在接下来的步骤中，我们将学习如何将它与火星车集成，并使用 Arduino 来控制它。敬请期待！
 
 
-That's quite a bit about our little module. In the next step, we'll learn how to integrate it with our rover and control it using the Arduino. Stay tuned!
 
-
-
-Infrared Obstacle Avoidance Module Detection Values
+红外避障模块检测值
 ------------------------------------------------------------
 
-1. Power up the GalaxyRVR.
-
+1. 打开 GalaxyRVR。
 
 .. raw:: html
 
    <br></br>
 
-2. We have arrived at an essential step, which is to adjust the detection distances of our sensors based on our current environment. The factory settings may not be optimal. If the detection distance of the two infrared modules is too short, the Mars Rover might collide with obstacles. If it's too far, the Rover might start turning while still a significant distance from an obstacle, potentially impacting its movement.
+2. 进入一个关键步骤，那就是根据当前环境调整传感器的检测距离。出厂设置可能并不理想。如果两个红外模块的检测距离太短，火星车可能会碰到障碍物；如果距离过远，火星车可能在距离障碍物较远的情况下就开始转向，影响其正常运动。
 
-    Here's how you can make adjustments:
+    调整方法如下：
 
-    a. Start by adjusting the right obstacle avoidance module. During transportation, collisions may cause the transmitter and receiver on the infrared module to tilt. Therefore, you need to manually straighten them.
+    a. 先调整右侧避障模块。在运输过程中，碰撞可能导致红外模块的发射器和接收器发生倾斜。因此，你需要手动将其调整到正确位置。
 
         .. raw:: html
 
@@ -117,141 +112,127 @@ Infrared Obstacle Avoidance Module Detection Values
                 Your browser does not support the video tag.
             </video>
 
-    b. Place an obstacle about 20 cm directly in front of the right module. The box in which our Rover kit came is a good choice for this! Now, turn the potentiometer on the module until the indicator light on the module just lights up. Then, keep moving the obstacle back and forth to check if the indicator light comes on at the desired distance. If the light doesn't turn on at the correct distance or if it remains on without going out, you'll need to adjust the other potentiometer.
+    b. 在右侧模块前约20厘米处放置一个障碍物。我们火星车套件的盒子就非常合适！然后，调整模块上的电位器，直到模块指示灯刚好亮起。接着，继续前后移动障碍物，检查指示灯是否在所需距离内点亮。如果灯不亮或始终亮着，你需要调整另一个电位器。
 
         .. raw:: html
 
             <video width="600" loop autoplay muted>
                 <source src="../_static/video/ir_adjust2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+                你的浏览器不支持视频标签。
             </video>
 
+    c. 对另一个模块重复相同的过程。
 
-    c. Repeat the same process for another module.
-
-
-
-3. Let's see what these two signals are. First, :ref:`app_connect`.
+3. 我们来看看这两个信号的情况。首先，参考： :ref:`app_connect`。
 
 .. raw:: html
 
    <br></br>
 
-
-4. In the GalaxyRVR category, find the left IR status and right IR status blocks. These store the detection results of the IR modules. Make sure to check the boxes for these.
+4. 在 GalaxyRVR 类别中，找到左侧红外状态和右侧红外状态模块。这些模块存储红外模块的检测结果。确保勾选这些框。
 
     .. image:: img/4_ir_statusblock.png
 
-5. The values will now be displayed on the stage.
+5. 现在，这些值会显示在舞台上。
 
     .. image:: img/4_ir_statusvalue.png
 
-6. Move your hand close to the infrared obstacle avoidance modules to trigger detection and observe the value changes on the stage.
+6. 将手靠近红外避障模块，触发检测并观察舞台上的值变化。
 
-If the IR modules detect an obstacle, the value will be True; if no obstacle is detected, the value will be False.
+如果红外模块检测到障碍物，值会变为 True；如果没有障碍物，值会是 False。
 
 
 
-Responding to the Infrared Obstacle Avoidance Module
+响应红外避障模块
 -------------------------------------------------------------
 
-We can utilize the infrared obstacle avoidance modules to make the GalaxyRVR automatically dodge obstacles on both sides.
+我们可以利用红外避障模块让 GalaxyRVR 自动避开两侧的障碍物。
 
-
-1. Drag in a green flag block
+1. 拖入一个绿色旗帜模块。
 
 .. image:: img/4_ir_start.png
 
-2. Set the speed. Here we set the speed to 30%, so it isn't too fast, making it easier to debug.
+2. 设置速度。这里我们将速度设置为30%，这样不会太快，便于调试。
 
 .. image:: img/4_ir_speed.png
 
-
-3. Find the ``when left IR is blocked`` block.
+3. 找到 ``when left IR is blocked`` 模块。
 
 .. image:: img/4_ir_when_blocked.png
 
-4. When the left side detects an obstacle, the GalaxyRVR should turn right.
+4. 当左侧检测到障碍物时，GalaxyRVR 应该向右转。
 
 .. image:: img/4_ir_turn_right.png
 
-5. Keep turning right until the left side no longer detects the obstacle.
+5. 一直向右转，直到左侧不再检测到障碍物。
 
 .. image:: img/4_ir_wait_until.png
 
-
-6. Stop moving.
+6. 停止移动。
 
 .. image:: img/4_ir_stop.png
 
-
-7. Once you have assembled these blocks, try triggering the left infrared obstacle avoidance module with your hand. The GalaxyRVR will smartly turn right to avoid your hand.
+7. 当你组装好这些模块后，试着用手触发左侧红外避障模块。GalaxyRVR 会智能地向右转来避开你的手。
 
 .. raw:: html
 
    <br></br>
 
-
-
-8. Long-press these blocks to bring up a menu, where you can duplicate the code.
+8. 长按这些模块，弹出菜单后可以复制代码。
 
 .. image:: img/4_ir_duplicate.png
 
-9. In the duplicated code, swap the left and right sides.
+9. 在复制的代码中，交换左右两侧。
 
 .. image:: img/4_ir_left_right.png
 
-10. You will notice that if both IR events are triggered simultaneously, the behavior may become erratic. To prevent this, the "stop other scripts in sprite" block will come in handy. It ensures that only one sensor event is responded to at a time.
+10. 如果两个红外事件同时触发，你会发现行为可能会变得不稳定。为避免这种情况，“停止其他脚本”模块会非常有用。它可以确保每次只有一个传感器事件被响应。
 
 .. image:: img/4_ir_stop_script.png
 
-.. note:: The stop scripts block and blocks with time parameters (e.g., forward for 1 sec) can conflict in some cases, so avoid using them together when possible.
+.. note:: 停止脚本模块与包含时间参数的模块（例如：前进1秒）可能会发生冲突，因此尽量避免同时使用。
 
 
-11. Now, the GalaxyRVR will turn left or right when obstacles are detected on either side. You can now test this by triggering both sensors with your hand to make the GalaxyRVR dodge left and right.
-
+11. 现在，当检测到任一侧的障碍物时，GalaxyRVR 会向左或向右转。你可以测试通过用手触发两个传感器，看看 GalaxyRVR 如何向左和向右躲避。
 
 .. raw:: html
 
    <br></br>
 
-
-12. Add a forward block under each code block so that the GalaxyRVR continues to move forward after avoiding the obstacle.
+12. 在每个代码块下添加一个前进模块，这样 GalaxyRVR 在避开障碍物后会继续前进。
 
 .. image:: img/4_ir_avoid_move.png
 
-
-Now, click the green flag, and the GalaxyRVR will move forward continuously, turning to avoid obstacles and resuming its path after avoiding them.
-
+现在，点击绿色旗帜，GalaxyRVR 会持续向前移动，转弯避开障碍物后继续前进。
 
 
-Blocks Related to the IR Module
+
+与红外模块相关的模块
 ----------------------------------------
 
 .. image:: img/block/ir_when.png
 
-This is an event block triggered when the left IR sensor detects an obstacle. You can:
+这是一个事件模块，当左侧红外传感器检测到障碍物时触发。你可以：
 
-    * Change "left" to "right" in the dropdown menu
+    * 在下拉菜单中将“left”改为“right”
 
 .. image:: img/block/ir_wait_until.png
 
-This block pauses the program until the left IR sensor no longer detects an obstacle, then continues. You can:
+此模块会暂停程序，直到左侧红外传感器不再检测到障碍物，然后继续。你可以：
 
-    * Change "left" to "right" in the first dropdown menu
-    * Change "is not" to "is" in the second dropdown menu to operate under the opposite condition
+    * 在第一个下拉菜单中将“left”改为“right”
+    * 在第二个下拉菜单中将“is not”改为“is”，以便在相反条件下操作
 
 .. image:: img/block/ir_condition.png
 
-This is a conditional block that returns TRUE if the left IR sensor detects an obstacle, otherwise FALSE. It is commonly used in blocks requiring conditionals like ``if``. You can:
+这是一个条件模块，当左侧红外传感器检测到障碍物时返回 TRUE，否则返回 FALSE。通常用于需要条件判断的模块中，例如 ``if``。你可以：
 
-    * Change "left" to "right" in the dropdown menu
+    * 在下拉菜单中将“left”改为“right”
 
 .. image:: img/block/ir_left_value.png
 
-This block displays whether the left IR sensor currently detects an obstacle.
+此模块显示左侧红外传感器当前是否检测到障碍物。
 
 .. image:: img/block/ir_right_value.png
 
-This block displays whether the right IR sensor currently detects an obstacle.
-
+此模块显示右侧红外传感器当前是否检测到障碍物。

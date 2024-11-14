@@ -1,16 +1,16 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与其他爱好者一起，深入探索树莓派、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：通过社区和团队的帮助解决售后问题和技术挑战。
+    - **学习与分享**：交流技巧和教程，提升你的技能。
+    - **独家预览**：提前体验新产品发布和独家内容。
+    - **专属折扣**：享受最新产品的专属优惠。
+    - **节庆促销与赠品**：参与节日促销和赠品活动。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 即刻加入！
 
 ESP32 CAM
 =================
@@ -19,116 +19,112 @@ ESP32 CAM
     :width: 500
     :align: center
 
-The ESP32-CAM is a very small camera module with the ESP32-S chip that costs approximately $10. Besides the OV2640 camera, and several GPIOs to connect peripherals, it also features a microSD card slot that can be useful to store images taken with the camera or to store files to serve to clients.
+ESP32-CAM 是一款非常小巧的摄像头模块，搭载 ESP32-S 芯片，价格大约为 10 美元。除了 OV2640 摄像头和多个 GPIO 引脚用于连接外设外，它还配备了一个 microSD 卡插槽，可以用于存储拍摄的图像或存储文件以供客户端使用。
 
-The module can work independently as the smallest system, with a size of only 27*40.5*4.5mm, and a deep sleep current as low as 6mA.
+该模块可以作为最小的独立系统运行，尺寸仅为 27*40.5*4.5mm，且深度睡眠电流低至 6mA。
 
-ESP32-CAM can be widely used in various IoT applications, suitable for home smart devices, industrial wireless control, wireless monitoring, QR wireless identification, wireless positioning system signals and other IoT applications. It is an ideal solution for IoT applications.
+ESP32-CAM 可广泛应用于各种物联网 (IoT) 应用，适用于家庭智能设备、工业无线控制、无线监控、二维码无线识别、无线定位系统信号等物联网场景，是物联网应用的理想解决方案。
 
-
-
-**Technical Specifications**
+**技术规格**
 
 .. list-table::
     :widths: 25 50
 
-    * - Module Model
+    * - 模块型号
       - ESP32-CAM
-    * - Package
+    * - 封装类型
       - DIP-16
-    * - Size
+    * - 尺寸
       - 27*40.5*4.5（±0.2）mm
-    * - SPI Flash
-      - default 32Mbit
+    * - SPI 闪存
+      - 默认 32Mbit
     * - RAM
-      - Internal 520KB + External 8MB PSRAM
-    * - Bluetooth
-      - Bluetooth 4.2 BR/EDR and BLE standards
+      - 内部 520KB + 外部 8MB PSRAM
+    * - 蓝牙
+      - 支持 Bluetooth 4.2 BR/EDR 和 BLE 标准
     * - Wi-Fi
       - 802.11 b/g/n/e/i
-    * - Support Interfaces
+    * - 支持接口
       - UART、SPI、I2C、PWM
-    * - Support TF Card
-      - up to 4G
-    * - IO Pins
-      -  9
-    * - Serial Port Speed
-      - default 115200 bps
-    * - Image Output Format
-      - JPEG(only OV2640 support),BMP,GRAYSCALE
-    * - Spectrum range
-      - 2400 ~2483.5MHz
-    * - Antenna Type
-      - On-board PCB antenna, gain 2dBi
-    * - Transmit Power
-      - 802.11b\: 17±2 dBm (@11Mbps) 
+    * - 支持 TF 卡
+      - 最大支持 4G
+    * - IO 引脚
+      - 9 个
+    * - 串口速率
+      - 默认 115200 bps
+    * - 图像输出格式
+      - JPEG（仅支持 OV2640）、BMP、灰度图
+    * - 频谱范围
+      - 2400 ~ 2483.5MHz
+    * - 天线类型
+      - 板载 PCB 天线，增益 2dBi
+    * - 发射功率
+      - 802.11b: 17±2 dBm（@11Mbps）
     * - 
-      - 802.11g\: 14±2 dBm (@54Mbps) 
+      - 802.11g: 14±2 dBm（@54Mbps）
     * - 
-      - 802.11n\: 13±2 dBm (@MCS7)
-    * - Receive Sensitivity
-      - CCK, 1 Mbps\: -90dBm, 
+      - 802.11n: 13±2 dBm（@MCS7）
+    * - 接收灵敏度
+      - CCK, 1 Mbps: -90dBm
     * - 
-      - CCK, 11 Mbps\: -85 dBm
+      - CCK, 11 Mbps: -85 dBm
     * - 
-      - 6 Mbps (1/2 BPSK)\: -88 dBm
+      - 6 Mbps (1/2 BPSK): -88 dBm
     * - 
-      - 54 Mbps (3/4 64-QAM)\: -70dBm
+      - 54 Mbps (3/4 64-QAM): -70dBm
     * - 
-      - MCS7 (65 Mbps, 72.2 Mbps)\: -67dBm
-    * - Power Consumption
-      - Flash off\: 180mA\@5V, 
+      - MCS7 (65 Mbps, 72.2 Mbps): -67dBm
+    * - 功耗
+      - 闪光灯关闭：180mA@5V
     * - 
-      - Flash on and brightness to maximum\: 310mA\@5V
+      - 闪光灯开启并最大亮度：310mA@5V
     * - 
-      - Deep-sleep\: the lowest power consumption can reach 6mA\@5V
+      - 深度睡眠：最低功耗可达 6mA@5V
     * - 
-      - Moderm-sleep\: minimum 20mA\@5V
+      - 常规睡眠：最低 20mA@5V
     * - 
-      - Light-sleep\: minimum 6.7mA\@5V
-    * - Security
+      - 浅睡眠：最低 6.7mA@5V
+    * - 安全性
       - WPA/WPA2/WPA2-Enterprise/WPS
-    * - Power supply range
+    * - 电源范围
       - 4.75-5.25V
-    * - Operating Temperature
+    * - 工作温度
       - -20 ℃ ~ 70 ℃
-    * - Storage Environment
-      - -40 ℃ ~ 125 ℃ , < 90%RH
+    * - 存储环境
+      - -40 ℃ ~ 125 ℃ ，< 90%RH
 
 
-**ESP32-CAM Pinout**
+**ESP32-CAM 引脚图**
 
-
-The following figure shows the ESP32-CAM pinout (AI-Thinker module).
+以下是 ESP32-CAM 引脚图（AI-Thinker 模块）。
 
 .. image:: img/esp32_cam_pinout.png
     :width: 800
 
-* There are three **GND** pins and three pins for power: 3.3V, 5V and either 3.3V or 5V.
-* **GPIO 1** and **GPIO 3** are the serial pins. You need these pins to upload code to your board. 
-* Additionally, **GPIO 0** also plays an important role, since it determines whether the ESP32 is in flashing mode or not. When **GPIO 0** is connected to **GND**, the ESP32 is in flashing mode.
+* 有三个 **GND** 引脚和三个电源引脚：3.3V、5V 和 3.3V 或 5V（任选）。
+* **GPIO 1** 和 **GPIO 3** 是串口引脚。你需要使用这些引脚将代码上传到开发板。
+* 此外，**GPIO 0** 也起着重要作用，因为它决定了 ESP32 是否处于闪烁模式。当 **GPIO 0** 连接到 **GND** 时，ESP32 进入闪烁模式。
 
-* The following pins are internally connected to the microSD card reader:
+* 以下引脚与 microSD 卡读取器内部连接：
 
 * GPIO 14: CLK
 * GPIO 15: CMD
 * GPIO 2: Data 0
-* GPIO 4: Data 1 (also connected to the on-board LED)
+* GPIO 4: Data 1（也与板载 LED 相连）
 * GPIO 12: Data 2
 * GPIO 13: Data 3
 
-**Note**
+**注意事项**
 
-* Please make sure that the input power of the module is at least 5V 2A, otherwise the picture may have water lines.
-* The ESP32 GPIO32 pin controls the camera power. When the camera is working, please pull GPIO32 low.
-* Since GPIO0 is connected to the camera XCLK, please leave GPIO0 in the air when using it, and do not connect it to high or low level.
-* The default firmware is already included in the factory, and no additional download is provided. Please be careful if you need to re-burn other firmware.
+* 请确保模块输入电源至少为 5V 2A，否则图像可能出现水波纹。
+* ESP32 GPIO32 引脚控制摄像头电源。当摄像头工作时，请将 GPIO32 拉低。
+* 由于 GPIO0 连接到摄像头的 XCLK 引脚，请在使用时将 GPIO0 保持浮空，不要连接高电平或低电平。
+* 默认固件已预装在出厂时，请谨慎操作，如需重新烧录其他固件。
 
+**文档**
 
-**Document**
-
-* Schematic diagram: |link_esp32cam_schematic|
-* Camera specification (English version): |link_cam_ov2640|
+* 原理图：|link_esp32cam_schematic|
+* 摄像头规格（英文版）：|link_cam_ov2640|
 
 .. note::
-    All information above comes from |link_aithiner|
+    上述所有信息来源于 |link_aithiner|

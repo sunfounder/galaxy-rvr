@@ -1,66 +1,66 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与其他爱好者一起，深入探索树莓派、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：通过社区和团队的帮助解决售后问题和技术挑战。
+    - **学习与分享**：交流技巧和教程，提升你的技能。
+    - **独家预览**：提前体验新产品发布和独家内容。
+    - **专属折扣**：享受最新产品的专属优惠。
+    - **节庆促销与赠品**：参与节日促销和赠品活动。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 即刻加入！
 
-Servo
+舵机
 ===========
 
-A servo is a specialized motor known for its precision in controlling specific angular positions. 
+舵机是一种专用电机，以其在控制特定角度位置上的精准度而著称。
 
 .. image:: img/servo.png
     :align: center
 
-* **Brown Line**: GND
-* **Orange Line**: Signal pin, connect to the PWM pin of main board.
-* **Red wire**: VCC
+* **棕色线**：GND
+* **橙色线**：信号引脚，连接至主板的 PWM 引脚。
+* **红色线**：VCC
 
-Unlike regular motors that spin continuously, a servo can move to a precise position and hold it accurately. It achieves this through a combination of gears, a potentiometer, and control circuitry. Servos are commonly used in various applications that require precise control over the position of objects or mechanisms.
+与普通电机连续旋转不同，舵机能够精确地转动到特定的位置并保持不动。它通过齿轮、可调电阻和控制电路的组合来实现这一点。舵机广泛应用于需要精确控制物体或机制位置的各种场合。
 
-**Features**
+**特性**
 
-* **Motor Type**: Core motor
-* **Operating Voltage**: 4.8~6V DC
-* **Standby Current**: ≤4 mA
-* **Consumption Current(at 4.8V No Load)**: ≦50mA
-* **Consumption Current(at 6 V no load)**: ≦60mA
-* **Stall Current(at locked 4.8V)**: ≦550mA
-* **Stall Current(at locked 6V)**: ≦650mA
-* **Rated Torque**: 4.8V, ≥0.6 kgf·cm; 6V, ≥0.7 kgf·cm
-* **Max. Torque**: 4.8V, ≥1.4 kgf.cm; 6V, ≥1.6 kgf.cm
-* **No Load Speed**: 4.8V, ≦0.14sec/60°; 6V, ≦0.12sec/60°
-* **Note**: Torsion protection:≥0.9 kgf.cm;Power failure protection after 5 seconds of continuous
-* **Operating Temperature Range**: -10℃~+50℃
-* **Storage Temperature Range**: -20℃~+60℃
-* **Operating Humidity Range**: ≤ 90%RH
-* **Storage Humidity Range**: ≤ 90%RH
-* **Weight**: 10± 0.5g
-* **Material**: ABS
-* **Operating Angle**: 180°±10°(500~2500us)
-* **Mechanical Limit Angle**: 360°
-* **Left & Right Travelling Angle**: ≤ 6°
-* **Centering deviation**: ≤ 1°
-* **Back Lash**: ≤ 4 us
-* **Amplifier Type**: Digital
-* **Cable Materia**: Ф1.08,19 PVC
-* **Cable Length**: 245±5mm(Exsert without plugs)
-* **Connector Type**: JR2.54mm/3Pin
+* **电机类型**：核心电机
+* **工作电压**：4.8~6V DC
+* **待机电流**：≤4 mA
+* **消耗电流（在 4.8V 空载时）**：≦50mA
+* **消耗电流（在 6V 空载时）**：≦60mA
+* **堵转电流（在 4.8V 时锁定）**：≦550mA
+* **堵转电流（在 6V 时锁定）**：≦650mA
+* **额定扭矩**：4.8V, ≥0.6 kgf·cm；6V, ≥0.7 kgf·cm
+* **最大扭矩**：4.8V, ≥1.4 kgf·cm；6V, ≥1.6 kgf·cm
+* **空载转速**：4.8V, ≦0.14秒/60°；6V, ≦0.12秒/60°
+* **注意**：扭矩保护：≥0.9 kgf·cm；连续工作 5 秒后具断电保护
+* **工作温度范围**：-10℃~+50℃
+* **存储温度范围**：-20℃~+60℃
+* **工作湿度范围**：≤ 90%RH
+* **存储湿度范围**：≤ 90%RH
+* **重量**：10± 0.5g
+* **材质**：ABS
+* **工作角度**：180°±10°（500~2500us）
+* **机械限制角度**：360°
+* **左右行程角度**：≤ 6°
+* **回中偏差**：≤ 1°
+* **背隙**：≤ 4 us
+* **放大器类型**：数字型
+* **电缆材质**：Ф1.08,19 PVC
+* **电缆长度**：245±5mm（无插头）
+* **连接器类型**：JR2.54mm/3Pin
 
-**Operating Principle**
+**工作原理**
 
-Inside a servo, essential components contribute to its unique functionality. At its core, a servo incorporates a conventional motor, this motor is intricately linked to a large gear, which in turn engages with a smaller gear on the motor shaft. This gearing arrangement efficiently converts the motor's rapid circular motion into slower yet potent movements.
+舵机内部的关键组件共同实现了其独特的功能。舵机的核心是一台常规电机，该电机通过复杂的齿轮系统与电机轴上的小齿轮相连接。这个齿轮布局将电机的快速旋转运动有效地转换为较慢但有力的动作。
 
 .. image:: img/servo_internal.png
 
-But the real magic happens within the servo, thanks to a minuscule electronic marvel known as a "potentiometer" and sophisticated "control circuitry." When the servo undergoes movement, the potentiometer rotates, altering its electrical resistance. The control circuitry detects and interprets this change in resistance with remarkable precision, thereby determining the servo's exact position. This is a testament to its ingenuity.
+然而，舵机真正的“魔力”来自于一个微小的电子组件——可调电阻（或称电位器）和复杂的控制电路。每当舵机发生运动时，电位器就会旋转，改变其电阻值。控制电路精准地检测并解读这一电阻变化，从而确定舵机的精确位置，这一过程展现了其卓越的技术。
 
-In the realm of servo control, a unique signaling method called "pulse-width modulation" or PWM comes into play. By skillfully adjusting the width of these pulses, operators can command the servo to move with precision and maintain its position. This is the essence of servo motor technology, a realm where precision and control converge to enable an array of applications.
+在舵机控制中，一种独特的信号调制方法——脉宽调制（PWM）发挥了重要作用。通过巧妙地调整脉冲的宽度，操控者可以精确地指令舵机进行运动，并保持其稳定的位置。这正是舵机电机技术的精髓所在，它将精确度与控制力结合，广泛应用于各类精确控制的场合。

@@ -1,204 +1,183 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与其他爱好者一起，深入探索树莓派、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：通过社区和团队的帮助解决售后问题和技术挑战。
+    - **学习与分享**：交流技巧和教程，提升你的技能。
+    - **独家预览**：提前体验新产品发布和独家内容。
+    - **专属折扣**：享受最新产品的专属优惠。
+    - **节庆促销与赠品**：参与赠品活动和节日促销。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 即刻加入！
 
-Lesson 2 Getting Started with the Mammoth Coding APP
+第二课 开始使用 Mammoth 编程 APP
 ======================================================
 
-Let's dive into the world of Mammoth Coding and create your first project! 
-For an optimal experience, it is recommended to use a device with a larger screen.
+让我们一起深入了解 Mammoth 编程的世界，创建你的第一个项目！ 
+为了获得最佳体验，建议使用屏幕较大的设备。
 
 
 
 
 
 
-Learning Objectives
+学习目标
 --------------------
 
-* Understand the APP programming environment and basic operations.
-* Learn how to script events in sprites, use the green flag, repeat, glide, and switch costumes.
-* Create a simple animation simulating a Mars rover.
+* 理解 APP 编程环境和基本操作。
+* 学习如何在角色中编写事件脚本，使用绿色旗帜、重复、滑行和更换服装等功能。
+* 创建一个模拟火星探测车的简单动画。
 
 
-Materials
+所需材料
 -----------
 
-* Smartphone or tablet
-* Mammoth Coding APP
+* 智能手机或平板电脑
+* Mammoth 编程 APP
 
+安装 Mammoth 编程 APP
+-----------------------------
 
-
-Installing the Mammoth Coding APP
---------------------------------------
-
-
-First, search for Mammoth Coding on Google Play or the Apple Store and download it.
+首先，在 Google Play 或 Apple Store 中搜索 Mammoth Coding，下载并安装。
 
 .. image:: img/mammoth_download.jpg
     :align: center
 
-
-Understanding the Mammoth Coding APP Interface
+了解 Mammoth 编程 APP 界面
 ------------------------------------------------------------
 
-Mammoth Coding is designed to be fun, educational, and easy to learn. 
-It provides tools for creating interactive stories, games, art, 
-simulations, and more using block-based coding. 
-It also includes its own drawing and sound editors.
+Mammoth 编程设计简单、富有教育意义且易于学习。 
+它提供了用于创建互动故事、游戏、艺术作品、模拟等的工具，使用基于块的编程方式。 
+此外，它还包括自己的绘图和声音编辑器。
 
-Here is what the interface looks like:
+
+以下是界面的展示：
 
 .. image:: img/2_app_ui_001.png
     :align: center
 
-For smaller screen devices, the interface looks like this:
+对于较小屏幕的设备，界面如下所示：
 
 .. image:: img/2_app_ui_002.png
     :align: center
 
 
-**Top Section**
+**顶部区域**
 
-The top section of Mammoth Coding includes several basic options.
+Mammoth 编程的顶部区域包含一些基本选项。
 
 .. image:: img/2_app_ui_1.png
     :align: center
 
-* The first option from the left is the language setting, allowing you to choose different languages.
-* The second option is the file menu, where you can create new files, load local files, and save the current file.
-* The third option is for renaming your project.
+* 从左侧第一个选项是语言设置，可以选择不同的语言。
+* 第二个选项是文件菜单，你可以在此创建新文件、加载本地文件或保存当前文件。
+* 第三个选项用于重命名你的项目。
 
 
-**Navigation**
+**导航**
 
-
-Just below the top section is the navigation bar, 
-which allows you to switch between the Code, Costumes, 
-and Sounds editing pages.
+在顶部区域下方是导航栏， 
+它允许你在“代码”、“服装”和“声音”编辑页面之间切换。
 
 .. image:: img/2_app_ui_3.png
     :align: center
 
-On smaller screens, the navigation bar appears at the top.
+在较小屏幕设备上，导航栏位于顶部。
 
 .. image:: img/2_app_ui_2.png
     :align: center
 
-The options are Code, Costumes, Sounds, and Stage. 
-The Stage page is actually the right-hand side of the interface on larger screens, 
-separated out on smaller devices to avoid clutter.
+这些选项分别是：代码、服装、声音和舞台。
+舞台页面在较大屏幕的界面上位于右侧，而在小设备上被单独分开以避免界面拥挤。
 
 .. image:: img/2_app_ui_4.png
     :align: center
 
-
-**Code**
+**代码**
 
 .. image:: img/2_app_ui_code.png
     :align: center
 
-The Code (and Stage) page is where most of your programming 
-activities will take place.
+“代码”（以及舞台）页面是你编程活动的主要区域。
 
-**Costumes**
+**服装**
 
 .. image:: img/2_app_ui_custom.png
     :align: center
 
-The Costumes page is used to edit sprites and backdrops, 
-providing visual elements for your programs.
+“服装”页面用于编辑角色和背景，为你的程序提供视觉元素。
 
-**Sounds**
+**声音**
 
 .. image:: img/2_app_ui_sound.png
     :align: center
 
-The Sounds page handles audio, providing multimedia elements for your programs.
+“声音”页面用于处理音频，为你的程序提供多媒体元素。
 
-First Time Using the Mammoth Coding APP
+首次使用 Mammoth 编程 APP
 ------------------------------------------------
 
-Drag a block to the center area.
+拖动一个代码块到中心区域。
 
 .. image:: img/2_drag.png
     :align: center
 
-Click the block and observe what happens.
+点击代码块并观察发生了什么。
 
 .. image:: img/2_click.png
     :align: center
 
-You'll see the sprite in the center of the stage move a bit. 
-If you keep clicking the block, it will continue to move.
+你会看到舞台上的角色稍微移动一下。 
+如果继续点击代码块，它会持续移动。
 
 .. image:: img/2_show.png
     :align: center
 
-Notice how the shapes of these blocks suggest that they can be connected, 
-similar to LEGO bricks. When you connect the blocks, 
-the sprite on the stage will execute the connected code 
-blocks in sequence (e.g., move and then rotate).
+注意这些代码块的形状暗示它们可以连接，就像乐高积木一样。
+当你连接代码块时，舞台上的角色将按顺序执行连接的代码块（例如，先移动再旋转）。
 
 .. image:: img/2_click2.png
     :align: center
 
 
-.. note:: This is the basic programming process in the APP. Drag blocks from the left area, connect them together, and click them to make the stage sprite perform actions.
+.. note:: 这是在 APP 中的基本编程过程。从左侧区域拖动代码块，连接它们，然后点击运行，使舞台上的角色执行相应动作。
+
+**选择角色**
 
 
-**Choosing a Sprite**
-
-
-In the lower right corner of the interface, 
-you’ll find the "choose a sprite" button. Tap it to see four pop-up options.
-
+在界面的右下角，你会看到“选择角色”按钮。
+点击它，你将看到四个弹出选项。
 
 .. image:: img/2_create_sp.png
     :align: center
 
-On smaller screens, you need to navigate to see this button.
+在较小的屏幕上，你需要进行导航才能看到该按钮。
 
 .. image:: img/2_create_sp0.png
     :align: center
 
+这四个选项分别是：
 
-The four options are:
+* **上传角色**：从设备存储中加载一个角色。
+* **惊喜**：从素材库中随机选择一个角色。
+* **绘画**：自己绘制一个角色。
+* **选择角色**：打开素材库选择一个角色。
 
-* **Upload Sprite**: Load a sprite from your device's storage.
-* **Surprise**: Select a random sprite from the asset library.
-* **Paint**: Draw a sprite.
-* **Choose a Sprite**: Open the asset library to choose a sprite.
-
-Tap "choose a sprite" to enter the asset library, which provides a variety of materials for your stage.
+点击“选择角色”进入素材库，提供多种舞台素材。
 
 .. image:: img/2_sp_list.png
     :align: center
 
-
-Find and select "GalaxyRVR".
-
+找到并选择“GalaxyRVR”。
 
 .. image:: img/2_sprite_rvr.png
     :align: center
 
-**Your First Example**
+**你的第一个示例**
 
-
-Let's create a simple animation using the APP to make GalaxyRVR move randomly.
-
-
-
+让我们使用这个 APP 创建一个简单的动画，让 GalaxyRVR 随机移动。
 
 .. raw:: html
 
@@ -210,40 +189,41 @@ Let's create a simple animation using the APP to make GalaxyRVR move randomly.
 
 
 
-**1. Start with the yellow Events category.**
+**1. 从黄色“事件”类别开始。**
 
-While we've previously executed code by clicking blocks in the central area, most of the time our code should be triggered by events. Events act like guards, monitoring actions such as sprite clicks or key presses, and tell the program what to do when these events occur.
+虽然我们之前通过点击中心区域的代码块来执行代码，但大多数情况下，代码应由事件触发。事件充当守卫，监控诸如角色点击或键盘按键等操作，并告诉程序在这些事件发生时应该做什么。
 
-Drag out the "when green flag clicked" block.
+拖动出“当点击绿色旗帜时”代码块。
 
 .. image:: img/2_first_flag.png
 
-The green flag acts like a starter's gun, representing the beginning of the program. This block triggers when you click the green flag next to the stage, starting all characters and code.
+绿色旗帜就像比赛的发令枪，代表程序的开始。当你点击舞台旁的绿色旗帜时，这个代码块会触发，启动所有角色和代码。
 
-**2. The Control category is the program's conductor.**
+**2. “控制”类别是程序的指挥官。**
 
-These blocks help control the program's flow, deciding when and how often actions should occur.
+这些代码块帮助控制程序的流程，决定何时以及多长时间执行某些动作。
 
-Drag out a "repeat 10" block and attach it below the green flag block.
+拖出“重复 10 次”代码块，并将其连接到绿色旗帜代码块下方。
 
 .. image:: img/2_first_repeat.png
 
-This means that after you click the green flag, something will happen ten times.
+这意味着点击绿色旗帜后，某些操作会发生 10 次。
 
-**3. The Motion category provides instructions for the stage's actors (sprites).**
+**3. “运动”类别为舞台上的角色（角色）提供指令。**
 
-Drag out a "glide 1 secs to random position" block and nest it inside the "repeat 10" block.
+拖出“滑行 1 秒到随机位置”代码块，并将其嵌套在“重复 10 次”代码块中。
 
 .. image:: img/2_first_glide.png
 
-This will make your sprite glide to a random position.
+这将使你的角色滑行到随机位置。
 
-**4. The Looks category adds animation and visual interest to your characters.**
+**4. “外观”类别为角色添加动画和视觉效果。**
 
-Drag out a "next costume" block and place it inside the "repeat 10" block.
+拖出“下一个服装”代码块，并将其放入“重复 10 次”代码块中。
 
 .. image:: img/2_first_custom.png
 
-This makes your sprite change costumes with each action, making it look like it’s walking.
+这样，每次操作时你的角色就会更换服装，看起来像是在走动。
 
-Now, click the green flag next to the stage and watch your GalaxyRVR move around randomly.
+
+现在，点击舞台旁的绿色旗帜，看看你的 GalaxyRVR 是如何随机移动的。

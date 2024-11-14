@@ -1,39 +1,39 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与志同道合的朋友一起，深入探索树莓派、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：通过社区和团队的帮助解决售后问题和技术挑战。
+    - **学习与分享**：交流技巧和教程，提升你的技术水平。
+    - **独家预览**：提前获得新产品发布和最新动态。
+    - **专属折扣**：享受我们最新产品的专属优惠。
+    - **节庆促销和赠品**：参与赠品活动和节日促销。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 即刻加入！
 
-18650 Battery
+18650 电池
 =================
 
 .. image:: img/3pin_battery.jpg
     :width: 500
     :align: center
 
-* **VCC**: Battery positive terminal, here there are two sets of VCC and GND is to increase the current and reduce the resistance.
-* **Middle**: To balance the voltage between the two cells and thus protect the battery.
-* **GND**: Negative battery terminal.
+* **VCC**：电池正极端子，设置了两组 VCC 和 GND 用于增加电流和减少电阻。
+* **中间**：用于平衡两节电池之间的电压，从而保护电池。
+* **GND**：电池负极端子。
+
+这是 SunFounder 定制的电池组，由两节 18650 电池组成，容量为 2000mAh。连接器为 
+XH2.54 3P，插入保护板后即可直接充电。
 
 
-This is a custom battery pack made by SunFounder consisting of two 18650 batteries with a capacity of 2000mAh. 
-The connector is XH2.54 3P, which can be charged directly after being inserted into the shield.
 
 
-**Features**
+**特点**
 
-* Battery charge: 5V/2A
-* Battery output: 5V/5A
-* Battery capacity: 3.7V 2000mAh x 2
-* Battery life: 90min
-* Battery charge time: 130min
-* Connector:XH2.54 3P
-
+* 电池充电：5V/2A
+* 电池输出：5V/5A
+* 电池容量：3.7V 2000mAh x 2
+* 电池续航：90分钟
+* 电池充电时间：130分钟
+* 连接器：XH2.54 3P

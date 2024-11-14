@@ -1,155 +1,154 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 Facebook 上的 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与志同道合的朋友一起深入探索树莓派、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：在售后问题和技术挑战上获得我们社区和团队的帮助。
+    - **学习与分享**：交流技巧和教程，提升你的技能。
+    - **独家预览**：提前获取新产品的发布信息和抢先体验。
+    - **专属折扣**：享受最新产品的独家优惠。
+    - **节日促销与赠品**：参与赠品活动和节日促销。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好和我们一起探索与创造了吗？点击 [|link_sf_facebook|]，立即加入吧！
 
 
-Lesson 13: Investigating the Mars Rover Energy System
+第十三课 探索火星探测器的能源系统
 =================================================================
 
-Welcome to the final lesson of our Mars rover exploration journey. This time, we are going to delve into the heart of the rover - its energy system.
+欢迎来到我们火星探测器探索之旅的最后一课。这一次，我们将深入探讨探测器的心脏——能源系统。
 
-When we think about exploring distant planets like Mars, one of the most crucial aspects to consider is energy. 
-How do these rovers power themselves in such harsh and remote environments? 
-In this lesson, we'll explore this fascinating topic and learn how rovers, like our Mars rover model, harness and manage energy.
+当我们考虑探索像火星这样遥远的星球时，最关键的方面之一就是能源。  
+这些探测器在如此恶劣和遥远的环境中是如何提供能量的？  
+在本课中，我们将探讨这一令人着迷的话题，了解像我们的火星探测器模型是如何获取和管理能源的。
 
-We'll investigate the working principles of battery and solar panel and even get our hands-on practice in installing and 
-using these power sources on our rover model. Furthermore, we'll take our skills a notch higher by using Arduino to monitor 
-the battery level.
+我们将研究电池和太阳能板的工作原理，并亲手安装和使用这些电源来为我们的探测器提供动力。
+此外，我们还将通过 Arduino 来监控电池电量，提升我们的技能。
 
-By the end of the lesson, we'll be able to display these vital energy statistics right on our APP, 
-allowing us to have a real-time understanding of our rover's energy status. Ready to power up our exploration? Let's get started!
+本课结束时，我们将能够在我们的 APP 上显示这些重要的能源统计数据，实时了解探测器的能源状态。
+准备好为我们的探索注入动力了吗？让我们开始吧！
 
 .. image:: img/solar_panel.jpg
     :width: 600
     :align: center
 
-Learning Goals
+学习目标
 -----------------------
 
-* Understand the working principles of batterry and solar panel.
-* Practice installing the solar panel on the Mars rover model.
-* Learn how to use Arduino to monitor battery level and the charging status of solar panel.
-* Display battery level on the APP.
+* 理解电池和太阳能板的工作原理。
+* 练习在火星探测器模型上安装太阳能板。
+* 学会如何使用 Arduino 监控电池电量和太阳能板的充电状态。
+* 在 APP 上显示电池电量。
 
-Materials needed
+所需材料
 ------------------------
 
-* Mars Rover model (equipped with all components, except for solar panel and bottom plate)
-* Solar panel and bottom plate
+* 火星探测器模型（配备所有组件，除了太阳能板和底板）
+* 太阳能板和底板
 * Arduino IDE
-* Computer
-* Tablet or smartphone with SunFounder Controller app installed
+* 计算机
+* 安装了 SunFounder Controller 应用的平板或智能手机
 
 
 
-Course Steps
+课程步骤
 ----------------------
 
-**Step1: Introduction to the Mars Rover's Energy System**
+**步骤 1：了解火星探测器的能源系统**
 
-Just as our bodies need a constant supply of energy to function, our Mars Rover needs a way to store and generate power for its exploration missions. Imagine the Rover's energy system like the heart in our bodies. Just as our hearts pump blood to all parts of our body, supplying necessary oxygen and nutrients, the Rover's energy system keeps energy flowing to every part of the Rover, ensuring it can perform its tasks smoothly.
+就像我们的身体需要持续供应能量才能正常运作一样，我们的火星探测器也需要一种方式来存储和生成能量，以支持其探索任务。可以把探测器的能源系统比作我们身体中的心脏。正如我们的心脏将血液泵送到全身各个部位，供应必要的氧气和营养，探测器的能源系统则确保能量持续流动到探测器的各个部分，保证它能够顺利执行任务。
 
-The main components of this energy system are the batteries and the solar panels, working in tandem to ensure the Rover can operate at all times, day or night.
+这个能源系统的主要组成部分是电池和太阳能板，它们协同工作，确保探测器在任何时间、无论白天还是黑夜，都能持续运作。
 
-The role of the batteries in the Rover's energy system is similar to the role of energy storage in our bodies. Just as we need to store energy for use when active, the Rover needs a way to store energy for its exploration missions. The energy stored in the batteries is continuously dispatched to various parts of the Rover, allowing it to carry out its tasks systematically.
+电池在探测器能源系统中的作用，类似于我们体内储存能量的方式。就像我们需要储存能量以应对活动时的需求一样，探测器也需要一种方式来储存能源以支持其探索任务。储存在电池中的能量会不断分配到探测器的各个部分，使其能够有序地执行任务。
 
 .. image:: img/battery_galaxyrvr.png
     :width: 600
     :align: center
 
-But what happens when the energy in the batteries runs out? How does it replenish its energy stores? This is where the solar panels come into play.
+但是，当电池中的能量耗尽时会发生什么呢？它是如何补充能源的呢？这时，太阳能板就发挥了作用。
 
-Much like trees absorb sunlight for photosynthesis to create food, our Mars Rover uses solar panels to harness energy from the Sun, converting it into electricity that is stored in the batteries for use. Each solar panel is made up of many smaller solar cells. These cells are composed of a material that can convert light into electricity – a process called the photovoltaic effect. When sunlight hits the cells, they generate an electric current that can be used immediately or stored in the Rover's batteries for later use.
+就像树木吸收阳光进行光合作用以制造食物一样，我们的火星探测器也利用太阳能板来捕获太阳能，将其转化为电力，并储存到电池中备用。每个太阳能板由多个小型太阳能电池组成，这些电池由能够将光转化为电力的材料构成——这一过程叫做光伏效应。当阳光照射到这些电池时，它们会产生电流，电流可以立即使用或存储在探测器的电池中以供日后使用。
 
 .. image:: img/solar_panel_gala.png
     :width: 600
     :align: center
 
-However, harnessing solar energy on Mars is not as easy as it sounds. Dust storms can reduce the amount of sunlight reaching the panels, and the weaker Martian sunlight (compared to Earth's) means that the panels generate less power than they would here at home. Despite these challenges, solar power is still the most practical and efficient way of powering our Mars Rover.
+然而，在火星上利用太阳能并不像听起来那么简单。沙尘暴会减少阳光到达太阳能板的量，而火星上的阳光比地球上的要弱，这意味着太阳能板产生的电力也比在地球上少。尽管面临这些挑战，太阳能仍然是为火星探测器供电最实用、最有效的方式。
 
-But how do we know when the solar panels are doing their job and when the batteries are getting low on power? This is where our Arduino comes in. In the next section, we will learn how to use Arduino to monitor the charging and discharging of the Rover's batteries.
+但我们如何知道太阳能板是否正在发挥作用，以及电池是否电量不足呢？这时 Arduino 就派上用场了。在接下来的部分，我们将学习如何使用 Arduino 监控探测器电池的充电和放电状态。
 
 
-**Step 2: Mounting the Solar Panel on the Mars Rover**
+**步骤 2：安装太阳能板到火星探测器上**
 
-Before we begin this step, we need to have our Mars Rover model, a solar panel, and the cables necessary to connect the solar panel to the Rover's power system.
+在开始这一步之前，我们需要准备好火星探测器模型、太阳能板，以及连接太阳能板和探测器电源系统所需的电缆。
 
-This is a process that allows us to put theory into practice and truly appreciate the charm of Science, Technology, Engineering, and Mathematics (STEM) education. Let's get started!
+这是一个让我们将理论付诸实践的过程，真正体会到科学、技术、工程和数学（STEM）教育的魅力。让我们开始吧！
 
 .. raw:: html
 
     <iframe width="600" height="400" src="https://www.youtube.com/embed/-Vj-dcniFrA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-**Step 3: Programming to Monitor Battery Voltage and Charge**
+**步骤 3：编程监控电池电压和电量**
 
-Now that we have installed the solar panels on our Mars Rover model, the next step is to monitor the voltage and charge of the battery through programming. 
-
+现在我们已经在火星探测器模型上安装了太阳能板，接下来的步骤是通过编程监控电池的电压和电量。
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/2e85e234-9575-4a1f-982b-2f9aba8e3156/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-This code effectively creates a simple battery monitor, which is particularly useful in applications like the Mars Rover where power management is crucial. It will allow you to monitor the state of the battery, helping you understand when the Rover needs to be recharged or when power-consuming tasks should be scheduled.
+这段代码有效地创建了一个简单的电池监视器，这在像火星探测器这样的应用中尤为重要，因为电力管理至关重要。它将帮助你监控电池的状态，了解何时需要为探测器充电，或者何时应该安排高耗电任务。
 
-Sure, let's break down the different parts of this code:
+我们来逐步解析这段代码的不同部分：
 
-*  This line is defining ``BATTERY_PIN`` as the analog pin A3, which is where the battery voltage will be read from.
+* 这一行代码定义了 ``BATTERY_PIN`` 为模拟引脚 A3，用于读取电池电压。
 
     .. code-block:: arduino
 
         #define BATTERY_PIN A3
 
-* This function calculates the battery's voltage. It first reads the analog value from ``BATTERY_PIN``, then converts it into voltage. Because the Arduino's analog-to-digital converter (ADC) operates on a scale of 0-1023, we divide the raw reading by 1023. We then multiply by 5 (the reference voltage of the Arduino) and by 2 (assuming a voltage divider of 2), to convert this to a voltage reading.
+* 这个函数用于计算电池电压。它首先读取 ``BATTERY_PIN`` 的模拟值，然后将其转换为电压值。由于 Arduino 的模拟-数字转换器（ADC）操作的范围是 0-1023，我们将原始读取值除以 1023，然后乘以 5（Arduino 的参考电压），再乘以 2（假设使用了 2 倍电压分压器），来将其转换为电压值。
 
     .. code-block:: arduino
         :emphasize-lines: 5
 
         float batteryGetVoltage() {
-            // Reads the analog value from the battery pin
+            // 读取电池引脚的模拟值
             int adcValue = analogRead(BATTERY_PIN);
-            // Converts the analog value to voltage
+            // 将模拟值转换为电压
             float adcVoltage = adcValue / 1023.0 * 5 * 2;
-            // Rounds the voltage to two decimal places
+            // 将电压四舍五入到小数点后两位
             float batteryVoltage = int(adcVoltage * 100) / 100.0;
             return batteryVoltage;
         }
-    
 
-    The raw ADC reading from the Arduino's analog-to-digital converter is divided by 1023 to convert it into a fraction, then multiplied by 5 to translate it into voltage, as Arduino uses a reference voltage of 5 volts.
 
-    However, because the battery voltage higher than Arduino's maximum input voltage, a resistor is used to protect the Arduino. Therefore, we multiply the ADC voltage by 2 to counteract the effect of the resistor and obtain the correct battery voltage.
+    Arduino 的模拟值通过将原始 ADC 读取值除以 1023 来转换为比例值，然后乘以 5，将其转化为电压，因为 Arduino 使用 5 伏的参考电压。
 
-* This function calculates the battery's percentage of charge based on its voltage. It uses the ``map`` function to ``map`` the voltage value (ranging from 6.6 to 8.4 volts) to a percentage (ranging from 0 to 100).
+    由于电池电压高于 Arduino 的最大输入电压，因此使用了电阻来保护 Arduino。因此，我们将 ADC 电压乘以 2，以抵消电阻的影响，从而获得正确的电池电压。
+
+* 这个函数根据电池电压计算电池的充电百分比。它使用 ``map`` 函数将电压值（范围在 6.6 到 8.4 伏之间）映射为百分比值（范围从 0 到 100）。
 
     .. code-block:: arduino
 
         uint8_t batteryGetPercentage() {
-            float voltage = batteryGetVoltage();  // Gets the battery voltage
-            // Maps the voltage to a percentage.
+            float voltage = batteryGetVoltage();  // 获取电池电压
+            // 将电压映射到百分比
             int16_t temp = map(voltage, 6.6, 8.4, 0, 100);
-            // Ensures the percentage is between 0 and 100
+            // 确保百分比在 0 到 100 之间
             uint8_t percentage = max(min(temp, 100), 0);
             return percentage;
         }
 
-**Step 4: Putting the Mars Rover's Energy System to the Test: Indoor and Outdoor Runs**
+**步骤 4：测试火星探测器能源系统：室内与室外测试**
 
-Having coded our battery monitoring system, it's now time to set the Mars Rover into action. 
-Begin by charging the Rover to full capacity, and plan for two 30-minute exploratory missions - one indoors, 
-and another outdoors in the sunlight. Record the initial battery level before each mission, 
-and compare it with the battery percentage at the end of each test. 
-The following table serves as a useful template to keep track of your findings:
+在完成电池监控系统的编程后，是时候让火星探测器投入实际操作了。  
+首先将探测器充电至满电状态，并计划进行两次各30分钟的探索任务——一次在室内，另一次在户外阳光下进行。
+在每次任务前记录初始的电池电量，并与每次测试结束时的电池电量进行比较。  
+以下表格可以帮助你记录测试结果：
+
+
 
 
 
@@ -158,93 +157,92 @@ The following table serves as a useful template to keep track of your findings:
    :header-rows: 1
 
    * - 
-     - Sun Shine
-     - In Room
-   * - Start Battery Percentage
-     -
-     - 
-   * - End Battery Percentage
+     - 阳光
+     - 室内
+   * - 开始时电池百分比
      - 
      - 
+   * - 结束时电池百分比
+     - 
+     - 
 
-Observe the difference in the battery levels following each test. Did the Rover's battery last longer when it was basking in 
-outdoor sunlight? What conclusions can we draw about the efficacy of the solar panel from this observation?
+观察每次测试后电池电量的变化。
+当探测器在户外阳光下时，它的电池是否能持续更长时间？从这些观察中，我们可以得出什么关于太阳能板效果的结论？
 
-Understanding these variances will help us better comprehend how solar energy can effectively power a Mars Rover, 
-even in remote, harsh environments such as those found on the Martian surface.
+理解这些差异将有助于我们更好地理解太阳能如何有效地为火星探测器提供动力，即使在像火星表面这样的遥远而恶劣的环境中。
 
-**Step 5: Display the Battery Level on the App**
 
-Naturally, it's impractical to repeatedly upload new code to the Mars Rover just to check the remaining battery level. That could be quite inconvenient.
 
-Instead, we can send the battery level to an app, allowing us to easily monitor how much playtime is left while we're having fun!
+**步骤 5：在APP上显示电池电量**
 
-From previous lessons, we've learned that when we want to shown data on the SunFounder Controller or control the Mars Rover using widgets, we need to add these widgets first.
+显然，反复上传新代码到火星探测器以检查剩余电量并不现实，这样非常不便。
 
-However, the battery level display is a special widget. It has a dedicated key (``BV``), and its display isn't located in the areas labeled from A to Q. Instead, it's represented by a battery icon in the top-right corner.
+相反，我们可以将电池电量发送到APP，让我们在享受乐趣时轻松监控剩余电量！
 
-Here's how we include it in our code:
+在之前的课程中，我们已经学过，当我们希望在 SunFounder Controller 上显示数据或使用控件控制火星探测器时，首先需要添加这些控件。
+
+然而，电池电量显示是一个特殊的控件。它有一个专用的键（ ``BV`` ），并且其显示位置不在标记为 A 到 Q 的区域中。相反，它通过右上角的电池图标来表示。
+
+以下是如何在代码中包含该控件：
 
 .. code-block:: Arduino
 
     ...
-    // This pin reads the voltage of the battery
+    // 该引脚读取电池电压
     #define BATTERY_PIN A3
     ...
 
     void setup() {
         ...
-        // Sets the battery pin as an input
+        // 设置电池引脚为输入模式
         pinMode(BATTERY_PIN, INPUT);
     }
 
-
-    // Function to execute when data is received from the Controller
+    // 接收到控制器数据时执行的函数
     void onReceive() {
         ...
-        //show battery voltage
+        // 显示电池电压
         aiCam.sendDoc["BV"] = batteryGetVoltage();
     }   
 
     ...
 
-    // This function reads the battery voltage
+    // 读取电池电压的函数
     float batteryGetVoltage() {
-        // Reads the analog value from the battery pin
+        // 读取电池引脚的模拟值
         int adcValue = analogRead(BATTERY_PIN);
-        // Converts the analog value to voltage
+        // 将模拟值转换为电压
         float adcVoltage = adcValue / 1023.0 * 5 * 2;
-        // Rounds the voltage to two decimal places
+        // 将电压四舍五入到小数点后两位
         float batteryVoltage = int(adcVoltage * 100) / 100.0;
         return batteryVoltage;
     }
 
-Please find the full code attached:
-
+请查看附带的完整代码：
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/8b6e0dbd-6fcc-45ac-8408-e8aa706a4bf3/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After successfully uploading the code, get your SunFounder Controller up and running. You'll see the battery level shown in the top-right corner.
+在成功上传代码后，启动你的 SunFounder Controller，你将在右上角看到电池电量显示。
 
 .. image:: img/battery_icon.png
 
-By completing this step, we've mastered the Mars Rover's energy system and gained the ability to monitor its power levels in real-time.
+通过完成这一步骤，我们已经掌握了火星探测器的能源系统，并具备了实时监控其电池电量的能力。
 
-Now that we have learned how to harness the sun's power to operate the Mars Rover effectively, we can start planning more extensive explorations of our backyard or even venture into more challenging terrains!
+现在我们已经学会如何利用太阳能有效驱动火星探测器，我们可以开始规划更大范围的探索，甚至挑战更具难度的地形！
 
-**Step 6: Reflection**
+**步骤 6：反思**
 
-Throughout this lesson, we've focused on understanding the crucial role of the energy system in the Mars Rover, and the mechanisms to monitor the Rover's remaining energy. The solar panel-based energy system not only powers the Rover but also underlines the importance of renewable energy sources in space exploration.
+在本课中，我们重点理解了火星探测器能源系统的关键作用，并学习了如何监控探测器剩余电量的机制。基于太阳能的能源系统不仅为探测器提供动力，还突显了可再生能源在太空探索中的重要性。
 
-With the knowledge you have now, think about the real-life implications of this system. Consider the challenges that a solar energy system might encounter on Mars. How might extreme temperatures, dust storms, or long periods of darkness affect the energy supply? What solutions could you propose to tackle these obstacles?
+凭借你现在掌握的知识，思考一下这个系统在现实生活中的意义。考虑一下太阳能系统在火星上可能遇到的挑战。极端温度、沙尘暴或长时间的黑暗将如何影响能源供应？你能提出哪些解决方案来应对这些障碍？
 
-**Step 7: Looking Forward**
+**步骤 7：展望未来**
 
-Now that we've given our Mars Rover the ability to move, it's time to let it start its exploration journey! You can let it wander in various terrains mimicking the Mars environment.
+现在我们已经赋予了火星探测器移动能力，是时候让它开始探索之旅了！你可以让它在模拟火星环境的各种地形中自由穿行。
 
-For instance, you can let it climb over a heap of stones.
+例如，你可以让它爬越一堆石头。
 
 .. raw:: html
 
@@ -253,7 +251,7 @@ For instance, you can let it climb over a heap of stones.
       Your browser does not support the video tag.
    </video>
 
-Or let it navigate through a thick grassy patch.
+或者让它穿越一片浓密的草地。
 
 .. raw:: html
 
@@ -262,7 +260,7 @@ Or let it navigate through a thick grassy patch.
       Your browser does not support the video tag.
    </video>
 
-Or set it on a course on a gravel terrain full of stones.
+又或者让它在一片布满石头的砾石地面上行驶。
 
 .. raw:: html
 
@@ -271,7 +269,7 @@ Or set it on a course on a gravel terrain full of stones.
       Your browser does not support the video tag.
    </video>
 
-However, please note that if the obstacle is too high, the rover might not be able to climb over it.
+然而，请注意，如果障碍物过高，探测器可能无法爬越。
 
 .. raw:: html
 
@@ -280,6 +278,6 @@ However, please note that if the obstacle is too high, the rover might not be ab
       Your browser does not support the video tag.
    </video>
 
-These varied terrains present unique challenges for the rover, just as they would for a real Mars Rover. As you watch your rover try to overcome these obstacles, you're experiencing a small part of what scientists and engineers at NASA do when they send rovers to Mars!
+这些多样的地形对探测器提出了独特的挑战，就像它们会对真实的火星探测器造成挑战一样。当你观看探测器尝试克服这些障碍时，你正在体验 NASA 科学家和工程师们在将探测器送往火星时所面临的实际情况！
 
-As we conclude our Mars Rover lessons, it's important to reflect on what we've learned. We hope this journey has not only expanded your knowledge and skills but also sparked curiosity and a desire to explore. Whether your Rover roams in your backyard or across the vast expanse of your imagination, the discoveries you make along the way are sure to be extraordinary.
+随着我们结束火星探测器课程的学习，重要的是反思我们所学到的内容。我们希望这段旅程不仅拓宽了你的知识和技能，也激发了你的好奇心和探索欲望。无论你的探测器是在后院漫游，还是穿越广阔的想象空间，你在旅程中的发现都一定是非凡的。

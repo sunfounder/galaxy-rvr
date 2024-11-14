@@ -1,34 +1,34 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与其他爱好者一起，深入探索树莓派、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：通过社区和团队的帮助解决售后问题和技术挑战。
+    - **学习与分享**：交流技巧和教程，提升你的技能。
+    - **独家预览**：提前体验新产品发布和独家内容。
+    - **专属折扣**：享受最新产品的专属优惠。
+    - **节庆促销与赠品**：参与节日促销和赠品活动。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 即刻加入！
 
-Solar Panel
+太阳能电池板
 =======================
 
 .. image:: img/solar_panel.png
     :width: 400
     :align: center
 
-Solar panels are devices that convert sunlight into electricity. They are made up of photovoltaic (PV) cells, which are made of semiconductor materials such as silicon. When sunlight hits a PV cell, it knocks electrons loose from their atoms. These electrons flow through the cell, creating an electric current.
+太阳能电池板是将阳光转化为电能的装置。它们由光伏（PV）电池组成，光伏电池采用如硅等半导体材料制成。当阳光照射到光伏电池时，它会将电子从原子中击出，电子流经电池，产生电流。
 
-Solar panels can be used to generate electricity for a variety of purposes, including powering homes, businesses, and even entire communities. They are a clean and renewable source of energy that can help reduce our reliance on fossil fuels.
-
-
-**Features**
+太阳能电池板可用于为各种用途提供电力，包括为家庭、企业甚至整个社区供电。它们是一种清洁且可再生的能源，有助于减少我们对化石燃料的依赖。
 
 
-* Output power: 6V/660mA
-* Time to fully charge the battery: 7.2h (theoretical value, assuming strong sunlight)
-* Size: 170mm x 170mm
-* Wires: Gray and Black, 24AWG, 200mm
-* Connector: White, XH2.54-2P
+**特性**
+
+
+* 输出功率：6V/660mA
+* 完全充电时间：7.2小时（理论值，假设阳光充足）
+* 尺寸：170mm x 170mm
+* 电缆：灰色和黑色，24AWG，200mm
+* 连接器：白色，XH2.54-2P

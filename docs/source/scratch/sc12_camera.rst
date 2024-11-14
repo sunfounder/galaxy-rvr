@@ -1,136 +1,129 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder Raspberry Pi、Arduino 和 ESP32 爱好者社区！在这里，你可以与其他爱好者一起深入探索 Raspberry Pi、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：在售后问题和技术挑战上，得到社区和团队的帮助。
+    - **学习与分享**：交流技巧和教程，共同提升技能。
+    - **独家预览**：抢先体验新产品的发布和预告。
+    - **专属折扣**：享受最新产品的独家折扣。
+    - **节日促销与赠品**：参与赠品活动和节日促销。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 今天就加入我们吧！
 
-Lesson 12 Camera System
+
+第十二课 摄像头系统
 ================================================
 
-Welcome back, young explorers! In the last lesson, we equipped our GalaxyRVR with the ability to "nod" using a tilt mechanism. Now, it's time to give our Rover "eyes" - the camera!
+欢迎回来，年轻的探险者们！在上一课中，我们通过倾斜机制为我们的 GalaxyRVR 配备了“点头”的能力。现在，是时候为我们的火星车安装“眼睛”——摄像头了！
 
-In this thrilling journey, we'll dive into the setup of the Rover's camera system. You'll learn how to relay the visuals captured by the Rover's camera to the APP, so you can see exactly what the Rover sees in real-time. Imagine the excitement of experiencing the Martian landscape from the Rover's perspective!
+在这次激动人心的旅程中，我们将深入了解火星车摄像头系统的设置。你将学会如何将火星车摄像头捕捉到的画面传输到 APP，让你实时看到火星车的视角。想象一下，从火星车的视角体验火星景观，那将是多么令人兴奋！
 
-This offers an even more interactive and engaging experience with our GalaxyRVR. Stay tuned for more adventures!
-
+这将为我们的 GalaxyRVR 带来更加互动和沉浸的体验，敬请期待更多冒险！
 
 .. image:: img/11_camera_image.png
 
-
-Learning Objectives
+学习目标
 -------------------------
 
-* Learn how to accurately see everything the Mars Rover sees in real-time.
-* Understand how to combine camera input and servo control to enhance project interactivity.
+* 学习如何实时准确地看到火星车所看到的一切。
+* 理解如何结合摄像头输入和舵机控制，提升项目的互动性。
 
-
-Materials
+所需材料
 -----------
 
-* Smartphone or tablet
-* Mammoth Coding APP
+* 智能手机或平板电脑
+* Mammoth Coding 应用
 * GalaxyRVR
 
-
-Introduction to ESP32 CAM
+ESP32 CAM 简介
 -------------------------------------------------------
 
-In our previous adventure, we equipped our Mars Rover with a pair of "eyes" by integrating the ESP32 CAM. Today, we're going to learn more about it and actually make it "see."
+在我们之前的冒险中，我们通过集成 ESP32 CAM 为我们的火星车配备了一双“眼睛”。今天，我们将更深入地了解它，并让它真正具备“视力”。
 
 .. image:: ../img/esp32_cam.png
     :width: 400
     :align: center
 
-The ESP32 CAM, acting like the eyes of our Rover, is a small yet powerful module. Not only does it integrate Wi-Fi and Bluetooth functionalities, but it also comes with a compact camera. This camera helps our Rover capture images of its surroundings.
+ESP32 CAM 就像是火星车的眼睛，是一个小巧但强大的模块。它不仅集成了 Wi-Fi 和蓝牙功能，还配备了一只紧凑的摄像头。这个摄像头帮助火星车捕捉周围环境的图像。
 
-Just like we use our eyes to observe our environment, the ESP32 CAM can "see" what lies ahead for the Rover, then send these visual data to our smartphone or computer. This allows us to see everything the Rover sees in real-time!
+就像我们用眼睛观察环境一样，ESP32 CAM 可以“看”到火星车前方的景象，并将这些视觉数据传输到我们的智能手机或电脑上。这样，我们就能实时看到火星车所看到的一切！
 
-It's as if we're piloting the Rover directly, observing not just the Rover itself, but also the world it explores! Incredible, isn't it? So, let's dive deeper into it...
-
+这就像是我们直接操作火星车，不仅观察火星车本身，还能看到它所探索的世界！不可思议吧？那么，让我们继续深入了解它吧……
 
 .. _camera_system:
 
-Exploring the Mars Rover Visual System
+探索火星车视觉系统
 ----------------------------------------------------
 
-1. Drag a ``turn camera ON`` block. Click it, and you'll see the background of the stage display the camera's feed.
+1. 拖动一个“打开摄像头”块。点击它后，你会看到舞台背景显示摄像头的画面。
 
 .. image:: img/11_camera_on.png
 .. :align: center
 
-2. If you see the camera feed inverted, a ``set camera image orientation to inverted`` block can help you correct it.
+2. 如果你看到摄像头的画面是倒置的，可以通过拖动一个“将摄像头图像方向设置为倒置”块来纠正。
 
 .. image:: img/11_camera_orientation.png
 .. :align: center
 
-3. Drag a ``turn camera LED ON`` block. Click it, and the LED next to the GalaxyRVR camera will light up.
+3. 拖动一个“打开摄像头 LED”块。点击它，GalaxyRVR 摄像头旁边的 LED 灯将亮起。
 
 .. image:: img/11_camera_led.png
 .. :align: center
 
-**Click the Sprite to Turn On the Camera**
+**点击精灵以打开摄像头**
 
-1. Now that we know how to control the camera module, create four new sprites to control the camera and its LED. Adjust their sizes to make them look harmonious.
+1. 现在我们已经知道如何控制摄像头模块，创建四个新精灵来控制摄像头和它的 LED。调整它们的大小，使它们看起来协调。
 
 .. image:: img/11_camera_4.png
 .. :align: center
 
-2. Program each sprite: clicking ball 1 will turn off the camera.
+2. 为每个精灵编程：点击球体 1 将关闭摄像头。
 
 .. image:: img/11_camera_1sp.png
 .. :align: center
 
-3. Clicking ball 2 will turn on the camera and set the image orientation.
+3. 点击球体 2 将打开摄像头并设置图像方向。
 
 .. image:: img/11_camera_2sp.png
 .. :align: center
 
-4. Clicking ballon 3 will turn on the LED.
+4. 点击气球 3 将打开 LED。
 
 .. image:: img/11_camera_3sp.png
 .. :align: center
 
-5. Clicking ballon 4 will turn off the LED.
+5. 点击气球 4 将关闭 LED。
 
 .. image:: img/11_camera_4sp.png
 .. :align: center
 
-6. To save space on the stage, stack each set of controls.
+6. 为了节省舞台空间，将每组控制块叠放在一起。
 
 .. image:: img/11_camera_fold.png
 .. :align: center
 
-7. Add a ``go to back layer`` block for each sprite. When clicked, the sprite will move to the back layer, revealing the next sprite, creating a toggle effect.
+7. 为每个精灵添加一个“去往后层”块。点击时，精灵将移动到后层，显示出下一个精灵，创建切换效果。
 
 .. image:: img/11_camera_layer.png
 .. :align: center
 
-
-
-Camera-Related Blocks
+摄像头相关的代码块
 -------------------------------
 
 .. image:: img/block/camera_turn.png
 
-Turn on (or off) the camera module. Once activated, the stage background will change to the camera view.
+打开（或关闭）摄像头模块。一旦激活，舞台背景将切换为摄像头视图。
 
 .. image:: img/block/camera_led_turn.png
 
-Turn on (or off) the supplemental LED on the camera module.
-
+打开（或关闭）摄像头模块的辅助 LED 灯。
 
 .. image:: img/block/camera_transp.png
 
-Set the opacity of the camera view.
+设置摄像头视图的透明度。
 
 .. image:: img/block/camera_orientation.png
 
-Set the orientation of the camera view. You can use this block to flip the view.
+设置摄像头视图的方向。你可以使用此块来翻转视图。

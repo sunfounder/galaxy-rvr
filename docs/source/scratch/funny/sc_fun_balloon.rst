@@ -1,25 +1,25 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与其他爱好者一起，深入探索树莓派、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：通过社区和团队的帮助解决售后问题和技术挑战。
+    - **学习与分享**：交流技巧和教程，提升你的技能。
+    - **独家预览**：提前体验新产品发布和独家内容。
+    - **专属折扣**：享受最新产品的专属优惠。
+    - **节庆促销与赠品**：参与节日促销和赠品活动。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 即刻加入！
 
 .. _sc_balloon:
 
-Extension 1 Inflating the Balloon
+扩展项目 1：给气球充气
 =========================================
 
-In this interactive project, we control a balloon's flight.
+在这个互动项目中，我们将控制气球的飞行。
 
-Upon clicking the green flag, the balloon will progressively inflate. If the balloon becomes too large, it will burst; if too small, it will fall. Your task is to block the left infrared module at the right moment to make it ascend.
+点击绿色旗帜后，气球将逐渐充气。如果气球充得太大，它会爆炸；如果充得太小，它会下落。你的任务是在适当的时刻遮挡左侧的红外模块，使气球上升。
 
 .. raw:: html
 
@@ -28,72 +28,70 @@ Upon clicking the green flag, the balloon will progressively inflate. If the bal
       Your browser does not support the video tag.
    </video>
 
-Below are the steps for implementing the project. It is advisable to follow these steps initially, and once familiar, you may alter the effects as desired.
+下面是实现这个项目的步骤。建议初次操作时按照这些步骤进行，熟悉后你可以根据需要调整效果。
 
-
-1. Add a Sprite and a Backdrop
+1. 添加角色和背景
 ----------------------------------------
 
-* Remove the default sprite and click the **Choose a Sprite** button in the bottom-right corner of the sprite area. Then, select the **Balloon1** sprite.
+* 删除默认角色，点击角色区右下角的 **选择角色** 按钮，然后选择 **Balloon1** 角色。
 
   .. image:: img/balloon_choose_sprite.png
 
-* Add a **Boardwalk** backdrop or another backdrop of your choice through the **Choose a Backdrop** button.
+* 通过 **选择背景** 按钮添加一个 **Boardwalk** 背景，或者选择其他你喜欢的背景。
 
   .. image:: img/balloon_choose_backdrop.png
 
-2. Paint a Costume for the **Balloon1** Sprite
+2. 为 **Balloon1** 角色绘制服装
 -------------------------------------------------------
 
-Now, let's create an exploding effect costume for the balloon.
+接下来，我们为气球绘制一个爆炸效果的服装。
 
-* Navigate to the **Costumes** tab for the **Balloon1** sprite, click the **Choose a Costume** button in the bottom left, and select **Paint** to open a blank **Costume**. Name it "boom".
+* 在 **Balloon1** 角色的 **服装** 标签中，点击左下角的 **选择服装** 按钮，选择 **绘制**，打开一个空白的 **服装**，并命名为 "boom"。
 
   .. image:: img/balloon_set_ball1.png
 
-* Choose a color and use the **Brush** tool to draw a pattern.
+* 选择一种颜色，使用 **画笔** 工具绘制一个图案。
 
   .. image:: img/balloon_set_ball2.png
     :width: 90%
 
-* Choose another color, select the **Fill** tool, and tap inside the pattern to fill it.
+* 选择另一种颜色，使用 **填充** 工具点击图案内部进行填充。
 
   .. image:: img/balloon_set_ball3.png
     :width: 90%
 
-* Finally, add the text "BOOM" to complete the explosion effect costume.
+* 最后，添加 "BOOM" 文字，完成爆炸效果的服装。
 
   .. image:: img/balloon_set_ball4.png
     :width: 90%
 
-3. Scripting the **Balloon** Sprite
+3. 为 **Balloon1** 角色编写脚本
 ------------------------------------------
 
-* Initialize the **Balloon1** sprite's position and size.
+* 初始化 **Balloon1** 角色的位置和大小。
 
   .. image:: img/balloon_script1.png
 
-* Gradually increase the size of the **Balloon** sprite.
+* 逐渐增大 **Balloon1** 角色的大小。
 
   .. image:: img/balloon_script2.png
 
-* At this point, block the left obstacle avoidance module to stop the **Balloon1** sprite from inflating further.
+* 此时，遮挡左侧的障碍物避让模块，停止 **Balloon1** 角色继续膨胀。
 
   .. image:: img/balloon_script3.png
 
-* Now, let the **Balloon1** sprite decide whether to ascend or descend based on its size.
+* 让 **Balloon1** 角色根据其大小决定是上升还是下降。
 
-  * If the size is less than 90, it will descend (y-coordinate decreases).
-  * If the size is between 90 and 120, it will ascend (y-coordinate increases).
+  * 如果大小小于 90，它将下落（y 坐标减小）。
+  * 如果大小在 90 和 120 之间，它将上升（y 坐标增大）。
 
   .. image:: img/balloon_script4.png
 
-* If you fail to block the left obstacle avoidance module, the balloon will continue to inflate until it exceeds a size of 120, at which point it will explode (switch to the explosion effect costume).
+* 如果你没有及时遮挡左侧的障碍物避让模块，气球将继续膨胀，直到超过 120 大小，届时气球将爆炸（切换到爆炸效果服装）。
 
   .. image:: img/balloon_script5.png
 
-Programming is complete. You can now click the green flag to run the script and see if it achieves the desired effect.
-
+编程完成后，你可以点击绿色旗帜运行脚本，看看是否达到了预期效果。
 
 .. raw:: html
 

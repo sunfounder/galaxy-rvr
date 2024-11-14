@@ -1,131 +1,128 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与其他爱好者一起，深入探索树莓派、Arduino 和 ESP32。
 
-    **Why Join?**
+    **为什么加入？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **专家支持**：通过社区和团队的帮助解决售后问题和技术挑战。
+    - **学习与分享**：交流技巧和教程，提升你的技能。
+    - **独家预览**：提前体验新产品发布和独家内容。
+    - **专属折扣**：享受最新产品的专属优惠。
+    - **节庆促销与赠品**：参与节日促销和赠品活动。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 即刻加入！
 
-Lesson 1 Unveiling the Mars Rover
+第一课 揭开火星探测车的面纱
 ========================================
 
-Welcome to Lesson 1: Understanding the Mars Rover. Today, we dive into the thrilling world of Mars rovers—our remote explorers on the Red Planet. We will learn about their evolution, their functions, and the technological marvels that they are. Furthermore, you'll channel your creativity to design your own rover and hone your presentation skills by explaining your unique design. Get ready to explore Mars from your classroom!
+欢迎来到课程 1：了解火星探测车。今天，我们将深入探索火星探测车的世界——这些是我们在红色星球上的遥控探险者。我们将学习它们的演变、功能以及它们的技术奇迹。此外，你还将发挥创意，设计你自己的探测车，并通过解释你的独特设计来提升你的演讲技巧。准备好从课堂上一起探索火星吧！
 
-
-Learning Objectives
+学习目标
 -------------------------
-* Gain an understanding of the evolution and purpose of Mars rovers
-* Express creativity by designing your own Mars rover
-* Enhance presentation skills by sharing and explaining your rover design
+* 理解火星探测车的演变和目的
+* 通过设计你自己的火星探测车来表达创造力
+* 通过分享和解释你的设计来提高演讲技巧
 
-Materials
+所需材料
 -----------
-* Mars Rover images and technical specifications for reference
-* Documentary video on the history of Mars rovers
-* Computer with internet access for research and viewing documentary
-* Presentation slides or interactive whiteboard for lesson delivery
-* Drawing paper, pencils, and coloring materials for rover design activity
-* Worksheets for guided note-taking, reflection, and design planning
+* 火星探测车的图片和技术规格参考
+* 关于火星探测车历史的纪录片视频
+* 具有互联网连接的电脑，用于查阅资料和观看纪录片
+* 用于授课的幻灯片或互动白板
+* 设计火星探测车的绘画纸、铅笔和上色工具
+* 用于引导笔记、反思和设计规划的工作表
 
-Steps
+步骤
 --------------
 
-**Step 1: What are Mars Rovers?**
+**步骤 1：什么是火星探测车？**
 
-Before we dive into Mars rovers, let's first acquaint ourselves with Mars itself. As we can see from the images and models, 
-the surface of Mars is marked with craters, mountains, valleys, and dust storms, painting a picture of a landscape 
-that is both fascinating and challenging.
+在我们深入了解火星探测车之前，让我们首先认识一下火星本身。
+从图片和模型中可以看到，火星表面布满了陨石坑、山脉、峡谷和尘暴，
+描绘出一个既神秘又充满挑战的景象。
 
     .. image:: ../img/mars_surface.jpg
         :width: 600
     .. image:: ../img/mars_surface.png
         :width: 600
 
-Can you imagine what it would be like to navigate through such a rugged terrain? 
-Now, suppose you have the task of designing a rover for Mars.
+你能想象在这样崎岖的地形中行驶吗？假设你有设计一辆火星探测车的任务。
 
-* What considerations will you keep in mind given the terrain and conditions of Mars?
-* What features will you equip it with to ensure it can perform its functions effectively?
-* What tasks do you envision your Mars rover would need to accomplish?
+* 在考虑火星的地形和环境时，你会关注哪些因素？
+* 你会为探测车配备哪些功能，以确保它能够有效执行任务？
+* 你认为火星探测车需要完成哪些任务？
 
-Remember, a Mars rover is a robot designed to explore Mars, study its environment, and send data back to Earth. 
-So think about aspects such as movement, communication, power supply, scientific research capabilities, and durability 
-under Mars' extreme conditions.
+记住，火星探测车是一种机器人，旨在探索火星、研究其环境，并将数据传回地球。
+因此，要考虑如移动、通信、电力供应、科学研究能力以及在火星极端环境下的耐用性等方面。
 
-Let's take a moment to brainstorm and share our ideas. It's interesting to think like engineers and scientists, isn't it? 
-We'll delve deeper into actual Mars rover designs and their functions in the following steps, 
-so keep your creative ideas in mind as we progress.
+让我们花点时间进行头脑风暴并分享我们的想法。像工程师和科学家思考问题是不是很有趣？
+我们将在接下来的步骤中深入了解实际的火星探测车设计及其功能，所以请将你的创意想法牢记在心。
 
 
-**Step 2: Exploring the History of Mars Rovers**
 
-Next, we'll embark on a journey through time by watching a documentary that details the history of Mars rovers. 
-The documentary takes us from the first attempt at deploying a rover on Mars, the Soviet Mars 3 rover which unfortunately 
-didn't succeed upon landing in 1971, to NASA's first successful Mars rover, Sojourner, in 1997. 
 
-Our journey doesn't stop there, as we venture further to understand the adventures of the most advanced rovers yet: Spirit, Opportunity, Curiosity, and Perseverance.
+**步骤 2：探索火星探测车的历史**
+
+接下来，我们将通过观看一部纪录片来回顾火星探测车的历史。
+纪录片将带我们回到1971年，回顾苏联的火星3号探测车——尽管它未能成功着陆；
+然后是1997年NASA成功发射的第一辆火星探测车——索杰纳号。
+
+我们的旅程并不止于此，接下来我们将继续了解目前最先进的探测车：
+精神号、机遇号、好奇号和毅力号。
 
 .. raw:: html
 
     <iframe width="600" height="400" src="https://www.youtube.com/embed/OO5CTBBgtXs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-This documentary not only presents a historical context but also provides a comprehensive understanding of the progressive 
-scientific and engineering milestones that have led to the current Mars exploration era.
+这部纪录片不仅提供了历史背景，还深入阐述了火星探测技术和工程的进步，
+帮助我们全面理解当前的火星探索时代。
 
 
-**Step 3: Summarize the Mars Rovers**
+**步骤 3：总结火星探测车**
 
-After watching the documentary, let's summarize the different Mars rovers that have been sent on the red planet.
+观看完纪录片后，我们来总结一下送上火星的各个探测车。
 
-* **Sojourner** (1997)
+* **索杰纳号**（1997）
 
-    **Sojourner**, the pioneer of Mars rovers, embarked on its journey as a part of the Mars Pathfinder mission. 
-    It made a successful landing in the Ares Vallis region on July 4, 1997. As the first wheeled vehicle to roam 
-    on a planet other than Earth, Sojourner marked a significant milestone in Martian exploration. 
-    Although it was operational on Mars for only 92 Martian days, or sols, it set the groundwork for future exploratory rovers.
+    火星探测车的先驱 **索杰纳号**，作为火星路径探测任务的一部分，它于1997年7月4日成功着陆于阿瑞斯谷地区。
+    作为首个在地球以外的行星上行驶的轮式车，索杰纳号在火星探索史上标志着一个重要的里程碑。
+    尽管它在火星上仅运行了92个火星日（sols），但它为未来的探测车奠定了基础。
 
     .. image:: ../img/mars_sojourner.jpg
 
-* **Spirit** (2004–2010) and **Opportunity** (2004–2018)
+* **精神号**（2004–2010）和 **机遇号**（2004–2018）
 
-    **Spirit** and **Opportunity** are twin rovers of NASA's Mars Exploration Rover (MER) mission. **Spirit**, also known as MER-A, 
-    operated on Mars from 2004 to 2010. 
-    
-    On the other hand, **Opportunity**, or MER-B, had a remarkably long run from 2004 to 2018. 
-    Together, they greatly expanded our understanding of the Martian surface and geological history.
+    NASA火星探索车（MER）任务中的双胞胎探测车 **精神号** 和 **机遇号** 。
+    其中 **精神号**（MER-A）从2004年到2010年在火星上进行工作。
+    而 **机遇号**（MER-B）则从2004年到2018年执行任务，取得了显著成果。
+    它们共同扩展了我们对火星表面和地质历史的认知。
 
     .. image:: ../img/mars_opportunity.jpg
 
-* **Curiosity** (2012–present):
+* **好奇号**（2012–至今）：
 
-    **Curiosity**, a car-sized Mars rover, was designed to explore the Gale crater on Mars as part of NASA's 
-    Mars Science Laboratory (MSL) mission. Since its arrival in 2012, **Curiosity** has made numerous significant discoveries, 
-    including evidence of past liquid water on Mars.
+    一辆类似汽车大小的火星探测车 **好奇号** ，旨在作为NASA火星科学实验室（MSL）任务的一部分，探索火星的盖尔陨石坑。
+    自2012年到达火星以来， **好奇号** 已作出多个重要发现，包括火星曾经有液态水的证据。
 
     .. image:: ../img/mars_curiosity.jpg
 
-* Perseverance (2021–present):
+* **毅力号**（2021–至今）：
 
-    **Perseverance**, also known as Percy, is the most recent rover to arrive on Mars. It's designed to explore the Jezero crater 
-    as part of NASA's Mars 2020 mission. Along with its scientific instruments, **Perseverance** also carries Ingenuity, a small experimental Mars helicopter, marking another first in Martian exploration.
+    “佩西”也被称为 **毅力号** ，是最新抵达火星的探测车。
+    它的任务是探索火星的耶泽罗陨石坑，作为NASA的火星2020任务的一部分。
+    除了配备科学仪器外， **毅力号** 还携带了“创意号”，一架小型实验性火星直升机，标志着火星探索的又一个突破。
 
     .. image:: ../img/mars_perseverance.jpg
 
-Now, let's have a discussion. Reflect on the evolution of these rovers.
+现在，我们来讨论一下这些探测车的演变。
 
-* How do the designs of these rovers differ? How are they similar?
-* How did the mission objectives influence the design of each rover?
-* What advancements in technology can you identify between each rover?
-* What features do you think the next Mars rover should have?
-* Share your thoughts and reflections, as well as any questions you might have!
+* 这些探测车的设计有何不同？又有哪些相似之处？
+* 任务目标如何影响每辆探测车的设计？
+* 你能识别出这些探测车之间的技术进步吗？
+* 你认为下一代火星探测车应具备哪些特点？
+* 请分享你的想法和反思，欢迎提出任何问题！
 
-**Step 4: Art Activity: Draw Your Own Mars Rover**
+**步骤 4：艺术活动：画出你的火星探测车**
 
 .. image:: ../img/sojourner-first.jpg
 .. image:: ../img/spirit-opportunity.jpg
@@ -133,31 +130,33 @@ Now, let's have a discussion. Reflect on the evolution of these rovers.
 .. image:: ../img/curiosity.png
 .. image:: ../img/perseverance_rover.png
 
-For our next activity, let's put our knowledge and creativity to work by designing our very own Mars rover. Consider the key characteristics of the rovers we've studied so far, but also think about the unique attributes you would want to incorporate in your design.
+在下一项活动中，让我们运用我们的知识和创造力，设计我们自己的火星探测车。考虑到我们目前所学习的探测车的关键特点，但也要思考你希望在设计中加入的独特元素。
 
-Materials you'll need:
 
-* Drawing paper
-* Pencils and erasers
-* Colored pencils, crayons, or markers
+所需材料：
 
-Drawing Instructions:
+* 绘画纸
+* 铅笔和橡皮
+* 彩色铅笔、蜡笔或马克笔
 
-#. Start with the body of the rover. What shape will it be? How large?
-#. Consider the wheels. How many will your rover have? What size and shape will they be?
-#. Don't forget about the instruments. What scientific equipment will your rover carry? Cameras, drills, spectrometers, or something entirely new?
-#. Lastly, consider any unique features. Does your rover have solar panels, or does it use a different power source? Can it communicate directly with Earth, or does it need a relay satellite?
 
-Once everyone has completed their drawings, we'll share them with the class. Explain your design choices and the mission you envision for your rover.
+绘画说明：
 
-**Step 5: Present Your Mars Rover Designs**
+#. 从探测车的主体开始。它会是什么形状？多大？
+#. 考虑车轮。你的探测车会有多少个车轮？它们的大小和形状如何？
+#. 不要忘记配备科学仪器。你的探测车会携带哪些科学设备？摄像头、钻头、光谱仪，还是其他全新的设备？
+#. 最后，考虑任何独特的功能。你的探测车是否有太阳能电池板，或者使用其他电源？它能直接与地球通信，还是需要一个中继卫星？
 
-Now that everyone has completed their Mars Rover drawings, it's time to share them! As you present, discuss the thought process behind your design. What is your rover's mission? How does the design support this mission?
+当每个人完成绘画后，我们将分享给全班。解释你的设计选择以及你设想的任务。
 
-Remember, there are no wrong answers in this activity. The purpose is to stimulate your creativity and deepen your understanding of Mars rover technology.
+**步骤 5：展示你的火星探测车设计**
 
-**Step 6: Reflection and Conclusion**
+现在，每个人都已经完成了火星探测车的绘制，是时候分享了！在展示时，讨论你的设计背后的思考过程。你的探测车任务是什么？它的设计如何支持这个任务？
 
-As we conclude our Mars Rover lesson, let's take a few minutes to reflect on what we have learned. How do our rover designs reflect the advancements in technology and scientific objectives? How might the real Mars rovers continue to evolve in the future?
+记住，这个活动没有“错误”的答案。目的在于激发你的创造力，并加深你对火星探测车技术的理解。
 
-Remember, the exploration of space, like any STEAM field, is all about asking questions, solving problems, and using creativity. Keep exploring, keep asking questions, and keep being curious!
+**步骤 6：反思与总结**
+
+在结束火星探测车课程时，让我们花几分钟反思我们所学到的内容。我们的探测车设计如何体现了技术进步和科学目标？现实中的火星探测车未来可能会如何发展？
+
+记住，像任何STEM领域一样，太空探索就是不断提出问题、解决问题并发挥创造力的过程。继续探索，继续提问，保持好奇心！
