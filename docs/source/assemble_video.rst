@@ -25,7 +25,7 @@
 
 * 对于 GalaxyRVR 的组装，我们在套件中提供了打印版的组装说明。以下是该说明的 PDF 版本：
 
-    * :Download:`组件清单和组装说明 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0112v11-a0001012-galaxyrvr.pdf>`
+    * :Download:`组件清单和组装说明 <_static/pdf/GalaxyRVR-assemble-cn.pdf>`
 
 * 如果你在理解打印版组装说明时遇到困难，可以按照我们的逐步组装视频进行操作。
 
