@@ -4,6 +4,8 @@
 #include <Arduino.h>
 
 #define BATTERY_PIN A3
+#define ANALOG_REFERENCE_VOLTAGE 5.246
+
 
 /**
  * @brief init battery module
@@ -20,8 +22,9 @@ void batteryBegin() {
  */
 float batteryGetVoltage() {
   int adcValue = analogRead(BATTERY_PIN);
-  float adcVoltage = adcValue/1024.0*5*2;
-  float batteryVoltage = int(adcVoltage*100)/100.0; // round two decimal places
+  float adcVoltage = float(adcValue) / 1024.0 * ANALOG_REFERENCE_VOLTAGE;
+  float batteryVoltage = adcVoltage * 2; // Battery voltage = ADC value * 2
+  batteryVoltage = int(batteryVoltage*100)/100.0; // round two decimal places
   return batteryVoltage;
 }
 
