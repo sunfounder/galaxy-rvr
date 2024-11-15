@@ -57,7 +57,7 @@ GalaxyRVR 不仅仅是一个玩具，更是通向火星的门户，是一款教�
 .. toctree:: 
     :maxdepth: 2
 
-    About this Kit <self>
+    关于本套件 <self>
     assemble_video
     play_mode
     course_mode

@@ -92,10 +92,10 @@ ESP32 CAM 就像我们漫游车的“眼睛”，它是一个小巧却功能强�
 
         .. code-block:: arduino
 
-        // AP 模式
-        #define WIFI_MODE WIFI_MODE_AP
-        #define SSID "GalaxyRVR"
-        #define PASSWORD "12345678"
+            // AP 模式
+            #define WIFI_MODE WIFI_MODE_AP
+            #define SSID "GalaxyRVR"
+            #define PASSWORD "12345678"
 
     * **STA 模式**：在这种模式下，漫游车连接到你的家庭 Wi-Fi 网络。记得你的控制设备（如手机或平板）也需要连接到相同的 Wi-Fi 网络。这种模式下，你的设备可以保持正常的互联网连接，同时控制漫游车，但漫游车的操作范围将受限于 Wi-Fi 覆盖范围。
 

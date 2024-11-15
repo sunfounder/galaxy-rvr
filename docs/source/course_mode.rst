@@ -14,7 +14,7 @@
 
 .. _course_mode:
 
-与 Arduino 一起玩
+课程模式
 ================================
 
 欢迎来到课程模式，这是一个通过 13 课引人入胜的旅程。在第一课中，我们将一窥火星漫游车的历史，为我们自己的漫游车组装奠定基础。
@@ -39,7 +39,7 @@
 
     * :download:`GalaxyRVR 代码文件 <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
 
-或者查看 `SunFounder GalaxyRVR Kit for Arduino - GitHub <https://github.com/sunfounder/galaxy-rvr/tree/main>` 中的代码。
+或者查看 `SunFounder GalaxyRVR Kit for Arduino - GitHub <https://github.com/sunfounder/galaxy-rvr/tree/main>`_ 中的代码。
 
 .. toctree::
     :maxdepth: 1
