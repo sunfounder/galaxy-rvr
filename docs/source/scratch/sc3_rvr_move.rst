@@ -149,6 +149,8 @@ Connecting the APP to GalaxyRVR
 
 6. Connect it.
 
+    .. image:: img/reconnect_2.png
+
     .. note:: The breathing light on the GalaxyRVR can help indicate the connection status. Flashing yellow means no devices are connected. A steady blue light means it’s connected.
 
 
