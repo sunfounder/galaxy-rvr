@@ -56,18 +56,18 @@ To control the GalaxyRVR with the APP, you need to upload a specific program usi
 
 Follow these steps on your computer:
 
-Download Arduino IDE
-^^^^^^^^^^^^^^^^^^^^^^^^
+.. Download Arduino IDE
+.. ^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Visit https://www.arduino.cc/en/software#future-version-of-the-arduino-ide .
+.. #. Visit https://www.arduino.cc/en/software#future-version-of-the-arduino-ide .
 
-#. Download the IDE for your OS version.
+.. #. Download the IDE for your OS version.
 
-    .. image:: img/sp_001.png
+..     .. image:: img/sp_001.png
 
-#. Install it.
+.. #. Install it.
 
-    .. image:: img/sp_005.png
+..     .. image:: img/sp_005.png
 
 
 Uploading the Adapted Code
