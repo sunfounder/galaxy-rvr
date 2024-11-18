@@ -34,9 +34,9 @@ release = '1.0'
 # ones.
 extensions = [
     'sphinx.ext.autosectionlabel',
-    'sphinx_copybutton'
+    'sphinx_copybutton',
+    'sphinx_rtd_theme',
 ]
-
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -55,6 +55,10 @@ exclude_patterns = []
 html_theme = 'sphinx_rtd_theme'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
+# -- sphinx_rtd_theme Theme options -----------------------------------------------------
+html_theme_options = {
+    'flyout_display': 'attached'
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
