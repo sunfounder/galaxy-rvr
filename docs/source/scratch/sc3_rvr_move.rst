@@ -73,7 +73,7 @@ Download Arduino IDE
 Uploading the Adapted Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Turn on the GalaxyRVR's power switch.
+#. Turn on the GalaxyRVR's power switch.
 
     .. raw:: html
 
@@ -82,30 +82,32 @@ Uploading the Adapted Code
             Your browser does not support the video tag.
         </video>
 
-2. Connect the Arduino and computer with a USB cable, and then turn the **upload** switch of the car to the upload end.
+#. Connect the Arduino and computer with a USB cable, and then turn the **upload** switch of the car to the upload end.
 
     .. image:: ../img/camera_upload.png
         :width: 500
         :align: center
 
-.. note:: It is the USB Type B port for connecting to Arduino, not the USB Type C port for charging.
+    .. note:: It is the USB Type B port for connecting to Arduino, not the USB Type C port for charging.
 
-3. Open the downloaded galaxy-rvr-1.2.0 folder. (It has been downloaded and installed in the :ref:`update_firmware` section), double-click to run the ``update-arduino-firmware.bat`` script. A command prompt will open.
+#. Check if you have completed :ref:`update_firmware` section.
 
-.. image:: ../img/firmware/updateFirmware.png
+#. Open the downloaded ``galaxy-rvr-1.2.0 folder``. (It has been downloaded and installed in the previous step), double-click to run the ``update-arduino-firmware.bat`` script. A command prompt will open.
 
-4. In the command prompt, you will see a serial port list showing the serial ports that the computer is currently connected to. Enter the sequence number on the left side of the serial port list to select the serial port of the Arduino Uno. Press Enter to automatically upload.
+    .. image:: ../img/firmware/updateFirmware.png
 
-.. image:: ../img/firmware/selectCOM.png
+#. In the command prompt, you will see a serial port list showing the serial ports that the computer is currently connected to. Enter the sequence number on the left side of the serial port list to select the serial port of the Arduino Uno. Press Enter to automatically upload.
 
-5. After waiting for the upload to complete, you can unplug the USB cable.
+    .. image:: ../img/firmware/selectCOM.png
 
-.. image:: ../img/firmware/UNOupdating.png
+#. After waiting for the upload to complete, you can unplug the USB cable.
 
-6. Turn the upload switch back and press the reset button, and the car is ready to use.
+    .. image:: ../img/firmware/UNOupdating.png
+
+#. Turn the upload switch back and press the reset button, and the car is ready to use.
 
 
-.. note:: This code enables the GalaxyRVR to respond to APP commands. You won’t need to upload any more code in the subsequent chapters that use the Mammoth Coding APP.
+    .. note:: This code enables the GalaxyRVR to respond to APP commands. You won’t need to upload any more code in the subsequent chapters that use the Mammoth Coding APP.
 
 
 .. _app_connect:
@@ -125,29 +127,29 @@ Connecting the APP to GalaxyRVR
 2. Connect your mobile device (e.g., phone, tablet) to the WiFi hotspot provided by GalaxyRVR. Generally, its SSID is ``GalaxyRVR`` and the password is ``12345678``.
 
 
-.. image:: ../img/firmware/SSID.png
+    .. image:: ../img/firmware/SSID.png
 
-.. note:: The default connection mode is **AP mode**. After you've connected, there might be a prompt warning that there is no internet access on this network. If so, choose "Stay connected".
+    .. note:: The default connection mode is **AP mode**. After you've connected, there might be a prompt warning that there is no internet access on this network. If so, choose "Stay connected".
 
-    .. image:: ../img/app/camera_stay.png
+        .. image:: ../img/app/camera_stay.png
 
 
 3. Open the APP. Click here.
 
-.. image:: img/connet_app_04.png
+    .. image:: img/connet_app_04.png
 
 
 4. Load the GalaxyRVR module.
 
-.. image:: img/connet_app_05.png
+    .. image:: img/connet_app_05.png
 
 5. The APP will search for your robot.
 
-.. image:: img/connet_app_06.png
+    .. image:: img/connet_app_06.png
 
 6. Connect it.
 
-.. note:: The breathing light on the GalaxyRVR can help indicate the connection status. Flashing yellow means no devices are connected. A steady blue light means it’s connected.
+    .. note:: The breathing light on the GalaxyRVR can help indicate the connection status. Flashing yellow means no devices are connected. A steady blue light means it’s connected.
 
 
 Re-connect APP
@@ -155,15 +157,15 @@ Re-connect APP
 
 When your device is disconnected from GalaxyRVR, you will see this pop-up window appear in the interface. Click reconnect.
 
-.. image:: img/reconnect_0.png
+    .. image:: img/reconnect_0.png
 
 If you close the pop-up window, you can also reconnect by clicking this button in the GalaxyRVR category.
 
-.. image:: img/reconnect_1.png
+    .. image:: img/reconnect_1.png
 
 Find your GalaxyRVR and click connect.
 
-.. image:: img/reconnect_2.png
+    .. image:: img/reconnect_2.png
 
 
 Controlling the GalaxyRVR with the APP
@@ -171,31 +173,31 @@ Controlling the GalaxyRVR with the APP
 
 1. In the Code interface, you'll find the GalaxyRVR category.
 
-.. image:: img/3_rvr_catego.png
+    .. image:: img/3_rvr_catego.png
 
 2. We've previously used the green flag to start programs. 
 During this process, you'll notice several blocks in the Events category that trigger code execution. 
 Find the ``when up arrow key pressed`` block.
 
-.. image:: img/3_rvr_when_arrow.png
+    .. image:: img/3_rvr_when_arrow.png
 
 3. Drag out four of these blocks, one for each arrow key event (up, down, left, right).
 
-.. image:: img/3_rvr_4_arrow.png
+    .. image:: img/3_rvr_4_arrow.png
 
-.. note:: You can click the eye icon below the green flag to hide the stage area and gain more coding space.
+    .. note:: You can click the eye icon below the green flag to hide the stage area and gain more coding space.
 
 4. Complete the code blocks for these four events. When the up arrow is pressed, make the GalaxyRVR move forward; when the left arrow is pressed, make it turn left, etc.
 
-.. image:: img/3_rvr_4_dir.png
+    .. image:: img/3_rvr_4_dir.png
 
 5. Expand the stage by clicking this button.
 
-.. image:: img/3_rvr_stage.png
+    .. image:: img/3_rvr_stage.png
 
 6. You'll enter an interface with an enlarged stage and a set of direction keys.
 
-.. image:: img/3_rvr_stage2.png
+    .. image:: img/3_rvr_stage2.png
 
 Press these direction keys and you'll be delighted to see you can directly control the GalaxyRVR.
 
@@ -210,7 +212,7 @@ After executing this block, the GalaxyRVR will move forward. You can:
     * Change the parameter from the dropdown menu to turn left, turn right, or reverse.
 
 
-.. image:: img/block/move_set_speed.png 
+.. image:: img/block/move_set_speed.png     
 ..    :align: center
 
 This block is used to set the moving speed of the GalaxyRVR. It does not initiate movement by itself.
@@ -224,7 +226,7 @@ After executing this block, the GalaxyRVR will move forward for 1 second. You ca
     * Adjust the number in the block to set the duration of GalaxyRVR’s movement.
 
 
-.. image:: img/block/move_forward_80.png 
+.. image:: img/block/move_forward_80.png    
 ..    :align: center
 
 After executing this block, the GalaxyRVR will move forward at 80% speed. You can:
