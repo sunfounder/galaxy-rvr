@@ -70,7 +70,7 @@
 上传适配代码
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. 打开 GalaxyRVR 的电源开关。
+#. 打开 GalaxyRVR 的电源开关。
 
     .. raw:: html
 
@@ -79,29 +79,31 @@
             Your browser does not support the video tag.
         </video>
 
-2. 使用 USB 数据线将 Arduino 与计算机连接，然后将车载设备的 **上传** 开关切换到上传位置。
+#. 使用 USB 数据线将 Arduino 与计算机连接，然后将车载设备的 **上传** 开关切换到上传位置。
 
     .. image:: ../img/camera_upload.png
         :width: 500
         :align: center
 
-.. note:: 连接到 Arduino 的 USB 接口是 Type B，而不是用于充电的 Type C 接口。
+    .. note:: 连接到 Arduino 的 USB 接口是 Type B，而不是用于充电的 Type C 接口。
 
-3. 打开下载的 galaxy-rvr-1.2.0 文件夹。（该文件已在 :ref:`update_firmware` 部分下载并安装），双击运行 ``update-arduino-firmware.bat`` 脚本，命令提示符窗口将会打开。
+#. 请确保你已完成 :ref:`update_firmware` 部分的检查。
 
-.. image:: ../img/firmware/updateFirmware.png
+#. 打开下载的 ``galaxy-rvr-1.2.0`` 文件夹。（该文件已在上一步中下载并安装），双击运行 ``update-arduino-firmware.bat`` 脚本，命令提示符窗口将会打开。
 
-4. 在命令提示符窗口中，你将看到一个串口列表，显示当前计算机连接的串口。根据串口列表中的序号选择 Arduino Uno 的串口，按下回车键即可自动开始上传。
+    .. image:: ../img/firmware/updateFirmware.png
 
-.. image:: ../img/firmware/selectCOM.png
+#. 在命令提示符窗口中，你将看到一个串口列表，显示当前计算机连接的串口。根据串口列表中的序号选择 Arduino Uno 的串口，按下回车键即可自动开始上传。
 
-5. 上传完成后，你可以拔掉 USB 数据线。
+    .. image:: ../img/firmware/selectCOM.png
 
-.. image:: ../img/firmware/UNOupdating.png
+#. 上传完成后，你可以拔掉 USB 数据线。
 
-6. 将上传开关切换回原位，并按下重置按钮，车载设备即可准备使用。
+    .. image:: ../img/firmware/UNOupdating.png
 
-.. note:: 此代码使 GalaxyRVR 能够响应 APP 命令。在后续章节中使用 Mammoth 编程 APP 时，你无需再上传其他代码。
+#. 将上传开关切换回原位，并按下重置按钮，车载设备即可准备使用。
+
+    .. note:: 此代码使 GalaxyRVR 能够响应 APP 命令。在后续章节中使用 Mammoth 编程 APP 时，你无需再上传其他代码。
 
 .. _app_connect:
 
