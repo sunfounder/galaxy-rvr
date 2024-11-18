@@ -33,14 +33,14 @@ Whether you are a novice eager to dive into the world of Mars rovers or an exper
 So, buckle up for an exciting journey into the world of Mars rovers! Dive in and start exploring the red planet from the comfort of your home.
 
 
-Download the Code
-------------------------------------------
+**Download the Code**
+
 
 Download the relevant code from the link below.
 
     * :download:`GalaxyRVR Code File <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
 
-Or check out the code at `SunFounder GalaxyRVR Kit for Arduino - GitHub <https://github.com/sunfounder/galaxy-rvr/tree/main>`.
+Or check out the code at `SunFounder GalaxyRVR Kit for Arduino - GitHub <https://github.com/sunfounder/galaxy-rvr/tree/main>`_.
 
 
 
