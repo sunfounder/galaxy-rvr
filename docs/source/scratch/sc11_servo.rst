@@ -176,20 +176,20 @@ When we touch the arrow, we can drag the direction of the arrow sprite.
 .. image:: img/6_animate_repeat_touching.png
     :width: 550
 
-3. Drag a ``point towards touch_position`` block to make the sprite face the touch position.
+5. Drag a ``point towards touch_position`` block to make the sprite face the touch position.
 
 .. image:: img/10_servo_arrow_point_toward.png
 
-4. Drag a ``set servo angle to 90 degrees`` block and embed a ``direction`` block to align the gimbal angle with the arrow sprite's orientation. This way, when we change the arrow sprite's direction (i.e., touch the stage area), we can change the gimbal angle.
+6. Drag a ``set servo angle to 90 degrees`` block and embed a ``direction`` block to align the gimbal angle with the arrow sprite's orientation. This way, when we change the arrow sprite's direction (i.e., touch the stage area), we can change the gimbal angle.
 
 .. image:: img/10_servo_arrow_angle_direction.png
 
-5. Add a limit check to ensure the arrow sprite's orientation does not exceed 135 degrees.
+7. Add a limit check to ensure the arrow sprite's orientation does not exceed 135 degrees.
 
 .. image:: img/10_servo_arrow_135.png
 
 
-6. Similarly, ensure its orientation does not go below 0 degrees.
+8. Similarly, ensure its orientation does not go below 0 degrees.
 
 .. image:: img/10_servo_arrow_0.png
 

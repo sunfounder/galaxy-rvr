@@ -133,10 +133,6 @@ Infrared Obstacle Avoidance Module Detection Values
 
 3. Let's see what these two signals are. First, :ref:`app_connect`.
 
-.. raw:: html
-
-   <br></br>
-
 
 4. In the GalaxyRVR category, find the left IR status and right IR status blocks. These store the detection results of the IR modules. Make sure to check the boxes for these.
 
@@ -187,11 +183,6 @@ We can utilize the infrared obstacle avoidance modules to make the GalaxyRVR aut
 
 7. Once you have assembled these blocks, try triggering the left infrared obstacle avoidance module with your hand. The GalaxyRVR will smartly turn right to avoid your hand.
 
-.. raw:: html
-
-   <br></br>
-
-
 
 8. Long-press these blocks to bring up a menu, where you can duplicate the code.
 
@@ -204,6 +195,8 @@ We can utilize the infrared obstacle avoidance modules to make the GalaxyRVR aut
 10. You will notice that if both IR events are triggered simultaneously, the behavior may become erratic. To prevent this, the "stop other scripts in sprite" block will come in handy. It ensures that only one sensor event is responded to at a time.
 
 .. image:: img/4_ir_stop_script.png
+    :width: 800
+
 
 .. note:: The stop scripts block and blocks with time parameters (e.g., forward for 1 sec) can conflict in some cases, so avoid using them together when possible.
 
@@ -211,15 +204,10 @@ We can utilize the infrared obstacle avoidance modules to make the GalaxyRVR aut
 11. Now, the GalaxyRVR will turn left or right when obstacles are detected on either side. You can now test this by triggering both sensors with your hand to make the GalaxyRVR dodge left and right.
 
 
-.. raw:: html
-
-   <br></br>
-
-
 12. Add a forward block under each code block so that the GalaxyRVR continues to move forward after avoiding the obstacle.
 
 .. image:: img/4_ir_avoid_move.png
-
+    :width: 400
 
 Now, click the green flag, and the GalaxyRVR will move forward continuously, turning to avoid obstacles and resuming its path after avoiding them.
 

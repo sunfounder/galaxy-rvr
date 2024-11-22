@@ -70,7 +70,7 @@ Follow these steps on your computer:
 ..     .. image:: img/sp_005.png
 
 
-Uploading the Adapted Code
+Uploading the Aduino Adapted Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Turn on the GalaxyRVR's power switch.
@@ -104,10 +104,10 @@ Uploading the Adapted Code
 
     .. image:: ../img/firmware/UNOupdating.png
 
-#. Turn the upload switch back and press the reset button, and the car is ready to use.
+.. #. Turn the upload switch back and press the reset button, and the car is ready to use.
 
 
-    .. note:: This code enables the GalaxyRVR to respond to APP commands. You won’t need to upload any more code in the subsequent chapters that use the Mammoth Coding APP.
+.. note:: This code enables the GalaxyRVR to respond to APP commands. You won’t need to upload any more code in the subsequent chapters that use the Mammoth Coding APP.
 
 
 .. _app_connect:
@@ -120,7 +120,7 @@ Connecting the APP to GalaxyRVR
     .. raw:: html
 
         <video width="600" loop autoplay muted>
-            <source src="_static/video/play_reset.mp4" type="video/mp4">
+            <source src="../_static/video/play_reset.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 

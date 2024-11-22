@@ -104,7 +104,7 @@ Responding to the Ultrasonic Distance Module
 
 We can use the infrared obstacle avoidance module to make the GalaxyRVR automatically avoid obstacles ahead.
 
-1. Drag in a small green flag block.
+1. Drag in a green flag block.
 
 .. image:: img/6_ultrasonic_flag.png
 
@@ -168,18 +168,18 @@ This block displays the current distance measured by the ultrasonic sensor.
 
 
 
-Servo-Related Blocks
--------------------------------
+.. Servo-Related Blocks
+.. -------------------------------
 
-.. image:: img/block/servo_set_angle.png
+.. .. image:: img/block/servo_set_angle.png
 
-This block is used to set the servo angle. The range is 0 to 180 degrees (however, due to structural limitations, the actual usable range is 0-135 degrees).
+.. This block is used to set the servo angle. The range is 0 to 180 degrees (however, due to structural limitations, the actual usable range is 0-135 degrees).
 
-.. image:: img/block/servo_increase_angle.png
+.. .. image:: img/block/servo_increase_angle.png
 
-This block increases (or decreases) the servo angle. The value can be negative.
+.. This block increases (or decreases) the servo angle. The value can be negative.
 
 
-.. image:: img/block/servo_value.png
+.. .. image:: img/block/servo_value.png
 
-The current angle of the servo.
+.. The current angle of the servo.

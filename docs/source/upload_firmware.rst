@@ -16,8 +16,10 @@
 .. _update_firmware:
 
 
-Updating the Firmware File
+Updating the ESP32 Firmware File
 ======================================
+
+This product has undergone several iterations, and the firmware on your device may not be the latest version. You need to check and update the firmware on your ESP32. Please follow the steps below to proceed.
 
 1. Download the firmwarefile.
 
