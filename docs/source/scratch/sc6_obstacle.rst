@@ -207,7 +207,7 @@ We can utilize the infrared obstacle avoidance modules to make the GalaxyRVR aut
 12. Add a forward block under each code block so that the GalaxyRVR continues to move forward after avoiding the obstacle.
 
 .. image:: img/4_ir_avoid_move.png
-    :width: 400
+    :width: 800
 
 Now, click the green flag, and the GalaxyRVR will move forward continuously, turning to avoid obstacles and resuming its path after avoiding them.
 

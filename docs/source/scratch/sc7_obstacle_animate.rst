@@ -117,10 +117,12 @@ a. Create its clones.
 b. Then move to a random position. Combine these two blocks and click them. You'll notice new rocks appearing randomly on the stage.
 
 .. image:: img/5_animate_clone_move.png
+   :width: 200
 
 c. Generate ten random rocks.
 
 .. image:: img/5_animate_clone_10.png
+   :width: 200
 
 d. These actions occur when the green flag is clicked.
 
@@ -129,7 +131,7 @@ d. These actions occur when the green flag is clicked.
 
 Now, this mini-game is complete.
 
-Connect GalaxyRVR to the APP (refer to :ref:`app_connet`) and click the green flag to start the game.
+Connect GalaxyRVR to the APP (refer to :ref:`app_connect`) and click the green flag to start the game.
 
 You will see many rocks randomly generated on the stage. Your task is to use your hands to trigger the two IR sensors,
 guiding GalaxyRVR to successfully reach the right side of the stage.
