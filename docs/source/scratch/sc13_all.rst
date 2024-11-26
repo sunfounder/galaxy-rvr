@@ -124,31 +124,33 @@ This part is the same as the :ref:`tilt_system`. Simply repeat the steps.
 2. A ``when this sprite clicked`` block is exactly what we need.
 
 .. image:: img/6_animate_when_touch.png
-    :width: 230
+    :width: 200
 
 
 3. Let the program repeat until we release it, meaning we no longer touch the sprite.
 
 .. image:: img/6_animate_repeat_touching.png
-    :width: 550
+    :width: 400
 
 4. Drag a ``point towards touch_position`` block to make the sprite face the touch position.
 
 .. image:: img/10_servo_arrow_point_toward.png
+    :width: 400
 
 5. Drag a ``set servo angle to 90 degrees`` block and embed a ``direction`` block to align the gimbal angle with the arrow sprite's orientation. This way, when we change the arrow sprite's direction (i.e., touch the stage area), we can change the gimbal angle.
 
 .. image:: img/10_servo_arrow_angle_direction.png
+    :width: 800
 
 6. Add a limit check to ensure the arrow sprite's orientation does not exceed 135 degrees.
 
 .. image:: img/10_servo_arrow_135.png
-
+    :width: 400
 
 7. Similarly, ensure its orientation does not go below 0 degrees.
 
 .. image:: img/10_servo_arrow_0.png
-
+    :width: 400
 
 Touch the sprite, and it will change direction as you drag, altering the gimbal angle.
 
