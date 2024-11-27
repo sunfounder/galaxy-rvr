@@ -25,6 +25,10 @@ SunFounder |link_Mars_Rover_Kit|をお選びいただき、ありがとうござ
         * |link_german_tutorials|
         * |link_jp_tutorials|
         * |link_en_tutorials|
+        * |link_fr_tutorials|
+        * |link_es_tutorials|
+        * |link_it_tutorials|
+        * |link_cn_tutorials|
 
     ご希望の言語でドキュメントにアクセスするために、それぞれのリンクをクリックしてください。
 
