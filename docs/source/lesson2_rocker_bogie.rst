@@ -1,17 +1,3 @@
-.. note:: 
-
-    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与其他爱好者一起，深入探索树莓派、Arduino 和 ESP32。
-
-    **为什么加入？**
-
-    - **专家支持**：通过我们的社区和团队，解决售后问题和技术挑战。
-    - **学习与分享**：交流技巧和教程，提升你的技能。
-    - **独家预览**：提前体验新产品发布和独家内容。
-    - **专属折扣**：享受最新产品的专属优惠。
-    - **节庆促销与赠品**：参与节日促销和赠品活动。
-
-    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 即刻加入！
-
 第二课 了解并制作摇臂-摆臂系统
 ============================================================
 
@@ -21,7 +7,7 @@
 
 那么，为什么所有漫游车都采用摇臂-摆臂系统呢？这个设计对于火星探索究竟有什么独特的优势呢？
 
-.. image:: img/rocker_bogie_pic.webp
+.. image:: img/rocker_bogie_pic.jpg
 
 在今天的课程中，我们将深入了解摇臂-摆臂系统背后的科学与工程原理，并动手制作一个模型。
 
@@ -50,7 +36,7 @@
 
 让我们来看看这个系统的两个主要部分——“摇臂”和“摆臂”。
 
-.. image:: img/rocker_bogie.png
+.. image:: img/rocker_bogie1.png
 
 * 系统中的“摇臂”部分就像是漫游车两侧的大腿，这些摇臂通过一个称为差速器的机构连接在一起并与车身相连。就像两条腿行走一样，摇臂相对于车身会朝相反的方向旋转，从而确保大部分轮子都能与地面保持接触。漫游车的车身维持着两个摇臂的平均角度。每个摇臂的一端连接着一个轮子，另一端连接着摆臂。
 
@@ -83,10 +69,6 @@
 * GalaxyRVR 套件
 * 螺丝刀、扳手等基本工具
 * 按照 GalaxyRVR 套件中的组装说明，构建漫游车的悬挂系统。
-
-.. raw:: html
-
-    <iframe width="600" height="400" src="https://www.youtube.com/embed/a1xtgDUEvR0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 请注意，耐心和精确非常重要，确保每个部件都正确放置并紧固。

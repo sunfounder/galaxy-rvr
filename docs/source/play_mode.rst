@@ -1,17 +1,3 @@
-.. note::
-
-    你好，欢迎加入SunFounder树莓派、Arduino和ESP32爱好者社区！与志同道合的朋友们一起，深入探索树莓派、Arduino和ESP32的世界。
-
-    **为什么加入？**
-
-    - **专家支持**：我们的社区和团队将帮助你解决售后问题和技术难题。
-    - **学习与分享**：交流技巧与教程，共同提升技能。
-    - **独家预览**：抢先体验新品发布与独家内容。
-    - **特别折扣**：享受我们的最新产品的独家折扣。
-    - **节日促销与赠品**：参与我们的赠品活动与节日促销。
-
-    👉 准备好与我们一起探索和创作了吗？点击 [|link_sf_facebook|]，立即加入！
-
 .. _play_mode:
 
 游戏模式
@@ -93,17 +79,17 @@
 
     * 默认连接模式是 **AP模式** 。连接后，可能会弹出警告提示该网络没有互联网连接。如果是这样，选择“保持连接”。
 
-        .. image:: img/app/camera_stay.png
+        .. image:: img/app/camera_stay1.png
 
 #. 设置控制器。
 
     * 在SunFounder Controller中创建一个控制器，点击 **+** 图标。
 
-        .. image:: img/app/app1.png
+        .. image:: img/app/app1.jpg
 
     * 对于某些产品，预设了控制器，这里我们选择 **GalaxyRVR** 。给它起个名字，或者直接点击 **确认** 。
 
-        .. image:: img/app/play_preset.jpg
+        .. image:: img/app/play_preset1.jpg
 
     * 进入后，应用程序会自动搜索GalaxyRVR。稍等片刻，你将看到“连接成功”的提示。
 

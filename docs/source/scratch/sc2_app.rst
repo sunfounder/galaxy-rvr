@@ -1,25 +1,8 @@
-.. note:: 
-
-    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与其他爱好者一起，深入探索树莓派、Arduino 和 ESP32。
-
-    **为什么加入？**
-
-    - **专家支持**：通过社区和团队的帮助解决售后问题和技术挑战。
-    - **学习与分享**：交流技巧和教程，提升你的技能。
-    - **独家预览**：提前体验新产品发布和独家内容。
-    - **专属折扣**：享受最新产品的专属优惠。
-    - **节庆促销与赠品**：参与赠品活动和节日促销。
-
-    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 即刻加入！
-
 第二课 开始使用 Mammoth 编程 APP
 ======================================================
 
 让我们一起深入了解 Mammoth 编程的世界，创建你的第一个项目！ 
 为了获得最佳体验，建议使用屏幕较大的设备。
-
-
-
 
 
 
@@ -42,7 +25,7 @@
 
 首先，在 Google Play 或 Apple Store 中搜索 Mammoth Coding，下载并安装。
 
-.. image:: img/mammoth_download.jpg
+.. image:: img/mammoth_download1.jpg
     :align: center
 
 了解 Mammoth 编程 APP 界面
@@ -60,7 +43,7 @@ Mammoth 编程设计简单、富有教育意义且易于学习。
 
 对于较小屏幕的设备，界面如下所示：
 
-.. image:: img/2_app_ui_002.png
+.. image:: img/2_app_ui_002.jpg
     :align: center
 
 
@@ -79,39 +62,39 @@ Mammoth 编程的顶部区域包含一些基本选项。
 **导航**
 
 在顶部区域下方是导航栏， 
-它允许你在“代码”、“服装”和“声音”编辑页面之间切换。
+它允许你在“代码”、“造型”和“声音”编辑页面之间切换。
 
-.. image:: img/2_app_ui_3.png
+.. image:: img/2_app_ui_3.jpg
     :align: center
 
 在较小屏幕设备上，导航栏位于顶部。
 
-.. image:: img/2_app_ui_2.png
+.. image:: img/2_app_ui_2(2).png
     :align: center
 
-这些选项分别是：代码、服装、声音和舞台。
+这些选项分别是：代码（Code）、造型（Costumes）、声音（Sounds）和舞台。
 舞台页面在较大屏幕的界面上位于右侧，而在小设备上被单独分开以避免界面拥挤。
 
-.. image:: img/2_app_ui_4.png
+.. image:: img/2_app_ui_4(2).png
     :align: center
 
 **代码**
 
-.. image:: img/2_app_ui_code.png
+.. image:: img/2_app_ui_code.jpg
     :align: center
 
-“代码”（以及舞台）页面是你编程活动的主要区域。
+“代码（Code）”以及舞台页面是你编程活动的主要区域。
 
 **服装**
 
-.. image:: img/2_app_ui_custom.png
+.. image:: img/2_app_ui_custom.jpg
     :align: center
 
-“服装”页面用于编辑角色和背景，为你的程序提供视觉元素。
+“服装Costumes”页面用于编辑角色和背景，为你的程序提供视觉元素。
 
 **声音**
 
-.. image:: img/2_app_ui_sound.png
+.. image:: img/2_app_ui_sound.jpg
     :align: center
 
 “声音”页面用于处理音频，为你的程序提供多媒体元素。
@@ -121,24 +104,24 @@ Mammoth 编程的顶部区域包含一些基本选项。
 
 拖动一个代码块到中心区域。
 
-.. image:: img/2_drag.png
+.. image:: img/2_drag.jpg
     :align: center
 
 点击代码块并观察发生了什么。
 
-.. image:: img/2_click.png
+.. image:: img/2_click.jpg
     :align: center
 
 你会看到舞台上的角色稍微移动一下。 
 如果继续点击代码块，它会持续移动。
 
-.. image:: img/2_show.png
+.. image:: img/2_show.jpg
     :align: center
 
 注意这些代码块的形状暗示它们可以连接，就像乐高积木一样。
 当你连接代码块时，舞台上的角色将按顺序执行连接的代码块（例如，先移动再旋转）。
 
-.. image:: img/2_click2.png
+.. image:: img/2_click2.jpg
     :align: center
 
 
@@ -150,12 +133,12 @@ Mammoth 编程的顶部区域包含一些基本选项。
 在界面的右下角，你会看到“选择角色”按钮。
 点击它，你将看到四个弹出选项。
 
-.. image:: img/2_create_sp.png
+.. image:: img/2_create_sp.jpg
     :align: center
 
 在较小的屏幕上，你需要进行导航才能看到该按钮。
 
-.. image:: img/2_create_sp0.png
+.. image:: img/2_create_sp0.jpg
     :align: center
 
 这四个选项分别是：
@@ -167,12 +150,12 @@ Mammoth 编程的顶部区域包含一些基本选项。
 
 点击“选择角色”进入素材库，提供多种舞台素材。
 
-.. image:: img/2_sp_list.png
+.. image:: img/2_sp_list.jpg
     :align: center
 
 找到并选择“GalaxyRVR”。
 
-.. image:: img/2_sprite_rvr.png
+.. image:: img/2_sprite_rvr.jpg
     :align: center
 
 **你的第一个示例**
@@ -195,7 +178,7 @@ Mammoth 编程的顶部区域包含一些基本选项。
 
 拖动出“当点击绿色旗帜时”代码块。
 
-.. image:: img/2_first_flag.png
+.. image:: img/2_first_flag.jpg
 
 绿色旗帜就像比赛的发令枪，代表程序的开始。当你点击舞台旁的绿色旗帜时，这个代码块会触发，启动所有角色和代码。
 
@@ -205,7 +188,7 @@ Mammoth 编程的顶部区域包含一些基本选项。
 
 拖出“重复 10 次”代码块，并将其连接到绿色旗帜代码块下方。
 
-.. image:: img/2_first_repeat.png
+.. image:: img/2_first_repeat.jpg
 
 这意味着点击绿色旗帜后，某些操作会发生 10 次。
 
@@ -213,7 +196,7 @@ Mammoth 编程的顶部区域包含一些基本选项。
 
 拖出“滑行 1 秒到随机位置”代码块，并将其嵌套在“重复 10 次”代码块中。
 
-.. image:: img/2_first_glide.png
+.. image:: img/2_first_glide.jpg
 
 这将使你的角色滑行到随机位置。
 
@@ -221,7 +204,7 @@ Mammoth 编程的顶部区域包含一些基本选项。
 
 拖出“下一个服装”代码块，并将其放入“重复 10 次”代码块中。
 
-.. image:: img/2_first_custom.png
+.. image:: img/2_first_custom.jpg
 
 这样，每次操作时你的角色就会更换服装，看起来像是在走动。
 

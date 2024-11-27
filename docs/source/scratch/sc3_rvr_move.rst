@@ -1,17 +1,3 @@
-.. note:: 
-
-    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！在这里，你可以与其他爱好者一起深入探索树莓派、Arduino 和 ESP32。
-
-    **为什么要加入？**
-
-    - **专家支持**：通过社区和团队的帮助，解决售后问题和技术挑战。
-    - **学习与分享**：交流技巧和教程，提升自己的技术水平。
-    - **独家预览**：抢先体验新产品发布和独家内容。
-    - **专属折扣**：享受最新产品的专属优惠。
-    - **节日促销与赠品**：参与赠品活动和节日促销。
-
-    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 立即加入！
-
 .. _rvr_move:
 
 第三课 远程控制你的 GalaxyRVR
@@ -60,11 +46,11 @@
 
 #. 下载适合你操作系统的 IDE 版本。
 
-    .. image:: img/sp_001.png
+    .. image:: img/sp_0001.png
 
 #. 安装 Arduino IDE。
 
-    .. image:: img/sp_005.png
+    .. image:: img/sp_0005.png
 
 
 上传适配代码
@@ -121,23 +107,23 @@
 
 2. 将你的移动设备（如手机或平板电脑）连接到 GalaxyRVR 提供的 WiFi 热点。通常，它的 SSID 是 ``GalaxyRVR``，密码是 ``12345678``。
 
-.. image:: ../img/firmware/SSID.png
+.. image:: ../img/firmware/SSID1.png
 
 .. note:: 默认的连接模式是 **AP 模式**。连接后，可能会弹出提示，表示该网络没有互联网连接。如果是这样，选择“保持连接”。
 
-    .. image:: ../img/app/camera_stay.png
+    .. image:: ../img/app/camera_stay1.png
 
 3. 打开 APP，点击这里。
 
-.. image:: img/connet_app_04.png
+.. image:: img/connet_app_004.jpg
 
 4. 加载 GalaxyRVR 模块。
 
-.. image:: img/connet_app_05.png
+.. image:: img/connet_app_005.png
 
 5. APP 将会搜索你的机器人。
 
-.. image:: img/connet_app_06.png
+.. image:: img/connet_app_006.png
 
 6. 连接 GalaxyRVR。
 
@@ -148,32 +134,32 @@
 
 当你的设备与 GalaxyRVR 断开连接时，界面上会弹出一个窗口，点击重新连接。
 
-.. image:: img/reconnect_0.png
+.. image:: img/reconnect_00.png
 
 如果你关闭了弹出窗口，你也可以通过点击 GalaxyRVR 类别中的这个按钮重新连接。
 
-.. image:: img/reconnect_1.png
+.. image:: img/reconnect_01.png
 
 找到你的 GalaxyRVR 并点击连接。
 
-.. image:: img/reconnect_2.png
+.. image:: img/reconnect_02.png
 
 通过 APP 控制 GalaxyRVR
 -----------------------------------------
 
 1. 在代码界面，你会看到 GalaxyRVR 类别。
 
-.. image:: img/3_rvr_catego.png
+.. image:: img/3_rvr_catego1.png
 
 2. 我们之前已经使用绿色旗帜来启动程序。 
 在这一过程中，你会发现 “事件” 类别中有多个块可以触发代码执行。 
 找到 ``当上箭头键按下`` 代码块。
 
-.. image:: img/3_rvr_when_arrow.png
+.. image:: img/3_rvr_when_arrow.jpg
 
 3. 拖出四个这样的代码块，分别用于四个箭头键事件（上、下、左、右）。
 
-.. image:: img/3_rvr_4_arrow.png
+.. image:: img/3_rvr_4_arrow.jpg
 
 .. note:: 你可以点击绿色旗帜下方的眼睛图标来隐藏舞台区域，从而获得更多的编程空间。
 
@@ -183,7 +169,7 @@
 
 5. 点击此按钮展开舞台。
 
-.. image:: img/3_rvr_stage.png
+.. image:: img/3_rvr_stage1.png
 
 6. 你将进入一个舞台放大的界面，并显示一组方向键。
 

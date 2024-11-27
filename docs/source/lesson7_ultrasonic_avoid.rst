@@ -1,17 +1,3 @@
-.. note::
-
-    你好，欢迎加入SunFounder Raspberry Pi、Arduino与ESP32爱好者社区！与志同道合的朋友们一起深入探讨Raspberry Pi、Arduino和ESP32的世界。
-
-    **为什么加入？**
-
-    - **专家支持**：在社区和团队的帮助下解决售后问题和技术挑战。
-    - **学习与分享**：交流技巧与教程，提升你的技能。
-    - **独家预览**：抢先体验新品发布和抢先预告。
-    - **专属折扣**：享受我们最新产品的独家折扣。
-    - **节日促销和赠品**：参与赠品活动和节日促销。
-
-    👉 准备好与我们一起探索和创造了吗？点击[|link_sf_facebook|]，立即加入！
-
 第七课 使用超声波模块增强漫游车导航
 =============================================================
 
@@ -63,9 +49,7 @@
 
 现在我们已经准备好为火星漫游车增添一项强大的“视力”，是时候将超声波传感器模块组装起来了。
 
-.. raw:: html
-
-  <iframe width="600" height="400" src="https://www.youtube.com/embed/c_xWAVapGic?si=ovuxheXdGVpHopPa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+.. image:: img/1732529548300.png
 
 好了！我们的火星漫游车现在已经装配好了完整的超声波传感器模块，准备帮助它以前所未有的方式进行导航。你是不是已经迫不及待想看看它如何提升漫游车的障碍物检测能力呢？让我们深入了解吧！
 
@@ -105,7 +89,7 @@
 
 * 我们将TRIG和ECHO引脚都连接到GalaxyRVR扩展板上的第10号引脚。这样，我们就可以通过一个Arduino引脚控制信号的发送和接收。
 
-.. image:: img/ultrasonic_shield.png
+.. image:: img/ultrasonic_shield1.png
 
 .. code-block:: arduino
 
@@ -241,7 +225,7 @@
   * 如果障碍物较近（距离在50cm到15cm之间），漫游车将以较低速度前进。
   * 如果障碍物非常接近（小于15cm），火星漫游车将后退，并向左转。
 
-  .. image:: img/ultrasonic_flowchart.png
+  .. image:: img/ultrasonic_flowchart1.png
 
 以下是完整代码，你可以将其上传到R3板上，查看是否达到了预期效果。你还可以根据实际环境调整检测距离，使避障系统更加完美。
 

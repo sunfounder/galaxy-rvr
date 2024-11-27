@@ -1,17 +1,3 @@
-.. note:: 
-
-    你好，欢迎加入 SunFounder Raspberry Pi、Arduino 和 ESP32 爱好者社区！与其他爱好者一起，深入探索 Raspberry Pi、Arduino 和 ESP32。
-
-    **为什么加入？**
-
-    - **专家支持**：借助社区和团队的帮助解决售后问题和技术难题。
-    - **学习与分享**：交换技巧和教程，提升你的技能。
-    - **独家预览**：提前体验新品发布和独家内容。
-    - **特别折扣**：享受最新产品的专属折扣。
-    - **节日促销与赠品**：参与赠品活动和节日促销。
-
-    👉 准备好和我们一起探索与创作了吗？点击 [|link_sf_facebook|]，立即加入！
-
 .. _play_robopilot:
 
 Play RoboPilot
@@ -81,7 +67,7 @@ Play RoboPilot
 
     * 默认连接模式为 **AP 模式**。连接后，可能会弹出提示，告知该网络没有互联网连接。如果是这样，请选择“保持连接”。
 
-        .. image:: img/app/camera_stay.png
+        .. image:: img/app/camera_stay1.png
 
 #. 打开 RoboPilot，点击“进入”以进入控制界面。
 

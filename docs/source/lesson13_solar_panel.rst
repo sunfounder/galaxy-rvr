@@ -1,18 +1,3 @@
-.. note:: 
-
-    你好，欢迎加入 Facebook 上的 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与志同道合的朋友一起深入探索树莓派、Arduino 和 ESP32。
-
-    **为什么加入？**
-
-    - **专家支持**：在售后问题和技术挑战上获得我们社区和团队的帮助。
-    - **学习与分享**：交流技巧和教程，提升你的技能。
-    - **独家预览**：提前获取新产品的发布信息和抢先体验。
-    - **专属折扣**：享受最新产品的独家优惠。
-    - **节日促销与赠品**：参与赠品活动和节日促销。
-
-    👉 准备好和我们一起探索与创造了吗？点击 [|link_sf_facebook|]，立即加入吧！
-
-
 第十三课 探索火星探测器的能源系统
 =================================================================
 
@@ -85,9 +70,7 @@
 
 这是一个让我们将理论付诸实践的过程，真正体会到科学、技术、工程和数学（STEM）教育的魅力。让我们开始吧！
 
-.. raw:: html
-
-    <iframe width="600" height="400" src="https://www.youtube.com/embed/-Vj-dcniFrA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+.. image:: img/1732530466471.png
 
 **步骤 3：编程监控电池电压和电量**
 

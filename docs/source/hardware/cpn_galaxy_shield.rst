@@ -1,17 +1,4 @@
-.. note:: 
-
-    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与其他爱好者一起，深入探索树莓派、Arduino 和 ESP32。
-
-    **为什么加入？**
-
-    - **专家支持**：通过社区和团队的帮助解决售后问题和技术挑战。
-    - **学习与分享**：交流技巧和教程，提升你的技能。
-    - **独家预览**：提前体验新产品发布和独家内容。
-    - **专属折扣**：享受最新产品的专属优惠。
-    - **节庆促销与赠品**：参与节日促销和赠品活动。
-
-    👉 准备好与我们一起探索和创造了吗？点击 [|link_sf_facebook|] 即刻加入！
-
+.. _galaxy_shield:
 
 GalaxyRVR 扩展板
 =========================
@@ -27,7 +14,7 @@ RGB 灯条、避障、灰度传感器、ESP32 CAM 和超声波模块。
 
 **引脚定义**
 
-.. image:: img/galaxyrvr_shield_pinout.png
+.. image:: img/galaxyrvr_shield_pinout1.png
 
 * 充电端口
     * 插入 5V/2A USB-C 端口后，可以为电池充电，充电时间为 130 分钟。
@@ -89,7 +76,7 @@ RGB 灯条、避障、灰度传感器、ESP32 CAM 和超声波模块。
 
 这是 ZH1.5-4P 超声波端口的引脚定义，Trig 和 Echo 引脚连接至 Arduino 板的 Pin 10。
 
-.. image:: img/ultrasonic_shield.png
+.. image:: img/ultrasonic_shield1.png
 
 .. _shield_camera_pin:
 
@@ -100,7 +87,7 @@ RGB 灯条、避障、灰度传感器、ESP32 CAM 和超声波模块。
 
 * TX 和 RX 用于 ESP32 CAM。
 
-.. image:: img/camera_shield.png
+.. image:: img/camera_shield1.png
 
 
 .. _shield_avoid_pin:
@@ -110,7 +97,7 @@ RGB 灯条、避障、灰度传感器、ESP32 CAM 和超声波模块。
 
 这是左侧和右侧避障模块的引脚。
 
-.. image:: img/ir_shield.png
+.. image:: img/ir_shield1.png
 
 
 .. _shield_strip_pin:
@@ -131,7 +118,7 @@ RGB LED 灯条
 
 这是两组电机端口的引脚定义。
 
-.. image:: img/motor_shield.png
+.. image:: img/motor_shield1.png
     :width: 600
     :align: center
 

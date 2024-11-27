@@ -1,18 +1,3 @@
-.. note:: 
-
-    你好，欢迎加入SunFounder Raspberry Pi、Arduino和ESP32爱好者社区！与其他爱好者一起深入探索Raspberry Pi、Arduino和ESP32的世界。
-
-    **为什么加入？**
-
-    - **专家支持**：在售后问题和技术挑战中，得到我们社区和团队的帮助。
-    - **学习与分享**：交流技巧和教程，提升你的技能。
-    - **独家预览**：抢先体验新产品的发布和预览。
-    - **特别折扣**：享受我们最新产品的专属折扣。
-    - **节日促销与赠品**：参与赠品活动和节庆促销。
-
-    👉 准备好与我们一起探索和创造了吗？点击[|link_sf_facebook|]，今天就加入我们吧！
-
-
 第十课 探索火星漫游车的视觉系统——伺服电机与倾斜机构
 ================================================================
 
@@ -86,7 +71,7 @@
 
 如果我们透过伺服电机的外壳，我们会看到几个重要的部件。伺服电机的核心是一台普通电机，类似于驱动火星漫游车车轮的电机。在这个电机上，有一只大齿轮与电机轴上的小齿轮连接，这样电机的快速旋转就能转化为较慢但更强大的运动。
 
-.. image:: img/servo_internal.png
+.. image:: img/servo_internal1.png
     :align: center
 
 但这并不是伺服电机特别的地方。伺服电机的魔力在于一个小小的电子元件——“电位器”和“控制电路”。当伺服电机移动时，电位器会旋转并改变其电阻，而控制电路则通过测量电阻的变化，准确地知道伺服电机的当前角度。很聪明，对吧？
@@ -135,10 +120,7 @@
         :width: 300
         :align: center
     
-.. raw:: html
-
-    <iframe width="600" height="400" src="https://www.youtube.com/embed/h43JVI3xLqE?si=Q7-RvRvZOusK7vPo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+    .. image:: img/1732529933825.png
 
 **步骤5：理解倾斜机构的运动限制**
 

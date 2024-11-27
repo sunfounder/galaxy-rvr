@@ -1,18 +1,3 @@
-.. note:: 
-
-    你好，欢迎加入 SunFounder Raspberry Pi、Arduino 和 ESP32 爱好者社区！与其他爱好者一起深入探索 Raspberry Pi、Arduino 和 ESP32 的奥秘。
-
-    **为什么要加入？**
-
-    - **专家支持**：通过社区和团队的帮助，解决售后问题和技术难题。
-    - **学习与分享**：交流技巧和教程，提升你的技能。
-    - **独家预览**：提前获得新品发布和预告片。
-    - **特别折扣**：享受我们最新产品的独家优惠。
-    - **节日促销和赠品**：参与赠品活动和节日促销。
-
-    👉 准备好和我们一起探索与创造了吗？点击 [|link_sf_facebook|] 今天就加入吧！
-
-
 第六课 探索避障模块
 ==============================================================
 
@@ -61,9 +46,7 @@
 
 现在，我们将把两个避障模块安装到火星车上。
 
-.. raw:: html
-
-    <iframe width="600" height="400" src="https://www.youtube.com/embed/UWEj_ROYAt0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+.. image:: img/1732529429786.png
 
 组装步骤很简单，对吧？接下来，我们将学习这些模块的工作原理，以及它们如何帮助火星车避开障碍。敬请期待！
 
@@ -89,7 +72,7 @@
 发射器像手电筒一样发射红外光。当障碍物出现时，红外光反射回来并被接收器捕捉到。
 模块随后发出低电平信号，提醒火星车前方有障碍。
 
-.. image:: img/ir_receive.png
+.. image:: img/ir_receive1.png
     :align: center
 
 这个小模块非常强大，能够在 2 到 40 厘米的范围内检测障碍物，并且具有很强的抗干扰能力。
@@ -99,7 +82,7 @@
 
 **EN** 引脚的低电平状态会激活模块，通过跳线帽将 **EN** 引脚与 GND 连接。如果你希望通过代码控制 **EN** 引脚，需要移除跳线帽。
 
-.. image:: img/ir_cap.png
+.. image:: img/ir_cap1.png
     :width: 400
     :align: center
 

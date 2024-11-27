@@ -1,17 +1,3 @@
-.. note::
-
-    你好，欢迎加入 SunFounder 树莓派、Arduino 和 ESP32 爱好者社区！与其他爱好者一起深入探索树莓派、Arduino 和 ESP32 的世界。
-
-    **为什么加入？**
-
-    - **专家支持**：通过我们的社区和团队，解决售后问题和技术难题。
-    - **学习与分享**：交流技巧和教程，提升你的技能。
-    - **独家预览**：提前获取新产品发布和抢先体验。
-    - **专属折扣**：享受最新产品的独家折扣。
-    - **节日促销和赠品**：参与赠品活动和节日促销。
-
-    👉 准备好和我们一起探索和创造了吗？点击 [|link_sf_facebook|] 立即加入！
-
 第十一课 探索火星漫游车视觉系统 - 摄像头与实时控制
 =======================================================
 
@@ -146,19 +132,19 @@ ESP32 CAM 就像我们漫游车的“眼睛”，它是一个小巧却功能强�
 
     * 在 SunFounder Controller 应用中，点击 **+** 图标以添加一个新的控制器。
 
-        .. image:: img/app/app1.png
+        .. image:: img/app/app1.jpg
 
     * 选择 **Blank** 预设，按照你的喜好选择 **Dual** 或 **Single Stick**，给新的控制器命名，然后点击 **确认**。
 
-        .. image:: img/app/camera_controller.png
+        .. image:: img/app/camera_controller.jpg
 
     * 现在你已进入控制器设置界面。在 D 区域点击 **+** 图标，然后从弹出的菜单中选择 “Slider”。
 
-        .. image:: img/app/camera_add_slider.png
+        .. image:: img/app/camera_add_slider.jpg
 
     * 这个滑动条控件将用来控制倾斜机制。正如我们在前一课中学到的，它的范围是从 0 到 140。因此，我们将这些值设置为滑动条的最小值和最大值。
 
-        .. image:: img/app/camera_slider_set.png
+        .. image:: img/app/camera_slider_set.jpg
     
     * 点击右上角的 |app_save| 按钮保存控制器设置。
 

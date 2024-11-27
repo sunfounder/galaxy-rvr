@@ -115,7 +115,7 @@ rst_epilog += """
 
     <a href="https://docs.sunfounder.com/projects/galaxy-rvr/en/latest/" target="_blank">English Online-tutorials</a>
 
-.. |link_ch_tutorials| raw:: html
+.. |link_cn_tutorials| raw:: html
 
     <a href="https://docs.sunfounder.com/projects/galaxy-rvr/ch/latest/" target="_blank">中文在线教程</a>
 

@@ -1,18 +1,3 @@
-.. note:: 
-
-    你好，欢迎加入SunFounder Raspberry Pi、Arduino和ESP32爱好者社区！与其他爱好者一起深入探索Raspberry Pi、Arduino和ESP32的世界。
-
-    **为什么加入？**
-
-    - **专家支持**：在售后问题和技术挑战中，得到我们社区和团队的帮助。
-    - **学习与分享**：交流技巧和教程，提升你的技能。
-    - **独家预览**：抢先体验新产品的发布和预览。
-    - **特别折扣**：享受我们最新产品的专属折扣。
-    - **节日促销与赠品**：参与赠品活动和节庆促销。
-
-    👉 准备好与我们一起探索和创造了吗？点击[|link_sf_facebook|]，今天就加入我们吧！
-
-
 第九课 用RGB LED灯带照亮前方
 ============================================================
 
@@ -62,9 +47,7 @@
 
 首先，将两条RGB灯带固定在火星漫游车的底部两侧。它们由一组引脚控制，因此在布线过程中无需区分。
 
-.. raw:: html
-
-    <iframe width="600" height="400" src="https://www.youtube.com/embed/v4YGjNwPOJE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+.. image:: img/1732529786414.png
 
 **步骤2：探索RGB LED灯带的光彩魔力**
 

@@ -1,17 +1,3 @@
-.. note:: 
-
-    你好，欢迎加入 SunFounder Raspberry Pi、Arduino 和 ESP32 爱好者社区！与其他爱好者一起深入探索 Raspberry Pi、Arduino 和 ESP32 的奥秘。
-
-    **为什么要加入？**
-
-    - **专家支持**：在售后问题和技术挑战上，社区和团队会为你提供帮助。
-    - **学习与分享**：交换技巧和教程，提升你的技能。
-    - **独家预览**：提前获取新品发布和预告片。
-    - **特别折扣**：享受我们最新产品的独家折扣。
-    - **节日促销和赠品**：参与赠品活动和节日促销。
-
-    👉 准备好与我们一起探索与创造了吗？点击 [|link_sf_facebook|] 今天就加入吧！
-
 第五课 释放火星车的移动能力
 ======================================================
 
@@ -62,11 +48,9 @@
 
 在此步骤中，我们将把电池、R3 板、GalaxyRVR Shield、电机和轮子安装到预先组装好的摇臂-摆臂系统上，使 GalaxyRVR 处于可运行状态。
 
-.. raw:: html
+.. image:: img/1732527386941.png
 
-    <iframe width="600" height="400" src="https://www.youtube.com/embed/lu8K26MY96s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-恭喜！我们已经成功组装了自己的火星车，它已经准备好开始探索了。让我们启程吧！
+.. image:: img/1732528359492.png
 
 **步骤 2：让火星车开始运动**
 
