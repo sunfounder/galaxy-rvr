@@ -25,6 +25,10 @@ Danke, dass Sie sich für unser |link_Mars_Rover_Kit| entschieden haben.
         * |link_german_tutorials|
         * |link_jp_tutorials|
         * |link_en_tutorials|
+        * |link_fr_tutorials|
+        * |link_es_tutorials|
+        * |link_it_tutorials|
+        * |link_cn_tutorials|
     
     Bitte klicken Sie auf die jeweiligen Links, um das Dokument in Ihrer bevorzugten Sprache aufzurufen.
 
