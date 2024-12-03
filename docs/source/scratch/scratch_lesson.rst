@@ -17,12 +17,14 @@ Simply drag and drop Scratch coding blocks to create exciting games, animations,
 Let's embark on this journey of exploration now!
 
 
-Download the Code
-------------------------------------------
+**Download the Code**
 
-Download the relevant code from the link below.
 
-    * :download:`GalaxyRVR Code File <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
+.. note::
+
+    All the Scratch scripts for the projects below have been uploaded to GitHub. You can download them via the link provided. All ``.sb3`` script files are located in the folder ``galaxy-rvr-main/scratch_codes/``.
+
+* :download:`GalaxyRVR Code File <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
 
 Or check out the code at `SunFounder GalaxyRVR Kit for Arduino - GitHub <https://github.com/sunfounder/galaxy-rvr/tree/main>`_.
 
