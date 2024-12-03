@@ -116,7 +116,21 @@ rst_epilog += """
 
     <a href="https://docs.sunfounder.com/projects/galaxy-rvr/en/latest/" target="_blank">English Online-tutorials</a>
 
+.. |link_fr_tutorials| raw:: html
 
+    <a href="https://docs.sunfounder.com/projects/galaxy-rvr/fr/latest/" target="_blank">Didacticiels en ligne en français</a>
+
+.. |link_es_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/galaxy-rvr/es/latest/" target="_blank">Tutoriales en línea en español</a>
+
+.. |link_it_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/galaxy-rvr/it/latest/" target="_blank">Tutorial online in italiano</a>
+
+.. |link_cn_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/galaxy-rvr/zh-cn/latest/" target="_blank">中文在线教程</a>
 
 .. |link_esp32cam_schematic| raw:: html
 
