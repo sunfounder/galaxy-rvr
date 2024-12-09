@@ -34,7 +34,7 @@ But before you set off to explore the Red Planet, let's make sure you are fully 
 
         * :download:`GalaxyRVR Codes <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
 
-    * Install |link_download_arduino|, then :ref:`install_lib`
+    * Install IDE in |link_download_arduino|, then :ref:`install_lib`
 
     * Then, open the ``galaxy-rvr.ino`` file located in the ``galaxy-rvr-main\galaxy-rvr`` directory.
     
