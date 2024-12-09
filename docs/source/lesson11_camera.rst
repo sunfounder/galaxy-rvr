@@ -127,6 +127,8 @@ ESP32 CAM 就像我们漫游车的“眼睛”，它是一个小巧却功能强�
 
 
 #. 从 **APP Store(iOS)** 或 **Google Play(Android)** 下载并安装应用。
+      .. image:: img/app/qrcode.png
+        :width: 60%
 
 #. 创建一个控制器。
 

@@ -114,13 +114,26 @@
 
 .. note::
 
-    * 在将ESP32 CAM插入摄像头适配器时，请注意其方向。确保它与ESP32适配器正确对接。
+   * 在将ESP32 CAM插入摄像头适配器时，请注意其方向。确保它与ESP32适配器正确对接。
 
     .. image:: img/esp32_cam_direction.png
         :width: 300
         :align: center
+
+
+   * :组装步骤: 25-26
+
+    .. image:: img/10.1.png
+        :width: 800
+        :align: center
+
+   * :组装步骤: 27-33
+
+    .. image:: img/10.2.png
+        :width: 800
+        :align: center
+
     
-    .. image:: img/1732529933825.png
 
 **步骤5：理解倾斜机构的运动限制**
 
