@@ -314,6 +314,7 @@ void onReceive() {
         {
           i += 1;
           servoAngle = aiCam.recvBuffer[i];
+          servoAngle = constrain(servoAngle, 0, 140);
           // Serial.println(F("Servo Angle"));
           // Serial.print(F("servoAngle:"));Serial.println(servoAngle);
           break;
