@@ -151,7 +151,7 @@ rst_epilog += """
 
 .. |link_arduino_web| raw:: html
 
-    <a href="https://www.arduino.cc/reference/en/" target="_blank">Arduino official website</a>
+    <a href="https://www.arduino.cc/reference/en/" target="_blank">Arduino 公式ウェブサイト</a>
 
 .. |link_sunfounder_controller| raw:: html
 
@@ -163,7 +163,7 @@ rst_epilog += """
 
 .. |link_sc_page| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/sf-controller/en/latest/page_introduction.html" target="_blank">Page Introduction</a>
+    <a href="https://docs.sunfounder.com/projects/sf-controller/en/latest/page_introduction.html" target="_blank">ページ紹介</a>
 
 .. |link_ai_camera_library_api| raw:: html
 
