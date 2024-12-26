@@ -92,7 +92,7 @@ rst_epilog += """
 
 .. |link_sf_facebook| raw:: html
 
-    <a href="https://bit.ly/raphaelkit" target="_blank">here</a>
+    <a href="https://bit.ly/raphaelkit" target="_blank">hier</a>
 
 
 .. |link_german_tutorials| raw:: html
@@ -152,7 +152,7 @@ rst_epilog += """
 
 .. |link_arduino_web| raw:: html
 
-    <a href="https://www.arduino.cc/reference/en/" target="_blank">Arduino official website</a>
+    <a href="https://www.arduino.cc/reference/en/" target="_blank">Arduino Die offizielle Webseite</a>
 
 .. |link_sunfounder_controller| raw:: html
 
@@ -164,7 +164,7 @@ rst_epilog += """
 
 .. |link_sc_page| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/sf-controller/en/latest/page_introduction.html" target="_blank">Page Introduction</a>
+    <a href="https://docs.sunfounder.com/projects/sf-controller/en/latest/page_introduction.html" target="_blank">Seiteneinführung</a>
 
 .. |link_ai_camera_library_api| raw:: html
 
