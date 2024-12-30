@@ -394,9 +394,10 @@ void handleSensorData() {
   // Battery Voltage
   index += 1;
   toSend[index] = 0x83;
-  uint8_t batteryVoltage = batteryGetVoltage() * 10;
+  float batteryVoltage = batteryGetVoltage();
+  uint8_t batteryValue = round((batteryVoltage - 6) * 100);
   index += 1;
-  toSend[index] = batteryVoltage;
+  toSend[index] = batteryValue;
 
   // End bit
   index += 1;
