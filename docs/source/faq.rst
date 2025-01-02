@@ -15,37 +15,142 @@
 FAQ
 ==============
 
+.. _upload_galaxy_code:
+
+How to Upload the ``galaxy-rvr.ino`` Code?
+-----------------------------------------------
+
+By default, the GalaxyRVR's Uno R3 board comes preloaded with the necessary firmware, allowing you to control it via APP. If your R3 board has been overwritten with other code, but you'd like to return to the default firmware and continue with the :ref:`quick_start` process, follow these steps to re-upload the code to your R3 board:
+
+#. Use a USB cable to connect the Arduino to your computer. Then, switch the **upload** switch on the rover to the "upload" position.
+
+   .. image:: img/camera_upload.png
+        :width: 400
+        :align: center
+
+#. Download the required firmware from the link below: 
+        
+   * :download:`GalaxyRVR Codes <https://github.com/sunfounder/galaxy-rvr/releases/download/1.1.0/galaxy-rvr-1.1.0.zip>`
+
+#. Extract the downloaded zip file, then double-click the ``update-arduino-firmware.bat`` file to run it.
+
+   .. image:: img/faq_firmware_file.png
+
+
+#. Type the corresponding number for your GalaxyRVR's Arduino Uno (e.g., ``2``) and press **Enter** to begin the update.
+
+
+   .. note::
+
+     * If the correct COM port does not appear, or if you're unsure which one it is, disconnect other USB devices from your computer, leaving only the rover connected.  
+     * If you encounter an error like "avrdude.exe: stk500_getsync() attempt 1 of 10: not in sync: resp=0xXX", ensure the **upload** switch on the rover is set to the "upload" position, as described in step 1.
+
+   .. image:: img/faq_firmware_port.png
+
+#. After a short while, the new code will be successfully uploaded to the Uno R3 board on GalaxyRVR.
+
+   .. image:: img/faq_firmware_finish.png
+
 .. _ap_to_sta:
 
-Q1: Change AP mode to STA mode
+How to Control the Rover Using Your Home WiFi?
 -------------------------------------------------
+By default, the Uno R3 is preloaded with code configured in APP mode. This means the GalaxyRVR will broadcast a hotspot, allowing you to connect your mobile device to control it via the SunFounder Controller APP.
 
-* You will need to download the relevant code.
+If you prefer to control the rover using your home WiFi, follow these steps to upload the modified code to the Uno board:
 
-    * :download:`GalaxyRVR Codes <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
+#. Download the required files from the following link: 
 
-* Install IDE, then, install libraries ``SoftPWM`` and ``SunFounder AI Camera``. :ref:`install_lib` .
+   * :download:`GalaxyRVR Codes <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
 
-* Then, open the ``galaxy-rvr.ino`` file located in the ``galaxy-rvr-main\galaxy-rvr`` directory.
+#. Refer to the installation guide: :ref:`install_arduino_ide`.
 
-* Comment out lines 69-71, uncomment lines 73-75, and change ``SSID`` and ``PASSWORD`` to your WLAN.
+#. Use the **Library Manager** to install the ``SoftPWM`` and ``SunFounder AI Camera`` libraries. For detailed steps, see :ref:`install_lib`.
 
-.. image:: img/ap_sta.png
-    :align: center
+#. Navigate to the ``galaxy-rvr-main\galaxy-rvr`` directory and open the ``galaxy-rvr.ino`` file.
 
-* Connect the Arduino and computer with a USB cable, and then turn the **upload** switch of the car to the upload end.
+   .. image:: img/faq_galaxy_code.png
 
-.. image:: img/camera_upload.png
-    :width: 400
-    :align: center
+#. Comment out lines 69-71, uncomment lines 73-75, replace ``SSID`` and ``PASSWORD`` with your home WiFi credentials.
 
-* Upload your code.
+   .. image:: img/ap_sta.png
+      :align: center
+
+#. Connect the GalaxyRVR and computer with a USB cable, and then turn the **upload** switch of the rover to the upload end.
+
+   .. image:: img/camera_upload.png
+        :width: 400
+        :align: center
+
+#. Click the **Upload** button in the Arduino IDE to upload the modified code to the Uno board.
+
+   .. image:: img/faq_galaxy_upload.png
+
+#. To activate the ESP32 CAM, move the mode switch to the **Run** position, and press the **reset** button to reboot the R3 board. You will then observe a cyan light flashing on the bottom strip.
+
+   .. raw:: html
+   
+       <video width="600" loop autoplay muted>
+           <source src="_static/video/play_reset.mp4" type="video/mp4">
+           Your browser does not support the video tag.
+       </video>
+
+#. Ensure your mobile device (tablet or smartphone) is connected to your home WiFi network.
+
+   .. image:: img/faq_connect_wifi.jpg
+        :width: 400
+        :align: center
+
+#. Open the SunFounder Controller App, tap the "+" icon to create a new controller, select the "GalaxyRVR" preset, enter a name or tap "Confirm" to proceed.
+
+   .. image:: img/app/play_preset.jpg
+        :width: 600
+
+#. The app will automatically search for the GalaxyRVR. After a moment, you will see a prompt stating "Connected Successfully."
+
+   .. image:: img/app/auto_connect.jpg
+        :width: 600
+    
+#. Now, tap the |app_run| button enables you to view the live video feed from the camera and control the rover using the provided widgets. 
+
+   .. image:: img/app/play_run_view.jpg
+        :width: 600 
+    
+How to Invert the Camera?  
+---------------------------
+
+If you find the camera feed upside down while using the SunFounder Controller, you can easily correct it through the app. Follow these steps:  
+
+1. Tap the |app_edit| button in the top-right corner.  
+
+   .. image:: img/app/faq_edit.png  
+        :width: 500 
+
+2. Click the **camera** button to open a popup. Toggle the **Inverted** switch to turn it on.  
+
+   .. image:: img/app/faq_inverted.png  
+        :width: 500  
+
+3. Save your settings.  
+
+   .. image:: img/app/faq_save.png  
+        :width: 500 
+
+4. Return to the control interface and click the |app_run| button.  
+
+   .. note::  
+
+        Occasionally, the camera feed may not appear. If this happens, pause the controller and then click the run button again.  
+
+   .. image:: img/app/faq_run.png  
+        :width: 500 
+    
 
 .. _install_lib:
 
-Q2: Compilation error: SoftPWM.h: No such file or directory？
----------------------------------------------------------------------
-If you get a “Compilation error: SoftPWM.h: No such file or directory” prompt, it means you don’t have the SoftPWM library installed.
+Compilation error: ``SoftPWM.h`` or ``SunFounder_AI_Camera.h``: No such file or directory？
+---------------------------------------------------------------------------------------------
+If you get a “Compilation error: ``SoftPWM.h``: No such file or directory” prompt, it means you don’t have the SoftPWM library installed.
 
 Please install the two required libraries ``SoftPWM`` and ``SunFounder AI Camera`` as shown.
 
@@ -56,8 +161,11 @@ Please install the two required libraries ``SoftPWM`` and ``SunFounder AI Camera
             Your browser does not support the video tag.
         </video>
 
+For the ``SunFounder AI Camera`` library, you need to select "INSTALL ALL" to simultaneously install the required ``ArduinoJson`` dependency.
 
-Q3: avrdude: stk500_getsync() attempt 10 of 10: not in sync: resp=0x6e?
+    .. image:: img/faq_install_ai_camera.png
+
+avrdude: stk500_getsync() attempt 10 of 10: not in sync: resp=0x6e?
 -----------------------------------------------------------------------------
 If the following message keeps appearing after clicking the **Upload** button when the board and port have been selected correctly.
 
@@ -85,7 +193,7 @@ After the code is successfully uploaded, if you need to use the ESP32 CAM, then 
 
 .. _stt_android:
 
-Q4: How can I use the STT mode on my Android device?
+How can I use the STT mode on my Android device?
 ------------------------------------------------------------------------
 
 The STT mode requires the Android mobile device to be connected to the Internet and to install the Google service component.
@@ -94,10 +202,10 @@ Now follow the steps below.
 
 #. Modify the AP mode of ``galaxy-rvr.ino`` file to STA mode.
 
-    * Open the the ``galaxy-rvr.ino`` file located in the ``galaxy-rvr-main\galaxy-rvr`` directory. 
-    * Then comment out the AP mode related code. Uncomment the STA mode related code and fill in  the ``SSID`` and ``PASSWORD`` of your home Wi-Fi.
+   * Open the the ``galaxy-rvr.ino`` file located in the ``galaxy-rvr-main\galaxy-rvr`` directory. 
+   * Then comment out the AP mode related code. Uncomment the STA mode related code and fill in  the ``SSID`` and ``PASSWORD`` of your home Wi-Fi.
 
-        .. code-block:: arduino
+     .. code-block:: arduino
 
             /** Configure Wifi mode, SSID, password*/
             // #define WIFI_MODE WIFI_MODE_AP
@@ -108,7 +216,7 @@ Now follow the steps below.
             #define SSID "xxxxxxxxxx"
             #define PASSWORD "xxxxxxxxxx"
 
-    * Save this code, select the correct board (Arduino Uno) and port, then click the **Upload** button to upload it to the R3 board.
+   * Save this code, select the correct board (Arduino Uno) and port, then click the **Upload** button to upload it to the R3 board.
 
 #. Search ``google`` in Google Play, find the app shown below and install it.
 
@@ -129,7 +237,7 @@ Now follow the steps below.
         :align: center
 
 
-#. Tap and hold the **STT(J)** widget after clicking the |app_run| button. A prompt will appear indicating that it is listening. Say the following command to move the car.
+#. Tap and hold the **STT(J)** widget after clicking the |app_run| button. A prompt will appear indicating that it is listening. Say the following command to move the rover.
 
     .. image:: img/app/play_speech.png
 

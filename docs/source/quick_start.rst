@@ -1,0 +1,204 @@
+.. note::
+
+    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+
+    **Why Join?**
+
+    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
+    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
+    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
+    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
+    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+
+    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+
+.. _quick_start:
+
+Quick Play with APP
+=========================
+
+Jump straight into your Martian adventure! With factory-preloaded code, you can start using your GalaxyRVR right after assembly. Explore features like first-person driving, obstacle avoidance, follow modes, and voice control, all through the SunFounder Controller app. Begin your journey today!
+
+.. raw:: html
+    
+    <video width="600" loop autoplay muted>
+        <source src="_static/video/play_mode.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+.. note::  
+
+    If your R3 board is programmed with other code and you wish to control the GalaxyRVR via the app, follow the steps in :ref:`upload_galaxy_code`.
+
+Quick Guide
+---------------------
+
+#. Let's start the GalaxyRVR.
+
+   * The first time you use your GalaxyRVR, it is recommended that you plug in a Type-C USB cable to fully charge the battery first. Then turn the power on.
+    
+     .. raw:: html
+
+        <video width="600" loop autoplay muted>
+            <source src="_static/video/play_start.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+   * To activate the ESP32 CAM, move the mode switch to the **Run** position, and press the **reset** button to reboot the R3 board. You will then observe a cyan light flashing on the bottom strip.
+
+     .. raw:: html
+
+        <video width="600" loop autoplay muted>
+            <source src="_static/video/play_reset.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+#. Install `SunFounder Controller <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_ from **APP Store(iOS)** or **Google Play(Android)**.
+
+
+#. Connect to the ``GalaxyRVR`` Network.
+
+   For optimal communication between your mobile device and the Rover, you'll need to connect them to the same local area network (LAN) provided by GalaxyRVR.
+
+
+   * Find ``GalaxyRVR`` on the list of available networks on your mobile device (tablet or smartphone), enter the password ``12345678``, and connect to it.
+
+     .. note::
+
+        * The current connection is to the Galaxy hotspot, so there is no internet access. If prompted to switch networks, please choose "Stay connected".
+        * :ref:`ap_to_sta`
+
+     .. image:: img/app/camera_lan.png
+        :width: 500
+
+
+    
+#. Set up a controller.
+
+   * To create a controller on SunFounder Controller, tap the **+** icon.
+
+     .. image:: img/app/app1.png
+
+   * Preset controllers are available for some products, here we choose **GalaxyRVR**. Give it a name, or simply tap **Confirm**.
+
+     .. image:: img/app/play_preset.jpg
+    
+   * Once inside, the app will automatically search for the GalaxyRVR. After a moment, you will see a prompt saying "Connected Successfully".
+
+     .. image:: img/app/auto_connect.jpg
+
+     .. note::
+
+       * If not connected, please confirm that your Wi-Fi is connected to ``GalaxyRVR``.
+       * You can also tap the |app_connect| button to connect manually. After a short wait, you should see ``GalaxyRVR(IP)`` appear. Tap on it to establish a connection.
+     
+       .. image:: img/app/camera_connect.png
+           :width: 300
+           :align: center
+
+
+   * Now, tap the |app_run| button enables you to view the live video feed from the camera and control the car using the provided widgets. 
+
+     .. image:: img/app/play_run_view.jpg
+
+#. Let's now delve into the functions of each widget:
+
+   * **Servo(D)**: Controls the tilt mechanism of the Rover's camera, allowing you to observe a wider range.
+   * :ref:`app_avoid`: Switches the Rover into obstacle avoidance mode. The factory-set detection distances for each obstacle avoidance module may differ. Manual adjustment is required.
+   * :ref:`app_follow`: Toggles the Rover into follow mode. The factory-set detection distances for each obstacle avoidance module may differ. Manual adjustment is required.
+   * **Stop(I)**: Immediately halts all Rover movements.
+   * :ref:`app_speech_control`: Press this widget to initiate voice recognition and make the Rover perform corresponding actions.
+   * **HeadLamp(M)**: To turn the LED on/off on the ESP32 CAM.
+   * **Throttle Widgets on K and Q**: The throttle widget in the K area controls the Rover's left motors, while the one in the Q area controls the right motors. Coordinating both widgets allows the GalaxyRVR to move in any direction.
+   * **Left IR(N)**: Displays the readings from the left obstacle avoidance module.
+   * **Ultrasonic(O)**: Shows the distance measured by the ultrasonic module.
+   * **Right IR(P)**: Displays the readings from the right obstacle avoidance module.
+
+.. _app_avoid:
+
+Avoid(E)
+------------------------
+
+Tap the **Avoid(E)** widget to activate the obstacle avoidance mode.
+
+Before enabling this mode, you may need to adjust the detection ranges of the sensors according to your current environment, as the factory settings may not be ideal for all situations.
+
+If the detection range of the two infrared modules is too short, the Mars Rover might bump into obstacles. Conversely, if the range is too long, the Rover might start swerving too far away from an obstacle, potentially disrupting its navigation.
+
+Here's how you can fine-tune the settings:
+
+#. Start by adjusting the right obstacle avoidance module. During transportation, collisions may cause the transmitter and receiver on the infrared module to tilt. Therefore, you need to manually straighten them.
+
+   .. raw:: html
+
+        <video width="600" loop autoplay muted>
+            <source src="_static/video/ir_adjust1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+#. Place an obstacle about 20 cm directly in front of the right module. The box in which our Rover kit came is a good choice for this! Now, turn the potentiometer on the module until the indicator light on the module just lights up. Then, keep moving the obstacle back and forth to check if the indicator light comes on at the desired distance. If the light doesn't turn on at the correct distance or if it remains on without going out, you'll need to adjust the other potentiometer.
+
+   .. raw:: html
+
+        <video width="600" loop autoplay muted>
+            <source src="_static/video/ir_adjust2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+
+#. Repeat the same process for the other module.
+
+
+.. _app_follow:
+
+Follow(F)
+------------
+
+When you're ready to activate follow mode, simply tap the **Follow(F)** widget. If you haven't previously adjusted the detection distance of the obstacle avoidance modules, you will need to follow the steps in :ref:`app_avoid` first.
+
+Once in follow mode, the GalaxyRVR will move towards an object in front of it or turn left or right to follow the object's movement.
+
+
+.. _app_speech_control:
+
+STT(J)
+-------------------
+
+
+STT stands for Speech to Text. The SunFounder Controller app integrates with your mobile device's voice recognition engine. Hence, when you tap and hold the **STT(J)** widget on the SunFounder Controller and speak into your mobile device,
+
+Your device will capture your speech, convert it into text, and send it to the GalaxyRVR. If this text matches the pre-set commands in your code, the Rover will carry out the corresponding actions.
+
+The following are the commands currently preset in the code. Speak any of the following commands and observe how the GalaxyRVR responds.
+
+.. image:: img/app/play_speech.png
+    :width: 600
+
+* ``stop``: All movements of the rover can be stopped.
+* ``forward``: Let the rover move forward.
+* ``backward``: Let the rover move backward.
+* ``left``: Let the rover turn left.
+* ``right``: Let the rover turn right.
+
+
+.. note::
+
+    The STT (Speech to Text) function requires an internet connection and Google services on Android devices. However, this doesn't work with the pre-set AP (Access Point) mode on the GalaxyRVR. 
+    
+    In AP mode, the GalaxyRVR creates a local Wi-Fi network that your mobile device can connect to, but it does not provide internet access.
+    
+    To use the STT function on Android, switch the Rover's code from AP to STA mode as outlined in :ref:`stt_android`.
+
+.. note::
+
+    iOS devices, using an offline voice recognition engine, work fine in both AP and STA modes. 
+    
+
+
+
+
+
+
+
+
+

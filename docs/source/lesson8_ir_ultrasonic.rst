@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-Lesson 8 Advanced Obstacle Avoidance and Intelligent Following System
+Lesson 8: Advanced Obstacle Avoidance and Intelligent Following System
 =======================================================================
 
 In today's lesson, we're going to push our STEAM skills a step further. We'll combine an obstacle avoidance module 

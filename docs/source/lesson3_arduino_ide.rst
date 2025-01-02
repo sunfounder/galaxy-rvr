@@ -109,6 +109,8 @@ Let's understand its key features in simple terms:
 
 With these basics, you'll be all set to begin your programming adventures with the SunFounder R3 board!
 
+.. _install_arduino_ide:
+
 Install Arduino IDE
 -----------------------------------------------
 
@@ -122,7 +124,7 @@ The latest version of the Arduino IDE is version 2.0. It's packed with features 
 
 To get started, follow these steps:
 
-#. Vist |link_download_arduino| and download the IDE for your OS version.
+#. Visit |link_download_arduino| and download the IDE for your OS version.
 
     .. image:: img/sp_001.png
 

@@ -17,9 +17,9 @@ Assemble Video
 
 **Overview**
 
-If you want to learn while assembling the various components, you can refer to :ref:`course_mode`. In Course Mode, each lesson comes with assembly videos, component principles, and related test code, allowing you to learn as you go. So, you can skip this chapter.
+If you want to learn while assembling the various components, you can refer to :ref:`programming_arduino`. In this capter, each lesson comes with assembly videos, component principles, and related test code, allowing you to learn as you go. So, you can skip this chapter.
 
-If you want to quickly assemble and start playing, you can watch the assembly video first. After completing the assembly, proceed to :ref:`play_mode` to learn about the app installation and connection. Then, you can use the app to control the GalaxyRVR.
+If you want to quickly assemble and start playing, you can watch the assembly video first. After completing the assembly, proceed to :ref:`quick_start` to learn about the app installation and connection. Then, you can use the app to control the GalaxyRVR.
 
 **Videos**
 
