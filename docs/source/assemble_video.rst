@@ -17,9 +17,9 @@ Video-Montage
 
 **Überblick**
 
-Wenn Sie beim Zusammenbau der verschiedenen Komponenten lernen möchten, können Sie sich auf :ref:`course_mode` beziehen. Im Kursmodus kommt jede Lektion mit Montagevideos, Komponentenprinzipien und zugehörigem Testcode, sodass Sie während des Lernens fortfahren können. Daher können Sie dieses Kapitel überspringen.
+Wenn Sie lernen möchten, während Sie die verschiedenen Komponenten zusammenbauen, können Sie sich auf :ref:`programming_arduino` beziehen. In diesem Kapitel enthält jede Lektion Montagevideos, Prinzipien der Komponenten und zugehörigen Testcode, sodass Sie während des Prozesses lernen können. Sie können dieses Kapitel also überspringen.
 
-Wenn Sie schnell zusammenbauen und sofort spielen möchten, können Sie sich zuerst das Montagevideo ansehen. Nach Abschluss der Montage fahren Sie mit :ref:`play_mode` fort, um mehr über die App-Installation und -Verbindung zu erfahren. Anschließend können Sie die App verwenden, um den GalaxyRVR zu steuern.
+Wenn Sie schnell montieren und sofort loslegen möchten, können Sie zuerst das Montagevideo ansehen. Nach Abschluss der Montage fahren Sie mit :ref:`quick_start` fort, um mehr über die App-Installation und Verbindung zu erfahren. Anschließend können Sie die App verwenden, um den GalaxyRVR zu steuern.
 
 **Videos**
 

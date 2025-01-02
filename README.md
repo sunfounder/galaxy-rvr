@@ -21,8 +21,8 @@ you're truly navigating the Red Planet. Its advanced obstacle avoidance module a
 
 <a id="update"></a>
 ## Update:
-2024-1-31:
-- Add a tutorial on how to flash firmware to ESP32-CAM.
+2025-1-2:
+- Add more FAQs.
 
 2024-1-18:
 - Added introduction to servo

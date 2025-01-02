@@ -12,7 +12,7 @@
 
     👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-Lektion 8 Fortgeschrittene Hindernisvermeidung und intelligentes Folgesystem
+Lektion 8: Fortgeschrittene Hindernisvermeidung und intelligentes Folgesystem
 ====================================================================================
 
 In der heutigen Lektion werden wir unsere STEAM-Fähigkeiten weiterentwickeln. Wir kombinieren ein Hindernisvermeidungsmodul mit einem Ultraschallsensor, um ein fortgeschrittenes Hindernisvermeidungssystem zu erstellen. Außerdem implementieren wir ein intelligentes Folgesystem in unseren Rover.

@@ -43,7 +43,8 @@ Kursmaterialien
 Kursschritte
 --------------
 
-**Schritt 1: Einführung in Arduino**
+Einführung in Arduino
+--------------------------
 
 Du hast den Begriff „Arduino“ vielleicht schon oft in verschiedenen Zusammenhängen gehört, aber was genau ist es und warum ist es so beliebt geworden?
 
@@ -82,7 +83,8 @@ Bereite dich auf eine spannende Lernreise vor!
 
 
 
-**Schritt 2: Machen Sie sich mit Ihrem SunFounder R3 Board vertraut**
+Machen Sie sich mit Ihrem SunFounder R3 Board vertraut
+-------------------------------------------------------------
 
 In Ihrem Kit finden Sie ein blaues Board, das wie eine kleine Stadt voller kleiner metallischer Türme und Wege erscheint. Aber lassen Sie sich nicht einschüchtern! Dies ist das SunFounder R3 Entwicklungsboard, eine Art Arduino-Board, das verwendet werden kann, um eine Vielzahl von elektronischen Geräten und Projekten zu programmieren und zu steuern.
 
@@ -108,7 +110,10 @@ Lassen Sie uns seine Schlüsselfunktionen in einfachen Begriffen verstehen:
 
 Mit diesen Grundlagen sind Sie bereit, Ihre Programmierabenteuer mit dem SunFounder R3-Board zu beginnen!
 
-**Schritt 3: Installieren Sie Arduino IDE**
+.. _install_arduino_ide:
+
+Installieren Sie Arduino IDE
+--------------------------------------
 
 Jetzt, da wir wissen, was Arduino und das Arduino-Board sind, ist es an der Zeit, dieses Wissen in die Praxis umzusetzen. Wir werden die Arduino IDE installieren, die Software, die wir verwenden werden, um unser Arduino-Board zu programmieren.
 
@@ -156,7 +161,8 @@ Um zu beginnen, folgen Sie diesen Schritten:
     Eine detaillierte Anleitung zur Installation der Arduino IDE 2.0 auf einem Linux-System finden Sie hier: |link_arduino_linux|.
     
 
-**Schritt 4: Entdecken des Arduino-Spielplatzes (IDE)**
+Entdecken des Arduino-Spielplatzes (IDE)
+-------------------------------------------------
 
 Stellen Sie sich vor, die Arduino IDE sei ein magischer Spielplatz voller Werkzeuge und Gadgets, die darauf warten, von uns erkundet und genutzt zu werden. Als Nächstes werde ich Ihnen helfen, jede Ecke dieses Spielplatzes zu verstehen.
 
@@ -178,7 +184,8 @@ Hier ist, was Sie auf Ihrem Spielplatz finden:
 Jetzt, da wir einen Blick auf den Spielplatz geworfen haben, ist es an der Zeit, einzutauchen und zu beginnen, zu erschaffen!
 
 
-**Schritt 5: Laden Sie Ihre erste Skizze hoch**
+Laden Sie Ihre erste Skizze hoch
+----------------------------------------
 
 In Ordnung, es ist Zeit, etwas Spaß zu haben! Wir werden eine LED blinken lassen - es ist wie ein „Hello, World!“ in der Welt von Arduino.
 
@@ -213,7 +220,8 @@ Lassen Sie uns das aufschlüsseln:
 Großartige Arbeit! Du hast gerade dein erstes Arduino-Programm ausgeführt und bist damit ein echter Programmierer! Was kommt als Nächstes? Wir kratzen gerade erst an der Oberfläche dessen, was Arduino leisten kann. Bereit für die nächste Herausforderung?
 
 
-**Schritt 6: Einige unterhaltsame Fakten zur Arduino-Programmierung**
+Einige unterhaltsame Fakten zur Arduino-Programmierung
+--------------------------------------------------------------
 
 Zeit, einige coole Geheimnisse über die Arduino-Programmierung zu lüften!
 
@@ -284,7 +292,7 @@ Zeit, einige coole Geheimnisse über die Arduino-Programmierung zu lüften!
 Denk daran, wir programmieren nicht nur für Maschinen, sondern auch für Menschen. Also lass uns dafür sorgen, dass unser Code eine klare und verständliche Geschichte erzählt!
 
 
-**Schritt 7: Reflektieren und Verbessern**
+**Reflektieren und Verbessern**
 
 Einen Moment innezuhalten und über unsere Reise nachzudenken, kann uns Einsichten geben, die wir im Trubel der Entdeckung vielleicht übersehen würden. Frag dich selbst:
 

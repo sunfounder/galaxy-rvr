@@ -32,39 +32,36 @@ Danke, dass Sie sich für unser |link_Mars_Rover_Kit| entschieden haben.
     
     Bitte klicken Sie auf die jeweiligen Links, um das Dokument in Ihrer bevorzugten Sprache aufzurufen.
 
-Stellen Sie sich vor, einen Rover auf dem öden Terrain des Mars zu steuern, fremde Landschaften zu erkunden und sich dem Unbekannten zu stellen. Klingt wie ein Traum für NASA-Ingenieure, nicht wahr?
+Stellen Sie sich vor, Sie steuern einen Rover über die öde Landschaft des Mars, erkunden außerirdische Landschaften und stellen sich dem Unbekannten. Klingt wie ein Traum für NASA-Ingenieure, oder?
 
 Nicht mehr.
 
-Willkommen in der Welt des GalaxyRVR, einem Mars-Rover-Kit von SunFounder, entworfen, um interplanetare Erkundungen direkt in Ihr Wohnzimmer zu bringen.
+Willkommen beim GalaxyRVR, einem Mars-Rover-Kit von SunFounder, das interplanetare Erkundungen in Ihr Wohnzimmer bringt.
 
 .. image:: img/galaxyRVR.jpg
-    :width: 600
+    :width: 500
     :align: center
 
-Auf dem universellen Rocker-Bogie-System aufgebaut, das von den echten Mars-Rovern der NASA verwendet wird, ist der GalaxyRVR in der Lage, alle Arten von Gelände zu überqueren – seien es felsige Berge, sandige Strände oder grasige Felder. Das Federungssystem sorgt für eine reibungslose Mobilität und macht die fremde Welt des Mars so heimisch wie Ihre eigene.
+Auf Basis von NASAs Rocker-Bogie-System gebaut, kann der GalaxyRVR felsige Berge, sandige Strände und grasbewachsene Felder mit reibungsloser Mobilität durchqueren, sodass sich der Mars wie zuhause anfühlt.
 
-Ausgestattet mit einem hochauflösenden Kameramodul, bietet der GalaxyRVR eine First-Person-Ansicht und liefert ein immersives Pilotenerlebnis, als ob Sie tatsächlich den Roten Planeten navigieren. Sein fortschrittliches Hindernisvermeidungsmodul und Ultraschallmodul sorgen dafür, dass er Hindernissen ausweichen kann, und verkörpert so einen Geist der Autonomie und Widerstandsfähigkeit.
+Ausgestattet mit einer hochauflösenden Kamera bietet der GalaxyRVR eine First-Person-Ansicht für ein immersives Steuerungserlebnis. Seine fortschrittlichen Hindernisvermeidungs- und Ultraschallmodule sorgen dafür, dass er Hindernisse autonom umfahren kann.
 
-**Eintauchen in den Kosmos: Die Kurse**
+Wählen Sie Ihren Weg basierend auf Ihren Interessen und Fähigkeiten:
 
-* :ref:`play_mode`: Möchten Sie schnell starten? Der Spielmodus ist für diejenigen gedacht, die es kaum erwarten können, ihre Reise zum Mars zu beginnen. Mit vorinstalliertem Code können Sie einfach Ihren GalaxyRVR zusammenbauen und ihn mit der praktischen App steuern, um seine vielfältigen Funktionen zu erkunden.
+* :ref:`quick_start` - Springen Sie direkt ein und steuern Sie den GalaxyRVR mit der mobilen App. Perfekt für Anfänger, die eine sofortige und mühelose Steuerung suchen.
 
-* :ref:`course_mode`: Interessieren Sie sich für die zugrundeliegende Technologie? Der Kursmodus ist für diejenigen, die tiefer eintauchen wollen. Verstehen Sie die Prinzipien hinter dem Design des GalaxyRVR, lernen Sie zu programmieren und bereichern Sie Ihren Rover mit einer Vielzahl von spannenden Funktionen.
-
-Diese Dokumentation ist Ihr Leitfaden, um die Feinheiten des GalaxyRVR zu erforschen. Sie enthält detaillierte Montageanleitungen, Programmieranleitungen und Einblicke in die Arbeitsprinzipien eines Mars-Rovers, alles darauf ausgerichtet, Ihre Neugier zu wecken und Kreativität zu fördern.
-
-Der GalaxyRVR ist nicht nur ein Spielzeug, sondern ein Tor zum Mars, ein Bildungswerkzeug und ein Katalysator für grenzenlose Vorstellungskraft. Beginnen Sie Ihre kosmische Reise heute mit dem GalaxyRVR und lassen Sie Ihre Welt eine Erweiterung des Mars werden.
+* :ref:`programming_arduino` - Tauchen Sie tiefer in den Code ein, verstehen Sie jede Funktion und passen Sie den GalaxyRVR mit Arduino-Programmierung an. Ideal für alle, die tiefere Kenntnisse und Experimente anstreben.
 
 .. toctree::
     :maxdepth: 2
 
-    Über dieses Kit <self>
+    About this Kit <self>
     assemble_video
-    play_mode
-    course_mode
+    quick_start
+    programming_arduino
     hardware/hardware
     faq
+
 
 **Urheberrechtshinweis**
 
