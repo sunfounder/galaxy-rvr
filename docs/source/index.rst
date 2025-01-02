@@ -32,40 +32,36 @@ Gracias por elegir nuestro |link_Mars_Rover_Kit|.
     
     Haz clic en los enlaces correspondientes para acceder al documento en tu idioma preferido.
 
-
-Imagina pilotar un rover en el desolado terreno de Marte, explorando paisajes alienígenas y enfrentando lo desconocido. Suena como el sueño de los ingenieros de la NASA, ¿verdad?
+¿Te imaginas pilotar un rover en el desolado terreno de Marte, explorando paisajes alienígenas y enfrentando lo desconocido? Suena como un sueño para los ingenieros de la NASA, ¿verdad?
 
 Ya no más.
 
-Bienvenido al mundo del GalaxyRVR, un kit de rover marciano de SunFounder, diseñado para llevar la exploración interplanetaria directamente a tu sala de estar.
+Bienvenido a GalaxyRVR, un kit de rover marciano de SunFounder, que lleva la exploración interplanetaria a tu sala de estar.
 
 .. image:: img/galaxyRVR.jpg
-    :width: 600
+    :width: 500
     :align: center
 
-Basado en el mismo sistema de suspensión rocker-bogie universal utilizado por los verdaderos rovers de Marte de la NASA, GalaxyRVR es capaz de atravesar todo tipo de terrenos, ya sean montañas rocosas, playas arenosas o campos cubiertos de césped. Su sistema de suspensión asegura una movilidad fluida, haciendo que el mundo alienígena de Marte se sienta como en casa.
+Construido sobre el sistema rocker-bogie de la NASA, GalaxyRVR puede atravesar montañas rocosas, playas arenosas y campos de hierba con una movilidad suave, haciendo que Marte se sienta como en casa.
 
-Equipado con un módulo de cámara de alta definición, el GalaxyRVR ofrece una vista en primera persona, brindando una experiencia de pilotaje inmersiva como si realmente estuvieras navegando por el Planeta Rojo. Su avanzado módulo de evitación de obstáculos y el módulo ultrasónico aseguran que pueda esquivar obstáculos, encarnando un espíritu de autonomía y resistencia.
+Equipado con una cámara de alta definición, GalaxyRVR proporciona una vista en primera persona para una experiencia de pilotaje inmersiva. Sus avanzados módulos de evasión de obstáculos y ultrasonido garantizan que pueda esquivar obstáculos de forma autónoma.
 
-**Adéntrate en el Cosmos: Los Cursos**
+Elige tu camino según tus intereses y nivel de habilidad:
 
-* :ref:`play_mode`: ¿Quieres comenzar rápidamente? El Modo de Juego está diseñado para aquellos que no pueden esperar para comenzar su viaje marciano. Con el código precargado de fábrica, simplemente ensambla tu GalaxyRVR y contrólalo usando la conveniente aplicación para explorar sus múltiples funciones.
+* :ref:`quick_start` - Sumérgete directamente y opera el GalaxyRVR usando la aplicación móvil. Perfecto para principiantes que buscan un control instantáneo y sin complicaciones.
 
-* :ref:`course_mode`: ¿Te intriga la tecnología subyacente? El Modo de Curso es para aquellos que desean profundizar. Comprende los principios detrás del diseño del GalaxyRVR, aprende a programar y dota a tu rover de una variedad de emocionantes características.
-
-Esta documentación es tu guía para explorar las complejidades del GalaxyRVR. Incluye instrucciones detalladas de ensamblaje, guías de programación y conocimientos sobre los principios de funcionamiento de un Rover Marciano, todo con el objetivo de estimular tu curiosidad y fomentar la creatividad.
-
-El GalaxyRVR no es solo un juguete, sino una puerta de entrada a Marte, una herramienta educativa y un catalizador para la imaginación sin límites. Comienza hoy tu viaje cósmico con GalaxyRVR y deja que tu mundo se convierta en una extensión de Marte.
+* :ref:`programming_arduino` - Profundiza en el código, comprende cada función y personaliza el GalaxyRVR con programación Arduino. Ideal para quienes buscan conocimiento y experimentación más detallados.
 
 .. toctree::
     :maxdepth: 2
 
-    About this Kit <self>
+    Acerca de este Kit <self>
     assemble_video
-    play_mode
-    course_mode
+    quick_start
+    programming_arduino
     hardware/hardware
     faq
+
 
 **Aviso de Derechos de Autor**
 

@@ -15,39 +15,145 @@
 FAQ
 ==============
 
+FAQ
+==============
+
+.. _upload_galaxy_code:
+
+¿Cómo cargar el código ``galaxy-rvr.ino``?
+-----------------------------------------------
+
+Por defecto, la placa Uno R3 del GalaxyRVR viene preinstalada con el firmware necesario, permitiéndote controlarlo a través de la APP. Si tu placa R3 ha sido sobrescrita con otro código y deseas volver al firmware predeterminado para continuar con el proceso :ref:`quick_start`, sigue estos pasos para recargar el código en tu placa R3:
+
+#. Usa un cable USB para conectar el Arduino a tu computadora. Luego, cambia el interruptor **upload** en el rover a la posición "upload".
+
+   .. image:: img/camera_upload.png
+        :width: 400
+        :align: center
+
+#. Descarga el firmware necesario desde el siguiente enlace:
+
+   * :download:`GalaxyRVR Codes <https://github.com/sunfounder/galaxy-rvr/releases/download/1.1.0/galaxy-rvr-1.1.0.zip>`
+
+#. Extrae el archivo zip descargado y haz doble clic en el archivo ``update-arduino-firmware.bat`` para ejecutarlo.
+
+   .. image:: img/faq_firmware_file.png
+
+#. Escribe el número correspondiente a la placa Arduino Uno de tu GalaxyRVR (por ejemplo, ``2``) y presiona **Enter** para comenzar la actualización.
+
+   .. note::
+
+     * Si el puerto COM correcto no aparece o si no estás seguro de cuál es, desconecta otros dispositivos USB de tu computadora dejando solo el rover conectado.
+     * Si encuentras un error como "avrdude.exe: stk500_getsync() attempt 1 of 10: not in sync: resp=0xXX", asegúrate de que el interruptor **upload** en el rover esté en la posición "upload", como se describe en el paso 1.
+
+   .. image:: img/faq_firmware_port.png
+
+#. Después de un breve momento, el nuevo código se cargará exitosamente en la placa Uno R3 del GalaxyRVR.
+
+   .. image:: img/faq_firmware_finish.png
+
 .. _ap_to_sta:
 
-P1: Cambiar de modo AP a modo STA
--------------------------------------------------
+¿Cómo controlar el rover utilizando tu WiFi doméstico?
+------------------------------------------------------
+Por defecto, el Uno R3 está preinstalado con un código configurado en modo APP. Esto significa que el GalaxyRVR transmitirá un punto de acceso, permitiéndote conectarte con tu dispositivo móvil para controlarlo a través de la aplicación SunFounder Controller.
 
-* Necesitarás descargar el código relevante.
+Si prefieres controlar el rover utilizando tu WiFi doméstico, sigue estos pasos para cargar el código modificado en la placa Uno:
 
-    * :download:`GalaxyRVR Codes <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
+#. Descarga los archivos necesarios desde el siguiente enlace:
 
-* Instala el IDE, luego instala las bibliotecas ``SoftPWM`` y ``SunFounder AI Camera``. :ref:`install_lib` .
+   * :download:`GalaxyRVR Codes <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
 
-* Luego, abre el archivo ``galaxy-rvr.ino`` que se encuentra en el directorio ``galaxy-rvr-main\galaxy-rvr``.
+#. Consulta la guía de instalación: :ref:`install_arduino_ide`.
 
-* Comenta las líneas 69-71, descomenta las líneas 73-75 y cambia ``SSID`` y ``PASSWORD`` por tu red WLAN.
+#. Usa el **Library Manager** para instalar las bibliotecas ``SoftPWM`` y ``SunFounder AI Camera``. Para pasos detallados, consulta :ref:`install_lib`.
 
-.. image:: img/ap_sta.png
-    :align: center
+#. Navega al directorio ``galaxy-rvr-main\galaxy-rvr`` y abre el archivo ``galaxy-rvr.ino``.
 
-* Conecta el Arduino y la computadora con un cable USB, y luego cambia el interruptor de **upload** del coche al modo de subida.
+   .. image:: img/faq_galaxy_code.png
 
-.. image:: img/camera_upload.png
-    :width: 400
-    :align: center
+#. Comenta las líneas 69-71, descomenta las líneas 73-75 y reemplaza ``SSID`` y ``PASSWORD`` con las credenciales de tu WiFi doméstico.
 
-* Sube tu código.
+   .. image:: img/ap_sta.png
+      :align: center
+
+#. Conecta el GalaxyRVR y tu computadora con un cable USB, y luego mueve el interruptor **upload** del rover a la posición "upload".
+
+   .. image:: img/camera_upload.png
+        :width: 400
+        :align: center
+
+#. Haz clic en el botón **Upload** en el IDE de Arduino para cargar el código modificado en la placa Uno.
+
+   .. image:: img/faq_galaxy_upload.png
+
+#. Para activar el ESP32 CAM, mueve el interruptor de modo a la posición **Run** y presiona el botón **reset** para reiniciar la placa R3. Luego observarás una luz cian parpadeando en la tira inferior.
+
+   .. raw:: html
+   
+       <video width="600" loop autoplay muted>
+           <source src="_static/video/play_reset.mp4" type="video/mp4">
+           Your browser does not support the video tag.
+       </video>
+
+#. Asegúrate de que tu dispositivo móvil (tableta o smartphone) esté conectado a tu red WiFi doméstica.
+
+   .. image:: img/faq_connect_wifi.jpg
+        :width: 400
+        :align: center
+
+#. Abre la aplicación SunFounder Controller, toca el icono "+" para crear un nuevo controlador, selecciona el preajuste "GalaxyRVR", introduce un nombre o toca "Confirmar" para continuar.
+
+   .. image:: img/app/play_preset.jpg
+        :width: 600
+
+#. La aplicación buscará automáticamente el GalaxyRVR. Después de un momento, verás un mensaje indicando "Conectado exitosamente."
+
+   .. image:: img/app/auto_connect.jpg
+        :width: 600
+
+#. Ahora, toca el botón |app_run| para habilitar la vista de video en vivo de la cámara y controlar el rover utilizando los widgets proporcionados.
+
+   .. image:: img/app/play_run_view.jpg
+        :width: 600 
+
+¿Cómo invertir la cámara?  
+---------------------------
+
+Si encuentras que la transmisión de la cámara está al revés mientras usas el SunFounder Controller, puedes corregirlo fácilmente a través de la aplicación. Sigue estos pasos:
+
+1. Toca el botón |app_edit| en la esquina superior derecha.
+
+   .. image:: img/app/faq_edit.png  
+        :width: 500 
+
+2. Haz clic en el botón **camera** para abrir una ventana emergente. Activa el interruptor **Inverted** para encenderlo.
+
+   .. image:: img/app/faq_inverted.png  
+        :width: 500  
+
+3. Guarda tus configuraciones.
+
+   .. image:: img/app/faq_save.png  
+        :width: 500 
+
+4. Vuelve a la interfaz de control y haz clic en el botón |app_run|.
+
+   .. note::  
+
+        Ocasionalmente, la transmisión de la cámara puede no aparecer. Si esto sucede, pausa el controlador y luego haz clic nuevamente en el botón ejecutar.
+
+   .. image:: img/app/faq_run.png  
+        :width: 500 
 
 .. _install_lib:
 
-P2: Error de compilación: ¿SoftPWM.h: No such file or directory?
----------------------------------------------------------------------
-Si recibes un aviso de "Error de compilación: SoftPWM.h: No such file or directory", significa que no tienes instalada la biblioteca SoftPWM.
+¿Error de compilación: ``SoftPWM.h`` o ``SunFounder_AI_Camera.h``: No such file or directory？
+------------------------------------------------------------------------------------------------
 
-Por favor, instala las dos bibliotecas requeridas ``SoftPWM`` y ``SunFounder AI Camera`` como se muestra.
+Si recibes un mensaje de "Error de compilación: ``SoftPWM.h``: No such file or directory", significa que no tienes instalada la biblioteca SoftPWM.
+
+Por favor, instala las dos bibliotecas necesarias ``SoftPWM`` y ``SunFounder AI Camera`` como se muestra.
 
     .. raw:: html
 
@@ -56,7 +162,11 @@ Por favor, instala las dos bibliotecas requeridas ``SoftPWM`` y ``SunFounder AI 
             Your browser does not support the video tag.
         </video>
 
-P3: avrdude: stk500_getsync() intento 10 de 10: ¿no sincronizado: resp=0x6e?
+Para la biblioteca ``SunFounder AI Camera``, necesitas seleccionar "INSTALL ALL" para instalar simultáneamente la dependencia requerida ``ArduinoJson``.
+
+    .. image:: img/faq_install_ai_camera.png
+
+avrdude: stk500_getsync() intento 10 de 10: ¿no sincronizado: resp=0x6e?
 ---------------------------------------------------------------------------------
 Si el siguiente mensaje sigue apareciendo después de hacer clic en el botón **Upload** y la placa y el puerto se han seleccionado correctamente.
 
@@ -85,7 +195,7 @@ Después de que el código se haya subido correctamente, si necesitas usar el ES
 
 .. _stt_android:
 
-P4: ¿Cómo puedo usar el modo STT en mi dispositivo Android?
+¿Cómo puedo usar el modo STT en mi dispositivo Android?
 ------------------------------------------------------------------------
 
 El modo STT requiere que el dispositivo móvil Android esté conectado a Internet y tenga instalado el componente de servicio de Google.
@@ -138,7 +248,7 @@ Sigue los siguientes pasos:
     * ``left``: Gira el rover hacia la izquierda.
     * ``right``: Gira el rover hacia la derecha.
 
-P5: Acerca del Firmware del ESP32 CAM
+Acerca del Firmware del ESP32 CAM
 ---------------------------------------------------
 
 Aquí está el enlace del firmware del ESP32 CAM: |link_ai_camera_firmware|
