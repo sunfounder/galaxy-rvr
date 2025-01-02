@@ -147,7 +147,7 @@ R3ボードにコードをアップロードした後、オレンジ色と黄色
   <iframe src=https://create.arduino.cc/editor/sunfounder01/60ec867f-5637-44bd-b72d-4709fc4f5349/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-これで、RGB LEDストリップは正しい色を表示できるはずです。まだ不一致がある場合は、 ``R_OFFSET``、 ``G_OFFSET``、および ``B_OFFSET`` の値を手動で調整できます。
+これで、RGB LEDストリップは正しい色を表示できるはずです。まだ不一致がある場合は、 ``R_OFFSET`` 、 ``G_OFFSET`` 、および ``B_OFFSET`` の値を手動で調整できます。
 
 LEDストリップに好きな色を表示するために実験してみてください。必要なことは、望む色のRGB値を入力することだけです。
 
