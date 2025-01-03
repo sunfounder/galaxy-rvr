@@ -17,9 +17,9 @@ Vidéo d'assemblage
 
 **Aperçu**
 
-Si vous souhaitez apprendre tout en assemblant les différents composants, vous pouvez vous référer à :ref:`course_mode`. En mode Cours, chaque leçon est accompagnée de vidéos d'assemblage, de principes des composants et de codes de test associés, vous permettant d'apprendre en cours de route. Ainsi, vous pouvez sauter ce chapitre.
+Si vous souhaitez apprendre tout en assemblant les différents composants, vous pouvez vous référer à :ref:`programming_arduino`. Dans ce chapitre, chaque leçon est accompagnée de vidéos d'assemblage, de principes des composants et de code de test associé, vous permettant d'apprendre au fur et à mesure. Ainsi, vous pouvez sauter ce chapitre.
 
-Si vous préférez assembler rapidement et commencer à explorer, vous pouvez d'abord regarder la vidéo d'assemblage. Une fois l'assemblage terminé, passez à :ref:`play_mode` pour en savoir plus sur l'installation de l'application et la connexion. Ensuite, vous pourrez utiliser l'application pour contrôler le GalaxyRVR.
+Si vous voulez assembler rapidement et commencer à jouer, vous pouvez d'abord regarder la vidéo d'assemblage. Une fois l'assemblage terminé, passez à :ref:`quick_start` pour en savoir plus sur l'installation et la connexion de l'application. Ensuite, vous pouvez utiliser l'application pour contrôler le GalaxyRVR.
 
 **Vidéos**
 

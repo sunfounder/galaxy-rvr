@@ -32,37 +32,33 @@ Merci d'avoir choisi notre |link_Mars_Rover_Kit|.
     
     Veuillez cliquer sur les liens correspondants pour accéder au document dans la langue de votre choix.
 
-Imaginez piloter un rover sur le terrain désertique de Mars, explorer des paysages extraterrestres et faire face à l'inconnu. Cela semble être un rêve réservé aux ingénieurs de la NASA, non ?
+Imaginez piloter un rover sur le terrain désolé de Mars, explorer des paysages extraterrestres et affronter l'inconnu. Cela ressemble à un rêve pour les ingénieurs de la NASA, n'est-ce pas ?
 
 Plus maintenant.
 
-Bienvenue dans le monde du GalaxyRVR, un kit de rover martien conçu par SunFounder pour vous offrir une expérience d'exploration interplanétaire directement dans votre salon.
+Bienvenue au GalaxyRVR, un kit de rover martien développé par SunFounder, qui apporte l'exploration interplanétaire dans votre salon.
 
 .. image:: img/galaxyRVR.jpg
-    :width: 600
+    :width: 500
     :align: center
 
-Reposant sur le même système de suspension rocker-bogie universel utilisé par les véritables rovers de la NASA, le GalaxyRVR est capable de traverser tous types de terrains – qu'il s'agisse de montagnes rocheuses, de plages de sable ou de champs d'herbe. Son système de suspension garantit une mobilité fluide, rendant les terrains extraterrestres aussi accessibles que ceux de la Terre.
+Construit sur le système rocker-bogie de la NASA, le GalaxyRVR peut traverser des montagnes rocheuses, des plages de sable et des champs herbeux avec une mobilité fluide, faisant de Mars un endroit familier.
 
-Équipé d'un module caméra haute définition, le GalaxyRVR vous offre une vue à la première personne, vous permettant une expérience immersive comme si vous étiez vraiment en train de naviguer sur la planète rouge. Son module avancé d'évitement d'obstacles et son module ultrasonique lui permettent de contourner les obstacles, incarnant un esprit d'autonomie et de résilience.
+Équipé d'une caméra haute définition, le GalaxyRVR offre une vue à la première personne pour une expérience de pilotage immersive. Ses modules avancés d'évitement d'obstacles et ultrasoniques garantissent qu'il peut esquiver les obstacles de manière autonome.
 
-**Plongez dans le Cosmos : Les Cours**
+Choisissez votre chemin en fonction de vos intérêts et de votre niveau de compétence :
 
-* :ref:`play_mode`: Vous souhaitez démarrer rapidement ? Le mode Play est conçu pour ceux qui ne peuvent attendre de commencer leur aventure martienne. Avec un code préchargé en usine, il vous suffit d'assembler votre GalaxyRVR et de le contrôler via l'application pour explorer ses nombreuses fonctionnalités.
+* :ref:`quick_start` - Lancez-vous directement et pilotez le GalaxyRVR à l'aide de l'application mobile. Parfait pour les débutants recherchant un contrôle instantané et sans effort.
 
-* :ref:`course_mode`: Vous êtes curieux de comprendre la technologie sous-jacente ? Le mode Cours est fait pour ceux qui veulent aller plus loin. Comprenez les principes derrière la conception du GalaxyRVR, apprenez à coder et enrichissez votre rover de nouvelles fonctionnalités passionnantes.
-
-Cette documentation est votre guide pour explorer toutes les subtilités du GalaxyRVR. Elle comprend des instructions détaillées d'assemblage, des guides de programmation et des explications sur les principes de fonctionnement d'un rover martien, conçus pour éveiller votre curiosité et encourager votre créativité.
-
-Le GalaxyRVR n'est pas simplement un jouet, mais une porte ouverte vers Mars, un outil éducatif et un catalyseur pour une imagination sans limites. Commencez votre voyage cosmique dès aujourd'hui avec le GalaxyRVR et laissez votre monde devenir une extension de Mars.
+* :ref:`programming_arduino` - Plongez plus profondément dans le code, comprenez chaque fonction et personnalisez le GalaxyRVR avec la programmation Arduino. Idéal pour ceux qui recherchent une connaissance approfondie et l'expérimentation.
 
 .. toctree::
     :maxdepth: 2
 
-    About this Kit <self>
+    À propos de ce kit <self>
     assemble_video
-    play_mode
-    course_mode
+    quick_start
+    programming_arduino
     hardware/hardware
     faq
 

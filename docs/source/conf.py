@@ -26,6 +26,12 @@ author = 'www.sunfounder.com'
 # The full version, including alpha/beta/rc tags
 release = '1.0'
 
+# -- sphinx_rtd_theme Theme options -----------------------------------------------------
+html_theme_options = {
+    'flyout_display': 'attached',
+    'version_selector': False,
+    'language_selector': False,
+}
 
 # -- General configuration ---------------------------------------------------
 
@@ -34,8 +40,10 @@ release = '1.0'
 # ones.
 extensions = [
     'sphinx.ext.autosectionlabel',
-    'sphinx_copybutton'
+    'sphinx_copybutton',
+    'sphinx_rtd_theme'
 ]
+
 
 
 # Add any paths that contain templates here, relative to this directory.
