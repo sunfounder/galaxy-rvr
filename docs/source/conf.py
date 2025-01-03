@@ -26,6 +26,12 @@ author = 'www.sunfounder.com'
 # The full version, including alpha/beta/rc tags
 release = '1.0'
 
+# -- sphinx_rtd_theme Theme options -----------------------------------------------------
+html_theme_options = {
+    'flyout_display': 'attached',
+    'version_selector': False,
+    'language_selector': False,
+}
 
 # -- General configuration ---------------------------------------------------
 
@@ -34,7 +40,8 @@ release = '1.0'
 # ones.
 extensions = [
     'sphinx.ext.autosectionlabel',
-    'sphinx_copybutton'
+    'sphinx_copybutton',
+    'sphinx_rtd_theme'
 ]
 
 
@@ -45,6 +52,7 @@ templates_path = ['_templates']
 # directories to ignore when looking for source files.
 # This pattern also affects html_static/video_path and html_extra_path.
 exclude_patterns = []
+html_static_path = ['_static']
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -59,7 +67,6 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
 
 html_js_files = [
     'https://ezblock.cc/readDocFile/custom.js',

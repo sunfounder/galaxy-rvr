@@ -17,9 +17,9 @@ Video di Montaggio
 
 **Panoramica**
 
-Se vuoi imparare durante l'assemblaggio dei vari componenti, puoi fare riferimento a :ref:`course_mode`. Nella modalità Corso, ogni lezione è accompagnata da video di montaggio, principi dei componenti e codice di test correlato, permettendoti di imparare man mano. Quindi, puoi saltare questo capitolo.
+Se vuoi imparare durante l'assemblaggio dei vari componenti, puoi fare riferimento a :ref:`programming_arduino`. In questo capitolo, ogni lezione è accompagnata da video di assemblaggio, principi dei componenti e codice di test correlato, consentendoti di apprendere mentre procedi. Quindi, puoi saltare questo capitolo.
 
-Se invece vuoi assemblare rapidamente e iniziare a giocare, puoi guardare prima il video di montaggio. Dopo aver completato l'assemblaggio, prosegui con :ref:`play_mode` per scoprire come installare e collegare l'app. Potrai così utilizzare l'app per controllare il GalaxyRVR.
+Se invece desideri assemblare rapidamente e iniziare a giocare, puoi guardare prima il video di assemblaggio. Dopo aver completato l'assemblaggio, procedi a :ref:`quick_start` per scoprire l'installazione e la connessione dell'app. Dopodiché, puoi utilizzare l'app per controllare il GalaxyRVR.
 
 **Video**
 

@@ -106,6 +106,8 @@ Ecco alcune caratteristiche chiave spiegate in termini semplici:
 
 Con queste basi, sarai pronto per iniziare la tua avventura di programmazione con la scheda SunFounder R3!
 
+.. _install_arduino_ide:
+
 Installa l'IDE di Arduino
 -----------------------------------------------
 
