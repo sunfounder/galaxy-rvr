@@ -15,6 +15,115 @@
 FAQ
 ==============
 
+How to Change Wi-Fi Channel?
+----------------------------------
+
+The 2.4GHz Wi-Fi band has channels ranging from 1 to 13. ESP32 supports channels 1 to 11. Other devices operating on the same channel may cause interference, leading to connection issues. To mitigate this, you can try changing the channel. By default, the channel is set to 1. When selecting a new channel, it’s recommended to skip 1-2 channels at a time. For example, if the current channel is 1, try channel 3 first, and if the signal is still poor, proceed to channel 5.
+
+.. note::
+
+   ESP32 CAM firmware version 1.4.1 or above is required to change channels. Refer to :ref:`update_firmware` for more details.
+
+#. Power on the GalaxyRVR. To activate the ESP32 CAM, move the mode switch to the **Run** position, and press the **reset** button to reboot the R3 board.
+
+     .. raw:: html
+
+        <video width="600" loop autoplay muted>
+            <source src="_static/video/play_reset.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+#. Find ``GalaxyRVR`` on the list of available networks on your mobile device (tablet or smartphone), enter the password ``12345678``, and connect to it.
+
+     .. note::
+
+        * The current connection is to the GalaxyRVR hotspot, so there is no internet access. If prompted to switch networks, please choose "Stay connected".
+        * :ref:`ap_to_sta`
+
+     .. image:: img/app/camera_lan.png
+        :width: 500
+
+#. Open a web browser on your mobile device and navigate to ``http://192.168.4.1`` to access the ESP32 CAM OTA update page.
+
+   .. image:: img/faq_cam_ota_141.jpg
+      :width: 400
+
+#. Under the **Wi-Fi AP Channel** section, select a different channel. 
+
+   * The default channel is 1. When selecting a new channel, skip 1-2 channels at a time (e.g., from channel 1 to 3, and if needed, to 5).  
+   * Click the **Confirm** button to save the changes.
+
+   .. image:: img/faq_cam_ota_channel.png
+      :width: 400
+
+#. A confirmation popup will appear, prompting you to reset the device. Click **Confirm**.
+
+   .. image:: img/faq_cam_ota_reset.jpg
+      :width: 400
+   
+#. Press the **Reset** button to reboot the device. The GalaxyRVR is now ready for normal operation.
+
+   .. image:: img/camera_reset.png
+
+.. _update_firmware:
+
+How to Update Firmware for ESP32 CAM
+-----------------------------------------
+
+Follow these detailed steps to update the firmware for your ESP32 CAM:
+
+#. Power on the GalaxyRVR. To activate the ESP32 CAM, move the mode switch to the **Run** position, and press the **reset** button to reboot the R3 board.
+
+     .. raw:: html
+
+        <video width="600" loop autoplay muted>
+            <source src="_static/video/play_reset.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+#. Find ``GalaxyRVR`` on the list of available networks on your mobile device (tablet or smartphone), enter the password ``12345678``, and connect to it.
+
+     .. note::
+
+        * The current connection is to the GalaxyRVR hotspot, so there is no internet access. If prompted to switch networks, please choose "Stay connected".
+        * :ref:`ap_to_sta`
+
+     .. image:: img/app/camera_lan.png
+        :width: 500
+
+#. Click the link below to download the firmware file ``ai-camera-firmware-v1.4.1-ota.bin`` and save it to your mobile device.
+
+   * :download:`AI Camera Firmware <https://github.com/sunfounder/ai-camera-firmware/releases/download/1.4.1/ai-camera-firmware-v1.4.1-ota.bin>`
+
+#. Open a web browser on your mobile device and navigate to ``http://192.168.4.1`` to access the ESP32 CAM OTA update page.
+
+   .. image:: img/faq_cam_ota.jpg
+      :width: 400
+
+#. On the OTA page, click the button to select the firmware file.
+
+   .. image:: img/faq_cam_ota_choose.png
+      :width: 400
+
+#. Choose the previously downloaded ``ai-camera-firmware-v1.4.1-ota.bin`` file from your device and click **OK**.
+
+   .. image:: img/faq_cam_ota_file.png
+      :width: 400
+
+#. Click the **Update** button to start the firmware update process.
+
+   .. image:: img/faq_cam_ota_update.png
+      :width: 400
+   
+#. Wait for the update to complete. Once the displayed version number changes to ``1.4.1``, the update is successful.
+
+   .. image:: img/faq_cam_ota_finish.png
+      :width: 400
+   
+#. After the update is complete, you can close the web browser. Press the **Reset** button to reboot the device. The ESP32 CAM is now ready for normal operation.
+
+   .. image:: img/camera_reset.png
+
 .. _upload_galaxy_code:
 
 How to Upload the ``galaxy-rvr.ino`` Code?
@@ -253,11 +362,7 @@ Q5: About the ESP32 CAM Firmware
 Here is the firmeware link of ESP32 CAM: |link_ai_camera_firmware|
 
 
-
-.. ↓ this firmware only for sunfounder controller
-
-
-.. Q6: How to Flash New Firmware to an ESP32 CAM?
+.. How to Flash New Firmware to an ESP32 CAM?
 .. ----------------------------------------------------
 .. The camera module comes pre-flashed from the factory. However, if you encounter a data corruption issue, you can re-flash it with new firmware using the Arduino IDE. Here's how:
 

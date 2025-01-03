@@ -65,7 +65,7 @@ Quick Guide
 
      .. note::
 
-        * The current connection is to the Galaxy hotspot, so there is no internet access. If prompted to switch networks, please choose "Stay connected".
+        * The current connection is to the GalaxyRVR hotspot, so there is no internet access. If prompted to switch networks, please choose "Stay connected".
         * :ref:`ap_to_sta`
 
      .. image:: img/app/camera_lan.png
