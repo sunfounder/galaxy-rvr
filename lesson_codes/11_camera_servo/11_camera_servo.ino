@@ -50,4 +50,5 @@ void onReceive() {
   int16_t sliderD = aiCam.getSlider(REGION_D);
   Serial.print("Slider D: ");
   Serial.println(sliderD);
+  myServo.write(int(sliderD));  // control the servo to move to the current angle
 }
