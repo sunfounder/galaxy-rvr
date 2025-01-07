@@ -87,21 +87,21 @@ Aquí te explico cómo hacerlo:
 
     * **Modo AP**: En este modo, el Rover crea un punto de acceso (nombrado como ``GalaxyRVR`` en nuestro código). Esto permite que cualquier dispositivo, como un teléfono móvil, tableta o computadora portátil, se conecte a esta red. Es útil cuando deseas controlar el Rover de manera remota en cualquier circunstancia. Sin embargo, ten en cuenta que esto hará que tu dispositivo no pueda conectarse temporalmente a Internet.
 
-        .. code-block:: arduino
+      .. code-block:: arduino
 
-        // Modo AP
-        #define WIFI_MODE WIFI_MODE_AP
-        #define SSID "GalaxyRVR"
-        #define PASSWORD "12345678"
+          // Modo AP
+          #define WIFI_MODE WIFI_MODE_AP
+          #define SSID "GalaxyRVR"
+          #define PASSWORD "12345678"
 
     * **Modo STA**: En este modo, el Rover se conecta a tu red WiFi doméstica. Recuerda que tu dispositivo de control (como un móvil o tableta) también debe estar conectado a la misma red WiFi. Este modo permite que tu dispositivo mantenga su acceso regular a Internet mientras controla el Rover, pero limita el rango operativo del Rover al área de cobertura de tu red WiFi.
 
-        .. code-block:: arduino
+      .. code-block:: arduino
 
-            // Modo STA
-            #define WIFI_MODE WIFI_MODE_STA
-            #define SSID "TU SSID"
-            #define PASSWORD "TU CONTRASEÑA"
+         // Modo STA
+         #define WIFI_MODE WIFI_MODE_STA
+         #define SSID "TU SSID"
+         #define PASSWORD "TU CONTRASEÑA"
 
 #. Sube el código a nuestro Rover y dale vida a la ESP32 CAM.
 
@@ -162,12 +162,12 @@ Recuerda, esto es solo el comienzo. Hay mucho más por explorar y aprender. En n
 
     * Basándonos en el código anterior, cambiemos al modo AP, donde puedes configurar el SSID y la CONTRASEÑA como prefieras.
     
-    .. code-block:: arduino
+      .. code-block:: arduino
     
-        // Modo AP
-        #define WIFI_MODE WIFI_MODE_AP
-        #define SSID "GalaxyRVR"
-        #define PASSWORD "12345678"
+          // Modo AP
+          #define WIFI_MODE WIFI_MODE_AP
+          #define SSID "GalaxyRVR"
+          #define PASSWORD "12345678"
 
     * A continuación, añadimos una función ``onReceive()`` para recibir los valores del SunFounder Controller y mostrarlos en el Monitor Serial. Utilizamos la función ``getSlider()`` para obtener el valor del control deslizante **slider**. Añadí un control deslizante en la Región D, pero si lo añadiste en otra región, necesitas cambiar ``REGION_D`` por tu región.
 
@@ -215,7 +215,7 @@ Recuerda, esto es solo el comienzo. Hay mucho más por explorar y aprender. En n
             Video streamer started on http://192.168.4.1:9000/mjpg
             WS+null
 
-#. Conéctate a la red ``GalaxyRVR``.
+#. Conéctate a la red ``GalaxyRVR``. Por favor, mantén abierto el Monitor Serial, ya que volver a abrir el Monitor Serial hará que el Arduino Uno se reinicie, lo que requerirá repetir este paso.
 
     En este punto, debes conectar tu dispositivo móvil a la red de área local (LAN) proporcionada por el GalaxyRVR. 
     Al hacer esto, tanto tu dispositivo móvil como el Rover estarán en la misma red, lo que permitirá una comunicación fluida 
@@ -234,6 +234,7 @@ Recuerda, esto es solo el comienzo. Hay mucho más por explorar y aprender. En n
     * Ahora, regresa al controlador que creaste antes (en mi caso, se llama "camera"). Usa el botón |app_connect| para vincular la aplicación SunFounder Controller con el Rover y establecer una línea de comunicación. Después de una breve espera, aparecerá ``GalaxyRVR(IP)`` (el nombre que asignaste en el código con ``#define NAME "GalaxyRVR"``). Haz clic en él para establecer la conexión. 
 
         .. image:: img/app/camera_connect.png
+            :width: 400
 
         .. note::
             Por favor, verifica que tu Wi-Fi esté conectado a ``GalaxyRVR`` si no ves el mensaje anterior después de un tiempo.
@@ -241,8 +242,9 @@ Recuerda, esto es solo el comienzo. Hay mucho más por explorar y aprender. En n
     * Una vez que veas el mensaje "Conectado exitosamente", presiona el botón |app_run|. Esto mostrará las imágenes en vivo de la cámara en la aplicación.
 
         .. image:: img/app/camera_view_app.png
-
-    * Ahora, mueve el control deslizante y abre simultáneamente el monitor serial de Arduino IDE. Deberías ver datos similares a los que se muestran a continuación.
+            :width: 400
+    
+    * Ahora, mueve el deslizador, deberías ver datos similares a los siguientes en el monitor serial del Arduino IDE. Si has vuelto a abrir el Monitor Serial, necesitarás repetir los pasos 4 y 5 para reconectar el GalaxyRVR y la aplicación.
 
         .. code-block:: 
     
@@ -264,20 +266,22 @@ Recuerda, esto es solo el comienzo. Hay mucho más por explorar y aprender. En n
         ...
         #include <Servo.h>
 
-        Servo myServo;  // crea un objeto servo
-        myServo.write(int(sliderD));  // controla el servo para moverse al ángulo actual
-
+        Servo myServo;  // create a servo object
         ...
-
-        void onReceive() {
-            ...
-            myServo.write(int(sliderD));  // controla el servo para moverse al ángulo actual
-        }
 
         void setup() {
             ...
-            myServo.attach(6);  // adjunta el servo al pin 6
+            myServo.attach(6);  // attaches the servo on pin 6
             ...
+        }
+
+        void loop() {
+            ...
+        }
+
+        void onReceive() {
+            ...
+            myServo.write(int(sliderD));  // control the servo to move to the current angle
         }
 
     Aquí tienes el código completo:
