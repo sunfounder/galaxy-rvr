@@ -87,21 +87,21 @@ ESP32-CAMをローバーに取り付けた後、今度はそれに命を吹き�
 
     * **AP Mode**: このモードでは、ローバーがホットスポット（コード内で ``GalaxyRVR`` として名付けられています）を作成します。これにより、携帯電話、タブレット、ラップトップなどのデバイスがこのネットワークに接続できます。特に、どんな状況でもローバーを遠隔操作したい場合に便利です。ただし、これによりデバイスが一時的にインターネットに接続できなくなることに注意してください。
 
-        .. code-block:: arduino
+      .. code-block:: arduino
 
-        // AP Mode
-        #define WIFI_MODE WIFI_MODE_AP
-        #define SSID "GalaxyRVR"
-        #define PASSWORD "12345678"
+         // AP Mode
+         #define WIFI_MODE WIFI_MODE_AP
+         #define SSID "GalaxyRVR"
+         #define PASSWORD "12345678"
 
     * **STA Mode**: このモードでは、ローバーが自宅のWi-Fiネットワークに接続します。携帯電話やタブレットなどの制御デバイスも同じWi-Fiネットワークに接続している必要があります。このモードでは、デバイスが通常のインターネットアクセスを維持しながらローバーを制御できますが、ローバーの操作範囲はWi-Fiのカバレッジエリアに限られます。
 
-        .. code-block:: arduino
+      .. code-block:: arduino
 
-            // STA Mode
-            #define WIFI_MODE WIFI_MODE_STA
-            #define SSID "YOUR SSID"
-            #define PASSWORD "YOUR PASSWORD"
+         // STA Mode
+         #define WIFI_MODE WIFI_MODE_STA
+         #define SSID "YOUR SSID"
+         #define PASSWORD "YOUR PASSWORD"
 
 #. コードをローバーにアップロードし、ESP32 CAMを起動します！
 
@@ -162,12 +162,12 @@ ESP32-CAMをローバーに取り付けた後、今度はそれに命を吹き�
 
     * 前のコードに基づいて、APモードに切り替えます。このモードでは、SSIDとPASSWORDを好きなものに設定できます。
     
-    .. code-block:: arduino
+      .. code-block:: arduino
     
-        // AP Mode
-        #define WIFI_MODE WIFI_MODE_AP
-        #define SSID "GalaxyRVR"
-        #define PASSWORD "12345678"
+          // AP Mode
+          #define WIFI_MODE WIFI_MODE_AP
+          #define SSID "GalaxyRVR"
+          #define PASSWORD "12345678"
 
     * 次に、SunFounderコントローラーからの値を受信するための ``onReceive()`` 関数を追加し、シリアルモニターでこれらの値を表示します。 ``getSlider()`` 関数を使用して、 **slider** ウィジェットの値を取得します。私はDエリアに **slider** ウィジェットを追加しましたが、異なるエリアに追加した場合は、 ``REGION_D`` をあなたのエリアに変更する必要があります。
 
@@ -215,7 +215,7 @@ ESP32-CAMをローバーに取り付けた後、今度はそれに命を吹き�
             Video streamer started on http://192.168.4.1:9000/mjpg
             WS+null
 
-#.  ``GalaxyRVR`` ネットワークに接続します。
+#. ``GalaxyRVR`` ネットワークに接続してください。シリアルモニタを開いたままにしてください。シリアルモニタを再度開くと、Arduino Unoが再起動し、この手順を再実行する必要があります。
 
     この時点で、モバイルデバイスをGalaxyRVRによって提供されるローカルエリアネットワーク（LAN）に接続する必要があります。
     これにより、モバイルデバイスとローバーが同じネットワークになり、モバイルデバイスのアプリケーションとローバー間のスムーズな通信が可能になります。
@@ -233,15 +233,17 @@ ESP32-CAMをローバーに取り付けた後、今度はそれに命を吹き�
     * 以前作成したコントローラー（私の場合は「camera」と名付けました）に戻ります。 |app_connect| ボタンを使用して、SunFounderコントローラーをローバーにリンクし、通信ラインを確立します。少し待つと、 ``GalaxyRVR(IP)`` （コード内で ``#define NAME "GalaxyRVR"`` として指定した名前）が表示されます。クリックして接続を確立します。
 
         .. image:: img/app/camera_connect.png
-
+            :width: 400
+    
         .. note::
             もし上記のメッセージがしばらくしても表示されない場合は、Wi-Fiが ``GalaxyRVR`` に接続されていることを確認してください。
 
     * 「Connected Successfully」メッセージが表示されたら、 |app_run| ボタンを押します。これにより、アプリ上にカメラのライブ映像が表示されます。
 
         .. image:: img/app/camera_view_app.png
-
-    * 今度はスライダーを動かしながらArduino IDEのシリアルモニターを開きます。以下のようなデータが表示されるはずです。
+            :width: 400
+    
+    * 次に、スライダーを動かしてください。Arduino IDEのシリアルモニタに以下のようなデータが表示されるはずです。シリアルモニタを再度開いた場合は、GalaxyRVRとアプリを再接続するために手順4と5をやり直す必要があります。
 
         .. code-block:: 
     
@@ -255,9 +257,7 @@ ESP32-CAMをローバーに取り付けた後、今度はそれに命を吹き�
 
 #. スライダーでチルトメカニズムを制御させます。
 
-    これで、スライダーウィジェットが送信する値がわかったので、これらの値を直接使用してサーボを回転させることができます。
-     したがって、以前のコードに基づいて、以下の行を追加してサーボを初期化し、スライダーの値をサーボに書き込みます。
-
+    これで、スライダーウィジェットが送信する値がわかったので、これらの値を直接使用してサーボを回転させることができます。したがって、以前のコードに基づいて、以下の行を追加してサーボを初期化し、スライダーの値をサーボに書き込みます。
 
     .. code-block::
 
@@ -265,19 +265,21 @@ ESP32-CAMをローバーに取り付けた後、今度はそれに命を吹き�
         #include <Servo.h>
 
         Servo myServo;  // create a servo object
-        myServo.write(int(sliderD));  // control the servo to move to the current angle
-
         ...
-
-        void onReceive() {
-            ...
-            myServo.write(int(sliderD));  // control the servo to move to the current angle
-        }
 
         void setup() {
             ...
             myServo.attach(6);  // attaches the servo on pin 6
             ...
+        }
+
+        void loop() {
+            ...
+        }
+
+        void onReceive() {
+            ...
+            myServo.write(int(sliderD));  // control the servo to move to the current angle
         }
 
     こちらが完全なコードです：

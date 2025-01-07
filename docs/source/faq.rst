@@ -14,6 +14,114 @@
 
 FAQ
 ==============
+Wi-Fiチャンネルの変更方法
+----------------------------------
+
+2.4GHz Wi-Fi帯域には1から13までのチャンネルがあります。ESP32は1から11のチャンネルをサポートしています。同じチャンネルを使用する他のデバイスが干渉を引き起こし、接続問題を引き起こす場合があります。これを軽減するために、チャンネルを変更することを試みることができます。デフォルトでは、チャンネルは1に設定されています。新しいチャンネルを選択する際は、1～2チャンネルずつ飛ばして選ぶことをお勧めします。例えば、現在のチャンネルが1の場合、まず3に変更し、信号がまだ弱い場合は5に進んでください。
+
+.. 注意::
+
+   チャンネルを変更するには、ESP32 CAMのファームウェアバージョン1.4.1以上が必要です。詳細については、:ref:`update_firmware` を参照してください。
+
+#. GalaxyRVRの電源を入れます。ESP32 CAMをアクティブにするには、モードスイッチを**Run**位置に移動し、**reset**ボタンを押してR3ボードを再起動します。
+
+     .. raw:: html
+
+        <video width="600" loop autoplay muted>
+            <source src="_static/video/play_reset.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+#. モバイルデバイス（タブレットやスマートフォン）の利用可能なネットワーク一覧で``GalaxyRVR``を見つけ、パスワード``12345678``を入力して接続します。
+
+     .. 注意::
+
+        * 現在の接続はGalaxyRVRホットスポットへのもので、インターネットアクセスはありません。ネットワークを切り替えるように促された場合は、「接続を維持」を選択してください。
+
+     .. image:: img/app/camera_lan.png
+        :width: 500
+
+#. モバイルデバイスのWebブラウザを開き、``http://192.168.4.1``にアクセスして、ESP32 CAMのOTA更新ページを開きます。
+
+   .. image:: img/faq_cam_ota_141.jpg
+      :width: 400
+
+#. **Wi-Fi AP Channel**セクションで、別のチャンネルを選択します。
+
+   * デフォルトのチャンネルは1です。新しいチャンネルを選択する際は、1～2チャンネルずつ飛ばして選んでください（例：チャンネル1から3、必要に応じて5へ）。  
+   * **Confirm**ボタンをクリックして変更を保存します。
+
+   .. image:: img/faq_cam_ota_channel.png
+      :width: 400
+
+#. デバイスをリセットするよう促す確認ポップアップが表示されます。**Confirm**をクリックします。
+
+   .. image:: img/faq_cam_ota_reset.jpg
+      :width: 400
+   
+#. **Reset**ボタンを押してデバイスを再起動します。これでGalaxyRVRは通常の操作が可能になります。
+
+   .. image:: img/camera_reset.png
+
+.. _update_firmware:
+
+ESP32 CAMのファームウェアを更新する方法
+-----------------------------------------
+
+ESP32 CAMのファームウェアを更新するための詳細な手順は以下の通りです：
+
+#. GalaxyRVRの電源を入れます。ESP32 CAMをアクティブにするには、モードスイッチを**Run**位置に移動し、**reset**ボタンを押してR3ボードを再起動します。
+
+     .. raw:: html
+
+        <video width="600" loop autoplay muted>
+            <source src="_static/video/play_reset.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+#. モバイルデバイス（タブレットやスマートフォン）の利用可能なネットワーク一覧で``GalaxyRVR``を見つけ、パスワード``12345678``を入力して接続します。
+
+     .. 注意::
+
+        * 現在の接続はGalaxyRVRホットスポットへのもので、インターネットアクセスはありません。ネットワークを切り替えるように促された場合は、「接続を維持」を選択してください。
+
+     .. image:: img/app/camera_lan.png
+        :width: 500
+
+#. 以下のリンクをクリックして、ファームウェアファイル``ai-camera-firmware-v1.4.1-ota.bin``をダウンロードし、モバイルデバイスに保存します。
+
+   * :download:`AI Camera Firmware <https://github.com/sunfounder/ai-camera-firmware/releases/download/1.4.1/ai-camera-firmware-v1.4.1-ota.bin>`
+
+#. モバイルデバイスのWebブラウザを開き、``http://192.168.4.1``にアクセスして、ESP32 CAMのOTA更新ページを開きます。
+
+   .. image:: img/faq_cam_ota.jpg
+      :width: 400
+
+#. OTAページで、ファームウェアファイルを選択するボタンをクリックします。
+
+   .. image:: img/faq_cam_ota_choose.png
+      :width: 400
+
+#. 以前にダウンロードした``ai-camera-firmware-v1.4.1-ota.bin``ファイルをデバイスから選択し、**OK**をクリックします。
+
+   .. image:: img/faq_cam_ota_file.png
+      :width: 400
+
+#. **Update**ボタンをクリックして、ファームウェア更新プロセスを開始します。
+
+   .. image:: img/faq_cam_ota_update.png
+      :width: 400
+   
+#. 更新が完了するまで待ちます。表示されるバージョン番号が``1.4.1``に変わると、更新が成功したことを意味します。
+
+   .. image:: img/faq_cam_ota_finish.png
+      :width: 400
+   
+#. 更新が完了した後、Webブラウザを閉じることができます。**Reset**ボタンを押してデバイスを再起動します。これでESP32 CAMは通常の操作が可能になります。
+
+   .. image:: img/camera_reset.png
+
+
 
 .. _upload_galaxy_code:
 
@@ -30,7 +138,7 @@ FAQ
 
 #. 以下のリンクから必要なファームウェアをダウンロードします：
         
-   * :download:`GalaxyRVR Codes <https://github.com/sunfounder/galaxy-rvr/releases/download/1.1.0/galaxy-rvr-1.1.0.zip>`
+   * :download:`GalaxyRVR Firmware File <https://github.com/sunfounder/galaxy-rvr/releases/download/1.1.0/galaxy-rvr-1.1.0.zip>`
 
 #. ダウンロードした zip ファイルを解凍し、 ``update-arduino-firmware.bat`` ファイルをダブルクリックして実行します。
 
@@ -44,10 +152,12 @@ FAQ
      * 「avrdude.exe: stk500_getsync() attempt 1 of 10: not in sync: resp=0xXX」というエラーが発生した場合は、手順 1 で説明されているように、ローバーの **upload** スイッチが「upload」位置にあることを確認してください。
 
    .. image:: img/faq_firmware_port.png
+      :width: 600
 
 #. しばらくすると、新しいコードが GalaxyRVR の Uno R3 ボードに正常にアップロードされます。
 
    .. image:: img/faq_firmware_finish.png
+      :width: 600
 
 .. _ap_to_sta:
 
@@ -68,6 +178,7 @@ FAQ
 #. ``galaxy-rvr-main\galaxy-rvr`` ディレクトリに移動し、 ``galaxy-rvr.ino`` ファイルを開きます。
 
    .. image:: img/faq_galaxy_code.png
+      :width: 400
 
 #. 行 69-71 をコメントアウトし、行 73-75 をコメント解除して、 ``SSID`` と ``PASSWORD`` をホーム WiFi の認証情報に置き換えます。
 
@@ -161,8 +272,8 @@ SunFounder Controller を使用しているときにカメラフィードが上�
 
 ``SunFounder AI Camera`` ライブラリの場合は、「INSTALL ALL」を選択して、必要な ``ArduinoJson`` 依存関係を同時にインストールします。
 
-    .. image:: img/faq_install_ai_camera.png
-
+   .. image:: img/faq_install_ai_camera.png
+      :width: 600
 
 .. _stt_android:
 
