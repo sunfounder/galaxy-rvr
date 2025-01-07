@@ -65,7 +65,7 @@ Guide rapide
 
      .. note::
 
-        * La connexion actuelle est au point d'accès Galaxy, donc il n'y a pas d'accès Internet. Si on vous demande de changer de réseau, choisissez "Rester connecté".
+        * La connexion actuelle est au point d'accès GalaxyRVR, donc il n'y a pas d'accès Internet. Si on vous demande de changer de réseau, choisissez "Rester connecté".
         * :ref:`ap_to_sta`
 
      .. image:: img/app/camera_lan.png
