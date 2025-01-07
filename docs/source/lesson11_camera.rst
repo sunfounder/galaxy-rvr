@@ -89,16 +89,16 @@ Ecco come possiamo farlo:
 
     * **Modalità AP**: In questa modalità, il Rover crea un hotspot (denominato ``GalaxyRVR`` nel nostro codice). Ciò consente a qualsiasi dispositivo, come un telefono cellulare, tablet o laptop, di connettersi a questa rete. Questa modalità è utile quando vuoi controllare il Rover da remoto in qualsiasi circostanza. Tuttavia, tieni presente che questo renderà temporaneamente impossibile la connessione del tuo dispositivo a Internet.
 
-        .. code-block:: arduino
+      .. code-block:: arduino
 
-        // AP Mode
-        #define WIFI_MODE WIFI_MODE_AP
-        #define SSID "GalaxyRVR"
-        #define PASSWORD "12345678"
+          // AP Mode
+          #define WIFI_MODE WIFI_MODE_AP
+          #define SSID "GalaxyRVR"
+          #define PASSWORD "12345678"
 
     * **Modalità STA**: In questa modalità, il Rover si connette alla tua rete WiFi domestica. Ricorda che il tuo dispositivo di controllo (come un telefono o tablet) deve essere connesso alla stessa rete WiFi. Questa modalità consente al tuo dispositivo di mantenere l'accesso regolare a Internet mentre controlli il Rover, ma limita l'area operativa del Rover alla copertura WiFi.
 
-        .. code-block:: arduino
+      .. code-block:: arduino
 
             // STA Mode
             #define WIFI_MODE WIFI_MODE_STA
@@ -166,12 +166,12 @@ Ora puoi! Con l'app SunFounder Controller, potrai fare proprio questo. Segui i p
 
     * Basandoci sul codice precedente, passiamo alla modalità AP, dove puoi impostare l'SSID e la PASSWORD secondo le tue preferenze.
     
-    .. code-block:: arduino
+      .. code-block:: arduino
     
-        // AP Mode
-        #define WIFI_MODE WIFI_MODE_AP
-        #define SSID "GalaxyRVR"
-        #define PASSWORD "12345678"
+          // AP Mode
+          #define WIFI_MODE WIFI_MODE_AP
+          #define SSID "GalaxyRVR"
+          #define PASSWORD "12345678"
 
     * Successivamente, aggiungiamo una funzione ``onReceive()`` per ricevere valori dal SunFounder Controller e stampare questi valori nel Monitor Seriale. Usiamo la funzione ``getSlider()`` per ottenere il valore del widget **slider**. Ho aggiunto un widget **slider** nella Regione D, ma se lo hai aggiunto in un'altra regione, devi cambiare ``REGION_D`` con la tua regione.
 
@@ -219,7 +219,7 @@ Ora puoi! Con l'app SunFounder Controller, potrai fare proprio questo. Segui i p
             Video streamer started on http://192.168.4.1:9000/mjpg
             WS+null
 
-#.  Connetti al network ``GalaxyRVR``.
+#. Connettiti alla rete ``GalaxyRVR``. Tieni aperto il Monitor Seriale, poiché riaprire il Monitor Seriale farà riavviare l'Arduino Uno, richiedendo di ripetere questo passaggio.
 
     A questo punto, dovresti connettere il tuo dispositivo mobile alla rete locale (LAN) fornita dal GalaxyRVR. 
     In questo modo, sia il tuo dispositivo mobile che il Rover saranno sulla stessa rete, consentendo una comunicazione fluida 
@@ -238,6 +238,7 @@ Ora puoi! Con l'app SunFounder Controller, potrai fare proprio questo. Segui i p
     * Ora, torna al controller che hai creato in precedenza (nel mio caso, si chiama "camera"). Utilizza il pulsante |app_connect| per collegare il SunFounder Controller al Rover e stabilire una linea di comunicazione. Dopo un breve periodo, apparirà ``GalaxyRVR(IP)`` (il nome che hai assegnato nel codice con ``#define NAME "GalaxyRVR"``). Clicca su di esso per stabilire la connessione.
 
         .. image:: img/app/camera_connect.png
+            :width: 400
 
         .. note::
             Verifica che il tuo Wi-Fi sia connesso a ``GalaxyRVR`` se non vedi il messaggio sopra dopo un po' di tempo.
@@ -245,8 +246,9 @@ Ora puoi! Con l'app SunFounder Controller, potrai fare proprio questo. Segui i p
     * Una volta visualizzato il messaggio "Connesso con successo", premi il pulsante |app_run|. Questo farà apparire il feed live della telecamera sull'app.
 
         .. image:: img/app/camera_view_app.png
+            :width: 400
 
-    * Ora, sposta il cursore e apri contemporaneamente il monitor seriale dell'Arduino IDE. Dovresti vedere dati simili a quelli riportati di seguito.
+    * Ora, sposta il cursore, dovresti vedere dati simili a quelli riportati di seguito nel monitor seriale dell'IDE Arduino. Se hai riaperto il Monitor Seriale, dovrai ripetere i passaggi 4 e 5 per riconnettere il GalaxyRVR e l'app.
 
         .. code-block:: 
     
@@ -260,28 +262,29 @@ Ora puoi! Con l'app SunFounder Controller, potrai fare proprio questo. Segui i p
 
 #. Lascia che il cursore controlli il meccanismo di inclinazione.
 
-    Ora che conosciamo i valori trasmessi dal widget del cursore, possiamo usare direttamente questi valori per ruotare il servo. 
-    Quindi, basandoci sul codice precedente, aggiungiamo le seguenti righe per inizializzare il servo e scrivere il valore del cursore al servo.
+    Ora che conosciamo i valori trasmessi dal widget del cursore, possiamo usare direttamente questi valori per ruotare il servo. Quindi, basandoci sul codice precedente, aggiungiamo le seguenti righe per inizializzare il servo e scrivere il valore del cursore al servo.
 
     .. code-block::
 
         ...
         #include <Servo.h>
 
-        Servo myServo;  // crea un oggetto servo
-        myServo.write(int(sliderD));  // controlla il servo per muoversi all'angolo corrente
-
+        Servo myServo;  // create a servo object
         ...
-
-        void onReceive() {
-            ...
-            myServo.write(int(sliderD));  // controlla il servo per muoversi all'angolo corrente
-        }
 
         void setup() {
             ...
-            myServo.attach(6);  // collega il servo al pin 6
+            myServo.attach(6);  // attaches the servo on pin 6
             ...
+        }
+
+        void loop() {
+            ...
+        }
+
+        void onReceive() {
+            ...
+            myServo.write(int(sliderD));  // control the servo to move to the current angle
         }
 
     Ecco il codice completo:

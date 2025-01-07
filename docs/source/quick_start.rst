@@ -65,7 +65,7 @@ Guida rapida
 
      .. note::
 
-        * La connessione attuale è all'hotspot del Galaxy, quindi non c'è accesso a Internet. Se richiesto di cambiare rete, scegli "Rimani connesso".
+        * La connessione attuale è all'hotspot del GalaxyRVR, quindi non c'è accesso a Internet. Se richiesto di cambiare rete, scegli "Rimani connesso".
         * :ref:`ap_to_sta`
 
      .. image:: img/app/camera_lan.png
