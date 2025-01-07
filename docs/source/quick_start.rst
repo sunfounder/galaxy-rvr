@@ -63,7 +63,7 @@ Schnellstart-Anleitung
 
      .. note::
 
-        * Die aktuelle Verbindung erfolgt über den Galaxy-Hotspot, sodass kein Internetzugang besteht. Wenn Sie aufgefordert werden, das Netzwerk zu wechseln, wählen Sie bitte "Verbunden bleiben".
+        * Die aktuelle Verbindung erfolgt über den GalaxyRVR-Hotspot, sodass kein Internetzugang besteht. Wenn Sie aufgefordert werden, das Netzwerk zu wechseln, wählen Sie bitte "Verbunden bleiben".
         * :ref:`ap_to_sta`
 
      .. image:: img/app/camera_lan.png

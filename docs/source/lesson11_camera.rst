@@ -89,21 +89,21 @@ So können wir das tun:
 
     * **AP Mode**: In diesem Modus erstellt der Rover einen Hotspot (in unserem Code als ``GalaxyRVR`` benannt). Dies ermöglicht es jedem Gerät wie einem Mobiltelefon, Tablet oder Laptop, sich mit diesem Netzwerk zu verbinden. Dies ist besonders nützlich, wenn Sie den Rover unter allen Umständen fernsteuern möchten. Beachten Sie jedoch, dass dies Ihr Gerät vorübergehend daran hindert, eine Internetverbindung herzustellen.
 
-        .. code-block:: arduino
+      .. code-block:: arduino
 
-        // AP Mode
-        #define WIFI_MODE WIFI_MODE_AP
-        #define SSID "GalaxyRVR"
-        #define PASSWORD "12345678"
+          // AP Mode
+          #define WIFI_MODE WIFI_MODE_AP
+          #define SSID "GalaxyRVR"
+          #define PASSWORD "12345678"
 
     * **STA Mode**: In diesem Modus verbindet sich der Rover mit Ihrem Heim-WLAN-Netzwerk. Denken Sie daran, dass Ihr Steuergerät (wie ein Mobiltelefon oder Tablet) ebenfalls mit demselben WLAN-Netzwerk verbunden sein sollte. Dieser Modus ermöglicht es Ihrem Gerät, seine reguläre Internetverbindung beizubehalten, während es den Rover steuert, beschränkt aber den Einsatzbereich des Rovers auf Ihre WLAN-Abdeckungsfläche.
 
-        .. code-block:: arduino
+      .. code-block:: arduino
 
-            // STA Mode
-            #define WIFI_MODE WIFI_MODE_STA
-            #define SSID "YOUR SSID"
-            #define PASSWORD "YOUR PASSWORD"
+         // STA Mode
+         #define WIFI_MODE WIFI_MODE_STA
+         #define SSID "YOUR SSID"
+         #define PASSWORD "YOUR PASSWORD"
 
 #. Laden Sie den Code auf unseren Rover und erwecken Sie unsere ESP32-CAM zum Leben!
 
@@ -167,12 +167,12 @@ Jetzt können Sie das! Mit Hilfe der SunFounder Controller-App können Sie genau
 
     * Basierend auf dem vorherigen Code wechseln wir in den AP-Modus, in dem Sie das SSID und PASSWORD nach Ihren Wünschen festlegen können.
     
-    .. code-block:: arduino
+      .. code-block:: arduino
     
-        // AP Mode
-        #define WIFI_MODE WIFI_MODE_AP
-        #define SSID "GalaxyRVR"
-        #define PASSWORD "12345678"
+          // AP Mode
+          #define WIFI_MODE WIFI_MODE_AP
+          #define SSID "GalaxyRVR"
+          #define PASSWORD "12345678"
 
     * Als Nächstes fügen wir eine ``onReceive()``-Funktion hinzu, um Werte vom SunFounder Controller zu empfangen und diese Werte im Seriellen Monitor anzuzeigen. Wir verwenden die Funktion ``getSlider()``, um den Wert des **slider**-Widgets zu erhalten. Ich habe ein **slider**-Widget in Region D hinzugefügt, aber wenn Sie es in einer anderen Region hinzugefügt haben, müssen Sie ``REGION_D`` in Ihre Region ändern.
 
@@ -220,7 +220,7 @@ Jetzt können Sie das! Mit Hilfe der SunFounder Controller-App können Sie genau
             Video streamer started on http://192.168.4.1:9000/mjpg
             WS+null
 
-#. Verbinden Sie sich mit dem Netzwerk ``GalaxyRVR``.
+#. Verbinden Sie sich mit dem Netzwerk ``GalaxyRVR``. Bitte halten Sie den Seriellen Monitor geöffnet, da das erneute Öffnen des Seriellen Monitors dazu führt, dass der Arduino Uno neu startet, wodurch dieser Schritt wiederholt werden muss.
 
     An diesem Punkt sollten Sie Ihr mobiles Gerät mit dem lokalen Netzwerk (LAN) verbinden, das von GalaxyRVR bereitgestellt wird.
     Dadurch befinden sich sowohl Ihr mobiles Gerät als auch der Rover im selben Netzwerk, was eine reibungslose Kommunikation 
@@ -239,15 +239,17 @@ Jetzt können Sie das! Mit Hilfe der SunFounder Controller-App können Sie genau
     * Kehren Sie nun zu dem Controller zurück, den Sie zuvor erstellt haben (in meinem Fall heißt er "camera"). Verwenden Sie den |app_connect|-Button, um den SunFounder Controller mit dem Rover zu verbinden und eine Kommunikationsverbindung herzustellen. Nach einer kurzen Wartezeit erscheint „GalaxyRVR(IP)“ (der Name, den Sie im Code mit ``#define NAME "GalaxyRVR"`` zugewiesen haben). Klicken Sie darauf, um eine Verbindung herzustellen.
 
         .. image:: img/app/camera_connect.png
-
+            :width: 400
+    
         .. note::
             Bitte überprüfen Sie, ob Ihr WLAN mit „GalaxyRVR“ verbunden ist, falls Sie die obige Nachricht nach einiger Zeit nicht sehen.
 
     * Sobald Sie die Nachricht „Connected Successfully“ sehen, drücken Sie den |app_run|-Button. Dies wird das Live-Footage der Kamera in der App anzeigen.
 
         .. image:: img/app/camera_view_app.png
+            :width: 400
 
-    * Bewegen Sie jetzt den Schieberegler und öffnen Sie gleichzeitig den seriellen Monitor der Arduino IDE. Sie sollten ähnliche Daten wie unten sehen.
+    * Bewegen Sie nun den Schieberegler. Sie sollten ähnliche Daten wie unten im Seriellen Monitor der Arduino IDE sehen. Wenn Sie den Seriellen Monitor erneut geöffnet haben, müssen Sie die Schritte 4 und 5 wiederholen, um die Verbindung mit GalaxyRVR und der App wiederherzustellen.
 
         .. code-block:: 
     
@@ -261,8 +263,7 @@ Jetzt können Sie das! Mit Hilfe der SunFounder Controller-App können Sie genau
 
 #. Lassen Sie den Schieberegler den Kippmechanismus steuern.
 
-    Jetzt, wo wir die vom Slider-Widget übertragenen Werte kennen, können wir diese Werte direkt verwenden, um den Servo zu drehen.
-     Fügen Sie daher basierend auf dem vorherigen Code die folgenden Zeilen hinzu, um den Servo zu initialisieren und den Wert des Schiebereglers auf den Servo zu schreiben.
+    Jetzt, wo wir die vom Slider-Widget übertragenen Werte kennen, können wir diese Werte direkt verwenden, um den Servo zu drehen. Fügen Sie daher basierend auf dem vorherigen Code die folgenden Zeilen hinzu, um den Servo zu initialisieren und den Wert des Schiebereglers auf den Servo zu schreiben.
 
     .. code-block::
 
@@ -270,19 +271,21 @@ Jetzt können Sie das! Mit Hilfe der SunFounder Controller-App können Sie genau
         #include <Servo.h>
 
         Servo myServo;  // create a servo object
-        myServo.write(int(sliderD));  // control the servo to move to the current angle
-
         ...
-
-        void onReceive() {
-            ...
-            myServo.write(int(sliderD));  // control the servo to move to the current angle
-        }
 
         void setup() {
             ...
             myServo.attach(6);  // attaches the servo on pin 6
             ...
+        }
+
+        void loop() {
+            ...
+        }
+
+        void onReceive() {
+            ...
+            myServo.write(int(sliderD));  // control the servo to move to the current angle
         }
 
     Hier ist der vollständige Code:

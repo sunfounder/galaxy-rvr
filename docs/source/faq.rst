@@ -14,6 +14,114 @@
 
 FAQ
 ==============
+
+So ändern Sie den WLAN-Kanal
+----------------------------------
+
+Das 2,4-GHz-WLAN-Band hat Kanäle von 1 bis 13. Der ESP32 unterstützt Kanäle von 1 bis 11. Andere Geräte, die denselben Kanal verwenden, können Interferenzen verursachen, was zu Verbindungsproblemen führen kann. Um dies zu vermeiden, können Sie versuchen, den Kanal zu wechseln. Standardmäßig ist der Kanal auf 1 eingestellt. Es wird empfohlen, beim Wechsel des Kanals 1–2 Kanäle zu überspringen. Wenn der aktuelle Kanal z. B. 1 ist, versuchen Sie zunächst Kanal 3, und wenn das Signal weiterhin schlecht ist, wechseln Sie zu Kanal 5.
+
+.. Hinweis::
+
+   Für den Wechsel des Kanals wird die Firmware-Version 1.4.1 oder höher für den ESP32 CAM benötigt. Weitere Informationen finden Sie unter :ref:`update_firmware`.
+
+#. Schalten Sie den GalaxyRVR ein. Um die ESP32 CAM zu aktivieren, stellen Sie den Modusschalter in die **Run**-Position und drücken Sie die **Reset**-Taste, um das R3-Board neu zu starten.
+
+     .. raw:: html
+
+        <video width="600" loop autoplay muted>
+            <source src="_static/video/play_reset.mp4" type="video/mp4">
+            Ihr Browser unterstützt das Video-Tag nicht.
+        </video>
+
+#. Suchen Sie auf Ihrem mobilen Gerät (Tablet oder Smartphone) nach ``GalaxyRVR`` in der Liste der verfügbaren Netzwerke, geben Sie das Passwort ``12345678`` ein und verbinden Sie sich damit.
+
+     .. Hinweis::
+
+        * Die aktuelle Verbindung erfolgt über den GalaxyRVR-Hotspot, sodass kein Internetzugang besteht. Wenn Sie aufgefordert werden, das Netzwerk zu wechseln, wählen Sie bitte „Verbunden bleiben“.
+
+     .. image:: img/app/camera_lan.png
+        :width: 500
+
+#. Öffnen Sie einen Webbrowser auf Ihrem mobilen Gerät und navigieren Sie zu ``http://192.168.4.1``, um auf die OTA-Aktualisierungsseite der ESP32 CAM zuzugreifen.
+
+   .. image:: img/faq_cam_ota_141.jpg
+      :width: 400
+
+#. Wählen Sie im Abschnitt **Wi-Fi AP Channel** einen anderen Kanal aus.
+
+   * Der Standardkanal ist 1. Wenn Sie einen neuen Kanal auswählen, überspringen Sie 1–2 Kanäle (z. B. von Kanal 1 auf 3 und bei Bedarf auf 5).  
+   * Klicken Sie auf die Schaltfläche **Bestätigen**, um die Änderungen zu speichern.
+
+   .. image:: img/faq_cam_ota_channel.png
+      :width: 400
+
+#. Ein Bestätigungspopup wird angezeigt, in dem Sie aufgefordert werden, das Gerät zurückzusetzen. Klicken Sie auf **Bestätigen**.
+
+   .. image:: img/faq_cam_ota_reset.jpg
+      :width: 400
+   
+#. Drücken Sie die **Reset**-Taste, um das Gerät neu zu starten. Der GalaxyRVR ist nun bereit für den normalen Betrieb.
+
+   .. image:: img/camera_reset.png
+
+.. _update_firmware:
+
+So aktualisieren Sie die Firmware für die ESP32 CAM
+---------------------------------------------------
+
+Befolgen Sie diese detaillierten Schritte, um die Firmware für Ihre ESP32 CAM zu aktualisieren:
+
+#. Schalten Sie den GalaxyRVR ein. Um die ESP32 CAM zu aktivieren, stellen Sie den Modusschalter in die **Run**-Position und drücken Sie die **Reset**-Taste, um das R3-Board neu zu starten.
+
+     .. raw:: html
+
+        <video width="600" loop autoplay muted>
+            <source src="_static/video/play_reset.mp4" type="video/mp4">
+            Ihr Browser unterstützt das Video-Tag nicht.
+        </video>
+
+#. Suchen Sie auf Ihrem mobilen Gerät (Tablet oder Smartphone) nach ``GalaxyRVR`` in der Liste der verfügbaren Netzwerke, geben Sie das Passwort ``12345678`` ein und verbinden Sie sich damit.
+
+     .. Hinweis::
+
+        * Die aktuelle Verbindung erfolgt über den GalaxyRVR-Hotspot, sodass kein Internetzugang besteht. Wenn Sie aufgefordert werden, das Netzwerk zu wechseln, wählen Sie bitte „Verbunden bleiben“.
+
+     .. image:: img/app/camera_lan.png
+        :width: 500
+
+#. Klicken Sie auf den untenstehenden Link, um die Firmware-Datei ``ai-camera-firmware-v1.4.1-ota.bin`` herunterzuladen und auf Ihrem mobilen Gerät zu speichern.
+
+   * :download:`AI Camera Firmware <https://github.com/sunfounder/ai-camera-firmware/releases/download/1.4.1/ai-camera-firmware-v1.4.1-ota.bin>`
+
+#. Öffnen Sie einen Webbrowser auf Ihrem mobilen Gerät und navigieren Sie zu ``http://192.168.4.1``, um auf die OTA-Aktualisierungsseite der ESP32 CAM zuzugreifen.
+
+   .. image:: img/faq_cam_ota.jpg
+      :width: 400
+
+#. Klicken Sie auf der OTA-Seite auf die Schaltfläche, um die Firmware-Datei auszuwählen.
+
+   .. image:: img/faq_cam_ota_choose.png
+      :width: 400
+
+#. Wählen Sie die zuvor heruntergeladene Datei ``ai-camera-firmware-v1.4.1-ota.bin`` von Ihrem Gerät aus und klicken Sie auf **OK**.
+
+   .. image:: img/faq_cam_ota_file.png
+      :width: 400
+
+#. Klicken Sie auf die Schaltfläche **Update**, um den Firmware-Aktualisierungsprozess zu starten.
+
+   .. image:: img/faq_cam_ota_update.png
+      :width: 400
+   
+#. Warten Sie, bis die Aktualisierung abgeschlossen ist. Sobald sich die angezeigte Versionsnummer auf ``1.4.1`` ändert, war die Aktualisierung erfolgreich.
+
+   .. image:: img/faq_cam_ota_finish.png
+      :width: 400
+   
+#. Nach Abschluss der Aktualisierung können Sie den Webbrowser schließen. Drücken Sie die **Reset**-Taste, um das Gerät neu zu starten. Die ESP32 CAM ist jetzt bereit für den normalen Betrieb.
+
+   .. image:: img/camera_reset.png
+
 .. _upload_galaxy_code:
 
 Wie lädt man den ``galaxy-rvr.ino`` Code hoch?
@@ -29,7 +137,7 @@ Standardmäßig ist das Uno R3-Board des GalaxyRVR mit der notwendigen Firmware 
 
 #. Laden Sie die erforderliche Firmware über den folgenden Link herunter:
 
-   * :download:`GalaxyRVR Codes <https://github.com/sunfounder/galaxy-rvr/releases/download/1.1.0/galaxy-rvr-1.1.0.zip>`
+   * :download:`GalaxyRVR Firmware File <https://github.com/sunfounder/galaxy-rvr/releases/download/1.1.0/galaxy-rvr-1.1.0.zip>`
 
 #. Entpacken Sie die heruntergeladene ZIP-Datei und doppelklicken Sie auf die Datei ``update-arduino-firmware.bat``, um sie auszuführen.
 
@@ -43,10 +151,12 @@ Standardmäßig ist das Uno R3-Board des GalaxyRVR mit der notwendigen Firmware 
      * Wenn Sie eine Fehlermeldung wie "avrdude.exe: stk500_getsync() attempt 1 of 10: not in sync: resp=0xXX" erhalten, stellen Sie sicher, dass der **Upload**-Schalter am Rover in der "Upload"-Position ist, wie in Schritt 1 beschrieben.
 
    .. image:: img/faq_firmware_port.png
+      :width: 600
 
 #. Nach kurzer Zeit wird der neue Code erfolgreich auf das Uno R3-Board des GalaxyRVR hochgeladen.
 
    .. image:: img/faq_firmware_finish.png
+      :width: 600
 
 .. _ap_to_sta:
 
@@ -67,6 +177,7 @@ Wenn Sie den Rover lieber über Ihr Heimnetzwerk steuern möchten, folgen Sie di
 #. Navigieren Sie zum Verzeichnis ``galaxy-rvr-main\galaxy-rvr`` und öffnen Sie die Datei ``galaxy-rvr.ino``.
 
    .. image:: img/faq_galaxy_code.png
+      :width: 400
 
 #. Kommentieren Sie die Zeilen 69-71 aus, heben Sie die Kommentare der Zeilen 73-75 auf, und ersetzen Sie ``SSID`` und ``PASSWORD`` durch Ihre Heim-WLAN-Zugangsdaten.
 
@@ -160,7 +271,8 @@ Bitte installieren Sie die beiden erforderlichen Bibliotheken ``SoftPWM`` und ``
 
 Für die Bibliothek ``SunFounder AI Camera`` müssen Sie "INSTALL ALL" auswählen, um gleichzeitig die erforderliche ``ArduinoJson``-Abhängigkeit zu installieren.
 
-    .. image:: img/faq_install_ai_camera.png
+   .. image:: img/faq_install_ai_camera.png
+      :width: 600
 
 avrdude: stk500_getsync() Versuch 10 von 10: nicht synchronisiert: resp=0x6e?
 -----------------------------------------------------------------------------------------
