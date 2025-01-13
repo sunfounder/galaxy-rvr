@@ -20,7 +20,7 @@ Come cambiare il canale Wi-Fi
 
 La banda Wi-Fi a 2,4GHz dispone di canali che vanno da 1 a 13. ESP32 supporta i canali da 1 a 11. Altri dispositivi che operano sullo stesso canale possono causare interferenze, portando a problemi di connessione. Per mitigare questo problema, puoi provare a cambiare canale. Per impostazione predefinita, il canale è impostato su 1. Quando selezioni un nuovo canale, si consiglia di saltare 1-2 canali alla volta. Ad esempio, se il canale attuale è 1, prova prima con il canale 3 e, se il segnale è ancora debole, passa al canale 5.
 
-.. nota::
+.. note::
 
    È necessaria la versione 1.4.1 o superiore del firmware ESP32 CAM per cambiare canale. Consulta :ref:`update_firmware` per ulteriori dettagli.
 
@@ -35,7 +35,7 @@ La banda Wi-Fi a 2,4GHz dispone di canali che vanno da 1 a 13. ESP32 supporta i 
 
 #. Trova ``GalaxyRVR`` nell'elenco delle reti disponibili sul tuo dispositivo mobile (tablet o smartphone), inserisci la password ``12345678`` e connettiti.
 
-     .. nota::
+     .. note::
 
         * La connessione attuale è all'hotspot GalaxyRVR, quindi non c'è accesso a Internet. Se richiesto di cambiare rete, scegli "Rimani connesso".
 
@@ -82,7 +82,7 @@ Segui questi passaggi dettagliati per aggiornare il firmware del tuo ESP32 CAM:
 
 #. Trova ``GalaxyRVR`` nell'elenco delle reti disponibili sul tuo dispositivo mobile (tablet o smartphone), inserisci la password ``12345678`` e connettiti.
 
-     .. nota::
+     .. note::
 
         * La connessione attuale è all'hotspot GalaxyRVR, quindi non c'è accesso a Internet. Se richiesto di cambiare rete, scegli "Rimani connesso".
 
@@ -91,7 +91,7 @@ Segui questi passaggi dettagliati per aggiornare il firmware del tuo ESP32 CAM:
 
 #. Fai clic sul link sottostante per scaricare il file del firmware ``ai-camera-firmware-v1.4.1-ota.bin`` e salvalo sul tuo dispositivo mobile.
 
-   * :download:`Firmware della fotocamera AI <https://github.com/sunfounder/ai-camera-firmware/releases/download/1.4.1/ai-camera-firmware-v1.4.1-ota.bin>`
+   * :download:`File del firmware di ESP32 CAM <https://github.com/sunfounder/ai-camera-firmware/releases/download/1.4.1/ai-camera-firmware-v1.4.1-ota.bin>`
 
 #. Apri un browser web sul tuo dispositivo mobile e vai su ``http://192.168.4.1`` per accedere alla pagina di aggiornamento OTA di ESP32 CAM.
 
@@ -137,7 +137,7 @@ Di default, la scheda Uno R3 del GalaxyRVR è preinstallata con il firmware nece
 
 #. Scarica il firmware necessario dal link qui sotto: 
         
-   * :download:`GalaxyRVR Firmware File <https://github.com/sunfounder/galaxy-rvr/releases/download/1.1.0/galaxy-rvr-1.1.0.zip>`
+   * :download:`File del firmware della scheda R3 <https://github.com/sunfounder/galaxy-rvr/releases/download/1.1.0/galaxy-rvr-1.1.0.zip>`
 
 #. Estrai il file zip scaricato, quindi fai doppio clic sul file ``update-arduino-firmware.bat`` per eseguirlo.
 
