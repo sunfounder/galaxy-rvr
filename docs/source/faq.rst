@@ -20,7 +20,7 @@ So ändern Sie den WLAN-Kanal
 
 Das 2,4-GHz-WLAN-Band hat Kanäle von 1 bis 13. Der ESP32 unterstützt Kanäle von 1 bis 11. Andere Geräte, die denselben Kanal verwenden, können Interferenzen verursachen, was zu Verbindungsproblemen führen kann. Um dies zu vermeiden, können Sie versuchen, den Kanal zu wechseln. Standardmäßig ist der Kanal auf 1 eingestellt. Es wird empfohlen, beim Wechsel des Kanals 1–2 Kanäle zu überspringen. Wenn der aktuelle Kanal z. B. 1 ist, versuchen Sie zunächst Kanal 3, und wenn das Signal weiterhin schlecht ist, wechseln Sie zu Kanal 5.
 
-.. Hinweis::
+.. note::
 
    Für den Wechsel des Kanals wird die Firmware-Version 1.4.1 oder höher für den ESP32 CAM benötigt. Weitere Informationen finden Sie unter :ref:`update_firmware`.
 
@@ -35,7 +35,7 @@ Das 2,4-GHz-WLAN-Band hat Kanäle von 1 bis 13. Der ESP32 unterstützt Kanäle v
 
 #. Suchen Sie auf Ihrem mobilen Gerät (Tablet oder Smartphone) nach ``GalaxyRVR`` in der Liste der verfügbaren Netzwerke, geben Sie das Passwort ``12345678`` ein und verbinden Sie sich damit.
 
-     .. Hinweis::
+     .. note::
 
         * Die aktuelle Verbindung erfolgt über den GalaxyRVR-Hotspot, sodass kein Internetzugang besteht. Wenn Sie aufgefordert werden, das Netzwerk zu wechseln, wählen Sie bitte „Verbunden bleiben“.
 
@@ -82,7 +82,7 @@ Befolgen Sie diese detaillierten Schritte, um die Firmware für Ihre ESP32 CAM z
 
 #. Suchen Sie auf Ihrem mobilen Gerät (Tablet oder Smartphone) nach ``GalaxyRVR`` in der Liste der verfügbaren Netzwerke, geben Sie das Passwort ``12345678`` ein und verbinden Sie sich damit.
 
-     .. Hinweis::
+     .. note::
 
         * Die aktuelle Verbindung erfolgt über den GalaxyRVR-Hotspot, sodass kein Internetzugang besteht. Wenn Sie aufgefordert werden, das Netzwerk zu wechseln, wählen Sie bitte „Verbunden bleiben“.
 
