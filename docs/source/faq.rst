@@ -67,7 +67,7 @@ La bande Wi-Fi 2.4GHz dispose de canaux allant de 1 à 13. L'ESP32 prend en char
 .. _update_firmware:
 
 Comment mettre à jour le firmware de l'ESP32 CAM
------------------------------------------
+----------------------------------------------------------
 
 Suivez ces étapes détaillées pour mettre à jour le firmware de votre ESP32 CAM :
 
