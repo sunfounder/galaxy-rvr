@@ -67,7 +67,7 @@ Das 2,4-GHz-WLAN-Band hat Kanäle von 1 bis 13. Der ESP32 unterstützt Kanäle v
 .. _update_firmware:
 
 So aktualisieren Sie die Firmware für die ESP32 CAM
----------------------------------------------------
+------------------------------------------------------
 
 Befolgen Sie diese detaillierten Schritte, um die Firmware für Ihre ESP32 CAM zu aktualisieren:
 
@@ -91,7 +91,7 @@ Befolgen Sie diese detaillierten Schritte, um die Firmware für Ihre ESP32 CAM z
 
 #. Klicken Sie auf den untenstehenden Link, um die Firmware-Datei ``ai-camera-firmware-v1.4.1-ota.bin`` herunterzuladen und auf Ihrem mobilen Gerät zu speichern.
 
-   * :download:`AI Camera Firmware <https://github.com/sunfounder/ai-camera-firmware/releases/download/1.4.1/ai-camera-firmware-v1.4.1-ota.bin>`
+   * :download:`ESP32 CAM Firmware <https://github.com/sunfounder/ai-camera-firmware/releases/download/1.4.1/ai-camera-firmware-v1.4.1-ota.bin>`
 
 #. Öffnen Sie einen Webbrowser auf Ihrem mobilen Gerät und navigieren Sie zu ``http://192.168.4.1``, um auf die OTA-Aktualisierungsseite der ESP32 CAM zuzugreifen.
 
@@ -137,7 +137,7 @@ Standardmäßig ist das Uno R3-Board des GalaxyRVR mit der notwendigen Firmware 
 
 #. Laden Sie die erforderliche Firmware über den folgenden Link herunter:
 
-   * :download:`GalaxyRVR Firmware File <https://github.com/sunfounder/galaxy-rvr/releases/download/1.1.0/galaxy-rvr-1.1.0.zip>`
+   * :download:`R3 Board Firmware-Datei <https://github.com/sunfounder/galaxy-rvr/releases/download/1.1.0/galaxy-rvr-1.1.0.zip>`
 
 #. Entpacken Sie die heruntergeladene ZIP-Datei und doppelklicken Sie auf die Datei ``update-arduino-firmware.bat``, um sie auszuführen.
 
