@@ -20,7 +20,7 @@ Cómo cambiar el canal Wi-Fi
 
 La banda Wi-Fi de 2.4GHz tiene canales que van del 1 al 13. El ESP32 admite los canales del 1 al 11. Otros dispositivos que operan en el mismo canal pueden causar interferencias, lo que lleva a problemas de conexión. Para mitigar esto, puedes intentar cambiar el canal. Por defecto, el canal está configurado en el 1. Al seleccionar un nuevo canal, se recomienda saltar 1-2 canales a la vez. Por ejemplo, si el canal actual es el 1, prueba primero con el canal 3 y, si la señal sigue siendo débil, continúa con el canal 5.
 
-.. nota::
+.. note::
 
    Se requiere la versión de firmware 1.4.1 o superior del ESP32 CAM para cambiar canales. Consulta :ref:`update_firmware` para más detalles.
 
@@ -35,7 +35,7 @@ La banda Wi-Fi de 2.4GHz tiene canales que van del 1 al 13. El ESP32 admite los 
 
 #. Encuentra ``GalaxyRVR`` en la lista de redes disponibles en tu dispositivo móvil (tableta o teléfono inteligente), introduce la contraseña ``12345678`` y conéctate a él.
 
-     .. nota::
+     .. note::
 
         * La conexión actual es al hotspot de GalaxyRVR, por lo que no hay acceso a Internet. Si se te solicita cambiar de red, elige "Mantenerse conectado".
 
@@ -82,7 +82,7 @@ Sigue estos pasos detallados para actualizar el firmware de tu ESP32 CAM:
 
 #. Encuentra ``GalaxyRVR`` en la lista de redes disponibles en tu dispositivo móvil (tableta o teléfono inteligente), introduce la contraseña ``12345678`` y conéctate a él.
 
-     .. nota::
+     .. note::
 
         * La conexión actual es al hotspot de GalaxyRVR, por lo que no hay acceso a Internet. Si se te solicita cambiar de red, elige "Mantenerse conectado".
 
