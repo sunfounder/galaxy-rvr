@@ -23,7 +23,7 @@ Wi-Fiチャンネルの変更方法
 
    チャンネルを変更するには、ESP32 CAMのファームウェアバージョン1.4.1以上が必要です。詳細については、:ref:`update_firmware` を参照してください。
 
-#. GalaxyRVRの電源を入れます。ESP32 CAMをアクティブにするには、モードスイッチを**Run**位置に移動し、**reset**ボタンを押してR3ボードを再起動します。
+#. GalaxyRVRの電源を入れます。ESP32 CAMをアクティブにするには、モードスイッチを **Run** 位置に移動し、 **reset** ボタンを押してR3ボードを再起動します。
 
      .. raw:: html
 
@@ -32,7 +32,7 @@ Wi-Fiチャンネルの変更方法
             Your browser does not support the video tag.
         </video>
 
-#. モバイルデバイス（タブレットやスマートフォン）の利用可能なネットワーク一覧で``GalaxyRVR``を見つけ、パスワード``12345678``を入力して接続します。
+#. モバイルデバイス（タブレットやスマートフォン）の利用可能なネットワーク一覧で ``GalaxyRVR`` を見つけ、パスワード ``12345678`` を入力して接続します。
 
      .. note::
 
@@ -41,25 +41,25 @@ Wi-Fiチャンネルの変更方法
      .. image:: img/app/camera_lan.png
         :width: 500
 
-#. モバイルデバイスのWebブラウザを開き、``http://192.168.4.1``にアクセスして、ESP32 CAMのOTA更新ページを開きます。
+#. モバイルデバイスのWebブラウザを開き、 ``http://192.168.4.1`` にアクセスして、ESP32 CAMのOTA更新ページを開きます。
 
    .. image:: img/faq_cam_ota_141.jpg
       :width: 400
 
-#. **Wi-Fi AP Channel**セクションで、別のチャンネルを選択します。
+#. **Wi-Fi AP Channel** セクションで、別のチャンネルを選択します。
 
    * デフォルトのチャンネルは1です。新しいチャンネルを選択する際は、1～2チャンネルずつ飛ばして選んでください（例：チャンネル1から3、必要に応じて5へ）。  
-   * **Confirm**ボタンをクリックして変更を保存します。
+   * **Confirm** ボタンをクリックして変更を保存します。
 
    .. image:: img/faq_cam_ota_channel.png
       :width: 400
 
-#. デバイスをリセットするよう促す確認ポップアップが表示されます。**Confirm**をクリックします。
+#. デバイスをリセットするよう促す確認ポップアップが表示されます。 **Confirm** をクリックします。
 
    .. image:: img/faq_cam_ota_reset.jpg
       :width: 400
    
-#. **Reset**ボタンを押してデバイスを再起動します。これでGalaxyRVRは通常の操作が可能になります。
+#. **Reset** ボタンを押してデバイスを再起動します。これでGalaxyRVRは通常の操作が可能になります。
 
    .. image:: img/camera_reset.png
 
@@ -70,7 +70,7 @@ ESP32 CAMのファームウェアを更新する方法
 
 ESP32 CAMのファームウェアを更新するための詳細な手順は以下の通りです：
 
-#. GalaxyRVRの電源を入れます。ESP32 CAMをアクティブにするには、モードスイッチを**Run**位置に移動し、**reset**ボタンを押してR3ボードを再起動します。
+#. GalaxyRVRの電源を入れます。ESP32 CAMをアクティブにするには、モードスイッチを **Run** 位置に移動し、 **reset** ボタンを押してR3ボードを再起動します。
 
      .. raw:: html
 
@@ -79,7 +79,7 @@ ESP32 CAMのファームウェアを更新するための詳細な手順は以�
             Your browser does not support the video tag.
         </video>
 
-#. モバイルデバイス（タブレットやスマートフォン）の利用可能なネットワーク一覧で``GalaxyRVR``を見つけ、パスワード``12345678``を入力して接続します。
+#. モバイルデバイス（タブレットやスマートフォン）の利用可能なネットワーク一覧で ``GalaxyRVR`` を見つけ、パスワード ``12345678`` を入力して接続します。
 
      .. note::
 
@@ -88,11 +88,11 @@ ESP32 CAMのファームウェアを更新するための詳細な手順は以�
      .. image:: img/app/camera_lan.png
         :width: 500
 
-#. 以下のリンクをクリックして、ファームウェアファイル``ai-camera-firmware-v1.4.1-ota.bin``をダウンロードし、モバイルデバイスに保存します。
+#. 以下のリンクをクリックして、ファームウェアファイル ``ai-camera-firmware-v1.4.1-ota.bin`` をダウンロードし、モバイルデバイスに保存します。
 
    * :download:`ESP32 CAMのファームウェアファイル <https://github.com/sunfounder/ai-camera-firmware/releases/download/1.4.1/ai-camera-firmware-v1.4.1-ota.bin>`
 
-#. モバイルデバイスのWebブラウザを開き、``http://192.168.4.1``にアクセスして、ESP32 CAMのOTA更新ページを開きます。
+#. モバイルデバイスのWebブラウザを開き、 ``http://192.168.4.1`` にアクセスして、ESP32 CAMのOTA更新ページを開きます。
 
    .. image:: img/faq_cam_ota.jpg
       :width: 400
@@ -102,22 +102,22 @@ ESP32 CAMのファームウェアを更新するための詳細な手順は以�
    .. image:: img/faq_cam_ota_choose.png
       :width: 400
 
-#. 以前にダウンロードした``ai-camera-firmware-v1.4.1-ota.bin``ファイルをデバイスから選択し、**OK**をクリックします。
+#. 以前にダウンロードした ``ai-camera-firmware-v1.4.1-ota.bin`` ファイルをデバイスから選択し、 **OK** をクリックします。
 
    .. image:: img/faq_cam_ota_file.png
       :width: 400
 
-#. **Update**ボタンをクリックして、ファームウェア更新プロセスを開始します。
+#. **Update** ボタンをクリックして、ファームウェア更新プロセスを開始します。
 
    .. image:: img/faq_cam_ota_update.png
       :width: 400
    
-#. 更新が完了するまで待ちます。表示されるバージョン番号が``1.4.1``に変わると、更新が成功したことを意味します。
+#. 更新が完了するまで待ちます。表示されるバージョン番号が ``1.4.1`` に変わると、更新が成功したことを意味します。
 
    .. image:: img/faq_cam_ota_finish.png
       :width: 400
    
-#. 更新が完了した後、Webブラウザを閉じることができます。**Reset**ボタンを押してデバイスを再起動します。これでESP32 CAMは通常の操作が可能になります。
+#. 更新が完了した後、Webブラウザを閉じることができます。 **Reset** ボタンを押してデバイスを再起動します。これでESP32 CAMは通常の操作が可能になります。
 
    .. image:: img/camera_reset.png
 
@@ -144,12 +144,12 @@ ESP32 CAMのファームウェアを更新するための詳細な手順は以�
 
    .. image:: img/faq_firmware_file.png
 
-#. GalaxyRVR の Arduino Uno に対応する番号（例: ``2``）を入力し、**Enter** を押して更新を開始します。
+#. GalaxyRVR の Arduino Uno に対応する番号（例: ``2``）を入力し、 **Enter** を押して更新を開始します。
 
    .. note::
 
      * 正しい COM ポートが表示されない場合やどれかわからない場合は、他の USB デバイスをコンピューターから取り外し、ローバーだけを接続してください。
-     * 「avrdude.exe: stk500_getsync() attempt 1 of 10: not in sync: resp=0xXX」というエラーが発生した場合は、手順 1 で説明されているように、ローバーの **upload** スイッチが「upload」位置にあることを確認してください。
+     * ``avrdude.exe: stk500_getsync() attempt 1 of 10: not in sync: resp=0xXX`` というエラーが発生した場合は、手順 1 で説明されているように、ローバーの **upload** スイッチが「upload」位置にあることを確認してください。
 
    .. image:: img/faq_firmware_port.png
       :width: 600
@@ -195,7 +195,7 @@ ESP32 CAMのファームウェアを更新するための詳細な手順は以�
 
    .. image:: img/faq_galaxy_upload.png
 
-#. ESP32 CAM を有効化するには、モードスイッチを **Run** 位置に移動し、**reset** ボタンを押して R3 ボードを再起動します。底部ストリップでシアンの光が点滅するのが見えます。
+#. ESP32 CAM を有効化するには、モードスイッチを **Run** 位置に移動し、 **reset** ボタンを押して R3 ボードを再起動します。底部ストリップでシアンの光が点滅するのが見えます。
 
    .. raw:: html
    
@@ -235,7 +235,7 @@ SunFounder Controller を使用しているときにカメラフィードが上�
    .. image:: img/app/faq_edit.png  
         :width: 500 
 
-2. **カメラ** ボタンをクリックしてポップアップを開き、**Inverted** スイッチをオンにします。
+2. **カメラ** ボタンをクリックしてポップアップを開き、 **Inverted** スイッチをオンにします。
 
    .. image:: img/app/faq_inverted.png  
         :width: 500  
@@ -305,15 +305,17 @@ STTモードは、Androidモバイルデバイスがインターネットに接�
 #. Google Playで ``google`` を検索し、以下のアプリを見つけてインストールします。
 
     .. image:: img/google_voice.png
+        :width: 400
 
 #. モバイルデバイスをコードに記載されたWi-Fiと同じものに接続します。
 
     .. image:: img/sta_wifi.png
+        :width: 400
 
 #. SunFounder Controllerで以前に作成したコントローラーを開き、|app_connect| ボタンを介して ``GalaxyRVR`` に接続します。
 
     .. image:: img/app/camera_connect.png
-
+        :width: 400
 
 #. |app_run| ボタンをクリックした後、 **STT(J)** ウィジェットをタップして押し続けると、聞いていることを示すプロンプトが表示されます。以下のコマンドを話して車を動かします。
 
