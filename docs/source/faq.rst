@@ -19,7 +19,7 @@ Wi-Fiチャンネルの変更方法
 
 2.4GHz Wi-Fi帯域には1から13までのチャンネルがあります。ESP32は1から11のチャンネルをサポートしています。同じチャンネルを使用する他のデバイスが干渉を引き起こし、接続問題を引き起こす場合があります。これを軽減するために、チャンネルを変更することを試みることができます。デフォルトでは、チャンネルは1に設定されています。新しいチャンネルを選択する際は、1～2チャンネルずつ飛ばして選ぶことをお勧めします。例えば、現在のチャンネルが1の場合、まず3に変更し、信号がまだ弱い場合は5に進んでください。
 
-.. 注意::
+.. note::
 
    チャンネルを変更するには、ESP32 CAMのファームウェアバージョン1.4.1以上が必要です。詳細については、:ref:`update_firmware` を参照してください。
 
@@ -34,7 +34,7 @@ Wi-Fiチャンネルの変更方法
 
 #. モバイルデバイス（タブレットやスマートフォン）の利用可能なネットワーク一覧で``GalaxyRVR``を見つけ、パスワード``12345678``を入力して接続します。
 
-     .. 注意::
+     .. note::
 
         * 現在の接続はGalaxyRVRホットスポットへのもので、インターネットアクセスはありません。ネットワークを切り替えるように促された場合は、「接続を維持」を選択してください。
 
@@ -81,7 +81,7 @@ ESP32 CAMのファームウェアを更新するための詳細な手順は以�
 
 #. モバイルデバイス（タブレットやスマートフォン）の利用可能なネットワーク一覧で``GalaxyRVR``を見つけ、パスワード``12345678``を入力して接続します。
 
-     .. 注意::
+     .. note::
 
         * 現在の接続はGalaxyRVRホットスポットへのもので、インターネットアクセスはありません。ネットワークを切り替えるように促された場合は、「接続を維持」を選択してください。
 
@@ -90,7 +90,7 @@ ESP32 CAMのファームウェアを更新するための詳細な手順は以�
 
 #. 以下のリンクをクリックして、ファームウェアファイル``ai-camera-firmware-v1.4.1-ota.bin``をダウンロードし、モバイルデバイスに保存します。
 
-   * :download:`AI Camera Firmware <https://github.com/sunfounder/ai-camera-firmware/releases/download/1.4.1/ai-camera-firmware-v1.4.1-ota.bin>`
+   * :download:`ESP32 CAMのファームウェアファイル <https://github.com/sunfounder/ai-camera-firmware/releases/download/1.4.1/ai-camera-firmware-v1.4.1-ota.bin>`
 
 #. モバイルデバイスのWebブラウザを開き、``http://192.168.4.1``にアクセスして、ESP32 CAMのOTA更新ページを開きます。
 
@@ -138,7 +138,7 @@ ESP32 CAMのファームウェアを更新するための詳細な手順は以�
 
 #. 以下のリンクから必要なファームウェアをダウンロードします：
         
-   * :download:`GalaxyRVR Firmware File <https://github.com/sunfounder/galaxy-rvr/releases/download/1.1.0/galaxy-rvr-1.1.0.zip>`
+   * :download:`R3ボードのファームウェアファイル <https://github.com/sunfounder/galaxy-rvr/releases/download/1.1.0/galaxy-rvr-1.1.0.zip>`
 
 #. ダウンロードした zip ファイルを解凍し、 ``update-arduino-firmware.bat`` ファイルをダブルクリックして実行します。
 
