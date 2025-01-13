@@ -91,7 +91,7 @@ Sigue estos pasos detallados para actualizar el firmware de tu ESP32 CAM:
 
 #. Haz clic en el siguiente enlace para descargar el archivo de firmware ``ai-camera-firmware-v1.4.1-ota.bin`` y guárdalo en tu dispositivo móvil.
 
-   * :download:`Firmware de cámara AI <https://github.com/sunfounder/ai-camera-firmware/releases/download/1.4.1/ai-camera-firmware-v1.4.1-ota.bin>` 
+   * :download:`Archivo de firmware de ESP32 CAM <https://github.com/sunfounder/ai-camera-firmware/releases/download/1.4.1/ai-camera-firmware-v1.4.1-ota.bin>` 
 
 #. Abre un navegador web en tu dispositivo móvil y navega a ``http://192.168.4.1`` para acceder a la página de actualización OTA del ESP32 CAM.
 
@@ -138,7 +138,7 @@ Por defecto, la placa Uno R3 del GalaxyRVR viene preinstalada con el firmware ne
 
 #. Descarga el firmware necesario desde el siguiente enlace:
 
-   * :download:`GalaxyRVR Codes <https://github.com/sunfounder/galaxy-rvr/releases/download/1.1.0/galaxy-rvr-1.1.0.zip>`
+   * :download:`Archivo de firmware de la placa R3 <https://github.com/sunfounder/galaxy-rvr/releases/download/1.1.0/galaxy-rvr-1.1.0.zip>`
 
 #. Extrae el archivo zip descargado y haz doble clic en el archivo ``update-arduino-firmware.bat`` para ejecutarlo.
 
