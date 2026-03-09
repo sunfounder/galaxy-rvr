@@ -5,9 +5,12 @@ void irObstacleBegin() {
   pinMode(IR_RIGHT_PIN, INPUT);
 }
 
+bool irObstacleIsLeftDetected() { return digitalRead(IR_LEFT_PIN) == LOW; }
+
+bool irObstacleIsRightDetected() { return digitalRead(IR_RIGHT_PIN) == LOW; }
+
 byte irObstacleRead() {
-  byte left = digitalRead(IR_LEFT_PIN);
-  byte right = digitalRead(IR_RIGHT_PIN);
+  byte left = irObstacleIsLeftDetected();
+  byte right = irObstacleIsRightDetected();
   return (left << 1) | right;
 }
-
