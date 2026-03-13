@@ -202,15 +202,12 @@ void modeHandler() {
   }
   switch (currentMode) {
   case MODE_OBSTACLE_FOLLOWING:
-    servo.write(servoAngle);
     obstacleFollowing();
     break;
   case MODE_OBSTACLE_AVOIDANCE:
-    servo.write(servoAngle);
     obstacleAvoidance();
     break;
   case MODE_APP_CONTROL:
-    servo.write(servoAngle);
     carSetMotors(leftMotorPower, rightMotorPower);
     break;
   default:
@@ -323,6 +320,7 @@ void onReceive() {
       servoAngle = constrain(servoAngle, 0, 140);
       // Serial.println(F("Servo Angle"));
       // Serial.print(F("servoAngle:"));Serial.println(servoAngle);
+      servo.write(servoAngle);
       break;
     }
     case 0x04: // Front Light
