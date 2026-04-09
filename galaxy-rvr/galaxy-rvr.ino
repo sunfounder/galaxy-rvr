@@ -25,7 +25,7 @@ Play(Android).
            https://docs.sunfounder.com
 
 ********************************************************************/
-#define VERSION "1.2.0.a3"
+#define VERSION "1.2.0"
 
 #include "galaxy-rvr.h"
 
