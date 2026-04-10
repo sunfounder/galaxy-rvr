@@ -15,280 +15,20 @@
 FAQ
 ==============
 
-How to Change Wi-Fi Channel?
-----------------------------------
-
-The 2.4GHz Wi-Fi band has channels ranging from 1 to 13. ESP32 supports channels 1 to 11. Other devices operating on the same channel may cause interference, leading to connection issues. To mitigate this, you can try changing the channel. By default, the channel is set to 1. When selecting a new channel, it’s recommended to skip 1-2 channels at a time. For example, if the current channel is 1, try channel 3 first, and if the signal is still poor, proceed to channel 5.
-
-.. note::
-
-   ESP32 CAM firmware version 1.4.2 or above is required to change channels. Refer to :ref:`update_firmware` for more details.
-
-#. Power on the GalaxyRVR. To activate the ESP32 CAM, move the mode switch to the **Run** position, and press the **reset** button to reboot the R3 board.
-
-   .. raw:: html
-
-        <video width="600" loop autoplay muted>
-            <source src="_static/video/play_reset.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-
-#. Find ``GalaxyRVR`` on the list of available networks on your mobile device (tablet or smartphone), enter the password ``12345678``, and connect to it.
-
-   .. note::
-
-        * The current connection is to the GalaxyRVR hotspot, so there is no internet access. If prompted to switch networks, please choose "Stay connected".
-        * :ref:`ap_to_sta`
-
-   .. image:: img/app/camera_lan.png
-        :width: 500
-
-#. Open a web browser on your mobile device and navigate to ``http://192.168.4.1`` to access the ESP32 CAM OTA update page.
-
-   .. image:: img/faq_cam_ota_141.jpg
-      :width: 400
-
-#. Under the **Wi-Fi AP Channel** section, select a different channel. 
-
-   * The default channel is 1. When selecting a new channel, skip 1-2 channels at a time (e.g., from channel 1 to 3, and if needed, to 5).  
-   * Click the **Confirm** button to save the changes.
-
-   .. image:: img/faq_cam_ota_channel.png
-      :width: 400
-
-#. A confirmation popup will appear, prompting you to reset the device. Click **Confirm**.
-
-   .. image:: img/faq_cam_ota_reset.jpg
-      :width: 400
-   
-#. Press the **Reset** button to reboot the device. The GalaxyRVR is now ready for normal operation.
-
-   .. image:: img/camera_reset.png
-
-.. _update_firmware:
-
-How to Update Firmware for ESP32 CAM
------------------------------------------
-
-Follow these detailed steps to update the firmware for your ESP32 CAM:
-
-#. Power on the GalaxyRVR. To activate the ESP32 CAM, move the mode switch to the **Run** position, and press the **reset** button to reboot the R3 board.
-
-     .. raw:: html
-
-        <video width="600" loop autoplay muted>
-            <source src="_static/video/play_reset.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-
-#. Find ``GalaxyRVR`` on the list of available networks on your mobile device (tablet or smartphone), enter the password ``12345678``, and connect to it.
-
-     .. note::
-
-        * The current connection is to the GalaxyRVR hotspot, so there is no internet access. If prompted to switch networks, please choose "Stay connected".
-        * :ref:`ap_to_sta`
-
-     .. image:: img/app/camera_lan.png
-        :width: 500
-
-#. Click the link below to download the firmware file ``ai-camera-firmware-v1.4.2-ota.bin`` and save it to your mobile device.
-
-   * :download:`ESP32 CAM Firmware <https://github.com/sunfounder/ai-camera-firmware/releases/download/1.4.2/ai-camera-firmware-v1.4.2-ota.bin>`
-
-#. Open a web browser on your mobile device and navigate to ``http://192.168.4.1`` to access the ESP32 CAM OTA update page.
-
-   .. image:: img/faq_cam_ota.jpg
-      :width: 400
-
-#. On the OTA page, click the button to select the firmware file.
-
-   .. image:: img/faq_cam_ota_choose.png
-      :width: 400
-
-#. Choose the previously downloaded ``ai-camera-firmware-v1.4.2-ota.bin`` file from your device and click **Add**.
-
-   .. image:: img/faq_cam_ota_file.png
-      :width: 400
-
-#. Click the **Update** button to start the firmware update process.
-
-   .. image:: img/faq_cam_ota_update.png
-      :width: 400
-   
-#. Wait for the update to complete. Once the displayed version number changes to ``1.4.2``, the update is successful.
-
-   .. image:: img/faq_cam_ota_finish.png
-      :width: 400
-   
-#. After the update is complete, you can close the web browser. Press the **Reset** button to reboot the device. The ESP32 CAM is now ready for normal operation.
-
-   .. image:: img/camera_reset.png
-      :with: 600
-
-.. _upload_galaxy_code:
-
-How to Upload the ``galaxy-rvr.ino`` Code?
------------------------------------------------
-
-By default, the GalaxyRVR's Uno R3 board comes preloaded with the necessary firmware, allowing you to control it via APP. If your R3 board has been overwritten with other code, but you'd like to return to the default firmware and continue with the :ref:`quick_start` process, follow these steps to re-upload the code to your R3 board:
-
-#. Use a USB cable to connect the Arduino to your computer. Then, switch the **upload** switch on the rover to the "upload" position.
-
-   .. image:: img/camera_upload.png
-        :width: 400
-        :align: center
-
-#. Download the required firmware from the link below: 
-        
-   * :download:`R3 Board Firmware <https://github.com/sunfounder/galaxy-rvr/releases/download/1.1.0/galaxy-rvr-1.1.0.zip>`
-
-#. Extract the downloaded zip file, then double-click the ``update-arduino-firmware.bat`` file to run it.
-
-   .. image:: img/faq_firmware_file.png
-
-
-#. Type the corresponding number for your GalaxyRVR's Arduino Uno (e.g., ``2``) and press **Enter** to begin the update.
-
-
-   .. note::
-
-     * If the correct COM port does not appear, or if you're unsure which one it is, disconnect other USB devices from your computer, leaving only the rover connected.  
-     * If you encounter an error like "avrdude.exe: stk500_getsync() attempt 1 of 10: not in sync: resp=0xXX", ensure the **upload** switch on the rover is set to the "upload" position, as described in step 1.
-
-   .. image:: img/faq_firmware_port.png
-
-#. After a short while, the new code will be successfully uploaded to the Uno R3 board on GalaxyRVR.
-
-   .. image:: img/faq_firmware_finish.png
-
-.. _ap_to_sta:
-
-Rover Network Configuration: Home WiFi and AP Mode
------------------------------------------------------
-
-By default, the Uno R3 is preloaded with code configured in AP mode. This means the GalaxyRVR will broadcast a hotspot, allowing you to connect your mobile device to control it via the SunFounder Controller APP.
-
-If you prefer to control the rover using your home WiFi, or need to reset to AP mode for different use cases, follow these steps to upload the modified code to the Uno board:
-
-#. Download the required files from the following link: 
-
-   * :download:`GalaxyRVR Codes <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
-
-#. Refer to the installation guide: :ref:`install_arduino_ide`.
-
-#. Use the **Library Manager** to install the ``SoftPWM`` and ``SunFounder AI Camera`` libraries. For detailed steps, see :ref:`install_lib`.
-
-#. Navigate to the ``galaxy-rvr-main\galaxy-rvr`` directory and open the ``galaxy-rvr.ino`` file.
-
-   .. image:: img/faq_galaxy_code.png
-
-#. Comment out lines 69-71, uncomment lines 73-75, replace ``SSID`` and ``PASSWORD`` with your home WiFi credentials.
-
-   .. code-block:: c
-
-      // /** Configure Wifi mode, SSID, password*/
-      // #define WIFI_MODE WIFI_MODE_AP
-      // #define SSID "GalaxyRVR"
-      // #define PASSWORD "12345678"
-
-      #define WIFI_MODE WIFI_MODE_STA
-      #define SSID "xxxxxxxxxx"
-      #define PASSWORD "xxxxxxxxxx"
-
-#. Connect the GalaxyRVR and computer with a USB cable, and then turn the **upload** switch of the rover to the upload end.
-
-   .. image:: img/camera_upload.png
-        :width: 400
-        :align: center
-
-#. Click the **Upload** button in the Arduino IDE to upload the modified code to the Uno board.
-
-   .. image:: img/faq_galaxy_upload.png
-
-#. To activate the ESP32 CAM, move the mode switch to the **Run** position, and press the **reset** button to reboot the R3 board. You will then observe a cyan light flashing on the bottom strip.
-
-   .. raw:: html
-   
-       <video width="600" loop autoplay muted>
-           <source src="_static/video/play_reset.mp4" type="video/mp4">
-           Your browser does not support the video tag.
-       </video>
-
-#. Ensure your mobile device (tablet or smartphone) is connected to your home WiFi network.
-
-   .. image:: img/faq_connect_wifi.jpg
-        :width: 400
-        :align: center
-
-#. Open the SunFounder Controller App, tap the "+" icon to create a new controller, select the "GalaxyRVR" preset, enter a name or tap "Confirm" to proceed.
-
-   .. image:: img/app/play_preset.jpg
-        :width: 600
-
-#. The app will automatically search for the GalaxyRVR. After a moment, you will see a prompt stating "Connected Successfully."
-
-   .. image:: img/app/auto_connect.jpg
-        :width: 600
-    
-#. Now, tap the |app_run| button enables you to view the live video feed from the camera and control the rover using the provided widgets. 
-
-   .. image:: img/app/play_run_view.jpg
-        :width: 600 
-
-
-**Resetting AP Mode**
-
-#. To reset to AP mode and change the SSID and PASSWORD, make sure the AP mode lines are enabled and update the SSID and PASSWORD to the new values. 
-
-   .. code-block:: c
-
-      #define WIFI_MODE WIFI_MODE_AP 
-      #define SSID "newSSIDName" 
-      #define PASSWORD "newPassword"
-
-      // #define WIFI_MODE WIFI_MODE_STA
-      // #define SSID "xxxxxxxxxx"
-      // #define PASSWORD "xxxxxxxxxx"
-
-#. Follow the same steps for uploading the code as detailed above.
-
-#. Once uploaded, the GalaxyRVR will broadcast its network with the new network name and password, allowing direct connections without a home WiFi network.
-
-
-How to Invert the Camera?  
----------------------------
-
-If you find the camera feed upside down while using the SunFounder Controller, you can easily correct it through the app. Follow these steps:  
-
-1. Tap the |app_edit| button in the top-right corner.  
-
-   .. image:: img/app/faq_edit.png  
-        :width: 500 
-
-2. Click the **camera** button to open a popup. Toggle the **Inverted** switch to turn it on.  
-
-   .. image:: img/app/faq_inverted.png  
-        :width: 500  
-
-3. Save your settings.  
-
-   .. image:: img/app/faq_save.png  
-        :width: 500 
-
-4. Return to the control interface and click the |app_run| button.  
-
-   .. note::  
-
-        Occasionally, the camera feed may not appear. If this happens, pause the controller and then click the run button again.  
-
-   .. image:: img/app/faq_run.png  
-        :width: 500 
-    
+1. Unable to Connect to GalaxyRVR?
+-------------------------------------------------------------------------------------------------
+
+If you cannot connect to the GalaxyRVR, please check the following:
+
+1. Check the battery indicators on the rover. If both LEDs are off, the battery is low. Charge the rover using a Type-C USB cable.
+2. Reset the GalaxyRVR by switching the mode to **Run** and pressing the **Reset** button.
+3. Verify that your mobile device is connected to the GalaxyRVR hotspot.
+4. If you have configured a home Wi-Fi network, ensure your mobile device is connected to the **same** home Wi-Fi network.
 
 .. _install_lib:
 
-Compilation error: ``SoftPWM.h`` or ``SunFounder_AI_Camera.h``: No such file or directory？
----------------------------------------------------------------------------------------------
+2. Compilation error: ``SoftPWM.h`` or ``SunFounder_AI_Camera.h``: No such file or directory？
+-------------------------------------------------------------------------------------------------
 If you get a “Compilation error: ``SoftPWM.h``: No such file or directory” prompt, it means you don’t have the SoftPWM library installed.
 
 Please install the two required libraries ``SoftPWM`` and ``SunFounder AI Camera`` as shown.
@@ -304,7 +44,7 @@ For the ``SunFounder AI Camera`` library, you need to select "INSTALL ALL" to si
 
     .. image:: img/faq_install_ai_camera.png
 
-avrdude: stk500_getsync() attempt 10 of 10: not in sync: resp=0x6e?
+3. avrdude: stk500_getsync() attempt 10 of 10: not in sync: resp=0x6e?
 -----------------------------------------------------------------------------
 If the following message keeps appearing after clicking the **Upload** button when the board and port have been selected correctly.
 
@@ -330,166 +70,107 @@ After the code is successfully uploaded, if you need to use the ESP32 CAM, then 
         :width: 500
         :align: center
 
-.. _stt_android:
+4. How to Change Wi-Fi Channel?
+----------------------------------
 
-How can I use the STT mode on my Android device?
-------------------------------------------------------------------------
+The 2.4GHz Wi-Fi band has channels ranging from 1 to 13. ESP32 supports channels 1 to 11. Other devices operating on the same channel may cause interference, leading to connection issues. To mitigate this, you can try changing the channel. By default, the channel is set to 1. When selecting a new channel, it’s recommended to skip 1-2 channels at a time. For example, if the current channel is 1, try channel 3 first, and if the signal is still poor, proceed to channel 5.
 
-The STT mode requires the Android mobile device to be connected to the Internet and to install the Google service component.
 
-Now follow the steps below.
+#. Power on the GalaxyRVR. To activate the ESP32 CAM, move the mode switch to the **Run** position, and press the **reset** button to reboot the R3 board.
 
-#. Modify the AP mode of ``galaxy-rvr.ino`` file to STA mode.
+     .. raw:: html
 
-   * Open the the ``galaxy-rvr.ino`` file located in the ``galaxy-rvr-main\galaxy-rvr`` directory. 
-   * Then comment out the AP mode related code. Uncomment the STA mode related code and fill in  the ``SSID`` and ``PASSWORD`` of your home Wi-Fi.
+        <video width="600" loop autoplay muted>
+            <source src="_static/video/play_reset_green.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-     .. code-block:: arduino
+#. Connect your mobile device to the GalaxyRVR's WiFi network.
 
-            /** Configure Wifi mode, SSID, password*/
-            // #define WIFI_MODE WIFI_MODE_AP
-            // #define SSID "GalaxyRVR"
-            // #define PASSWORD "12345678"
+   * The network name (SSID) is ``GalaxyRVR`` and the password is ``12345678``.  
+   * If you see a warning stating "No Internet access," please choose the option to **"Stay connected."**
 
-            #define WIFI_MODE WIFI_MODE_STA
-            #define SSID "xxxxxxxxxx"
-            #define PASSWORD "xxxxxxxxxx"
-
-   * Save this code, select the correct board (Arduino Uno) and port, then click the **Upload** button to upload it to the R3 board.
-
-#. Search ``google`` in Google Play, find the app shown below and install it.
-
-    .. image:: img/google_voice.png
-        :width: 500
+     .. image:: img/camera_lan.png
+        :width: 50%
         :align: center
 
-#. Connect your mobile device to the same Wi-Fi as you wrote in the code.
+#. Open a web browser on your mobile device and go to the address ``http://192.168.4.1``. This will take you to the ESP32-CAM firmware update portal.
 
-    .. image:: img/sta_wifi.png
-        :width: 500
+   .. image:: img/firmware_access.jpg
+        :width: 50%
         :align: center
 
-#. Open the controller previously created in SunFounder Controller and connect it to ``GalaxyRVR`` through the |app_connect| button.
+#. Under the **AP** page, select a different channel. 
 
-    .. image:: img/app/camera_connect.png
-        :width: 400
+   * The default channel is 1. When selecting a new channel, skip 1-2 channels at a time (e.g., from channel 1 to 3, and if needed, to 5).  
+
+   .. image:: img/fap_ap_channel.jpg
+        :width: 50%
         :align: center
 
+#. Return to the **Base** page and click the **Reboot** button to restart the GalaxyRVR. The GalaxyRVR is now ready for normal operation.
 
-#. Tap and hold the **STT(J)** widget after clicking the |app_run| button. A prompt will appear indicating that it is listening. Say the following command to move the rover.
+   .. image:: img/faq_firmware_reboot.png
+        :width: 50%
+        :align: center
 
-    .. image:: img/app/play_speech.png
+5. How to Update Firmware for ESP32 CAM
+-----------------------------------------
 
-    * ``stop``: All movements of the rover can be stopped.
-    * ``forward``: Let the rover move forward.
-    * ``backward``: Let the rover move backward.
-    * ``left``: Let the rover turn left.
-    * ``right``: Let the rover turn right.
+For detailed step-by-step instructions, please refer to: :ref:`update_firmware`
 
-About the ESP32 CAM Firmware
----------------------------------------------------
+6. How to Restore the R3 Firmware
+-----------------------------------------
 
-Here is the firmeware link of ESP32 CAM: |link_ai_camera_firmware|
+The GalaxyRVR’s R3 board comes with firmware that supports both the RoboPilot App and Mammoth Coding.
+
+If you have overwritten this firmware and need to restore communication, follow :ref:`update_r3_firmware`.
+
+.. _ap_to_sta:
+
+7. How to Set Up Wi-Fi Connection
+-----------------------------------------------------
+
+By default, GalaxyRVR operates in **AP mode**, where it creates its own Wi-Fi hotspot that other devices can connect to.
+
+If you want GalaxyRVR to connect to your **home Wi-Fi network**, follow the steps below:
 
 
-.. How to Flash New Firmware to an ESP32 CAM?
-.. ----------------------------------------------------
-.. The camera module comes pre-flashed from the factory. However, if you encounter a data corruption issue, you can re-flash it with new firmware using the Arduino IDE. Here's how:
+#. Power on the GalaxyRVR. To activate the ESP32 CAM, move the mode switch to the **Run** position, and press the **reset** button to reboot the R3 board.
 
-.. **1. Prepare the Programmer**
+     .. raw:: html
 
-.. #. First, get a programmer ready.
+        <video width="600" loop autoplay muted>
+            <source src="_static/video/play_reset_green.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-..     .. image:: img/esp32_cam_programmer.png
-..         :width: 300
-..         :align: center
+#. Connect your mobile device to the GalaxyRVR's WiFi network.
 
-.. #. Insert the ESP32 CAM into the programmer and then plug the programmer into your computer.
+   * The network name (SSID) is ``GalaxyRVR`` and the password is ``12345678``.  
+   * If you see a warning stating "No Internet access," please choose the option to **"Stay connected."**
 
-..     .. image:: img/esp32_cam_usb.jpg
-..         :width: 300
-..         :align: center
+     .. image:: img/camera_lan.png
+        :width: 50%
+        :align: center
 
-.. **2. Install the ESP32 Board**
+#. Open a web browser on your mobile device and go to the address ``http://192.168.4.1``. This will take you to the ESP32-CAM firmware update portal.
 
-.. To program the ESP32 microcontroller, you must install the ESP32 board package in the Arduino IDE. Follow these steps:
+   .. image:: img/firmware_access.jpg
+        :width: 50%
+        :align: center
 
-.. #. Go to **File** and select **Preferences** from the drop-down menu.
+#. Under the **WiFi** page, enter your home WiFi network name (SSID) and password.
 
-..     .. image:: img/install_esp321.png
-..         :width: 500
-..         :align: center
+   .. image:: img/faq_wifi.png
+        :width: 50%
+        :align: center
 
-.. #. In the **Preferences** window, find the **Additional Board Manager URLs** field. Click on it to enable the text box.
+#. Tap the **CONFIRM** button. 
 
-..     .. image:: img/install_esp322.png
-..         :width: 500
-..         :align: center
+   * GalaxyRVR will attempt to connect to your home Wi-Fi.
+   * If the connection is successful, the spinning icon will stop and a checkmark will appear.
 
-.. #. Add this URL to the **Additional Board Manager URLs** field: https://espressif.github.io/arduino-esp32/package_esp32_index.json. This URL links to the package index file for ESP32 boards. Click **OK** to save the changes.
+#. After rebooting, connect your mobile device to the same home Wi-Fi network.
 
-..     .. image:: img/install_esp323.png
-..         :width: 500
-..         :align: center
-
-.. #.  In the **Boards Manager** window, search for **ESP32**. Click the **Install** button to begin installation. This downloads and installs the ESP32 board package.
-
-..     .. image:: img/install_esp324.png
-..         :align: center
-
-.. **3. Install the Libraries**
-
-.. #. Install the ``WebSockets`` library from the **LIBRARY MANAGER**.
-
-..     .. image:: img/esp32_cam_websockets.png
-..         :width: 500
-..         :align: center
-
-.. #. Follow the same steps to install the ``ArduinoJson`` library.
-
-..     .. image:: img/esp32_cam_arduinojson.png
-..         :width: 500
-..         :align: center
-
-.. **3. Download and Upload Firmware**
-
-.. #. Download the firmware file.
-
-..     * :download:`ai-camera-firmware <https://github.com/sunfounder/ai-camera-firmware/archive/refs/heads/main.zip>`
-
-.. #. Extract the downloaded firmware file and rename the extracted folder from ``ai-camera-firmware-main`` to ``ai-camera-firmware``.
-
-..     .. image:: img/esp32_cam_change_name.png
-..         :align: center
-
-.. #. Open ``ai-camera-firmware.ino`` with the Arduino IDE, which also opens the associated code files.
-
-..     .. image:: img/esp32_cam_ino.png
-..         :align: center
-
-.. #. Select **Board** -> **esp32** -> **ESP32 Dev Module**.
-
-..     .. image:: img/esp32_cam_board.png
-..         :width: 500
-..         :align: center
-
-.. #. Choose the correct port.
-
-..     .. image:: img/esp32_cam_port.png
-..         :width: 400
-..         :align: center
-
-.. #. Ensure to enable **PSRAM** and select **Huge APP** in the **Partition Scheme**.
-
-..     .. image:: img/esp32_cam_psram.png
-..         :width: 400
-..         :align: center
-
-.. #. Finally, upload the firmware to the ESP32 CAM.
-
-..     .. image:: img/esp32_cam_upload.png
-..         :width: 500
-..         :align: center
-
-.. #. After successful firmware upload, you can find more information at this link: https://github.com/sunfounder/ai-camera-firmware.
-
+#. You can now connect to GalaxyRVR through the RoboPilot App or Mammoth Coding.

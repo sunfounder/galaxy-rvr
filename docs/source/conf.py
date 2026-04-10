@@ -39,7 +39,7 @@ html_theme_options = {
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autosectionlabel',
+    #'sphinx.ext.autosectionlabel',
     'sphinx_copybutton',
     'sphinx_rtd_theme'
 ]
@@ -75,30 +75,9 @@ html_css_files = [
     'https://ezblock.cc/readDocFile/custom.css',
 ]
 
-# pictures
-rst_epilog = """
-
-.. |app_connect| image:: /img/app/app_connect.jpg
-    :width: 20
-
-.. |app_save| image:: /img/app/app_save.jpg
-    :width: 20
-
-.. |app_run| image:: /img/app/app_run.png
-    :width: 20
-
-.. |app_edit| image:: /img/app/app_edit.jpg
-    :width: 20
-
-.. |app_set| image:: /img/app/app_set.png
-    :width: 20
-
-"""
-
-
 # open link in a new window
 
-rst_epilog += """
+rst_epilog = """
 
 .. |link_sf_facebook| raw:: html
 
@@ -195,5 +174,14 @@ rst_epilog += """
 .. |link_Mars_Rover_Kit| raw:: html
 
     <a href="https://www.sunfounder.com/products/sunfounder-galaxyrvr-mars-rover-kit?_pos=1&_sid=c7193042f&_ss=r" target="_blank">GalaxyRVR</a>
+
+.. |link_github_galaxyrvr| raw:: html
+
+    <a href="https://github.com/sunfounder/galaxy-rvr/tree/1.2.x" target="_blank">SunFounder GalaxyRVR Kit for Arduino - GitHub</a>
+
+.. |download_galaxyrvr_code| replace:: :download:`GalaxyRVR Code File <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/1.2.x.zip>`
+
+
+.. |download_galaxyrvr_filmware| replace:: :download:`GalaxyRVR Firmware File <https://github.com/sunfounder/galaxy-rvr/releases/download/1.2.1/galaxy-rvr.ino.1.2.1.zip>`
 
 """

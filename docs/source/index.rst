@@ -49,17 +49,21 @@ Equipped with a high-definition camera, GalaxyRVR provides a first-person view f
 
 Choose your path based on your interests and skill level:
 
-* :ref:`quick_start` - Jump right in and operate the GalaxyRVR using the mobile app. Perfect for beginners seeking instant, hassle-free control.
+* :ref:`quick_start`: Get started right away by controlling the GalaxyRVR with the RoboPilot App, or quickly run example codes in Arduino IDE and Mammoth Coding — ideal for beginners who want fast, hands-on control.  
 
-* :ref:`programming_arduino` - Delve deeper into the code, understand each function, and customize the GalaxyRVR with Arduino programming. Ideal for those seeking in-depth knowledge and experimentation.
+* :ref:`programming_arduino`: Delve deeper into the code, understand each function, and customize the GalaxyRVR with Arduino programming. Ideal for those seeking in-depth knowledge and experimentation.
+
+* :ref:`programming_scratch`: Use Scratch to program the GalaxyRVR. A visual and block-based language perfect for beginners and those new to coding.
 
 .. toctree::
     :maxdepth: 2
 
     About this Kit <self>
     assemble_video
-    quick_start
-    programming_arduino
+    update_firmware
+    quick_start/quick_start
+    arduino/programming_arduino
+    scratch/scratch
     hardware/hardware
     faq
 
