@@ -13,6 +13,12 @@
 
     * :Download:`组件清单和组装说明 <_static/pdf/GalaxyRVR-assemble-cn.pdf>`
 
+**组装视频**
+
+.. raw:: html
+
+  <iframe width="700" height="394" src="https://player.bilibili.com/player.html?isOutside=true&aid=114358436763399&bvid=BV1Ha5jziEfp&cid=29482159543&p=1" title="Bilibili video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 **提示**
 
 * 在将 ESP32 CAM 插入相机适配器时，请注意其方向。确保其与 ESP32 适配器正确对齐。

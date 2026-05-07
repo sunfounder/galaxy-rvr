@@ -1,6 +1,6 @@
 .. _play_mode:
 
-游戏模式
+快速上手使用 APP
 =========================
 
 你是否迫不及待地想要开始你的火星之旅？我们的游戏模式正是为那些急于探索的你量身定制的。
@@ -20,24 +20,7 @@
 
 .. note::
 
-    * 如果你的R3板已经上传了其他代码，但你仍希望使用游戏模式，你需要下载相关代码。
-
-        * :download:`GalaxyRVR代码 <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
-
-    * 安装 |link_download_arduino|
-
-    * 接着，打开位于 ``galaxy-rvr-main\galaxy-rvr`` 目录下的 ``galaxy-rvr.ino`` 文件。
-
-    * 在示例程序中，你需要将手机设备连接到GalaxyRVR发布的热点，这将阻止你同时使用外部网络。你可以 :ref:`ap_to_sta`。将其设置为STA模式后，只要你的设备和GalaxyRVR处于同一WLAN中，就可以控制GalaxyRVR。
- 
-    * 将开关拨到右侧，然后点击 **上传** 。
-
-    * 如果你出现弹出了  :ref:`install_lib`  问题，请点进该链接处理。
-
-    .. image:: img/camera_upload.png
-        :width: 400
-        :align: center
-
+    如果你的 R3 板子上已经烧录了其他代码，并希望通过 APP 控制 GalaxyRVR，请按照 :ref:`upload_galaxy_code` 中的步骤进行操作。
 
 快速指南
 ---------------------
@@ -64,7 +47,7 @@
 
 #. 从 **APP Store(iOS)** 或 **Google Play(Android)** 安装 `SunFounder Controller <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_，或者扫描以下二维码，下载安装SunFounder Controller。
 
-        .. image:: img/app/qrcode.png
+        .. image:: img/app/qrcode_2.png
          :width: 60%
 
             
@@ -77,9 +60,14 @@
 
         .. image:: img/app/camera_lan.png
 
-    * 默认连接模式是 **AP模式** 。连接后，可能会弹出警告提示该网络没有互联网连接。如果是这样，选择“保持连接”。
+     .. note:: 
 
-        .. image:: img/app/camera_stay1.png
+        * 当前连接的是 GalaxyRVR 热点，因此无法访问互联网。如出现切换网络的提示，请选择“保持连接”。
+        * :ref:`ap_to_sta`
+
+     .. image:: img/app/camera_lan.png
+        :width: 500
+
 
 #. 设置控制器。
 

@@ -70,6 +70,9 @@
 * 螺丝刀、扳手等基本工具
 * 按照 GalaxyRVR 套件中的组装说明，构建漫游车的悬挂系统。
 
+.. raw:: html
+
+  <iframe width="700" height="394" src="https://player.bilibili.com/player.html?isOutside=true&aid=114358436763399&bvid=BV1Ha5jziEfp&cid=29482159543&p=1" title="Bilibili video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 请注意，耐心和精确非常重要，确保每个部件都正确放置并紧固。
 
