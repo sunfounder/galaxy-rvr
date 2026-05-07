@@ -22,7 +22,7 @@ La bande Wi-Fi 2.4GHz dispose de canaux allant de 1 à 13. L'ESP32 prend en char
 
 .. note::
 
-   La version 1.4.1 ou supérieure du firmware ESP32 CAM est requise pour changer de canal. Référez-vous à :ref:`update_firmware` pour plus de détails.
+   La version 1.4.2 ou supérieure du firmware ESP32 CAM est requise pour changer de canal. Référez-vous à :ref:`update_firmware` pour plus de détails.
 
 #. Allumez le GalaxyRVR. Pour activer l'ESP32 CAM, déplacez le commutateur de mode sur la position **Run** et appuyez sur le bouton **reset** pour redémarrer la carte R3.
 
@@ -89,9 +89,9 @@ Suivez ces étapes détaillées pour mettre à jour le firmware de votre ESP32 C
      .. image:: img/app/camera_lan.png
         :width: 500
 
-#. Cliquez sur le lien ci-dessous pour télécharger le fichier firmware ``ai-camera-firmware-v1.4.1-ota.bin`` et enregistrez-le sur votre appareil mobile.
+#. Cliquez sur le lien ci-dessous pour télécharger le fichier firmware ``ai-camera-firmware-v1.4.2-ota.bin`` et enregistrez-le sur votre appareil mobile.
 
-   * :download:`Fichier du firmware de l'ESP32 CAM <https://github.com/sunfounder/ai-camera-firmware/releases/download/1.4.1/ai-camera-firmware-v1.4.1-ota.bin>`
+   * :download:`ESP32 CAM Firmware <https://github.com/sunfounder/ai-camera-firmware/releases/download/1.4.2/ai-camera-firmware-v1.4.2-ota.bin>`
 
 #. Ouvrez un navigateur Web sur votre appareil mobile et accédez à ``http://192.168.4.1`` pour accéder à la page de mise à jour OTA de l'ESP32 CAM.
 
@@ -103,7 +103,7 @@ Suivez ces étapes détaillées pour mettre à jour le firmware de votre ESP32 C
    .. image:: img/faq_cam_ota_choose.png
       :width: 400
 
-#. Choisissez le fichier ``ai-camera-firmware-v1.4.1-ota.bin`` téléchargé précédemment depuis votre appareil et cliquez sur **OK**.
+#. Choisissez le fichier ``ai-camera-firmware-v1.4.2-ota.bin`` téléchargé précédemment depuis votre appareil et cliquez sur **OK**.
 
    .. image:: img/faq_cam_ota_file.png
       :width: 400
@@ -113,7 +113,7 @@ Suivez ces étapes détaillées pour mettre à jour le firmware de votre ESP32 C
    .. image:: img/faq_cam_ota_update.png
       :width: 400
    
-#. Attendez que la mise à jour soit terminée. Une fois que le numéro de version affiché passe à ``1.4.1``, la mise à jour est réussie.
+#. Attendez que la mise à jour soit terminée. Une fois que le numéro de version affiché passe à ``1.4.2``, la mise à jour est réussie.
 
    .. image:: img/faq_cam_ota_finish.png
       :width: 400
