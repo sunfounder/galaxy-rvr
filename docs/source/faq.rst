@@ -26,21 +26,21 @@ Das 2,4-GHz-WLAN-Band hat Kanäle von 1 bis 13. Der ESP32 unterstützt Kanäle v
 
 #. Schalten Sie den GalaxyRVR ein. Um die ESP32 CAM zu aktivieren, stellen Sie den Modusschalter in die **Run**-Position und drücken Sie die **Reset**-Taste, um das R3-Board neu zu starten.
 
-     .. raw:: html
+   .. raw:: html
 
-        <video width="600" loop autoplay muted>
-            <source src="_static/video/play_reset.mp4" type="video/mp4">
-            Ihr Browser unterstützt das Video-Tag nicht.
-        </video>
+      <video width="600" loop autoplay muted>
+          <source src="_static/video/play_reset.mp4" type="video/mp4">
+          Ihr Browser unterstützt das Video-Tag nicht.
+      </video>
 
 #. Suchen Sie auf Ihrem mobilen Gerät (Tablet oder Smartphone) nach ``GalaxyRVR`` in der Liste der verfügbaren Netzwerke, geben Sie das Passwort ``12345678`` ein und verbinden Sie sich damit.
 
-     .. note::
+   .. note::
 
-        * Die aktuelle Verbindung erfolgt über den GalaxyRVR-Hotspot, sodass kein Internetzugang besteht. Wenn Sie aufgefordert werden, das Netzwerk zu wechseln, wählen Sie bitte „Verbunden bleiben“.
+      * Die aktuelle Verbindung erfolgt über den GalaxyRVR-Hotspot, sodass kein Internetzugang besteht. Wenn Sie aufgefordert werden, das Netzwerk zu wechseln, wählen Sie bitte „Verbunden bleiben“.
 
-     .. image:: img/app/camera_lan.png
-        :width: 500
+   .. image:: img/app/camera_lan.png
+      :width: 500
 
 #. Öffnen Sie einen Webbrowser auf Ihrem mobilen Gerät und navigieren Sie zu ``http://192.168.4.1``, um auf die OTA-Aktualisierungsseite der ESP32 CAM zuzugreifen.
 
@@ -73,25 +73,25 @@ Befolgen Sie diese detaillierten Schritte, um die Firmware für Ihre ESP32 CAM z
 
 #. Schalten Sie den GalaxyRVR ein. Um die ESP32 CAM zu aktivieren, stellen Sie den Modusschalter in die **Run**-Position und drücken Sie die **Reset**-Taste, um das R3-Board neu zu starten.
 
-     .. raw:: html
+   .. raw:: html
 
-        <video width="600" loop autoplay muted>
-            <source src="_static/video/play_reset.mp4" type="video/mp4">
-            Ihr Browser unterstützt das Video-Tag nicht.
-        </video>
+      <video width="600" loop autoplay muted>
+          <source src="_static/video/play_reset.mp4" type="video/mp4">
+          Ihr Browser unterstützt das Video-Tag nicht.
+      </video>
 
 #. Suchen Sie auf Ihrem mobilen Gerät (Tablet oder Smartphone) nach ``GalaxyRVR`` in der Liste der verfügbaren Netzwerke, geben Sie das Passwort ``12345678`` ein und verbinden Sie sich damit.
 
-     .. note::
+   .. note::
 
-        * Die aktuelle Verbindung erfolgt über den GalaxyRVR-Hotspot, sodass kein Internetzugang besteht. Wenn Sie aufgefordert werden, das Netzwerk zu wechseln, wählen Sie bitte „Verbunden bleiben“.
+      * Die aktuelle Verbindung erfolgt über den GalaxyRVR-Hotspot, sodass kein Internetzugang besteht. Wenn Sie aufgefordert werden, das Netzwerk zu wechseln, wählen Sie bitte „Verbunden bleiben“.
 
-     .. image:: img/app/camera_lan.png
-        :width: 500
+   .. image:: img/app/camera_lan.png
+      :width: 500
 
 #. Klicken Sie auf den untenstehenden Link, um die Firmware-Datei ``ai-camera-firmware-v1.4.1-ota.bin`` herunterzuladen und auf Ihrem mobilen Gerät zu speichern.
 
-   * :download:`ESP32 CAM Firmware <https://github.com/sunfounder/ai-camera-firmware/releases/download/1.4.1/ai-camera-firmware-v1.4.1-ota.bin>`
+   * :download:`ESP32 CAM Firmware <https://github.com/sunfounder/ai-camera-firmware/releases/download/1.4.2/ai-camera-firmware-v1.4.2-ota.bin>`
 
 #. Öffnen Sie einen Webbrowser auf Ihrem mobilen Gerät und navigieren Sie zu ``http://192.168.4.1``, um auf die OTA-Aktualisierungsseite der ESP32 CAM zuzugreifen.
 
