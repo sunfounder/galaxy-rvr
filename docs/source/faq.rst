@@ -22,25 +22,25 @@ La banda Wi-Fi a 2,4GHz dispone di canali che vanno da 1 a 13. ESP32 supporta i 
 
 .. note::
 
-   È necessaria la versione 1.4.1 o superiore del firmware ESP32 CAM per cambiare canale. Consulta :ref:`update_firmware` per ulteriori dettagli.
+   È necessaria la versione 1.4.2 o superiore del firmware ESP32 CAM per cambiare canale. Consulta :ref:`update_firmware` per ulteriori dettagli.
 
 #. Accendi il GalaxyRVR. Per attivare l'ESP32 CAM, sposta l'interruttore di modalità sulla posizione **Run** e premi il pulsante **reset** per riavviare la scheda R3.
 
-     .. raw:: html
+   .. raw:: html
 
-        <video width="600" loop autoplay muted>
-            <source src="_static/video/play_reset.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+      <video width="600" loop autoplay muted>
+          <source src="_static/video/play_reset.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
 
 #. Trova ``GalaxyRVR`` nell'elenco delle reti disponibili sul tuo dispositivo mobile (tablet o smartphone), inserisci la password ``12345678`` e connettiti.
 
-     .. note::
+   .. note::
 
-        * La connessione attuale è all'hotspot GalaxyRVR, quindi non c'è accesso a Internet. Se richiesto di cambiare rete, scegli "Rimani connesso".
+      * La connessione attuale è all'hotspot GalaxyRVR, quindi non c'è accesso a Internet. Se richiesto di cambiare rete, scegli "Rimani connesso".
 
-     .. image:: img/app/camera_lan.png
-        :width: 500
+   .. image:: img/app/camera_lan.png
+      :width: 500
 
 #. Apri un browser web sul tuo dispositivo mobile e vai su ``http://192.168.4.1`` per accedere alla pagina di aggiornamento OTA di ESP32 CAM.
 
@@ -73,25 +73,25 @@ Segui questi passaggi dettagliati per aggiornare il firmware del tuo ESP32 CAM:
 
 #. Accendi il GalaxyRVR. Per attivare l'ESP32 CAM, sposta l'interruttore di modalità sulla posizione **Run** e premi il pulsante **reset** per riavviare la scheda R3.
 
-     .. raw:: html
+   .. raw:: html
 
-        <video width="600" loop autoplay muted>
-            <source src="_static/video/play_reset.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+      <video width="600" loop autoplay muted>
+          <source src="_static/video/play_reset.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
 
 #. Trova ``GalaxyRVR`` nell'elenco delle reti disponibili sul tuo dispositivo mobile (tablet o smartphone), inserisci la password ``12345678`` e connettiti.
 
-     .. note::
+   .. note::
 
-        * La connessione attuale è all'hotspot GalaxyRVR, quindi non c'è accesso a Internet. Se richiesto di cambiare rete, scegli "Rimani connesso".
+      * La connessione attuale è all'hotspot GalaxyRVR, quindi non c'è accesso a Internet. Se richiesto di cambiare rete, scegli "Rimani connesso".
 
-     .. image:: img/app/camera_lan.png
-        :width: 500
+   .. image:: img/app/camera_lan.png
+      :width: 500
 
-#. Fai clic sul link sottostante per scaricare il file del firmware ``ai-camera-firmware-v1.4.1-ota.bin`` e salvalo sul tuo dispositivo mobile.
+#. Fai clic sul link sottostante per scaricare il file del firmware ``ai-camera-firmware-v1.4.2-ota.bin`` e salvalo sul tuo dispositivo mobile.
 
-   * :download:`File del firmware di ESP32 CAM <https://github.com/sunfounder/ai-camera-firmware/releases/download/1.4.1/ai-camera-firmware-v1.4.1-ota.bin>`
+   * :download:`ESP32 CAM Firmware <https://github.com/sunfounder/ai-camera-firmware/releases/download/1.4.2/ai-camera-firmware-v1.4.2-ota.bin>`
 
 #. Apri un browser web sul tuo dispositivo mobile e vai su ``http://192.168.4.1`` per accedere alla pagina di aggiornamento OTA di ESP32 CAM.
 
@@ -103,7 +103,7 @@ Segui questi passaggi dettagliati per aggiornare il firmware del tuo ESP32 CAM:
    .. image:: img/faq_cam_ota_choose.png
       :width: 400
 
-#. Scegli il file ``ai-camera-firmware-v1.4.1-ota.bin`` precedentemente scaricato dal tuo dispositivo e fai clic su **OK**.
+#. Scegli il file ``ai-camera-firmware-v1.4.2-ota.bin`` precedentemente scaricato dal tuo dispositivo e fai clic su **OK**.
 
    .. image:: img/faq_cam_ota_file.png
       :width: 400
@@ -113,7 +113,7 @@ Segui questi passaggi dettagliati per aggiornare il firmware del tuo ESP32 CAM:
    .. image:: img/faq_cam_ota_update.png
       :width: 400
    
-#. Attendi il completamento dell'aggiornamento. Una volta che il numero di versione visualizzato passa a ``1.4.1``, l'aggiornamento è stato completato con successo.
+#. Attendi il completamento dell'aggiornamento. Una volta che il numero di versione visualizzato passa a ``1.4.2``, l'aggiornamento è stato completato con successo.
 
    .. image:: img/faq_cam_ota_finish.png
       :width: 400
