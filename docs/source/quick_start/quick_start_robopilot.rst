@@ -28,7 +28,6 @@ With RoboPilot, you can:
 
 .. note::
 
-    * The GalaxyRVR’s R3 board comes with firmware that supports the RoboPilot App and Mammoth Coding.
     * If you have overwritten the firmware and need to restore communication, follow :ref:`update_r3_firmware`.
 
 Quick Guide

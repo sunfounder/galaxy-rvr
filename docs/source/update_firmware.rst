@@ -91,48 +91,89 @@ If the firmware is outdated, these functions may not work properly. Follow the s
    .. image:: img/camera_lan.png
         :width: 50%
         :align: center
-       
-#. Open a web browser on your mobile device and go to the address ``http://192.168.4.1``. This will take you to the ESP32-CAM firmware update portal.
+
+#. Open a web browser on your mobile device and navigate to ``http://192.168.4.1`` to access the ESP32 CAM OTA update page.
+
+
+.. note:: On this page, you will see OTA upgrade options in one of two interfaces. Version A (the former) and Version B (the latter) will appear depending on your firmware version. Simply select the corresponding upgrade steps based on the interface you see.
+
+   .. image:: img/faq_cam_ota.jpg
+      :width: 40%
 
    .. image:: img/firmware_access.jpg
-        :width: 50%
-        :align: center
+      :width: 40%
 
-#. On the **OTA** page, check the current firmware version displayed on the webpage.
-    
-   * If your version number is **higher than 1.5.1**, an update is not required. You can skip the remaining steps and proceed directly to :ref:`quick_start`.
-   * If the version is **1.5.1 or lower**, please continue with the update.
 
-   .. image:: img/firmware_version.jpg
-        :width: 50%
-        :align: center
+**Version A**
 
-#. Tap the **Upgrade Firmware** button.
+   5. On the OTA page, click the button to select the firmware file.
 
-   .. image:: img/firmware_tap.jpg
-        :width: 50%
-        :align: center
+      .. image:: img/faq_cam_ota_choose.png
+         :width: 400
 
-#. A file selection dialog will appear. Navigate to and select the ``ai-camera-firware.ino.x.x.x.bin`` file you transferred to your mobile device earlier.
+   #. Choose the previously downloaded ``ai-camera-firmware-vX.X.X-ota.bin`` file from your device and click **Add**.
 
-   .. image:: img/firmware_select.jpg
-        :width: 50%
-        :align: center
+      .. image:: img/faq_cam_ota_file.png
+         :width: 400
 
-#. The firmware update will begin immediately after you select the file.
+   #. Click the **Update** button to start the firmware update process.
 
-   .. image:: img/firmware_upgrade.jpg
-        :width: 50%
-        :align: center
+      .. image:: img/faq_cam_ota_update.png
+         :width: 400
+      
+   #. Wait for the update to complete. 
 
-#. Wait for the firmware upgrade to complete.
+      .. image:: img/faq_cam_ota_finish.png
+         :width: 400
 
-   * The upload process typically takes 1-2 minutes. Once finished, a success message will appear in a pop-up window.
-   * You can then select **CONFIRM** to restart the GalaxyRVR or **CLOSE** to dismiss the window.
+   #. After the update is complete, you can close the web browser. Press the **Reset** button to reboot the device. The ESP32 CAM is now ready for normal operation.
 
-   .. image:: img/firmware_finish.jpg
-        :width: 50%
-        :align: center
+      .. image:: img/camera_reset.png
+         :width: 600
+
+   .. note:: After the update is complete, the GalaxyRVR's WiFi hotspot name will change to "AI Camera-xxxxxx", and the password will remain "12345678".
+
+
+**Version B**
+
+
+   5. On the **OTA** page, check the current firmware version displayed on the webpage.
+      
+      * If your version number is **higher than 1.5.1**, an update is not required. You can skip the remaining steps and proceed directly to :ref:`quick_start`.
+      * If the version is **1.5.1 or lower**, please continue with the update.
+
+      .. image:: img/firmware_version.jpg
+         :width: 50%
+         :align: center
+
+
+   #. Tap the **Upgrade Firmware** button.
+
+      .. image:: img/firmware_tap.jpg
+         :width: 50%
+         :align: center
+
+   #. A file selection dialog will appear. Navigate to and select the ``ai-camera-firware.ino.x.x.x.bin`` file you transferred to your mobile device earlier.
+
+      .. image:: img/firmware_select.jpg
+         :width: 50%
+         :align: center
+
+   #. The firmware update will begin immediately after you select the file.
+
+      .. image:: img/firmware_upgrade.jpg
+         :width: 50%
+         :align: center
+
+   #. Wait for the firmware upgrade to complete.
+
+      * The upload process typically takes 1-2 minutes. Once finished, a success message will appear in a pop-up window.
+      * You can then select **CONFIRM** to restart the GalaxyRVR or **CLOSE** to dismiss the window.
+
+      .. image:: img/firmware_finish.jpg
+         :width: 50%
+         :align: center
+
 
 .. _update_r3_firmware:
 
@@ -185,3 +226,4 @@ Follow the steps below to reinstall the communication firmware.
 
    This code enables the GalaxyRVR to respond to APP commands. You won’t need to upload any additional code when using either the RoboPilot remote control APP or the Mammoth Coding software.
 
+#. You can now proceed to :ref:`quick_start` to start your GalaxyRVR journey!

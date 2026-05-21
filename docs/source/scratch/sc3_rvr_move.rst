@@ -44,7 +44,6 @@ Connecting the APP to GalaxyRVR
 
 .. note::
 
-    * The GalaxyRVR’s R3 board comes with firmware that supports the RoboPilot App and Mammoth Coding.
     * If you have overwritten the firmware and need to restore communication, follow :ref:`update_r3_firmware`.
 
 #. Before using the GalaxyRVR for the first time, fully charge the battery with the supplied Type-C USB cable. After charging, turn the power on.
@@ -97,8 +96,8 @@ Connecting the APP to GalaxyRVR
       
       Connection status is indicated by the GalaxyRVR's LED lights:
       
-      - **Flashing yellow**: Searching for connection
-      - **Steady blue**: Successfully connected and ready
+      - **Flashing Purple**: Searching for connection
+      - **Solid Off**: Successfully connected and ready
 
 Re-connect APP
 -------------------------------------
