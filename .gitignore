@@ -1,3 +1,33 @@
-.vscode/
+# Claude
+.claude/
+
+# 环境变量 & 密钥
+.env
+.env.*
+*.secret
+secrets.*
+credentials.*
+*.pem
+*.key
+*secret*
+*credential*
+
+# Arduino build
 build/
+
+# Output
 output/
+
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+cmake-build-*/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

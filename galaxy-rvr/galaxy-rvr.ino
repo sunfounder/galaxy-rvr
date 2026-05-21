@@ -14,7 +14,7 @@ Play(Android).
     - ArduinoJson
     - Sunfounder_AI_Camera
 
-  Version: 1.0.0
+  Version: 2.0.0
     -- https://github.com/sunfounder/galaxy-rvr.git
 
   Documentation:
@@ -25,7 +25,7 @@ Play(Android).
            https://docs.sunfounder.com
 
 ********************************************************************/
-#define VERSION "1.2.1"
+#define VERSION "2.0.0"
 
 #include "galaxy-rvr.h"
 

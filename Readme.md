@@ -1,62 +1,101 @@
 # GalaxyRVR
-The control program of the GalaxyRVR for Ardunio UNO.
 
-- [GalaxyRVR](#galaxyrvr)
-  - [Development test environment](#development-test-environment)
-  - [Dependency libraries](#dependency-libraries)
-  - [ESP32-CAM firmware](#esp32-cam-firmware)
-  - [Docs](#docs)
-  - [Project Tree](#project-tree)
-  - [About SunFounder](#about-sunfounder)
-  - [Contact us](#contact-us)
-## Development test environment
-- Board: Ardunio UNO
-- IDE: Arduino IDE 1.8.19
-- Compiler Tools: Arduino AVR Boards 1.8.3
+Arduino UNO firmware for the GalaxyRVR robot car, works with the SunFounder Controller APP.
 
-## Dependency libraries
+Current version: **2.0.0**
+
+- [Dev Environment](#dev-environment)
+- [Quick Start](#quick-start)
+- [Project Structure](#project-structure)
+- [Firmware Flashing](#firmware-flashing)
+- [Docs](#docs)
+- [About SunFounder](#about-sunfounder)
+
+## Dev Environment
+
+| Item | Version |
+|------|---------|
+| Board | Arduino UNO |
+| IDE | Arduino IDE 2.x |
+| AVR Boards | 1.8.3 |
+
+Dependencies:
+
 - IRLremote
 - SoftPWM
 - Servo
 - ArduinoJson
 - SunFounder_AI_Camera
 
-## ESP32-CAM firmware
-https://github.com/sunfounder/ai-camera-firmware
+## Quick Start
+
+1. Open `galaxy-rvr/galaxy-rvr.ino` in Arduino IDE
+2. Select Board: Arduino UNO, pick the correct port
+3. Compile and upload
+4. Install SunFounder Controller APP on your phone, connect to WiFi `GalaxyRVR` (password `12345678`)
+
+## Project Structure
+
+```
+galaxy-rvr/
+├── galaxy-rvr/                   # Main firmware
+│   ├── galaxy-rvr.ino            # Entry point (setup/loop/state machine/WS handler)
+│   ├── galaxy-rvr.h              # Central config (pins, constants, includes)
+│   ├── cmd_code_config.hpp       # Mode definitions, voice command table
+│   ├── car_control.cpp/h         # Motor driver
+│   ├── rgb.cpp/h                 # RGB LED strip
+│   ├── ir_obstacle.cpp/h         # IR obstacle avoidance sensor
+│   ├── ultrasonic.cpp/h          # Ultrasonic distance sensor
+│   ├── soft_servo.cpp/h          # Software PWM servo (camera gimbal)
+│   ├── battery.h                 # Battery voltage / percentage
+│   └── test.h                    # Per-module test routines
+├── lesson_codes/                 # Tutorial examples (by chapter)
+│   ├── 5_car_move/               # Car movement
+│   ├── 6_read_ir/                # IR sensor read
+│   ├── 6_ir_avoid/               # IR obstacle avoidance
+│   ├── 7_read_ultrasonic/        # Ultrasonic read
+│   ├── 7_ultrasonic_avoid/       # Ultrasonic avoidance
+│   ├── 8_ultrasonic_ir_avoid/    # Ultrasonic + IR avoidance
+│   ├── 8_ultrasonic_ir_follow/   # Ultrasonic + IR follow
+│   ├── 9_rgb_*/                  # RGB LED control
+│   ├── 10_servo*/                # Servo control
+│   ├── 11_camera_*/              # Camera control
+│   ├── 12_app_*/                 # APP interaction
+│   └── 13_*battery*/             # Battery monitoring
+├── test/
+│   └── electric-test/            # Factory electrical test
+├── ai-camera-firmware.v1.5.3-ota.bin  # ESP32-CAM firmware image
+├── update-arduino-firmware.bat    # One-click flash script (Windows)
+├── LICENSE
+└── Readme.md
+```
+
+## Firmware Flashing
+
+### Option 1: One-click script (Windows)
+
+```bat
+update-arduino-firmware.bat
+```
+
+The script uses `avrdude` to flash `galaxy-rvr.ino.2.0.0.hex`.
+
+### Option 2: Arduino IDE
+
+Open `galaxy-rvr/galaxy-rvr.ino`, compile and upload.
+
+### ESP32-CAM firmware
+
+The AI Camera module requires its own firmware. See [ai-camera-firmware](https://github.com/sunfounder/ai-camera-firmware) for source and instructions.
+
 ## Docs
-https://docs.sunfounder.com
 
-## Project Tree
-```
-galaxy-rvr                  
-├─ galaxy-rvr               
-│  ├─ ai_camera.cpp         // functions for communicating with ESP32-CAM
-│  ├─ ai_camera.h           
-│  ├─ battery.h             // functions for getting the battery status
-│  ├─ car_control.cpp       // functions for controll motors 
-│  ├─ car_control.h         
-│  ├─ cmd_code_config.hpp   // the command table for voice control, and the 
-│  ├─ galaxy-rvr.ino        // Arduino main program
-│  ├─ ir_obstacle.cpp       // functions for IR obstacle avoidance module
-│  ├─ ir_obstacle.h         
-│  ├─ rgb.cpp               // functions for rgb led strip
-│  ├─ rgb.h                 
-│  ├─ test.h                
-│  ├─ ultrasonic.cpp        // functions for ultrasonic module
-│  └─ ultrasonic.h          
-├─ test                     
-│  └─ electric-test         
-│     └─ electric-test.ino  // modules test
-├─ LICENSE                  
-└─ Readme.md                
+https://docs.sunfounder.com/projects/galaxy-rvr/en/latest/
 
-```
 ## About SunFounder
-SunFounder is a company focused on STEAM education with products like open source robots, development boards, STEAM kit, modules, tools and other smart devices distributed globally. In SunFounder, we strive to help elementary and middle school students as well as hobbyists, through STEAM education, strengthen their hands-on practices and problem-solving abilities. In this way, we hope to disseminate knowledge and provide skill training in a full-of-joy way, thus fostering your interest in programming and making, and exposing you to a fascinating world of science and engineering. To embrace the future of artificial intelligence, it is urgent and meaningful to learn abundant STEAM knowledge.
 
-## Contact us
-website:
-    www.sunfounder.com
+SunFounder focuses on STEAM education with open-source robots, dev boards, kits, and modules. We help students and hobbyists learn programming and engineering through hands-on practice.
 
-E-mail:
-    service@sunfounder.com
+Website: [www.sunfounder.com](https://www.sunfounder.com)
+
+Contact: [service@sunfounder.com](mailto:service@sunfounder.com)
