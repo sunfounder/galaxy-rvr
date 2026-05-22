@@ -99,11 +99,12 @@ If the firmware is outdated, these functions may not work properly. Follow the s
 
    .. image:: img/firmware_access_ab.png
       :width: 90%
+      :align: center
 
 
 **Version A**
 
-   5. On the OTA page, click the button to select the firmware file.
+   6. On the OTA page, click the button to select the firmware file.
 
       .. image:: img/faq_cam_ota_choose.png
          :width: 400
@@ -134,7 +135,7 @@ If the firmware is outdated, these functions may not work properly. Follow the s
 **Version B**
 
 
-   5. On the **OTA** page, check the current firmware version displayed on the webpage.
+   6. On the **OTA** page, check the current firmware version displayed on the webpage.
       
       * If your version number is **higher than 1.5.1**, an update is not required. You can skip the remaining steps and proceed directly to :ref:`quick_start`.
       * If the version is **1.5.1 or lower**, please continue with the update.
