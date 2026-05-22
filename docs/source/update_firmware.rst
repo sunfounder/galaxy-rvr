@@ -97,11 +97,8 @@ If the firmware is outdated, these functions may not work properly. Follow the s
 
 .. note:: On this page, you will see OTA upgrade options in one of two interfaces. Version A (the former) and Version B (the latter) will appear depending on your firmware version. Simply select the corresponding upgrade steps based on the interface you see.
 
-   .. image:: img/faq_cam_ota.jpg
-      :width: 40%
-
-   .. image:: img/firmware_access.jpg
-      :width: 40%
+   .. image:: img/firmware_access_ab.png
+      :width: 90%
 
 
 **Version A**
@@ -222,8 +219,8 @@ Follow the steps below to reinstall the communication firmware.
 
    .. image:: img/faq_uno_updating.png
 
-.. note:: 
+   .. note:: 
 
-   This code enables the GalaxyRVR to respond to APP commands. You won’t need to upload any additional code when using either the RoboPilot remote control APP or the Mammoth Coding software.
+      This code enables the GalaxyRVR to respond to APP commands. You won’t need to upload any additional code when using either the RoboPilot remote control APP or the Mammoth Coding software.
 
 #. You can now proceed to :ref:`quick_start` to start your GalaxyRVR journey!
