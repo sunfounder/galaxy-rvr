@@ -1,4 +1,4 @@
-Quick Start with Scratch
+Quick Play with Scratch
 ==================================
 
 In this chapter, you'll learn how to **quickly open and run example projects in Scratch (Mammoth Coding)** to see your GalaxyRVR in action.

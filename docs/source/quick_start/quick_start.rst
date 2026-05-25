@@ -14,7 +14,7 @@
 
 .. _quick_start:
 
-Quick Start
+Quick Play
 ===================
 
 This chapter helps you quickly begin using your GalaxyRVR.  

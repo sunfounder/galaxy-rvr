@@ -1,4 +1,4 @@
-Quick Start with Arduino
+Quick Play with Arduino
 ===============================
 
 In this chapter, you’ll learn how to **quickly open and run specific Arduino example codes** to make your GalaxyRVR perform various actions.
