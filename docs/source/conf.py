@@ -179,7 +179,7 @@ rst_epilog = """
 
     <a href="https://github.com/sunfounder/galaxy-rvr/tree/1.2.x" target="_blank">SunFounder GalaxyRVR Kit for Arduino - GitHub</a>
 
-.. |download_galaxyrvr_code| replace:: :download:`GalaxyRVR Code File <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/1.2.x.zip>`
+.. |download_galaxyrvr_code| replace:: :download:`GalaxyRVR Code File <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
 
 
 .. |download_galaxyrvr_filmware| replace:: :download:`GalaxyRVR Firmware File <https://github.com/sunfounder/galaxy-rvr/releases/download/2.0.0/galaxy-rvr.ino.2.0.0.zip>`
