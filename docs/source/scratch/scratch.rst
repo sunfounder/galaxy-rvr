@@ -1,3 +1,6 @@
+﻿.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 .. _programming_scratch:
 
 Programming with Scratch
