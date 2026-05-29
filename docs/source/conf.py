@@ -1,4 +1,4 @@
-# Configuration file for the Sphinx documentation builder.
+﻿# Configuration file for the Sphinx documentation builder.
 #
 # This file only contains a selection of the most common options. For a full
 # list see the documentation:
@@ -18,7 +18,7 @@ import time
 
 # -- Project information -----------------------------------------------------
 
-project = 'SunFounder GalaxyRVR Kit for Arduino'
+project = 'SunFounder GalaxyRVR Arduino 套件'
 copyright = f'{time.localtime().tm_year}, SunFounder'
 author = 'www.sunfounder.com'
 
@@ -26,6 +26,12 @@ author = 'www.sunfounder.com'
 # The full version, including alpha/beta/rc tags
 release = '1.0'
 
+# -- sphinx_rtd_theme Theme options -----------------------------------------------------
+html_theme_options = {
+    'flyout_display': 'attached',
+    'version_selector': False,
+    'language_selector': False,
+}
 
 # -- General configuration ---------------------------------------------------
 
@@ -33,9 +39,9 @@ release = '1.0'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autosectionlabel',
+    #'sphinx.ext.autosectionlabel',
     'sphinx_copybutton',
-    'sphinx_rtd_theme',
+    'sphinx_rtd_theme'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -55,10 +61,6 @@ exclude_patterns = []
 html_theme = 'sphinx_rtd_theme'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
-# -- sphinx_rtd_theme Theme options -----------------------------------------------------
-html_theme_options = {
-    'flyout_display': 'attached'
-}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -73,30 +75,9 @@ html_css_files = [
     'https://ezblock.cc/readDocFile/custom.css',
 ]
 
-# pictures
-rst_epilog = """
-
-.. |app_connect| image:: /img/app/app_connect.jpg
-    :width: 20
-
-.. |app_save| image:: /img/app/app_save.jpg
-    :width: 20
-
-.. |app_run| image:: /img/app/app_run.png
-    :width: 20
-
-.. |app_edit| image:: /img/app/app_edit.jpg
-    :width: 20
-
-.. |app_set| image:: /img/app/app_set.png
-    :width: 20
-
-"""
-
-
 # open link in a new window
 
-rst_epilog += """
+rst_epilog = """
 
 .. |link_sf_facebook| raw:: html
 
@@ -130,7 +111,6 @@ rst_epilog += """
 .. |link_cn_tutorials| raw:: html
 
     <a href="https://docs.sunfounder.com/projects/galaxy-rvr/zh-cn/latest/" target="_blank">中文在线教程</a>
-
 
 .. |link_esp32cam_schematic| raw:: html
 
@@ -194,5 +174,14 @@ rst_epilog += """
 .. |link_Mars_Rover_Kit| raw:: html
 
     <a href="https://www.sunfounder.com/products/sunfounder-galaxyrvr-mars-rover-kit?_pos=1&_sid=c7193042f&_ss=r" target="_blank">GalaxyRVR</a>
+
+.. |link_github_galaxyrvr| raw:: html
+
+    <a href="https://github.com/sunfounder/galaxy-rvr/tree/1.2.x" target="_blank">SunFounder GalaxyRVR Kit for Arduino - GitHub</a>
+
+.. |download_galaxyrvr_code| replace:: :download:`GalaxyRVR Code File <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
+
+
+.. |download_galaxyrvr_filmware| replace:: :download:`GalaxyRVR Firmware File <https://github.com/sunfounder/galaxy-rvr/releases/download/2.0.0/galaxy-rvr.ino.2.0.0.zip>`
 
 """

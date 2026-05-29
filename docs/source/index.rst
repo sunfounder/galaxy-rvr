@@ -1,11 +1,11 @@
-|link_Mars_Rover_Kit| - SunFounder 火星漫游车套件
+|link_Mars_Rover_Kit| - SunFounder 火星车套件
 ========================================================
 
 * |link_GalaxyRVR|
 
 感谢您选择我们的 |link_Mars_Rover_Kit|。
 
-.. note:: 
+.. note::
     本文档提供以下语言版本。
 
         * |link_german_tutorials|
@@ -15,45 +15,44 @@
         * |link_es_tutorials|
         * |link_it_tutorials|
         * |link_cn_tutorials|
-        
-    
-    请点击相应链接以访问您偏好的语言版本。
+
+    请点击相应链接以获取您首选语言的文档。
 
 
-想象一下，驾驶漫游车在火星荒凉的地形上，探索外星景观并面对未知的挑战。这听起来像是 NASA 工程师的梦想，对吧？
+想象一下，在荒凉的火星地形上驾驶一辆火星车，探索外星景观，直面未知。这听起来像是 NASA 工程师的梦想，对吧？
 
-但现在，不再是梦想。
+但现在已经不再是了。
 
-欢迎来到 GalaxyRVR 的世界，这是 SunFounder 推出的火星漫游车套件，旨在将行星际探索带入您的客厅。
+欢迎来到 GalaxyRVR，一款来自 SunFounder 的火星车套件，将星际探索带入您的客厅。
 
 .. image:: img/galaxyRVR.jpg
-    :width: 600
+    :width: 500
     :align: center
 
-GalaxyRVR 基于 NASA 真实火星漫游车所采用的通用摇臂悬挂系统，能够在各种地形上自由穿行——无论是岩石山脉、沙滩还是草地。其悬挂系统确保了平稳的移动，让火星的外星世界仿佛就在家门口。
+基于 NASA 的摇臂转向架系统，GalaxyRVR 能够平稳穿越岩石山、沙滩和草地，让火星感觉像家一样。
 
-配备高清摄像头模块，GalaxyRVR 提供了第一视角，带来身临其境的驾驶体验，让你仿佛真正在操控红色星球。其先进的避障模块和超声波模块确保了漫游车能避开障碍，展现出自主和坚韧的精神。
+配备高清摄像头，GalaxyRVR 提供第一人称视角，带来沉浸式的驾驶体验。其先进的避障和超声波模块确保它能自主躲避障碍物。
 
-**探索宇宙：课程介绍**
+根据您的兴趣和技能水平选择您的路径：
 
-* :ref:`play_mode`: 想要快速上手？“游戏模式”专为那些迫不及待开始火星之旅的人设计。通过预装的工厂代码，简单组装 GalaxyRVR，并使用便捷的应用程序控制，探索其众多功能。
+* :ref:`quick_start`：通过 RoboPilot App 控制 GalaxyRVR，或在 Arduino IDE 和 Mammoth Coding 中快速运行示例代码，快速上手——适合希望快速动手控制的初学者。
 
-* :ref:`course_mode`: 对底层技术感兴趣？“课程模式”适合那些想深入了解的人。了解 GalaxyRVR 设计背后的原理，学习编程，为你的漫游车赋予更多有趣的功能。
+* :ref:`programming_arduino`：深入研究代码，理解每个函数，并通过 Arduino 编程自定义 GalaxyRVR。适合寻求深入知识和实验的用户。
 
-本文档将引导你深入了解 GalaxyRVR 的细节。它包含了详细的组装说明、编程指南以及火星漫游车工作原理的见解，旨在激发你的好奇心并培养你的创造力。
+* :ref:`programming_scratch`：使用 Scratch 对 GalaxyRVR 进行编程。这是一种可视化、基于积木块的语言，非常适合初学者和编程新手。
 
-GalaxyRVR 不仅仅是一个玩具，更是通向火星的门户，是一款教育工具，是无限想象力的催化剂。从今天开始，踏上你的宇宙之旅，让你的世界成为火星的延伸。
-
-.. toctree:: 
+.. toctree::
     :maxdepth: 2
 
-    关于本套件 <self>
+    About this Kit <self>
     assemble_video
-    play_mode
-    course_mode
+    update_firmware
+    quick_start/quick_start
+    arduino/programming_arduino
+    scratch/scratch
     hardware/hardware
     faq
 
 **版权声明**
 
-本手册中的所有内容，包括但不限于文字、图片和代码，均由 SunFounder 公司拥有。你只能在相关法规和版权法的框架下，出于个人学习、研究、娱乐或其他非商业性目的使用这些内容，且不得侵犯作者和相关权利人的合法权益。对于任何未经授权用于商业盈利的个人或组织，公司保留采取法律行动的权利。
+本手册中的所有内容（包括但不限于文字、图片和代码）均归 SunFounder 公司所有。您仅可将其用于个人学习、研究、娱乐或其他非商业或非盈利目的，且须遵守相关法规和版权法，不得侵犯作者及相关权利人的合法权益。对于任何未经许可将本手册用于商业盈利的个人或组织，本公司保留追究法律责任的权利。
