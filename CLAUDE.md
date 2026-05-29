@@ -24,14 +24,31 @@
 - 代码中的函数名、变量名、引脚号
 - 文件名和文件路径
 
+### ⚠️ RST 粗体标记与中文的兼容性（重要）
+
+RST 的 `**粗体**` 语法要求开始 `**` 前和结束 `**` 后必须是 ASCII 空格或英文标点（如 `.`, `,`, `:`, `)` 等）。中文文字和全角标点（`，`、`。`、`：`、`（`、`）`）不符合此要求，会导致 Sphinx 编译警告 `Inline strong start-string without end-string`。
+
+**翻译时必须**在 `**` 与相邻中文字符之间添加 ASCII 空格：
+- `中文**粗体**` → `中文 **粗体**`（开始 `**` 前加空格）
+- `**粗体**中文` → `**粗体** 中文`（结束 `**` 后加空格）
+
+无需在 `**` 与已存在的 ASCII 空格或行首/行尾之间额外处理。
+
 ### 中文格式规范
 - 使用中文标点符号：，、。！？：；""''【】《》
-- 中英文之间不需要空格（中文排版惯例）
-- 数字和中文之间不需要空格
 - 术语翻译需保持一致
 
 ### 要删除的内容
-- 文件开头的 Facebook 社区 `.. note::` 块（"您好，欢迎加入..."）
+
+- 文件开头的 Facebook 社区 `.. note::` 块。英文源使用 `.. include:: /index.rst` 方式引用，同步时直接删除每个页面开头的 3 行 include 块即可：
+
+  ```rst
+  .. include:: /index.rst
+     :start-after: start_hello_message
+     :end-before: end_hello_message
+  ```
+
+  同时删除 `index.rst` 中 `.. start_hello_message` 和 `.. end_hello_message` 之间的内容。
 
 ### 要翻译的内容
 - HTML 视频后备文本：`Your browser does not support the video tag.` → `您的浏览器不支持此视频标签。`
