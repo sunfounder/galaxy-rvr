@@ -10,6 +10,43 @@
     * GalaxyRVR 的 R3 板搭载了支持 RoboPilot App 和 Mammoth Coding 的固件。
     * 如果您已覆盖此固件并需要恢复通信，请按照 :ref:`update_r3_firmware` 进行操作。
 
+.. _install_scratch:
+
+安装 Mammoth Coding App
+---------------------------
+
+扫描下方二维码下载。
+
+.. image:: img/scratch_qrcode.png
+   :width: 300
+   :align: center
+
+**iOS 用户**
+
+直接选择在 **App Store** 或者是 **Google Play** 中安装就可以了。
+
+.. image:: img/scratch_home.jpg
+   :width: 300
+   :align: center
+
+**安卓用户**
+
+#. 扫码后，点击右上角的菜单按钮，选择 **"用浏览器打开"**。进入浏览器后，点击 **"APK下载"**。
+
+   .. image:: img/scratch_download.png
+      :width: 700
+
+#. 在弹出的下载页面中，点击 **"下载"** 即可。
+
+   .. image:: img/scratch_download_start.png
+      :width: 300
+
+#. 下载完成后，浏览器会询问是否安装。点击 **"允许"**，部分手机需要经过安全扫描才能继续安装，耐心等待就好。
+
+   .. image:: img/scratch_install.png
+      :width: 500
+
+#. 安装完成后，Mammoth Coding 图标就会出现在你的手机桌面上了。
 
 如何快速打开 Scratch 示例
 -------------------------------------
@@ -23,10 +60,7 @@
    .. image:: img/scratch_mobile_save.png
       :width: 400
 
-#. 在 **Google Play** 或 **Apple App Store** 上搜索 **Mammoth Coding** 并进行安装。
 
-   .. image:: img/scratch_app_install.png
-      :width: 600
 
 #. 首次使用 GalaxyRVR 前，请使用附带的 Type-C USB 线将电池充满电。充电完成后，打开电源。
 

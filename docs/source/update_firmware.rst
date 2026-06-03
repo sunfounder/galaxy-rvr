@@ -7,6 +7,11 @@
 由于产品持续改进，您的设备可能未搭载最新固件。
 为确保最佳稳定性能，请按照以下步骤检查并更新您的 ESP32 CAM 和 R3 板上的固件。
 
+.. raw:: html
+
+   <iframe width="600" height="400" src="https://www.youtube.com/embed/Tl2W26pIQoU?si=r7oBf1J98xmjEixA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 1. 检查是否需要更新
 -------------------------------------
 

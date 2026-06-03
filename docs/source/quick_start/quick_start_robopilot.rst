@@ -17,6 +17,42 @@
 
     * 如果您已覆盖固件并需要恢复通信，请按照 :ref:`update_r3_firmware` 进行操作。
 
+安装 Mammoth Coding App
+---------------------------
+
+扫描下方二维码下载。
+
+.. image:: img/robopilot_qrcode.png
+   :width: 300
+   :align: center
+
+**iOS 用户**
+
+直接选择在 **App Store** 或者是 **Google Play** 中安装就可以了。
+
+.. image:: img/robopilot_home.jpg
+   :width: 300
+   :align: center
+
+**安卓用户**
+
+#. 扫码后，点击右上角的菜单按钮，选择 **"用浏览器打开"**。进入浏览器后，点击 **"APK下载"**。
+
+   .. image:: img/robopilot_download.png
+      :width: 700
+
+#. 在弹出的下载页面中，点击 **"下载"** 即可。
+
+   .. image:: img/robopilot_download_start.png
+      :width: 300
+
+#. 下载完成后，浏览器会询问是否安装。点击 **"允许"**，部分手机需要经过安全扫描才能继续安装，耐心等待就好。
+
+   .. image:: img/robopilot_install.png
+      :width: 500
+
+#. 安装完成后，RoboPilot 图标就会出现在你的手机桌面上了。
+
 快速指南
 ---------------------
 

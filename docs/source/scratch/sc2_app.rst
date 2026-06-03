@@ -14,11 +14,7 @@
 安装应用
 ----------------------
 
-1. 在 Google Play 或 Apple App Store 中搜索 **Mammoth Coding** 并安装。
-
-   .. image:: img/1_app_install.png
-      :width: 600
-      :align: center
+1. :ref:`install_scratch`
 
 2. 安装完成后即可打开。以下是大屏设备上的界面效果：
 
