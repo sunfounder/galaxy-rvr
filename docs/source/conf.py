@@ -39,11 +39,10 @@ html_theme_options = {
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autosectionlabel',
+    #'sphinx.ext.autosectionlabel',
     'sphinx_copybutton',
     'sphinx_rtd_theme'
 ]
-
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -52,7 +51,7 @@ templates_path = ['_templates']
 # directories to ignore when looking for source files.
 # This pattern also affects html_static/video_path and html_extra_path.
 exclude_patterns = []
-html_static_path = ['_static']
+
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -66,6 +65,7 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
+html_static_path = ['_static']
 
 html_js_files = [
     'https://ezblock.cc/readDocFile/custom.js',
@@ -75,34 +75,13 @@ html_css_files = [
     'https://ezblock.cc/readDocFile/custom.css',
 ]
 
-# pictures
-rst_epilog = """
-
-.. |app_connect| image:: /img/app/app_connect.jpg
-    :width: 20
-
-.. |app_save| image:: /img/app/app_save.jpg
-    :width: 20
-
-.. |app_run| image:: /img/app/app_run.png
-    :width: 20
-
-.. |app_edit| image:: /img/app/app_edit.jpg
-    :width: 20
-
-.. |app_set| image:: /img/app/app_set.png
-    :width: 20
-
-"""
-
-
 # open link in a new window
 
-rst_epilog += """
+rst_epilog = """
 
 .. |link_sf_facebook| raw:: html
 
-    <a href="https://bit.ly/raphaelkit" target="_blank">Aquí</a>
+    <a href="https://bit.ly/raphaelkit" target="_blank">aquí</a>
 
 
 .. |link_german_tutorials| raw:: html
@@ -135,7 +114,7 @@ rst_epilog += """
 
 .. |link_esp32cam_schematic| raw:: html
 
-    <a href="https://docs.ai-thinker.com/_media/esp32/docs/esp32_cam_sch.pdf" target="_blank">ESP32-CAM schematic diagram</a>
+    <a href="https://docs.ai-thinker.com/_media/esp32/docs/esp32_cam_sch.pdf" target="_blank">Diagrama esquemático del ESP32-CAM</a>
 
 .. |link_cam_ov2640| raw:: html
 
@@ -154,15 +133,15 @@ rst_epilog += """
 
 .. |link_download_arduino| raw:: html
 
-    <a href="https://www.arduino.cc/en/software#future-version-of-the-arduino-ide" target="_blank">Arduino IDE 2.0.0 Page</a>
+    <a href="https://www.arduino.cc/en/software#future-version-of-the-arduino-ide" target="_blank">Página de Arduino IDE 2.0.0</a>
 
 .. |link_arduino_linux| raw:: html
 
-    <a href="https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing#linux" target="_blank">Install Arduino IDE on Linux</a>
+    <a href="https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing#linux" target="_blank">Instalar Arduino IDE en Linux</a>
 
 .. |link_arduino_web| raw:: html
 
-    <a href="https://www.arduino.cc/reference/en/" target="_blank">Arduino Sitio web oficial</a>
+    <a href="https://www.arduino.cc/reference/en/" target="_blank">Sitio web oficial de Arduino</a>
 
 .. |link_sunfounder_controller| raw:: html
 
@@ -170,7 +149,7 @@ rst_epilog += """
 
 .. |link_sc_widgets| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/sf-controller/en/latest/widgets_list.html" target="_blank">Widgets List</a>
+    <a href="https://docs.sunfounder.com/projects/sf-controller/en/latest/widgets_list.html" target="_blank">Lista de Widgets</a>
 
 .. |link_sc_page| raw:: html
 
@@ -178,11 +157,11 @@ rst_epilog += """
 
 .. |link_ai_camera_library_api| raw:: html
 
-    <a href="https://github.com/sunfounder/SunFounder_AI_Camera/blob/main/README.md" target="_blank">Widgets Usage</a>
+    <a href="https://github.com/sunfounder/SunFounder_AI_Camera/blob/main/README.md" target="_blank">Uso de Widgets</a>
 
 .. |link_widgets_list| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/sf-controller/en/latest/widgets_list.html" target="_blank">Widgets List</a>
+    <a href="https://docs.sunfounder.com/projects/sf-controller/en/latest/widgets_list.html" target="_blank">Lista de Widgets</a>
 
 .. |link_ai_camera_firmware| raw:: html
 
@@ -190,10 +169,19 @@ rst_epilog += """
 
 .. |link_GalaxyRVR| raw:: html
 
-    <a href="https://www.sunfounder.com/products/sunfounder-galaxyrvr-mars-rover-kit?_pos=1&_sid=c7193042f&_ss=r" target="_blank"Enlace de compra para GalaxyRVR</a>
+    <a href="https://www.sunfounder.com/products/sunfounder-galaxyrvr-mars-rover-kit?_pos=1&_sid=c7193042f&_ss=r" target="_blank">Enlace de compra para GalaxyRVR</a>
 
 .. |link_Mars_Rover_Kit| raw:: html
 
     <a href="https://www.sunfounder.com/products/sunfounder-galaxyrvr-mars-rover-kit?_pos=1&_sid=c7193042f&_ss=r" target="_blank">GalaxyRVR</a>
+
+.. |link_github_galaxyrvr| raw:: html
+
+    <a href="https://github.com/sunfounder/galaxy-rvr/tree/1.2.x" target="_blank">SunFounder GalaxyRVR Kit for Arduino - GitHub</a>
+
+.. |download_galaxyrvr_code| replace:: :download:`Archivo de código GalaxyRVR <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
+
+
+.. |download_galaxyrvr_filmware| replace:: :download:`Archivo de firmware GalaxyRVR <https://github.com/sunfounder/galaxy-rvr/releases/download/2.0.0/galaxy-rvr.ino.2.0.0.zip>`
 
 """
