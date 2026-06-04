@@ -11,6 +11,11 @@ Update Firmwares
 Your device may not have the latest firmware due to ongoing product improvements.  
 To ensure optimal and stable performance, please follow the steps below to check and update the firmware on your ESP32 CAM and R3 board.
 
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Tl2W26pIQoU?si=98bbfUPc1g2cEz3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 1. Check Whether an Update Is Needed
 -------------------------------------
 
