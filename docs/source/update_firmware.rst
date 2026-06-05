@@ -8,38 +8,43 @@
 ==========================
 
 製品の継続的な改良により、お使いのデバイスに最新のファームウェアが搭載されていない場合があります。
-最適で安定したパフォーマンスを確保するために、以下の手順に従って ESP32 CAM および R3 ボードのファームウェアを確認し、更新してください。
+すべてがスムーズに動作するように、初めて使用する前にファームウェアを更新することをお勧めします。ファームウェアの更新により、以下のことが保証されます：
+
+* **バグ修正**: 既知の問題を解決し、安定性を向上させます。
+* **アプリ互換性**: RoboPilot アプリと Mammoth Coding が正しく動作するために最新のファームウェアが必要です。
+* **新機能**: ファームウェアの更新により新しい機能や改善が追加される場合があります。
+* **パフォーマンス向上**: Wi-Fi 接続、カメラストリーミング、モーター制御の最適化。
+
+.. note::
+   ファームウェアを更新せず、現在の設定のまま使用したい場合は、 `GalaxyRVR v1 ドキュメント <https://docs.sunfounder.com/projects/galaxy-rvr/en/v1/index.html>`_ を参照してください。
+
+
+.. raw:: html
+
+   <iframe width="600" height="400" src="https://www.youtube.com/embed/Tl2W26pIQoU?si=98bbfUPc1g2cEz3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 1. 更新が必要かどうかの確認
 -------------------------------------
 
-#. GalaxyRVR を初めて使用する前に、付属の Type-C USB ケーブルでバッテリーを完全に充電してください。充電後、電源をオンにします。
+#. GalaxyRVR の電源を入れ、底部のライトストリップを確認します。
+
+   * GalaxyRVR を初めて使用する前に、付属の Type-C USB ケーブルでバッテリーを完全に充電してください。
+   * 電源スイッチをオンにします。
+   * モードを **Run** に切り替え、R3 ボードの **Reset** ボタンを押します。
+   * 底部のライトストリップが点滅し、起動成功を示します。
 
    .. raw:: html
 
-        <video width="600" loop autoplay muted>
-            <source src="_static/video/play_start.mp4" type="video/mp4">
-            お使いのブラウザはこのビデオタグをサポートしていません。
-        </video>
+      <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=rnoaDgQPnb-y6wnK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-#. ESP32 CAM を起動するには、モードを **Run** に切り替え、R3 ボードの **Reset** ボタンを押します。底部のライトストリップが点滅し、起動成功を示します。
+#. 底部のライトストリップを確認します。
 
-   .. note::
+   * 底部のライトストリップが **緑色に点滅** している場合、ESP32 ファームウェアは最新です。 :ref:`quick_start` に進んでください。
+   * 底部のライトストリップが **他の色** で点滅している場合は、以下が必要です：
 
-      * 底部のライトストリップが **緑色に点滅** している場合、ESP32 ファームウェアは最新です。
-      * :ref:`quick_start` に進んでください。
-
-   .. raw:: html
-
-        <video width="600" loop autoplay muted>
-            <source src="_static/video/play_reset_green.mp4" type="video/mp4">
-            お使いのブラウザはこのビデオタグをサポートしていません。
-        </video>
-
-#. 底部のライトストリップが **他の色** で点滅している場合は、以下を実行する必要があります：
-
-   * :ref:`update_esp32_firmware`
-   * :ref:`update_r3_firmware`
+     - :ref:`update_esp32_firmware`
+     - :ref:`update_r3_firmware`
 
    .. raw:: html
 

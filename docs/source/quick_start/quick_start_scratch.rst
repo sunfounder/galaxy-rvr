@@ -32,27 +32,16 @@ Scratch サンプルをすばやく開く方法
    .. image:: img/scratch_app_install.png
       :width: 600
 
-#. GalaxyRVR を初めて使用する前に、付属の Type-C USB ケーブルでバッテリーを完全に充電してください。充電後、電源をオンにします。
+#. GalaxyRVR を起動します。
+
+   * GalaxyRVR を初めて使用する前に、付属の Type-C USB ケーブルでバッテリーを完全に充電してください。
+   * 電源スイッチをオンにします。
+   * モードを **Run** に切り替え、R3 ボードの **Reset** ボタンを押します。
+   * 底部のライトストリップが **緑色** に点滅し、起動成功を示します。
 
    .. raw:: html
 
-        <video width="600" loop autoplay muted>
-            <source src="../_static/video/play_start.mp4" type="video/mp4">
-            お使いのブラウザはこのビデオタグをサポートしていません。
-        </video>
-
-#. ESP32 CAM を起動するには、モードを **Run** に切り替え、R3 ボードの **Reset** ボタンを押します。底部のライトストリップが点滅し、起動成功を示します。
-
-   .. note::
-
-      * 底部のライトストリップが **緑色以外の色で点滅** している場合、GalaxyRVR のファームウェア更新が必要です。:ref:`update_firmware` を参照してください。
-
-   .. raw:: html
-
-        <video width="600" loop autoplay muted>
-            <source src="../_static/video/play_reset_green.mp4" type="video/mp4">
-            お使いのブラウザはこのビデオタグをサポートしていません。
-        </video>
+      <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=rnoaDgQPnb-y6wnK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 #. モバイルデバイスを GalaxyRVR の WiFi ネットワークに接続します。
