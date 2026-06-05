@@ -32,27 +32,16 @@ How to Quickly Open a Scratch Example
    .. image:: img/scratch_app_install.png
       :width: 600
 
-#. Before using the GalaxyRVR for the first time, fully charge the battery with the supplied Type-C USB cable. After charging, turn the power on.
-    
-   .. raw:: html
+#. Start up the GalaxyRVR.
 
-        <video width="600" loop autoplay muted>
-            <source src="../_static/video/play_start.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-
-#. To start the ESP32 CAM, switch the mode to **Run** and press the **Reset** button on the R3 board. The bottom light strip will begin flashing to indicate a successful startup.
-
-   .. note::
-
-      * If the bottom light strip shows a **flashing light of any color other than green**, your GalaxyRVR needs a firmware update. Please refer to :ref:`update_firmware`.
+   * Before using the GalaxyRVR for the first time, fully charge the battery with the supplied Type-C USB cable.
+   * Turn the power switch on.
+   * Switch the mode to **Run** and press the **Reset** button on the R3 board.
+   * The bottom light strip will flash **green**, indicating a successful startup.
 
    .. raw:: html
 
-        <video width="600" loop autoplay muted>
-            <source src="../_static/video/play_reset_green.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+      <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=rnoaDgQPnb-y6wnK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 #. Connect your mobile device to the GalaxyRVR's WiFi network.

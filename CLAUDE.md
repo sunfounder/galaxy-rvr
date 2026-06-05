@@ -147,7 +147,8 @@ The Facebook community `.. note::` block is defined once in `index.rst` between 
 2. After changes are committed to `docs`, sync to language branches:
    - Copy all files from `docs` to the target language branch
    - Translate `.rst` file content (preserve ALL markup, paths, URLs)
-   - Remove Facebook community note blocks
+   - **Delete the `.. include:: /index.rst` block** from every page except `index.rst` (3 lines each)
+   - In `index.rst`, delete everything between `.. start_hello_message` and `.. end_hello_message`
    - Translate HTML fallback text (`Your browser does not support the video tag`)
    - Fix language-specific config (`conf.py` project name, `lang.js` key)
    - **Fix bold markers**: ensure ASCII spaces between `**` markers and adjacent CJK characters (see below)
@@ -163,6 +164,50 @@ RST's `**bold**` syntax requires ASCII whitespace or punctuation (`.`, `,`, `:`,
 - `中文**粗体**中文` → `中文 **粗体** 中文` (both sides)
 
 This is the standard workaround for RST+CJK compatibility.
+
+**Common mistake:** Translators often write `**text **: value` (space before closing `**`). This breaks RST parsing because the closing `**` must be immediately preceded by a non-whitespace character. Always write `**text**： value` — the space goes AFTER the closing `**`, not before.
+
+## RST Title Underlines in CJK Translations
+
+RST section title underlines (``===``, ``---``, ``~~~``) must be at least as long as the title text's **display width**, not its character count. CJK characters are double-width — each counts as 2 columns.
+
+**Rule:** When writing CJK titles, make the underline roughly `(CJK_char_count × 2) + ASCII_char_count` characters long.
+
+Example: Title `お楽しみプロジェクト4 リンゴを食べる` has 17 CJK chars + 2 ASCII chars = display width ≈ 36. The ``===`` underline must be at least 36 characters.
+
+This also applies to inline-markup-containing titles like ``4. **クロスヘア** スプライト`` — the ``**`` markers count toward the display width.
+
+## FAQ Conventions
+
+### Ordering logic
+FAQs should follow this priority order — from most actionable/reassuring to most technical/nuclear:
+
+1. **Why update firmware?** — explain the value FIRST so users understand the context before diving into troubleshooting
+2. **Connection issues** (general → RoboPilot → Scratch) — the most common user-facing problems
+3. **Compilation/upload errors** — Arduino IDE issues
+4. **Configuration** (WiFi channel, AP→STA setup) — optional setup tasks
+5. **Firmware operations** (update ESP32, restore R3) — how-to guides
+6. **Factory reset** (ESP32 CAM) — last-resort troubleshooting
+
+### Writing style
+- Use **bold** for each checklist item's key phrase (e.g., `**Check the battery**:`)
+- Use `:ref:` cross-references liberally to connect related FAQs
+- Use `.. note::` blocks for important reminders (re-configuration needed, side effects, etc.)
+- Each checklist item is one complete paragraph — no multi-paragraph items
+
+### ESP32 CAM factory reset
+To restore ESP32 CAM to factory settings: short **IO13** and **IO15** pins while powering on. The ESP32 CAM LED will flash twice quickly — remove the jumper at that point. After reset:
+- Hotspot first appears as `AI Camera-xxxxxx` (password `12345678`)
+- After reboot, changes to `GalaxyRVR-xxxxxx`
+- Saved home WiFi settings are cleared — user must reconfigure
+
+### update_firmware.rst
+- The intro section should explain **why** to update (same 4 reasons as FAQ #1), not just how
+- Include SunFounder Controller tip and v1 docs fallback note
+- The v1 docs link is for users who prefer NOT to update — not because their product is "old"
+
+### v1 documentation fallback
+When users don't want to update firmware and prefer to keep their current configuration, link to `https://docs.sunfounder.com/projects/galaxy-rvr/en/v1/index.html`. The new docs work for all product versions; the v1 link is only for those who choose not to update.
 
 ## Known Issues (do not fix)
 

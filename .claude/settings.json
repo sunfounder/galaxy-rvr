@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(robocopy \"f:\\\\Basic Kits\\\\Arduino Robots\\\\GalaxyRVR\\\\galaxy-rvr\\\\docs\" \"f:\\\\Basic Kits\\\\Arduino Robots\\\\GalaxyRVR\\\\galaxy-rvr-ja\\\\docs\" /E /NFL /NDL /NJH /NJS)",
+      "PowerShell(robocopy \"f:\\\\Basic Kits\\\\Arduino Robots\\\\GalaxyRVR\\\\galaxy-rvr\\\\docs\" \"f:\\\\Basic Kits\\\\Arduino Robots\\\\GalaxyRVR\\\\galaxy-rvr - Copy\\\\docs\" /E /NFL /NDL /NJH /NJS)",
+      "PowerShell($file = \"f:\\\\Basic Kits\\\\Arduino Robots\\\\GalaxyRVR\\\\galaxy-rvr - Copy\\\\docs\\\\source\\\\quick_start\\\\quick_start_scratch.rst\"; $content = Get-Content -Path $file -Raw -Encoding UTF8; $lines = $content -split \"`r?`n\"; for \\($i = 12; $i -lt 47; $i++\\) { Write-Host \"$\\($i+1\\): [$\\($lines[$i]\\)]\" })",
+      "Bash(ls -d \"f:/Basic Kits/Arduino Robots/GalaxyRVR/\"*docs* 2>/dev/null || echo \"No docs-* dirs found\")",
+      "Read(//f/Basic Kits/Arduino Robots/GalaxyRVR/**)",
+      "Bash(Get-ChildItem -Path \"f:\\\\Basic Kits\\\\Arduino Robots\\\\GalaxyRVR\\\\galaxy-rvr - Copy\" -Directory)",
+      "Bash(Select-Object Name)",
+      "PowerShell($path = \"F:\\\\Basic Kits\\\\Arduino Robots\\\\GalaxyRVR\\\\galaxy-rvr - Copy\\\\docs\\\\source\\\\hardware\\\\cpn_camera_adapter.rst\"; $bytes = [System.IO.File]::ReadAllBytes\\($path\\); $text = [System.Text.Encoding]::UTF8.GetString\\($bytes\\); # Search for specific patterns that are commonly unaccented $patterns = @\\( \"están\", \"también\", \"después\", \"sólo\", \"cómo\", \"qué\", \"dónde\", \"cuándo\", \"más\", \"sí\", \"dé\", \"sé\", \"él\", \"tú\" \\); foreach \\($p in $patterns\\) { Write-Host \"'$p': $\\($text.Contains\\($p\\)\\)\"; } Write-Host \"---\"; # Also check for accented version of words already found Write-Host \"Contains 'energía': $\\($text.Contains\\('energía'\\)\\)\"; Write-Host \"Contains 'generación': $\\($text.Contains\\('generación'\\)\\)\"; Write-Host \"Contains 'señales': $\\($text.Contains\\('señales'\\)\\)\"; Write-Host \"Contains 'señal': $\\($text.Contains\\('señal'\\)\\)\";)",
+      "PowerShell($path = \"F:\\\\Basic Kits\\\\Arduino Robots\\\\GalaxyRVR\\\\galaxy-rvr - Copy\\\\docs\\\\source\\\\hardware\\\\cpn_camera_adapter.rst\"; $bytes = [System.IO.File]::ReadAllBytes\\($path\\); $text = [System.Text.Encoding]::UTF8.GetString\\($bytes\\); $sw = New-Object System.IO.StringWriter; # Check for words missing accents $una = @\\(\"estan\",\"tambien\",\"despues\",\"solo\",\"como\",\"que\",\"donde\",\"cuando\",\"mas\",\"energia\",\"generacion\",\"señal\",\"señales\"\\); foreach \\($p in $una\\) { $found = $text.IndexOf\\($p, [System.StringComparison]::Ordinal\\); $sw.WriteLine\\(\"'{0}': {1}\", $p, \\($found -ge 0\\)\\); } Write-Host $sw.ToString\\(\\);)",
+      "PowerShell($path = \"F:\\\\Basic Kits\\\\Arduino Robots\\\\GalaxyRVR\\\\galaxy-rvr - Copy\\\\docs\\\\source\\\\hardware\\\\cpn_camera_adapter.rst\"; $text = [System.IO.File]::ReadAllText\\($path, [System.Text.Encoding]::UTF8\\); Write-Host $text.Length;)",
+      "Bash(cd \"/mnt/f/Basic Kits/Arduino Robots/GalaxyRVR/galaxy-rvr - Copy\" && grep -n \"cion\" docs/source/hardware/cpn_camera_adapter.rst || echo \"no cion matches\")",
+      "Read(//mnt/f/Basic Kits/Arduino Robots/GalaxyRVR/**)"
+    ]
+  }
+}

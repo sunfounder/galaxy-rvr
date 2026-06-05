@@ -5,54 +5,47 @@
 
 .. _update_firmware:
 
-Update Firmwares
+Update Firmware
 ==========================
 
-Your device may not have the latest firmware due to ongoing product improvements.  
-To ensure optimal and stable performance, please follow the steps below to check and update the firmware on your ESP32 CAM and R3 board.
+Your device may not have the latest firmware due to ongoing product improvements.
+We recommend updating the firmware before your first use to ensure everything works smoothly. Updating the firmware ensures:
+
+* **Bug fixes**: Resolves known issues and improves stability.
+* **App compatibility**: The latest firmware is required for the RoboPilot app and Mammoth Coding to work correctly.
+* **New features**: Firmware updates may add new capabilities and improvements.
+* **Better performance**: Optimizations for WiFi connectivity, camera streaming, and motor control.
+
+.. note::
+   If you prefer not to update the firmware and want to keep using your current configuration, you can refer to the `GalaxyRVR v1 Documentation <https://docs.sunfounder.com/projects/galaxy-rvr/en/v1/index.html>`_.
+
 
 .. raw:: html
 
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/Tl2W26pIQoU?si=98bbfUPc1g2cEz3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+   <iframe width="600" height="400" src="https://www.youtube.com/embed/Tl2W26pIQoU?si=98bbfUPc1g2cEz3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 1. Check Whether an Update Is Needed
 -------------------------------------
 
-#. Before using the GalaxyRVR for the first time, fully charge the battery with the supplied Type-C USB cable. After charging, turn the power on.
-    
-   .. raw:: html
+#. Power on the GalaxyRVR and check the bottom light strip.
 
-        <video width="600" loop autoplay muted>
-            <source src="_static/video/play_start.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-
-#. To start the ESP32 CAM, switch the mode to **Run** and press the **Reset** button on the R3 board. The bottom light strip will begin flashing to indicate a successful startup.
-
-   .. note::
-
-      * If the bottom light strip shows a **green flashing light**, your ESP32 firmware is already up to date.  
-      * You may proceed to :ref:`quick_start`.
+   * Before using the GalaxyRVR for the first time, fully charge the battery with the supplied Type-C USB cable.
+   * Turn the power switch on.
+   * Switch the mode to **Run** and press the **Reset** button on the R3 board.
+   * The bottom light strip will begin flashing to indicate a successful startup.
 
    .. raw:: html
 
-        <video width="600" loop autoplay muted>
-            <source src="_static/video/play_reset_green.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+      <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=rnoaDgQPnb-y6wnK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-#. If the bottom light strip flashes **other color**, you will need to:
+#. Check the bottom light strip.
 
-   * :ref:`update_esp32_firmware`
-   * :ref:`update_r3_firmware`
+   * If the bottom light strip shows a **green flashing light**, your ESP32 firmware is already up to date. You may proceed to :ref:`quick_start`.
+   * If the bottom light strip flashes **other color**, you will need to:
 
-   .. raw:: html
-
-        <video width="600" loop autoplay muted>
-            <source src="_static/video/play_reset.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+     - :ref:`update_esp32_firmware`
+     - :ref:`update_r3_firmware`
 
    
 .. _update_esp32_firmware:
@@ -102,27 +95,27 @@ If the firmware is outdated, these functions may not work properly. Follow the s
    6. On the OTA page, click the button to select the firmware file.
 
       .. image:: img/faq_cam_ota_choose.png
-         :width: 400
+         :width: 300
 
    #. Choose the previously downloaded ``ai-camera-firmware-vX.X.X-ota.bin`` file from your device and click **Add**.
 
       .. image:: img/faq_cam_ota_file.png
-         :width: 400
+         :width: 300
 
    #. Click the **Update** button to start the firmware update process.
 
       .. image:: img/faq_cam_ota_update.png
-         :width: 400
+         :width: 300
       
    #. Wait for the update to complete. 
 
       .. image:: img/faq_cam_ota_finish.png
-         :width: 400
+         :width: 300
 
    #. After the update is complete, you can close the web browser. Press the **Reset** button to reboot the device. The ESP32 CAM is now ready for normal operation.
 
       .. image:: img/camera_reset.png
-         :width: 600
+         :width: 500
 
    .. note:: After the update is complete, the GalaxyRVR's WiFi hotspot name will change to "AI Camera-xxxxxx", and the password will remain "12345678".
 
