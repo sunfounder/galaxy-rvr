@@ -126,7 +126,7 @@
 
 .. raw:: html
 
-    <iframe width="600" height="400" src="https://www.youtube.com/embed/h43JVI3xLqE?si=Q7-RvRvZOusK7vPo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114358420051073&bvid=BV1yt5jzuEnm&cid=29482223729&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 **步骤5：理解倾斜机构的限制**
 

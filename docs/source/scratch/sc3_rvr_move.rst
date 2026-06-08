@@ -32,25 +32,17 @@
 
     * 如果你覆盖了固件且需要恢复通信，请参考 :ref:`update_r3_firmware`。
 
-#. 首次使用 GalaxyRVR 之前，请使用附带的 Type-C USB 数据线将电池充满电。充电后，打开电源。
+#. 启动 GalaxyRVR。
+
+   * 首次使用 GalaxyRVR 前，请使用附带的 Type-C USB 线将电池充满电。
+   * 打开电源开关。
+   * 将模式切换到 **Run** 并按下 R3 板上的 **Reset** 按钮。
+   * 底部灯带将闪烁 **绿色** ，表示启动成功。
 
    .. raw:: html
 
         <video width="600" loop autoplay muted>
-            <source src="../_static/video/play_start.mp4" type="video/mp4">
-            您的浏览器不支持此视频标签。
-        </video>
-
-#. 启动 ESP32 CAM，将模式开关切换到 **运行** 档，并按下 R3 主板上的 ** 复位** 按钮。底部灯带将开始闪烁，表示启动成功。
-
-   .. note::
-
-      * 如果底部灯带显示 **非绿色的闪烁灯光** ，则你的 GalaxyRVR 需要更新固件。请参考 :ref:`update_firmware`。
-
-   .. raw:: html
-
-        <video width="600" loop autoplay muted>
-            <source src="../_static/video/play_reset_green.mp4" type="video/mp4">
+            <source src="../_static/video/power_start.mp4" type="video/mp4">
             您的浏览器不支持此视频标签。
         </video>
 

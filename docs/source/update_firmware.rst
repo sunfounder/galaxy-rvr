@@ -1,54 +1,46 @@
-﻿
+
 .. _update_firmware:
 
 更新固件
 ==========================
 
 由于产品持续改进，您的设备可能未搭载最新固件。
-为确保最佳稳定性能，请按照以下步骤检查并更新您的 ESP32 CAM 和 R3 板上的固件。
+我们建议在首次使用前更新固件，以确保一切运行顺畅。更新固件可确保：
 
-.. raw:: html
+* **Bug 修复**：解决已知问题，提高稳定性。
+* **App 兼容性**：RoboPilot App 和 Mammoth Coding 需要最新固件才能正常工作。
+* **新功能**：固件更新可能会添加新的功能和改进。
+* **更佳性能**：优化 WiFi 连接、摄像头视频流和电机控制。
 
-   <iframe width="600" height="400" src="https://www.youtube.com/embed/Tl2W26pIQoU?si=r7oBf1J98xmjEixA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+.. note::
+   如果您不想更新固件并希望继续使用当前配置，可以参考 `GalaxyRVR v1 文档 <https://docs.sunfounder.com/projects/galaxy-rvr/en/v1/index.html>`_ 。
+
 
 
 1. 检查是否需要更新
 -------------------------------------
 
-#. 首次使用 GalaxyRVR 前，请使用附带的 Type-C USB 线将电池充满电。充电完成后，打开电源。
+#. 启动 GalaxyRVR 并检查底部灯带。
+
+   * 首次使用 GalaxyRVR 前，请使用附带的 Type-C USB 线将电池充满电。
+   * 打开电源开关。
+   * 将模式切换到 **Run** 并按下 R3 板上的 **Reset** 按钮。
+   * 底部灯带将开始闪烁，表示启动成功。
 
    .. raw:: html
 
         <video width="600" loop autoplay muted>
-            <source src="_static/video/play_start.mp4" type="video/mp4">
+            <source src="../_static/video/power_start.mp4" type="video/mp4">
             您的浏览器不支持此视频标签。
         </video>
 
-#. 要启动 ESP32 CAM，请将模式切换到 **Run** 并按下 R3 板上的 **Reset** 按钮。底部灯带将开始闪烁，表示启动成功。
+#. 检查底部灯带。
 
-   .. note::
+   * 如果底部灯带显示 **绿色闪烁灯光** ，则您的 ESP32 固件已是最新。您可以继续前往 :ref:`quick_start` 。
+   * 如果底部灯带闪烁 **其他颜色** ，您将需要：
 
-      * 如果底部灯带显示 **绿色闪烁灯光** ，则您的 ESP32 固件已是最新。
-      * 您可以继续前往 :ref:`quick_start`。
-
-   .. raw:: html
-
-        <video width="600" loop autoplay muted>
-            <source src="_static/video/play_reset_green.mp4" type="video/mp4">
-            您的浏览器不支持此视频标签。
-        </video>
-
-#. 如果底部灯带闪烁 **其他颜色** ，您将需要：
-
-   * :ref:`update_esp32_firmware`
-   * :ref:`update_r3_firmware`
-
-   .. raw:: html
-
-        <video width="600" loop autoplay muted>
-            <source src="_static/video/play_reset.mp4" type="video/mp4">
-            您的浏览器不支持此视频标签。
-        </video>
+     - :ref:`update_esp32_firmware`
+     - :ref:`update_r3_firmware`
 
 
 .. _update_esp32_firmware:
@@ -76,7 +68,7 @@ ESP32 CAM 负责广播 Wi-Fi 热点并为 GalaxyRVR 采集视频。
 
 #. 将您的移动设备连接到 GalaxyRVR 的 WiFi 网络。
 
-   * 网络名称（SSID）为 ``GalaxyRVR``，密码为 ``12345678``。
+   * 网络名称（SSID）为 ``GalaxyRVR`` ，密码为 ``12345678`` 。
    * 如果看到提示"无互联网访问"，请选择 **"保持连接"** 选项。
 
    .. image:: img/camera_lan.png
@@ -98,27 +90,27 @@ ESP32 CAM 负责广播 Wi-Fi 热点并为 GalaxyRVR 采集视频。
    6. 在 OTA 页面上，点击按钮选择固件文件。
 
       .. image:: img/faq_cam_ota_choose.png
-         :width: 400
+         :width: 300
 
    #. 从设备中选择之前下载的 ``ai-camera-firmware-vX.X.X-ota.bin`` 文件，然后点击 **Add** 。
 
       .. image:: img/faq_cam_ota_file.png
-         :width: 400
+         :width: 300
 
    #. 点击 **Update** 按钮开始固件更新过程。
 
       .. image:: img/faq_cam_ota_update.png
-         :width: 400
+         :width: 300
 
    #. 等待更新完成。
 
       .. image:: img/faq_cam_ota_finish.png
-         :width: 400
+         :width: 300
 
    #. 更新完成后，您可以关闭网页浏览器。按下 **Reset** 按钮重启设备。ESP32 CAM 现在即可正常运行。
 
       .. image:: img/camera_reset.png
-         :width: 600
+         :width: 500
 
    .. note:: 更新完成后，GalaxyRVR 的 WiFi 热点名称将更改为 "AI Camera-xxxxxx"，密码仍为 "12345678"。
 
@@ -128,7 +120,7 @@ ESP32 CAM 负责广播 Wi-Fi 热点并为 GalaxyRVR 采集视频。
 
    6. 在 **OTA** 页面上，查看网页上显示的当前固件版本。
 
-      * 如果您的版本号 **高于 1.5.1** ，则无需更新。您可以跳过剩余步骤，直接前往 :ref:`quick_start`。
+      * 如果您的版本号 **高于 1.5.1** ，则无需更新。您可以跳过剩余步骤，直接前往 :ref:`quick_start` 。
       * 如果版本为 **1.5.1 或更低** ，请继续更新。
 
       .. image:: img/firmware_version.jpg

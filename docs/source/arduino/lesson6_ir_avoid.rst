@@ -48,7 +48,7 @@
 
 .. raw:: html
 
-    <iframe width="600" height="400" src="https://www.youtube.com/embed/UWEj_ROYAt0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114358419985870&bvid=BV1Wt5jzuEdN&cid=29482223160&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 组装步骤很简单，对吧？在接下来的步骤中，我们将了解这些模块的工作原理，以及它们如何帮助我们的火星车避障。敬请期待！
 

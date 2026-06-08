@@ -13,16 +13,12 @@
 
     * :Download:`组件清单与组装说明 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0112v11-a0001012-galaxyrvr.pdf>`
 
-* 如果您在理解纸质版组装说明时遇到困难，可以跟随我们的逐步组装视频进行操作。
+* 如果您在理解纸质版组装说明时遇到困难，可以跟随我们的逐步组装视频进行操作。组装视频共有 7 集。
 
-    .. note::
 
-        * 组装视频共有 7 集。
-        * 您可以在右上角查看播放列表中的其他视频，或让它自动播放。
+   .. raw:: html
 
-    .. raw:: html
-
-        <iframe width="600" height="400" src="https://www.youtube.com/embed/videoseries?list=PLwWF-ICTWmB62DgzmHWZwilt0Le4vGFry" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114358436763399&bvid=BV1Ha5jziEfp&cid=29482159543&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 **小贴士**
 

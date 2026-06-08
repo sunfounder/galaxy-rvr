@@ -56,30 +56,21 @@
 快速指南
 ---------------------
 
-#. 首次使用 GalaxyRVR 前，请使用附带的 Type-C USB 线将电池充满电。充电完成后，打开电源。
+#. 启动 GalaxyRVR。
+
+   * 首次使用 GalaxyRVR 前，请使用附带的 Type-C USB 线将电池充满电。
+   * 打开电源开关。
+   * 将模式切换到 **Run** 并按下 R3 板上的 **Reset** 按钮。
+   * 底部灯带将闪烁 **绿色** ，表示启动成功。
 
    .. raw:: html
 
         <video width="600" loop autoplay muted>
-            <source src="../_static/video/play_start.mp4" type="video/mp4">
+            <source src="../_static/video/power_start.mp4" type="video/mp4">
             您的浏览器不支持此视频标签。
         </video>
 
-#. 要启动 ESP32 CAM，请将模式切换到 **Run** 并按下 R3 板上的 **Reset** 按钮。底部灯带将开始闪烁，表示启动成功。
-
-   .. note::
-
-      * 如果底部灯带显示 **非绿色的闪烁灯光** ，则您的 GalaxyRVR 需要固件更新。请参阅 :ref:`update_firmware`。
-
-   .. raw:: html
-
-        <video width="600" loop autoplay muted>
-            <source src="../_static/video/play_reset_green.mp4" type="video/mp4">
-            您的浏览器不支持此视频标签。
-        </video>
-
-
-#. 从 **APP Store（iOS）** 或 **Google Play（Android）** 安装 **RoboPilot** 。
+#. 如果底部灯带显示 **非绿色的闪烁灯光** ，则您的 GalaxyRVR 需要固件更新。请参阅 :ref:`update_firmware`。
 
 #. 将您的移动设备连接到 GalaxyRVR 的 WiFi 网络。
 

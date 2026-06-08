@@ -68,7 +68,7 @@
 
 .. raw:: html
 
-    <iframe width="600" height="400" src="https://www.youtube.com/embed/-Vj-dcniFrA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114358403207261&bvid=BV1Wb5jzBEtq&cid=29482224249&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 **步骤3：通过编程监测电池电压和电量**
 

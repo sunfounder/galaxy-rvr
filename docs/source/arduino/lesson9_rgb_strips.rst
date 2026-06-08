@@ -50,7 +50,7 @@
 
 .. raw:: html
 
-    <iframe width="600" height="400" src="https://www.youtube.com/embed/v4YGjNwPOJE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114358419984531&bvid=BV1st5jzuEgG&cid=29482223488&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 **步骤2：用RGB LED灯带探索光的魔法**
 
