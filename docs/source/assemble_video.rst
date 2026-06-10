@@ -1,38 +1,38 @@
 .. note::
 
-    Ciao, benvenuto nella community di SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci il mondo di Raspberry Pi, Arduino ed ESP32 con altri appassionati.
+    Ciao, benvenuto nella community SunFounder per appassionati di Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci la tua conoscenza di Raspberry Pi, Arduino e ESP32 con altri appassionati.
 
-    **Perché unirti a noi?**
+    **Perché unirsi?**
 
-    - **Supporto esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra community e del nostro team.
-    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
-    - **Anteprime esclusive**: Accedi in anticipo agli annunci dei nuovi prodotti e alle anteprime.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime.
     - **Sconti speciali**: Goditi sconti esclusivi sui nostri prodotti più recenti.
-    - **Promozioni festive e giveaway**: Partecipa a promozioni festive e concorsi a premi.
+    - **Promozioni festive e omaggi**: Partecipa a omaggi e promozioni festive.
 
-    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi!
 
-Video di Montaggio
+Assemblaggio
 =========================
 
 **Panoramica**
 
-Se vuoi imparare durante l'assemblaggio dei vari componenti, puoi fare riferimento a :ref:`programming_arduino`. In questo capitolo, ogni lezione è accompagnata da video di assemblaggio, principi dei componenti e codice di test correlato, consentendoti di apprendere mentre procedi. Quindi, puoi saltare questo capitolo.
+Se vuoi imparare mentre assembli i vari componenti, puoi consultare :ref:`programming_arduino`. In questo capitolo, ogni lezione include video di assemblaggio, principi dei componenti e relativi codici di test, permettendoti di imparare man mano. Quindi, puoi saltare questo capitolo.
 
-Se invece desideri assemblare rapidamente e iniziare a giocare, puoi guardare prima il video di assemblaggio. Dopo aver completato l'assemblaggio, procedi a :ref:`quick_start` per scoprire l'installazione e la connessione dell'app. Dopodiché, puoi utilizzare l'app per controllare il GalaxyRVR.
+Se vuoi assemblare rapidamente e iniziare a giocare, puoi prima guardare il video di assemblaggio. Dopo aver completato l'assemblaggio, procedi a :ref:`quick_start` per conoscere l'installazione e la connessione dell'app. Poi, puoi utilizzare l'app per controllare il GalaxyRVR.
 
 **Video**
 
-* Per il montaggio del GalaxyRVR, forniamo istruzioni di montaggio stampate nel kit. Ecco la versione PDF:
+* Per l'assemblaggio del GalaxyRVR, forniamo istruzioni di assemblaggio stampate nel kit. Ecco la versione PDF:
 
-    * :Download:`Component List and Assembly Instructions <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0112v11-a0001012-galaxyrvr.pdf>`
+    * :Download:`Elenco dei componenti e istruzioni di assemblaggio <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0112v11-a0001012-galaxyrvr.pdf>`
 
-* Se hai difficoltà a comprendere le istruzioni di montaggio stampate, puoi seguire invece i nostri video di montaggio passo passo.
+* Se hai difficoltà a comprendere le istruzioni di assemblaggio stampate, puoi invece seguire il nostro video di assemblaggio passo dopo passo.
 
     .. note::
 
-        * I video di montaggio sono una serie di 7.
-        * Puoi vedere altri video dalla playlist nell'angolo in alto a destra o lasciare che si riproducano automaticamente.
+        * I video di assemblaggio sono in una serie di 7.
+        * Puoi visualizzare altri video dalla playlist nell'angolo in alto a destra, o lasciare che vengano riprodotti automaticamente.
 
     .. raw:: html
 
@@ -40,13 +40,13 @@ Se invece desideri assemblare rapidamente e iniziare a giocare, puoi guardare pr
 
 **Consigli**
 
-* Quando inserisci l'ESP32 CAM nell'adattatore della fotocamera, fai attenzione al suo orientamento. Deve allinearsi correttamente con l'adattatore ESP32.
+* Quando inserisci l'ESP32 CAM nell'adattatore per fotocamera, fai attenzione al suo orientamento. Dovrebbe allinearsi correttamente con l'adattatore ESP32.
 
     .. image:: img/esp32_cam_direction.png
         :width: 300
         :align: center
 
-* Dopo l'assemblaggio, puoi fissare i fili del motore alla piastra utilizzando fascette per evitare che si impiglino nelle ruote.
+* Dopo l'assemblaggio, puoi fissare i cavi dei motori alla piastra utilizzando fascette per evitare che si aggroviglino nelle ruote.
 
     .. raw:: html
 

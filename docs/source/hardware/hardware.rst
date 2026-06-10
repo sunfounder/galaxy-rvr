@@ -1,24 +1,23 @@
 .. note::
 
-    Ciao, benvenuto nella community SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci il mondo di Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
+    Ciao, benvenuto nella community SunFounder per appassionati di Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci la tua conoscenza di Raspberry Pi, Arduino e ESP32 con altri appassionati.
 
-    **Perché unirti a noi?**
+    **Perché unirsi?**
 
     - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
-    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
-    - **Anteprime esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e anteprime.
-    - **Sconti esclusivi**: Approfitta di sconti speciali sui nostri prodotti più recenti.
-    - **Promozioni festive e giveaway**: Partecipa a giveaway e promozioni durante le festività.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime.
+    - **Sconti speciali**: Goditi sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a omaggi e promozioni festive.
 
-    👉 Pronto per esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
-
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi!
 
 Hardware
 ==================
 
-Quando scrivi codice, potresti aver bisogno di sapere come funziona ogni modulo o quale sia il ruolo di ciascun pin. Consulta quindi questo capitolo.
+Quando scrivi codice, potresti aver bisogno di sapere come funziona ciascun modulo o il ruolo di ciascun pin: consulta questo capitolo.
 
-In questo capitolo troverai una descrizione delle funzioni di ogni modulo, dei parametri tecnici e del principio di funzionamento.
+In questo capitolo troverai una descrizione della funzione, dei parametri tecnici e del principio di funzionamento di ciascun modulo.
 
 .. toctree::
     :maxdepth: 2
@@ -34,4 +33,4 @@ In questo capitolo troverai una descrizione delle funzioni di ogni modulo, dei p
     cpn_solar_panel
     cpn_18650_battery
 
-..     cpn_camera_adapter
+..  cpn_camera_adapter

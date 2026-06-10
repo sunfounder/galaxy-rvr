@@ -1,62 +1,63 @@
 .. note::
 
-    Ciao, benvenuto nella comunità SunFounder di appassionati di Raspberry Pi, Arduino ed ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
+    Ciao, benvenuto nella community SunFounder per appassionati di Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci la tua conoscenza di Raspberry Pi, Arduino e ESP32 con altri appassionati.
 
-    **Perché unirti a noi?**
+    **Perché unirsi?**
 
-    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
     - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
-    - **Anteprime esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e anteprime.
-    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
-    - **Promozioni festive e giveaway**: Partecipa a concorsi e promozioni durante le festività.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime.
+    - **Sconti speciali**: Goditi sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a omaggi e promozioni festive.
 
-    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi!
 
-Modulo di Evitamento Ostacoli a Infrarossi (IR)
-====================================================
+Modulo evitamento ostacoli IR
+=======================================
 
-Questo è un modulo di evitamento ostacoli a infrarossi in grado di rilevare la presenza di oggetti davanti a sé. Viene comunemente utilizzato in robot, sistemi di automazione e altri dispositivi intelligenti. Il suo raggio di rilevamento varia da 2 cm a 40 cm e gli oggetti di diversi colori hanno livelli di riflettività diversi. Pertanto, più scuro è l'oggetto, minore sarà la distanza di rilevamento.
+Questo è un modulo evitamento ostacoli a infrarossi in grado di rilevare la presenza di oggetti davanti a sé. È comunemente utilizzato in robot, sistemi di automazione e altri dispositivi intelligenti. La sua portata di rilevamento va da 2 cm a 40 cm, e oggetti di diversi colori hanno diversi livelli di riflettività. Pertanto, più scuro è l'oggetto, minore è la distanza di rilevamento.
 
 .. image:: img/ir_avoid.png
     :width: 400
     :align: center
 
-Di seguito sono riportate le definizioni dei pin:
+Ecco le definizioni dei pin:
 
 * **GND**: Massa
-* **+**: Alimentazione, 3.3 ~ 5V DC.
-* **Out**: Di default, rimane alto e va basso solo quando rileva un ostacolo.
-* **EN**: Questo pin **enable** decide quando il modulo deve funzionare. Per impostazione predefinita, è collegato a GND, il che significa che il modulo è sempre attivo.
+* **+**: Alimentazione, 3,3 ~ 5V CC.
+* **Out**: Per impostazione predefinita, rimane alto e va basso solo quando rileva un ostacolo.
+* **EN**: Questo pin di **abilitazione** decide quando il modulo deve funzionare. Per impostazione predefinita, è collegato a GND, il che significa che il modulo è sempre in funzione.
 
 
 **Come funziona?**
 
-Questo modulo contiene una coppia di componenti trasmittenti e riceventi a infrarossi. Fondamentalmente, il trasmettitore emette luce a infrarossi e quando questa luce incontra un ostacolo, viene riflessa e ricevuta dal ricevitore. Al rilevamento, l'indicatore si illumina. Dopo l'elaborazione del circuito, viene emesso un segnale di livello basso.
+Questo modulo contiene una coppia di componenti di trasmissione e ricezione IR. Fondamentalmente, il trasmettitore emette luce infrarossa; quando la luce infrarossa emessa incontra un ostacolo, viene riflessa e ricevuta dal ricevitore. Al rilevamento, l'indicatore si illumina. Dopo l'elaborazione del circuito, emette un segnale a livello basso.
 
 .. image:: img/ir_receive.png
     :width: 600
     :align: center
 
-Lo stato di basso livello del pin **EN** attiva il modulo, con il cappuccio jumper che collega il pin **EN** al GND. Per controllare il pin EN tramite programma, rimuovere il cappuccio jumper.
+
+Lo stato a livello basso del pin **EN** attiva il modulo, con il cappuccio jumper che fissa il pin **EN** a GND. Per controllare il pin EN programmaticamente, rimuovi il cappuccio jumper.
 
 .. image:: img/ir_cap.png
     :width: 400
     :align: center
 
-Sul modulo ci sono due potenziometri, uno per regolare la potenza di trasmissione e l'altro per regolare la frequenza di trasmissione. Regolando questi due potenziometri, è possibile regolare la distanza effettiva.
+Ci sono due potenziometri sul modulo, uno per regolare la potenza di trasmissione e uno per regolare la frequenza di trasmissione; regolando questi due potenziometri puoi regolare la sua distanza effettiva.
 
 .. image:: img/ir_avoid_pot.png
     :width: 400
-    :align: center 
+    :align: center
 
 
-**Regolare la distanza di rilevamento**
+**Regolazione della distanza di rilevamento**
 
-Per ottenere prestazioni ottimali, il raggio di rilevamento del modulo di evitamento ostacoli deve essere calibrato con precisione, poiché le impostazioni di fabbrica predefinite potrebbero non essere adeguate a requisiti specifici.
+La portata di rilevamento del modulo evitamento ostacoli deve essere calibrata con precisione per prestazioni ottimali, poiché le impostazioni predefinite di fabbrica potrebbero non essere in linea con i requisiti specifici.
 
-La calibrazione si svolge secondo i seguenti passaggi:
+La calibrazione prevede i seguenti passaggi:
 
-#. Allineamento del modulo: Inizia con il modulo di evitamento ostacoli sul lato destro. Il trasporto può talvolta spostare l'allineamento del trasmettitore e del ricevitore a infrarossi del modulo. Devono essere riallineati manualmente per garantire l'accuratezza.
+#. Allineamento del modulo: Inizia con il modulo evitamento ostacoli sul lato destro. Il trasporto può occasionalmente spostare l'allineamento del trasmettitore e del ricevitore a infrarossi del modulo. Devono essere riallineati manualmente per garantire la precisione.
 
     .. raw:: html
 
@@ -65,7 +66,7 @@ La calibrazione si svolge secondo i seguenti passaggi:
             Your browser does not support the video tag.
         </video>
 
-#. Posiziona un ostacolo a circa 20 cm direttamente di fronte al modulo destro. La scatola in cui è contenuto il kit del nostro Rover è una buona scelta per questo! Ora, ruota il potenziometro sul modulo fino a quando la spia luminosa sul modulo si accende. Poi, continua a spostare l'ostacolo avanti e indietro per verificare se la spia si accende alla distanza desiderata. Se la spia non si accende alla distanza corretta o rimane accesa senza spegnersi, sarà necessario regolare l'altro potenziometro.
+#. Posiziona un ostacolo a circa 20 cm direttamente davanti al modulo destro. La scatola in cui è arrivato il nostro kit Rover è una buona scelta per questo! Ora, gira il potenziometro sul modulo finché la spia indicatrice sul modulo si accende appena. Quindi, continua a muovere l'ostacolo avanti e indietro per verificare se la spia si accende alla distanza desiderata. Se la spia non si accende alla distanza corretta o se rimane accesa senza spegnersi, dovrai regolare l'altro potenziometro.
 
     .. raw:: html
 
@@ -74,18 +75,19 @@ La calibrazione si svolge secondo i seguenti passaggi:
             Your browser does not support the video tag.
         </video>
 
+
 #. Ripeti lo stesso processo per l'altro modulo.
 
 **Caratteristiche**
 
-* Tensione operativa: da 3.3 V a 5 V
-* Uscita: digitale (on/off)
-* Soglia di rilevamento: regolabile tramite 2 potenziometri
-* Gamma di distanza: da 2 a 40 cm
-* Regolazione R5: regolazione della frequenza 38 kHz (già ottimizzata)
-* Regolazione R6: regolazione del ciclo di lavoro del LED IR (già ottimizzata)
-* Temperatura di esercizio: da -10 °C a +50 °C
-* Angolo efficace: 35°
-* Interfaccia I/O: interfaccia a 4 fili (- / + / S / EN)
-* Dimensioni: 45 x 16 x 10 mm
-* Peso: 9 g
+* tensione operativa: da 3,3 V a 5 V
+* uscita: digitale (on/off)
+* soglia di rilevamento: regolabile tramite 2 potenziometri
+* intervallo di distanza: da 2 a 40 cm
+* regolazione R5: regolazione frequenza 38 kHz (già ottimizzata)
+* regolazione R6: regolazione duty cycle LED IR (già ottimizzata)
+* temperatura operativa: da -10 °C a +50 °C
+* angolo effettivo: 35°
+* interfaccia I/O: interfaccia a 4 fili (- / + / S / EN)
+* dimensioni: 45 x 16 x 10 mm
+* peso: 9 g
