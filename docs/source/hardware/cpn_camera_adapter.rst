@@ -65,7 +65,7 @@ Da der geomagnetische Chip QMC6310 anfällig für Störungen durch Motoren ist, 
 
 Der QMC6310 ist ein dreiaxialer Magnetfeldsensor, der magnetische Sensoren und Signalzustands-ASIC in einem Siliziumchip integriert. Dieses Land Grid Array-Paket (LGA) ist für Anwendungen wie E-Kompass, Kartenrotation, Gaming und persönliche Navigation in mobilen und tragbaren Geräten konzipiert.
 
-Der QMC6310 basiert auf modernster, hochauflösender, magnetoresistiver Technologie. Zusammen mit dem eigens entwickelten 16-Bit-ADC-ASIC bietet er die Vorteile von geringem Rauschen, hoher Genauigkeit, geringem Stromverbrauch, Offset-Kompensation und Temperaturkompensationen. QMC6310 ermöglicht eine Kompassgenauigkeit von 1° bis 2°. Der I²C-Serienbus ermöglicht eine einfache Schnittstelle.
+Der QMC6310 basiert auf modernster, hochauflösender, magnetoresistiver Technologie. Zusammen mit dem eigens entwickelten 16-Bit-ADC-ASIC bietet er die Vorteile von geringem Rauschen, höher Genauigkeit, geringem Stromverbrauch, Offset-Kompensation und Temperaturkompensationen. QMC6310 ermöglicht eine Kompassgenauigkeit von 1° bis 2°. Der I²C-Serienbus ermöglicht eine einfache Schnittstelle.
 
 Der QMC6310 ist in einem 1,2x1,2x0,53mm3 großen, oberflächenmontierbaren 8-Pin-LGA-Gehäuse untergebracht.
 

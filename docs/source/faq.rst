@@ -64,7 +64,7 @@ Das 2,4-GHz-WLAN-Band hat Kanäle von 1 bis 13. Der ESP32 unterstützt Kanäle v
 
    .. image:: img/camera_reset.png
 
-.. _update_firmware:
+.. _faq_update_firmware:
 
 So aktualisieren Sie die Firmware für die ESP32 CAM
 ------------------------------------------------------

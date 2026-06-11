@@ -39,7 +39,7 @@ html_theme_options = {
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autosectionlabel',
+   # 'sphinx.ext.autosectionlabel',
     'sphinx_copybutton',
     'sphinx_rtd_theme'
 ]
@@ -195,5 +195,13 @@ rst_epilog += """
 .. |link_Mars_Rover_Kit| raw:: html
 
     <a href="https://www.sunfounder.com/products/sunfounder-galaxyrvr-mars-rover-kit?_pos=1&_sid=c7193042f&_ss=r" target="_blank">GalaxyRVR</a>
+
+.. |download_galaxyrvr_code| replace:: :download:`GalaxyRVR Code-Datei <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
+
+.. |download_galaxyrvr_filmware| replace:: :download:`GalaxyRVR Firmware-Datei <https://github.com/sunfounder/galaxy-rvr/releases/download/2.0.0/galaxy-rvr.ino.2.0.0.zip>`
+
+.. |link_github_galaxyrvr| raw:: html
+
+    <a href="https://github.com/sunfounder/galaxy-rvr" target="_blank">SunFounder GalaxyRVR GitHub</a>
 
 """

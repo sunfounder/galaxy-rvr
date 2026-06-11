@@ -55,11 +55,13 @@ Wählen Sie Ihren Weg basierend auf Ihren Interessen und Fähigkeiten:
 .. toctree::
     :maxdepth: 2
 
-    About this Kit <self>
+    Über dieses Kit <self>
     assemble_video
-    quick_start
-    programming_arduino
+    quick_start/quick_start
+    arduino/programming_arduino
+    scratch/scratch
     hardware/hardware
+    update_firmware
     faq
 
 
