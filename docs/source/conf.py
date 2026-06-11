@@ -1,14 +1,15 @@
-# Configuration file for the Sphinx documentation builder.
+# Fichier de configuration pour le générateur de documentation Sphinx.
 #
-# This file only contains a selection of the most common options. For a full
-# list see the documentation:
+# Ce fichier contient uniquement une sélection des options les plus courantes.
+# Pour une liste complète, consultez la documentation :
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-# -- Path setup --------------------------------------------------------------
+# -- Configuration des chemins -------------------------------------------------
 
-# If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
+# Si les extensions (ou les modules à documenter avec autodoc) se trouvent dans
+# un autre répertoire, ajoutez ces répertoires à sys.path ici. Si le répertoire
+# est relatif à la racine de la documentation, utilisez os.path.abspath
+# pour le rendre absolu, comme montré ici.
 #
 # import os
 # import sys
@@ -16,57 +17,56 @@
 import sphinx_rtd_theme
 import time
 
-# -- Project information -----------------------------------------------------
+# -- Informations sur le projet ------------------------------------------------
 
-project = 'SunFounder GalaxyRVR Kit for Arduino'
+project = 'SunFounder GalaxyRVR Kit pour Arduino'
 copyright = f'{time.localtime().tm_year}, SunFounder'
 author = 'www.sunfounder.com'
 
 
-# The full version, including alpha/beta/rc tags
+# La version complète, incluant les balises alpha/beta/rc
 release = '1.0'
 
-# -- sphinx_rtd_theme Theme options -----------------------------------------------------
+# -- Options du thème sphinx_rtd_theme -----------------------------------------
 html_theme_options = {
     'flyout_display': 'attached',
     'version_selector': False,
     'language_selector': False,
 }
 
-# -- General configuration ---------------------------------------------------
+# -- Configuration générale ----------------------------------------------------
 
-# Add any Sphinx extension module names here, as strings. They can be
-# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
-# ones.
+# Ajoutez ici les noms des modules d'extension Sphinx, sous forme de chaînes.
+# Il peut s'agir d'extensions fournies avec Sphinx (nommées 'sphinx.ext.*')
+# ou personnalisées.
 extensions = [
-    'sphinx.ext.autosectionlabel',
+    #'sphinx.ext.autosectionlabel',
     'sphinx_copybutton',
     'sphinx_rtd_theme'
 ]
 
-
-
-# Add any paths that contain templates here, relative to this directory.
+# Ajoutez ici les chemins contenant des modèles, relatifs à ce répertoire.
 templates_path = ['_templates']
 
-# List of patterns, relative to source directory, that match files and
-# directories to ignore when looking for source files.
-# This pattern also affects html_static/video_path and html_extra_path.
+# Liste des motifs, relatifs au répertoire source, qui correspondent aux fichiers
+# et répertoires à ignorer lors de la recherche des fichiers source.
+# Ce motif affecte également html_static/video_path et html_extra_path.
 exclude_patterns = []
 
 
-# -- Options for HTML output -------------------------------------------------
+# -- Options pour la sortie HTML -----------------------------------------------
 
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
+# Le thème à utiliser pour les pages HTML et HTML Help. Consultez la
+# documentation pour une liste des thèmes intégrés.
 #
 html_theme = 'sphinx_rtd_theme'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
+# Ajoutez ici les chemins contenant des fichiers statiques personnalisés
+# (comme les feuilles de style), relatifs à ce répertoire. Ils sont copiés
+# après les fichiers statiques intégrés, donc un fichier nommé "default.css"
+# écrasera le "default.css" intégré.
 html_static_path = ['_static']
 
 html_js_files = [
@@ -77,34 +77,13 @@ html_css_files = [
     'https://ezblock.cc/readDocFile/custom.css',
 ]
 
-# pictures
+# Ouvrir les liens dans une nouvelle fenêtre
+
 rst_epilog = """
-
-.. |app_connect| image:: /img/app/app_connect.jpg
-    :width: 20
-
-.. |app_save| image:: /img/app/app_save.jpg
-    :width: 20
-
-.. |app_run| image:: /img/app/app_run.png
-    :width: 20
-
-.. |app_edit| image:: /img/app/app_edit.jpg
-    :width: 20
-
-.. |app_set| image:: /img/app/app_set.png
-    :width: 20
-
-"""
-
-
-# open link in a new window
-
-rst_epilog += """
 
 .. |link_sf_facebook| raw:: html
 
-    <a href="https://bit.ly/raphaelkit" target="_blank">Ici</a>
+    <a href="https://bit.ly/raphaelkit" target="_blank">ici</a>
 
 
 .. |link_german_tutorials| raw:: html
@@ -137,7 +116,7 @@ rst_epilog += """
 
 .. |link_esp32cam_schematic| raw:: html
 
-    <a href="https://docs.ai-thinker.com/_media/esp32/docs/esp32_cam_sch.pdf" target="_blank">ESP32-CAM schematic diagram</a>
+    <a href="https://docs.ai-thinker.com/_media/esp32/docs/esp32_cam_sch.pdf" target="_blank">Schéma de l'ESP32-CAM</a>
 
 .. |link_cam_ov2640| raw:: html
 
@@ -151,20 +130,20 @@ rst_epilog += """
 
 .. |link_qmc6310_datasheet| raw:: html
 
-    <a href="https://www.qstcorp.com/upload/pdf/202202/%EF%BC%88%E5%B7%B2%E4%BC%A0%EF%BC%8913-52-17%20QMC6310%20Datasheet%20Rev.C(1).pdf" target="_blank">QMC6310 Datasheet</a>
+    <a href="https://www.qstcorp.com/upload/pdf/202202/%EF%BC%88%E5%B7%B2%E4%BC%A0%EF%BC%8913-52-17%20QMC6310%20Datasheet%20Rev.C(1).pdf" target="_blank">Fiche technique QMC6310</a>
 
 
 .. |link_download_arduino| raw:: html
 
-    <a href="https://www.arduino.cc/en/software#future-version-of-the-arduino-ide" target="_blank">Arduino IDE 2.0.0 Page</a>
+    <a href="https://www.arduino.cc/en/software#future-version-of-the-arduino-ide" target="_blank">Page Arduino IDE 2.0.0</a>
 
 .. |link_arduino_linux| raw:: html
 
-    <a href="https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing#linux" target="_blank">Install Arduino IDE on Linux</a>
+    <a href="https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing#linux" target="_blank">Installer Arduino IDE sur Linux</a>
 
 .. |link_arduino_web| raw:: html
 
-    <a href="https://www.arduino.cc/reference/en/" target="_blank">Arduino Site officiel</a>
+    <a href="https://www.arduino.cc/reference/en/" target="_blank">Site officiel Arduino</a>
 
 .. |link_sunfounder_controller| raw:: html
 
@@ -172,19 +151,19 @@ rst_epilog += """
 
 .. |link_sc_widgets| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/sf-controller/en/latest/widgets_list.html" target="_blank">Widgets List</a>
+    <a href="https://docs.sunfounder.com/projects/sf-controller/en/latest/widgets_list.html" target="_blank">Liste des widgets</a>
 
 .. |link_sc_page| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/sf-controller/en/latest/page_introduction.html" target="_blank">Introduction de la page</a>
+    <a href="https://docs.sunfounder.com/projects/sf-controller/en/latest/page_introduction.html" target="_blank">Introduction à la page</a>
 
 .. |link_ai_camera_library_api| raw:: html
 
-    <a href="https://github.com/sunfounder/SunFounder_AI_Camera/blob/main/README.md" target="_blank">Widgets Usage</a>
+    <a href="https://github.com/sunfounder/SunFounder_AI_Camera/blob/main/README.md" target="_blank">Utilisation des widgets</a>
 
 .. |link_widgets_list| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/sf-controller/en/latest/widgets_list.html" target="_blank">Widgets List</a>
+    <a href="https://docs.sunfounder.com/projects/sf-controller/en/latest/widgets_list.html" target="_blank">Liste des widgets</a>
 
 .. |link_ai_camera_firmware| raw:: html
 
@@ -197,5 +176,13 @@ rst_epilog += """
 .. |link_Mars_Rover_Kit| raw:: html
 
     <a href="https://www.sunfounder.com/products/sunfounder-galaxyrvr-mars-rover-kit?_pos=1&_sid=c7193042f&_ss=r" target="_blank">GalaxyRVR</a>
+
+.. |link_github_galaxyrvr| raw:: html
+
+    <a href="https://github.com/sunfounder/galaxy-rvr/tree/1.2.x" target="_blank">SunFounder GalaxyRVR Kit pour Arduino - GitHub</a>
+
+.. |download_galaxyrvr_code| replace:: :download:`Fichier Code GalaxyRVR <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
+
+.. |download_galaxyrvr_filmware| replace:: :download:`Fichier Firmware GalaxyRVR <https://github.com/sunfounder/galaxy-rvr/releases/download/2.0.0/galaxy-rvr.ino.2.0.0.zip>`
 
 """
