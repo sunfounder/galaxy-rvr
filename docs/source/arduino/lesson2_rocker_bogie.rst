@@ -71,7 +71,7 @@
 
 .. raw:: html
 
-    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114358436763399&bvid=BV1Ha5jziEfp&cid=29482159543&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    <iframe width="600" height="400" src="https://player.bilibili.com/player.html?isOutside=true&aid=114358436763399&bvid=BV1Ha5jziEfp&cid=29482159543&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 
 请注意，耐心和精确度在这里至关重要，确保正确放置每个部件并将其牢固固定。

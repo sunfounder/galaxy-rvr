@@ -15,9 +15,10 @@
 .. note::
    如果您不想更新固件并希望继续使用当前配置，可以参考 `GalaxyRVR v1 文档 <https://docs.sunfounder.com/projects/galaxy-rvr/en/v1/index.html>`_ 。
 
+
 .. raw:: html
 
-   <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=116729342663499&bvid=BV11REY6JEFs&cid=39027148026&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+  <iframe width="600" height="400" src="https://player.bilibili.com/player.html?isOutside=true&aid=116729342663499&bvid=BV11REY6JEFs&cid=39027148026&p=1" scrolling="no" border="0" frameborder="0" framespacing="0" allowfullscreen="true"></iframe>
 
 
 1. 检查是否需要更新

@@ -126,7 +126,7 @@
 
 .. raw:: html
 
-    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114358420051073&bvid=BV1yt5jzuEnm&cid=29482223729&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    <iframe width="600" height="400" src="https://player.bilibili.com/player.html?isOutside=true&aid=114358420051073&bvid=BV1yt5jzuEnm&cid=29482223729&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 **步骤5：理解倾斜机构的限制**
 

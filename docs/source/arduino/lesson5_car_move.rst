@@ -50,7 +50,7 @@
 
 .. raw:: html
 
-    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114358419986408&bvid=BV1st5jzuENx&cid=29482222340&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    <iframe width="600" height="400" src="https://player.bilibili.com/player.html?isOutside=true&aid=114358419986408&bvid=BV1st5jzuENx&cid=29482222340&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 恭喜！我们成功建造了我们自己的火星车，它已经准备好开始探索了。让我们动起来吧！
 
