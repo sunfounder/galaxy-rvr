@@ -1,3 +1,7 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
 
 Lektion 2: Erste Schritte mit der Mammoth Coding-App
 ===============================================================

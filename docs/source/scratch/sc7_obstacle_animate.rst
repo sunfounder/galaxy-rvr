@@ -1,3 +1,7 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
 
 Lektion 7: Eine IR-Hindernis-Animation erstellen
 ========================================================
