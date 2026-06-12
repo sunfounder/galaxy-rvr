@@ -1,42 +1,42 @@
 .. note::
 
-    Ciao, benvenuto nella community SunFounder per appassionati di Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci la tua conoscenza di Raspberry Pi, Arduino e ESP32 con altri appassionati.
+    Benvenuto/a nella community degli appassionati di Raspberry Pi, Arduino ed ESP32 di SunFounder su Facebook! Approfondisca le sue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
     **Perché unirsi?**
 
-    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
-    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
-    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime.
-    - **Sconti speciali**: Goditi sconti esclusivi sui nostri prodotti più recenti.
-    - **Promozioni festive e omaggi**: Partecipa a omaggi e promozioni festive.
+    - **Supporto esperto**: Risolva problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impari e condivida**: Scambi suggerimenti e tutorial per migliorare le sue competenze.
+    - **Anteprime esclusive**: Acceda in anteprima ai nuovi annunci di prodotti e alle anteprime.
+    - **Sconti speciali**: Goda di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipi a giveaway e promozioni festive.
 
-    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi!
+    👉 Pronto a esplorare e creare con noi? Clicchi su |link_sf_facebook| e si unisca oggi stesso!
 
 .. _quick_start:
 
 Gioco Rapido
 ===================
 
-Questo capitolo ti aiuta a iniziare rapidamente a utilizzare il tuo GalaxyRVR.
-Puoi controllarlo con l'App RoboPilot o eseguire i codici di esempio già pronti nell'IDE Arduino o in Mammoth Coding, senza bisogno di programmare.
+Questo capitolo La aiuta a iniziare rapidamente a utilizzare il suo GalaxyRVR.
+Può controllarlo con l'app RoboPilot o eseguire i codici di esempio già pronti in Arduino IDE o Mammoth Coding, senza bisogno di scrivere codice.
 
 GalaxyRVR supporta tre metodi di controllo:
 
-- **App RoboPilot**: Guida e controlla il GalaxyRVR dal tuo dispositivo mobile.
-- **Arduino IDE**: Apri e carica i codici di esempio per controllare il rover.
-- **Mammoth Coding**: Utilizza blocchi drag-and-drop per caricare ed eseguire progetti di esempio.
+- **App RoboPilot**: Guidare e controllare il GalaxyRVR dal suo dispositivo mobile.
+- **Arduino IDE**: Aprire e caricare codici di esempio per controllare il rover.
+- **Mammoth Coding**: Utilizzare blocchi drag-and-drop per caricare ed eseguire progetti di esempio.
 
-Puoi scegliere uno qualsiasi dei metodi sopra per iniziare a controllare il tuo GalaxyRVR.
+Può scegliere uno qualsiasi dei metodi sopra indicati per iniziare a controllare il suo GalaxyRVR.
 
 ----
 
-**Scarica il codice**
+**Scaricare il codice**
 
-Scarica i codici di esempio dal link qui sotto:
+Scarichi i codici di esempio dal link seguente:
 
     * |download_galaxyrvr_code|
 
-Oppure esplorali su |link_github_galaxyrvr|.
+Oppure li esplori su |link_github_galaxyrvr|.
 
 ----
 
