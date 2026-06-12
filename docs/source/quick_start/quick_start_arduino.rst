@@ -1,16 +1,6 @@
-.. note::
-
-    Benvenuto/a nella community degli appassionati di Raspberry Pi, Arduino ed ESP32 di SunFounder su Facebook! Approfondisca le sue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
-
-    **Perché unirsi?**
-
-    - **Supporto esperto**: Risolva problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
-    - **Impari e condivida**: Scambi suggerimenti e tutorial per migliorare le sue competenze.
-    - **Anteprime esclusive**: Acceda in anteprima ai nuovi annunci di prodotti e alle anteprime.
-    - **Sconti speciali**: Goda di sconti esclusivi sui nostri prodotti più recenti.
-    - **Promozioni festive e omaggi**: Partecipi a giveaway e promozioni festive.
-
-    👉 Pronto a esplorare e creare con noi? Clicchi su |link_sf_facebook| e si unisca oggi stesso!
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
 Gioco Rapido con Arduino
 ===============================

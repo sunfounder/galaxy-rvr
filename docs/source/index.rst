@@ -1,3 +1,5 @@
+.. start_hello_message
+
 .. note::
 
     Ciao, benvenuto nella community SunFounder per appassionati di Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci la tua conoscenza di Raspberry Pi, Arduino e ESP32 con altri appassionati.
@@ -11,6 +13,8 @@
     - **Promozioni festive e omaggi**: Partecipa a omaggi e promozioni festive.
 
     👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi!
+
+.. end_hello_message
 
 |link_Mars_Rover_Kit| - Kit Mars Rover SunFounder
 ====================================================
