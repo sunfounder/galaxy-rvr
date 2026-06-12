@@ -12,7 +12,13 @@
       "PowerShell($path = \"F:\\\\Basic Kits\\\\Arduino Robots\\\\GalaxyRVR\\\\galaxy-rvr - Copy\\\\docs\\\\source\\\\hardware\\\\cpn_camera_adapter.rst\"; $bytes = [System.IO.File]::ReadAllBytes\\($path\\); $text = [System.Text.Encoding]::UTF8.GetString\\($bytes\\); $sw = New-Object System.IO.StringWriter; # Check for words missing accents $una = @\\(\"estan\",\"tambien\",\"despues\",\"solo\",\"como\",\"que\",\"donde\",\"cuando\",\"mas\",\"energia\",\"generacion\",\"señal\",\"señales\"\\); foreach \\($p in $una\\) { $found = $text.IndexOf\\($p, [System.StringComparison]::Ordinal\\); $sw.WriteLine\\(\"'{0}': {1}\", $p, \\($found -ge 0\\)\\); } Write-Host $sw.ToString\\(\\);)",
       "PowerShell($path = \"F:\\\\Basic Kits\\\\Arduino Robots\\\\GalaxyRVR\\\\galaxy-rvr - Copy\\\\docs\\\\source\\\\hardware\\\\cpn_camera_adapter.rst\"; $text = [System.IO.File]::ReadAllText\\($path, [System.Text.Encoding]::UTF8\\); Write-Host $text.Length;)",
       "Bash(cd \"/mnt/f/Basic Kits/Arduino Robots/GalaxyRVR/galaxy-rvr - Copy\" && grep -n \"cion\" docs/source/hardware/cpn_camera_adapter.rst || echo \"no cion matches\")",
-      "Read(//mnt/f/Basic Kits/Arduino Robots/GalaxyRVR/**)"
+      "Read(//mnt/f/Basic Kits/Arduino Robots/GalaxyRVR/**)",
+      "Bash(grep -rn \"https:https://\\\\|://player.bilibili.com\\\\|width.*height.*bilibili\\\\|height.*width.*bilibili\" . --include=\"*.rst\")",
+      "Bash(cp \"galaxy-rvr - Copy/docs/source/img/esp32cam_io1315.png\" galaxy-rvr/docs/source/img/)",
+      "Bash(cp \"galaxy-rvr - Copy/docs/source/img/esp32cam_led.png\" galaxy-rvr/docs/source/img/)",
+      "Bash(cp \"galaxy-rvr - Copy/docs/source/img/firmware_access_ab.png\" galaxy-rvr/docs/source/img/)",
+      "Bash(cp \"galaxy-rvr - Copy/docs/source/img/firmware_bin_file.png\" galaxy-rvr/docs/source/img/)",
+      "Bash(cp \"galaxy-rvr - Copy/docs/source/img/faq_bat_file.png\" galaxy-rvr/docs/source/img/)"
     ]
   }
 }

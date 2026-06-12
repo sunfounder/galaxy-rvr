@@ -27,51 +27,75 @@ For step-by-step update instructions, see :ref:`update_firmware`.
 If you cannot connect to the GalaxyRVR, please check the following:
 
 1. **Check the battery**: Look at the battery indicators on the rover. If both LEDs are off, the battery is low. Charge the rover using a Type-C USB cable.
-2. **Check the mode switch**: Make sure the mode switch is set to **Run** (not **Upload**). The WiFi hotspot only works in Run mode.
+2. **Check the ESP32 CAM**: Ensure the ESP32 CAM is properly seated in its slot. If the ESP32 CAM LED is not lit, the camera module may not be receiving power or could be damaged. The ESP32 CAM creates the WiFi hotspot — if it's not working, no network will appear.
+3. **Check the mode switch**: Make sure the mode switch is set to **Run** (not **Upload**). The WiFi hotspot only works in Run mode.
 
    .. image:: img/camera_run.png
         :width: 500
         :align: center
 
-3. **Reset the R3 board**: After switching to Run mode, press the **Reset** button on the R3 board. The bottom light strip should flash to indicate a successful startup.
-4. **Check the WiFi password**: The default hotspot name (SSID) is ``GalaxyRVR`` and the password is ``12345678``. Make sure you entered the password correctly.
-5. **Check the ESP32 CAM**: Ensure the ESP32 CAM is properly seated in its slot. If the ESP32 CAM LED is not lit, the camera module may not be receiving power or could be damaged.
+4. **Reset the R3 board**: After switching to Run mode, press the **Reset** button on the R3 board. The bottom light strip should flash to indicate a successful startup.
+5. **Check the WiFi password**: The default hotspot name (SSID) is ``GalaxyRVR`` and the password is ``12345678``. Make sure you entered the password correctly.
 6. **WiFi interference**: Other devices on the same WiFi channel may cause connection issues. If you suspect interference, try :ref:`changing the WiFi channel <change_wifi_channel>`.
 7. **After firmware update**: If you just updated the ESP32 CAM firmware and WiFi stopped working, see :ref:`faq_wifi_after_update`.
 8. **Verify your mobile device's connection**: If you are using GalaxyRVR in AP mode (default), connect your mobile device to the GalaxyRVR hotspot. If you have :ref:`configured a home Wi-Fi network <ap_to_sta>`, ensure your mobile device is connected to the **same** home Wi-Fi network.
 
 
-3. RoboPilot App Can't Connect?
+3. The Bottom Light Is Solid Orange and No WiFi Hotspot Appears?
+----------------------------------------------------------------------------------------------
+
+If the GalaxyRVR's bottom light strip shows a **solid orange light** and the ``GalaxyRVR`` WiFi network does not appear, the cause is a **firmware version mismatch**:
+
+- The **ESP32 CAM** firmware is still an older version (1.4.x or 1.3.x)
+- The **UNO R3 board** firmware has been updated to version 2.x
+- The version mismatch prevents communication between the ESP32 CAM and the UNO R3
+
+To resolve this, follow these steps **in the exact order**:
+
+#. **Roll back the UNO R3 firmware to version 1.x first**:
+
+   Follow the guide in the v1 documentation: `GalaxyRVR v1 — How to Upload the galaxy-rvr.ino Code <https://docs.sunfounder.com/projects/galaxy-rvr/en/v1/faq.html#how-to-upload-the-galaxy-rvr-ino-code>`_
+
+#. **Update both firmware following the ESP32 CAM → UNO R3 order**:
+
+   Follow the updated guide: :ref:`update_firmware`
+
+.. note::
+
+   The order matters — always update the ESP32 CAM first, then the R3 board. Skipping the rollback step or changing the order will not fix the issue.
+
+
+
+4. RoboPilot App Can't Connect?
 ---------------------------------------------------------------------------------------
 
 If the RoboPilot app cannot find or connect to your GalaxyRVR, check the following:
 
-1. **Is the R3 firmware up to date?** The R3 board must have the factory communication firmware installed. If you have uploaded custom Arduino code, it will overwrite this firmware and break RoboPilot communication. Follow :ref:`update_r3_firmware` to restore it.
-2. **Is the ESP32 CAM firmware up to date?** An outdated ESP32 CAM firmware may cause connection issues. Follow :ref:`update_esp32_firmware` to check and update.
+1. **Is the ESP32 CAM firmware up to date?** An outdated ESP32 CAM firmware may cause connection issues. Follow :ref:`update_esp32_firmware` to check and update.
+2. **Is the R3 firmware up to date?** The R3 board must have the factory communication firmware installed. If you have uploaded custom Arduino code, it will overwrite this firmware and break RoboPilot communication. Follow :ref:`update_r3_firmware` to restore it.
 3. **Is the mode switch on Run?** The mode switch must be set to **Run** (not Upload) for the WiFi hotspot to work.
 4. **Is your mobile device on the correct WiFi network?** Connect to the GalaxyRVR hotspot (``GalaxyRVR`` / ``12345678``), or if you configured a home WiFi, connect to that same network.
 5. **Try resetting**: Switch to **Run** mode and press the **Reset** button, then try connecting again.
 
-If none of the above helps, try :ref:`clearing the ESP32 CAM configuration <faq_wifi_after_update>`.
+If none of the above helps, try :ref:`faq_wifi_after_update`.
 
 
-4. Mammoth Coding (Scratch) App Can't Connect?
+5. Mammoth Coding (Scratch) App Can't Connect?
 ---------------------------------------------------------------------------------------
 
 If Mammoth Coding cannot connect to your GalaxyRVR, check the following:
 
-1. **Is the R3 firmware up to date?** Mammoth Coding requires the factory communication firmware on the R3 board. If you have uploaded your own Arduino code, the communication firmware is overwritten. Follow :ref:`update_r3_firmware` to restore it.
-2. **Is the ESP32 CAM firmware up to date?** The ESP32 CAM handles the WiFi connection that Mammoth Coding relies on. Follow :ref:`update_esp32_firmware` to ensure it is up to date.
+1. **Is the ESP32 CAM firmware up to date?** The ESP32 CAM handles the WiFi connection that Mammoth Coding relies on. Follow :ref:`update_esp32_firmware` to ensure it is up to date.
+2. **Is the R3 firmware up to date?** Mammoth Coding requires the factory communication firmware on the R3 board. If you have uploaded your own Arduino code, the communication firmware is overwritten. Follow :ref:`update_r3_firmware` to restore it.
 3. **Is the mode switch on Run?** The mode switch must be set to **Run** for the WiFi hotspot to be active.
 4. **Is your mobile device on the correct WiFi network?** Make sure your device is connected to the GalaxyRVR hotspot or the same home WiFi network configured on the rover.
-5. **After uploading Arduino code**: Remember that uploading any Arduino sketch to the R3 board will overwrite the communication firmware. You will need to :ref:`restore the R3 firmware <update_r3_firmware>` before Mammoth Coding can connect again.
 
 .. note::
    If you want to use **both** Arduino programming and Mammoth Coding, keep in mind that you need to re-upload the R3 firmware each time you switch between them.
 
 .. _install_lib:
 
-5. Compilation error: ``SoftPWM.h`` or ``SunFounder_AI_Camera.h``: No such file or directory？
+6. Compilation error: ``SoftPWM.h`` or ``SunFounder_AI_Camera.h``: No such file or directory？
 -------------------------------------------------------------------------------------------------
 If you get a "Compilation error: ``SoftPWM.h``: No such file or directory" prompt, it means you don't have the SoftPWM library installed.
 
@@ -88,7 +112,7 @@ For the ``SunFounder AI Camera`` library, you need to select "INSTALL ALL" to si
 
     .. image:: img/faq_install_ai_camera.png
 
-6. avrdude: stk500_getsync() attempt 10 of 10: not in sync: resp=0x6e?
+7. avrdude: stk500_getsync() attempt 10 of 10: not in sync: resp=0x6e?
 -----------------------------------------------------------------------------
 If the following message keeps appearing after clicking the **Upload** button when the board and port have been selected correctly.
 
@@ -117,7 +141,7 @@ After the code is successfully uploaded, if you need to use the ESP32 CAM, then 
 
 .. _change_wifi_channel:
 
-7. How to Change Wi-Fi Channel?
+8. How to Change Wi-Fi Channel?
 ----------------------------------
 
 The 2.4GHz Wi-Fi band has channels ranging from 1 to 13. ESP32 supports channels 1 to 11. Other devices operating on the same channel may cause interference, leading to connection issues. To mitigate this, you can try changing the channel. By default, the channel is set to 1. When selecting a new channel, it's recommended to skip 1-2 channels at a time. For example, if the current channel is 1, try channel 3 first, and if the signal is still poor, proceed to channel 5.
@@ -159,14 +183,14 @@ The 2.4GHz Wi-Fi band has channels ranging from 1 to 13. ESP32 supports channels
         :width: 50%
         :align: center
 
-8. How to Update Firmware for ESP32 CAM
+9. How to Update Firmware for ESP32 CAM
 -----------------------------------------
 
 To ensure app compatibility and optimal performance, please make sure your ESP32 CAM firmware is up to date.
 
 For detailed step-by-step instructions, please refer to: :ref:`update_esp32_firmware`
 
-9. How to Restore the R3 Firmware
+10. How to Restore the R3 Firmware
 -----------------------------------------
 
 The GalaxyRVR's R3 board comes with firmware that supports both the RoboPilot App and Mammoth Coding.
@@ -175,7 +199,7 @@ If you have overwritten this firmware and need to restore communication, follow 
 
 .. _ap_to_sta:
 
-10. How to Set Up Wi-Fi Connection
+11. How to Set Up Wi-Fi Connection
 -----------------------------------------------------
 
 By default, GalaxyRVR operates in **AP mode**, where it creates its own Wi-Fi hotspot that other devices can connect to.
@@ -222,7 +246,7 @@ If you want GalaxyRVR to connect to your **home Wi-Fi network**, follow the step
 
 .. _faq_wifi_after_update:
 
-11. How to Restore ESP32 CAM to Factory Settings?
+12. How to Restore ESP32 CAM to Factory Settings?
 ---------------------------------------------------------------------------------------
 
 If the GalaxyRVR's WiFi hotspot does not appear or you cannot connect after updating the ESP32 CAM firmware, the old WiFi configuration data stored in the ESP32 CAM's flash memory may be causing a conflict.
