@@ -98,6 +98,26 @@ RST 的 `**粗体**` 语法要求开始 `**` 前和结束 `**` 后必须是 ASCI
 | Ultrasonic | 超声波 |
 | Upload | 上传 |
 
+## Bilibili 视频嵌入格式
+
+Bilibili 视频必须使用以下格式嵌入，否则会出现视频太小或无法播放的问题：
+
+```rst
+.. raw:: html
+
+   <iframe width="600" height="400" src="https://player.bilibili.com/player.html?isOutside=true&aid=XXXXX&bvid=XXXXX&cid=XXXXX&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+```
+
+**关键规则：**
+- `width="600" height="400"` — 固定尺寸，否则视频显示过小
+- `https://player.bilibili.com/` — 必须使用 `https://`，不能用 `//`（协议相对）或 `http://`
+- `scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"` — 固定属性，缺一不可
+
+**常见错误：**
+- `src="//player.bilibili.com/..."` — 协议相对 URL 会导致视频无法加载
+- `width="700" height="394"` — 尺寸不统一，统一使用 600x400
+- 缺少 `allowfullscreen="true"` — 全屏按钮不可用
+
 ## 目录结构
 
 与英文 `docs` 完全一致，详见英文版的 CLAUDE.md。
