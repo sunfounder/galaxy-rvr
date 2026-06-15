@@ -1,3 +1,7 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
 Lección 2: Explora el Sistema Rocker-Bogie
 ============================================================
 En nuestra lección anterior, aprendimos sobre los rovers de Marte y su estructura básica. Un aspecto interesante que notamos

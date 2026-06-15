@@ -1,3 +1,7 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
 Lección 3: Entrando en el Mundo de Arduino y la Programación
 =============================================================
 

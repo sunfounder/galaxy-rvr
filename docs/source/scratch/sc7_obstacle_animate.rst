@@ -1,3 +1,7 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
 Lección 7: Crear una Animación de Obstáculos con IR
 =====================================================
 
