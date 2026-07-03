@@ -21,6 +21,5 @@ In this chapter you will find a description of each module's function, technical
     cpn_servo
     cpn_tt_motor_xh
     cpn_solar_panel
-    cpn_18650_battery
 
 ..  cpn_camera_adapter
