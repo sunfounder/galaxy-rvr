@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 7: Create an IR Obstacle Animation &mdash; SunFounder GalaxyRVR Kit for Arduino 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+        <script src="../_static/./lang.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lesson 8 Advanced Obstacle Avoidance" href="sc8_avoid.html" />
+    <link rel="prev" title="Lesson 6 IR Obstacle" href="sc6_obstacle.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder GalaxyRVR Kit for Arduino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">About this Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemble_video.html">Assemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../update_firmware.html">Update Firmwares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arduino/programming_arduino.html">Programming with Arduino IDE</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="scratch.html">Programming with Scratch</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sc1_history.html">Lesson 1 Unveiling the Mars Rover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc2_app.html">Lesson 2 Getting Started with the Mammoth Coding App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc3_rvr_move.html">Lesson 3: Remote Control Your GalaxyRVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc4_ultrasonic.html">Lesson 4: Ultrasonic Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc5_animate.html">Lesson 5 Interactive Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc6_obstacle.html">Lesson 6 IR Obstacle</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 7: Create an IR Obstacle Animation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-the-animation-scene">Creating the Animation Scene</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#programming-the-galaxyrvr-sprite">Programming the GalaxyRVR Sprite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#programming-the-rock-sprite">Programming the Rock Sprite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mission-launch">Mission Launch!</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sc8_avoid.html">Lesson 8 Advanced Obstacle Avoidance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc9_follow.html">Lesson 9: Mars Exploration Partner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc10_rgb.html">Lesson 10: Lighting the Way with RGB LED Strips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc11_servo.html">Lesson 11: Control Your Rover’s Camera Tilt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc12_camera.html">Lesson 12: See Through Your Rover’s Eyes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc13_all.html">Lesson 13: Complete Mars Rover Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_balloon.html">Fun1 Inflating the Balloon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_flappy_parrot.html">Fun2 Flappy Parrot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_shooting.html">Fun3 Shooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_eat_apple.html">Fun4 Eat Apple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_fish.html">Fun5 Fishing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_sensitive_ball.html">Fun6 Distance Sensitive Ball</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_tap_tile.html">Fun7 Tap on The Black Tile</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder GalaxyRVR Kit for Arduino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="scratch.html">Programming with Scratch</a></li>
+      <li class="breadcrumb-item active">Lesson 7: Create an IR Obstacle Animation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/scratch/sc7_obstacle_animate.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="lesson-7-create-an-ir-obstacle-animation">
+<h1>Lesson 7: Create an IR Obstacle Animation<a class="headerlink" href="#lesson-7-create-an-ir-obstacle-animation" title="Permalink to this heading"></a></h1>
+<p>In our previous missions, we used the Infrared Obstacle Avoidance Module to help our GalaxyRVR automatically steer clear of obstacles - just like a real Mars rover navigating the Red Planet!</p>
+<p>Now, let’s take this to the next level by combining the physical IR sensors with a virtual Martian landscape. We’ll create an exciting animation game where you control a rover sprite by triggering the real IR sensors with your hands!</p>
+<video width="600" loop autoplay muted>
+   <source src="../_static/video/sc_animate_rock.mp4" type="video/mp4">
+   Your browser does not support the video tag.
+</video><section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Discover how the Infrared Obstacle Avoidance Module brings your Mars rover to life</p></li>
+<li><p>Learn to use IR sensor data to control characters in your Scratch animations</p></li>
+<li><p>Build your own Mars exploration game where you dodge rocks using real sensors</p></li>
+</ul>
+</section>
+<section id="creating-the-animation-scene">
+<h2>Creating the Animation Scene<a class="headerlink" href="#creating-the-animation-scene" title="Permalink to this heading"></a></h2>
+<ol class="arabic">
+<li><p>First, <a class="reference internal" href="sc3_rvr_move.html#app-connect"><span class="std std-ref">Connecting the APP to GalaxyRVR</span></a>.</p></li>
+<li><p>Setting up the Mars-themed background</p>
+<ul>
+<li><p>First, we need a Mars-themed stage background. Click to select a backdrop.</p>
+<img alt="../_images/5_animate_choose.png" src="../_images/5_animate_choose.png" />
+</li>
+<li><p>Choose the <strong>Mars</strong> background.</p>
+<img alt="../_images/5_animate_mars.png" src="../_images/5_animate_mars.png" />
+</li>
+</ul>
+</li>
+<li><p>Adding the rover character</p>
+<p>Choose the <strong>GalaxyRVR</strong> sprite from the library and resize it to fit your scene appropriately.</p>
+<img alt="../_images/5_animate_rvr.png" src="../_images/5_animate_rvr.png" />
+</li>
+<li><p>Adding obstacles</p>
+<p>Select a <strong>Rocks</strong> sprite from the library and adjust its size.</p>
+<img alt="../_images/5_animate_rock.png" src="../_images/5_animate_rock.png" />
+</li>
+</ol>
+</section>
+<section id="programming-the-galaxyrvr-sprite">
+<h2>Programming the GalaxyRVR Sprite<a class="headerlink" href="#programming-the-galaxyrvr-sprite" title="Permalink to this heading"></a></h2>
+<p>Program your GalaxyRVR sprite to travel across the screen from left to right. Your mission: guide it safely past the rocks!
+Use your hands to trigger the physical rover’s IR sensors - right sensor moves the sprite down, left sensor moves it up.</p>
+<ol class="arabic">
+<li><p>Set the starting position by moving the sprite to the left edge of the stage. The motion blocks will automatically update with the correct coordinates.</p>
+<img alt="../_images/5_animate_glide.png" src="../_images/5_animate_glide.png" />
+</li>
+<li><p>Add a forever block to create the main program loop that runs continuously.</p>
+<img alt="../_images/5_animate_forever.png" src="../_images/5_animate_forever.png" />
+</li>
+<li><p>Include a conditional block to check if the rover is touching a rock obstacle.</p>
+<img alt="../_images/5_animate_touching.png" src="../_images/5_animate_touching.png" />
+</li>
+<li><p>If no rock is detected, keep moving forward toward the right side.</p>
+<img alt="../_images/5_animate_moving.png" src="../_images/5_animate_moving.png" />
+</li>
+<li><p>If the rover hits a rock, stop all movement and display a warning message.</p>
+<img alt="../_images/5_animate_say.png" src="../_images/5_animate_say.png" />
+</li>
+<li><p>Add sensor controls: create events for both IR sensors that move the sprite up (left sensor) or down (right sensor) when triggered by your hand.</p>
+<img alt="../_images/5_animate_y.png" src="../_images/5_animate_y.png" />
+</li>
+</ol>
+</section>
+<section id="programming-the-rock-sprite">
+<h2>Programming the Rock Sprite<a class="headerlink" href="#programming-the-rock-sprite" title="Permalink to this heading"></a></h2>
+<p>Let’s create multiple rock obstacles to make the game more challenging! We’ll use cloning to generate rocks at random positions on the stage.</p>
+<ol class="arabic">
+<li><p>Create rock clones using the “create clone of myself” block.</p>
+<img alt="../_images/5_animate_clone.png" src="../_images/5_animate_clone.png" />
+</li>
+<li><p>Make each clone appear at a random location by adding the “go to random position” block.</p>
+<a class="reference internal image-reference" href="../_images/5_animate_clone_move.png"><img alt="../_images/5_animate_clone_move.png" src="../_images/5_animate_clone_move.png" style="width: 200px;" /></a>
+</li>
+<li><p>Generate ten rocks by repeating the clone creation ten times.</p>
+<a class="reference internal image-reference" href="../_images/5_animate_clone_10.png"><img alt="../_images/5_animate_clone_10.png" src="../_images/5_animate_clone_10.png" style="width: 200px;" /></a>
+</li>
+<li><p>Set all this action to start when the green flag is clicked.</p>
+<a class="reference internal image-reference" href="../_images/5_animate_clone_flag.png"><img alt="../_images/5_animate_clone_flag.png" src="../_images/5_animate_clone_flag.png" style="width: 200px;" /></a>
+</li>
+</ol>
+</section>
+<section id="mission-launch">
+<h2>Mission Launch!<a class="headerlink" href="#mission-launch" title="Permalink to this heading"></a></h2>
+<p>Congratulations! Your Mars obstacle avoidance game is ready for launch.</p>
+<p>Connect your GalaxyRVR to the APP and click the green flag to begin your mission. Watch as rocks randomly appear across the Martian landscape.</p>
+<p>Your challenge: Use your hands to trigger the IR sensors and carefully guide the GalaxyRVR sprite across the screen. Move it up and down to avoid the rocks and reach the right side safely!</p>
+<p>Can you complete the mission without any collisions? How quickly can you navigate the obstacle course? Keep practicing to become a master Mars rover pilot!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sc6_obstacle.html" class="btn btn-neutral float-left" title="Lesson 6 IR Obstacle" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sc8_avoid.html" class="btn btn-neutral float-right" title="Lesson 8 Advanced Obstacle Avoidance" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

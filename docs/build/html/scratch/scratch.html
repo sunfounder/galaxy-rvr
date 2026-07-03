@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programming with Scratch &mdash; SunFounder GalaxyRVR Kit for Arduino 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+        <script src="../_static/./lang.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lesson 1 Unveiling the Mars Rover" href="sc1_history.html" />
+    <link rel="prev" title="Lesson 12: Investigating the Mars Rover Energy System" href="../arduino/lesson12_solar_panel.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder GalaxyRVR Kit for Arduino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">About this Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemble_video.html">Assemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../update_firmware.html">Update Firmwares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arduino/programming_arduino.html">Programming with Arduino IDE</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Programming with Scratch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sc1_history.html">Lesson 1 Unveiling the Mars Rover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc2_app.html">Lesson 2 Getting Started with the Mammoth Coding App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc3_rvr_move.html">Lesson 3: Remote Control Your GalaxyRVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc4_ultrasonic.html">Lesson 4: Ultrasonic Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc5_animate.html">Lesson 5 Interactive Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc6_obstacle.html">Lesson 6 IR Obstacle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc7_obstacle_animate.html">Lesson 7: Create an IR Obstacle Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc8_avoid.html">Lesson 8 Advanced Obstacle Avoidance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc9_follow.html">Lesson 9: Mars Exploration Partner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc10_rgb.html">Lesson 10: Lighting the Way with RGB LED Strips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc11_servo.html">Lesson 11: Control Your Rover’s Camera Tilt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc12_camera.html">Lesson 12: See Through Your Rover’s Eyes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc13_all.html">Lesson 13: Complete Mars Rover Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_balloon.html">Fun1 Inflating the Balloon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_flappy_parrot.html">Fun2 Flappy Parrot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_shooting.html">Fun3 Shooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_eat_apple.html">Fun4 Eat Apple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_fish.html">Fun5 Fishing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_sensitive_ball.html">Fun6 Distance Sensitive Ball</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_tap_tile.html">Fun7 Tap on The Black Tile</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder GalaxyRVR Kit for Arduino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Programming with Scratch</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/scratch/scratch.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="programming-with-scratch">
+<span id="programming-scratch"></span><h1>Programming with Scratch<a class="headerlink" href="#programming-with-scratch" title="Permalink to this heading"></a></h1>
+<p>In addition to programming on the Arduino IDE, we can also use graphical programming.</p>
+<p>We recommend using Scratch for programming.
+However, the official Scratch currently only supports Raspberry Pi. To address this, we have developed Mammoth Coding,
+a graphical programming software based on Scratch 3, specifically for Arduino boards (Uno, Mega2560, and Nano).</p>
+<p>Mammoth Coding retains the basic functionalities of Scratch 3 while adding the capability to control various boards such as Arduino Uno,
+Mega, Nano custom boards. It allows you to use external sensors and robots to control the sprites on stage, providing robust hardware interaction capabilities.</p>
+<p>Moreover, this app is easy to use even if you don’t have much programming experience. You can learn and utilize these cutting-edge technologies with ease.</p>
+<p>Simply drag and drop Scratch coding blocks to create exciting games, animations, interactive projects, and even control robots exactly as you envision!</p>
+<p>Let’s embark on this journey of exploration now!</p>
+<p><strong>Download the Code</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<blockquote>
+<div><p>All the Scratch scripts for the projects below have been uploaded to GitHub. You can download them via the link provided. All <code class="docutils literal notranslate"><span class="pre">.sb3</span></code> script files are located in the folder <code class="docutils literal notranslate"><span class="pre">galaxy-rvr-main/scratch_codes/</span></code>.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><a class="reference download external" download="" href="https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/1.2.x.zip"><code class="xref download docutils literal notranslate"><span class="pre">GalaxyRVR</span> <span class="pre">Code</span> <span class="pre">File</span></code></a></p></li>
+</ul>
+</div>
+<p>Or check out the code at <a class="reference external" href="https://github.com/sunfounder/galaxy-rvr/tree/1.2">SunFounder GalaxyRVR Kit for Arduino - GitHub</a>.</p>
+<p><strong>Basic Projects</strong></p>
+<p>These projects are the basic courses for controlling the GalaxyRVR with Mammoth Coding. They will guide you step by step on how to utilize GalaxyRVR.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sc1_history.html">Lesson 1 Unveiling the Mars Rover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sc2_app.html">Lesson 2 Getting Started with the Mammoth Coding App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sc3_rvr_move.html">Lesson 3: Remote Control Your GalaxyRVR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sc4_ultrasonic.html">Lesson 4: Ultrasonic Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sc5_animate.html">Lesson 5 Interactive Animation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sc6_obstacle.html">Lesson 6 IR Obstacle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sc7_obstacle_animate.html">Lesson 7: Create an IR Obstacle Animation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sc8_avoid.html">Lesson 8 Advanced Obstacle Avoidance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sc9_follow.html">Lesson 9: Mars Exploration Partner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sc10_rgb.html">Lesson 10: Lighting the Way with RGB LED Strips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sc11_servo.html">Lesson 11: Control Your Rover’s Camera Tilt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sc12_camera.html">Lesson 12: See Through Your Rover’s Eyes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sc13_all.html">Lesson 13: Complete Mars Rover Control</a></li>
+</ul>
+</div>
+<p><strong>Fun Projects</strong></p>
+<p>Here are some fun projects that don’t require the Galaxy RVR, but you can implement them here.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fun/sc_fun_balloon.html">Fun1 Inflating the Balloon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fun/sc_fun_flappy_parrot.html">Fun2 Flappy Parrot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fun/sc_fun_shooting.html">Fun3 Shooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fun/sc_fun_eat_apple.html">Fun4 Eat Apple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fun/sc_fun_fish.html">Fun5 Fishing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fun/sc_fun_sensitive_ball.html">Fun6 Distance Sensitive Ball</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fun/sc_fun_tap_tile.html">Fun7 Tap on The Black Tile</a></li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../arduino/lesson12_solar_panel.html" class="btn btn-neutral float-left" title="Lesson 12: Investigating the Mars Rover Energy System" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sc1_history.html" class="btn btn-neutral float-right" title="Lesson 1 Unveiling the Mars Rover" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

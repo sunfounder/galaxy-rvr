@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IR Obstacle Avoidcance Module &mdash; SunFounder GalaxyRVR Kit for Arduino 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+        <script src="../_static/./lang.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4 RGB LEDs Strip" href="cpn_rgb_strip.html" />
+    <link rel="prev" title="Ultrasonic Module" href="cpn_ultrasonic_module_xh.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder GalaxyRVR Kit for Arduino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">About this Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemble_video.html">Assemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../update_firmware.html">Update Firmwares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arduino/programming_arduino.html">Programming with Arduino IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scratch/scratch.html">Programming with Scratch</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="hardware.html">Hardware</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cpn_r3_board.html">SunFounder R3 Board</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpn_galaxy_shield.html">GalaxyRVR Shield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpn_esp_32_cam.html">ESP32 CAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpn_ultrasonic_module_xh.html">Ultrasonic Module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">IR Obstacle Avoidcance Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpn_rgb_strip.html">4 RGB LEDs Strip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpn_servo.html">Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpn_tt_motor_xh.html">TT Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpn_solar_panel.html">Solar Panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpn_18650_battery.html">18650 Battery</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder GalaxyRVR Kit for Arduino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="hardware.html">Hardware</a></li>
+      <li class="breadcrumb-item active">IR Obstacle Avoidcance Module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/hardware/cpn_ir_obstacle_module.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="ir-obstacle-avoidcance-module">
+<h1>IR Obstacle Avoidcance Module<a class="headerlink" href="#ir-obstacle-avoidcance-module" title="Permalink to this heading"></a></h1>
+<p>This is an infrared obstacle avoidance module that can detect the presence of objects ahead. It is commonly used in robots, automation systems, and other intelligent devices. Its detection range is 2cm to 40cm, and objects of different colors have different levels of reflectivity. Therefore, the darker the object, the shorter the detection distance.</p>
+<a class="reference internal image-reference" href="../_images/ir_avoid1.png"><img alt="../_images/ir_avoid1.png" class="align-center" src="../_images/ir_avoid1.png" style="width: 400px;" /></a>
+<p>Here are the pin definitions:</p>
+<ul class="simple">
+<li><p><strong>GND</strong>: Ground</p></li>
+<li><p><strong>+</strong>: Power supply, 3.3 ~ 5V DC.</p></li>
+<li><p><strong>Out</strong>: By default, it stays high and only goes low when it spots an obstacle.</p></li>
+<li><p><strong>EN</strong>: This <strong>enable</strong> pin decides when the module should work. By default, it is connected to GND, meaning the module is always on the job.</p></li>
+</ul>
+<p><strong>How it works?</strong></p>
+<p>This module contains a pair of IR transmitting and receiving components. Basically, the transmitter emits infrared light, when the emitted infrared light encounters an obstacle, it is reflected back and received by the receiver. Upon detection, the indicator lights up. After circuit processing, it outputs a low level signal.</p>
+<a class="reference internal image-reference" href="../_images/ir_receive1.png"><img alt="../_images/ir_receive1.png" class="align-center" src="../_images/ir_receive1.png" style="width: 600px;" /></a>
+<p>The <strong>EN</strong> pin’s low-level state activates the module, with the jumper cap securing the <strong>EN</strong> pin to the GND. To control the EN pin programmatically, remove the jumper cap.</p>
+<a class="reference internal image-reference" href="../_images/ir_cap1.png"><img alt="../_images/ir_cap1.png" class="align-center" src="../_images/ir_cap1.png" style="width: 400px;" /></a>
+<p>There are two potentiometers on the module, one for adjusting the transmitting power and one for adjusting the transmitting frequency, and by adjusting these two potentiometers you can adjust its effective distance.</p>
+<a class="reference internal image-reference" href="../_images/ir_avoid_pot1.png"><img alt="../_images/ir_avoid_pot1.png" class="align-center" src="../_images/ir_avoid_pot1.png" style="width: 400px;" /></a>
+<p><strong>Adjust the detection distance</strong></p>
+<p>The obstacle avoidance module’s detection range must be precisely calibrated for optimal performance, as default factory settings may not align with specific requirements.</p>
+<p>Calibration involves the following steps:</p>
+<ol class="arabic">
+<li><p>Alignment of the Module: Start with the right-hand side obstacle avoidance module. Transportation can occasionally displace the alignment of the module’s infrared transmitter and receiver. They should be manually realigned to ensure accuracy.</p>
+<blockquote>
+<div><video width="600" loop autoplay muted>
+    <source src="../_static/video/ir_adjust1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video></div></blockquote>
+</li>
+<li><p>Place an obstacle about 20 cm directly in front of the right module. The box in which our Rover kit came is a good choice for this! Now, turn the potentiometer on the module until the indicator light on the module just lights up. Then, keep moving the obstacle back and forth to check if the indicator light comes on at the desired distance. If the light doesn’t turn on at the correct distance or if it remains on without going out, you’ll need to adjust the other potentiometer.</p>
+<blockquote>
+<div><video width="600" loop autoplay muted>
+    <source src="../_static/video/ir_adjust2.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video></div></blockquote>
+</li>
+<li><p>Repeat the same process for another module.</p></li>
+</ol>
+<p><strong>Features</strong></p>
+<ul class="simple">
+<li><p>operating voltage: 3.3 V to 5 V</p></li>
+<li><p>output: digital (on/off)</p></li>
+<li><p>detection threshold: adjustable by 2 potentiometers</p></li>
+<li><p>distance range: 2 to 40 cm</p></li>
+<li><p>adjustment R5: frequency adjustment 38 kHz (already optimized)</p></li>
+<li><p>adjustment R6: IR LED duty cycle adjustment (already optimized)</p></li>
+<li><p>operating temperature: -10 °C to +50 °C</p></li>
+<li><p>effective angle: 35°</p></li>
+<li><p>I/O interface: 4 wire interface (- / + / S / EN)</p></li>
+<li><p>dimensions: 45 x 16 x 10 mm</p></li>
+<li><p>weight: 9 g</p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="cpn_ultrasonic_module_xh.html" class="btn btn-neutral float-left" title="Ultrasonic Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cpn_rgb_strip.html" class="btn btn-neutral float-right" title="4 RGB LEDs Strip" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 8: Advanced Obstacle Avoidance and Intelligent Following System &mdash; SunFounder GalaxyRVR Kit for Arduino 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+        <script src="../_static/./lang.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lesson 9: Lighting the Way with RGB LED Strips" href="lesson9_rgb_strips.html" />
+    <link rel="prev" title="Lesson 7: Enhancing Rover Navigation with Ultrasonic Module" href="lesson7_ultrasonic_avoid.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder GalaxyRVR Kit for Arduino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">About this Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemble_video.html">Assemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../update_firmware.html">Update Firmwares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="programming_arduino.html">Programming with Arduino IDE</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="lesson1_history.html">Lesson 1 Unveiling the Mars Rover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson2_rocker_bogie.html">Lesson 2 Understanding and Making Rocker-Bogie System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson3_arduino_ide.html">Lesson 3:  Entering the World of Arduino and Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson4_motor.html">Lesson 4: Mastering the TT Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson5_car_move.html">Lesson 5: Unleashing Mars Rover Mobility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson6_ir_avoid.html">Lesson 6: Exploring the Obstacle Avoidance Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson7_ultrasonic_avoid.html">Lesson 7: Enhancing Rover Navigation with Ultrasonic Module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 8: Advanced Obstacle Avoidance and Intelligent Following System</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#course-objectives">Course Objectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#course-materials">Course Materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#course-steps">Course Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lesson9_rgb_strips.html">Lesson 9: Lighting the Way with RGB LED Strips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson10_servo.html">Lesson 10: Exploring the Mars Rover Visual System - Servo and Tilt Mechanism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson11_camera.html">Lesson 11: Exploring the Mars Rover Visual System - Camera and Real-time Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson12_solar_panel.html">Lesson 12: Investigating the Mars Rover Energy System</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scratch/scratch.html">Programming with Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder GalaxyRVR Kit for Arduino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="programming_arduino.html">Programming with Arduino IDE</a></li>
+      <li class="breadcrumb-item active">Lesson 8: Advanced Obstacle Avoidance and Intelligent Following System</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/arduino/lesson8_ir_ultrasonic.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="lesson-8-advanced-obstacle-avoidance-and-intelligent-following-system">
+<h1>Lesson 8: Advanced Obstacle Avoidance and Intelligent Following System<a class="headerlink" href="#lesson-8-advanced-obstacle-avoidance-and-intelligent-following-system" title="Permalink to this heading"></a></h1>
+<p>In today’s lesson, we’re going to push our STEAM skills a step further. We’ll combine an obstacle avoidance module
+with an ultrasonic sensor to create an advanced obstacle avoidance system.
+We’ll also implement an intelligent following system to our Rover.</p>
+<p>By the end of this lesson, our Mars Rover will not only be able to avoid obstacles in its path
+but also follow moving objects. Imagine having a mini robotic pet following you around!
+Exciting, isn’t it? So let’s get started.</p>
+<video width="600" loop autoplay muted>
+    <source src="../_static/video/ultrasonic_ir_avoid.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are learning this course after fully assembling the GalaxyRVR, you need to move this switch to the right before uploading the code.</p>
+<a class="reference internal image-reference" href="../_images/camera_upload.png"><img alt="../_images/camera_upload.png" class="align-center" src="../_images/camera_upload.png" style="width: 500px;" /></a>
+</div>
+<section id="course-objectives">
+<h2>Course Objectives<a class="headerlink" href="#course-objectives" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Learn how to combine obstacle avoidance modules with an ultrasonic module for improved navigation.</p></li>
+<li><p>Understand the principles and functionalities behind an advanced obstacle avoidance system.</p></li>
+<li><p>Learn how to implement an intelligent following system in the Mars Rover.</p></li>
+</ul>
+</section>
+<section id="course-materials">
+<h2>Course Materials<a class="headerlink" href="#course-materials" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Mars Rover model (the one we built in previous lessons)</p></li>
+<li><p>USB Cable</p></li>
+<li><p>Arduino IDE</p></li>
+<li><p>Computer</p></li>
+<li><p>And of course, your creative mind!</p></li>
+</ul>
+</section>
+<section id="course-steps">
+<h2>Course Steps<a class="headerlink" href="#course-steps" title="Permalink to this heading"></a></h2>
+<p><strong>Step 1: Understanding the Concept</strong></p>
+<p>The obstacle avoidance module, as the name suggests, helps our Rover avoid obstacles.
+It detects obstacles by transmitting an infrared signal and then receiving the signal
+reflected back from the object. If there is an obstacle in front of the module,
+the infrared signal is reflected back, and the module detects it.</p>
+<p>Now, adding an ultrasonic sensor to the mix improves this system. Ultrasonic sensors measure distance by
+sending out a sound wave at a specific frequency and listening for that sound wave to bounce back.
+By recording the elapsed time between the sound wave being generated and the sound wave bouncing back,
+it is possible to calculate the distance between the sensor and the object.</p>
+<p>Combining these two gives us a reliable, efficient, and versatile obstacle avoidance system!</p>
+<p><strong>Step 2: Constructing Advanced Obstacle Avoidance Systems</strong></p>
+<p>In our previous lessons, we’ve learned the basics of obstacle avoidance using infrared sensors. We’ve also explored how an ultrasonic module works. Now, we are going to bring all these pieces together and build an advanced obstacle avoidance system!</p>
+<p>Our enhanced Mars Rover will now use both ultrasonic and infrared sensors to navigate its surroundings.</p>
+<p>Let’s envision how the infrared and ultrasonic modules should work together. To help clarify our logic, let’s use a flowchart. Learning how to create flowcharts is an invaluable step in our coding journey as it can help you clarify your thoughts and systematically outline your plan.</p>
+<a class="reference internal image-reference" href="../_images/ultrasonic_ir_avoid_flowchart.png"><img alt="../_images/ultrasonic_ir_avoid_flowchart.png" src="../_images/ultrasonic_ir_avoid_flowchart.png" style="width: 800px;" /></a>
+<p>Now let’s turn this flowchart into actual code to bring our Rover to life.</p>
+<iframe src=https://create.arduino.cc/editor/sunfounder01/53d72ee5-a4c8-4524-92f8-4b0f4760c015/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe><p>Note that the <code class="docutils literal notranslate"><span class="pre">handleForwardMovement()</span></code> function is where we’ve integrated the behavior of the ultrasonic sensor. We read the distance data from the sensor and based on this data, we decide the movement of the Rover.</p>
+<p>After uploading the code to your R3 board, it’s time to test the system.
+Make sure the Rover can detect and avoid obstacles efficiently.
+Remember, you may need to adjust the detection distance in the code based on your actual environment to perfect the system.</p>
+<p><strong>Step 3: Coding the Intelligent Following System</strong></p>
+<p>With our Rover now capable of avoiding obstacles, let’s enhance it further by making it follow objects. Our goal is to modify our existing code to make the Rover move towards a moving object.</p>
+<p>Ever wondered about the differences between a following system and an obstacle avoidance system?</p>
+<p>The key here is that in a following system, we want our Rover to move in response to detected objects, while in an obstacle avoidance system, we’re looking to steer clear of detected objects.</p>
+<p>Let’s visualize the desired workflow:</p>
+<img alt="../_images/ultrasonic_ir_follow_flowchart.png" src="../_images/ultrasonic_ir_follow_flowchart.png" />
+<ul class="simple">
+<li><p>If the ultrasonic sensor detects an object within 5-30 cm, our Rover should move towards it.</p></li>
+<li><p>If the left IR sensor detects an object, our Rover should take a left turn.</p></li>
+<li><p>If the right IR sensor detects an object, our Rover should take a right turn.</p></li>
+<li><p>In all other cases, our Rover should remain stationary.</p></li>
+</ul>
+<p>Now, it’s time for us to complete the code.</p>
+<iframe src=https://create.arduino.cc/editor/sunfounder01/75662c17-4b0a-4494-b18b-089cc2b32311/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe><p>Once the code is completed, test if the Rover follows your movements.</p>
+<p>As we did with the obstacle avoidance system, it will be crucial to test our following system and troubleshoot any issues that may arise. Ready to start?</p>
+<p><strong>Step 4: Summary and Reflection</strong></p>
+<p>Today, you’ve accomplished something amazing. You combined different modules and concepts to create an advanced obstacle avoidance and following system for your Mars Rover. Remember, learning does not end here - keep exploring, innovating, and applying your newfound skills to other projects.</p>
+<p>Remember to always reflect on your learning process. Think about the following:</p>
+<ul class="simple">
+<li><p>Why do you think we prioritized the obstacle avoidance module before the ultrasonic sensor in our obstacle avoidance system, and vice versa in the following system?</p></li>
+<li><p>How would the outcome differ if we were to swap the order in which these modules are checked in the code?</p></li>
+</ul>
+<p>Challenges and problems are an integral part of the STEAM learning process, offering valuable opportunities for improvement. Don’t shy away from troubleshooting - it’s a powerful learning tool in itself!</p>
+<p>As you continue on your journey, know that every obstacle you overcome brings you one step closer to mastering your STEAM skills. Keep going and enjoy the journey!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lesson7_ultrasonic_avoid.html" class="btn btn-neutral float-left" title="Lesson 7: Enhancing Rover Navigation with Ultrasonic Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="lesson9_rgb_strips.html" class="btn btn-neutral float-right" title="Lesson 9: Lighting the Way with RGB LED Strips" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

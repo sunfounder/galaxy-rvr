@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick Start with Arduino &mdash; SunFounder GalaxyRVR Kit for Arduino 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+        <script src="../_static/./lang.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Quick Start with Scratch" href="quick_start_scratch.html" />
+    <link rel="prev" title="Quick Play with APP" href="quick_start_robopilot.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder GalaxyRVR Kit for Arduino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">About this Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemble_video.html">Assemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../update_firmware.html">Update Firmwares</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="quick_start.html">Quick Start</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quick_start_robopilot.html">Quick Play with APP</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Quick Start with Arduino</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-quickly-open-an-arduino-example">How to Quickly Open an Arduino Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="quick_start_scratch.html">Quick Start with Scratch</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../arduino/programming_arduino.html">Programming with Arduino IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scratch/scratch.html">Programming with Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder GalaxyRVR Kit for Arduino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="quick_start.html">Quick Start</a></li>
+      <li class="breadcrumb-item active">Quick Start with Arduino</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/quick_start/quick_start_arduino.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="quick-start-with-arduino">
+<h1>Quick Start with Arduino<a class="headerlink" href="#quick-start-with-arduino" title="Permalink to this heading"></a></h1>
+<p>In this chapter, you’ll learn how to <strong>quickly open and run specific Arduino example codes</strong> to make your GalaxyRVR perform various actions.</p>
+<p>If you want to understand the code logic and programming principles behind these examples, please refer to the <a class="reference internal" href="../arduino/programming_arduino.html#programming-arduino"><span class="std std-ref">Programming with Arduino IDE</span></a> chapter.</p>
+<section id="how-to-quickly-open-an-arduino-example">
+<h2>How to Quickly Open an Arduino Example<a class="headerlink" href="#how-to-quickly-open-an-arduino-example" title="Permalink to this heading"></a></h2>
+<p>In this example, we’ll demonstrate how to use the Arduino IDE to open an arduino example.</p>
+<ol class="arabic">
+<li><p>Start the GalaxyRVR.</p>
+<ul>
+<li><p>When using GalaxyRVR for the first time, it is recommended to fully charge the battery by plugging in a Type-C USB cable. Then, turn on the power.</p>
+<video width="600" loop autoplay muted>
+    <source src="../_static/video/play_start.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video></li>
+</ul>
+<blockquote>
+<div><ul>
+<li><p>The ESP32-CAM and the Arduino board share the same RX (receive) and TX (transmit) pins. So, before uploading the code, you’ll need to first release the ESP32-CAM by slide this switch to right side to avoid any conflicts or potential issues.</p>
+<a class="reference internal image-reference" href="../_images/camera_upload.png"><img alt="../_images/camera_upload.png" src="../_images/camera_upload.png" style="width: 600px;" /></a>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Connect your Arduino board to your computer using a USB cable.</p></li>
+<li><p>Visit <a href="https://www.arduino.cc/en/software#future-version-of-the-arduino-ide" target="_blank">Arduino IDE 2.0.0 Page</a> and download the Arduino IDE for your operating system. Follow the installation prompts to complete setup.</p>
+<img alt="../_images/arduino_download_page.png" src="../_images/arduino_download_page.png" />
+</li>
+<li><p>Download the example codes from the link below:</p>
+<ul class="simple">
+<li><p><a class="reference download external" download="" href="https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/1.2.x.zip"><code class="xref download docutils literal notranslate"><span class="pre">GalaxyRVR</span> <span class="pre">Code</span> <span class="pre">File</span></code></a></p></li>
+</ul>
+</li>
+<li><p>Unzip the downloaded file, navigate to <code class="docutils literal notranslate"><span class="pre">galaxy-rvr-1.2.x\lesson_codes</span></code>.</p>
+<img alt="../_images/arduino_open_folder.png" src="../_images/arduino_open_folder.png" />
+</li>
+<li><p>Select an example code folder, navigate to that folder, then double-click the <code class="docutils literal notranslate"><span class="pre">.ino</span></code> file to open it in the Arduino IDE.</p>
+<img alt="../_images/arduino_open_file.png" src="../_images/arduino_open_file.png" />
+</li>
+<li><p>In the Arduino IDE, select <strong>Arduino Uno</strong> as the board and choose the appropriate <strong>port</strong> for your device.</p>
+<img alt="../_images/arduino_choose_board.png" src="../_images/arduino_choose_board.png" />
+</li>
+<li><p>Click the <strong>Upload</strong> button (right-pointing arrow) to upload the code to your board.</p>
+<img alt="../_images/arduino_upload.png" src="../_images/arduino_upload.png" />
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you’re not familiar with the Arduino IDE, please refer to:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../arduino/lesson3_arduino_ide.html#install-arduino-ide"><span class="std std-ref">Install Arduino IDE</span></a></p></li>
+<li><p><a class="reference internal" href="../arduino/lesson3_arduino_ide.html#upload-sketch"><span class="std std-ref">Upload Your First Sketch</span></a></p></li>
+</ul>
+</div>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">5_car_move</span></code>: The rover moves forward, then backward, turns left and right, and finally stops.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">6_ir_avoid</span></code>: The rover avoids obstacles using IR sensors.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">7_ultrasonic_avoid</span></code>: The rover avoids obstacles using ultrasonic module.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">8_ultrasonic_ir_avoid</span></code>: The rover uses both IR and ultrasonic module to detect obstacles.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">8_ultrasonic_ir_follow</span></code>: The rover follows objects using IR and ultrasonic module.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">9_rgb_car_move</span></code>: Adds color indicators for movement: green for forward, red for backward, and yellow for turning left or right.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10_servo_range</span></code>: The camera gimbal rotates from 0° to 180° using a for loop, and the current angle is displayed in the Serial Monitor.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">11_camera_view</span></code>: View the live video feed from the rover’s camera in a web browser. <strong>SunFounder AI Camera</strong> library is required.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">13_read_battery</span></code>: Monitors the battery voltage through code.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="quick_start_robopilot.html" class="btn btn-neutral float-left" title="Quick Play with APP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="quick_start_scratch.html" class="btn btn-neutral float-right" title="Quick Start with Scratch" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

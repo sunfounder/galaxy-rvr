@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 5 Interactive Animation &mdash; SunFounder GalaxyRVR Kit for Arduino 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+        <script src="../_static/./lang.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lesson 6 IR Obstacle" href="sc6_obstacle.html" />
+    <link rel="prev" title="Lesson 4: Ultrasonic Module" href="sc4_ultrasonic.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder GalaxyRVR Kit for Arduino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">About this Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemble_video.html">Assemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../update_firmware.html">Update Firmwares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arduino/programming_arduino.html">Programming with Arduino IDE</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="scratch.html">Programming with Scratch</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sc1_history.html">Lesson 1 Unveiling the Mars Rover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc2_app.html">Lesson 2 Getting Started with the Mammoth Coding App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc3_rvr_move.html">Lesson 3: Remote Control Your GalaxyRVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc4_ultrasonic.html">Lesson 4: Ultrasonic Module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 5 Interactive Animation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-new-sprites">Adding New Sprites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-the-animation">Creating the Animation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sc6_obstacle.html">Lesson 6 IR Obstacle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc7_obstacle_animate.html">Lesson 7: Create an IR Obstacle Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc8_avoid.html">Lesson 8 Advanced Obstacle Avoidance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc9_follow.html">Lesson 9: Mars Exploration Partner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc10_rgb.html">Lesson 10: Lighting the Way with RGB LED Strips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc11_servo.html">Lesson 11: Control Your Rover’s Camera Tilt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc12_camera.html">Lesson 12: See Through Your Rover’s Eyes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc13_all.html">Lesson 13: Complete Mars Rover Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_balloon.html">Fun1 Inflating the Balloon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_flappy_parrot.html">Fun2 Flappy Parrot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_shooting.html">Fun3 Shooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_eat_apple.html">Fun4 Eat Apple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_fish.html">Fun5 Fishing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_sensitive_ball.html">Fun6 Distance Sensitive Ball</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_tap_tile.html">Fun7 Tap on The Black Tile</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder GalaxyRVR Kit for Arduino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="scratch.html">Programming with Scratch</a></li>
+      <li class="breadcrumb-item active">Lesson 5 Interactive Animation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/scratch/sc5_animate.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="lesson-5-interactive-animation">
+<h1>Lesson 5 Interactive Animation<a class="headerlink" href="#lesson-5-interactive-animation" title="Permalink to this heading"></a></h1>
+<p>Previously, we used the ultrasonic module to make GalaxyRVR automatically avoid obstacles in its path.</p>
+<p>In this activity, we will combine the module with a stage to create an interactive animation of a rover joyfully traversing the surface of Mars.</p>
+<video width="600" loop autoplay muted>
+   <source src="../_static/video/sc_animate_jump.mp4" type="video/mp4">
+   Your browser does not support the video tag.
+</video><section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Learn how to draw sprites and edit backgrounds.</p></li>
+<li><p>Understand basic programming concepts such as event listeners and loop structures.</p></li>
+<li><p>Get familiar with the APP programming environment and basic operations to create a simple animation simulating a Mars rover.</p></li>
+</ul>
+</section>
+<section id="adding-new-sprites">
+<h2>Adding New Sprites<a class="headerlink" href="#adding-new-sprites" title="Permalink to this heading"></a></h2>
+<ol class="arabic">
+<li><p>First, <a class="reference internal" href="sc3_rvr_move.html#app-connect"><span class="std std-ref">Connecting the APP to GalaxyRVR</span></a>.</p></li>
+<li><p>Delete any sprites you don’t need.</p>
+<img alt="../_images/6_animate_delete.png" src="../_images/6_animate_delete.png" />
+</li>
+<li><p>In the bottom right corner of the interface, tap the <strong>Choose a Sprite</strong> button to reveal four options.</p>
+<img alt="../_images/5_create_sp.png" src="../_images/5_create_sp.png" />
+</li>
+<li><p>On smaller screens, you may need to switch to another screen to see this button.</p>
+<img alt="../_images/5_create_sp0.png" src="../_images/5_create_sp0.png" />
+</li>
+</ol>
+<p>The four options are:</p>
+<ul class="simple">
+<li><p><strong>Upload Sprite</strong> – Load a sprite from your device.</p></li>
+<li><p><strong>Surprise</strong> – Randomly select a sprite from the library.</p></li>
+<li><p><strong>Paint</strong> – Draw your own sprite.</p></li>
+<li><p><strong>Choose a Sprite</strong> – Select from the sprite library.</p></li>
+</ul>
+<p>Next, we will use <strong>Choose a Sprite</strong> to select a sprite and <strong>Paint</strong> to draw one.</p>
+<p><strong>Choose a Sprite</strong></p>
+<ol class="arabic">
+<li><p>Tap <strong>Choose a Sprite</strong> (magnifier icon) to open the sprite library.</p>
+<img alt="../_images/5_sp_list.png" src="../_images/5_sp_list.png" />
+</li>
+<li><p>Find and select <strong>GalaxyRVR</strong> from the library.</p>
+<img alt="../_images/1_choose_galaxyrvr.png" src="../_images/1_choose_galaxyrvr.png" />
+</li>
+</ol>
+<p><strong>Paint a New Sprite</strong></p>
+<ol class="arabic">
+<li><p>Tap <strong>Paint</strong> (brush icon) to create a new sprite. We’ll draw a <strong>Mars</strong> sprite.</p>
+<img alt="../_images/5_create_custom.png" src="../_images/5_create_custom.png" />
+</li>
+<li><p>Use the <strong>Circle Tool</strong> to draw a circle representing the planet.</p>
+<img alt="../_images/5_create_custom1.png" src="../_images/5_create_custom1.png" />
+</li>
+<li><p>Use the <strong>Pointer Tool</strong> to move the circle to the center of the canvas. This step is important because the sprite’s coordinates and movements are based on its center.</p>
+<img alt="../_images/5_create_custom2.png" src="../_images/5_create_custom2.png" />
+</li>
+<li><p>Use the <strong>Paint Bucket Tool</strong> to fill the circle with red.</p>
+<img alt="../_images/5_create_custom3.png" src="../_images/5_create_custom3.png" />
+</li>
+<li><p>Select the <strong>Brush Tool</strong>, increase the brush size, and add texture with a suitable fill color.</p>
+<img alt="../_images/5_create_custom_pen.png" src="../_images/5_create_custom_pen.png" />
+</li>
+<li><p>If the color doesn’t look right, change the fill color and use the <strong>Paint Bucket Tool</strong> again.</p>
+<img alt="../_images/5_create_custom5.png" src="../_images/5_create_custom5.png" />
+</li>
+<li><p>Select the <strong>Brush Tool</strong> again, set the size to 2, change the color to black, and draw craters on Mars.</p>
+<img alt="../_images/5_create_custom6.png" src="../_images/5_create_custom6.png" />
+</li>
+<li><p>Use the <strong>Paint Bucket Tool</strong> to fill the craters with a suitable color.</p>
+<img alt="../_images/5_create_custom7.png" src="../_images/5_create_custom7.png" />
+</li>
+<li><p>Once finished, switch back to the <strong>Code Interface</strong>.</p>
+<img alt="../_images/5_create_custom8.png" src="../_images/5_create_custom8.png" />
+</li>
+<li><p>On smaller screens, click the icon to return to the Code Interface.</p>
+<img alt="../_images/5_create_custom8.1.png" src="../_images/5_create_custom8.1.png" />
+</li>
+<li><p>You’ll now see the Mars sprite on the stage. Don’t forget to <strong>rename</strong> it.</p>
+<img alt="../_images/5_create_custom9.png" src="../_images/5_create_custom9.png" />
+</li>
+</ol>
+<p><strong>Stage</strong></p>
+<ol class="arabic">
+<li><p>Click on <strong>Backdrops</strong> to modify the background. The default white backdrop will be changed to simulate a night sky.</p>
+<img alt="../_images/6_jump_backdrop.png" src="../_images/6_jump_backdrop.png" />
+</li>
+<li><p>Enter the <strong>Backdrops</strong> interface.</p>
+<img alt="../_images/6_jump_backdrop_page.png" src="../_images/6_jump_backdrop_page.png" />
+</li>
+<li><p>Draw a rectangle on the canvas.</p>
+<img alt="../_images/6_jump_rect.png" src="../_images/6_jump_rect.png" />
+</li>
+<li><p>Use the <strong>Paint Bucket Tool</strong> to fill it with a dark color.</p>
+<img alt="../_images/6_jump_fill.png" src="../_images/6_jump_fill.png" />
+</li>
+<li><p>Use the <strong>Brush Tool</strong> to add some stars.</p>
+<img alt="../_images/6_jump_paint.png" src="../_images/6_jump_paint.png" />
+</li>
+</ol>
+</section>
+<section id="creating-the-animation">
+<h2>Creating the Animation<a class="headerlink" href="#creating-the-animation" title="Permalink to this heading"></a></h2>
+<p>Now that we have Mars and GalaxyRVR, and we know how to animate sprites, let’s create an animation of GalaxyRVR moving on Mars.
+We can make the sprite appear to move by rotating Mars in the opposite direction, creating the effect of GalaxyRVR moving across its surface.</p>
+<ol class="arabic">
+<li><p>First, <a class="reference internal" href="sc3_rvr_move.html#app-connect"><span class="std std-ref">Connecting the APP to GalaxyRVR</span></a>.</p></li>
+<li><p>Adjust the size and position of both sprites.</p>
+<ul class="simple">
+<li><p>Set the GalaxyRVR sprite to <strong>(0, 0)</strong> and position Mars so GalaxyRVR appears to stand on its surface.</p></li>
+</ul>
+<img alt="../_images/6_jump_place.png" src="../_images/6_jump_place.png" />
+</li>
+</ol>
+<p><strong>Mars Sprite</strong></p>
+<ol class="arabic">
+<li><p>Select the Mars sprite. Its task is to rotate counterclockwise, creating the illusion that GalaxyRVR is moving forward.</p>
+<img alt="../_images/6_ssp_mars.png" src="../_images/6_ssp_mars.png" />
+</li>
+<li><p>Drag a green flag block. All animation starts with the green flag.</p>
+<img alt="../_images/6_jump_mar_flag.png" src="../_images/6_jump_mar_flag.png" />
+</li>
+<li><p>Drag a <code class="docutils literal notranslate"><span class="pre">forever</span></code> block to keep the animation running continuously.</p>
+<img alt="../_images/6_jump_mar_forever.png" src="../_images/6_jump_mar_forever.png" />
+</li>
+<li><p>Drag a <code class="docutils literal notranslate"><span class="pre">turn</span></code> block and a <code class="docutils literal notranslate"><span class="pre">wait</span></code> block to make Mars rotate continuously.</p>
+<img alt="../_images/6_jump_mar_turn.png" src="../_images/6_jump_mar_turn.png" />
+</li>
+<li><p>Now click the green flag, and you will see Mars rotating counterclockwise.</p></li>
+</ol>
+<p><strong>GalaxyRVR Sprite</strong></p>
+<ol class="arabic">
+<li><p>Select the GalaxyRVR sprite. Its task is to animate as if it’s moving, even though it isn’t actually moving.</p>
+<img alt="../_images/6_ssp_rvr.png" src="../_images/6_ssp_rvr.png" />
+</li>
+<li><p>Drag a green flag block. All animation starts with the green flag.</p>
+<img alt="../_images/6_jump_mar_flag.png" src="../_images/6_jump_mar_flag.png" />
+</li>
+<li><p>Drag a <code class="docutils literal notranslate"><span class="pre">forever</span></code> block to keep the animation running continuously.</p>
+<img alt="../_images/6_jump_mar_forever.png" src="../_images/6_jump_mar_forever.png" />
+</li>
+<li><p>Drag a <code class="docutils literal notranslate"><span class="pre">next</span> <span class="pre">costume</span></code> block and a <code class="docutils literal notranslate"><span class="pre">wait</span></code> block to make GalaxyRVR continuously animate.</p>
+<img alt="../_images/6_jump_mar_next.png" src="../_images/6_jump_mar_next.png" />
+</li>
+<li><p>Drag a <code class="docutils literal notranslate"><span class="pre">when</span> <span class="pre">distance</span></code> block. This will trigger when the ultrasonic module detects an obstacle (e.g., your hand).</p>
+<img alt="../_images/6_jump_when.png" src="../_images/6_jump_when.png" />
+</li>
+<li><p>Drag two <code class="docutils literal notranslate"><span class="pre">glide</span></code> blocks and change the y-value of the first one to make the sprite jump up and then come down, creating a jumping effect.</p>
+<img alt="../_images/6_jump_glide.png" src="../_images/6_jump_glide.png" />
+</li>
+<li><p>The complete code for the GalaxyRVR sprite should look like this:</p>
+<img alt="../_images/6_jump_mar_rvr_all.png" src="../_images/6_jump_mar_rvr_all.png" />
+</li>
+</ol>
+<p>Now, click the green flag to start the animation. Simulate an obstacle by placing your hand in front of the ultrasonic module, and the GalaxyRVR sprite will jump to avoid it.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sc4_ultrasonic.html" class="btn btn-neutral float-left" title="Lesson 4: Ultrasonic Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sc6_obstacle.html" class="btn btn-neutral float-right" title="Lesson 6 IR Obstacle" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

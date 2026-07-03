@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fun6 Distance Sensitive Ball &mdash; SunFounder GalaxyRVR Kit for Arduino 1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+        <script src="../../_static/./lang.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Fun7 Tap on The Black Tile" href="sc_fun_tap_tile.html" />
+    <link rel="prev" title="Fun5 Fishing" href="sc_fun_fish.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            SunFounder GalaxyRVR Kit for Arduino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">About this Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assemble_video.html">Assemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../update_firmware.html">Update Firmwares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../arduino/programming_arduino.html">Programming with Arduino IDE</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../scratch.html">Programming with Scratch</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../sc1_history.html">Lesson 1 Unveiling the Mars Rover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc2_app.html">Lesson 2 Getting Started with the Mammoth Coding App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc3_rvr_move.html">Lesson 3: Remote Control Your GalaxyRVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc4_ultrasonic.html">Lesson 4: Ultrasonic Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc5_animate.html">Lesson 5 Interactive Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc6_obstacle.html">Lesson 6 IR Obstacle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc7_obstacle_animate.html">Lesson 7: Create an IR Obstacle Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc8_avoid.html">Lesson 8 Advanced Obstacle Avoidance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc9_follow.html">Lesson 9: Mars Exploration Partner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc10_rgb.html">Lesson 10: Lighting the Way with RGB LED Strips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc11_servo.html">Lesson 11: Control Your Rover’s Camera Tilt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc12_camera.html">Lesson 12: See Through Your Rover’s Eyes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc13_all.html">Lesson 13: Complete Mars Rover Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc_fun_balloon.html">Fun1 Inflating the Balloon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc_fun_flappy_parrot.html">Fun2 Flappy Parrot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc_fun_shooting.html">Fun3 Shooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc_fun_eat_apple.html">Fun4 Eat Apple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc_fun_fish.html">Fun5 Fishing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Fun6 Distance Sensitive Ball</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#select-sprites">1. Select Sprites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#draw-a-line-sprite">2. Draw a <strong>Line</strong> Sprite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scripting-the-ball-sprite">3. Scripting the <strong>Ball</strong> Sprite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scripting-the-star-sprite">4. Scripting the <strong>Star</strong> Sprite</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sc_fun_tap_tile.html">Fun7 Tap on The Black Tile</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SunFounder GalaxyRVR Kit for Arduino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../scratch.html">Programming with Scratch</a></li>
+      <li class="breadcrumb-item active">Fun6 Distance Sensitive Ball</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/scratch/fun/sc_fun_sensitive_ball.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="fun6-distance-sensitive-ball">
+<h1>Fun6 Distance Sensitive Ball<a class="headerlink" href="#fun6-distance-sensitive-ball" title="Permalink to this heading"></a></h1>
+<p>In this project, we utilize an ultrasonic module to control the vertical movement of a ball on the stage. When you click the green flag, place your hand above the ultrasonic module. The ball will ascend if the distance between your hand and the module is less than 15 cm; otherwise, it will descend. When the ball makes contact with a line, it triggers a delightful sound and activates twinkling starlight effects.</p>
+<video loop autoplay muted style = "max-width:70%">
+   <source src="../../_static/video/sc_sensitive_ball.mp4" type="video/mp4">
+   Your browser does not support the video tag.
+</video><p>Follow these steps to set up the project, and feel free to tweak the effects to your liking once you’re accustomed to how it works.</p>
+<section id="select-sprites">
+<h2>1. Select Sprites<a class="headerlink" href="#select-sprites" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Remove the default sprite and select the <strong>Ball</strong>, <strong>Bowl</strong>, and <strong>Star</strong> sprites.</p>
+<img alt="../../_images/ball_choose_sprite.png" src="../../_images/ball_choose_sprite.png" />
+</li>
+<li><p>Position the <strong>Bowl</strong> sprite at the center bottom of the stage and increase its size.</p>
+<img alt="../../_images/ball_set_bowl.png" src="../../_images/ball_set_bowl.png" />
+</li>
+<li><p>Place the <strong>Ball</strong> sprite directly above the <strong>Bowl</strong> sprite, setting its direction to 0 to allow vertical movement.</p>
+<img alt="../../_images/ball_set_ball.png" src="../../_images/ball_set_ball.png" />
+</li>
+<li><p>Adjust the <strong>Star</strong> sprite’s size and set its direction to 180 to ensure it falls downward. This can be altered to different angles if preferred.</p>
+<img alt="../../_images/ball_set_star.png" src="../../_images/ball_set_star.png" />
+</li>
+<li><p>Add the <strong>Stars</strong> backdrop for added ambiance.</p>
+<img alt="../../_images/ball_select_backdrop.png" src="../../_images/ball_select_backdrop.png" />
+</li>
+</ul>
+</section>
+<section id="draw-a-line-sprite">
+<h2>2. Draw a <strong>Line</strong> Sprite<a class="headerlink" href="#draw-a-line-sprite" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Now add a <strong>Line</strong> sprite.</p>
+<img alt="../../_images/ball_select_line.png" src="../../_images/ball_select_line.png" />
+</li>
+<li><p>Navigate to the <strong>Costumes</strong> page of the <strong>Line</strong> sprite.</p>
+<a class="reference internal image-reference" href="../../_images/ball_open_cos.png"><img alt="../../_images/ball_open_cos.png" src="../../_images/ball_open_cos.png" style="width: 90%;" /></a>
+</li>
+<li><p>Slightly reduce the width of the red line on the canvas, duplicate it four times, and align these lines.</p>
+<a class="reference internal image-reference" href="../../_images/ball_copy_line.png"><img alt="../../_images/ball_copy_line.png" src="../../_images/ball_copy_line.png" style="width: 90%;" /></a>
+</li>
+<li><p>Color each line differently. Select a line, use the <strong>Fill</strong> tool, and pick a color.</p>
+<a class="reference internal image-reference" href="../../_images/ball_set_bk_color.png"><img alt="../../_images/ball_set_bk_color.png" src="../../_images/ball_set_bk_color.png" style="width: 90%;" /></a>
+</li>
+<li><p>Apply this method to color all lines accordingly.</p>
+<a class="reference internal image-reference" href="../../_images/ball_select_line_color.png"><img alt="../../_images/ball_select_line_color.png" src="../../_images/ball_select_line_color.png" style="width: 90%;" /></a>
+</li>
+<li><p>Return to the <strong>Code</strong> page and position the <strong>Line</strong> sprite at the top of the stage.</p>
+<img alt="../../_images/ball_line_position.png" src="../../_images/ball_line_position.png" />
+</li>
+</ul>
+</section>
+<section id="scripting-the-ball-sprite">
+<h2>3. Scripting the <strong>Ball</strong> Sprite<a class="headerlink" href="#scripting-the-ball-sprite" title="Permalink to this heading"></a></h2>
+<p>Here, we script the <strong>Ball</strong> sprite to move up or down based on the distance detected by the ultrasonic module, with a movement constraint to simulate landing on the <strong>Bowl</strong> sprite.</p>
+<ul>
+<li><p>When the green flag is clicked, set the initial position of the <strong>Ball</strong> sprite.</p>
+<img alt="../../_images/ball_script_ball1.png" src="../../_images/ball_script_ball1.png" />
+</li>
+<li><p>Use an [if else] block to check if the distance is less than 15. If true, move the <strong>Ball</strong> sprite up by 10 steps, given its direction is set to 0.</p>
+<img alt="../../_images/ball_script_ball3.png" src="../../_images/ball_script_ball3.png" />
+</li>
+<li><p>Otherwise, let the <strong>Ball</strong> sprite fall, limiting its Y coordinate to a minimum of -100, adjustable to appear as though it’s landing on the <strong>Bowl</strong> sprite.</p>
+<img alt="../../_images/ball_script_ball4.png" src="../../_images/ball_script_ball4.png" />
+</li>
+<li><p>Script interaction where the <strong>Ball</strong> sprite, upon touching the <strong>Line</strong> sprite, records its Y position to the variable <strong>ball_coor</strong> and broadcasts a <strong>bling</strong> message.</p>
+<img alt="../../_images/ball_script_ball5.png" src="../../_images/ball_script_ball5.png" />
+</li>
+</ul>
+</section>
+<section id="scripting-the-star-sprite">
+<h2>4. Scripting the <strong>Star</strong> Sprite<a class="headerlink" href="#scripting-the-star-sprite" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Initially hide the <strong>Star</strong> sprite when the green flag is clicked. Upon receiving the <strong>Bling</strong> message, clone the <strong>Star</strong> sprite.</p>
+<img alt="../../_images/ball_script_star1.png" src="../../_images/ball_script_star1.png" />
+</li>
+<li><p>Set the clone’s position and sound effects to synchronize with the <strong>Ball</strong> sprite’s position.</p>
+<img alt="../../_images/ball_script_star2.png" src="../../_images/ball_script_star2.png" />
+</li>
+<li><p>Allow it to rotate between -80 to 80 degrees randomly.</p>
+<img alt="../../_images/ball_script_star3.png" src="../../_images/ball_script_star3.png" />
+</li>
+<li><p>Adjust the appearance and behavior of the <strong>Star</strong> sprite as needed to enhance the visual effect.</p>
+<img alt="../../_images/ball_script_star4.png" src="../../_images/ball_script_star4.png" />
+</li>
+</ul>
+<p>Programming is complete. Click the green flag to run the script and see if it meets your expectations.</p>
+<video loop autoplay muted style = "max-width:70%">
+   <source src="../../_static/video/sc_sensitive_ball.mp4"  type="video/mp4">
+   Your browser does not support the video tag.
+</video></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sc_fun_fish.html" class="btn btn-neutral float-left" title="Fun5 Fishing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sc_fun_tap_tile.html" class="btn btn-neutral float-right" title="Fun7 Tap on The Black Tile" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

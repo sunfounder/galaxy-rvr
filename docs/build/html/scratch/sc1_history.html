@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 1 Unveiling the Mars Rover &mdash; SunFounder GalaxyRVR Kit for Arduino 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+        <script src="../_static/./lang.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lesson 2 Getting Started with the Mammoth Coding App" href="sc2_app.html" />
+    <link rel="prev" title="Programming with Scratch" href="scratch.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder GalaxyRVR Kit for Arduino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">About this Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemble_video.html">Assemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../update_firmware.html">Update Firmwares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arduino/programming_arduino.html">Programming with Arduino IDE</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="scratch.html">Programming with Scratch</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 1 Unveiling the Mars Rover</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#materials">Materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#steps">Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sc2_app.html">Lesson 2 Getting Started with the Mammoth Coding App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc3_rvr_move.html">Lesson 3: Remote Control Your GalaxyRVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc4_ultrasonic.html">Lesson 4: Ultrasonic Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc5_animate.html">Lesson 5 Interactive Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc6_obstacle.html">Lesson 6 IR Obstacle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc7_obstacle_animate.html">Lesson 7: Create an IR Obstacle Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc8_avoid.html">Lesson 8 Advanced Obstacle Avoidance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc9_follow.html">Lesson 9: Mars Exploration Partner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc10_rgb.html">Lesson 10: Lighting the Way with RGB LED Strips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc11_servo.html">Lesson 11: Control Your Rover’s Camera Tilt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc12_camera.html">Lesson 12: See Through Your Rover’s Eyes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc13_all.html">Lesson 13: Complete Mars Rover Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_balloon.html">Fun1 Inflating the Balloon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_flappy_parrot.html">Fun2 Flappy Parrot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_shooting.html">Fun3 Shooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_eat_apple.html">Fun4 Eat Apple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_fish.html">Fun5 Fishing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_sensitive_ball.html">Fun6 Distance Sensitive Ball</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_tap_tile.html">Fun7 Tap on The Black Tile</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder GalaxyRVR Kit for Arduino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="scratch.html">Programming with Scratch</a></li>
+      <li class="breadcrumb-item active">Lesson 1 Unveiling the Mars Rover</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/scratch/sc1_history.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="lesson-1-unveiling-the-mars-rover">
+<h1>Lesson 1 Unveiling the Mars Rover<a class="headerlink" href="#lesson-1-unveiling-the-mars-rover" title="Permalink to this heading"></a></h1>
+<p>Welcome to Lesson 1: Understanding the Mars Rover. Today, we dive into the thrilling world of Mars rovers—our remote explorers on the Red Planet. We will learn about their evolution, their functions, and the technological marvels that they are. Furthermore, you’ll channel your creativity to design your own rover and hone your presentation skills by explaining your unique design. Get ready to explore Mars from your classroom!</p>
+<section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Gain an understanding of the evolution and purpose of Mars rovers</p></li>
+<li><p>Express creativity by designing your own Mars rover</p></li>
+<li><p>Enhance presentation skills by sharing and explaining your rover design</p></li>
+</ul>
+</section>
+<section id="materials">
+<h2>Materials<a class="headerlink" href="#materials" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Mars Rover images and technical specifications for reference</p></li>
+<li><p>Documentary video on the history of Mars rovers</p></li>
+<li><p>Computer with internet access for research and viewing documentary</p></li>
+<li><p>Presentation slides or interactive whiteboard for lesson delivery</p></li>
+<li><p>Drawing paper, pencils, and coloring materials for rover design activity</p></li>
+<li><p>Worksheets for guided note-taking, reflection, and design planning</p></li>
+</ul>
+</section>
+<section id="steps">
+<h2>Steps<a class="headerlink" href="#steps" title="Permalink to this heading"></a></h2>
+<p><strong>Step 1: What are Mars Rovers?</strong></p>
+<p>Before we dive into Mars rovers, let’s first acquaint ourselves with Mars itself. As we can see from the images and models,
+the surface of Mars is marked with craters, mountains, valleys, and dust storms, painting a picture of a landscape
+that is both fascinating and challenging.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/mars_surface1.jpg"><img alt="../_images/mars_surface1.jpg" src="../_images/mars_surface1.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../_images/mars_surface1.png"><img alt="../_images/mars_surface1.png" src="../_images/mars_surface1.png" style="width: 600px;" /></a>
+</div></blockquote>
+<p>Can you imagine what it would be like to navigate through such a rugged terrain?
+Now, suppose you have the task of designing a rover for Mars.</p>
+<ul class="simple">
+<li><p>What considerations will you keep in mind given the terrain and conditions of Mars?</p></li>
+<li><p>What features will you equip it with to ensure it can perform its functions effectively?</p></li>
+<li><p>What tasks do you envision your Mars rover would need to accomplish?</p></li>
+</ul>
+<p>Remember, a Mars rover is a robot designed to explore Mars, study its environment, and send data back to Earth.
+So think about aspects such as movement, communication, power supply, scientific research capabilities, and durability
+under Mars’ extreme conditions.</p>
+<p>Let’s take a moment to brainstorm and share our ideas. It’s interesting to think like engineers and scientists, isn’t it?
+We’ll delve deeper into actual Mars rover designs and their functions in the following steps,
+so keep your creative ideas in mind as we progress.</p>
+<p><strong>Step 2: Exploring the History of Mars Rovers</strong></p>
+<p>Next, we’ll embark on a journey through time by watching a documentary that details the history of Mars rovers.
+The documentary takes us from the first attempt at deploying a rover on Mars, the Soviet Mars 3 rover which unfortunately
+didn’t succeed upon landing in 1971, to NASA’s first successful Mars rover, Sojourner, in 1997.</p>
+<p>Our journey doesn’t stop there, as we venture further to understand the adventures of the most advanced rovers yet: Spirit, Opportunity, Curiosity, and Perseverance.</p>
+<iframe width="600" height="400" src="https://www.youtube.com/embed/OO5CTBBgtXs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p>This documentary not only presents a historical context but also provides a comprehensive understanding of the progressive
+scientific and engineering milestones that have led to the current Mars exploration era.</p>
+<p><strong>Step 3: Summarize the Mars Rovers</strong></p>
+<p>After watching the documentary, let’s summarize the different Mars rovers that have been sent on the red planet.</p>
+<ul>
+<li><p><strong>Sojourner</strong> (1997)</p>
+<blockquote>
+<div><p><strong>Sojourner</strong>, the pioneer of Mars rovers, embarked on its journey as a part of the Mars Pathfinder mission.
+It made a successful landing in the Ares Vallis region on July 4, 1997. As the first wheeled vehicle to roam
+on a planet other than Earth, Sojourner marked a significant milestone in Martian exploration.
+Although it was operational on Mars for only 92 Martian days, or sols, it set the groundwork for future exploratory rovers.</p>
+<img alt="../_images/mars_sojourner1.jpg" src="../_images/mars_sojourner1.jpg" />
+</div></blockquote>
+</li>
+<li><p><strong>Spirit</strong> (2004–2010) and <strong>Opportunity</strong> (2004–2018)</p>
+<blockquote>
+<div><p><strong>Spirit</strong> and <strong>Opportunity</strong> are twin rovers of NASA’s Mars Exploration Rover (MER) mission. <strong>Spirit</strong>, also known as MER-A,
+operated on Mars from 2004 to 2010.</p>
+<p>On the other hand, <strong>Opportunity</strong>, or MER-B, had a remarkably long run from 2004 to 2018.
+Together, they greatly expanded our understanding of the Martian surface and geological history.</p>
+<img alt="../_images/mars_opportunity1.jpg" src="../_images/mars_opportunity1.jpg" />
+</div></blockquote>
+</li>
+<li><p><strong>Curiosity</strong> (2012–present):</p>
+<blockquote>
+<div><p><strong>Curiosity</strong>, a car-sized Mars rover, was designed to explore the Gale crater on Mars as part of NASA’s
+Mars Science Laboratory (MSL) mission. Since its arrival in 2012, <strong>Curiosity</strong> has made numerous significant discoveries,
+including evidence of past liquid water on Mars.</p>
+<img alt="../_images/mars_curiosity1.jpg" src="../_images/mars_curiosity1.jpg" />
+</div></blockquote>
+</li>
+<li><p>Perseverance (2021–present):</p>
+<blockquote>
+<div><p><strong>Perseverance</strong>, also known as Percy, is the most recent rover to arrive on Mars. It’s designed to explore the Jezero crater
+as part of NASA’s Mars 2020 mission. Along with its scientific instruments, <strong>Perseverance</strong> also carries Ingenuity, a small experimental Mars helicopter, marking another first in Martian exploration.</p>
+<img alt="../_images/mars_perseverance1.jpg" src="../_images/mars_perseverance1.jpg" />
+</div></blockquote>
+</li>
+</ul>
+<p>Now, let’s have a discussion. Reflect on the evolution of these rovers.</p>
+<ul class="simple">
+<li><p>How do the designs of these rovers differ? How are they similar?</p></li>
+<li><p>How did the mission objectives influence the design of each rover?</p></li>
+<li><p>What advancements in technology can you identify between each rover?</p></li>
+<li><p>What features do you think the next Mars rover should have?</p></li>
+<li><p>Share your thoughts and reflections, as well as any questions you might have!</p></li>
+</ul>
+<p><strong>Step 4: Art Activity: Draw Your Own Mars Rover</strong></p>
+<img alt="../_images/sojourner-first1.jpg" src="../_images/sojourner-first1.jpg" />
+<a class="reference internal image-reference" href="../_images/spirit-opportunity1.jpg"><img alt="../_images/spirit-opportunity1.jpg" src="../_images/spirit-opportunity1.jpg" style="width: 500px;" /></a>
+<img alt="../_images/curiosity1.png" src="../_images/curiosity1.png" />
+<img alt="../_images/perseverance_rover1.png" src="../_images/perseverance_rover1.png" />
+<p>For our next activity, let’s put our knowledge and creativity to work by designing our very own Mars rover. Consider the key characteristics of the rovers we’ve studied so far, but also think about the unique attributes you would want to incorporate in your design.</p>
+<p>Materials you’ll need:</p>
+<ul class="simple">
+<li><p>Drawing paper</p></li>
+<li><p>Pencils and erasers</p></li>
+<li><p>Colored pencils, crayons, or markers</p></li>
+</ul>
+<p>Drawing Instructions:</p>
+<ol class="arabic simple">
+<li><p>Start with the body of the rover. What shape will it be? How large?</p></li>
+<li><p>Consider the wheels. How many will your rover have? What size and shape will they be?</p></li>
+<li><p>Don’t forget about the instruments. What scientific equipment will your rover carry? Cameras, drills, spectrometers, or something entirely new?</p></li>
+<li><p>Lastly, consider any unique features. Does your rover have solar panels, or does it use a different power source? Can it communicate directly with Earth, or does it need a relay satellite?</p></li>
+</ol>
+<p>Once everyone has completed their drawings, we’ll share them with the class. Explain your design choices and the mission you envision for your rover.</p>
+<p><strong>Step 5: Present Your Mars Rover Designs</strong></p>
+<p>Now that everyone has completed their Mars Rover drawings, it’s time to share them! As you present, discuss the thought process behind your design. What is your rover’s mission? How does the design support this mission?</p>
+<p>Remember, there are no wrong answers in this activity. The purpose is to stimulate your creativity and deepen your understanding of Mars rover technology.</p>
+<p><strong>Step 6: Reflection and Conclusion</strong></p>
+<p>As we conclude our Mars Rover lesson, let’s take a few minutes to reflect on what we have learned. How do our rover designs reflect the advancements in technology and scientific objectives? How might the real Mars rovers continue to evolve in the future?</p>
+<p>Remember, the exploration of space, like any STEAM field, is all about asking questions, solving problems, and using creativity. Keep exploring, keep asking questions, and keep being curious!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="scratch.html" class="btn btn-neutral float-left" title="Programming with Scratch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sc2_app.html" class="btn btn-neutral float-right" title="Lesson 2 Getting Started with the Mammoth Coding App" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

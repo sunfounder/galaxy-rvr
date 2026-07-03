@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 2 Getting Started with the Mammoth Coding App &mdash; SunFounder GalaxyRVR Kit for Arduino 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+        <script src="../_static/./lang.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lesson 3: Remote Control Your GalaxyRVR" href="sc3_rvr_move.html" />
+    <link rel="prev" title="Lesson 1 Unveiling the Mars Rover" href="sc1_history.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder GalaxyRVR Kit for Arduino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">About this Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemble_video.html">Assemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../update_firmware.html">Update Firmwares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arduino/programming_arduino.html">Programming with Arduino IDE</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="scratch.html">Programming with Scratch</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sc1_history.html">Lesson 1 Unveiling the Mars Rover</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 2 Getting Started with the Mammoth Coding App</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-the-app">Installing the APP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#understanding-the-app">Understanding the APP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#top-section">Top Section</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#navigation-bar">Navigation Bar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#code-area">Code Area</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#costumes">Costumes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sounds">Sounds</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-your-first-program">Creating Your First Program</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#create-or-open-a-project">1. Create or Open a Project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#choose-a-sprite">2. Choose a Sprite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#write-the-program">3. Write the Program</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-the-program">4. Run the Program</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#save-your-project">5. Save Your Project</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sc3_rvr_move.html">Lesson 3: Remote Control Your GalaxyRVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc4_ultrasonic.html">Lesson 4: Ultrasonic Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc5_animate.html">Lesson 5 Interactive Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc6_obstacle.html">Lesson 6 IR Obstacle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc7_obstacle_animate.html">Lesson 7: Create an IR Obstacle Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc8_avoid.html">Lesson 8 Advanced Obstacle Avoidance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc9_follow.html">Lesson 9: Mars Exploration Partner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc10_rgb.html">Lesson 10: Lighting the Way with RGB LED Strips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc11_servo.html">Lesson 11: Control Your Rover’s Camera Tilt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc12_camera.html">Lesson 12: See Through Your Rover’s Eyes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc13_all.html">Lesson 13: Complete Mars Rover Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_balloon.html">Fun1 Inflating the Balloon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_flappy_parrot.html">Fun2 Flappy Parrot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_shooting.html">Fun3 Shooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_eat_apple.html">Fun4 Eat Apple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_fish.html">Fun5 Fishing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_sensitive_ball.html">Fun6 Distance Sensitive Ball</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_tap_tile.html">Fun7 Tap on The Black Tile</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder GalaxyRVR Kit for Arduino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="scratch.html">Programming with Scratch</a></li>
+      <li class="breadcrumb-item active">Lesson 2 Getting Started with the Mammoth Coding App</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/scratch/sc2_app.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="lesson-2-getting-started-with-the-mammoth-coding-app">
+<h1>Lesson 2 Getting Started with the Mammoth Coding App<a class="headerlink" href="#lesson-2-getting-started-with-the-mammoth-coding-app" title="Permalink to this heading"></a></h1>
+<p>Let’s dive into the world of Mammoth Coding and create your first project! For an optimal experience, it’s recommended to use a device with a larger screen.</p>
+<section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Set up the Mammoth Coding programming environment.</p></li>
+<li><p>Understand basic programming concepts in Mammoth Coding.</p></li>
+<li><p>Write and run your first program.</p></li>
+</ul>
+</section>
+<section id="installing-the-app">
+<h2>Installing the APP<a class="headerlink" href="#installing-the-app" title="Permalink to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Search for <strong>Mammoth Coding</strong> on Google Play or the Apple App Store and install it.</p>
+<a class="reference internal image-reference" href="../_images/1_app_install.png"><img alt="../_images/1_app_install.png" class="align-center" src="../_images/1_app_install.png" style="width: 600px;" /></a>
+</li>
+<li><p>After installation, you can open it. Here’s what the interface looks like on larger screens:</p>
+<a class="reference internal image-reference" href="../_images/1_app_ui_001.png"><img alt="../_images/1_app_ui_001.png" class="align-center" src="../_images/1_app_ui_001.png" style="width: 600px;" /></a>
+</li>
+<li><p>For devices with smaller screens, the interface appears as follows:</p>
+<a class="reference internal image-reference" href="../_images/1_app_ui_002.png"><img alt="../_images/1_app_ui_002.png" class="align-center" src="../_images/1_app_ui_002.png" style="width: 600px;" /></a>
+</li>
+</ol>
+</section>
+<section id="understanding-the-app">
+<h2>Understanding the APP<a class="headerlink" href="#understanding-the-app" title="Permalink to this heading"></a></h2>
+<p>Mammoth Coding is designed to be fun, educational, and easy to learn. It provides tools for creating interactive stories, games, art, simulations, and more using block-based coding. It also includes built-in drawing and sound editors.</p>
+<section id="top-section">
+<h3>Top Section<a class="headerlink" href="#top-section" title="Permalink to this heading"></a></h3>
+<p>The top section of Mammoth Coding includes several essential options.</p>
+<img alt="../_images/1_app_ui_1.png" class="align-center" src="../_images/1_app_ui_1.png" />
+<ul class="simple">
+<li><p><strong>Language Settings</strong>: The first option on the left allows you to choose different languages. Currently, English and Simplified Chinese are available.</p></li>
+<li><p><strong>File Menu</strong>: The second option is the <strong>File</strong> menu, where you can create new projects, open existing ones, and save your current project.</p></li>
+<li><p><strong>Project Name</strong>: The third option allows you to rename your project.</p></li>
+</ul>
+</section>
+<section id="navigation-bar">
+<h3>Navigation Bar<a class="headerlink" href="#navigation-bar" title="Permalink to this heading"></a></h3>
+<p>Just below the top section is the navigation bar, which allows you to switch between different editing pages.</p>
+<img alt="../_images/1_app_ui_3.png" class="align-center" src="../_images/1_app_ui_3.png" />
+<p>On smaller screens:</p>
+<ul>
+<li><p>The navigation bar appears at the top with options for <strong>Code</strong>, <strong>Costumes</strong>, <strong>Sounds</strong>, and <strong>Stage</strong>.</p>
+<img alt="../_images/1_app_ui_2.png" src="../_images/1_app_ui_2.png" />
+</li>
+<li><p>The <strong>Stage</strong> page is actually the right-hand side of the interface on larger screens, separated out on smaller devices to avoid clutter.</p>
+<a class="reference internal image-reference" href="../_images/1_app_ui_4.png"><img alt="../_images/1_app_ui_4.png" src="../_images/1_app_ui_4.png" style="width: 600px;" /></a>
+</li>
+</ul>
+</section>
+<section id="code-area">
+<h3>Code Area<a class="headerlink" href="#code-area" title="Permalink to this heading"></a></h3>
+<p>The <strong>Code</strong> page is where most of your programming activities will take place.</p>
+<a class="reference internal image-reference" href="../_images/1_app_ui_code.png"><img alt="../_images/1_app_ui_code.png" class="align-center" src="../_images/1_app_ui_code.png" style="width: 600px;" /></a>
+</section>
+<section id="costumes">
+<h3>Costumes<a class="headerlink" href="#costumes" title="Permalink to this heading"></a></h3>
+<p>The <strong>Costumes</strong> page is used to edit sprites and backdrops, providing visual elements for your programs.</p>
+<a class="reference internal image-reference" href="../_images/1_app_ui_custom.png"><img alt="../_images/1_app_ui_custom.png" class="align-center" src="../_images/1_app_ui_custom.png" style="width: 600px;" /></a>
+</section>
+<section id="sounds">
+<h3>Sounds<a class="headerlink" href="#sounds" title="Permalink to this heading"></a></h3>
+<p>The <strong>Sounds</strong> page handles audio, providing multimedia elements for your programs.</p>
+<a class="reference internal image-reference" href="../_images/1_app_ui_sound.png"><img alt="../_images/1_app_ui_sound.png" class="align-center" src="../_images/1_app_ui_sound.png" style="width: 600px;" /></a>
+</section>
+</section>
+<section id="creating-your-first-program">
+<h2>Creating Your First Program<a class="headerlink" href="#creating-your-first-program" title="Permalink to this heading"></a></h2>
+<section id="create-or-open-a-project">
+<h3>1. Create or Open a Project<a class="headerlink" href="#create-or-open-a-project" title="Permalink to this heading"></a></h3>
+<ul>
+<li><p>Each time you open the Mammoth Coding App, a new project is automatically created.</p>
+<a class="reference internal image-reference" href="../_images/1_open_new.png"><img alt="../_images/1_open_new.png" src="../_images/1_open_new.png" style="width: 600px;" /></a>
+</li>
+<li><p>Change the default project name “My Project” to something meaningful.</p>
+<a class="reference internal image-reference" href="../_images/1_new_name.png"><img alt="../_images/1_new_name.png" src="../_images/1_new_name.png" style="width: 600px;" /></a>
+</li>
+<li><p>You can also open a project that you’ve previously saved on your device.</p>
+<a class="reference internal image-reference" href="../_images/1_new_save.png"><img alt="../_images/1_new_save.png" src="../_images/1_new_save.png" style="width: 600px;" /></a>
+</li>
+</ul>
+</section>
+<section id="choose-a-sprite">
+<h3>2. Choose a Sprite<a class="headerlink" href="#choose-a-sprite" title="Permalink to this heading"></a></h3>
+<ul>
+<li><p>When you start a new project, a default sprite is provided. You can:</p>
+<ul class="simple">
+<li><p>Use the default sprite.</p></li>
+<li><p>Choose a new sprite from the library.</p></li>
+<li><p>Draw your own sprite.</p></li>
+<li><p>Upload a sprite from your device.</p></li>
+</ul>
+<img alt="../_images/1_choose_sprite.png" src="../_images/1_choose_sprite.png" />
+</li>
+<li><p>To choose a new sprite: Tap <strong>“Choose a Sprite”</strong> and select <strong>“GalaxyRVR”</strong>.</p>
+<img alt="../_images/1_choose_galaxyrvr.png" src="../_images/1_choose_galaxyrvr.png" />
+</li>
+</ul>
+</section>
+<section id="write-the-program">
+<h3>3. Write the Program<a class="headerlink" href="#write-the-program" title="Permalink to this heading"></a></h3>
+<p>In the left sidebar, you’ll find various categorys containing different categories of blocks. You can drag blocks from these categorys into the scripting area to build your program.</p>
+<p>For example, to make the <strong>GalaxyRVR</strong> sprite move forward 10 steps and then switch to the next costume when the green flag is clicked:</p>
+<ol class="arabic">
+<li><p>From the <strong>Events</strong> category, drag out the <strong>“When green flag clicked”</strong> block into the scripting area.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/1_code_flag.png"><img alt="../_images/1_code_flag.png" src="../_images/1_code_flag.png" style="width: 600px;" /></a>
+</div></blockquote>
+</li>
+<li><p>From the <strong>Motion</strong> category, drag out the <strong>“Move (10) steps”</strong> block and snap it below the event block.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/1_code_move10.png"><img alt="../_images/1_code_move10.png" src="../_images/1_code_move10.png" style="width: 600px;" /></a>
+</div></blockquote>
+</li>
+<li><p>From the <strong>Looks</strong> category, drag out the <strong>“Next costume”</strong> block and attach it below the motion block.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/1_code_next.png"><img alt="../_images/1_code_next.png" src="../_images/1_code_next.png" style="width: 600px;" /></a>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="run-the-program">
+<h3>4. Run the Program<a class="headerlink" href="#run-the-program" title="Permalink to this heading"></a></h3>
+<p>There are two ways to run your program:</p>
+<ol class="arabic">
+<li><p>Simply tap on the stack of blocks you’ve assembled in the scripting area. A yellow highlight will appear, indicating the script is running.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/1_code_run.png"><img alt="../_images/1_code_run.png" src="../_images/1_code_run.png" style="width: 30%;" /></a>
+</div></blockquote>
+</li>
+<li><p>If your script starts with the <strong>“When green flag clicked”</strong> block, you can click the green flag at the top left of the <strong>Stage</strong> to run your program. This is recommended for projects with multiple sprites or more complex code.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/1_code_green_flag.png"><img alt="../_images/1_code_green_flag.png" src="../_images/1_code_green_flag.png" style="width: 70%;" /></a>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="save-your-project">
+<h3>5. Save Your Project<a class="headerlink" href="#save-your-project" title="Permalink to this heading"></a></h3>
+<p>After testing your code and ensuring everything works correctly, it’s important to save your project.</p>
+<ol class="arabic">
+<li><p>Click the save icon located to the right of your project’s name.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/1_code_save.png"><img alt="../_images/1_code_save.png" src="../_images/1_code_save.png" style="width: 600px;" /></a>
+</div></blockquote>
+</li>
+<li><p>A “Project saved” message will appear. The project will be saved within the Mammoth Coding App. You can access your saved projects by clicking the menu button on the far right.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/1_code_save_app.png"><img alt="../_images/1_code_save_app.png" src="../_images/1_code_save_app.png" style="width: 600px;" /></a>
+</div></blockquote>
+</li>
+<li><p>To share your code or save it to your device, click <strong>File &gt; Save to your equipment</strong>, then choose an application to share with or save the project to your mobile device.</p>
+<blockquote>
+<div><img alt="../_images/1_code_save_device.png" src="../_images/1_code_save_device.png" />
+</div></blockquote>
+</li>
+</ol>
+<p><strong>Congratulations!</strong></p>
+<p>You’ve successfully created and run your first program in Mammoth Coding. Keep experimenting and exploring to discover more features and unleash your creativity!</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sc1_history.html" class="btn btn-neutral float-left" title="Lesson 1 Unveiling the Mars Rover" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sc3_rvr_move.html" class="btn btn-neutral float-right" title="Lesson 3: Remote Control Your GalaxyRVR" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

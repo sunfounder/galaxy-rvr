@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 13: Complete Mars Rover Control &mdash; SunFounder GalaxyRVR Kit for Arduino 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+        <script src="../_static/./lang.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Fun1 Inflating the Balloon" href="fun/sc_fun_balloon.html" />
+    <link rel="prev" title="Lesson 12: See Through Your Rover’s Eyes" href="sc12_camera.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder GalaxyRVR Kit for Arduino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">About this Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemble_video.html">Assemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../update_firmware.html">Update Firmwares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arduino/programming_arduino.html">Programming with Arduino IDE</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="scratch.html">Programming with Scratch</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sc1_history.html">Lesson 1 Unveiling the Mars Rover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc2_app.html">Lesson 2 Getting Started with the Mammoth Coding App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc3_rvr_move.html">Lesson 3: Remote Control Your GalaxyRVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc4_ultrasonic.html">Lesson 4: Ultrasonic Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc5_animate.html">Lesson 5 Interactive Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc6_obstacle.html">Lesson 6 IR Obstacle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc7_obstacle_animate.html">Lesson 7: Create an IR Obstacle Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc8_avoid.html">Lesson 8 Advanced Obstacle Avoidance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc9_follow.html">Lesson 9: Mars Exploration Partner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc10_rgb.html">Lesson 10: Lighting the Way with RGB LED Strips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc11_servo.html">Lesson 11: Control Your Rover’s Camera Tilt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc12_camera.html">Lesson 12: See Through Your Rover’s Eyes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 13: Complete Mars Rover Control</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#camera-system">Camera System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#movement-lighting-system">Movement &amp; Lighting System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#camera-tilt-control">Camera Tilt Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#complete-control-of-your-galaxyrvr">Complete Control of Your GalaxyRVR</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_balloon.html">Fun1 Inflating the Balloon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_flappy_parrot.html">Fun2 Flappy Parrot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_shooting.html">Fun3 Shooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_eat_apple.html">Fun4 Eat Apple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_fish.html">Fun5 Fishing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_sensitive_ball.html">Fun6 Distance Sensitive Ball</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_tap_tile.html">Fun7 Tap on The Black Tile</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder GalaxyRVR Kit for Arduino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="scratch.html">Programming with Scratch</a></li>
+      <li class="breadcrumb-item active">Lesson 13: Complete Mars Rover Control</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/scratch/sc13_all.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="lesson-13-complete-mars-rover-control">
+<h1>Lesson 13: Complete Mars Rover Control<a class="headerlink" href="#lesson-13-complete-mars-rover-control" title="Permalink to this heading"></a></h1>
+<p>You’ve mastered all the pieces - now let’s put them together! Combine everything you’ve learned to create your fully functional Mars Rover with live camera view, movement controls, and camera tilt.</p>
+<p>Bring together three amazing systems:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="sc12_camera.html#camera-system"><span class="std std-ref">Exploring Your Rover’s Camera System</span></a>: See through your rover’s eyes with live video</p></li>
+<li><p><a class="reference internal" href="sc10_rgb.html#rgb-move"><span class="std std-ref">GalaxyRVR Signal Lights in Action</span></a>: Drive around with colorful signal lights</p></li>
+<li><p><a class="reference internal" href="sc11_servo.html#tilt-system"><span class="std std-ref">Touch Control for Camera Angle</span></a>: Look up and down with camera controls</p></li>
+</ul>
+<p>The result? Complete control of your GalaxyRVR! Click buttons for camera controls and use arrow keys to drive.</p>
+<img alt="../_images/13_camera_go_all2.png" src="../_images/13_camera_go_all2.png" />
+<section id="camera-system">
+<h2>Camera System<a class="headerlink" href="#camera-system" title="Permalink to this heading"></a></h2>
+<p>Repeat the camera setup from your previous lesson: <a class="reference internal" href="sc12_camera.html#camera-system"><span class="std std-ref">Exploring Your Rover’s Camera System</span></a>.</p>
+<ol class="arabic">
+<li><p>Create four control sprites and arrange them neatly.</p>
+<img alt="../_images/11_camera_4.png" src="../_images/11_camera_4.png" />
+</li>
+<li><p>Program each button’s function:</p>
+<ul class="simple">
+<li><p>Ball 1: Camera OFF</p></li>
+</ul>
+<img alt="../_images/11_camera_1sp.png" src="../_images/11_camera_1sp.png" />
+<ul class="simple">
+<li><p>Ball 2: Camera ON with correct orientation</p></li>
+</ul>
+<img alt="../_images/11_camera_2sp.png" src="../_images/11_camera_2sp.png" />
+<ul class="simple">
+<li><p>Balloon 1: LED light ON</p></li>
+</ul>
+<img alt="../_images/11_camera_3sp.png" src="../_images/11_camera_3sp.png" />
+<ul class="simple">
+<li><p>Balloon 2: LED light OFF</p></li>
+</ul>
+<img alt="../_images/11_camera_4sp.png" src="../_images/11_camera_4sp.png" />
+</li>
+<li><p>Stack the controls to save space - they’ll unfold when you need them!</p>
+<img alt="../_images/11_camera_fold.png" src="../_images/11_camera_fold.png" />
+</li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">go</span> <span class="pre">to</span> <span class="pre">back</span> <span class="pre">layer</span></code> to create a cool toggle effect between buttons.</p>
+<img alt="../_images/11_camera_layer.png" src="../_images/11_camera_layer.png" />
+</li>
+</ol>
+</section>
+<section id="movement-lighting-system">
+<h2>Movement &amp; Lighting System<a class="headerlink" href="#movement-lighting-system" title="Permalink to this heading"></a></h2>
+<p>Let’s add colorful lights to your rover’s movements!  We have already coded these in the <a class="reference internal" href="sc10_rgb.html#rgb-move"><span class="std std-ref">GalaxyRVR Signal Lights in Action</span></a> section.</p>
+<p>We recommend placing this code in the Backdrops section - this keeps it separate from your sprite code and makes everything more organized.</p>
+<blockquote>
+<div><img alt="../_images/13.ccc_code_in_stage.png" src="../_images/13.ccc_code_in_stage.png" />
+</div></blockquote>
+<ol class="arabic">
+<li><p>Make your rover glow GREEN when moving forward.</p>
+<img alt="../_images/13.ccc_light_forward.png" src="../_images/13.ccc_light_forward.png" />
+</li>
+<li><p>Make your rover glow RED when moving backward.</p>
+<img alt="../_images/13.ccc_light_backfwd.png" src="../_images/13.ccc_light_backfwd.png" />
+</li>
+<li><p>Make your rover glow YELLOW when turning left or right.</p>
+<img alt="../_images/13.ccc_light_left_right.png" src="../_images/13.ccc_light_left_right.png" />
+</li>
+<li><p>Create a breathing blue light effect when your rover is stopped.</p>
+<img alt="../_images/13.ccc_light_breath.png" src="../_images/13.ccc_light_breath.png" />
+</li>
+</ol>
+<p>Your complete backdrop code should look like this:</p>
+<blockquote>
+<div><img alt="../_images/11_camera_backdrops.png" src="../_images/11_camera_backdrops.png" />
+</div></blockquote>
+</section>
+<section id="camera-tilt-control">
+<h2>Camera Tilt Control<a class="headerlink" href="#camera-tilt-control" title="Permalink to this heading"></a></h2>
+<p>Let’s add camera controls! This part is the same as the <a class="reference internal" href="sc11_servo.html#tilt-system"><span class="std std-ref">Touch Control for Camera Angle</span></a>. Simply repeat the steps.</p>
+<ol class="arabic">
+<li><p>Add an <strong>Arrow</strong> sprite to control your camera’s tilt.</p>
+<img alt="../_images/10_servo_arrow.png" src="../_images/10_servo_arrow.png" />
+</li>
+<li><p>Start with a <code class="docutils literal notranslate"><span class="pre">when</span> <span class="pre">this</span> <span class="pre">sprite</span> <span class="pre">clicked</span></code> block.</p>
+<a class="reference internal image-reference" href="../_images/6_animate_when_touch.png"><img alt="../_images/6_animate_when_touch.png" src="../_images/6_animate_when_touch.png" style="width: 200px;" /></a>
+</li>
+<li><p>Create a loop that runs while you’re touching the arrow.</p>
+<a class="reference internal image-reference" href="../_images/6_animate_repeat_touching.png"><img alt="../_images/6_animate_repeat_touching.png" src="../_images/6_animate_repeat_touching.png" style="width: 400px;" /></a>
+</li>
+<li><p>Make the arrow point toward your finger as you drag.</p>
+<a class="reference internal image-reference" href="../_images/10_servo_arrow_point_toward.png"><img alt="../_images/10_servo_arrow_point_toward.png" src="../_images/10_servo_arrow_point_toward.png" style="width: 400px;" /></a>
+</li>
+<li><p>Connect the arrow’s direction to the camera angle - rotate the arrow to move the camera!</p>
+<a class="reference internal image-reference" href="../_images/10_servo_arrow_angle_direction.png"><img alt="../_images/10_servo_arrow_angle_direction.png" src="../_images/10_servo_arrow_angle_direction.png" style="width: 800px;" /></a>
+</li>
+<li><p>Set limits to keep the camera between 0-135 degrees.</p>
+<a class="reference internal image-reference" href="../_images/10_servo_arrow_135.png"><img alt="../_images/10_servo_arrow_135.png" src="../_images/10_servo_arrow_135.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/10_servo_arrow_0.png"><img alt="../_images/10_servo_arrow_0.png" src="../_images/10_servo_arrow_0.png" style="width: 400px;" /></a>
+</li>
+</ol>
+<p>Touch and drag the arrow to aim your rover’s camera! Make the arrow bigger if it’s hard to control.</p>
+</section>
+<section id="complete-control-of-your-galaxyrvr">
+<h2>Complete Control of Your GalaxyRVR<a class="headerlink" href="#complete-control-of-your-galaxyrvr" title="Permalink to this heading"></a></h2>
+<p>Now you have full control of your Mars Rover! Here’s how to operate your complete GalaxyRVR:</p>
+<img alt="../_images/13_camera_go_all2.png" src="../_images/13_camera_go_all2.png" />
+<p><strong>Control Your Rover:</strong></p>
+<ul class="simple">
+<li><p>Use the arrow keys to drive forward, backward, and turn</p></li>
+<li><p>Click the Ball sprites to turn the live camera video on and off</p></li>
+<li><p>Click the Balloon sprites to control the camera LED light on and off</p></li>
+<li><p>Drag the arrow sprite to tilt the camera up and down</p></li>
+</ul>
+<p><strong>Test All Features Together:</strong></p>
+<ul class="simple">
+<li><p>Drive around while watching the live camera feed from your rover</p></li>
+<li><p>Notice the colored lights that signal each movement</p></li>
+<li><p>Practice tilting the camera to look at objects from different angles</p></li>
+<li><p>Try exploring in both bright and dark conditions using the LED light</p></li>
+</ul>
+<p>Congratulations! You have successfully combined all the systems to create a fully functional Mars Rover. You’ve learned how to program movement, lighting, camera controls, and tilt mechanisms - all the skills needed to operate a real exploration robot.</p>
+<p>Your Mars mission is now ready to begin. Happy exploring!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sc12_camera.html" class="btn btn-neutral float-left" title="Lesson 12: See Through Your Rover’s Eyes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="fun/sc_fun_balloon.html" class="btn btn-neutral float-right" title="Fun1 Inflating the Balloon" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 5: Unleashing Mars Rover Mobility &mdash; SunFounder GalaxyRVR Kit for Arduino 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+        <script src="../_static/./lang.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lesson 6: Exploring the Obstacle Avoidance Module" href="lesson6_ir_avoid.html" />
+    <link rel="prev" title="Lesson 4: Mastering the TT Motor" href="lesson4_motor.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder GalaxyRVR Kit for Arduino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">About this Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemble_video.html">Assemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../update_firmware.html">Update Firmwares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="programming_arduino.html">Programming with Arduino IDE</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="lesson1_history.html">Lesson 1 Unveiling the Mars Rover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson2_rocker_bogie.html">Lesson 2 Understanding and Making Rocker-Bogie System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson3_arduino_ide.html">Lesson 3:  Entering the World of Arduino and Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson4_motor.html">Lesson 4: Mastering the TT Motor</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 5: Unleashing Mars Rover Mobility</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#materials-needed">Materials needed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#steps">Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lesson6_ir_avoid.html">Lesson 6: Exploring the Obstacle Avoidance Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson7_ultrasonic_avoid.html">Lesson 7: Enhancing Rover Navigation with Ultrasonic Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson8_ir_ultrasonic.html">Lesson 8: Advanced Obstacle Avoidance and Intelligent Following System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson9_rgb_strips.html">Lesson 9: Lighting the Way with RGB LED Strips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson10_servo.html">Lesson 10: Exploring the Mars Rover Visual System - Servo and Tilt Mechanism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson11_camera.html">Lesson 11: Exploring the Mars Rover Visual System - Camera and Real-time Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson12_solar_panel.html">Lesson 12: Investigating the Mars Rover Energy System</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scratch/scratch.html">Programming with Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder GalaxyRVR Kit for Arduino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="programming_arduino.html">Programming with Arduino IDE</a></li>
+      <li class="breadcrumb-item active">Lesson 5: Unleashing Mars Rover Mobility</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/arduino/lesson5_car_move.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="lesson-5-unleashing-mars-rover-mobility">
+<h1>Lesson 5: Unleashing Mars Rover Mobility<a class="headerlink" href="#lesson-5-unleashing-mars-rover-mobility" title="Permalink to this heading"></a></h1>
+<p>Get ready, young explorers! We’ve mastered controlling motors, now we’re taking those skills to the red planet. In this lesson, we’re bringing the Mars Rover to life!</p>
+<p>We’ll learn how to assemble the motors into the Rocker-Bogie suspension system system and then, using our coding skills, we’ll guide our Rover across imagined Martian landscapes.</p>
+<p>It’s a Martian adventure in our classroom. Let’s get started!</p>
+<video width="600" loop autoplay muted>
+   <source src="../_static/video/car_move.mp4" type="video/mp4">
+   Your browser does not support the video tag.
+</video><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are learning this course after fully assembling the GalaxyRVR, you need to move this switch to the right before uploading the code.</p>
+<a class="reference internal image-reference" href="../_images/camera_upload.png"><img alt="../_images/camera_upload.png" class="align-center" src="../_images/camera_upload.png" style="width: 500px;" /></a>
+</div>
+<section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Understand how to assemble the motors into the Mars Rover’s Rocker-Bogie suspension system.</p></li>
+<li><p>Learn to use Arduino to control the motion of the Mars Rover.</p></li>
+<li><p>Practice writing a program to control the Mars Rover’s motion on different terrains.</p></li>
+</ul>
+</section>
+<section id="materials-needed">
+<h2>Materials needed<a class="headerlink" href="#materials-needed" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>SunFounder R3 Board</p></li>
+<li><p>TT Motors</p></li>
+<li><p>GalaxyRVR Shield</p></li>
+<li><p>Battery</p></li>
+<li><p>Mars Rover Model (Equipped with Rocker-Bogie System)</p></li>
+<li><p>Basic tools and accessories (e.g. screwdriver, screws, etc.)</p></li>
+<li><p>USB Cable</p></li>
+<li><p>Arduino IDE</p></li>
+<li><p>Computer</p></li>
+</ul>
+</section>
+<section id="steps">
+<h2>Steps<a class="headerlink" href="#steps" title="Permalink to this heading"></a></h2>
+<p><strong>Step 1: Assembling the Rover Components</strong></p>
+<p>In this step, we will assemble the battery, R3 board, GalaxyRVR Shield, motors, and wheels onto the pre-assembled rocker-bogie system. This will bring the GalaxyRVR to a runnable state.</p>
+<iframe width="600" height="400" src="https://www.youtube.com/embed/lu8K26MY96s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p>Congratulations! We’ve successfully built our very own rover, and it’s ready to start exploring. Let’s get moving!</p>
+<p><strong>Step 2: Set the Rover in Motion</strong></p>
+<p>Now it’s time to breathe life into our creation and send it off on its maiden voyage.
+But how do we communicate with our rover? How do we tell it where to go and what to do?
+That’s where our coding skills come into play!</p>
+<p>In the real world, if we want a car to move forward, we push the accelerator, and both wheels start spinning.
+The wheels on the right side turn clockwise, while those on the left side turn counterclockwise.</p>
+<img alt="../_images/move_car.gif" class="align-center" src="../_images/move_car.gif" />
+<p>Imagine you’re sitting in the driver’s seat, the world whizzing past you as you cruise along the open road - that’s exactly the experience we’re going to give our rover.</p>
+<p>Now, let’s translate that experience into the language our rover understands - code!</p>
+<blockquote>
+<div><div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;SoftPWM.h&gt;</span>
+
+<span class="c1">// Define the pins of motors</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nb">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Initialize SoftPWM</span>
+<span class="w">    </span><span class="n">SoftPWMBegin</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nb">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Set the left motors rotate counterclockwise</span>
+<span class="w">    </span><span class="n">SoftPWMSet</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span><span class="w">  </span><span class="c1">// Full speed</span>
+<span class="w">    </span><span class="n">SoftPWMSet</span><span class="p">(</span><span class="n">in2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w">    </span><span class="c1">// Stop</span>
+
+<span class="w">    </span><span class="c1">// Set the right motors rotate clockwise</span>
+<span class="w">    </span><span class="n">SoftPWMSet</span><span class="p">(</span><span class="n">in3</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w">    </span><span class="c1">// Stop</span>
+<span class="w">    </span><span class="n">SoftPWMSet</span><span class="p">(</span><span class="n">in4</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span><span class="w">  </span><span class="c1">// Full speed</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>In this code, we’re speaking to our rover, telling it exactly what to do.
+With the <code class="docutils literal notranslate"><span class="pre">SoftPWMSet()</span></code> function, we’re acting like the car’s accelerator and brakes,
+controlling the speed and direction of each motor.
+We tell the left motors to spin counterclockwise and the right motors to spin clockwise, and just like that, our rover moves forward!</p>
+<p>Absolutely, the concept of reversing the rover is straightforward once you understand how to move it forward.
+To make the rover move backward, we just need to reverse the direction of rotation of each motor.</p>
+<p>Here’s how we’d do that in code, we do just the opposite. The right wheels should now rotate counterclockwise, and the left wheels should rotate clockwise.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;SoftPWM.h&gt;</span>
+
+<span class="c1">// Define the pins of motors</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nb">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Initialize SoftPWM</span>
+<span class="w">    </span><span class="n">SoftPWMBegin</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nb">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Set the left motors to rotate clockwise</span>
+<span class="hll"><span class="w">    </span><span class="n">SoftPWMSet</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w">    </span><span class="c1">// Stop</span>
+</span><span class="hll"><span class="w">    </span><span class="n">SoftPWMSet</span><span class="p">(</span><span class="n">in2</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span><span class="w">  </span><span class="c1">// Full speed</span>
+</span>
+<span class="w">    </span><span class="c1">// Set the right motors to rotate counterclockwise</span>
+<span class="hll"><span class="w">    </span><span class="n">SoftPWMSet</span><span class="p">(</span><span class="n">in3</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span><span class="w">  </span><span class="c1">// Full speed</span>
+</span><span class="hll"><span class="w">    </span><span class="n">SoftPWMSet</span><span class="p">(</span><span class="n">in4</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w">    </span><span class="c1">// Stop</span>
+</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this code, we use <code class="docutils literal notranslate"><span class="pre">SoftPWMSet()</span></code> to tell the left motors to rotate clockwise and the right motors to rotate counterclockwise.</p>
+<p>Isn’t it fascinating that we can control our rover’s journey simply with code? The next time you’re in a car, take a moment to think about the journey of your rover, exploring the world one rotation at a time. Stay tuned, because our rover’s journey is just beginning!</p>
+<p><strong>Step 3: Making the Rover Move in Other Directions</strong></p>
+<p>Now that we know how to move our Mars Rover forward and backward, what if we want it to turn left or right?</p>
+<p>Just as in real life driving, there are two main ways for a car to turn left.</p>
+<ul class="simple">
+<li><p>The first way is by having the wheels on the left side rotate slower than the ones on the right. This difference in speed will make the rover turn towards the left.</p></li>
+<li><p>The second way is by making both left and right motors rotate in the same direction (clockwise in this case), which will make the rover spin to the left on its axis.</p></li>
+</ul>
+<p>Let’s see how we can implement both ways in code:</p>
+<p><strong>Method 1: Different speeds on each side</strong></p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;SoftPWM.h&gt;</span>
+
+<span class="c1">// Define the pins of motors</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nb">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Initialize SoftPWM</span>
+<span class="w">    </span><span class="n">SoftPWMBegin</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nb">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Set the left motors rotate counterclockwise in low speed</span>
+<span class="hll"><span class="w">    </span><span class="n">SoftPWMSet</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="n">SoftPWMSet</span><span class="p">(</span><span class="n">in2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</span>
+<span class="w">    </span><span class="c1">// Set the right motors rotate clockwise in higher speed</span>
+<span class="hll"><span class="w">    </span><span class="n">SoftPWMSet</span><span class="p">(</span><span class="n">in3</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="n">SoftPWMSet</span><span class="p">(</span><span class="n">in4</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span>
+</span>
+<span class="w">    </span><span class="nf">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span><span class="w">  </span><span class="c1">// Last for 2 seconds</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this code, we have decreased the speed of the left motors while keeping the right motors at a higher speed. This will make the rover turn towards the left.</p>
+<p><strong>Method 2: Rotating all motors in the same direction</strong></p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;SoftPWM.h&gt;</span>
+
+<span class="c1">// Define the motor pins</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nb">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Initialize SoftPWM</span>
+<span class="w">    </span><span class="n">SoftPWMBegin</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nb">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Set all motors to rotate clockwise</span>
+<span class="hll"><span class="w">    </span><span class="n">SoftPWMSet</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="n">SoftPWMSet</span><span class="p">(</span><span class="n">in2</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="n">SoftPWMSet</span><span class="p">(</span><span class="n">in3</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="n">SoftPWMSet</span><span class="p">(</span><span class="n">in4</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span>
+</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>In this code, we set all motors to rotate clockwise. The rover will spin around its own axis and the direction will change to the left.</p>
+<p>For making the rover turn right, the concepts are the same but the directions are reversed. Can you figure out how to do it?</p>
+<p><strong>Step 4: Moving in All Directions</strong></p>
+<p>As we develop more functionalities for our Mars Rover, our code could become quite long and messy. In programming, it’s a good practice to keep your code organized and maintainable. One way to achieve this is by creating separate functions for separate tasks.</p>
+<p>In this case, we can create separate functions for each direction the rover can move. This not only makes our code easier to understand but also allows us to re-use these functions anywhere in our program without having to re-write the same lines of code.</p>
+<p>Let’s see how we can do this:</p>
+<iframe src=https://create.arduino.cc/editor/sunfounder01/90c13522-9757-4212-b250-63ffbc790fd3/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe><p>With this structure, our main loop remains simple and easy to follow. We can clearly see that the rover moves forward, then backward,
+then turns left and right, and finally stops.</p>
+<video width="600" loop autoplay muted>
+   <source src="../_static/video/car_move.mp4" type="video/mp4">
+   Your browser does not support the video tag.
+</video><p>The details of how each of these actions is achieved are hidden away in separate functions. This is a key aspect of good programming practices known as abstraction.</p>
+<p><strong>Step 5: Sharing and Reflection</strong></p>
+<p>Congratulations on completing this exploration journey with the Mars Rover! This is a practical application of your knowledge of science and engineering, and you did a fantastic job!</p>
+<p>Now, you can share how your rover overcomes various terrain obstacles. You could film your rover navigating different terrains, or show off your rover to your friends.</p>
+<p>Reflecting on your learning process is also very important. What have you learned during this process? Did any new ideas or creative thoughts emerge? What have you gained in controlling motors and programming?</p>
+<p>You can continue to explore, discover new knowledge, and constantly improve yourself. Keep it up, future scientists and engineers!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lesson4_motor.html" class="btn btn-neutral float-left" title="Lesson 4: Mastering the TT Motor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="lesson6_ir_avoid.html" class="btn btn-neutral float-right" title="Lesson 6: Exploring the Obstacle Avoidance Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

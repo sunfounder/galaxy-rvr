@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 4: Mastering the TT Motor &mdash; SunFounder GalaxyRVR Kit for Arduino 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+        <script src="../_static/./lang.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lesson 5: Unleashing Mars Rover Mobility" href="lesson5_car_move.html" />
+    <link rel="prev" title="Lesson 3: Entering the World of Arduino and Coding" href="lesson3_arduino_ide.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder GalaxyRVR Kit for Arduino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">About this Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemble_video.html">Assemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../update_firmware.html">Update Firmwares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="programming_arduino.html">Programming with Arduino IDE</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="lesson1_history.html">Lesson 1 Unveiling the Mars Rover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson2_rocker_bogie.html">Lesson 2 Understanding and Making Rocker-Bogie System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson3_arduino_ide.html">Lesson 3:  Entering the World of Arduino and Coding</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 4: Mastering the TT Motor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#course-objectives">Course Objectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#course-materials">Course Materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#course-steps">Course Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lesson5_car_move.html">Lesson 5: Unleashing Mars Rover Mobility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson6_ir_avoid.html">Lesson 6: Exploring the Obstacle Avoidance Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson7_ultrasonic_avoid.html">Lesson 7: Enhancing Rover Navigation with Ultrasonic Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson8_ir_ultrasonic.html">Lesson 8: Advanced Obstacle Avoidance and Intelligent Following System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson9_rgb_strips.html">Lesson 9: Lighting the Way with RGB LED Strips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson10_servo.html">Lesson 10: Exploring the Mars Rover Visual System - Servo and Tilt Mechanism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson11_camera.html">Lesson 11: Exploring the Mars Rover Visual System - Camera and Real-time Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson12_solar_panel.html">Lesson 12: Investigating the Mars Rover Energy System</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scratch/scratch.html">Programming with Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder GalaxyRVR Kit for Arduino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="programming_arduino.html">Programming with Arduino IDE</a></li>
+      <li class="breadcrumb-item active">Lesson 4: Mastering the TT Motor</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/arduino/lesson4_motor.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="lesson-4-mastering-the-tt-motor">
+<h1>Lesson 4: Mastering the TT Motor<a class="headerlink" href="#lesson-4-mastering-the-tt-motor" title="Permalink to this heading"></a></h1>
+<p>In the previous lessons, we explored Mars rovers, their suspension systems, and delved into knowledge about Arduino.</p>
+<p>In this exciting course, we’ll explore the workings of motors, a key component that drives Mars rovers.
+We’ll understand the principles that power these motors and learn to control them using SunFounder R3 board and a GalaxyRVR Shield.</p>
+<p>By the end of this course, you’ll have a solid understanding of motor operation and hands-on experience in motor control.</p>
+<p>Let’s dive in!</p>
+<video width="600" loop autoplay muted>
+    <source src="../_static/video/left_1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are learning this course after fully assembling the GalaxyRVR, you need to move this switch to the right before uploading the code.</p>
+<a class="reference internal image-reference" href="../_images/camera_upload.png"><img alt="../_images/camera_upload.png" class="align-center" src="../_images/camera_upload.png" style="width: 500px;" /></a>
+</div>
+<section id="course-objectives">
+<h2>Course Objectives<a class="headerlink" href="#course-objectives" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Understand the basic principles of motors and the characteristics of the TT motor.</p></li>
+<li><p>Learn how to control the direction and speed of the TT motor.</p></li>
+<li><p>Understand how the GalaxyRVR Shield controls six motors.</p></li>
+</ul>
+</section>
+<section id="course-materials">
+<h2>Course Materials<a class="headerlink" href="#course-materials" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>SunFounder R3 Board</p></li>
+<li><p>TT Motor</p></li>
+<li><p>GalaxyRVR Shield</p></li>
+<li><p>Battery</p></li>
+<li><p>USB Cable</p></li>
+<li><p>Arduino IDE</p></li>
+<li><p>Computer</p></li>
+</ul>
+</section>
+<section id="course-steps">
+<h2>Course Steps<a class="headerlink" href="#course-steps" title="Permalink to this heading"></a></h2>
+<p><strong>Step 1: What is a Motor?</strong></p>
+<p>Motors play an integral part in our daily lives. They’re everywhere! From the electric fans that cool us on hot days, the mixers that help us make delicious cakes, to the electric cars that whizz by on the streets – motors make things move!</p>
+<img alt="../_images/motor_application.jpg" src="../_images/motor_application.jpg" />
+<p>A motor is like the heart of a machine. It converts electrical energy into mechanical energy, making our toys, appliances, and even big vehicles come to life!</p>
+<p>The magic behind a motor isn’t magic at all - it’s science, specifically the principle of electromagnetic induction. Here’s how it works: when electricity is supplied to a motor, it generates a magnetic field. This magnetic field then interacts with other magnets within the motor, causing the motor to spin. This spin, like spinning a top, can then be used to move wheels, propellers, or any other moving parts of a machine.</p>
+<img alt="../_images/motor_rotate.gif" class="align-center" src="../_images/motor_rotate.gif" />
+<p>The type of motor we’re focusing on in our GalaxyRVR is a specific kind called a TT Gear Motor.</p>
+<a class="reference internal image-reference" href="../_images/tt_motor_xh.jpg"><img alt="../_images/tt_motor_xh.jpg" class="align-center" src="../_images/tt_motor_xh.jpg" style="width: 400px;" /></a>
+<p>This is essentially a regular motor combined with a series of gears, all encased within a plastic shell.</p>
+<p>As the motor spins, the gears translate this spin to the wheels of our rover. The use of gears provides a crucial benefit - it increases torque, enabling the motor to move larger, heavier loads.</p>
+<a class="reference internal image-reference" href="../_images/motor_internal.gif"><img alt="../_images/motor_internal.gif" class="align-center" src="../_images/motor_internal.gif" style="width: 600px;" /></a>
+<p>Isn’t it fascinating to see how science and engineering principles come to life? Motors are a perfect example of these principles in action. By understanding how motors work, we can dream up and invent a wide array of machines. Let’s dive deeper into the world of motors and unleash our creativity!</p>
+<p><strong>Step 2: Exploring Motor Functioning and Operation</strong></p>
+<p>Having understood what a motor is and its broad spectrum of applications, it’s time we venture into the heart of motor operation.</p>
+<p>In essence, a motor works on the principle of electromagnetism. When an electric current passes through a wire, it generates a magnetic field around it. This magnetic field can interact with other magnetic fields, causing motion.</p>
+<p>Consider a simple experiment where we connect a motor directly to a battery. The current from the battery flows into the motor, triggering the internal mechanism of the motor to start spinning. This spinning action is due to the magnetic forces inside the motor.</p>
+<blockquote>
+<div><img alt="../_images/motor_battery.png" src="../_images/motor_battery.png" />
+</div></blockquote>
+<p>Interestingly, if you reverse the connections to the battery, the motor spins in the opposite direction! This happens because the direction of current flow changes, altering the direction of the magnetic field and consequently the direction of the motor’s spin.</p>
+<p>Now we know that connecting the motor directly to a battery can make it spin, but often we want to control its movement with code, so we include an Arduino board between them. But what would happen if we tried to connect the motor directly to the signal pins on the Arduino board?</p>
+<a class="reference internal image-reference" href="../_images/motor_uno.png"><img alt="../_images/motor_uno.png" class="align-center" src="../_images/motor_uno.png" style="width: 600px;" /></a>
+<p>If you guessed that the motor would not spin, you are correct! But why is that so?</p>
+<p>The answer lies in the current output of the Arduino board. The signal pins on a typical Arduino board can output only about 20mA of current, which is insufficient to drive a motor.</p>
+<p>So, how can we control motors using our Arduino? This is where a crucial component comes into the picture - a motor driver. Think of a motor driver as a bridge between the Arduino and the motor. It takes the low-current control signal from the Arduino, amplifies it, and sends it to the motor, thus enabling the motor to spin.</p>
+<img alt="../_images/motor_uno2.png" src="../_images/motor_uno2.png" />
+<p>In our next step, we’ll dive into the specifics of the motor driver and understand how we can effectively use it with our Arduino board to control a motor. Stay tuned for more exciting learning!</p>
+<p><strong>Step 3: How the Motor is controlled by the Motor Driver</strong></p>
+<p>Our GalaxyRVR Shield, included in the kit, serves as the control center for our Mars Rover. It is the hub where we connect all our sensors, motors, and power supply. It consists of several components that allow us to control and power our Rover effectively.</p>
+<p>On the right side of the shield, you’ll notice six motor ports. However, they are grouped into two sets, each controlled by a separate motor drive chip. Three ports marked “Left” are controlled by one chip, and the other three ports marked “Right” are controlled by another.</p>
+<img alt="../_images/motor_shield.png" src="../_images/motor_shield.png" />
+<p>Let’s learn how these two drive chips control the six motors through hands-on experience:</p>
+<ul>
+<li><p><strong>1. Connecting the Circuit</strong></p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Plug the GalaxyRVR Shield into the R3 board, connect a motor, and finally plug in the battery to provide power to the expansion board.</p>
+<blockquote>
+<div><video width="600" loop autoplay muted>
+    <source src="../_static/video/connect_shield.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video></div></blockquote>
+</li>
+<li><p>The first time you use, it is recommended that you plug in a Type-C USB cable to fully charge the battery first. Then turn the power on.</p>
+<blockquote>
+<div><video width="600" loop autoplay muted>
+    <source src="../_static/video/plug_usbc.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video></div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p><strong>2. Writing and Uploading Code</strong></p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Open the Arduino IDE and input the following code:</p>
+<blockquote>
+<div><div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nb">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">pinMode</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="kr">OUTPUT</span><span class="p">);</span>
+<span class="w">    </span><span class="nf">pinMode</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="kr">OUTPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nb">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="kr">LOW</span><span class="p">);</span>
+<span class="w">    </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="kr">HIGH</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pinMode()</span></code>: This function sets a pin as INPUT or OUTPUT, akin to deciding whether a character in our story speaks (OUTPUT) or listens (INPUT).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">digitalWrite()</span></code>: This function can set a pin HIGH (on) or LOW (off), much like switching a magic light on and off.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Once you’ve selected the correct board(Arduino Uno) and port, click on the <strong>Upload</strong> button. It’s like putting a letter in a mailbox - you’re sending your instructions off to Arduino!</p>
+<blockquote>
+<div><img alt="../_images/motor_upload.png" src="../_images/motor_upload.png" />
+</div></blockquote>
+</li>
+<li><p>Once the code has been successfully uploaded, you will see the motor start to rotate clockwise.</p>
+<blockquote>
+<div><video width="600" loop autoplay muted>
+    <source src="../_static/video/left_1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video></div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p><strong>3. About Circuit Internal Connection</strong></p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>You can plug two more motors into the “Left” marked motor ports. You will see them rotate simultaneously.</p></li>
+<li><p>Now, let’s understand the simple principle of how the two drive chips control the six motors. Pins 2 and 3 on the Arduino board output signals to the motor drive chip, and the other end of the chip is connected to three motors in parallel. Similarly, pins 4 and 5 output signals to another drive chip, which in turn is connected to another three motors in parallel.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/motor_driver.png"><img alt="../_images/motor_driver.png" src="../_images/motor_driver.png" style="width: 500px;" /></a>
+</div></blockquote>
+</li>
+<li><p>If you want to test another drive chip, you just need to change the pins to <code class="docutils literal notranslate"><span class="pre">4</span></code> and <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p>
+<blockquote>
+<div><div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nb">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">pinMode</span><span class="p">(</span><span class="n">in3</span><span class="p">,</span><span class="w"> </span><span class="kr">OUTPUT</span><span class="p">);</span>
+<span class="w">    </span><span class="nf">pinMode</span><span class="p">(</span><span class="n">in4</span><span class="p">,</span><span class="w"> </span><span class="kr">OUTPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nb">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">    </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">in3</span><span class="p">,</span><span class="w"> </span><span class="kr">LOW</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">in4</span><span class="p">,</span><span class="w"> </span><span class="kr">HIGH</span><span class="p">);</span>
+</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Here, we define two variables to represent pins 4 and 5. By using variables, we can easily manage and adjust our pin assignments throughout our code.</p>
+<p>Think of it as if we’re assigning a specific role or duty to each pin number. When we decide to reassign the roles, instead of going through the entire script and changing every instance, we just update the assignment at the beginning of the script (where the variable is initially defined).</p>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p><strong>4. About Drive Logic</strong></p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>In the previous tests, you would have noticed that the motors all spin in one direction. How do we make it spin in the opposite direction? Someone might suggest swapping the HIGH and LOW of the two pins. That’s correct.</p>
+<blockquote>
+<div><div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+</span><span class="hll"><span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span>
+<span class="kr">void</span><span class="w"> </span><span class="nb">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">pinMode</span><span class="p">(</span><span class="n">in3</span><span class="p">,</span><span class="w"> </span><span class="kr">OUTPUT</span><span class="p">);</span>
+<span class="w">    </span><span class="nf">pinMode</span><span class="p">(</span><span class="n">in4</span><span class="p">,</span><span class="w"> </span><span class="kr">OUTPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nb">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">in3</span><span class="p">,</span><span class="w"> </span><span class="kr">HIGH</span><span class="p">);</span>
+<span class="w">    </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">in4</span><span class="p">,</span><span class="w"> </span><span class="kr">LOW</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Once you’ve written your code and uploaded it to your Arduino board, the motor will behave as instructed.</p>
+<video width="600" loop autoplay muted>
+    <source src="../_static/video/right_cc.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video></div></blockquote>
+</li>
+<li><p>Let’s now look at the internal driving logic of the drive chip.</p>
+<blockquote>
+<div><table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>INA</p></th>
+<th class="head"><p>INB</p></th>
+<th class="head"><p>Motor</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>L</p></td>
+<td><p>L</p></td>
+<td><p>Standby</p></td>
+</tr>
+<tr class="row-odd"><td><p>L</p></td>
+<td><p>H</p></td>
+<td><p>Clockwise</p></td>
+</tr>
+<tr class="row-even"><td><p>H</p></td>
+<td><p>L</p></td>
+<td><p>Counterclockwise</p></td>
+</tr>
+<tr class="row-odd"><td><p>H</p></td>
+<td><p>H</p></td>
+<td><p>Brake</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</li>
+<li><p>Now, let’s try to make the motor rotate clockwise for 2 seconds, counterclockwise for 2 seconds, and then stop.</p>
+<blockquote>
+<div><div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nb">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">pinMode</span><span class="p">(</span><span class="n">in3</span><span class="p">,</span><span class="w"> </span><span class="kr">OUTPUT</span><span class="p">);</span>
+<span class="w">    </span><span class="nf">pinMode</span><span class="p">(</span><span class="n">in4</span><span class="p">,</span><span class="w"> </span><span class="kr">OUTPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nb">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">    </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">in3</span><span class="p">,</span><span class="w"> </span><span class="kr">LOW</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">in4</span><span class="p">,</span><span class="w"> </span><span class="kr">HIGH</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="nf">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">in3</span><span class="p">,</span><span class="w"> </span><span class="kr">HIGH</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">in4</span><span class="p">,</span><span class="w"> </span><span class="kr">LOW</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="nf">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">in3</span><span class="p">,</span><span class="w"> </span><span class="kr">HIGH</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">in4</span><span class="p">,</span><span class="w"> </span><span class="kr">HIGH</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="nf">delay</span><span class="p">(</span><span class="mi">5000</span><span class="p">);</span>
+</span><span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Here we use the <code class="docutils literal notranslate"><span class="pre">delay()</span></code> function to make the Arduino pause for a certain amount of time, much like taking a short nap in the middle of our story.</p></li>
+<li><p>In the code, we use the “Brake” state to stop the motor, and you’ll notice that the motor stops abruptly. Try setting both pins to LOW to test the “Standby” state, and you’ll find that the motor gradually slows down to a stop.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+<p>Now that you should have a better understanding of how the motor driver chip controls the motors through the GalaxyRVR Shield and how we can use Arduino code to manipulate the motor’s movements. Isn’t it fascinating how a few lines of code can dictate the behavior of a physical object like our motor?</p>
+<p>Consider the following questions as you move forward:</p>
+<ul class="simple">
+<li><p>If we move all the code from the <code class="docutils literal notranslate"><span class="pre">loop()</span></code> function into the <code class="docutils literal notranslate"><span class="pre">setup()</span></code> function, how would the behavior of the motor change?</p></li>
+<li><p>How would you modify the code to control six motors simultaneously?</p></li>
+</ul>
+<p>Remember, the more you experiment and play around with your code, the more you learn. Feel free to tweak, modify, and optimize your code as you deem fit. Happy coding!</p>
+<p><strong>Step 4: Controlling Motor Speed</strong></p>
+<p>In the previous step, we controlled the motor’s direction by simply setting its pins HIGH or LOW.
+This is like giving the motor full power to drive it, similar to pressing the accelerator pedal to the floor in a car.
+But in many situations, we might want to adjust the motor speed to suit different scenarios,
+just like we adjust the speed of a car depending on whether we’re driving in a city or on a highway.
+This is where Pulse Width Modulation (PWM) comes in.</p>
+<img alt="../_images/motor_pwm.jpg" src="../_images/motor_pwm.jpg" />
+<p>PWM is a technique used to create the effect of variable voltage output by rapidly switching the output between HIGH and LOW.
+With PWM, we can simulate the effect of an analogue signal while only actually outputting digital signals.</p>
+<p>You might be finding this hard to understand, and that’s okay! We’ll be learning how to adjust motor speed using PWM through coding in the following sections.</p>
+<p>Note that although the SunFounder R3 board has some pins with built-in PWM functionality, we can’t use them for our motor because they’re already serving other functions. Thus, we’re connecting the driver chips to pins 2, 3, 4, and 5, and using the Arduino’s SoftPWM library to enable PWM on these pins.</p>
+<p>Here’s what we’ll do next:</p>
+<ol class="arabic">
+<li><p>Open Arduino IDE, search for <code class="docutils literal notranslate"><span class="pre">softpwm</span></code> in the <strong>LIBRARY MANAGER</strong> and install it.</p>
+<blockquote>
+<div><video width="600" loop autoplay muted>
+    <source src="../_static/video/install_softpwm.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video></div></blockquote>
+</li>
+<li><p>Enter the following code into Arduino IDE. After uploading the code successfully, the motor will rotate clockwise.</p>
+<blockquote>
+<div><div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;SoftPWM.h&gt;</span>
+</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nb">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">    </span><span class="n">SoftPWMBegin</span><span class="p">();</span>
+</span><span class="p">}</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nb">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">    </span><span class="n">SoftPWMSet</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="n">SoftPWMSet</span><span class="p">(</span><span class="n">in2</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span>
+</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>In the code above, we first add <code class="docutils literal notranslate"><span class="pre">SoftPWM.h</span></code> to the top of the code, enabling us to use the functions in the <code class="docutils literal notranslate"><span class="pre">SoftPWM</span></code> library directly.</p></li>
+<li><p>Then, initialize the <code class="docutils literal notranslate"><span class="pre">SoftPWM</span></code> library with <code class="docutils literal notranslate"><span class="pre">SoftPWMBegin()</span></code> function.</p></li>
+<li><p>Finally, in the <code class="docutils literal notranslate"><span class="pre">loop()</span></code> function, we use <code class="docutils literal notranslate"><span class="pre">SoftPWMSet()</span></code> to assign different values to <code class="docutils literal notranslate"><span class="pre">in1</span></code> and <code class="docutils literal notranslate"><span class="pre">in2</span></code>, setting the motor in motion. You will notice the effect is similar to directly using <code class="docutils literal notranslate"><span class="pre">LOW</span></code> and <code class="docutils literal notranslate"><span class="pre">HIGH</span></code>, but here we use numerical values within a range of <code class="docutils literal notranslate"><span class="pre">0~255</span></code>.</p></li>
+<li><p>Remember, in the world of Arduino, speed is expressed as a value between 0 (like a car at a stop sign) and 255 (zooming down the highway!). So, when we say <code class="docutils literal notranslate"><span class="pre">SoftPWMSet(in2,</span> <span class="pre">255)</span></code>, we’re telling that motor to go full speed ahead!</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Now, let’s enter other values and observe any differences in motor speed.</p>
+<blockquote>
+<div><div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;SoftPWM.h&gt;</span>
+
+<span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nb">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">SoftPWMBegin</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nb">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">SoftPWMSet</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="hll"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kr">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">255</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">        </span><span class="n">SoftPWMSet</span><span class="p">(</span><span class="n">in2</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+</span><span class="hll"><span class="w">        </span><span class="nf">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+</span><span class="hll"><span class="p">}</span>
+</span><span class="w">    </span><span class="nf">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In the code above, we use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to increment a variable <code class="docutils literal notranslate"><span class="pre">i</span></code> up to <code class="docutils literal notranslate"><span class="pre">255</span></code>. The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop in C language is used to iterate over a part of the program several times. It consists of three parts:</p>
+<a class="reference internal image-reference" href="../_images/motor_for123.png"><img alt="../_images/motor_for123.png" class="align-center" src="../_images/motor_for123.png" style="width: 400px;" /></a>
+<ul class="simple">
+<li><p><strong>Initialization</strong>: This step is executed first and only once when we enter the loop for the first time. It allows us to declare and initialize any loop control variables.</p></li>
+<li><p><strong>Condition</strong>: This is the next step after initialization. If it’s true, the body of the loop is executed. If it’s false, the body of the loop does not execute and the flow of control goes outside of the for loop.</p></li>
+<li><p><strong>Increment or Decrement</strong>: After executing the Initialization and Condition steps and the loop body code, the Increment or Decrement step is executed. This statement allows us to update any loop control variables.</p></li>
+</ul>
+<p>The flowchart for the for loop is shown below:</p>
+<img alt="../_images/motor_for.png" src="../_images/motor_for.png" />
+<p>So, after running the above code, you will see the motor speed gradually increasing. It stops for a second, and then starts again from 0 and gradually increases.</p>
+<video width="600" loop autoplay muted>
+    <source src="../_static/video/left_speed.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video></div></blockquote>
+</li>
+</ol>
+<p>In this step, we have learned about Pulse Width Modulation (PWM), a technique for controlling the speed of our motor. By using the Arduino’s SoftPWM library, we can adjust the speed of the motor, allowing us to simulate analogue signals while only outputting digital signals. This provides us with finer control over our rover’s movements, and prepares us for more complex maneuvers in the future.</p>
+<p><strong>Step 5: Reflect and Improve</strong></p>
+<p>Having completed this lesson, you should now be familiar with the working principles of motors, as well as how to control their direction and speed through programming.</p>
+<p>Let’s test your understanding with these challenges:</p>
+<ul class="simple">
+<li><p>How would you modify the for loop to gradually decrease the motor speed?</p></li>
+<li><p>How would you control the motor to accelerate or decelerate while rotating counterclockwise?</p></li>
+</ul>
+<p>You can experiment with the provided code to answer these questions. Feel free to adjust the code according to your hypotheses and observe the changes in the motor’s behavior.</p>
+<p>Your hands-on experiments and reflections on these questions will deepen your understanding and enhance your problem-solving skills. It is through challenges like these that real learning occurs. Always remember, there is no “right” or “wrong” in your exploratory journey – this is all about learning and discovery!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lesson3_arduino_ide.html" class="btn btn-neutral float-left" title="Lesson 3: Entering the World of Arduino and Coding" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="lesson5_car_move.html" class="btn btn-neutral float-right" title="Lesson 5: Unleashing Mars Rover Mobility" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

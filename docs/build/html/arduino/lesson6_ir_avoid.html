@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 6: Exploring the Obstacle Avoidance Module &mdash; SunFounder GalaxyRVR Kit for Arduino 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+        <script src="../_static/./lang.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lesson 7: Enhancing Rover Navigation with Ultrasonic Module" href="lesson7_ultrasonic_avoid.html" />
+    <link rel="prev" title="Lesson 5: Unleashing Mars Rover Mobility" href="lesson5_car_move.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder GalaxyRVR Kit for Arduino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">About this Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemble_video.html">Assemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../update_firmware.html">Update Firmwares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="programming_arduino.html">Programming with Arduino IDE</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="lesson1_history.html">Lesson 1 Unveiling the Mars Rover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson2_rocker_bogie.html">Lesson 2 Understanding and Making Rocker-Bogie System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson3_arduino_ide.html">Lesson 3:  Entering the World of Arduino and Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson4_motor.html">Lesson 4: Mastering the TT Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson5_car_move.html">Lesson 5: Unleashing Mars Rover Mobility</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 6: Exploring the Obstacle Avoidance Module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#materials-needed">Materials Needed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#steps">Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lesson7_ultrasonic_avoid.html">Lesson 7: Enhancing Rover Navigation with Ultrasonic Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson8_ir_ultrasonic.html">Lesson 8: Advanced Obstacle Avoidance and Intelligent Following System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson9_rgb_strips.html">Lesson 9: Lighting the Way with RGB LED Strips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson10_servo.html">Lesson 10: Exploring the Mars Rover Visual System - Servo and Tilt Mechanism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson11_camera.html">Lesson 11: Exploring the Mars Rover Visual System - Camera and Real-time Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson12_solar_panel.html">Lesson 12: Investigating the Mars Rover Energy System</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scratch/scratch.html">Programming with Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder GalaxyRVR Kit for Arduino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="programming_arduino.html">Programming with Arduino IDE</a></li>
+      <li class="breadcrumb-item active">Lesson 6: Exploring the Obstacle Avoidance Module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/arduino/lesson6_ir_avoid.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="lesson-6-exploring-the-obstacle-avoidance-module">
+<h1>Lesson 6: Exploring the Obstacle Avoidance Module<a class="headerlink" href="#lesson-6-exploring-the-obstacle-avoidance-module" title="Permalink to this heading"></a></h1>
+<p>We’re diving into the world of the Infrared Obstacle Avoidance Module. Tucked at the sides of our Mars Rover, these sensors act as the rover’s “eyes,” helping it dodge side obstacles and safely navigate the Martian landscape.</p>
+<p>We’ll learn how to integrate these modules with our rover, unravel the magic behind their functioning, and develop code to make our rover smartly sidestep any hurdles it comes across.</p>
+<p>Get ready to gear up our rover with some Martian obstacle-dodging intelligence! Let’s get rolling!</p>
+<video width="600" loop autoplay muted>
+   <source src="../_static/video/car_ir1.mp4" type="video/mp4">
+   Your browser does not support the video tag.
+</video><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are learning this course after fully assembling the GalaxyRVR, you need to move this switch to the right before uploading the code.</p>
+<a class="reference internal image-reference" href="../_images/camera_upload.png"><img alt="../_images/camera_upload.png" class="align-center" src="../_images/camera_upload.png" style="width: 500px;" /></a>
+</div>
+<section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Understand the working principle and application of the infrared obstacle avoidance module.</p></li>
+<li><p>Learn to use Arduino to control the infrared obstacle avoidance module.</p></li>
+<li><p>Practice designing and building an automatic obstacle avoidance system based on infrared obstacle avoidance.</p></li>
+</ul>
+</section>
+<section id="materials-needed">
+<h2>Materials Needed<a class="headerlink" href="#materials-needed" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Obstacle Avoidance Modules</p></li>
+<li><p>Basic tools and accessories (e.g. screwdriver, screws, wires etc.)</p></li>
+<li><p>Mars Rover Model (Equipped with rocker-bogie system, main boards, motors)</p></li>
+<li><p>USB Cable</p></li>
+<li><p>Arduino IDE</p></li>
+<li><p>Computer</p></li>
+</ul>
+</section>
+<section id="steps">
+<h2>Steps<a class="headerlink" href="#steps" title="Permalink to this heading"></a></h2>
+<p><strong>Step 1: Install the Obstacle Avoidance Module</strong></p>
+<p>Now we will install the two obstacle avoidance modules onto the rover.</p>
+<iframe width="600" height="400" src="https://www.youtube.com/embed/UWEj_ROYAt0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p>The assembly steps were simple, weren’t they? In the following steps, we will learn about the working principle of these modules, and how they help our Mars Rover to avoid obstacles. Stay tuned!</p>
+<p><strong>Step 2: Demystifying the Module</strong></p>
+<p>Meet the Infrared Obstacle Avoidance Module - our rover’s smart sidekick. This little device is a pack of wonders. Let’s take a tour:</p>
+<a class="reference internal image-reference" href="../_images/ir_avoid.png"><img alt="../_images/ir_avoid.png" class="align-center" src="../_images/ir_avoid.png" style="width: 300px;" /></a>
+<p>Here are the pin definitions:</p>
+<ul class="simple">
+<li><p><strong>GND</strong>: This is like the module’s anchor, connecting it to the ground or common point in the circuit.</p></li>
+<li><p><strong>+</strong>: Here’s where the module gets its energy, needing a power supply of 3.3 to 5V DC.</p></li>
+<li><p><strong>Out</strong>: This is the module’s communicator. By default, it stays high and only goes low when it spots an obstacle.</p></li>
+<li><p><strong>EN</strong>: Meet the module’s controller. This <strong>enable</strong> pin decides when the module should work. By default, it is connected to GND, meaning the module is always on the job.</p></li>
+</ul>
+<p>Curious about how this tiny module works? It’s quite interesting! It uses a pair of IR components - a transmitter and a receiver. The transmitter is like the module’s flashlight, emitting infrared light.
+When an obstacle appears, the infrared light bounces back and gets caught by the receiver. The module then gives a low signal, alerting our rover of the obstacle.</p>
+<img alt="../_images/ir_receive.png" class="align-center" src="../_images/ir_receive.png" />
+<p>Our little module is quite robust, spotting obstacles within a range of 2-40cm and boasting excellent anti-interference abilities.
+However, the color of objects does impact its sensing. Darker objects, especially black ones, are detected at a shorter range.
+Against a white wall, the sensor is most efficient, sensing within the 2-30cm range.</p>
+<p>The <strong>EN</strong> pin’s low-level state activates the module, with the jumper cap securing the <strong>EN</strong> pin to the GND. If you wish to control the <strong>EN</strong> pin via code, the jumper cap needs to be removed.</p>
+<a class="reference internal image-reference" href="../_images/ir_cap.png"><img alt="../_images/ir_cap.png" class="align-center" src="../_images/ir_cap.png" style="width: 400px;" /></a>
+<p>There are two potentiometers on the module, one for adjusting the transmitting power and one for adjusting the transmitting frequency, and by adjusting these two potentiometers you can adjust its effective distance.</p>
+<a class="reference internal image-reference" href="../_images/ir_avoid_pot.png"><img alt="../_images/ir_avoid_pot.png" class="align-center" src="../_images/ir_avoid_pot.png" style="width: 400px;" /></a>
+<p>That’s quite a bit about our little module. In the next step, we’ll learn how to integrate it with our rover and control it using the Arduino. Stay tuned!</p>
+<p><strong>Step 3: Read from the 2 Modules</strong></p>
+<p>Just like curious space explorers, let’s dive into the universe of codes and sensors!</p>
+<ol class="arabic">
+<li><p>Our Mars Rover is equipped with two special “Alien-Eye” sensors, perched neatly on pins 7 (right) and 8 (left). These “Alien-Eye” sensors are actually our infrared obstacle avoidance modules, always vigilant to dodge any “space rocks” (obstacles) in our Rover’s interstellar journey!</p>
+<blockquote>
+<div><img alt="../_images/ir_shield.png" src="../_images/ir_shield.png" />
+</div></blockquote>
+</li>
+<li><p>Next, we’ll need to communicate with our Rover using the universal language of Arduino code.</p>
+<blockquote>
+<div><p>First things first, let’s give a unique name to each eye of the Rover. Let’s call them <code class="docutils literal notranslate"><span class="pre">IR_RIGHT</span></code> and <code class="docutils literal notranslate"><span class="pre">IR_LEFT</span></code>, this way we won’t mix them up.</p>
+<blockquote>
+<div><div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="cp">#define IR_RIGHT 7</span>
+<span class="cp">#define IR_LEFT 8</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Now, we let our Rover know that these are its special eyes - they will feed information from the world outside into the Rover’s electronic brain.</p>
+<blockquote>
+<div><div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="nf">pinMode</span><span class="p">(</span><span class="n">IR_RIGHT</span><span class="p">,</span><span class="w"> </span><span class="kr">INPUT</span><span class="p">);</span>
+<span class="nf">pinMode</span><span class="p">(</span><span class="n">IR_LEFT</span><span class="p">,</span><span class="w"> </span><span class="kr">INPUT</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To make sure our Rover shares its findings with us, we establish a secret line of communication, like spies in a sci-fi movie. This next line kicks off a serial conversation at the speed of 9600 bits per second - that’s lightning fast chatter!</p>
+<blockquote>
+<div><div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="nf">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Now, our Rover scans its surroundings with its “Alien-Eyes” and relays the findings back to us. If it spots an obstacle, the value will be 0; if the path is clear, the value will be 1. It keeps sending these messages to us, keeping us in the loop.</p>
+<blockquote>
+<div><div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">int</span><span class="w"> </span><span class="n">rightValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">digitalRead</span><span class="p">(</span><span class="n">IR_RIGHT</span><span class="p">);</span>
+<span class="kr">int</span><span class="w"> </span><span class="n">leftValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">digitalRead</span><span class="p">(</span><span class="n">IR_LEFT</span><span class="p">);</span>
+<span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Right IR: &quot;</span><span class="p">);</span>
+<span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">rightValue</span><span class="p">);</span>
+<span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Left IR: &quot;</span><span class="p">);</span>
+<span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">leftValue</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Finally, the Rover pauses for a moment (about 200 milliseconds) after each transmission. This tiny break gives us the chance to interpret the Rover’s message before it sends another one.</p>
+<blockquote>
+<div><div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="nf">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Here is the complete code:</p>
+<iframe src=https://create.arduino.cc/editor/sunfounder01/98546821-5f4b-42ae-bc9f-e7ec15544c8b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe></div></blockquote>
+</li>
+<li><p>Once your code is ready, select the correct board and port, and beam up the code to your Mars Rover. Then, tune into our secret communication line (the Serial Monitor) by clicking on its icon in the top right corner.</p>
+<blockquote>
+<div><img alt="../_images/ir_open_serial.png" src="../_images/ir_open_serial.png" />
+</div></blockquote>
+</li>
+<li><p>Before you start receiving the Rover’s messages, make sure your secret communication line is tuned at the same speed (9600 baud) as your Rover. And there you have it - live updates from your Mars Rover!</p>
+<blockquote>
+<div><img alt="../_images/ir_serial.png" src="../_images/ir_serial.png" />
+</div></blockquote>
+</li>
+<li><p>To put our system to the test, wave a “space rock” (your hand) in front of one of the sensors. You’ll see the value flip to 0, and the corresponding LED on the module lights up. That’s the Rover saying, “Look out, space rock on my right!”</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Right</span> <span class="n">IR</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">Left</span> <span class="n">IR</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">Right</span> <span class="n">IR</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">Left</span> <span class="n">IR</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">Right</span> <span class="n">IR</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">Left</span> <span class="n">IR</span><span class="p">:</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>By now, you’ve not just journeyed through space but also deciphered Martian! Can’t wait to see what interstellar secrets we unveil in our next mission!</p>
+<p><strong>Step 4: Adjusting the Detection Distance</strong></p>
+<p>We have arrived at an essential step, which is to adjust the detection distances of our sensors based on our current environment. The factory settings may not be optimal.</p>
+<p>If the detection distance of the two infrared modules is too short, the Mars Rover might collide with obstacles. If it’s too far, the Rover might start turning while still a significant distance from an obstacle, potentially impacting its movement.</p>
+<p>Here’s how you can make adjustments:</p>
+<ol class="arabic">
+<li><p>Start by adjusting the right obstacle avoidance module. During transportation, collisions may cause the transmitter and receiver on the infrared module to tilt. Therefore, you need to manually straighten them.</p>
+<blockquote>
+<div><video width="600" loop autoplay muted>
+    <source src="../_static/video/ir_adjust1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video></div></blockquote>
+</li>
+<li><p>Place an obstacle about 20 cm directly in front of the right module. The box in which our Rover kit came is a good choice for this! Now, turn the potentiometer on the module until the indicator light on the module just lights up. Then, keep moving the obstacle back and forth to check if the indicator light comes on at the desired distance. If the light doesn’t turn on at the correct distance or if it remains on without going out, you’ll need to adjust the other potentiometer.</p>
+<blockquote>
+<div><video width="600" loop autoplay muted>
+    <source src="../_static/video/ir_adjust2.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video></div></blockquote>
+</li>
+<li><p>Repeat the same process for another module.</p></li>
+</ol>
+<p>Now that our sensors are fully prepared, let’s embark on the next journey!</p>
+<p><strong>Step 5: Design an Automatic Obstacle Avoidance System</strong></p>
+<p>Now, let’s take a big leap in our space exploration and make use of these messages from the Rover.
+We’re going to create an automatic obstacle avoidance system!</p>
+<p>Here’s our plan: If the right sensor detects an obstacle, the Rover will turn to the back right. If the left sensor detects an obstacle, the Rover will turn to the back left. If both sensors detect an obstacle, the Rover will move backward. If no obstacles are detected, the Rover will continue moving straight ahead.</p>
+<p>Let’s visualize this in a flowchart to make it even more clear. Flowcharts are a great way to logically outline a plan, especially when it comes to programming!</p>
+<img alt="../_images/ir_flowchart.png" src="../_images/ir_flowchart.png" />
+<p>Let’s whisper this plan to our Rover in its language(Arduino code):</p>
+<iframe src=https://create.arduino.cc/editor/sunfounder01/af6539d4-7b4b-4e74-a04a-9fa069391d4d/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe><p>In this code, we are using <code class="docutils literal notranslate"><span class="pre">if...else</span></code> statement in the <code class="docutils literal notranslate"><span class="pre">loop()</span></code> function.</p>
+<blockquote>
+<div><p>The <code class="docutils literal notranslate"><span class="pre">if...else</span></code> statement is used to execute a block of code among two alternatives.
+However, when we need to choose among more than two alternatives, we use the <code class="docutils literal notranslate"><span class="pre">if...else</span> <span class="pre">if...else</span></code> statement.</p>
+<p>The syntax of the <code class="docutils literal notranslate"><span class="pre">if...else</span> <span class="pre">if...else</span></code> statement is:</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="c1">// code block 1</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition2</span><span class="p">){</span>
+<span class="c1">// code block 2</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition3</span><span class="p">){</span>
+<span class="c1">// code block 3</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="c1">// code block 4</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Here,</p>
+<ul class="simple">
+<li><p>If condition1 is true, code block 1 is executed.</p></li>
+<li><p>If condition1 is false, then condition2 is evaluated.</p></li>
+<li><p>If condition2 is true, code block 2 is executed.</p></li>
+<li><p>If condition2 is false, then condition3 is evaluated.</p></li>
+<li><p>If condition3 is true, code block 3 is executed.</p></li>
+<li><p>If condition3 is false, code block 4 is executed.</p></li>
+</ul>
+</div></blockquote>
+<p>Now that we’ve designed our automatic obstacle avoidance system, it’s time for the exciting part - putting it to the test!</p>
+<ul class="simple">
+<li><p>You can observe if the Rover moves as you expected.</p></li>
+<li><p>Or, place it in different lighting conditions to see how its movements change.</p></li>
+</ul>
+<p>By integrating science into our engineering project, we’re becoming space detectives, solving the mysteries of our Rover’s behavior.
+This isn’t just about correcting errors but optimizing performance, making our Rover the best it can be! Keep up the fantastic work, space detectives!</p>
+<p><strong>Step 6: Reflection and Summary</strong></p>
+<p>In the testing phase, you might have noticed an interesting behavior of our Mars Rover: while it expertly avoids obstacles to its left and right, it might struggle to detect smaller obstacles straight ahead.</p>
+<p>How can we solve this challenge?</p>
+<p>Stay tuned for the next lesson, where we’ll continue our exploration into the fascinating world of coding, sensors, and obstacle detection.</p>
+<p>Remember, every challenge is an opportunity for learning and innovation. And as we continue our space exploration journey, there’s so much more to discover and learn!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lesson5_car_move.html" class="btn btn-neutral float-left" title="Lesson 5: Unleashing Mars Rover Mobility" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="lesson7_ultrasonic_avoid.html" class="btn btn-neutral float-right" title="Lesson 7: Enhancing Rover Navigation with Ultrasonic Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

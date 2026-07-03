@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fun2 Flappy Parrot &mdash; SunFounder GalaxyRVR Kit for Arduino 1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+        <script src="../../_static/./lang.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Fun3 Shooting" href="sc_fun_shooting.html" />
+    <link rel="prev" title="Fun1 Inflating the Balloon" href="sc_fun_balloon.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            SunFounder GalaxyRVR Kit for Arduino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">About this Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assemble_video.html">Assemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../update_firmware.html">Update Firmwares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../arduino/programming_arduino.html">Programming with Arduino IDE</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../scratch.html">Programming with Scratch</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../sc1_history.html">Lesson 1 Unveiling the Mars Rover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc2_app.html">Lesson 2 Getting Started with the Mammoth Coding App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc3_rvr_move.html">Lesson 3: Remote Control Your GalaxyRVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc4_ultrasonic.html">Lesson 4: Ultrasonic Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc5_animate.html">Lesson 5 Interactive Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc6_obstacle.html">Lesson 6 IR Obstacle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc7_obstacle_animate.html">Lesson 7: Create an IR Obstacle Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc8_avoid.html">Lesson 8 Advanced Obstacle Avoidance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc9_follow.html">Lesson 9: Mars Exploration Partner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc10_rgb.html">Lesson 10: Lighting the Way with RGB LED Strips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc11_servo.html">Lesson 11: Control Your Rover’s Camera Tilt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc12_camera.html">Lesson 12: See Through Your Rover’s Eyes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc13_all.html">Lesson 13: Complete Mars Rover Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc_fun_balloon.html">Fun1 Inflating the Balloon</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Fun2 Flappy Parrot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#add-sprites">1. Add Sprites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scripting-for-the-parrot-sprite">2. Scripting for the <strong>Parrot</strong> Sprite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scripting-for-the-paddle-sprite">3. Scripting for the <strong>Paddle</strong> Sprite</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sc_fun_shooting.html">Fun3 Shooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc_fun_eat_apple.html">Fun4 Eat Apple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc_fun_fish.html">Fun5 Fishing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc_fun_sensitive_ball.html">Fun6 Distance Sensitive Ball</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc_fun_tap_tile.html">Fun7 Tap on The Black Tile</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SunFounder GalaxyRVR Kit for Arduino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../scratch.html">Programming with Scratch</a></li>
+      <li class="breadcrumb-item active">Fun2 Flappy Parrot</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/scratch/fun/sc_fun_flappy_parrot.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="fun2-flappy-parrot">
+<span id="sc-parrot"></span><h1>Fun2 Flappy Parrot<a class="headerlink" href="#fun2-flappy-parrot" title="Permalink to this heading"></a></h1>
+<p>In this project, we utilize an ultrasonic module to play a flappy parrot game.</p>
+<p>After starting the script, the green bamboo (Paddle) will move from right to left at a random height. To control the parrot, place your hand above the ultrasonic module. If the distance between your hand and the module is less than 10cm, the parrot will ascend; otherwise, it will descend. You must manage this distance carefully to help the Parrot navigate past the green bamboo. Contact with the bamboo ends the game.</p>
+<video loop autoplay muted style = "max-width:70%">
+   <source src="../../_static/video/sc_flappy_parrot.mp4" type="video/mp4">
+   Your browser does not support the video tag.
+</video><p>Below are the steps for implementing the project. It is recommended to follow these steps initially, and once familiar, you may alter the effects as desired.</p>
+<section id="add-sprites">
+<h2>1. Add Sprites<a class="headerlink" href="#add-sprites" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Delete the default sprite and use the <strong>Choose a Sprite</strong> button to add the <strong>Parrot</strong> sprite. Set its size to 50% and position it on the bottom left corner.</p>
+<img alt="../../_images/parrot_choose_parrot.png" src="../../_images/parrot_choose_parrot.png" />
+</li>
+<li><p>Add the <strong>Paddle</strong> sprite, set its size to 150%, rotate it to 180 degrees, and position it in the top right corner.</p>
+<img alt="../../_images/parrot_choose_paddle.png" src="../../_images/parrot_choose_paddle.png" />
+</li>
+<li><p>Navigate to the <strong>Costumes</strong> page of the <strong>Paddle</strong> sprite, select the <strong>Paddle</strong> on the canvas, and then click the <strong>Outline</strong> tool.</p>
+<a class="reference internal image-reference" href="../../_images/parrot_set_parrot1.png"><img alt="../../_images/parrot_set_parrot1.png" src="../../_images/parrot_set_parrot1.png" style="width: 90%;" /></a>
+</li>
+<li><p>Change the outline effect to full fill mode and use the removal tool to eliminate it.</p>
+<a class="reference internal image-reference" href="../../_images/parrot_set_parrot2.png"><img alt="../../_images/parrot_set_parrot2.png" src="../../_images/parrot_set_parrot2.png" style="width: 90%;" /></a>
+</li>
+</ul>
+</section>
+<section id="scripting-for-the-parrot-sprite">
+<h2>2. Scripting for the <strong>Parrot</strong> Sprite<a class="headerlink" href="#scripting-for-the-parrot-sprite" title="Permalink to this heading"></a></h2>
+<p>Script the <strong>Parrot</strong> sprite to simulate its flight, with altitude adjustments based on the ultrasonic module’s detection distance.</p>
+<ul>
+<li><p>When the green flag is clicked, switch the costume every 0.2 seconds to maintain the appearance of flight.</p>
+<img alt="../../_images/parrot_script_parrot1.png" src="../../_images/parrot_script_parrot1.png" />
+</li>
+<li><p>If the ultrasonic detection distance is less than 10cm, increase the y-coordinate by 50, causing the <strong>Parrot</strong> to ascend. Otherwise, decrease the y-coordinate by 40, causing the <strong>Parrot</strong> to descend.</p>
+<img alt="../../_images/parrot_script_parrot3.png" src="../../_images/parrot_script_parrot3.png" />
+</li>
+<li><p>If the <strong>Parrot</strong> sprite makes contact with the <strong>Paddle</strong> sprite, the game ends, and the script ceases execution.</p>
+<img alt="../../_images/parrot_script_parrot4.png" src="../../_images/parrot_script_parrot4.png" />
+</li>
+</ul>
+</section>
+<section id="scripting-for-the-paddle-sprite">
+<h2>3. Scripting for the <strong>Paddle</strong> Sprite<a class="headerlink" href="#scripting-for-the-paddle-sprite" title="Permalink to this heading"></a></h2>
+<p>Script the <strong>Paddle</strong> sprite to appear randomly on stage.</p>
+<ul>
+<li><p>Hide the <strong>Paddle</strong> sprite when the green flag is clicked and simultaneously create a clone of itself. The [<a class="reference external" href="https://en.scratch-wiki.info/wiki/Create_Clone_of_()_(block)">create clone of</a>] block controls this cloning process.</p>
+<img alt="../../_images/parrot_script_paddle1.png" src="../../_images/parrot_script_paddle1.png" />
+</li>
+<li><p>Set the clone’s position with the x-coordinate at 220 (rightmost) and the y-coordinate randomly between (-125 to 125).</p>
+<img alt="../../_images/parrot_script_paddle2.png" src="../../_images/parrot_script_paddle2.png" />
+</li>
+<li><p>Use the [repeat] block to gradually decrease its x-coordinate, making the clone move slowly from right to left until it disappears.</p>
+<img alt="../../_images/parrot_script_paddle3.png" src="../../_images/parrot_script_paddle3.png" />
+</li>
+<li><p>Re-clone a new <strong>Paddle</strong> sprite and delete the previous clone.</p>
+<img alt="../../_images/parrot_script_paddle4.png" src="../../_images/parrot_script_paddle4.png" />
+</li>
+</ul>
+<p>Programming is complete. You can now click the green flag to run the script and see if it achieves the desired effect.</p>
+<video loop autoplay muted style = "max-width:70%">
+   <source src="../../_static/video/sc_flappy_parrot.mp4"  type="video/mp4">
+   Your browser does not support the video tag.
+</video></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sc_fun_balloon.html" class="btn btn-neutral float-left" title="Fun1 Inflating the Balloon" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sc_fun_shooting.html" class="btn btn-neutral float-right" title="Fun3 Shooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

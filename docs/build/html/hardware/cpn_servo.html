@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servo &mdash; SunFounder GalaxyRVR Kit for Arduino 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+        <script src="../_static/./lang.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="TT Motor" href="cpn_tt_motor_xh.html" />
+    <link rel="prev" title="4 RGB LEDs Strip" href="cpn_rgb_strip.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder GalaxyRVR Kit for Arduino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">About this Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemble_video.html">Assemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../update_firmware.html">Update Firmwares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arduino/programming_arduino.html">Programming with Arduino IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scratch/scratch.html">Programming with Scratch</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="hardware.html">Hardware</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cpn_r3_board.html">SunFounder R3 Board</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpn_galaxy_shield.html">GalaxyRVR Shield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpn_esp_32_cam.html">ESP32 CAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpn_ultrasonic_module_xh.html">Ultrasonic Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpn_ir_obstacle_module.html">IR Obstacle Avoidcance Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpn_rgb_strip.html">4 RGB LEDs Strip</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpn_tt_motor_xh.html">TT Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpn_solar_panel.html">Solar Panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpn_18650_battery.html">18650 Battery</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder GalaxyRVR Kit for Arduino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="hardware.html">Hardware</a></li>
+      <li class="breadcrumb-item active">Servo</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/hardware/cpn_servo.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="servo">
+<h1>Servo<a class="headerlink" href="#servo" title="Permalink to this heading"></a></h1>
+<p>A servo is a specialized motor known for its precision in controlling specific angular positions.</p>
+<img alt="../_images/servo1.png" class="align-center" src="../_images/servo1.png" />
+<ul class="simple">
+<li><p><strong>Brown Line</strong>: GND</p></li>
+<li><p><strong>Orange Line</strong>: Signal pin, connect to the PWM pin of main board.</p></li>
+<li><p><strong>Red wire</strong>: VCC</p></li>
+</ul>
+<p>Unlike regular motors that spin continuously, a servo can move to a precise position and hold it accurately. It achieves this through a combination of gears, a potentiometer, and control circuitry. Servos are commonly used in various applications that require precise control over the position of objects or mechanisms.</p>
+<p><strong>Features</strong></p>
+<ul class="simple">
+<li><p><strong>Motor Type</strong>: Core motor</p></li>
+<li><p><strong>Operating Voltage</strong>: 4.8~6V DC</p></li>
+<li><p><strong>Standby Current</strong>: ≤4 mA</p></li>
+<li><p><strong>Consumption Current(at 4.8V No Load)</strong>: ≦50mA</p></li>
+<li><p><strong>Consumption Current(at 6 V no load)</strong>: ≦60mA</p></li>
+<li><p><strong>Stall Current(at locked 4.8V)</strong>: ≦550mA</p></li>
+<li><p><strong>Stall Current(at locked 6V)</strong>: ≦650mA</p></li>
+<li><p><strong>Rated Torque</strong>: 4.8V, ≥0.6 kgf·cm; 6V, ≥0.7 kgf·cm</p></li>
+<li><p><strong>Max. Torque</strong>: 4.8V, ≥1.4 kgf.cm; 6V, ≥1.6 kgf.cm</p></li>
+<li><p><strong>No Load Speed</strong>: 4.8V, ≦0.14sec/60°; 6V, ≦0.12sec/60°</p></li>
+<li><p><strong>Note</strong>: Torsion protection:≥0.9 kgf.cm;Power failure protection after 5 seconds of continuous</p></li>
+<li><p><strong>Operating Temperature Range</strong>: -10℃~+50℃</p></li>
+<li><p><strong>Storage Temperature Range</strong>: -20℃~+60℃</p></li>
+<li><p><strong>Operating Humidity Range</strong>: ≤ 90%RH</p></li>
+<li><p><strong>Storage Humidity Range</strong>: ≤ 90%RH</p></li>
+<li><p><strong>Weight</strong>: 10± 0.5g</p></li>
+<li><p><strong>Material</strong>: ABS</p></li>
+<li><p><strong>Operating Angle</strong>: 180°±10°(500~2500us)</p></li>
+<li><p><strong>Mechanical Limit Angle</strong>: 360°</p></li>
+<li><p><strong>Left &amp; Right Travelling Angle</strong>: ≤ 6°</p></li>
+<li><p><strong>Centering deviation</strong>: ≤ 1°</p></li>
+<li><p><strong>Back Lash</strong>: ≤ 4 us</p></li>
+<li><p><strong>Amplifier Type</strong>: Digital</p></li>
+<li><p><strong>Cable Materia</strong>: Ф1.08,19 PVC</p></li>
+<li><p><strong>Cable Length</strong>: 245±5mm(Exsert without plugs)</p></li>
+<li><p><strong>Connector Type</strong>: JR2.54mm/3Pin</p></li>
+</ul>
+<p><strong>Operating Principle</strong></p>
+<p>Inside a servo, essential components contribute to its unique functionality. At its core, a servo incorporates a conventional motor, this motor is intricately linked to a large gear, which in turn engages with a smaller gear on the motor shaft. This gearing arrangement efficiently converts the motor’s rapid circular motion into slower yet potent movements.</p>
+<img alt="../_images/servo_internal1.png" src="../_images/servo_internal1.png" />
+<p>But the real magic happens within the servo, thanks to a minuscule electronic marvel known as a “potentiometer” and sophisticated “control circuitry.” When the servo undergoes movement, the potentiometer rotates, altering its electrical resistance. The control circuitry detects and interprets this change in resistance with remarkable precision, thereby determining the servo’s exact position. This is a testament to its ingenuity.</p>
+<p>In the realm of servo control, a unique signaling method called “pulse-width modulation” or PWM comes into play. By skillfully adjusting the width of these pulses, operators can command the servo to move with precision and maintain its position. This is the essence of servo motor technology, a realm where precision and control converge to enable an array of applications.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="cpn_rgb_strip.html" class="btn btn-neutral float-left" title="4 RGB LEDs Strip" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cpn_tt_motor_xh.html" class="btn btn-neutral float-right" title="TT Motor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

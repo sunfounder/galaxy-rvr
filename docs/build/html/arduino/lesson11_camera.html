@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 11: Exploring the Mars Rover Visual System - Camera and Real-time Control &mdash; SunFounder GalaxyRVR Kit for Arduino 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+        <script src="../_static/./lang.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lesson 12: Investigating the Mars Rover Energy System" href="lesson12_solar_panel.html" />
+    <link rel="prev" title="Lesson 10: Exploring the Mars Rover Visual System - Servo and Tilt Mechanism" href="lesson10_servo.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder GalaxyRVR Kit for Arduino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">About this Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemble_video.html">Assemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../update_firmware.html">Update Firmwares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="programming_arduino.html">Programming with Arduino IDE</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="lesson1_history.html">Lesson 1 Unveiling the Mars Rover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson2_rocker_bogie.html">Lesson 2 Understanding and Making Rocker-Bogie System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson3_arduino_ide.html">Lesson 3:  Entering the World of Arduino and Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson4_motor.html">Lesson 4: Mastering the TT Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson5_car_move.html">Lesson 5: Unleashing Mars Rover Mobility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson6_ir_avoid.html">Lesson 6: Exploring the Obstacle Avoidance Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson7_ultrasonic_avoid.html">Lesson 7: Enhancing Rover Navigation with Ultrasonic Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson8_ir_ultrasonic.html">Lesson 8: Advanced Obstacle Avoidance and Intelligent Following System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson9_rgb_strips.html">Lesson 9: Lighting the Way with RGB LED Strips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson10_servo.html">Lesson 10: Exploring the Mars Rover Visual System - Servo and Tilt Mechanism</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 11: Exploring the Mars Rover Visual System - Camera and Real-time Control</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#learning-goals">Learning Goals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#materials-needed">Materials needed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#course-steps">Course Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lesson12_solar_panel.html">Lesson 12: Investigating the Mars Rover Energy System</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scratch/scratch.html">Programming with Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder GalaxyRVR Kit for Arduino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="programming_arduino.html">Programming with Arduino IDE</a></li>
+      <li class="breadcrumb-item active">Lesson 11: Exploring the Mars Rover Visual System - Camera and Real-time Control</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/arduino/lesson11_camera.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="lesson-11-exploring-the-mars-rover-visual-system-camera-and-real-time-control">
+<h1>Lesson 11: Exploring the Mars Rover Visual System - Camera and Real-time Control<a class="headerlink" href="#lesson-11-exploring-the-mars-rover-visual-system-camera-and-real-time-control" title="Permalink to this heading"></a></h1>
+<p>Welcome back, young explorers! In the last lesson, we equipped our Mars Rover with the ability to “nod” using a tilt mechanism. Now, it’s time to give our Rover “eyes” - the camera!</p>
+<p>In this thrilling journey, we’ll dive into the setup of the Rover’s camera system. You’ll learn how to relay the visuals captured by the Rover’s camera to a web page, so you can see exactly what the Rover sees, in real time. Imagine the excitement of experiencing the Martian landscape from the Rover’s perspective!</p>
+<p>The excitement continues as we also introduce the SunFounder Controller app. This application allows us to get a live feed of the Rover’s view as it navigates around, and we can control the tilt mechanism directly from our smartphones or tablets. It’s like having a remote control with a built-in screen!</p>
+<section id="learning-goals">
+<h2>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Understand how to establish a WiFi connection with the ESP32 CAM.</p></li>
+<li><p>Learn how to see exactly what the Rover sees, in real time.</p></li>
+<li><p>Learn how to use the SunFounder Controller app to create a virtual remote and control the Mars Rover.</p></li>
+</ul>
+</section>
+<section id="materials-needed">
+<h2>Materials needed<a class="headerlink" href="#materials-needed" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Mars Rover model (equipped with all components)</p></li>
+<li><p>Arduino IDE</p></li>
+<li><p>Computer</p></li>
+<li><p>Tablet or smartphone with SunFounder Controller app installed</p></li>
+</ul>
+</section>
+<section id="course-steps">
+<h2>Course Steps<a class="headerlink" href="#course-steps" title="Permalink to this heading"></a></h2>
+<p><strong>Step 1: Introduction to ESP32 CAM</strong></p>
+<p>In our previous adventure, we have equipped our Mars Rover with a pair of “eyes” by integrating the ESP32 CAM. Today, we’re going to learn more about it and actually make it “see”.</p>
+<a class="reference internal image-reference" href="../_images/esp32_cam.png"><img alt="../_images/esp32_cam.png" class="align-center" src="../_images/esp32_cam.png" style="width: 400px;" /></a>
+<p>The ESP32 CAM, acting like the eyes of our Rover, is a small yet powerful module. Not only does it integrate Wi-Fi and Bluetooth functionalities, it also comes with a compact camera. This camera helps our Rover capture images of its surroundings.</p>
+<p>Just like we use our eyes to observe our environment, the ESP32 CAM can “see” what lies ahead for the Rover, then send these visual data to our smartphone or computer. This allows us to see everything the Rover sees in real-time!</p>
+<p>It’s as if we’re piloting the Rover directly, observing not just the Rover itself, but also the world it explores! Incredible, isn’t it? So, let’s dive deeper into it…</p>
+<p><strong>Step 2: Programming the Rover’s Camera and Viewing the Feed</strong></p>
+<p>After fitting the ESP32-CAM to our Rover, we now need to breathe life into it.
+To do so, we will use the Arduino IDE to write a program that will control the camera, allow it to connect to WiFi,
+and stream the visuals it captures.</p>
+<p>Here’s how we can do it:</p>
+<ol class="arabic">
+<li><p>Install the <code class="docutils literal notranslate"><span class="pre">SunFounder</span> <span class="pre">AI</span> <span class="pre">Camera</span></code> library.</p>
+<blockquote>
+<div><ul>
+<li><p>Open the Arduino IDE’s <strong>Library Manager</strong>, search for “SunFounder Camera”, and click <strong>INSTALL</strong>.</p>
+<blockquote>
+<div><img alt="../_images/camera_install_lib.png" src="../_images/camera_install_lib.png" />
+</div></blockquote>
+</li>
+<li><p>A pop-up window will appear for the installation of library dependencies. Click <strong>INSTALL ALL</strong> and wait for the process to complete.</p>
+<blockquote>
+<div><img alt="../_images/camera_install_lib1.png" src="../_images/camera_install_lib1.png" />
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>In the Arduino IDE, input the following code.</p>
+<blockquote>
+<div><p>Regarding the variables <code class="docutils literal notranslate"><span class="pre">NAME</span></code>, <code class="docutils literal notranslate"><span class="pre">TYPE</span></code>, and <code class="docutils literal notranslate"><span class="pre">PORT</span></code> in the code, let’s not delve into them at this point. They will come into play in our next step. Just keep in mind that these variables will be important in our upcoming journey to establish a real-time video feed from our Mars Rover.</p>
+<iframe src=https://create.arduino.cc/editor/sunfounder01/06b648e4-23e8-4b28-accd-aac171069116/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe><p>Notice we have two connection modes in the code - <strong>AP</strong> mode and <strong>STA</strong> mode. You can decide which one to use based on your specific needs.</p>
+<ul>
+<li><p><strong>AP Mode</strong>: In this mode, the Rover creates a hotspot (named as <code class="docutils literal notranslate"><span class="pre">GalaxyRVR</span></code> in our code). This allows any device like a mobile phone, tablet, or laptop to connect to this network. This is especially useful when you want to control the Rover remotely under any circumstances. However, note that this would make your device temporarily unable to connect to the Internet.</p>
+<blockquote>
+<div><div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="c1">// AP Mode</span>
+<span class="cp">#define WIFI_MODE WIFI_MODE_AP</span>
+<span class="cp">#define SSID &quot;GalaxyRVR&quot;</span>
+<span class="cp">#define PASSWORD &quot;12345678&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>STA Mode</strong>: In this mode, the Rover connects to your home WiFi network. Remember that your controlling device (like a mobile phone or tablet) should also be connected to the same WiFi network. This mode allows your device to keep its regular internet access while controlling the Rover, but limits the Rover’s operational range to your WiFi coverage area.</p>
+<blockquote>
+<div><div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="c1">// STA Mode</span>
+<span class="cp">#define WIFI_MODE WIFI_MODE_STA</span>
+<span class="cp">#define SSID &quot;YOUR SSID&quot;</span>
+<span class="cp">#define PASSWORD &quot;YOUR PASSWORD&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Upload the code to our Rover and bring our ESP32 CAM to life!</p>
+<blockquote>
+<div><ul>
+<li><p>The ESP32-CAM and the Arduino board share the same RX (receive) and TX (transmit) pins. So, before uploading the code, you’ll need to first release the ESP32-CAM by slide this switch to right side to avoid any conflicts or potential issues.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/camera_upload.png"><img alt="../_images/camera_upload.png" src="../_images/camera_upload.png" style="width: 600px;" /></a>
+</div></blockquote>
+</li>
+<li><p>Once the code has been uploaded successfully, switch it back to the left side to start the ESP32 CAM.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This step and the previous one are required every time you re-upload the code.</p>
+</div>
+<a class="reference internal image-reference" href="../_images/camera_run.png"><img alt="../_images/camera_run.png" src="../_images/camera_run.png" style="width: 600px;" /></a>
+</div></blockquote>
+</li>
+<li><p>Open the <strong>Serial Monitor</strong> and set the baud rate to 115200. If no information appears, press the <strong>Reset button</strong> on the GalaxyRVR shield to run the code again. You should see an IP address in the serial monitor output. This is the address your Rover’s camera is broadcasting to.</p>
+<blockquote>
+<div><img alt="../_images/camera_serial.png" src="../_images/camera_serial.png" />
+</div></blockquote>
+</li>
+<li><p>Now, it’s time to actually see what our Rover sees! Open up a web browser - we recommend Google Chrome - and enter the URL you see in the Serial Monitor, in the format <code class="docutils literal notranslate"><span class="pre">http://ip:9000/mjpg</span></code>.</p>
+<blockquote>
+<div><img alt="../_images/camera_view.png" src="../_images/camera_view.png" />
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<p>And voila! You should now be able to see the live feed from your Rover’s camera. Isn’t it amazing to think that you are viewing Mars (or maybe just your living room) from the Rover’s perspective? Just like a real Mars Rover scientist!</p>
+<p>Remember, this is just the beginning. There is so much more to explore and learn. In our next step, we will explore how to control our Rover while viewing the live camera feed. Exciting, isn’t it? Onwards, explorers!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lesson10_servo.html" class="btn btn-neutral float-left" title="Lesson 10: Exploring the Mars Rover Visual System - Servo and Tilt Mechanism" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="lesson12_solar_panel.html" class="btn btn-neutral float-right" title="Lesson 12: Investigating the Mars Rover Energy System" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

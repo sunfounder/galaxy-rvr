@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Update Firmwares &mdash; SunFounder GalaxyRVR Kit for Arduino 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+        <script src="_static/./lang.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Quick Start" href="quick_start/quick_start.html" />
+    <link rel="prev" title="Assemble" href="assemble_video.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SunFounder GalaxyRVR Kit for Arduino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">About this Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assemble_video.html">Assemble</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Update Firmwares</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#check-whether-an-update-is-needed">1. Check Whether an Update Is Needed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#updating-the-esp32-cam-firmware">2. Updating the ESP32 CAM Firmware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#updating-the-r3-board-firmware">3. Updating the R3 Board Firmware</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arduino/programming_arduino.html">Programming with Arduino IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scratch/scratch.html">Programming with Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware/hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SunFounder GalaxyRVR Kit for Arduino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Update Firmwares</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/update_firmware.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="update-firmwares">
+<span id="update-firmware"></span><h1>Update Firmwares<a class="headerlink" href="#update-firmwares" title="Permalink to this heading"></a></h1>
+<p>Your device may not have the latest firmware due to ongoing product improvements.
+To ensure optimal and stable performance, please follow the steps below to check and update the firmware on your ESP32 CAM and R3 board.</p>
+<section id="check-whether-an-update-is-needed">
+<h2>1. Check Whether an Update Is Needed<a class="headerlink" href="#check-whether-an-update-is-needed" title="Permalink to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Before using the GalaxyRVR for the first time, fully charge the battery with the supplied Type-C USB cable. After charging, turn the power on.</p>
+<video width="600" loop autoplay muted>
+    <source src="_static/video/play_start.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video></li>
+<li><p>To start the ESP32 CAM, switch the mode to <strong>Run</strong> and press the <strong>Reset</strong> button on the R3 board. The bottom light strip will begin flashing to indicate a successful startup.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>If the bottom light strip shows a <strong>green flashing light</strong>, your ESP32 firmware is already up to date.</p></li>
+<li><p>You may proceed to <a class="reference internal" href="quick_start/quick_start.html#quick-start"><span class="std std-ref">Quick Start</span></a>.</p></li>
+</ul>
+</div>
+<video width="600" loop autoplay muted>
+    <source src="_static/video/play_reset_green.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video></li>
+<li><p>If the bottom light strip flashes <strong>other color</strong>, you will need to:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#update-esp32-firmware"><span class="std std-ref">2. Updating the ESP32 CAM Firmware</span></a></p></li>
+<li><p><a class="reference internal" href="#update-r3-firmware"><span class="std std-ref">3. Updating the R3 Board Firmware</span></a></p></li>
+</ul>
+<video width="600" loop autoplay muted>
+    <source src="_static/video/play_reset.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video></li>
+</ol>
+</section>
+<section id="updating-the-esp32-cam-firmware">
+<span id="update-esp32-firmware"></span><h2>2. Updating the ESP32 CAM Firmware<a class="headerlink" href="#updating-the-esp32-cam-firmware" title="Permalink to this heading"></a></h2>
+<p>The ESP32 CAM broadcasts the Wi-Fi hotspot and captures video for the GalaxyRVR.
+If the firmware is outdated, these functions may not work properly. Follow the steps below to update the firmware.</p>
+<ol class="arabic">
+<li><p>Turn on the GalaxyRVR’s power switch. To start the ESP32 CAM, switch the mode to <strong>Run</strong> and press the <strong>Reset</strong> button on the R3 board.</p>
+<a class="reference internal image-reference" href="_images/camera_run1.png"><img alt="_images/camera_run1.png" class="align-center" src="_images/camera_run1.png" style="width: 500px;" /></a>
+</li>
+<li><p>Download the firmware file.</p>
+<ul class="simple">
+<li><p><a class="reference download external" download="" href="https://github.com/sunfounder/galaxy-rvr/releases/download/2.0.0/galaxy-rvr.ino.2.0.0.zip"><code class="xref download docutils literal notranslate"><span class="pre">GalaxyRVR</span> <span class="pre">Firmware</span> <span class="pre">File</span></code></a></p></li>
+</ul>
+</li>
+<li><p>Extract the downloaded ZIP file. Locate the firmware file named <code class="docutils literal notranslate"><span class="pre">ai-camera-firware.ino.x.x.x.bin</span></code> and transfer it to your mobile device. You can use any file manager app, such as ES File Explorer or a file transfer utility.</p>
+<img alt="_images/firmware_bin_file.png" class="align-center" src="_images/firmware_bin_file.png" />
+</li>
+<li><p>Connect your mobile device to the GalaxyRVR’s WiFi network.</p>
+<ul class="simple">
+<li><p>The network name (SSID) is <code class="docutils literal notranslate"><span class="pre">GalaxyRVR</span></code> and the password is <code class="docutils literal notranslate"><span class="pre">12345678</span></code>.</p></li>
+<li><p>If you see a warning stating “No Internet access,” please choose the option to <strong>“Stay connected.”</strong></p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/camera_lan.png"><img alt="_images/camera_lan.png" class="align-center" src="_images/camera_lan.png" style="width: 50%;" /></a>
+</li>
+<li><p>Open a web browser on your mobile device and navigate to <code class="docutils literal notranslate"><span class="pre">http://192.168.4.1</span></code> to access the ESP32 CAM OTA update page.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On this page, you will see OTA upgrade options in one of two interfaces. Version A (the former) and Version B (the latter) will appear depending on your firmware version. Simply select the corresponding upgrade steps based on the interface you see.</p>
+<a class="reference internal image-reference" href="_images/firmware_access_ab.png"><img alt="_images/firmware_access_ab.png" class="align-center" src="_images/firmware_access_ab.png" style="width: 90%;" /></a>
+</div>
+<p><strong>Version A</strong></p>
+<blockquote>
+<div><ol class="arabic" start="6">
+<li><p>On the OTA page, click the button to select the firmware file.</p>
+<a class="reference internal image-reference" href="_images/faq_cam_ota_choose.png"><img alt="_images/faq_cam_ota_choose.png" src="_images/faq_cam_ota_choose.png" style="width: 400px;" /></a>
+</li>
+<li><p>Choose the previously downloaded <code class="docutils literal notranslate"><span class="pre">ai-camera-firmware-vX.X.X-ota.bin</span></code> file from your device and click <strong>Add</strong>.</p>
+<a class="reference internal image-reference" href="_images/faq_cam_ota_file.png"><img alt="_images/faq_cam_ota_file.png" src="_images/faq_cam_ota_file.png" style="width: 400px;" /></a>
+</li>
+<li><p>Click the <strong>Update</strong> button to start the firmware update process.</p>
+<a class="reference internal image-reference" href="_images/faq_cam_ota_update.png"><img alt="_images/faq_cam_ota_update.png" src="_images/faq_cam_ota_update.png" style="width: 400px;" /></a>
+</li>
+<li><p>Wait for the update to complete.</p>
+<a class="reference internal image-reference" href="_images/faq_cam_ota_finish.png"><img alt="_images/faq_cam_ota_finish.png" src="_images/faq_cam_ota_finish.png" style="width: 400px;" /></a>
+</li>
+<li><p>After the update is complete, you can close the web browser. Press the <strong>Reset</strong> button to reboot the device. The ESP32 CAM is now ready for normal operation.</p>
+<a class="reference internal image-reference" href="_images/camera_reset.png"><img alt="_images/camera_reset.png" src="_images/camera_reset.png" style="width: 600px;" /></a>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After the update is complete, the GalaxyRVR’s WiFi hotspot name will change to “AI Camera-xxxxxx”, and the password will remain “12345678”.</p>
+</div>
+</div></blockquote>
+<p><strong>Version B</strong></p>
+<blockquote>
+<div><ol class="arabic" start="6">
+<li><p>On the <strong>OTA</strong> page, check the current firmware version displayed on the webpage.</p>
+<ul class="simple">
+<li><p>If your version number is <strong>higher than 1.5.1</strong>, an update is not required. You can skip the remaining steps and proceed directly to <a class="reference internal" href="quick_start/quick_start.html#quick-start"><span class="std std-ref">Quick Start</span></a>.</p></li>
+<li><p>If the version is <strong>1.5.1 or lower</strong>, please continue with the update.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/firmware_version.jpg"><img alt="_images/firmware_version.jpg" class="align-center" src="_images/firmware_version.jpg" style="width: 50%;" /></a>
+</li>
+<li><p>Tap the <strong>Upgrade Firmware</strong> button.</p>
+<a class="reference internal image-reference" href="_images/firmware_tap.jpg"><img alt="_images/firmware_tap.jpg" class="align-center" src="_images/firmware_tap.jpg" style="width: 50%;" /></a>
+</li>
+<li><p>A file selection dialog will appear. Navigate to and select the <code class="docutils literal notranslate"><span class="pre">ai-camera-firware.ino.x.x.x.bin</span></code> file you transferred to your mobile device earlier.</p>
+<a class="reference internal image-reference" href="_images/firmware_select.jpg"><img alt="_images/firmware_select.jpg" class="align-center" src="_images/firmware_select.jpg" style="width: 50%;" /></a>
+</li>
+<li><p>The firmware update will begin immediately after you select the file.</p>
+<a class="reference internal image-reference" href="_images/firmware_upgrade.jpg"><img alt="_images/firmware_upgrade.jpg" class="align-center" src="_images/firmware_upgrade.jpg" style="width: 50%;" /></a>
+</li>
+<li><p>Wait for the firmware upgrade to complete.</p>
+<ul class="simple">
+<li><p>The upload process typically takes 1-2 minutes. Once finished, a success message will appear in a pop-up window.</p></li>
+<li><p>You can then select <strong>CONFIRM</strong> to restart the GalaxyRVR or <strong>CLOSE</strong> to dismiss the window.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/firmware_finish.jpg"><img alt="_images/firmware_finish.jpg" class="align-center" src="_images/firmware_finish.jpg" style="width: 50%;" /></a>
+</li>
+</ol>
+</div></blockquote>
+</section>
+<section id="updating-the-r3-board-firmware">
+<span id="update-r3-firmware"></span><h2>3. Updating the R3 Board Firmware<a class="headerlink" href="#updating-the-r3-board-firmware" title="Permalink to this heading"></a></h2>
+<p>The R3 board includes built-in firmware that enables communication with the RoboPilot APP and Mammoth Coding.</p>
+<p>You need to re-upload this firmware if:</p>
+<ul class="simple">
+<li><p>Your device uses an older firmware version, or</p></li>
+<li><p>You have flashed your own Arduino code and want to restore compatibility.</p></li>
+</ul>
+<p>Follow the steps below to reinstall the communication firmware.</p>
+<ol class="arabic">
+<li><p>Connect the Arduino and computer with a USB cable, and then turn the <strong>upload</strong> switch of the car to the upload end.</p>
+<a class="reference internal image-reference" href="_images/camera_upload.png"><img alt="_images/camera_upload.png" class="align-center" src="_images/camera_upload.png" style="width: 500px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is the USB Type B port for connecting to Arduino, not the USB Type C port for charging.</p>
+</div>
+</li>
+<li><p>Check whether the firmware files have been downloaded.</p>
+<ul class="simple">
+<li><p><a class="reference download external" download="" href="https://github.com/sunfounder/galaxy-rvr/releases/download/2.0.0/galaxy-rvr.ino.2.0.0.zip"><code class="xref download docutils literal notranslate"><span class="pre">GalaxyRVR</span> <span class="pre">Firmware</span> <span class="pre">File</span></code></a></p></li>
+</ul>
+</li>
+<li><p>Run the update script</p>
+<ul class="simple">
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">galaxy-rvr.ino.xxx</span></code> folder (downloaded and installed in the previous step).</p></li>
+<li><p>Double-click the <code class="docutils literal notranslate"><span class="pre">update-arduino-firmware.bat</span></code> script.</p></li>
+<li><p>A command prompt window will appear automatically.</p></li>
+</ul>
+<img alt="_images/faq_bat_file.png" src="_images/faq_bat_file.png" />
+</li>
+<li><p>Select the serial port and upload</p>
+<ul class="simple">
+<li><p>In the command prompt, a list of available serial ports will be displayed.</p></li>
+<li><p>Enter the sequence number shown on the left to select the Arduino Uno’s serial port.</p></li>
+<li><p>Press <strong>Enter</strong> to begin the automatic upload.</p></li>
+<li><p>Example: If the list shows <cite>1 USB-SERIALXXX (COMxx)</cite>, enter <strong>1</strong> and press <strong>Enter</strong>.</p></li>
+</ul>
+<img alt="_images/faq_select_com.png" src="_images/faq_select_com.png" />
+</li>
+<li><p>After waiting for the upload to complete, you can unplug the USB cable.</p>
+<img alt="_images/faq_uno_updating.png" src="_images/faq_uno_updating.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This code enables the GalaxyRVR to respond to APP commands. You won’t need to upload any additional code when using either the RoboPilot remote control APP or the Mammoth Coding software.</p>
+</div>
+</li>
+<li><p>You can now proceed to <a class="reference internal" href="quick_start/quick_start.html#quick-start"><span class="std std-ref">Quick Start</span></a> to start your GalaxyRVR journey!</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="assemble_video.html" class="btn btn-neutral float-left" title="Assemble" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="quick_start/quick_start.html" class="btn btn-neutral float-right" title="Quick Start" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

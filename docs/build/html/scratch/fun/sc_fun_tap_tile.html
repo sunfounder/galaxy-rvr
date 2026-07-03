@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fun7 Tap on The Black Tile &mdash; SunFounder GalaxyRVR Kit for Arduino 1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+        <script src="../../_static/./lang.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Hardware" href="../../hardware/hardware.html" />
+    <link rel="prev" title="Fun6 Distance Sensitive Ball" href="sc_fun_sensitive_ball.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            SunFounder GalaxyRVR Kit for Arduino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">About this Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assemble_video.html">Assemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../update_firmware.html">Update Firmwares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../arduino/programming_arduino.html">Programming with Arduino IDE</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../scratch.html">Programming with Scratch</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../sc1_history.html">Lesson 1 Unveiling the Mars Rover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc2_app.html">Lesson 2 Getting Started with the Mammoth Coding App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc3_rvr_move.html">Lesson 3: Remote Control Your GalaxyRVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc4_ultrasonic.html">Lesson 4: Ultrasonic Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc5_animate.html">Lesson 5 Interactive Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc6_obstacle.html">Lesson 6 IR Obstacle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc7_obstacle_animate.html">Lesson 7: Create an IR Obstacle Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc8_avoid.html">Lesson 8 Advanced Obstacle Avoidance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc9_follow.html">Lesson 9: Mars Exploration Partner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc10_rgb.html">Lesson 10: Lighting the Way with RGB LED Strips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc11_servo.html">Lesson 11: Control Your Rover’s Camera Tilt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc12_camera.html">Lesson 12: See Through Your Rover’s Eyes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sc13_all.html">Lesson 13: Complete Mars Rover Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc_fun_balloon.html">Fun1 Inflating the Balloon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc_fun_flappy_parrot.html">Fun2 Flappy Parrot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc_fun_shooting.html">Fun3 Shooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc_fun_eat_apple.html">Fun4 Eat Apple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc_fun_fish.html">Fun5 Fishing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc_fun_sensitive_ball.html">Fun6 Distance Sensitive Ball</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Fun7 Tap on The Black Tile</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#paint-a-tile-sprite">1. Paint a <strong>Tile</strong> sprite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scripting-the-tile-sprite">2. Scripting the <strong>Tile</strong> sprite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scripting-the-backdrop">3. Scripting the backdrop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#paint-left-ir-sprite">4. Paint <strong>Left IR</strong> sprite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scripting-the-left-ir-sprite">5. Scripting the <strong>Left IR</strong> sprite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#right-ir-sprite">6. <strong>Right IR</strong> sprite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-the-script">7. Running the Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SunFounder GalaxyRVR Kit for Arduino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../scratch.html">Programming with Scratch</a></li>
+      <li class="breadcrumb-item active">Fun7 Tap on The Black Tile</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/scratch/fun/sc_fun_tap_tile.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="fun7-tap-on-the-black-tile">
+<span id="sc-tap-tile"></span><h1>Fun7 Tap on The Black Tile<a class="headerlink" href="#fun7-tap-on-the-black-tile" title="Permalink to this heading"></a></h1>
+<p>Many of you are familiar with the popular mobile game where players tap on the black tiles to score points while avoiding the white tiles. We’re bringing this addictive challenge using two obstacle avoidance modules. When your hand is blocked over one of the IR modules, a tap is registered on the stage.</p>
+<p>If a tap lands on a black tile, you score a point; tapping a white tile deducts a point. Players must decide quickly whether to tap over the left or right IR module based on the position of the black tiles.</p>
+<video loop autoplay muted style = "max-width:70%">
+   <source src="../../_static/video/sc_tap_black_tile.mp4"  type="video/mp4">
+   Your browser does not support the video tag.
+</video><p>Below are the steps for implementing the project. It is recommended to follow these steps initially, and once familiar, you may modify the effects as desired.</p>
+<section id="paint-a-tile-sprite">
+<h2>1. Paint a <strong>Tile</strong> sprite<a class="headerlink" href="#paint-a-tile-sprite" title="Permalink to this heading"></a></h2>
+<p>A <strong>Tile</strong> sprite is used to achieve the effect of alternating black and white tiles moving downward; in the cell phone version of this game, there are generally 4 columns, here we only do two columns.</p>
+<ul>
+<li><p>Delete the default sprite, tap on the <strong>Add Sprite</strong> icon, select <strong>Paint</strong>.</p>
+<img alt="../../_images/tile_paint_tile1.png" src="../../_images/tile_paint_tile1.png" />
+</li>
+<li><p>Next, go to the <strong>Costumes</strong> page and use the <strong>Rectangle</strong> tool to draw a rectangle with a gray border and white fill.</p>
+<a class="reference internal image-reference" href="../../_images/tile_paint_tile2.png"><img alt="../../_images/tile_paint_tile2.png" src="../../_images/tile_paint_tile2.png" style="width: 90%;" /></a>
+</li>
+<li><p>Select the rectangle and click <strong>Copy</strong> -&gt; <strong>Paste</strong> to make an identical rectangle, then move the two rectangles to a flush position.</p>
+<a class="reference internal image-reference" href="../../_images/tile_paint_tile3.png"><img alt="../../_images/tile_paint_tile3.png" src="../../_images/tile_paint_tile3.png" style="width: 90%;" /></a>
+</li>
+<li><p>Select one of the rectangles and choose a fill color of black.</p>
+<a class="reference internal image-reference" href="../../_images/tile_paint_tile4.png"><img alt="../../_images/tile_paint_tile4.png" src="../../_images/tile_paint_tile4.png" style="width: 90%;" /></a>
+</li>
+<li><p>Now select both rectangles and move them so that their center points match the center of the canvas.</p>
+<a class="reference internal image-reference" href="../../_images/tile_paint_tile5.png"><img alt="../../_images/tile_paint_tile5.png" src="../../_images/tile_paint_tile5.png" style="width: 90%;" /></a>
+</li>
+<li><p>Duplicate costume1, alternating the fill colors of the two rectangles. For example, the fill color of costume1 is white on the left and black on the right, and the fill color of costume2 is black on the left and white on the right.</p>
+<a class="reference internal image-reference" href="../../_images/tile_paint_tile6.png"><img alt="../../_images/tile_paint_tile6.png" src="../../_images/tile_paint_tile6.png" style="width: 90%;" /></a>
+</li>
+<li><p>Return to the <strong>Code</strong> page and set the sprite’s name to <strong>Tile</strong>.</p>
+<img alt="../../_images/tile_paint_tile7.png" src="../../_images/tile_paint_tile7.png" />
+</li>
+</ul>
+</section>
+<section id="scripting-the-tile-sprite">
+<h2>2. Scripting the <strong>Tile</strong> sprite<a class="headerlink" href="#scripting-the-tile-sprite" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>First, set the initial position of the <strong>Tile</strong> sprite so that it is at the top of the stage.</p>
+<img alt="../../_images/tile_script_tile1.png" src="../../_images/tile_script_tile1.png" />
+</li>
+<li><p>Create a variable - <strong>blocks</strong> and give it an initial value to determine the number of times the <strong>Tile</strong> sprite will appear. Use the [repeat until] block to make the variable <strong>blocks</strong> gradually decrease until <strong>blocks</strong> is 0. During this time, have the sprite <strong>Tile</strong> randomly switch its costume. After clicking on the green flag, you will see the <strong>Tile</strong> sprite on the stage quickly switch costumes.</p>
+<img alt="../../_images/tile_script_tile2.png" src="../../_images/tile_script_tile2.png" />
+</li>
+<li><p>Create clones of the <strong>Tile</strong> sprite while the variable <strong>blocks</strong> is decreasing, and stop the script from running when blocks is 0. Two [wait () seconds] blocks are used here, the first to limit the interval between <strong>Tile’s</strong> clones and the second is to let the variable blocks decrease to 0 without stopping the program immediately, giving the last tile sprite enough time to move.</p>
+<img alt="../../_images/tile_script_tile3.png" src="../../_images/tile_script_tile3.png" />
+</li>
+<li><p>Now script the clone of the <strong>Tile</strong> sprite to move down slowly and delete it when it reaches the bottom of the stage. The change in the y coordinate affects the drop speed, the larger the value, the faster the drop speed.</p>
+<img alt="../../_images/tile_script_tile4.png" src="../../_images/tile_script_tile4.png" />
+</li>
+<li><p>Hide the body and show the clone.</p>
+<img alt="../../_images/tile_script_tile5.png" src="../../_images/tile_script_tile5.png" />
+</li>
+</ul>
+</section>
+<section id="scripting-the-backdrop">
+<h2>3. Scripting the backdrop<a class="headerlink" href="#scripting-the-backdrop" title="Permalink to this heading"></a></h2>
+<p>In the backdrop, read the values of the 2 IR modules and make the corresponding actions.</p>
+<ul>
+<li><p>When the green flag is clicked, set the variable <strong>count</strong> to 0.</p>
+<a class="reference internal image-reference" href="../../_images/tile_script_backdrop.png"><img alt="../../_images/tile_script_backdrop.png" src="../../_images/tile_script_backdrop.png" style="width: 90%;" /></a>
+</li>
+<li><p>If the left IR obstacle avoidance module senses your hand, broadcast a message - <strong>left</strong>.</p>
+<img alt="../../_images/tile_script_backdrop1.png" src="../../_images/tile_script_backdrop1.png" />
+</li>
+<li><p>If the right IR avoidance module senses your hand, broadcast a message - <strong>right</strong>.</p>
+<img alt="../../_images/tile_script_backdrop2.png" src="../../_images/tile_script_backdrop2.png" />
+</li>
+</ul>
+</section>
+<section id="paint-left-ir-sprite">
+<h2>4. Paint <strong>Left IR</strong> sprite<a class="headerlink" href="#paint-left-ir-sprite" title="Permalink to this heading"></a></h2>
+<p>A <strong>Left IR</strong> sprite is used to achieve the click effect; when the left IR module senses your hand, it will send a message - <strong>left</strong> to <strong>Left IR</strong> sprite, letting it start working. If it touches the black tile on the stage, the score will be increased by 1, otherwise, the score will be decreased by 1.</p>
+<ul>
+<li><p>Again, tap on the <strong>Add Sprite</strong> icon and select <strong>Paint</strong>.</p>
+<img alt="../../_images/tile_paint_ir1.png" src="../../_images/tile_paint_ir1.png" />
+</li>
+<li><p>Go to the <strong>Costumes</strong> page, select the fill color (any color out of black and white) and draw a circle.</p>
+<img alt="../../_images/tile_paint_ir2.png" src="../../_images/tile_paint_ir2.png" />
+</li>
+<li><p>Return to the <strong>Code</strong> page and change the sprite’s name to <strong>Left IR</strong>.</p>
+<img alt="../../_images/tile_paint_ir3.png" src="../../_images/tile_paint_ir3.png" />
+</li>
+</ul>
+</section>
+<section id="scripting-the-left-ir-sprite">
+<h2>5. Scripting the <strong>Left IR</strong> sprite<a class="headerlink" href="#scripting-the-left-ir-sprite" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Now start scripting the <strong>Left IR</strong> sprite. When the green flag is clicked, first hide the sprite.</p>
+<img alt="../../_images/tile_script_ir1.png" src="../../_images/tile_script_ir1.png" />
+</li>
+<li><p>When the message - <strong>left</strong> is received (the IR receiver module on the left detects an obstacle), show the sprite, set its size to 100%, and then shrink it at intervals of 10 using a [Repeat] block before hiding it again. This gives the sprite an effect of expanding and contracting.</p>
+<img alt="../../_images/tile_script_ir2.png" src="../../_images/tile_script_ir2.png" />
+</li>
+<li><p>Then determine if the black block of the <strong>Tile</strong> sprite is touched, and if it is, let the variable <strong>count</strong> increase by 1, otherwise decrease by 1.</p>
+<img alt="../../_images/tile_script_ir3.png" src="../../_images/tile_script_ir3.png" />
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You need to make the <strong>Tile</strong> sprite appear on the stage, and then absorb the color of the black block in the <strong>Tile</strong> sprite.</p>
+<img alt="../../_images/tile_script_ir4.png" src="../../_images/tile_script_ir4.png" />
+</div>
+</section>
+<section id="right-ir-sprite">
+<h2>6. <strong>Right IR</strong> sprite<a class="headerlink" href="#right-ir-sprite" title="Permalink to this heading"></a></h2>
+<p>The function of <strong>Right IR</strong> sprite is basically the same as <strong>Left IR</strong>, except that it receives <strong>Right</strong> information.</p>
+<ul>
+<li><p>Now duplicate the <strong>Left IR</strong> sprite and change the sprite’s name to <strong>Right IR</strong>.</p>
+<img alt="../../_images/tile_paint_ir4.png" src="../../_images/tile_paint_ir4.png" />
+</li>
+<li><p>Then change the received message to - <strong>right</strong>.</p>
+<blockquote>
+<div><img alt="../../_images/tile_script_ir5.png" src="../../_images/tile_script_ir5.png" />
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="running-the-script">
+<h2>7. Running the Script<a class="headerlink" href="#running-the-script" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Now adjust the positions and sizes of the three sprites.</p>
+<ul class="simple">
+<li><p>Drag the <strong>Tile</strong> sprite to the bottom of the stage and set its x position to 0.</p></li>
+<li><p>Move the <strong>Left IR</strong> sprite into the left frame. You need to go to the <strong>Costumes</strong> page to reduce the sprite’s size to only 50% of the frame’s size.</p></li>
+<li><p>Similarly, move the <strong>Right IR</strong> sprite into the right frame. You need to go to the <strong>Costumes</strong> page to reduce the sprite’s size to only 50% of the frame’s size.</p></li>
+<li><p>Make sure that the <strong>Left IR</strong> and <strong>Right IR</strong> sprites are above the <strong>Tile</strong> sprite.</p></li>
+</ul>
+<img alt="../../_images/tile_paint_ir5.png" src="../../_images/tile_paint_ir5.png" />
+</li>
+<li><p>Now all the scripting is done, and you can click on the green flag to run the script.</p>
+<video loop autoplay muted style = "max-width:70%">
+    <source src="../../_static/video/sc_tap_black_tile.mp4"  type="video/mp4">
+    Your browser does not support the video tag.
+</video></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sc_fun_sensitive_ball.html" class="btn btn-neutral float-left" title="Fun6 Distance Sensitive Ball" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../hardware/hardware.html" class="btn btn-neutral float-right" title="Hardware" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

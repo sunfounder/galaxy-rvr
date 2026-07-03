@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 4: Ultrasonic Module &mdash; SunFounder GalaxyRVR Kit for Arduino 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+        <script src="../_static/./lang.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lesson 5 Interactive Animation" href="sc5_animate.html" />
+    <link rel="prev" title="Lesson 3: Remote Control Your GalaxyRVR" href="sc3_rvr_move.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder GalaxyRVR Kit for Arduino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">About this Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemble_video.html">Assemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../update_firmware.html">Update Firmwares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arduino/programming_arduino.html">Programming with Arduino IDE</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="scratch.html">Programming with Scratch</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sc1_history.html">Lesson 1 Unveiling the Mars Rover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc2_app.html">Lesson 2 Getting Started with the Mammoth Coding App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc3_rvr_move.html">Lesson 3: Remote Control Your GalaxyRVR</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 4: Ultrasonic Module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exploring-the-ultrasonic-module">Exploring the Ultrasonic Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testing-the-ultrasonic-sensor">Testing the Ultrasonic Sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-an-obstacle-avoiding-rover">Creating an Obstacle-Avoiding Rover</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ultrasonic-sensor-blocks">Ultrasonic Sensor Blocks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sc5_animate.html">Lesson 5 Interactive Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc6_obstacle.html">Lesson 6 IR Obstacle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc7_obstacle_animate.html">Lesson 7: Create an IR Obstacle Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc8_avoid.html">Lesson 8 Advanced Obstacle Avoidance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc9_follow.html">Lesson 9: Mars Exploration Partner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc10_rgb.html">Lesson 10: Lighting the Way with RGB LED Strips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc11_servo.html">Lesson 11: Control Your Rover’s Camera Tilt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc12_camera.html">Lesson 12: See Through Your Rover’s Eyes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc13_all.html">Lesson 13: Complete Mars Rover Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_balloon.html">Fun1 Inflating the Balloon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_flappy_parrot.html">Fun2 Flappy Parrot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_shooting.html">Fun3 Shooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_eat_apple.html">Fun4 Eat Apple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_fish.html">Fun5 Fishing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_sensitive_ball.html">Fun6 Distance Sensitive Ball</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_tap_tile.html">Fun7 Tap on The Black Tile</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder GalaxyRVR Kit for Arduino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="scratch.html">Programming with Scratch</a></li>
+      <li class="breadcrumb-item active">Lesson 4: Ultrasonic Module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/scratch/sc4_ultrasonic.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="lesson-4-ultrasonic-module">
+<h1>Lesson 4: Ultrasonic Module<a class="headerlink" href="#lesson-4-ultrasonic-module" title="Permalink to this heading"></a></h1>
+<p>Give your GalaxyRVR the power to “see” with sound!</p>
+<p>Discover how ultrasonic sensors work like a bat’s echolocation - sending out sound waves and listening for echoes to detect obstacles and measure distances.</p>
+<p>Make your Mars Rover smarter and safer as it explores!</p>
+<video width="600" loop autoplay muted>
+   <source src="../_static/video/ultrasonic_avoid.mp4" type="video/mp4">
+   Your browser does not support the video tag.
+</video><section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Discover how ultrasonic sensors use sound waves to measure distance</p></li>
+<li><p>Learn to read distance measurements using the Mammoth Coding APP</p></li>
+<li><p>Program your GalaxyRVR to avoid obstacles using the ultrasonic sensor</p></li>
+</ul>
+</section>
+<section id="exploring-the-ultrasonic-module">
+<h2>Exploring the Ultrasonic Module<a class="headerlink" href="#exploring-the-ultrasonic-module" title="Permalink to this heading"></a></h2>
+<p>Meet the HC-SR04 ultrasonic sensor - your rover’s new “superpower” for seeing distances without touching anything! Just like bats use sound to navigate, this clever device can detect objects from 2cm to 400cm away.</p>
+<a class="reference internal image-reference" href="../_images/ultrasonic_pic2.png"><img alt="../_images/ultrasonic_pic2.png" class="align-center" src="../_images/ultrasonic_pic2.png" style="width: 400px;" /></a>
+<p><strong>Meet the Four Important Pins:</strong></p>
+<ul class="simple">
+<li><p><strong>TRIG</strong> - The “start button” that tells the sensor to send out sound waves</p></li>
+<li><p><strong>ECHO</strong> - Listens for the returning echo from objects</p></li>
+<li><p><strong>VCC</strong> - Power connection (needs 5V electricity)</p></li>
+<li><p><strong>GND</strong> - Ground connection (completes the circuit)</p></li>
+</ul>
+<p><strong>How It Works - The Echo Game:</strong></p>
+<a class="reference internal image-reference" href="../_images/ultrasonic_prin2.jpg"><img alt="../_images/ultrasonic_prin2.jpg" src="../_images/ultrasonic_prin2.jpg" style="width: 800px;" /></a>
+<ol class="arabic simple">
+<li><p><strong>START</strong> - The sensor sends out 8 quick sound waves (too high for us to hear!)</p></li>
+<li><p><strong>LISTEN</strong> - It starts timing and waits for the echo to bounce back</p></li>
+<li><p><strong>CALCULATE</strong> - Using the echo time, it calculates: Distance = (Time × Speed of Sound) ÷ 2</p></li>
+</ol>
+<p>Think of it like shouting in a canyon and counting how long it takes to hear your echo. The longer the wait, the farther the wall!</p>
+<p>Now let’s give your Mars Rover this amazing superpower!</p>
+</section>
+<section id="testing-the-ultrasonic-sensor">
+<h2>Testing the Ultrasonic Sensor<a class="headerlink" href="#testing-the-ultrasonic-sensor" title="Permalink to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>First, <a class="reference internal" href="sc3_rvr_move.html#app-connect"><span class="std std-ref">Connecting the APP to GalaxyRVR</span></a>.</p></li>
+</ol>
+<ol class="arabic" start="2">
+<li><p>Find the “distance in cm” block in the GalaxyRVR category and check its box.</p>
+<img alt="../_images/6_ultrasonic_value.png" src="../_images/6_ultrasonic_value.png" />
+</li>
+<li><p>The sensor’s reading will now show live on the stage.</p>
+<img alt="../_images/6_ultrasonic_value2.png" src="../_images/6_ultrasonic_value2.png" />
+</li>
+<li><p>Wave your hand in front of the ultrasonic sensor and watch the number change - it’s measuring the distance in centimeters!</p></li>
+</ol>
+</section>
+<section id="creating-an-obstacle-avoiding-rover">
+<h2>Creating an Obstacle-Avoiding Rover<a class="headerlink" href="#creating-an-obstacle-avoiding-rover" title="Permalink to this heading"></a></h2>
+<p>Let’s program your GalaxyRVR to automatically avoid obstacles using the ultrasonic sensor.</p>
+<ol class="arabic">
+<li><p>Start with the green flag block.</p>
+<img alt="../_images/6_ultrasonic_flag.png" src="../_images/6_ultrasonic_flag.png" />
+</li>
+<li><p>Set a comfortable speed (we recommend 30%) for testing.</p>
+<img alt="../_images/6_ultrasonic_speed.png" src="../_images/6_ultrasonic_speed.png" />
+</li>
+<li><p>Add a “move forward” block so the rover keeps moving when the path is clear.</p>
+<img alt="../_images/6_ultrasonic_forward.png" src="../_images/6_ultrasonic_forward.png" />
+</li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">when</span> <span class="pre">distance</span> <span class="pre">&lt;</span> <span class="pre">15</span> <span class="pre">cm</span></code> block to detect nearby obstacles.</p>
+<img alt="../_images/6_ultrasonic_when.png" src="../_images/6_ultrasonic_when.png" />
+</li>
+<li><p>When something gets too close, make the rover stop and back up.</p>
+<img alt="../_images/6_ultrasonic_backward.png" src="../_images/6_ultrasonic_backward.png" />
+</li>
+<li><p>Then have it turn slightly (left or right - your choice!).</p>
+<img alt="../_images/6_ultrasonic_turn.png" src="../_images/6_ultrasonic_turn.png" />
+</li>
+<li><p>Finally, tell it to move forward again on its new path.</p>
+<img alt="../_images/6_ultrasonic_forward_again.png" src="../_images/6_ultrasonic_forward_again.png" />
+</li>
+</ol>
+<p>Now place your GalaxyRVR on the floor and watch it go! It will cruise forward until it detects an obstacle, then smartly change direction and continue exploring.</p>
+</section>
+<section id="ultrasonic-sensor-blocks">
+<h2>Ultrasonic Sensor Blocks<a class="headerlink" href="#ultrasonic-sensor-blocks" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p><strong>Event Trigger Block</strong></p>
+<p>Starts code when an object is detected within a set distance.</p>
+<ul class="simple">
+<li><p>Change the comparison symbol (&lt; or &gt;)</p></li>
+<li><p>Adjust the distance threshold (in cm)</p></li>
+</ul>
+<img alt="../_images/ultra_when.png" src="../_images/ultra_when.png" />
+</li>
+<li><p><strong>Wait Until Block</strong></p>
+<p>Pauses your program until the sensor detects an object at the specified distance.</p>
+<ul class="simple">
+<li><p>Choose &lt; or &gt; for distance comparison</p></li>
+<li><p>Set your desired distance value</p></li>
+</ul>
+<img alt="../_images/ultra_wait_until.png" src="../_images/ultra_wait_until.png" />
+</li>
+<li><p><strong>Condition Check Block</strong></p>
+<p>Returns TRUE or FALSE based on distance detection. Perfect for use with <code class="docutils literal notranslate"><span class="pre">if</span></code> statements.</p>
+<ul class="simple">
+<li><p>Switch between &lt; and &gt; as needed</p></li>
+<li><p>Set the distance limit</p></li>
+</ul>
+<img alt="../_images/ultra_condition.png" src="../_images/ultra_condition.png" />
+</li>
+<li><p><strong>Distance Value Block</strong></p>
+<p>Shows the current distance reading from the ultrasonic sensor in centimeters.</p>
+<img alt="../_images/ultra_value.png" src="../_images/ultra_value.png" />
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sc3_rvr_move.html" class="btn btn-neutral float-left" title="Lesson 3: Remote Control Your GalaxyRVR" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sc5_animate.html" class="btn btn-neutral float-right" title="Lesson 5 Interactive Animation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

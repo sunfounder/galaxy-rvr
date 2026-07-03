@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 7: Enhancing Rover Navigation with Ultrasonic Module &mdash; SunFounder GalaxyRVR Kit for Arduino 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+        <script src="../_static/./lang.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lesson 8: Advanced Obstacle Avoidance and Intelligent Following System" href="lesson8_ir_ultrasonic.html" />
+    <link rel="prev" title="Lesson 6: Exploring the Obstacle Avoidance Module" href="lesson6_ir_avoid.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder GalaxyRVR Kit for Arduino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">About this Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemble_video.html">Assemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../update_firmware.html">Update Firmwares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="programming_arduino.html">Programming with Arduino IDE</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="lesson1_history.html">Lesson 1 Unveiling the Mars Rover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson2_rocker_bogie.html">Lesson 2 Understanding and Making Rocker-Bogie System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson3_arduino_ide.html">Lesson 3:  Entering the World of Arduino and Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson4_motor.html">Lesson 4: Mastering the TT Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson5_car_move.html">Lesson 5: Unleashing Mars Rover Mobility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson6_ir_avoid.html">Lesson 6: Exploring the Obstacle Avoidance Module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 7: Enhancing Rover Navigation with Ultrasonic Module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#course-objectives">Course Objectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#materials-needed">Materials Needed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#course-steps">Course Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lesson8_ir_ultrasonic.html">Lesson 8: Advanced Obstacle Avoidance and Intelligent Following System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson9_rgb_strips.html">Lesson 9: Lighting the Way with RGB LED Strips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson10_servo.html">Lesson 10: Exploring the Mars Rover Visual System - Servo and Tilt Mechanism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson11_camera.html">Lesson 11: Exploring the Mars Rover Visual System - Camera and Real-time Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson12_solar_panel.html">Lesson 12: Investigating the Mars Rover Energy System</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scratch/scratch.html">Programming with Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder GalaxyRVR Kit for Arduino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="programming_arduino.html">Programming with Arduino IDE</a></li>
+      <li class="breadcrumb-item active">Lesson 7: Enhancing Rover Navigation with Ultrasonic Module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/arduino/lesson7_ultrasonic_avoid.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="lesson-7-enhancing-rover-navigation-with-ultrasonic-module">
+<h1>Lesson 7: Enhancing Rover Navigation with Ultrasonic Module<a class="headerlink" href="#lesson-7-enhancing-rover-navigation-with-ultrasonic-module" title="Permalink to this heading"></a></h1>
+<p>In our last adventure, we equipped our Mars Rover with “eyes” on its sides, creating a basic obstacle avoidance system. Yet, there’s a blind spot right in front – a challenge we’re ready to overcome!</p>
+<p>Today, in this lesson, we’re going to give our Rover a new sense of “sight.” We’ll install an ultrasonic sensor module, acting as a pair of central eyes, which will help our rover detect obstacles directly ahead.</p>
+<p>We will delve into the fascinating mechanics of ultrasonic waves and explore how they enhance our Rover’s ability to navigate complex terrains. With this addition, our Mars Rover will be more perceptive and agile, ready to embark on more ambitious exploratory missions.</p>
+<p>Join us as we take a step further into this exciting STEAM journey, making our Mars Rover even more adept at exploring the uncharted territories!</p>
+<video width="600" loop autoplay muted>
+   <source src="../_static/video/ultrasonic_avoid.mp4" type="video/mp4">
+   Your browser does not support the video tag.
+</video><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are learning this course after fully assembling the GalaxyRVR, you need to move this switch to the right before uploading the code.</p>
+<a class="reference internal image-reference" href="../_images/camera_upload.png"><img alt="../_images/camera_upload.png" class="align-center" src="../_images/camera_upload.png" style="width: 500px;" /></a>
+</div>
+<section id="course-objectives">
+<h2>Course Objectives<a class="headerlink" href="#course-objectives" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Understand the principle of ultrasonic distance measurement.</p></li>
+<li><p>Learn how to use Arduino and ultrasonic module for distance measurement.</p></li>
+<li><p>Practice applying the ultrasonic module for obstacle avoidance on the Mars Rover model.</p></li>
+</ul>
+</section>
+<section id="materials-needed">
+<h2>Materials Needed<a class="headerlink" href="#materials-needed" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Ultrasonic Module</p></li>
+<li><p>Basic tools and accessories (e.g. screwdriver, screws, wires etc.)</p></li>
+<li><p>Mars Rover Model (Equipped with rocker-bogie system, main boards, motors, obstacle avoidance module)</p></li>
+<li><p>USB Cable</p></li>
+<li><p>Arduino IDE</p></li>
+<li><p>Computer</p></li>
+</ul>
+</section>
+<section id="course-steps">
+<h2>Course Steps<a class="headerlink" href="#course-steps" title="Permalink to this heading"></a></h2>
+<p><strong>Step 1: Assemble the Ultrasonic Sensor Module</strong></p>
+<p>Now that we’ve got our eyes set on equipping our Mars Rover with a powerful new sense of “sight”, it’s time to put together the ultrasonic sensor module.</p>
+<iframe width="600" height="400" src="https://www.youtube.com/embed/c_xWAVapGic?si=ovuxheXdGVpHopPa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p>And there we have it! Our Mars Rover now has a fully-assembled ultrasonic sensor module, ready to help it navigate like never before. Are you excited to see how it changes our Rover’s obstacle detection abilities? Let’s dive right into it!</p>
+<p><strong>Step 2: Exploring the Ultrasonic Module</strong></p>
+<p>Let’s get to know the HC-SR04, a powerful ultrasonic distance sensor. This tiny device can accurately measure distances from 2 cm up to 400 cm, all without touching a thing! Amazing, right? It’s like having a superhero power! It can “see” the distances just by using sound waves, like how a bat navigates at night.</p>
+<p>It uses four superpowers, or rather, four pins to do its magic:</p>
+<a class="reference internal image-reference" href="../_images/ultrasonic_pic.png"><img alt="../_images/ultrasonic_pic.png" class="align-center" src="../_images/ultrasonic_pic.png" style="width: 400px;" /></a>
+<ul class="simple">
+<li><p><strong>TRIG (Trigger Pulse Input)</strong> - It’s the start button for our superhero. It tells our superhero, “Hey, it’s time to send out a super sonic wave!”</p></li>
+<li><p><strong>ECHO (Echo Pulse Output)</strong> - This is how our superhero listens to the echo of the sound wave it sent out.</p></li>
+<li><p><strong>VCC</strong> - Even superheroes need some energy. We connect it to a 5V power supply.</p></li>
+<li><p><strong>GND</strong> - It’s the ground connection. Just like how superheroes need to stay connected to reality!</p></li>
+</ul>
+<p>Imagine our superhero, the HC-SR04 Ultrasonic Sensor, playing a game of echo in the mountains.</p>
+<a class="reference internal image-reference" href="../_images/ultrasonic_prin.jpg"><img alt="../_images/ultrasonic_prin.jpg" src="../_images/ultrasonic_prin.jpg" style="width: 800px;" /></a>
+<ul class="simple">
+<li><p>First, our superhero’s brain, the MCU, says, “Ready, Set, Go!” by sending out a high-level signal for at least 10 microseconds to our superhero. This is like when we gather our energy before we yell into a valley.</p></li>
+<li><p>On hearing “Go!”, our superhero shouts out loud 8 times very quickly. This super-sonic shout is sent out at a speed of 40 kHz. The superhero also starts a stopwatch and keeps an ear out for any returning shouts.</p></li>
+<li><p>If there is an obstacle in front, the shout will hit it and echo back. On hearing the echo, our superhero stops the stopwatch and notes the time. It also sends out a high-level signal to let the MCU know it heard an echo.</p></li>
+<li><p>Lastly, to find out how far away the obstacle is, our superhero uses a simple formula. It takes the time it recorded on the stopwatch, divides it by 2, and multiplies it by the speed of sound (340m/s). The result is the distance to the obstacle!</p></li>
+</ul>
+<p>That’s how our superhero sensor can figure out if there’s an obstacle in its path and how far away it is. Amazing, isn’t it? Next, we’ll learn how we can use this superhero power in our Mars Rover!</p>
+<p><strong>Step 3: Coding Our Superhero Sensor</strong></p>
+<p>Having assembled our superhero sensor and understood how it uses its superpowers, it’s time to put those powers into action! Let’s write an Arduino sketch to allow our ultrasonic sensor to measure distances and then show us those measurements.</p>
+<p>Here are the key steps that our superhero sensor will follow:</p>
+<ul class="simple">
+<li><p>We have connected both the TRIG and ECHO pins to pin 10 on the GalaxyRVR Shield. This allows us to control both signal transmission and reception of the ultrasonic module using a single Arduino pin.</p></li>
+</ul>
+<img alt="../_images/ultrasonic_shield.png" src="../_images/ultrasonic_shield.png" />
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="c1">// Define the pin for the ultrasonic module</span>
+<span class="cp">#define ULTRASONIC_PIN 10</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Preparation</strong>: To start, we establish serial communication at a 9600 baud rate so we can see the superhero’s measurements in our Serial Monitor.</p></li>
+</ul>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nb">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Start the serial communication</span>
+<span class="w">    </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Shout Out!</strong>: We set the <code class="docutils literal notranslate"><span class="pre">ULTRASONIC_PIN</span></code> as an <code class="docutils literal notranslate"><span class="pre">OUTPUT</span></code> pin to send a 10-microsecond pulse, which is like commanding our ultrasonic superhero to emit a powerful shout (ultrasonic sound waves)!</p></li>
+</ul>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="c1">// A 4ms delay is required, otherwise the reading may be 0</span>
+<span class="nf">delay</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+
+<span class="c1">//Set to OUTPUT to send signal</span>
+<span class="nf">pinMode</span><span class="p">(</span><span class="n">ULTRASONIC_PIN</span><span class="p">,</span><span class="w"> </span><span class="kr">OUTPUT</span><span class="p">);</span>
+
+<span class="c1">// Clear the trigger pin</span>
+<span class="nf">digitalWrite</span><span class="p">(</span><span class="n">ULTRASONIC_PIN</span><span class="p">,</span><span class="w"> </span><span class="kr">LOW</span><span class="p">);</span>
+<span class="nf">delayMicroseconds</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="c1">// Trigger the sensor by sending a high pulse for 10us</span>
+<span class="nf">digitalWrite</span><span class="p">(</span><span class="n">ULTRASONIC_PIN</span><span class="p">,</span><span class="w"> </span><span class="kr">HIGH</span><span class="p">);</span>
+<span class="nf">delayMicroseconds</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+
+<span class="c1">// Set the trigger pin back to low</span>
+<span class="nf">digitalWrite</span><span class="p">(</span><span class="n">ULTRASONIC_PIN</span><span class="p">,</span><span class="w"> </span><span class="kr">LOW</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Wait and Listen</strong>: Set the <code class="docutils literal notranslate"><span class="pre">ULTRASONIC_PIN</span></code> as INPUT. This way, our superhero sensor is now ready to listen for the echo of its shout. If there is an obstacle in front, the shout will hit it and echo back. On hearing the echo, our superhero stops the stopwatch and notes the time. It also sends out a high-level signal to let the MCU know it heard an echo.</p></li>
+</ul>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="nf">pinMode</span><span class="p">(</span><span class="n">ULTRASONIC_PIN</span><span class="p">,</span><span class="w"> </span><span class="kr">INPUT</span><span class="p">);</span>
+<span class="kr">float</span><span class="w"> </span><span class="n">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">pulseIn</span><span class="p">(</span><span class="n">ULTRASONIC_PIN</span><span class="p">,</span><span class="w"> </span><span class="kr">HIGH</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Super Math</strong>: With the echo returned, our sensor uses the speed of sound to calculate the distance to the object. We divide the total echo time by 2 because the time includes both the shout out and the wait for the echo.</p></li>
+</ul>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">float</span><span class="w"> </span><span class="n">distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">duration</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.034</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Report the Findings</strong>: Our superhero sensor then reveals the result of its mission, printing the distance to the Serial Monitor for us to see.</p></li>
+</ul>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="c1">// Print the distance to the serial monitor</span>
+<span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;The distance is: &quot;</span><span class="p">);</span>
+<span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">distance</span><span class="p">);</span>
+<span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot; cm&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Rest &amp; Ready</strong>: Every superhero needs a rest, so our sensor takes a short pause before the next mission. This allows the sensor to “reset” before we ask it to start another measurement.</p></li>
+</ul>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="nf">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Here’s the complete code that turns our sensor into a superhero:</p>
+<iframe src=https://create.arduino.cc/editor/sunfounder01/35bddbcf-145c-4e4f-b3ea-21e8210af4a6/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe><p><strong>Step 4: Programming the Ultrasonic Module to Drive the Mars Rover</strong></p>
+<p>Now that we’ve equipped our Mars Rover with an ultrasonic sensor module, it’s time to program it to respond based on the sensor’s measurements.</p>
+<ul>
+<li><p>For easier reading, we have created a function called <code class="docutils literal notranslate"><span class="pre">readSensorData()</span></code>. This function encapsulates all the code required to read the distance from the ultrasonic sensor.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">float</span><span class="w"> </span><span class="nf">readSensorData</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// A 4ms delay is required, otherwise the reading may be 0</span>
+<span class="w">    </span><span class="nf">delay</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">//Set to OUTPUT to send signal</span>
+<span class="w">    </span><span class="nf">pinMode</span><span class="p">(</span><span class="n">ULTRASONIC_PIN</span><span class="p">,</span><span class="w"> </span><span class="kr">OUTPUT</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Clear the trigger pin</span>
+<span class="w">    </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">ULTRASONIC_PIN</span><span class="p">,</span><span class="w"> </span><span class="kr">LOW</span><span class="p">);</span>
+<span class="w">    </span><span class="nf">delayMicroseconds</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Trigger the sensor by sending a high pulse for 10us</span>
+<span class="w">    </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">ULTRASONIC_PIN</span><span class="p">,</span><span class="w"> </span><span class="kr">HIGH</span><span class="p">);</span>
+<span class="w">    </span><span class="nf">delayMicroseconds</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Set the trigger pin back to low</span>
+<span class="w">    </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">ULTRASONIC_PIN</span><span class="p">,</span><span class="w"> </span><span class="kr">LOW</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">//Set to INPUT to read</span>
+<span class="w">    </span><span class="nf">pinMode</span><span class="p">(</span><span class="n">ULTRASONIC_PIN</span><span class="p">,</span><span class="w"> </span><span class="kr">INPUT</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// pulseIn returns the duration of the pulse on the pin</span>
+<span class="w">    </span><span class="kr">float</span><span class="w"> </span><span class="n">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">pulseIn</span><span class="p">(</span><span class="n">ULTRASONIC_PIN</span><span class="p">,</span><span class="w"> </span><span class="kr">HIGH</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Calculate the distance (in cm) based on the speed of sound (340 m/s or 0.034 cm/us)</span>
+<span class="w">    </span><span class="kr">float</span><span class="w"> </span><span class="n">distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">duration</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.034</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">distance</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">loop()</span></code> function, we call <code class="docutils literal notranslate"><span class="pre">readSensorData()</span></code> and stores its returned value in the <code class="docutils literal notranslate"><span class="pre">distance</span></code> variable.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">float</span><span class="w"> </span><span class="n">distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">readSensorData</span><span class="p">();</span>
+</pre></div>
+</div>
+</li>
+<li><p>Depending on this distance, the Rover will move forward, move backward, or stop.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="c1">// Control rover based on distance reading</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">distance</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// If it&#39;s safe to move forward</span>
+<span class="w">  </span><span class="n">moveForward</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">distance</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">15</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// If there&#39;s an obstacle close</span>
+<span class="w">  </span><span class="n">moveBackward</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+<span class="w">  </span><span class="nf">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w">  </span><span class="c1">// Wait for a while before attempting to turn</span>
+<span class="w">  </span><span class="n">backLeft</span><span class="p">(</span><span class="mi">150</span><span class="p">);</span>
+<span class="w">  </span><span class="nf">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// For distances in between, proceed with caution</span>
+<span class="w">  </span><span class="n">moveForward</span><span class="p">(</span><span class="mi">150</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>If the path is clear (the obstacle is more than 50 cm away), our Rover boldly moves forward.</p></li>
+<li><p>And if an obstacle is getting close (less than 50 cm but more than 15 cm away), our Rover will move forward at a lower speed.</p></li>
+<li><p>If an obstacle is too close for comfort (less than 15 cm away), the Mars rover will move backward and then turn to the left.</p></li>
+</ul>
+<img alt="../_images/ultrasonic_flowchart.png" src="../_images/ultrasonic_flowchart.png" />
+</li>
+</ul>
+<p>Below is the complete code. You can upload this code to the R3 board and see if it achieves the desired effect. You can also modify the detection distance based on the actual environment to make this obstacle avoidance system more perfect.</p>
+<iframe src=https://create.arduino.cc/editor/sunfounder01/cded6408-1469-4289-b79b-7d445b56352b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe><p>By leveraging these enhanced capabilities, the Mars Rover would be better equipped to identify potential obstacles in its path, measure distances accurately, and make informed decisions to navigate around them. This would significantly reduce the likelihood of collisions or other hazards that could hinder the rover’s exploration mission.</p>
+<p>With its super-senses, the Mars Rover can operate with greater confidence and efficiency, enabling it to delve deeper into the mysteries of Mars and gather valuable scientific data for researchers back on Earth.</p>
+<p><strong>Step 5: Summary and Reflection</strong></p>
+<p>In this lesson, we delved into the workings of ultrasonic waves and how to translate their return time to the sensor into measurable distance via coding.</p>
+<p>Subsequently, we leveraged ultrasonic waves to devise an obstacle-avoidance system. This particular system varies its responses based on the distance to the impending obstacle.</p>
+<p>Now, let’s prompt some introspection on this lesson through a handful of questions:</p>
+<ul class="simple">
+<li><p>How does an ultrasonic module detect distance? Can you elucidate the underlying concept?</p></li>
+<li><p>How does the obstacle-avoidance system of this lesson differ from that of the previous one? What are their respective advantages and drawbacks?</p></li>
+<li><p>Is it feasible to amalgamate these two obstacle-avoidance systems?</p></li>
+</ul>
+<p>Reflecting upon these queries will aid in solidifying our comprehension and prompt us to contemplate the application of these concepts to other projects. Looking forward to our next venture!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lesson6_ir_avoid.html" class="btn btn-neutral float-left" title="Lesson 6: Exploring the Obstacle Avoidance Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="lesson8_ir_ultrasonic.html" class="btn btn-neutral float-right" title="Lesson 8: Advanced Obstacle Avoidance and Intelligent Following System" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

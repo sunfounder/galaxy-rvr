@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 6 IR Obstacle &mdash; SunFounder GalaxyRVR Kit for Arduino 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+        <script src="../_static/./lang.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lesson 7: Create an IR Obstacle Animation" href="sc7_obstacle_animate.html" />
+    <link rel="prev" title="Lesson 5 Interactive Animation" href="sc5_animate.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder GalaxyRVR Kit for Arduino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">About this Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemble_video.html">Assemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../update_firmware.html">Update Firmwares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arduino/programming_arduino.html">Programming with Arduino IDE</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="scratch.html">Programming with Scratch</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sc1_history.html">Lesson 1 Unveiling the Mars Rover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc2_app.html">Lesson 2 Getting Started with the Mammoth Coding App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc3_rvr_move.html">Lesson 3: Remote Control Your GalaxyRVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc4_ultrasonic.html">Lesson 4: Ultrasonic Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc5_animate.html">Lesson 5 Interactive Animation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 6 IR Obstacle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#meet-the-obstacle-avoidance-module">Meet the Obstacle Avoidance Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testing-your-infrared-sensors">Testing Your Infrared Sensors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#programming-your-rover-to-avoid-obstacles">Programming Your Rover to Avoid Obstacles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blocks-related-to-the-ir-module">Blocks Related to the IR Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sc7_obstacle_animate.html">Lesson 7: Create an IR Obstacle Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc8_avoid.html">Lesson 8 Advanced Obstacle Avoidance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc9_follow.html">Lesson 9: Mars Exploration Partner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc10_rgb.html">Lesson 10: Lighting the Way with RGB LED Strips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc11_servo.html">Lesson 11: Control Your Rover’s Camera Tilt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc12_camera.html">Lesson 12: See Through Your Rover’s Eyes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc13_all.html">Lesson 13: Complete Mars Rover Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_balloon.html">Fun1 Inflating the Balloon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_flappy_parrot.html">Fun2 Flappy Parrot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_shooting.html">Fun3 Shooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_eat_apple.html">Fun4 Eat Apple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_fish.html">Fun5 Fishing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_sensitive_ball.html">Fun6 Distance Sensitive Ball</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_tap_tile.html">Fun7 Tap on The Black Tile</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder GalaxyRVR Kit for Arduino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="scratch.html">Programming with Scratch</a></li>
+      <li class="breadcrumb-item active">Lesson 6 IR Obstacle</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/scratch/sc6_obstacle.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="lesson-6-ir-obstacle">
+<span id="ir-obstacle"></span><h1>Lesson 6 IR Obstacle<a class="headerlink" href="#lesson-6-ir-obstacle" title="Permalink to this heading"></a></h1>
+<p>Meet your rover’s side “eyes” - the Infrared Obstacle Avoidance sensors!</p>
+<p>These clever sensors help your GalaxyRVR detect and dodge obstacles on its sides, just like having peripheral vision. Learn how they work and program your rover to navigate around objects automatically.</p>
+<p>Get ready to make your Mars Rover a smart obstacle-avoider!</p>
+<video width="600" loop autoplay muted>
+   <source src="../_static/video/car_ir1.mp4" type="video/mp4">
+   Your browser does not support the video tag.
+</video><section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Understand the working principles of the Infrared Obstacle Avoidance Module and its application in the Mars rover.</p></li>
+<li><p>Learn how to read and apply data from the Infrared Obstacle Avoidance Module in Scratch.</p></li>
+<li><p>Create a Mars exploration-themed obstacle avoidance game using the IR module and the Scratch stage.</p></li>
+</ul>
+</section>
+<section id="meet-the-obstacle-avoidance-module">
+<h2>Meet the Obstacle Avoidance Module<a class="headerlink" href="#meet-the-obstacle-avoidance-module" title="Permalink to this heading"></a></h2>
+<p>Say hello to your GalaxyRVR’s new sidekick - the Infrared Obstacle Avoidance Module! This clever little device helps your rover detect and avoid obstacles. Let’s see what makes it tick:</p>
+<a class="reference internal image-reference" href="../_images/ir_avoid2.png"><img alt="../_images/ir_avoid2.png" class="align-center" src="../_images/ir_avoid2.png" style="width: 300px;" /></a>
+<p><strong>Meet the Four Important Pins:</strong></p>
+<ul class="simple">
+<li><p><strong>GND</strong> - The ground connection (completes the circuit)</p></li>
+<li><p><strong>+</strong> - Power input (needs 3.3V to 5V electricity)</p></li>
+<li><p><strong>Out</strong> - Signal output (sends “obstacle detected” messages)</p></li>
+<li><p><strong>EN</strong> - Enable pin (controls when the module is active)</p></li>
+</ul>
+<p><strong>How It Works - The Invisible Flashlight:</strong></p>
+<p>Think of this module as having an invisible flashlight and special glasses:</p>
+<img alt="../_images/ir_receive2.png" class="align-center" src="../_images/ir_receive2.png" />
+<ol class="arabic simple">
+<li><p>The transmitter sends out infrared light (invisible to our eyes)</p></li>
+<li><p>When the light hits an obstacle, it bounces back</p></li>
+<li><p>The receiver “sees” the reflected light</p></li>
+<li><p>The module sends a signal: “Obstacle ahead!”</p></li>
+</ol>
+<p><strong>Fun Facts About Your Sensor:</strong></p>
+<ul class="simple">
+<li><p><strong>Detection Range</strong>: 2-40cm (about the length of your pencil case!)</p></li>
+<li><p><strong>Color Matters</strong>: Works best with light-colored objects</p></li>
+<li><p><strong>Dark Objects</strong>: Harder to detect from far away</p></li>
+</ul>
+<p><strong>Advanced Controls (For Curious Minds):</strong></p>
+<ul>
+<li><p><strong>EN Pin</strong>: The jumper cap keeps the module always active. Remove it if you want to control the module with code.</p>
+<a class="reference internal image-reference" href="../_images/ir_cap2.png"><img alt="../_images/ir_cap2.png" class="align-center" src="../_images/ir_cap2.png" style="width: 400px;" /></a>
+</li>
+<li><p><strong>Two Adjustments</strong>:</p>
+<ul class="simple">
+<li><p>One dial controls how far the infrared light travels</p></li>
+<li><p>One dial adjusts the light frequency</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/ir_avoid_pot2.png"><img alt="../_images/ir_avoid_pot2.png" class="align-center" src="../_images/ir_avoid_pot2.png" style="width: 400px;" /></a>
+</li>
+</ul>
+<p>Now that you’ve met your new sidekick, let’s connect it to your rover and start programming!</p>
+</section>
+<section id="testing-your-infrared-sensors">
+<h2>Testing Your Infrared Sensors<a class="headerlink" href="#testing-your-infrared-sensors" title="Permalink to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>First, <a class="reference internal" href="sc3_rvr_move.html#app-connect"><span class="std std-ref">Connecting the APP to GalaxyRVR</span></a>.</p></li>
+</ol>
+<ol class="arabic" start="2">
+<li><p>Let’s tune your sensors for perfect performance!</p>
+<ol class="loweralpha">
+<li><p>Make sure the infrared components are straight. Gently adjust if needed.</p>
+<video width="600" loop autoplay muted>
+    <source src="../_static/video/ir_adjust1.mp4" type="video/mp4">
+</video></li>
+<li><p>Place an object (like your rover’s box) 20cm away. Turn the dial until the indicator light turns on. Test by moving the object closer and farther.</p>
+<video width="600" loop autoplay muted>
+    <source src="../_static/video/ir_adjust2.mp4" type="video/mp4">
+</video></li>
+<li><p>Do the same for the other infrared module.</p></li>
+</ol>
+</li>
+<li><p>Then, <a class="reference internal" href="sc3_rvr_move.html#app-connect"><span class="std std-ref">Connecting the APP to GalaxyRVR</span></a>.</p></li>
+<li><p>Find the “left IR status” and “right IR status” blocks in the GalaxyRVR category and check their boxes.</p>
+<img alt="../_images/4_ir_statusblock.png" src="../_images/4_ir_statusblock.png" />
+</li>
+<li><p>The sensor values will now show on your stage.</p>
+<img alt="../_images/4_ir_statusvalue.png" src="../_images/4_ir_statusvalue.png" />
+</li>
+<li><p>Wave your hand near each infrared sensor and watch the values change!</p></li>
+</ol>
+<p><strong>What the Values Mean:</strong></p>
+<ul class="simple">
+<li><p><strong>True</strong> = Obstacle detected</p></li>
+<li><p><strong>False</strong> = Clear path</p></li>
+</ul>
+<p>Now you’re ready to see what your rover can “see”!</p>
+</section>
+<section id="programming-your-rover-to-avoid-obstacles">
+<h2>Programming Your Rover to Avoid Obstacles<a class="headerlink" href="#programming-your-rover-to-avoid-obstacles" title="Permalink to this heading"></a></h2>
+<p>Let’s teach your GalaxyRVR to automatically dodge obstacles using its infrared sensors!</p>
+<ol class="arabic">
+<li><p>First, <a class="reference internal" href="sc3_rvr_move.html#app-connect"><span class="std std-ref">Connecting the APP to GalaxyRVR</span></a>.</p></li>
+<li><p>Start the program with a green flag block.</p>
+<img alt="../_images/4_ir_start.png" src="../_images/4_ir_start.png" />
+</li>
+<li><p>Set a safe speed of 30% for easy testing and debugging.</p>
+<img alt="../_images/4_ir_speed.png" src="../_images/4_ir_speed.png" />
+</li>
+<li><p>Find the <code class="docutils literal notranslate"><span class="pre">when</span> <span class="pre">left</span> <span class="pre">IR</span> <span class="pre">is</span> <span class="pre">blocked</span></code> block for left sensor detection.</p>
+<img alt="../_images/4_ir_when_blocked.png" src="../_images/4_ir_when_blocked.png" />
+</li>
+<li><p>When the left sensor detects an obstacle, make the rover turn right.</p>
+<img alt="../_images/4_ir_turn_right.png" src="../_images/4_ir_turn_right.png" />
+</li>
+<li><p>Keep turning right until the left side no longer detects the obstacle.</p>
+<img alt="../_images/4_ir_wait_until.png" src="../_images/4_ir_wait_until.png" />
+</li>
+<li><p>Stop moving once the path is clear.</p>
+<img alt="../_images/4_ir_stop.png" src="../_images/4_ir_stop.png" />
+</li>
+<li><p>Test by triggering the left infrared sensor with your hand. The GalaxyRVR should smartly turn right to avoid it.</p></li>
+<li><p>Duplicate the code by long-pressing the blocks and selecting duplicate from the menu.</p>
+<img alt="../_images/4_ir_duplicate.png" src="../_images/4_ir_duplicate.png" />
+</li>
+<li><p>In the duplicated code, swap the left and right sides so it handles right-side obstacles.</p>
+<img alt="../_images/4_ir_left_right.png" src="../_images/4_ir_left_right.png" />
+</li>
+<li><p>To prevent erratic behavior when both sensors are triggered at once, add a “stop other scripts in sprite” block. This ensures only one sensor event is handled at a time.</p>
+<a class="reference internal image-reference" href="../_images/4_ir_stop_script.png"><img alt="../_images/4_ir_stop_script.png" src="../_images/4_ir_stop_script.png" style="width: 800px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The stop scripts block can conflict with timed movement blocks, so avoid using them together when possible.</p>
+</div>
+</li>
+<li><p>Now your GalaxyRVR will turn left or right when obstacles are detected on either side. Test by triggering both sensors with your hands.</p></li>
+<li><p>Add a forward block under each code section so the rover continues moving after avoiding obstacles.</p>
+<a class="reference internal image-reference" href="../_images/4_ir_avoid_move.png"><img alt="../_images/4_ir_avoid_move.png" src="../_images/4_ir_avoid_move.png" style="width: 800px;" /></a>
+</li>
+</ol>
+<p>Now click the green flag! Your GalaxyRVR will move forward continuously, smartly dodging obstacles and resuming its path after avoiding them.</p>
+</section>
+<section id="blocks-related-to-the-ir-module">
+<h2>Blocks Related to the IR Module<a class="headerlink" href="#blocks-related-to-the-ir-module" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Event block triggered when the left IR sensor detects an obstacle</p>
+<ul class="simple">
+<li><p>Change “left” to “right” in the dropdown menu</p></li>
+</ul>
+<img alt="../_images/ir_when.png" src="../_images/ir_when.png" />
+</li>
+<li><p>Pauses the program until the left IR sensor no longer detects an obstacle</p>
+<ul class="simple">
+<li><p>Change “left” to “right” for the other sensor</p></li>
+<li><p>Change “is not” to “is” for opposite condition</p></li>
+</ul>
+<img alt="../_images/ir_wait_until.png" src="../_images/ir_wait_until.png" />
+</li>
+<li><p>Conditional block that returns TRUE if left IR sensor detects an obstacle</p>
+<ul class="simple">
+<li><p>Perfect for use with <code class="docutils literal notranslate"><span class="pre">if</span></code> statements</p></li>
+<li><p>Change “left” to “right” for the other sensor</p></li>
+</ul>
+<img alt="../_images/ir_condition.png" src="../_images/ir_condition.png" />
+</li>
+<li><p>Displays the current detection status of the left IR sensor</p>
+<img alt="../_images/ir_left_value.png" src="../_images/ir_left_value.png" />
+</li>
+<li><p>Displays the current detection status of the right IR sensor</p>
+<img alt="../_images/ir_right_value.png" src="../_images/ir_right_value.png" />
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sc5_animate.html" class="btn btn-neutral float-left" title="Lesson 5 Interactive Animation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sc7_obstacle_animate.html" class="btn btn-neutral float-right" title="Lesson 7: Create an IR Obstacle Animation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

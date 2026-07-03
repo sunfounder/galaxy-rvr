@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 12: See Through Your Rover’s Eyes &mdash; SunFounder GalaxyRVR Kit for Arduino 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+        <script src="../_static/./lang.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lesson 13: Complete Mars Rover Control" href="sc13_all.html" />
+    <link rel="prev" title="Lesson 11: Control Your Rover’s Camera Tilt" href="sc11_servo.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder GalaxyRVR Kit for Arduino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">About this Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemble_video.html">Assemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../update_firmware.html">Update Firmwares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arduino/programming_arduino.html">Programming with Arduino IDE</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="scratch.html">Programming with Scratch</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sc1_history.html">Lesson 1 Unveiling the Mars Rover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc2_app.html">Lesson 2 Getting Started with the Mammoth Coding App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc3_rvr_move.html">Lesson 3: Remote Control Your GalaxyRVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc4_ultrasonic.html">Lesson 4: Ultrasonic Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc5_animate.html">Lesson 5 Interactive Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc6_obstacle.html">Lesson 6 IR Obstacle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc7_obstacle_animate.html">Lesson 7: Create an IR Obstacle Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc8_avoid.html">Lesson 8 Advanced Obstacle Avoidance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc9_follow.html">Lesson 9: Mars Exploration Partner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc10_rgb.html">Lesson 10: Lighting the Way with RGB LED Strips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc11_servo.html">Lesson 11: Control Your Rover’s Camera Tilt</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 12: See Through Your Rover’s Eyes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#meet-your-rover-s-eyes-esp32-cam">Meet Your Rover’s Eyes: ESP32 CAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exploring-your-rover-s-camera-system">Exploring Your Rover’s Camera System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#camera-control-blocks">Camera Control Blocks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sc13_all.html">Lesson 13: Complete Mars Rover Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_balloon.html">Fun1 Inflating the Balloon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_flappy_parrot.html">Fun2 Flappy Parrot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_shooting.html">Fun3 Shooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_eat_apple.html">Fun4 Eat Apple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_fish.html">Fun5 Fishing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_sensitive_ball.html">Fun6 Distance Sensitive Ball</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun/sc_fun_tap_tile.html">Fun7 Tap on The Black Tile</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder GalaxyRVR Kit for Arduino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="scratch.html">Programming with Scratch</a></li>
+      <li class="breadcrumb-item active">Lesson 12: See Through Your Rover’s Eyes</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/scratch/sc12_camera.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="lesson-12-see-through-your-rover-s-eyes">
+<h1>Lesson 12: See Through Your Rover’s Eyes<a class="headerlink" href="#lesson-12-see-through-your-rover-s-eyes" title="Permalink to this heading"></a></h1>
+<p>Now that your rover can nod its camera, let’s give it real vision! In this lesson, you’ll learn how to see exactly what your Mars Rover sees through its camera.</p>
+<p>Watch live video from your rover’s perspective as it explores - see Martian landscapes, discover interesting rocks, and navigate like a real space explorer!</p>
+<img alt="../_images/11_camera_image.png" src="../_images/11_camera_image.png" />
+<section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>View live camera footage from your Mars Rover in real-time</p></li>
+<li><p>Combine camera viewing with servo control for interactive exploration</p></li>
+</ul>
+</section>
+<section id="meet-your-rover-s-eyes-esp32-cam">
+<h2>Meet Your Rover’s Eyes: ESP32 CAM<a class="headerlink" href="#meet-your-rover-s-eyes-esp32-cam" title="Permalink to this heading"></a></h2>
+<p>Say hello to the ESP32 CAM - your rover’s powerful vision system! This amazing module is like giving your rover super-smart eyes.</p>
+<a class="reference internal image-reference" href="../_images/esp32_cam2.png"><img alt="../_images/esp32_cam2.png" class="align-center" src="../_images/esp32_cam2.png" style="width: 400px;" /></a>
+<p>The ESP32 CAM does two incredible things:</p>
+<ol class="arabic simple">
+<li><p><strong>Takes photos and video</strong> of whatever your rover is looking at</p></li>
+<li><p><strong>Sends the video</strong> directly to your phone or computer</p></li>
+</ol>
+<p>It’s like being right there on Mars with your rover! You’ll see everything it sees, in real time. Ready to start exploring through your rover’s eyes?</p>
+</section>
+<section id="exploring-your-rover-s-camera-system">
+<span id="camera-system"></span><h2>Exploring Your Rover’s Camera System<a class="headerlink" href="#exploring-your-rover-s-camera-system" title="Permalink to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Drag a <code class="docutils literal notranslate"><span class="pre">turn</span> <span class="pre">camera</span> <span class="pre">ON</span></code> block and click it - watch the stage turn into a live camera view from your rover!</p>
+<img alt="../_images/11_camera_on.png" src="../_images/11_camera_on.png" />
+</li>
+<li><p>If the camera view appears upside down, use <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">camera</span> <span class="pre">image</span> <span class="pre">orientation</span> <span class="pre">to</span> <span class="pre">inverted</span></code> to fix it.</p>
+<img alt="../_images/11_camera_orientation.png" src="../_images/11_camera_orientation.png" />
+</li>
+<li><p>Need more light? Use <code class="docutils literal notranslate"><span class="pre">turn</span> <span class="pre">camera</span> <span class="pre">LED</span> <span class="pre">ON</span></code> to activate the camera’s built-in light.</p>
+<img alt="../_images/11_camera_led.png" src="../_images/11_camera_led.png" />
+</li>
+</ol>
+<p><strong>Create Camera Control Buttons</strong></p>
+<ol class="arabic">
+<li><p>Let’s build a camera control panel! Create four sprites and arrange them neatly.</p>
+<img alt="../_images/11_camera_4.png" src="../_images/11_camera_4.png" />
+</li>
+<li><p>Program each button:</p>
+<ul class="simple">
+<li><p>Ball 1: Turns camera OFF</p></li>
+</ul>
+<img alt="../_images/11_camera_1sp.png" src="../_images/11_camera_1sp.png" />
+<ul class="simple">
+<li><p>Ball 2: Turns camera ON and sets orientation</p></li>
+</ul>
+<img alt="../_images/11_camera_2sp.png" src="../_images/11_camera_2sp.png" />
+<ul class="simple">
+<li><p>Balloon 1: Turns LED ON</p></li>
+</ul>
+<img alt="../_images/11_camera_3sp.png" src="../_images/11_camera_3sp.png" />
+<ul class="simple">
+<li><p>Balloon 2: Turns LED OFF</p></li>
+</ul>
+<img alt="../_images/11_camera_4sp.png" src="../_images/11_camera_4sp.png" />
+</li>
+<li><p>Save space by stacking the controls - they’ll pop out when needed!</p>
+<img alt="../_images/11_camera_fold.png" src="../_images/11_camera_fold.png" />
+</li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">go</span> <span class="pre">to</span> <span class="pre">back</span> <span class="pre">layer</span></code> to each sprite - clicking one button reveals the next, creating a cool toggle effect.</p>
+<img alt="../_images/11_camera_layer.png" src="../_images/11_camera_layer.png" />
+</li>
+<li><p>Click the stage expansion button to enter the full control mode.</p>
+<img alt="../_images/11_camera_go_stage.png" src="../_images/11_camera_go_stage.png" />
+</li>
+<li><p>You’ll now watch live video from your rover’s perspective as it explores - see Martian landscapes, discover interesting rocks, and navigate like a real space explorer!</p>
+<img alt="../_images/11_camera_image.png" src="../_images/11_camera_image.png" />
+</li>
+</ol>
+</section>
+<section id="camera-control-blocks">
+<h2>Camera Control Blocks<a class="headerlink" href="#camera-control-blocks" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Turn the camera on or off. When on, the stage shows live video from your rover!</p>
+<img alt="../_images/camera_turn.png" src="../_images/camera_turn.png" />
+</li>
+<li><p>Control the camera’s LED light - perfect for dark explorations.</p>
+<img alt="../_images/camera_led_turn.png" src="../_images/camera_led_turn.png" />
+</li>
+<li><p>Adjust how see-through the camera view appears.</p>
+<img alt="../_images/camera_transp.png" src="../_images/camera_transp.png" />
+</li>
+<li><p>Flip the camera view if it appears upside down.</p>
+<img alt="../_images/camera_orientation.png" src="../_images/camera_orientation.png" />
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sc11_servo.html" class="btn btn-neutral float-left" title="Lesson 11: Control Your Rover’s Camera Tilt" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sc13_all.html" class="btn btn-neutral float-right" title="Lesson 13: Complete Mars Rover Control" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 3: Entering the World of Arduino and Coding &mdash; SunFounder GalaxyRVR Kit for Arduino 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+        <script src="../_static/./lang.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lesson 4: Mastering the TT Motor" href="lesson4_motor.html" />
+    <link rel="prev" title="Lesson 2 Understanding and Making Rocker-Bogie System" href="lesson2_rocker_bogie.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder GalaxyRVR Kit for Arduino
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">About this Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemble_video.html">Assemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../update_firmware.html">Update Firmwares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="programming_arduino.html">Programming with Arduino IDE</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="lesson1_history.html">Lesson 1 Unveiling the Mars Rover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson2_rocker_bogie.html">Lesson 2 Understanding and Making Rocker-Bogie System</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 3:  Entering the World of Arduino and Coding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#course-objectives">Course Objectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#course-materials">Course Materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#introduction-to-arduino">Introduction to Arduino</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getting-to-know-your-sunfounder-r3-board">Getting to Know Your SunFounder R3 Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-arduino-ide">Install Arduino IDE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#discovering-the-arduino-playground-ide">Discovering the Arduino Playground (IDE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#upload-your-first-sketch">Upload Your First Sketch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#some-fun-arduino-programming-facts">Some Fun Arduino Programming Facts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lesson4_motor.html">Lesson 4: Mastering the TT Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson5_car_move.html">Lesson 5: Unleashing Mars Rover Mobility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson6_ir_avoid.html">Lesson 6: Exploring the Obstacle Avoidance Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson7_ultrasonic_avoid.html">Lesson 7: Enhancing Rover Navigation with Ultrasonic Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson8_ir_ultrasonic.html">Lesson 8: Advanced Obstacle Avoidance and Intelligent Following System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson9_rgb_strips.html">Lesson 9: Lighting the Way with RGB LED Strips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson10_servo.html">Lesson 10: Exploring the Mars Rover Visual System - Servo and Tilt Mechanism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson11_camera.html">Lesson 11: Exploring the Mars Rover Visual System - Camera and Real-time Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson12_solar_panel.html">Lesson 12: Investigating the Mars Rover Energy System</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scratch/scratch.html">Programming with Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder GalaxyRVR Kit for Arduino</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="programming_arduino.html">Programming with Arduino IDE</a></li>
+      <li class="breadcrumb-item active">Lesson 3:  Entering the World of Arduino and Coding</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/arduino/lesson3_arduino_ide.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="lesson-3-entering-the-world-of-arduino-and-coding">
+<h1>Lesson 3:  Entering the World of Arduino and Coding<a class="headerlink" href="#lesson-3-entering-the-world-of-arduino-and-coding" title="Permalink to this heading"></a></h1>
+<p>In our previous lesson, we successfully built the Rocker-Bogie Suspension System.
+However, to make it functional, we need to provide it with power, a control board, and programming to dictate its movements.</p>
+<p>So in this lesson, we’re going to get acquainted with the control board and the programming platform we’ll be using.</p>
+<img alt="../_images/upload_blink.gif" src="../_images/upload_blink.gif" />
+<section id="course-objectives">
+<h2>Course Objectives<a class="headerlink" href="#course-objectives" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Understand the basic concepts and functions of Arduino.</p></li>
+<li><p>Learn about SunFounder R3 Board.</p></li>
+<li><p>Install Arduino IDE and get familiar with its interface.</p></li>
+<li><p>Learn about basic syntax rules for Arduino programming.</p></li>
+</ul>
+</section>
+<section id="course-materials">
+<h2>Course Materials<a class="headerlink" href="#course-materials" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>SunFounder R3 Board</p></li>
+<li><p>Arduino IDE</p></li>
+<li><p>USB Cable</p></li>
+<li><p>Computer</p></li>
+</ul>
+</section>
+<section id="introduction-to-arduino">
+<h2>Introduction to Arduino<a class="headerlink" href="#introduction-to-arduino" title="Permalink to this heading"></a></h2>
+<p>You may have often heard the term “Arduino” in various contexts, but what exactly is it and why has it become so popular?</p>
+<p>Arduino is an open-source electronics platform that is easy to use for both hardware and software applications. It’s designed to make digital devices and interactive objects that can sense and control the physical world around them.</p>
+<p>Sure, let’s break it down:</p>
+<ul>
+<li><p><strong>Open-source</strong>: Think of open-source like a community garden. Everyone can use it, everyone can contribute to it, and everyone can benefit from it. With open-source, both the designs of the physical parts (the hardware) and the programming instructions (the software) are shared freely. This means anyone can use them, improve them, or create their own versions. It’s all about sharing and creativity!</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/arduino_oscomm.png"><img alt="../_images/arduino_oscomm.png" class="align-center" src="../_images/arduino_oscomm.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p><strong>Microcontroller</strong>: A microcontroller is like the brain of the Arduino. It’s a tiny computer that can run simple software. Although it’s not as powerful as the computer you’re using now, it’s perfect for simple tasks like understanding messages from sensors or lighting up an LED (a small light).</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/arduino_micro.jpg"><img alt="../_images/arduino_micro.jpg" class="align-center" src="../_images/arduino_micro.jpg" style="width: 500px;" /></a>
+</div></blockquote>
+</li>
+<li><p><strong>Development Board</strong>: Imagine the development board as the body that supports the brain. It’s the board where the microcontroller sits and it contains other parts that help the microcontroller interact with the world. These parts include things like oscillators (that help with timing), voltage regulators (that control power levels), and connectors for power and data (like the plugs and switches in your house).</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/arduino_board.png"><img alt="../_images/arduino_board.png" class="align-center" src="../_images/arduino_board.png" style="width: 600px;" /></a>
+</div></blockquote>
+</li>
+<li><p><strong>Arduino IDE</strong>: This is like the teaching classroom for your Arduino. It’s a program that runs on your computer where you can write the instructions that tell your Arduino what to do. These instructions are written in a programming language based on C++. Once you’ve written your instructions, you can send them to the Arduino board using a USB cable, just like handing in your homework!</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/arduino_ide_icon.png"><img alt="../_images/arduino_ide_icon.png" class="align-center" src="../_images/arduino_ide_icon.png" style="width: 200px;" /></a>
+</div></blockquote>
+</li>
+</ul>
+<p>Now that you understand these basic ideas, you’re well on your way to becoming an Arduino expert!</p>
+<p>Then we’ll dive into some hands-on activities to get you acquainted with Arduino programming and engineering principles.
+Get ready for an exciting learning journey!</p>
+</section>
+<section id="getting-to-know-your-sunfounder-r3-board">
+<h2>Getting to Know Your SunFounder R3 Board<a class="headerlink" href="#getting-to-know-your-sunfounder-r3-board" title="Permalink to this heading"></a></h2>
+<p>Inside your kit, you’ll find a blue board, seemingly a tiny city filled with small metallic towers and pathways. But don’t let it intimidate you! This is the SunFounder R3 development board, a kind of Arduino board that can be used to program and control a vast array of electronic devices and projects.</p>
+<p>Let’s understand its key features in simple terms:</p>
+<a class="reference internal image-reference" href="../_images/sf_r3.jpg"><img alt="../_images/sf_r3.jpg" src="../_images/sf_r3.jpg" style="width: 800px;" /></a>
+<ul>
+<li><p><strong>14 Digital Pins</strong>: Think of these pins like little messengers. They can be programmed to send (output) or receive (input) simple “yes” or “no” messages to other parts of your Mars Rover. These messages are actually “on” or “off” signals that the board uses to control things like lights or motors.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Six of these special pins can even send messages in a kind of secret code called PWM (Pulse Width Modulation). This code can be used to control how bright a light is, how fast a motor spins, or even where a moving part positions itself.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>6 Analog Pins</strong>: These pins are like the board’s six special senses. They can read signals from different types of sensors (like a temperature sensor) and then translate these signals into a language that the board can understand and use in its programming.</p></li>
+<li><p><strong>USB Connection</strong>: This is like the board’s umbilical cord. You can use it to connect your board to your computer. This connection allows your computer to “teach” the board what to do by sending it a program you write.</p></li>
+<li><p><strong>Power Jack</strong>: This is the board’s food supply. You can connect a power supply, like a battery or an AC-to-DC adapter, to this jack to “feed” your board the electricity it needs to work.</p></li>
+<li><p><strong>ICSP Header</strong>: This is like a special entrance for programming the board. It can be used if you have an external programmer (a special device for “teaching” the board).</p></li>
+<li><p><strong>Reset Button</strong>: If you press it, it’s like telling the board to forget what it was just doing and start its program over from the beginning.</p></li>
+</ul>
+<p>With these basics, you’ll be all set to begin your programming adventures with the SunFounder R3 board!</p>
+</section>
+<section id="install-arduino-ide">
+<span id="id1"></span><h2>Install Arduino IDE<a class="headerlink" href="#install-arduino-ide" title="Permalink to this heading"></a></h2>
+<p>Now that we understand what Arduino and the Arduino board are, it’s time to start putting that knowledge to use. We’re going to install the Arduino IDE, which is the software we’ll use to program our Arduino board.</p>
+<p>The latest version of the Arduino IDE is version 2.0. It’s packed with features and is super user-friendly. However, you should know that it does have some system requirements:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Windows - Win 10 and newer, 64 bits</p></li>
+<li><p>Linux - 64 bits</p></li>
+<li><p>Mac OS X - Version 10.14: “Mojave” or newer, 64 bits</p></li>
+</ul>
+</div></blockquote>
+<p>To get started, follow these steps:</p>
+<ol class="arabic">
+<li><p>Visit <a href="https://www.arduino.cc/en/software#future-version-of-the-arduino-ide" target="_blank">Arduino IDE 2.0.0 Page</a> and download the IDE for your OS version.</p>
+<blockquote>
+<div><img alt="../_images/sp_001.png" src="../_images/sp_001.png" />
+</div></blockquote>
+</li>
+</ol>
+<p><strong>For Windows users:</strong></p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Once you’ve downloaded the file (it will be called something like <code class="docutils literal notranslate"><span class="pre">arduino-ide_xxxx.exe</span></code>), double-click it to start the installation process.</p></li>
+<li><p>You’ll be shown the <strong>License Agreement</strong>. Take a moment to read through this, and if you agree to the terms, click “I Agree”.</p>
+<blockquote>
+<div><img alt="../_images/sp_002.png" src="../_images/sp_002.png" />
+</div></blockquote>
+</li>
+<li><p>Next, you’ll be asked to choose installation options. Leave these as they are and click “Next”.</p>
+<blockquote>
+<div><img alt="../_images/sp_003.png" src="../_images/sp_003.png" />
+</div></blockquote>
+</li>
+<li><p>Choose where you want to install the software. It’s generally best to install it on a different drive than the one your system uses.</p>
+<blockquote>
+<div><img alt="../_images/sp_004.png" src="../_images/sp_004.png" />
+</div></blockquote>
+</li>
+<li><p>Click “Install” to start the installation. Once it’s done, click “Finish”.</p>
+<blockquote>
+<div><img alt="../_images/sp_005.png" src="../_images/sp_005.png" />
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+<p><strong>For macOS users:</strong></p>
+<blockquote>
+<div><p>Double-click the downloaded file (which will be called something like <code class="docutils literal notranslate"><span class="pre">arduino_ide_xxxx.dmg</span></code>). Follow the on-screen instructions to drag the <strong>Arduino IDE</strong> app into the <strong>Applications</strong> folder. After a few seconds, the Arduino IDE will be successfully installed.</p>
+<a class="reference internal image-reference" href="../_images/macos_install_ide.png"><img alt="../_images/macos_install_ide.png" src="../_images/macos_install_ide.png" style="width: 800px;" /></a>
+</div></blockquote>
+<p><strong>For Linux users:</strong></p>
+<blockquote>
+<div><p>You can find a detailed tutorial on installing the Arduino IDE 2.0 on a Linux system here: <a href="https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing#linux" target="_blank">Install Arduino IDE on Linux</a>.</p>
+</div></blockquote>
+</section>
+<section id="discovering-the-arduino-playground-ide">
+<h2>Discovering the Arduino Playground (IDE)<a class="headerlink" href="#discovering-the-arduino-playground-ide" title="Permalink to this heading"></a></h2>
+<p>Let’s imagine together that the Arduino IDE is a magical playground filled with tools and gadgets waiting for us to explore and play with. Up next, I will guide you to understand every corner of this playground.</p>
+<a class="reference internal image-reference" href="../_images/ide-2-overview.png"><img alt="../_images/ide-2-overview.png" src="../_images/ide-2-overview.png" style="width: 800px;" /></a>
+<p>Here’s what you’ll find in your playground:</p>
+<ul class="simple">
+<li><p><strong>Verify / Upload</strong> - Imagine this as your magic elevator. It takes the code you’ve written and whisks it up into your Arduino board.</p></li>
+<li><p><strong>Select Board &amp; Port</strong> - This is your treasure map. It automatically shows the Arduino boards you’ve plugged into your computer, and tells you their port number.</p></li>
+<li><p><strong>Sketchbook</strong> - This is your personal library. It’s where all your sketches (programs) are stored on your computer. Plus, it can connect to the Arduino Cloud, so you can fetch your sketches from the online world too.</p></li>
+<li><p><strong>Boards Manager</strong> - Think of this as your toolkit. It’s where you can find and install different packages for your Arduino.</p></li>
+<li><p><strong>Library Manager</strong> - This is your endless treasure chest. Thousands of libraries made by Arduino and its community are waiting for you here. Need a tool or material for your code? Dive in and find it!</p></li>
+<li><p><strong>Debugger</strong> - Imagine you had a superpower that let you test and debug your code in real time, finding and fixing problems as they happen. That’s what this is!</p></li>
+<li><p><strong>Search</strong> - Think of this as your magnifying glass. It helps you search for keywords in your code.</p></li>
+<li><p><strong>Open Serial Monitor</strong> - This is like your communicator device. It opens a new tab that lets your computer and Arduino board send messages back and forth.</p></li>
+</ul>
+<p>Now that we’ve gotten a glimpse of the playground, it’s time to dive in and start creating!</p>
+</section>
+<section id="upload-your-first-sketch">
+<span id="upload-sketch"></span><h2>Upload Your First Sketch<a class="headerlink" href="#upload-your-first-sketch" title="Permalink to this heading"></a></h2>
+<p>Alright, it’s time to have some fun! We’re going to make an LED blink - it’s like saying “Hello, World!” in the world of Arduino.</p>
+<p>Most Arduino boards have a built-in LED on pin 13, which makes this a good first experiment.</p>
+<a class="reference internal image-reference" href="../_images/1_led.jpg"><img alt="../_images/1_led.jpg" class="align-center" src="../_images/1_led.jpg" style="width: 400px;" /></a>
+<p>Let’s break it down:</p>
+<ol class="arabic">
+<li><p><strong>Plug it in</strong>: Connect your SunFounder R3 Board to your computer using a USB cable. This is how we’re going to give our board power and send our program (also called a “sketch”) to it. You might feel like you’re just plugging in a computer gadget, but believe me, you’re connecting to a world of possibilities!</p>
+<blockquote>
+<div><img alt="../_images/connect_board_pc.gif" src="../_images/connect_board_pc.gif" />
+</div></blockquote>
+</li>
+<li><p><strong>Find the example sketch</strong>: On the Arduino IDE, go to <strong>File</strong> -&gt; <strong>Examples</strong> -&gt; <strong>Basic</strong> -&gt; <strong>Blink</strong>. What you see that pops up is a ready-to-use program that we’re going to modify. It’s like getting a ready-made cake that we’re about to decorate!</p>
+<blockquote>
+<div><img alt="../_images/open_blink.png" src="../_images/open_blink.png" />
+</div></blockquote>
+</li>
+<li><p><strong>Understand the sketch</strong>: Look at the code in this new window. It tells Arduino to turn on the built-in LED (which is on pin 13) for one second, then turn it off for one second, and then repeat. It’s like sending Morse code, but with light!</p>
+<blockquote>
+<div><img alt="../_images/led_blink.png" src="../_images/led_blink.png" />
+</div></blockquote>
+</li>
+<li><p><strong>Upload the sketch</strong>: Once you’ve selected the correct board and port, just click the upload button. It’s as easy as sending a letter; you’re delivering your instructions to the Arduino board! Most of the time, the system will automatically detect the board and port for you.</p>
+<blockquote>
+<div><img alt="../_images/upload_blink.gif" src="../_images/upload_blink.gif" />
+</div></blockquote>
+</li>
+<li><p><strong>Watch it work</strong>: If all goes well, you’ll see the LED on your Arduino board start to blink on and off. It’s like your Arduino is winking at you!</p>
+<blockquote>
+<div><img alt="../_images/blink_led.gif" src="../_images/blink_led.gif" />
+</div></blockquote>
+</li>
+</ol>
+<p>You’ve done a great job! You’ve just run your first Arduino program, making you a bona fide programmer! So what’s next? We’re just scratching the surface of what Arduino can do. Ready for the next challenge?</p>
+</section>
+<section id="some-fun-arduino-programming-facts">
+<h2>Some Fun Arduino Programming Facts<a class="headerlink" href="#some-fun-arduino-programming-facts" title="Permalink to this heading"></a></h2>
+<p>Time to uncover some cool secrets about Arduino programming!</p>
+<ul>
+<li><p>Code Magic: <code class="docutils literal notranslate"><span class="pre">setup()</span></code> and <code class="docutils literal notranslate"><span class="pre">loop()</span></code></p>
+<blockquote>
+<div><p>An Arduino sketch, or a piece of code, is like a two-act play:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">setup()</span></code>: This is Act 1, the opening scene. It only happens once, when your Arduino board first wakes up. It’s used to set the stage by preparing things like pin modes and libraries.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">loop()</span></code>: After Act 1, we move onto Act 2 which repeats on a loop until the final curtain (which only happens if we turn off the power or hit the reset button!). This part of the code is like the main part of our play, where the action really happens.</p></li>
+</ul>
+<p>But remember, even if there’s no magic (code) in the <code class="docutils literal notranslate"><span class="pre">setup()</span></code> or <code class="docutils literal notranslate"><span class="pre">loop()</span></code>, we still need to keep them. They’re like the stage - even an empty stage is still a stage.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nb">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// initialize digital pin LED_BUILTIN as an output.</span>
+<span class="w">    </span><span class="nf">pinMode</span><span class="p">(</span><span class="kr">LED_BUILTIN</span><span class="p">,</span><span class="w"> </span><span class="kr">OUTPUT</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="kr">LED_BUILTIN</span><span class="p">,</span><span class="w"> </span><span class="kr">HIGH</span><span class="p">);</span><span class="w">  </span><span class="c1">// turn the LED on (HIGH is the voltage level)</span>
+<span class="w">    </span><span class="nf">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">                      </span><span class="c1">// wait for a second</span>
+<span class="w">    </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="kr">LED_BUILTIN</span><span class="p">,</span><span class="w"> </span><span class="kr">LOW</span><span class="p">);</span><span class="w">   </span><span class="c1">// turn the LED off by making the voltage LOW</span>
+<span class="w">    </span><span class="nf">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">                      </span><span class="c1">// wait for a second</span>
+<span class="p">}</span>
+
+<span class="c1">// the loop function runs over and over again forever</span>
+<span class="kr">void</span><span class="w"> </span><span class="nb">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Punctuation Marks in Coding</p>
+<blockquote>
+<div><p>Just like in a storybook, Arduino uses special punctuation marks to make sense of the code:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Semicolons</span> <span class="pre">(;)</span></code>: These are like the full stops in a story. They tell the Arduino “Okay, I’m done with this action. What’s next?”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Curly</span> <span class="pre">Braces</span> <span class="pre">{}</span></code>: These are like the beginning and the end of a chapter. They wrap up pieces of code together, marking where a section starts and ends.</p></li>
+</ul>
+<p>If you happen to forget some of these punctuation marks, don’t worry! The Arduino is like a friendly teacher who will check your work, point out where the mistakes are, and show you how to fix them. It’s all part of the learning adventure!</p>
+<img alt="../_images/blink_error.gif" src="../_images/blink_error.gif" />
+</div></blockquote>
+</li>
+<li><p>About the Functions</p>
+<blockquote>
+<div><p>Imagine these functions as magical spells. Each spell has a specific effect in our Arduino adventure:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pinMode()</span></code>: This spell decides whether a pin is an INPUT or an OUTPUT. It’s like deciding if a character in our story speaks (OUTPUT) or listens (INPUT).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">digitalWrite()</span></code>: This spell can turn a pin HIGH (on) or LOW (off), like switching a magic light on and off.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">delay()</span></code>: This spell makes the Arduino pause for a certain amount of time, like taking a short nap in the middle of our story.</p></li>
+</ul>
+<p>Just like a spell book, you can find all these spells and many more in the <a href="https://www.arduino.cc/reference/en/" target="_blank">Arduino official website</a>. The more spells you know, the more exciting your Arduino adventures can be!</p>
+</div></blockquote>
+</li>
+<li><p>Comments: Our Secret Messages</p>
+<blockquote>
+<div><p>We also have a secret language in coding, called <code class="docutils literal notranslate"><span class="pre">comments</span></code>. These are messages that we can write in our code using <code class="docutils literal notranslate"><span class="pre">//</span></code> or <code class="docutils literal notranslate"><span class="pre">/*</span> <span class="pre">*/</span></code>. The magic part? The Arduino completely ignores them! It’s a great place to leave notes for yourself or others to explain what the tricky parts of the code are doing.</p>
+</div></blockquote>
+</li>
+<li><p>Code Readability: Making Code Friendly</p>
+<blockquote>
+<div><p>While you can write your code in any manner you want (for example, placing semicolons on a separate line won’t cause any errors), it’s important to keep in mind the readability of the code.</p>
+<img alt="../_images/blink_noerror.gif" src="../_images/blink_noerror.gif" />
+<p>Just like writing a good story, the way we write code can make it either fun and easy or boring and difficult to read. Here are some ways to make your code more friendly:</p>
+<ul class="simple">
+<li><p>Use proper indentation to arrange your sentences into neat paragraphs. It helps the reader understand where one section ends and another begins.</p></li>
+<li><p>Use variable names that make sense. It’s like calling a character by a fitting name in a story.</p></li>
+<li><p>Keep your functions small and simple, like short and sweet chapters in a book.</p></li>
+<li><p>Leave comments for the tricky parts. It’s like leaving a footnote to explain a difficult word.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>Remember, we’re not only coding for machines but also for humans, so let’s make sure our code tells a clear and understandable story!</p>
+<p><strong>Reflect and Improve</strong></p>
+<p>Taking a moment to reflect on our journey can provide us with insights that we might miss in the flurry of exploration. Ask yourself:</p>
+<ul class="simple">
+<li><p>What was the most interesting part of this Arduino adventure?</p></li>
+<li><p>Were there any challenges along the way? How did you overcome them?</p></li>
+<li><p>Could you explain to a friend what Arduino is, what the Arduino IDE does, or how to run Arduino code?</p></li>
+<li><p>How would you describe your first Arduino programming experience?</p></li>
+<li><p>What more do you want to learn about Arduino?</p></li>
+</ul>
+<p>By thinking about these questions, you are deepening your understanding and preparing yourself for future explorations. Always remember, there’s no “wrong” answer in reflection – it’s your personal journey after all!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lesson2_rocker_bogie.html" class="btn btn-neutral float-left" title="Lesson 2 Understanding and Making Rocker-Bogie System" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="lesson4_motor.html" class="btn btn-neutral float-right" title="Lesson 4: Mastering the TT Motor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
