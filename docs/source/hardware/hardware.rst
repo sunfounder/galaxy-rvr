@@ -1,13 +1,13 @@
-﻿.. include:: /index.rst
+.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
-ハードウェア
+�ϩ`�ɥ�����
 ==================
 
-コードを書く際に、各モジュールの動作や各ピンの役割を知る必要がある場合は、この章をご覧ください。
+���`�ɤ�����H�ˡ����⥸��`��΄�������ԥ���۸��֪���Ҫ��������Ϥϡ������¤��E����������
 
-この章では、各モジュールの機能、技術パラメータ、および動作原理について説明します。
+�����¤Ǥϡ����⥸��`��ΙC�ܡ����g�ѥ��`��������ӄ���ԭ���ˤĤ����h�����ޤ���
 
 .. toctree::
     :maxdepth: 2
@@ -21,6 +21,5 @@
     cpn_servo
     cpn_tt_motor_xh
     cpn_solar_panel
-    cpn_18650_battery
 
 ..  cpn_camera_adapter
