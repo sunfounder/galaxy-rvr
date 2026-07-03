@@ -21,6 +21,5 @@ In diesem Kapitel finden Sie eine Beschreibung der Funktion jedes Moduls, der te
     cpn_servo
     cpn_tt_motor_xh
     cpn_solar_panel
-    cpn_18650_battery
 
 ..     cpn_camera_adapter
