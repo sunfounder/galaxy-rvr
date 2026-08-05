@@ -87,6 +87,9 @@ git push origin 2.0.0
 | `update-arduino-firmware-mac.sh` | macOS 烧录脚本 |
 | `update-arduino-firmware-linux.sh` | Linux 烧录脚本 |
 
+> 📌 **脚本源头已纳入版本管理**：`release/` 目录（`update-arduino-firmware-mac.sh` / `update-arduino-firmware-linux.sh` / `update-arduino-firmware.bat`）。发布打包时从 `release/` 拷贝到 `output/`，不要在 output/ 里直接改脚本。
+> ⚠️ 已知坑：`for port in /dev/tty.usbmodem* 2>/dev/null; do` 这种写法是语法错误（glob 列表不能重定向），必须用 `shopt -s nullglob`。
+
 ### 烧录脚本依赖
 
 - **Windows**: `avrdude.exe` 和 `avrdude.conf` 已打包在 output 中，无需额外安装
