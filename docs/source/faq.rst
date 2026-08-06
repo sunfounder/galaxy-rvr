@@ -304,43 +304,40 @@ R3 板包含内置固件，用于实现与 RoboPilot App 和 Mammoth Coding 的�
 #. 解压下载的压缩包，获取 ``output`` 文件夹。右键点击（或按住 Control 点击） ``output`` 文件夹，从上下文菜单中选择 **New Terminal at Folder**。
 
    .. image:: img/faq_mac_firmware_open.png
+      :width: 400
 
-#. 终端将直接在 ``output`` 文件夹中打开。运行以下命令，然后输入检测到的 COM 端口序号（例如 ``1`` ）：
+#. 终端将直接在 ``output`` 文件夹中打开。
 
-   .. code-block:: bash
-
-      bash update-arduino-firmware-mac.sh
+   * 运行 ``bash update-arduino-firmware-mac.sh`` 命令
+   * 然后输入检测到的 COM 端口序号（例如 ``1``）：
 
    .. image:: img/faq_mac_firmware_run.png
-      :width: 500
+      :width: 600
 
 #. 如果出现 **"avrdude not Opened"** 提示：
 
    .. image:: img/faq_mac_firmware_avrdude.png
+      :width: 300
 
-#. 前往系统设置 > **隐私与安全性**，点击 **Allow Anyway**（允许）。
+#. 前往 **系统设置** > **隐私与安全性**，点击 **Allow Anyway**。
 
    .. image:: img/faq_mac_firmware_allow.png
-      :width: 500
+      :width: 600
 
-#. 再次运行脚本：
-
-   .. code-block:: bash
-
-      bash update-arduino-firmware-mac.sh
+#. 再次运行脚本：``bash update-arduino-firmware-mac.sh``
 
    这次您可以选择 **Open Anyway**。输入管理员用户名和密码以允许此操作。
 
    .. image:: img/faq_mac_firmware_anyway.png
-      :width: 500
+      :width: 600
 
 #. 看到成功提示后，即可拔掉 USB 线。
 
    .. image:: img/faq_mac_firmware_finish.png
-      :width: 500
+      :width: 600
 
-   .. note::
+.. important::
 
-      此固件使 GalaxyRVR 能够响应 App 命令。在使用 RoboPilot 遥控 App 或 Mammoth Coding 软件时，您无需上传任何额外代码。
-
-#. 现在您可以前往 :ref:`quick_start` 开始您的 GalaxyRVR 之旅！
+   * 此固件使 GalaxyRVR 能够响应 App 命令。
+   * 在使用 RoboPilot 遥控 App 或 Mammoth Coding 软件时，您无需上传任何额外代码。
+   * 现在您可以前往 :ref:`quick_start` 开始您的 GalaxyRVR 之旅！
