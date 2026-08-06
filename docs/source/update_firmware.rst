@@ -98,32 +98,15 @@ ESP32 CAM は、GalaxyRVR の Wi-Fi ホットスポットをブロードキャ�
 
 **バージョン A**
 
-   6. OTA ページで、ファームウェアファイルを選択するボタンをクリックします。
+   6. OTA ページでファームウェアファイルを選択し、更新を開始します：
 
-      .. image:: img/faq_cam_ota_choose.png
-         :width: 400
+      * デバイスから先ほどダウンロードした ``ai-camera-firmware-vX.X.X-ota.bin`` ファイルを選択し、**Add** をクリックします。
+      * **Update** ボタンをクリックしてファームウェアの更新を開始し、完了するまで待ちます。
 
-   #. デバイスから先ほどダウンロードした ``ai-camera-firmware-vX.X.X-ota.bin`` ファイルを選択し、 **Add** をクリックします。
+      .. image:: img/faq_ota_a.png
+         :width: 700
 
-      .. image:: img/faq_cam_ota_file.png
-         :width: 400
-
-   #. **Update** ボタンをクリックして、ファームウェアの更新プロセスを開始します。
-
-      .. image:: img/faq_cam_ota_update.png
-         :width: 400
-
-   #. 更新が完了するまで待ちます。
-
-      .. image:: img/faq_cam_ota_finish.png
-         :width: 400
-
-   #. 更新が完了したら、ウェブブラウザを閉じてください。 **Reset** ボタンを押してデバイスを再起動します。これで ESP32 CAM は通常の動作が可能になります。
-
-      .. image:: img/camera_reset.png
-         :width: 600
-
-   .. note:: 更新が完了すると、GalaxyRVR の WiFi ホットスポット名は "AI Camera-xxxxxx" に変更され、パスワードは "12345678" のままです。
+   #. 更新が完了すると、GalaxyRVR の WiFi ホットスポット名は "AI Camera-xxxxxx" に変更され、パスワードは "12345678" のままです。
 
 
 **バージョン B**
@@ -139,32 +122,15 @@ ESP32 CAM は、GalaxyRVR の Wi-Fi ホットスポットをブロードキャ�
          :align: center
 
 
-   #. **Upgrade Firmware** ボタンをタップします。
+   #. **Upgrade Firmware** をタップし、ファームウェアファイルを選択して更新の完了を待ちます：
 
-      .. image:: img/firmware_tap.jpg
-         :width: 50%
-         :align: center
+      * **Upgrade Firmware** ボタンをタップし、先ほどデバイスにダウンロードした ``ai-camera-firware.ino.x.x.x.bin`` ファイルを選択します。
+      * 更新はすぐに開始され、通常1〜2分かかります。完了したら **CONFIRM** を選択して GalaxyRVR を再起動します。
 
-   #. ファイル選択ダイアログが表示されます。先ほどモバイルデバイスに転送した ``ai-camera-firware.ino.x.x.x.bin`` ファイルを参照して選択します。
+      .. image:: img/faq_ota_b.png
+         :width: 700
 
-      .. image:: img/firmware_select.jpg
-         :width: 50%
-         :align: center
-
-   #. ファイルを選択すると、ファームウェアの更新がすぐに開始されます。
-
-      .. image:: img/firmware_upgrade.jpg
-         :width: 50%
-         :align: center
-
-   #. ファームウェアのアップグレードが完了するまで待ちます。
-
-      * アップロードプロセスは通常1〜2分かかります。完了すると、ポップアップウィンドウに成功メッセージが表示されます。
-      * その後、 **CONFIRM** を選択して GalaxyRVR を再起動するか、 **CLOSE** を選択してウィンドウを閉じることができます。
-
-      .. image:: img/firmware_finish.jpg
-         :width: 50%
-         :align: center
+   #. 更新が完了すると、GalaxyRVR の WiFi ホットスポット名は "AI Camera-xxxxxx" に変更され、パスワードは "12345678" のままです。
 
 
 .. _update_r3_firmware:
@@ -181,13 +147,17 @@ R3 ボードには、RoboPilot APP および Mammoth Coding との通信を可�
 
 以下の手順に従って、通信ファームウェアを再インストールしてください。
 
-#. Arduino とコンピューターを USB ケーブルで接続し、車の **upload** スイッチをアップロード側に切り替えます。
+.. note::
+
+   Mac を使用している場合は、macOS 専用のガイドを参照してください：
+
+   :ref:`uno_firmware_mac`
+
+#. USB A-B ケーブル（USB Type-C ではありません）で Arduino をコンピューターに接続し、モードスイッチを **Upload** に切り替えます。
 
    .. image:: img/camera_upload.png
         :width: 500
         :align: center
-
-   .. note:: Arduino に接続するのは USB Type B ポートです。充電用の USB Type C ポートではありません。
 
 #. ファームウェアファイルがダウンロードされているか確認します。
 
@@ -214,8 +184,8 @@ R3 ボードには、RoboPilot APP および Mammoth Coding との通信を可�
 
    .. image:: img/faq_uno_updating.png
 
-   .. note::
+   .. important::
 
-      このコードにより、GalaxyRVR は APP コマンドに応答できるようになります。RoboPilot リモートコントロール APP または Mammoth Coding ソフトウェアを使用する際に、追加のコードをアップロードする必要はありません。
+      このファームウェアにより、GalaxyRVR はアプリのコマンドに応答できるようになります。RoboPilot リモートコントロールアプリまたは Mammoth Coding ソフトウェアを使用する際に、追加のコードをアップロードする必要はありません。
 
 #. これで :ref:`quick_start` に進み、GalaxyRVR の旅を始めることができます！
