@@ -274,3 +274,73 @@ GalaxyRVR 的 R3 板搭载了支持 RoboPilot App 和 Mammoth Coding 的固件�
 
 .. note::
    恢复出厂设置后，您需要重新配置任何之前保存的家庭 WiFi 设置（:ref:`ap_to_sta`）。
+
+
+.. _uno_firmware_mac:
+
+13. 如何在 macOS 上更新 R3 固件
+----------------------------------
+
+R3 板包含内置固件，用于实现与 RoboPilot App 和 Mammoth Coding 的通信。
+
+在以下情况下，您需要重新上传此固件：
+
+- 您的设备使用较旧的固件版本，或
+- 您已烧录了自己的 Arduino 代码并希望恢复兼容性。
+
+请按照以下步骤重新安装通信固件。
+
+#. 使用 USB 线将 Arduino 连接到计算机，然后将模式开关拨到 **Upload** 位置。
+
+   .. image:: img/camera_upload.png
+        :width: 500
+
+   .. note:: 请使用 USB Type B 端口（用于连接 Arduino），而非 USB Type C 端口（仅用于充电）。
+
+#. 确保固件文件已下载。
+
+   * |download_galaxyrvr_filmware|
+
+#. 解压下载的压缩包，获取 ``output`` 文件夹。右键点击（或按住 Control 点击） ``output`` 文件夹，从上下文菜单中选择 **New Terminal at Folder**。
+
+   .. image:: img/faq_mac_firmware_open.png
+
+#. 终端将直接在 ``output`` 文件夹中打开。运行以下命令，然后输入检测到的 COM 端口序号（例如 ``1`` ）：
+
+   .. code-block:: bash
+
+      bash update-arduino-firmware-mac.sh
+
+   .. image:: img/faq_mac_firmware_run.png
+      :width: 500
+
+#. 如果出现 **"avrdude not Opened"** 提示：
+
+   .. image:: img/faq_mac_firmware_avrdude.png
+
+#. 前往系统设置 > **隐私与安全性**，点击 **Allow Anyway**（允许）。
+
+   .. image:: img/faq_mac_firmware_allow.png
+      :width: 500
+
+#. 再次运行脚本：
+
+   .. code-block:: bash
+
+      bash update-arduino-firmware-mac.sh
+
+   这次您可以选择 **Open Anyway**。输入管理员用户名和密码以允许此操作。
+
+   .. image:: img/faq_mac_firmware_anyway.png
+      :width: 500
+
+#. 看到成功提示后，即可拔掉 USB 线。
+
+   .. image:: img/faq_mac_firmware_finish.png
+      :width: 500
+
+   .. note::
+
+      此固件使 GalaxyRVR 能够响应 App 命令。在使用 RoboPilot 遥控 App 或 Mammoth Coding 软件时，您无需上传任何额外代码。
+
+#. 现在您可以前往 :ref:`quick_start` 开始您的 GalaxyRVR 之旅！

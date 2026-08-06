@@ -91,32 +91,15 @@ ESP32 CAM 负责广播 Wi-Fi 热点并为 GalaxyRVR 采集视频。
 
 **版本 A**
 
-   6. 在 OTA 页面上，点击按钮选择固件文件。
+   6. 在 OTA 页面选择固件文件并开始更新：
 
-      .. image:: img/faq_cam_ota_choose.png
-         :width: 300
+      * 从设备中选择之前下载的 ``ai-camera-firmware-vX.X.X-ota.bin`` 文件，然后点击 **Add**。
+      * 点击 **Update** 按钮开始固件更新，等待完成即可。
 
-   #. 从设备中选择之前下载的 ``ai-camera-firmware-vX.X.X-ota.bin`` 文件，然后点击 **Add** 。
+      .. image:: img/faq_ota_a.png
+         :width: 700
 
-      .. image:: img/faq_cam_ota_file.png
-         :width: 300
-
-   #. 点击 **Update** 按钮开始固件更新过程。
-
-      .. image:: img/faq_cam_ota_update.png
-         :width: 300
-
-   #. 等待更新完成。
-
-      .. image:: img/faq_cam_ota_finish.png
-         :width: 300
-
-   #. 更新完成后，您可以关闭网页浏览器。按下 **Reset** 按钮重启设备。ESP32 CAM 现在即可正常运行。
-
-      .. image:: img/camera_reset.png
-         :width: 500
-
-   .. note:: 更新完成后，GalaxyRVR 的 WiFi 热点名称将更改为 "AI Camera-xxxxxx"，密码仍为 "12345678"。
+   #. 更新完成后，GalaxyRVR 的 WiFi 热点名称将更改为 "AI Camera-xxxxxx"，密码仍为 "12345678"。
 
 
 **版本 B**
@@ -132,32 +115,15 @@ ESP32 CAM 负责广播 Wi-Fi 热点并为 GalaxyRVR 采集视频。
          :align: center
 
 
-   #. 点击 **Upgrade Firmware** 按钮。
+   #. 点击 **Upgrade Firmware**，选择固件文件并等待更新完成：
 
-      .. image:: img/firmware_tap.jpg
-         :width: 50%
-         :align: center
+      * 点击 **Upgrade Firmware** 按钮，然后从设备中选择之前下载的 ``ai-camera-firware.ino.x.x.x.bin`` 文件。
+      * 更新将立即开始，通常需要 1-2 分钟。完成后，选择 **CONFIRM** 重启 GalaxyRVR。
 
-   #. 将出现文件选择对话框。找到并选择您之前传输到移动设备的 ``ai-camera-firware.ino.x.x.x.bin`` 文件。
+      .. image:: img/faq_ota_b.png
+         :width: 700
 
-      .. image:: img/firmware_select.jpg
-         :width: 50%
-         :align: center
-
-   #. 选择文件后，固件更新将立即开始。
-
-      .. image:: img/firmware_upgrade.jpg
-         :width: 50%
-         :align: center
-
-   #. 等待固件升级完成。
-
-      * 上传过程通常需要 1-2 分钟。完成后，弹出窗口中将显示成功消息。
-      * 您可以选择 **CONFIRM** 重启 GalaxyRVR 或选择 **CLOSE** 关闭窗口。
-
-      .. image:: img/firmware_finish.jpg
-         :width: 50%
-         :align: center
+   #. 更新完成后，GalaxyRVR 的 WiFi 热点名称将更改为 "AI Camera-xxxxxx"，密码仍为 "12345678"。
 
 
 .. _update_r3_firmware:
@@ -174,13 +140,17 @@ R3 板包含内置固件，用于实现与 RoboPilot APP 和 Mammoth Coding 的�
 
 请按照以下步骤重新安装通信固件。
 
-#. 使用 USB 线连接 Arduino 和计算机，然后将车的 **upload** 开关拨到上传端。
+.. note::
+
+   如果您使用的是 Mac 电脑，请参考 macOS 专用指南：
+
+   :ref:`uno_firmware_mac`
+
+#. 使用 USB A 转 B 线（非 USB Type C）连接 Arduino 和计算机，然后将模式开关拨到 **Upload** 位置。
 
    .. image:: img/camera_upload.png
         :width: 500
         :align: center
-
-   .. note:: 连接 Arduino 的是 USB Type B 端口，而非用于充电的 USB Type C 端口。
 
 #. 检查固件文件是否已下载。
 
@@ -207,8 +177,8 @@ R3 板包含内置固件，用于实现与 RoboPilot APP 和 Mammoth Coding 的�
 
    .. image:: img/faq_uno_updating.png
 
-   .. note::
+   .. important::
 
-      此代码使 GalaxyRVR 能够响应 APP 命令。在使用 RoboPilot 遥控 APP 或 Mammoth Coding 软件时，您无需上传任何额外代码。
+      此固件使 GalaxyRVR 能够响应 App 命令。在使用 RoboPilot 遥控 App 或 Mammoth Coding 软件时，您无需上传任何额外代码。
 
 #. 现在您可以前往 :ref:`quick_start` 开始您的 GalaxyRVR 之旅！
