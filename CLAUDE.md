@@ -282,7 +282,8 @@ FAQs should follow this priority order — from most actionable/reassuring to mo
 3. **Compilation/upload errors** — Arduino IDE issues
 4. **Configuration** (WiFi channel, AP→STA setup) — optional setup tasks
 5. **Firmware operations** (update ESP32, restore R3) — how-to guides
-6. **Factory reset** (ESP32 CAM) — last-resort troubleshooting
+6. **Platform-specific firmware** (e.g., macOS R3 firmware update) — after general firmware guides
+7. **Factory reset** (ESP32 CAM) — last-resort troubleshooting
 
 ### Writing style
 - Use **bold** for each checklist item's key phrase (e.g., `**Check the battery**:`)
@@ -298,8 +299,11 @@ To restore ESP32 CAM to factory settings: short **IO13** and **IO15** pins while
 
 ### update_firmware.rst
 - The intro section should explain **why** to update (same 4 reasons as FAQ #1), not just how
-- Include SunFounder Controller tip and v1 docs fallback note
+- Include v1 docs fallback note
 - The v1 docs link is for users who prefer NOT to update — not because their product is "old"
+- **Version A/B OTA steps**: Each version's OTA update sub-steps are consolidated into one summary sentence + 2-3 bullet points + a single combined image (``faq_ota_a.png`` / ``faq_ota_b.png``). Individual screenshots per sub-step are replaced by one overview image.
+- **R3 firmware section**: Includes a ``.. note::`` redirecting Mac users to the macOS-specific guide (``:ref:`uno_firmware_mac```) before the Windows-oriented ``.bat`` steps.
+- The "after update" reboot step and hotspot name change note appear after the consolidated step for both versions.
 
 ### v1 documentation fallback
 When users don't want to update firmware and prefer to keep their current configuration, link to `https://docs.sunfounder.com/projects/galaxy-rvr/en/v1/index.html`. The new docs work for all product versions; the v1 link is only for those who choose not to update.
