@@ -99,32 +99,15 @@ Si el firmware está desactualizado, estas funciones pueden no funcionar correct
 
 **Versión A**
 
-   6. En la página OTA, haga clic en el botón para seleccionar el archivo de firmware.
+   6. En la página OTA, seleccione el archivo de firmware e inicie la actualización:
 
-      .. image:: img/faq_cam_ota_choose.png
-         :width: 400
+      * Seleccione el archivo ``ai-camera-firmware-vX.X.X-ota.bin`` previamente descargado de su dispositivo y haga clic en **Add**.
+      * Haga clic en el botón **Update** para iniciar la actualización del firmware y espere a que se complete.
 
-   #. Seleccione el archivo ``ai-camera-firmware-vX.X.X-ota.bin`` previamente descargado de su dispositivo y haga clic en **Add**.
+      .. image:: img/faq_ota_a.png
+         :width: 700
 
-      .. image:: img/faq_cam_ota_file.png
-         :width: 400
-
-   #. Haga clic en el botón **Update** para iniciar el proceso de actualización del firmware.
-
-      .. image:: img/faq_cam_ota_update.png
-         :width: 400
-
-   #. Espere a que se complete la actualización.
-
-      .. image:: img/faq_cam_ota_finish.png
-         :width: 400
-
-   #. Una vez completada la actualización, puede cerrar el navegador web. Presione el botón **Reset** para reiniciar el dispositivo. La ESP32 CAM ya está lista para funcionar con normalidad.
-
-      .. image:: img/camera_reset.png
-         :width: 600
-
-   .. note:: Una vez completada la actualización, el nombre del punto de acceso WiFi del GalaxyRVR cambiará a "AI Camera-xxxxxx", y la contrase?a seguirá siendo "12345678".
+   #. Una vez completada la actualización, el nombre del punto de acceso WiFi del GalaxyRVR cambiará a "AI Camera-xxxxxx", y la contraseña seguirá siendo "12345678".
 
 
 **Versión B**
@@ -140,32 +123,15 @@ Si el firmware está desactualizado, estas funciones pueden no funcionar correct
          :align: center
 
 
-   #. Toque el botón **Upgrade Firmware**.
+   #. Toque **Upgrade Firmware**, seleccione el archivo de firmware y espere a que finalice la actualización:
 
-      .. image:: img/firmware_tap.jpg
-         :width: 50%
-         :align: center
+      * Toque el botón **Upgrade Firmware** y seleccione el archivo ``ai-camera-firware.ino.x.x.x.bin`` previamente descargado de su dispositivo.
+      * La actualización comenzará inmediatamente y generalmente toma 1-2 minutos. Una vez finalizada, seleccione **CONFIRM** para reiniciar el GalaxyRVR.
 
-   #. Aparecerá un cuadro de diálogo de selección de archivos. Navegue hasta el archivo ``ai-camera-firware.ino.x.x.x.bin`` que transfirió a su dispositivo móvil anteriormente y selecciónelo.
+      .. image:: img/faq_ota_b.png
+         :width: 700
 
-      .. image:: img/firmware_select.jpg
-         :width: 50%
-         :align: center
-
-   #. La actualización del firmware comenzará inmediatamente después de seleccionar el archivo.
-
-      .. image:: img/firmware_upgrade.jpg
-         :width: 50%
-         :align: center
-
-   #. Espere a que finalice la actualización del firmware.
-
-      * El proceso de carga generalmente toma 1-2 minutos. Una vez finalizado, aparecerá un mensaje de éxito en una ventana emergente.
-      * Luego puede seleccionar **CONFIRM** para reiniciar el GalaxyRVR o **CLOSE** para cerrar la ventana.
-
-      .. image:: img/firmware_finish.jpg
-         :width: 50%
-         :align: center
+   #. Una vez completada la actualización, el nombre del punto de acceso WiFi del GalaxyRVR cambiará a "AI Camera-xxxxxx", y la contraseña seguirá siendo "12345678".
 
 
 .. _update_r3_firmware:
@@ -182,13 +148,17 @@ Necesita volver a cargar este firmware si:
 
 Siga los pasos a continuación para reinstalar el firmware de comunicación.
 
-#. Conecte el Arduino y el ordenador con un cable USB, y luego gire el interruptor **upload** del carro hacia el extremo de carga.
+.. note::
+
+   Si está usando un Mac, siga la guía específica para macOS:
+
+   :ref:`uno_firmware_mac`
+
+#. Conecte el Arduino al ordenador con un cable USB A a B (no USB Tipo C) y coloque el interruptor de modo en **Upload**.
 
    .. image:: img/camera_upload.png
         :width: 500
         :align: center
-
-   .. note:: Es el puerto USB Tipo B para conectar al Arduino, no el puerto USB Tipo C para cargar.
 
 #. Verifique si los archivos de firmware se han descargado.
 
@@ -215,8 +185,8 @@ Siga los pasos a continuación para reinstalar el firmware de comunicación.
 
    .. image:: img/faq_uno_updating.png
 
-   .. note::
+   .. important::
 
-      Este código permite que el GalaxyRVR responda a los comandos de la aplicación. No necesitará cargar ningún código adicional al usar la aplicación de control remoto RoboPilot o el software Mammoth Coding.
+      Este firmware permite que el GalaxyRVR responda a los comandos de la aplicación. No necesitará cargar ningún código adicional al usar la aplicación de control remoto RoboPilot o el software Mammoth Coding.
 
 #. Ahora puede continuar con :ref:`quick_start` para comenzar su viaje con el GalaxyRVR.
