@@ -273,3 +273,73 @@ Per risolvere il problema, deve ripristinare le impostazioni di fabbrica dell'ES
 
 .. note::
    Dopo aver ripristinato le impostazioni di fabbrica, dovrà riconfigurare eventuali impostazioni WiFi domestiche precedentemente salvate (:ref:`ap_to_sta`).
+
+
+.. _uno_firmware_mac:
+
+13. Come aggiornare il firmware della R3 su macOS?
+------------------------------------------------------
+
+La scheda R3 include un firmware integrato che consente la comunicazione con l'app RoboPilot e Mammoth Coding.
+
+È necessario ricaricare questo firmware se:
+
+- Il dispositivo utilizza una versione precedente del firmware, oppure
+- Ha caricato il proprio codice Arduino e desidera ripristinare la compatibilità.
+
+Segua i passaggi seguenti per reinstallare il firmware di comunicazione.
+
+#. Colleghi Arduino al computer con un cavo USB A-B (non USB Type-C) e porti l'interruttore di modalità su **Upload**.
+
+   .. image:: img/camera_upload.png
+        :width: 500
+
+   .. note:: Utilizzi la porta USB Type B (per il collegamento ad Arduino), non la porta USB Type C (solo per la ricarica).
+
+#. Si assicuri che i file del firmware siano stati scaricati.
+
+   * |download_galaxyrvr_filmware|
+
+#. Estragga l'archivio scaricato per ottenere una cartella ``output``. Faccia clic destro (o Ctrl-clic) sulla cartella ``output`` e selezioni **New Terminal at Folder** dal menu contestuale.
+
+   .. image:: img/faq_mac_firmware_open.png
+
+#. Il Terminale si aprirà direttamente nella cartella ``output``. Esegua il seguente comando, quindi inserisca il numero della porta COM rilevata (ad esempio, ``1``):
+
+   .. code-block:: bash
+
+      bash update-arduino-firmware-mac.sh
+
+   .. image:: img/faq_mac_firmware_run.png
+      :width: 500
+
+#. Se viene visualizzato il messaggio **"avrdude not Opened"**:
+
+   .. image:: img/faq_mac_firmware_avrdude.png
+
+#. Vada su Impostazioni di Sistema > **Privacy e Sicurezza** e faccia clic su **Allow Anyway** (Consenti comunque).
+
+   .. image:: img/faq_mac_firmware_allow.png
+      :width: 500
+
+#. Esegua di nuovo lo script:
+
+   .. code-block:: bash
+
+      bash update-arduino-firmware-mac.sh
+
+   Questa volta potrà selezionare **Open Anyway**. Inserisca il nome utente e la password di amministratore per consentire l'operazione.
+
+   .. image:: img/faq_mac_firmware_anyway.png
+      :width: 500
+
+#. Una volta visualizzato il messaggio di successo, può scollegare il cavo USB.
+
+   .. image:: img/faq_mac_firmware_finish.png
+      :width: 500
+
+   .. note::
+
+      Questo firmware consente a GalaxyRVR di rispondere ai comandi dell'app. Non sarà necessario caricare alcun codice aggiuntivo quando si utilizza l'app di controllo remoto RoboPilot o il software Mammoth Coding.
+
+#. Ora può procedere a :ref:`quick_start` per iniziare il Suo viaggio con GalaxyRVR!
