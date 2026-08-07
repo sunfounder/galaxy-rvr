@@ -185,8 +185,8 @@ Siga los pasos a continuación para reinstalar el firmware de comunicación.
 
    .. image:: img/faq_uno_updating.png
 
-   .. important::
+.. important::
 
-      Este firmware permite que el GalaxyRVR responda a los comandos de la aplicación. No necesitará cargar ningún código adicional al usar la aplicación de control remoto RoboPilot o el software Mammoth Coding.
-
-#. Ahora puede continuar con :ref:`quick_start` para comenzar su viaje con el GalaxyRVR.
+   * Este firmware permite que el GalaxyRVR responda a los comandos de la aplicación.
+   * No necesitará cargar ningún código adicional al usar la aplicación de control remoto RoboPilot o el software Mammoth Coding.
+   * Ahora puede continuar con :ref:`quick_start` para comenzar su viaje con el GalaxyRVR.
