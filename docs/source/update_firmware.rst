@@ -93,7 +93,7 @@ Si el firmware está desactualizado, estas funciones pueden no funcionar correct
 .. note:: En esta página, verá las opciones de actualización OTA en una de dos interfaces. La Versión A (la primera) y la Versión B (la segunda) aparecerán dependiendo de la versión de su firmware. Simplemente seleccione los pasos de actualización correspondientes según la interfaz que vea.
 
    .. image:: img/firmware_access_ab.png
-      :width: 90%
+      :width: 80%
       :align: center
 
 
