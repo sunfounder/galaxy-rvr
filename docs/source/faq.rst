@@ -292,7 +292,7 @@ R3 ボードには、RoboPilot アプリおよび Mammoth Coding との通信を
 
 以下の手順に従って、通信ファームウェアを再インストールしてください。
 
-#. USB A-B ケーブル（USB Type-C ではありません）で Arduino をコンピューターに接続し、モードスイッチを **Upload** に切り替えます。
+#. USB ケーブルで Arduino をコンピューターに接続し、モードスイッチを **Upload** に切り替えます。
 
    .. image:: img/camera_upload.png
         :width: 500
@@ -306,43 +306,40 @@ R3 ボードには、RoboPilot アプリおよび Mammoth Coding との通信を
 #. ダウンロードしたアーカイブを解凍し、``output`` フォルダーを取得します。``output`` フォルダーを右クリック（または Control キーを押しながらクリック）し、コンテキストメニューから **New Terminal at Folder** を選択します。
 
    .. image:: img/faq_mac_firmware_open.png
+      :width: 400
 
-#. ターミナルが ``output`` フォルダーで直接開きます。以下のコマンドを実行し、検出された COM ポートの番号（例：``1``）を入力します：
+#. ターミナルが ``output`` フォルダーで直接開きます。
 
-   .. code-block:: bash
-
-      bash update-arduino-firmware-mac.sh
+   * ``bash update-arduino-firmware-mac.sh`` コマンドを実行します
+   * 検出された COM ポートの番号（例：``1``）を入力します：
 
    .. image:: img/faq_mac_firmware_run.png
-      :width: 500
+      :width: 600
 
 #. **"avrdude not Opened"** というメッセージが表示された場合：
 
    .. image:: img/faq_mac_firmware_avrdude.png
+      :width: 300
 
-#. システム設定 > **プライバシーとセキュリティ** に移動し、**Allow Anyway**（許可）をクリックします。
+#. **システム設定** > **プライバシーとセキュリティ** に移動し、**Allow Anyway** をクリックします。
 
    .. image:: img/faq_mac_firmware_allow.png
-      :width: 500
+      :width: 600
 
-#. スクリプトを再度実行します：
-
-   .. code-block:: bash
-
-      bash update-arduino-firmware-mac.sh
+#. スクリプトを再度実行します：``bash update-arduino-firmware-mac.sh``
 
    今回は **Open Anyway** を選択できます。管理者のユーザー名とパスワードを入力して操作を許可します。
 
    .. image:: img/faq_mac_firmware_anyway.png
-      :width: 500
+      :width: 600
 
 #. 成功メッセージが表示されたら、USB ケーブルを取り外せます。
 
    .. image:: img/faq_mac_firmware_finish.png
-      :width: 500
+      :width: 600
 
-   .. note::
+.. important::
 
-      このファームウェアにより、GalaxyRVR はアプリのコマンドに応答できるようになります。RoboPilot リモートコントロールアプリまたは Mammoth Coding ソフトウェアを使用する際に、追加のコードをアップロードする必要はありません。
-
-#. これで :ref:`quick_start` に進み、GalaxyRVR の旅を始めることができます！
+   * このファームウェアにより、GalaxyRVR はアプリのコマンドに応答できるようになります。
+   * RoboPilot リモートコントロールアプリまたは Mammoth Coding ソフトウェアを使用する際に、追加のコードをアップロードする必要はありません。
+   * これで :ref:`quick_start` に進み、GalaxyRVR の旅を始めることができます！
