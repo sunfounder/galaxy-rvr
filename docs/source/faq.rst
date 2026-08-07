@@ -290,7 +290,7 @@ Necesita volver a cargar este firmware si:
 
 Siga los pasos a continuación para reinstalar el firmware de comunicación.
 
-#. Conecte el Arduino al ordenador con un cable USB A a B (no USB Tipo C) y coloque el interruptor de modo en **Upload**.
+#. Conecte el Arduino al ordenador con un cable USB y coloque el interruptor de modo en **Upload**.
 
    .. image:: img/camera_upload.png
         :width: 500
@@ -304,43 +304,40 @@ Siga los pasos a continuación para reinstalar el firmware de comunicación.
 #. Extraiga el archivo descargado para obtener una carpeta ``output``. Haga clic derecho (o Control-clic) en la carpeta ``output`` y seleccione **New Terminal at Folder** del menú contextual.
 
    .. image:: img/faq_mac_firmware_open.png
+      :width: 400
 
-#. La Terminal se abrirá directamente en la carpeta ``output``. Ejecute el siguiente comando e ingrese el número del puerto COM detectado (por ejemplo, ``1``):
+#. La Terminal se abrirá directamente en la carpeta ``output``.
 
-   .. code-block:: bash
-
-      bash update-arduino-firmware-mac.sh
+   * Ejecute el comando ``bash update-arduino-firmware-mac.sh``
+   * Luego ingrese el número del puerto COM detectado (por ejemplo, ``1``):
 
    .. image:: img/faq_mac_firmware_run.png
-      :width: 500
+      :width: 600
 
 #. Si aparece el mensaje **"avrdude not Opened"**:
 
    .. image:: img/faq_mac_firmware_avrdude.png
+      :width: 300
 
-#. Vaya a Configuración del Sistema > **Privacidad y seguridad** y haga clic en **Allow Anyway** (Permitir de todos modos).
+#. Vaya a **Configuración del Sistema** > **Privacidad y seguridad** y haga clic en **Allow Anyway**.
 
    .. image:: img/faq_mac_firmware_allow.png
-      :width: 500
+      :width: 600
 
-#. Ejecute el script de nuevo:
-
-   .. code-block:: bash
-
-      bash update-arduino-firmware-mac.sh
+#. Ejecute el script de nuevo: ``bash update-arduino-firmware-mac.sh``
 
    Esta vez podrá seleccionar **Open Anyway**. Ingrese su nombre de usuario y contraseña de administrador para permitir la operación.
 
    .. image:: img/faq_mac_firmware_anyway.png
-      :width: 500
+      :width: 600
 
 #. Una vez que aparezca el mensaje de éxito, puede desconectar el cable USB.
 
    .. image:: img/faq_mac_firmware_finish.png
-      :width: 500
+      :width: 600
 
-   .. note::
+.. important::
 
-      Este firmware permite que el GalaxyRVR responda a los comandos de la aplicación. No necesitará cargar ningún código adicional al usar la aplicación de control remoto RoboPilot o el software Mammoth Coding.
-
-#. Ahora puede continuar con :ref:`quick_start` para comenzar su viaje con el GalaxyRVR.
+   * Este firmware permite que el GalaxyRVR responda a los comandos de la aplicación.
+   * No necesitará cargar ningún código adicional al usar la aplicación de control remoto RoboPilot o el software Mammoth Coding.
+   * Ahora puede continuar con :ref:`quick_start` para comenzar su viaje con el GalaxyRVR.
