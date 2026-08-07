@@ -85,7 +85,7 @@ ESP32 CAM 负责广播 Wi-Fi 热点并为 GalaxyRVR 采集视频。
 .. note:: 在此页面上，您会看到两种界面之一的 OTA 升级选项。版本 A（前者）和版本 B（后者）会根据您的固件版本显示。请根据您看到的界面选择相应的升级步骤。
 
    .. image:: img/firmware_access_ab.png
-      :width: 90%
+      :width: 80%
       :align: center
 
 
@@ -177,8 +177,8 @@ R3 板包含内置固件，用于实现与 RoboPilot APP 和 Mammoth Coding 的�
 
    .. image:: img/faq_uno_updating.png
 
-   .. important::
+.. important::
 
-      此固件使 GalaxyRVR 能够响应 App 命令。在使用 RoboPilot 遥控 App 或 Mammoth Coding 软件时，您无需上传任何额外代码。
-
-#. 现在您可以前往 :ref:`quick_start` 开始您的 GalaxyRVR 之旅！
+   * 此固件使 GalaxyRVR 能够响应 App 命令。
+   * 在使用 RoboPilot 遥控 App 或 Mammoth Coding 软件时，您无需上传任何额外代码。
+   * 现在您可以前往 :ref:`quick_start` 开始您的 GalaxyRVR 之旅！
