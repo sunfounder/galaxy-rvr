@@ -184,8 +184,8 @@ R3 ボードには、RoboPilot APP および Mammoth Coding との通信を可�
 
    .. image:: img/faq_uno_updating.png
 
-   .. important::
+.. important::
 
-      このファームウェアにより、GalaxyRVR はアプリのコマンドに応答できるようになります。RoboPilot リモートコントロールアプリまたは Mammoth Coding ソフトウェアを使用する際に、追加のコードをアップロードする必要はありません。
-
-#. これで :ref:`quick_start` に進み、GalaxyRVR の旅を始めることができます！
+   * このファームウェアにより、GalaxyRVR はアプリのコマンドに応答できるようになります。
+   * RoboPilot リモートコントロールアプリまたは Mammoth Coding ソフトウェアを使用する際に、追加のコードをアップロードする必要はありません。
+   * これで :ref:`quick_start` に進み、GalaxyRVR の旅を始めることができます！
