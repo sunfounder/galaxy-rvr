@@ -86,7 +86,7 @@ Si le firmware est obsolète, ces fonctions peuvent ne pas fonctionner correctem
 .. note:: Sur cette page, vous verrez les options de mise à jour OTA dans l'une des deux interfaces. La Version A (la première) et la Version B (la seconde) apparaîtront selon la version de votre firmware. Sélectionnez simplement les étapes de mise à jour correspondantes en fonction de l'interface que vous voyez.
 
    .. image:: img/firmware_access_ab.png
-      :width: 90%
+      :width: 80%
       :align: center
 
 
