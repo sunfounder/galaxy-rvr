@@ -84,7 +84,7 @@ Wenn die Firmware veraltet ist, funktionieren diese Funktionen möglicherweise n
 .. note:: Auf dieser Seite werden Ihnen die OTA-Upgrade-Optionen in einer von zwei Oberflächen angezeigt. Version A (die erstere) und Version B (die letztere) werden je nach Ihrer Firmware-Version angezeigt. Wählen Sie einfach die entsprechenden Upgrade-Schritte basierend auf der angezeigten Oberfläche aus.
 
    .. image:: img/firmware_access_ab.png
-      :width: 90%
+      :width: 80%
       :align: center
 
 
@@ -176,8 +176,8 @@ Befolgen Sie die nachstehenden Schritte, um die Kommunikations-Firmware neu zu i
 
    .. image:: img/faq_uno_updating.png
 
-   .. important::
+.. important::
 
-      Diese Firmware ermöglicht es dem GalaxyRVR, auf App-Befehle zu reagieren. Sie müssen keinen zusätzlichen Code hochladen, wenn Sie die RoboPilot-Fernsteuerungs-App oder die Mammoth-Coding-Software verwenden.
-
-#. Sie können nun mit dem :ref:`quick_start` fortfahren, um Ihre Reise mit dem GalaxyRVR zu beginnen!
+   * Diese Firmware ermöglicht es dem GalaxyRVR, auf App-Befehle zu reagieren.
+   * Sie müssen keinen zusätzlichen Code hochladen, wenn Sie die RoboPilot-Fernsteuerungs-App oder die Mammoth-Coding-Software verwenden.
+   * Sie können nun mit dem :ref:`quick_start` fortfahren, um Ihre Reise mit dem GalaxyRVR zu beginnen!
