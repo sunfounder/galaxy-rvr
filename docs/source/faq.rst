@@ -290,7 +290,7 @@ Sie müssen diese Firmware neu hochladen, wenn:
 
 Befolgen Sie die nachstehenden Schritte, um die Kommunikations-Firmware neu zu installieren.
 
-#. Verbinden Sie den Arduino über ein USB-A-auf-B-Kabel (nicht USB-Typ-C) mit dem Computer und stellen Sie den Modusschalter auf **Upload**.
+#. Verbinden Sie den Arduino mit einem USB-Kabel mit Ihrem Computer und stellen Sie den Modusschalter auf **Upload**.
 
    .. image:: img/camera_upload.png
         :width: 500
@@ -304,43 +304,40 @@ Befolgen Sie die nachstehenden Schritte, um die Kommunikations-Firmware neu zu i
 #. Entpacken Sie das heruntergeladene Archiv, um einen ``output``-Ordner zu erhalten. Klicken Sie mit der rechten Maustaste (oder bei gedrückter Control-Taste) auf den ``output``-Ordner und wählen Sie **New Terminal at Folder** aus dem Kontextmenü.
 
    .. image:: img/faq_mac_firmware_open.png
+      :width: 400
 
-#. Das Terminal öffnet sich direkt im ``output``-Ordner. Führen Sie den folgenden Befehl aus und geben Sie die Nummer des erkannten COM-Ports ein (z. B. ``1``):
+#. Das Terminal öffnet sich direkt im ``output``-Ordner.
 
-   .. code-block:: bash
-
-      bash update-arduino-firmware-mac.sh
+   * Führen Sie den Befehl ``bash update-arduino-firmware-mac.sh`` aus
+   * Geben Sie dann die Nummer des erkannten COM-Ports ein (z. B. ``1``):
 
    .. image:: img/faq_mac_firmware_run.png
-      :width: 500
+      :width: 600
 
 #. Wenn die Meldung **"avrdude not Opened"** erscheint:
 
    .. image:: img/faq_mac_firmware_avrdude.png
+      :width: 300
 
-#. Gehen Sie zu Systemeinstellungen > **Privatsphäre & Sicherheit** und klicken Sie auf **Allow Anyway** (Zulassen).
+#. Gehen Sie zu **Systemeinstellungen** > **Privatsphäre & Sicherheit** und klicken Sie auf **Allow Anyway**.
 
    .. image:: img/faq_mac_firmware_allow.png
-      :width: 500
+      :width: 600
 
-#. Führen Sie das Skript erneut aus:
-
-   .. code-block:: bash
-
-      bash update-arduino-firmware-mac.sh
+#. Führen Sie das Skript erneut aus: ``bash update-arduino-firmware-mac.sh``
 
    Diesmal können Sie **Open Anyway** auswählen. Geben Sie Ihren Administrator-Benutzernamen und Ihr Passwort ein, um den Vorgang zu erlauben.
 
    .. image:: img/faq_mac_firmware_anyway.png
-      :width: 500
+      :width: 600
 
 #. Sobald die Erfolgsmeldung erscheint, können Sie das USB-Kabel abziehen.
 
    .. image:: img/faq_mac_firmware_finish.png
-      :width: 500
+      :width: 600
 
-   .. note::
+.. important::
 
-      Diese Firmware ermöglicht es dem GalaxyRVR, auf App-Befehle zu reagieren. Sie müssen keinen zusätzlichen Code hochladen, wenn Sie die RoboPilot-Fernsteuerungs-App oder die Mammoth-Coding-Software verwenden.
-
-#. Sie können nun mit dem :ref:`quick_start` fortfahren, um Ihre Reise mit dem GalaxyRVR zu beginnen!
+   * Diese Firmware ermöglicht es dem GalaxyRVR, auf App-Befehle zu reagieren.
+   * Sie müssen keinen zusätzlichen Code hochladen, wenn Sie die RoboPilot-Fernsteuerungs-App oder die Mammoth-Coding-Software verwenden.
+   * Sie können nun mit dem :ref:`quick_start` fortfahren, um Ihre Reise mit dem GalaxyRVR zu beginnen!
