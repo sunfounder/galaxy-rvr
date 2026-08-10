@@ -110,7 +110,19 @@ gh api -X DELETE repos/sunfounder/galaxy-rvr/releases/assets/<asset-id>
 
 # 3. 上传新 zip
 gh release upload X.Y.Z galaxy-rvr.ino.X.Y.Z.zip --clobber
+
+# 4. 上传固定名副本（必做！课程/文档固定下载链接依赖此包）
+cp galaxy-rvr.ino.X.Y.Z.zip galaxy-rvr.ino.zip
+gh release upload X.Y.Z galaxy-rvr.ino.zip --clobber
 ```
+
+### 固定下载链接（课程/文档直接写死这个 URL，永不变化）
+
+`https://github.com/sunfounder/galaxy-rvr/releases/latest/download/galaxy-rvr.ino.zip`
+
+- 永远指向**最新正式版**（`releases/latest` 只认非 prerelease）
+- 发布 prerelease（如 2.0.0-fixN）期间仍指向上一正式版，转正式后自动切换
+- **每次发布必须同时上传固定名副本** `galaxy-rvr.ino.zip`，否则链接失效
 
 Release Notes 使用英文撰写，结构：Core Upgrade → Breaking Changes → Features → Bug Fixes → Firmware Update
 
