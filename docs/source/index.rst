@@ -61,11 +61,11 @@ Wählen Sie Ihren Weg basierend auf Ihren Interessen und Fähigkeiten:
 
     Über dieses Kit <self>
     assemble_video
+    update_firmware
     quick_start/quick_start
     arduino/programming_arduino
     scratch/scratch
     hardware/hardware
-    update_firmware
     faq
 
 
