@@ -39,8 +39,8 @@ docs/
     │   ├── lesson8_ir_ultrasonic.rst  # Lesson 8: IR + ultrasonic combined
     │   ├── lesson9_rgb_strips.rst     # Lesson 9: RGB LED strips
     │   ├── lesson10_servo.rst         # Lesson 10: Servo control
-    │   ├── lesson11_camera.rst        # Lesson 11: ESP32 camera
-    │   ├── lesson12_solar_panel.rst   # Lesson 12: Solar panel & battery monitoring
+    │   ├── lesson11_solar_panel.rst   # Lesson 11: Solar panel & battery monitoring (final lesson)
+    │   ├── camera.rst                 # Camera live-view guide (unnumbered reference, last in toctree)
     │   └── img/                       # Arduino lesson images (109 files)
     ├── scratch/
     │   ├── scratch.rst                # Scratch learning path overview

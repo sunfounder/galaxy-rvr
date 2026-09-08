@@ -37,5 +37,6 @@ Or check out the code at |link_github_galaxyrvr|.
     lesson8_ir_ultrasonic
     lesson9_rgb_strips
     lesson10_servo
-    lesson12_solar_panel
+    lesson11_solar_panel
+    camera
 

@@ -2,10 +2,10 @@
    :start-after: start_hello_message
    :end-before: end_hello_message
 
-Lesson 11: Exploring the Mars Rover Visual System - Camera and Real-time Control
+Exploring the Mars Rover Visual System - Camera and Real-time Control
 ==================================================================================
 
-Welcome back, young explorers! In the last lesson, we equipped our Mars Rover with the ability to "nod" using a tilt mechanism. Now, it's time to give our Rover "eyes" - the camera!
+Welcome back, young explorers! In Lesson 10, we equipped our Mars Rover with the ability to "nod" using a tilt mechanism. Now, it's time to give our Rover "eyes" - the camera!
 
 In this thrilling journey, we'll dive into the setup of the Rover's camera system. You'll learn how to relay the visuals captured by the Rover's camera to a web page, so you can see exactly what the Rover sees, in real time. Imagine the excitement of experiencing the Martian landscape from the Rover's perspective!
 
