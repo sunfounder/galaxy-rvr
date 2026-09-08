@@ -3,7 +3,7 @@
    :end-before: end_hello_message
 
 
-Lezione 12: Investigare il sistema energetico del Mars Rover
+Lezione 11: Investigare il sistema energetico del Mars Rover
 =================================================================
 
 Benvenuto alla lezione finale del nostro viaggio di esplorazione del Mars Rover. Questa volta, ci addentreremo nel cuore del rover: il suo sistema energetico.

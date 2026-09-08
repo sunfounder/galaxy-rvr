@@ -2,10 +2,10 @@
    :start-after: start_hello_message
    :end-before: end_hello_message
 
-Lezione 11: Esplorare il sistema visivo del Mars Rover - Fotocamera e controllo in tempo reale
+Esplorare il sistema visivo del Mars Rover - Fotocamera e controllo in tempo reale
 ==============================================================================================
 
-Bentornati, giovani esploratori! Nell'ultima lezione, abbiamo equipaggiato il nostro Mars Rover con la capacità di "annuire" usando un meccanismo di inclinazione. Ora, è il momento di dare al nostro Rover degli "occhi": la fotocamera!
+Bentornati, giovani esploratori! Nella Lezione 10, abbiamo equipaggiato il nostro Mars Rover con la capacità di "annuire" usando un meccanismo di inclinazione. Ora, è il momento di dare al nostro Rover degli "occhi": la fotocamera!
 
 In questo entusiasmante viaggio, ci immergeremo nella configurazione del sistema di telecamere del Rover. Imparerai a trasmettere le immagini catturate dalla fotocamera del Rover a una pagina web, così potrai vedere esattamente ciò che il Rover vede, in tempo reale. Immagina l'emozione di vivere il paesaggio marziano dalla prospettiva del Rover!
 
