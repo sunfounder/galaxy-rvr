@@ -3,7 +3,7 @@
    :end-before: end_hello_message
 
 
-Lektion 12: Untersuchung des Energieversorgungssystems des Mars Rovers
+Lektion 11: Untersuchung des Energieversorgungssystems des Mars Rovers
 =======================================================================
 
 Willkommen zur letzten Lektion unserer Mars Rover-Erkundungsreise. Dieses Mal werden wir in das Herz des Rovers eintauchen - sein Energieversorgungssystem.

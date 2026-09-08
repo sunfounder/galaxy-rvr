@@ -3,10 +3,10 @@
    :end-before: end_hello_message
 
 
-Lektion 11: Erkundung des Mars Rover-Visionssystems - Kamera und Echtzeitsteuerung
+Erkundung des Mars Rover-Visionssystems - Kamera und Echtzeitsteuerung
 ==================================================================================
 
-Willkommen zurück, junge Entdecker! In der letzten Lektion haben wir unseren Mars Rover mit der Fähigkeit ausgestattet, mit einem Neigungsmechanismus zu "nicken". Jetzt ist es an der Zeit, unserem Rover "Augen" zu geben - die Kamera!
+Willkommen zurück, junge Entdecker! In Lektion 10 haben wir unseren Mars Rover mit der Fähigkeit ausgestattet, mit einem Neigungsmechanismus zu "nicken". Jetzt ist es an der Zeit, unserem Rover "Augen" zu geben - die Kamera!
 
 Auf dieser spannenden Reise werden wir uns mit der Einrichtung des Kamerasystems des Rovers befassen. Sie werden lernen, wie die von der Rover-Kamera aufgenommenen Bilder an eine Webseite übertragen werden, sodass Sie genau sehen können, was der Rover sieht - in Echtzeit. Stellen Sie sich die Aufregung vor, die Marslandschaft aus der Perspektive des Rovers zu erleben!
 
