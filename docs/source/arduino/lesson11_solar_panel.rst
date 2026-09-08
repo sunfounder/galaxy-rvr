@@ -2,7 +2,7 @@
    :start-after: start_hello_message
    :end-before: end_hello_message
 
-Lección 12: Panel Solar y Monitoreo de Batería
+Lección 11: Panel Solar y Monitoreo de Batería
 =================================================================
 
 Bienvenidos a la última lección de nuestro viaje de exploración del rover marciano. Esta vez, vamos a adentrarnos en el corazón del rover: su sistema de energía.

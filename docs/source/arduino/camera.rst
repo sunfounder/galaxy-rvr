@@ -2,10 +2,10 @@
    :start-after: start_hello_message
    :end-before: end_hello_message
 
-Lección 11: Sistema de Cámara del Rover
+Sistema de Cámara del Rover
 =========================================================================================
 
-¡Bienvenidos de nuevo, jóvenes exploradores! En la última lección, equipamos nuestro Mars Rover con la capacidad de "asentir" usando un mecanismo de inclinación. ¡Ahora es momento de darle "ojos" a nuestro Rover: la cámara!
+¡Bienvenidos de nuevo, jóvenes exploradores! En la Lección 10, equipamos nuestro Mars Rover con la capacidad de "asentir" usando un mecanismo de inclinación. ¡Ahora es momento de darle "ojos" a nuestro Rover: la cámara!
 
 En este emocionante viaje, nos sumergiremos en la configuración del sistema de cámara del Rover. Aprenderás cómo transmitir las imágenes capturadas por la cámara del Rover a una página web, para que puedas ver exactamente lo que el Rover ve, en tiempo real. ¡Imagina la emoción de experimentar el paisaje marciano desde la perspectiva del Rover!
 
