@@ -2,7 +2,7 @@
    :start-after: start_hello_message
    :end-before: end_hello_message
 
-Lesson 12: Investigating the Mars Rover Energy System
+Lesson 11: Investigating the Mars Rover Energy System
 =================================================================
 
 Welcome to the final lesson of our Mars rover exploration journey. This time, we are going to delve into the heart of the rover - its energy system.
