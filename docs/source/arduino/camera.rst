@@ -2,10 +2,10 @@
    :start-after: start_hello_message
    :end-before: end_hello_message
 
-Leçon 11 : Exploration du système de vision du Mars Rover – Caméra et contrôle en temps réel
+Exploration du système de vision du Mars Rover – Caméra et contrôle en temps réel
 ==============================================================================================
 
-Bienvenue à nouveau, jeunes explorateurs ! Lors de la leçon précédente, nous avons équipé notre Mars Rover d'un mécanisme d'inclinaison lui permettant de « hocher la tête ». Il est maintenant temps de lui donner des « yeux » : la caméra !
+Bienvenue à nouveau, jeunes explorateurs ! Lors de la Leçon 10, nous avons équipé notre Mars Rover d'un mécanisme d'inclinaison lui permettant de « hocher la tête ». Il est maintenant temps de lui donner des « yeux » : la caméra !
 
 Dans cette aventure passionnante, nous allons découvrir comment mettre en place le système de caméra du Rover. Vous apprendrez à transmettre les images capturées par la caméra du Rover vers une page web afin de voir exactement ce que le Rover voit, en temps réel. Imaginez l'excitation de découvrir le paysage martien depuis le point de vue du Rover !
 

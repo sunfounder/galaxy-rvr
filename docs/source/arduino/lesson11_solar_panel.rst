@@ -2,7 +2,7 @@
    :start-after: start_hello_message
    :end-before: end_hello_message
 
-Leçon 12 : Exploration du système énergétique du Mars Rover
+Leçon 11 : Exploration du système énergétique du Mars Rover
 ===========================================================
 
 Bienvenue dans la dernière leçon de notre aventure d'exploration du Mars Rover. Cette fois-ci, nous allons nous intéresser au cœur même du Rover : son système énergétique.
