@@ -38,5 +38,4 @@ Or check out the code at |link_github_galaxyrvr|.
     lesson9_rgb_strips
     lesson10_servo
     lesson11_solar_panel
-    camera
 
