@@ -13,7 +13,7 @@ Wenn Sie lernen möchten, wie Sie diese Skripte von Grund auf selbst erstellen, 
 .. note::
 
     * Das R3-Board des GalaxyRVR wird mit einer Firmware ausgeliefert, die die RoboPilot-App und Mammoth Coding unterstützt.
-    * Falls Sie die Firmware überschrieben haben und die Kommunikation wiederherstellen müssen, folgen Sie der Anleitung unter :ref:`update_r3_firmware`.
+    * Falls Sie die Firmware überschrieben haben und die Kommunikation wiederherstellen müssen, folgen Sie der Anleitung unter :ref:`update_uno_firmware`.
 
 
 So öffnen Sie schnell ein Scratch-Beispiel

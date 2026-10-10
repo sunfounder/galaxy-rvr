@@ -72,7 +72,7 @@ Um dies zu beheben, führen Sie die folgenden Schritte **in der genauen Reihenfo
 Wenn die RoboPilot-App Ihren GalaxyRVR nicht finden oder keine Verbindung herstellen kann, überprüfen Sie Folgendes:
 
 1. **Ist die ESP32-CAM-Firmware auf dem neuesten Stand?** Eine veraltete ESP32-CAM-Firmware kann Verbindungsprobleme verursachen. Folgen Sie :ref:`update_esp32_firmware`, um dies zu überprüfen und zu aktualisieren.
-2. **Ist die R3-Firmware auf dem neuesten Stand?** Das R3-Board muss über die werksseitige Kommunikationsfirmware verfügen. Wenn Sie benutzerdefinierten Arduino-Code hochgeladen haben, überschreibt dies die Firmware und unterbricht die RoboPilot-Kommunikation. Folgen Sie :ref:`update_r3_firmware`, um sie wiederherzustellen.
+2. **Ist die R3-Firmware auf dem neuesten Stand?** Das R3-Board muss über die werksseitige Kommunikationsfirmware verfügen. Wenn Sie benutzerdefinierten Arduino-Code hochgeladen haben, überschreibt dies die Firmware und unterbricht die RoboPilot-Kommunikation. Folgen Sie :ref:`update_uno_firmware`, um sie wiederherzustellen.
 3. **Steht der Modusschalter auf Run?** Der Modusschalter muss auf **Run** (nicht Upload) stehen, damit der WLAN-Hotspot funktioniert.
 4. **Ist Ihr mobiles Gerät mit dem richtigen WLAN-Netzwerk verbunden?** Verbinden Sie sich mit dem GalaxyRVR-Hotspot (``GalaxyRVR`` / ``12345678``), oder falls Sie ein Heim-WLAN konfiguriert haben, mit diesem selben Netzwerk.
 5. **Versuchen Sie einen Neustart**: Schalten Sie in den **Run**-Modus und drücken Sie die **Reset**-Taste, dann versuchen Sie erneut, eine Verbindung herzustellen.
@@ -86,7 +86,7 @@ Wenn nichts davon hilft, versuchen Sie es mit :ref:`faq_wifi_after_update`.
 Wenn Mammoth Coding keine Verbindung zu Ihrem GalaxyRVR herstellen kann, überprüfen Sie Folgendes:
 
 1. **Ist die ESP32-CAM-Firmware auf dem neuesten Stand?** Die ESP32 CAM verwaltet die WLAN-Verbindung, auf die Mammoth Coding angewiesen ist. Folgen Sie :ref:`update_esp32_firmware`, um sicherzustellen, dass sie auf dem neuesten Stand ist.
-2. **Ist die R3-Firmware auf dem neuesten Stand?** Mammoth Coding benötigt die werksseitige Kommunikationsfirmware auf dem R3-Board. Wenn Sie Ihren eigenen Arduino-Code hochgeladen haben, wird die Kommunikationsfirmware überschrieben. Folgen Sie :ref:`update_r3_firmware`, um sie wiederherzustellen.
+2. **Ist die R3-Firmware auf dem neuesten Stand?** Mammoth Coding benötigt die werksseitige Kommunikationsfirmware auf dem R3-Board. Wenn Sie Ihren eigenen Arduino-Code hochgeladen haben, wird die Kommunikationsfirmware überschrieben. Folgen Sie :ref:`update_uno_firmware`, um sie wiederherzustellen.
 3. **Steht der Modusschalter auf Run?** Der Modusschalter muss auf **Run** stehen, damit der WLAN-Hotspot aktiv ist.
 4. **Ist Ihr mobiles Gerät mit dem richtigen WLAN-Netzwerk verbunden?** Stellen Sie sicher, dass Ihr Gerät mit dem GalaxyRVR-Hotspot oder demselben auf dem Rover konfigurierten Heim-WLAN verbunden ist.
 
@@ -111,6 +111,8 @@ Bitte installieren Sie die beiden erforderlichen Bibliotheken ``SoftPWM`` und ``
 Für die Bibliothek ``SunFounder AI Camera`` müssen Sie „INSTALL ALL" auswählen, um gleichzeitig die erforderliche ``ArduinoJson``-Abhängigkeit zu installieren.
 
     .. image:: img/faq_install_ai_camera.png
+
+.. _faq_r3_upload_bat:
 
 7. avrdude: stk500_getsync() Versuch 10 von 10: nicht synchronisiert: resp=0x6e?
 -------------------------------------------------------------------------------------
@@ -195,11 +197,31 @@ Eine detaillierte Schritt-für-Schritt-Anleitung finden Sie unter: :ref:`update_
 
 Das R3-Board des GalaxyRVR wird mit einer Firmware ausgeliefert, die sowohl die RoboPilot-App als auch Mammoth Coding unterstützt.
 
-Wenn Sie diese Firmware überschrieben haben und die Kommunikation wiederherstellen müssen, folgen Sie :ref:`update_r3_firmware`.
+Wenn Sie diese Firmware überschrieben haben und die Kommunikation wiederherstellen müssen, folgen Sie :ref:`update_uno_firmware`.
+
+.. _serial_monitor:
+
+11. Wie prüfe ich die serielle Ausgabe im Browser?
+-------------------------------------------------------
+
+Wenn Sie sehen möchten, was die R3-Platine oder die ESP32 CAM ausgibt – zum Beispiel um zu prüfen, ob die beiden Platinen kommunizieren, oder um die IP-Adresse der Kamera zu ermitteln – können Sie den seriellen Monitor im Browser verwenden. Er läuft direkt im Browser, Sie müssen also die Arduino IDE nicht installieren:
+
+|link_serial_monitor|
+
+#. Verbinden Sie den GalaxyRVR mit dem USB-A-auf-B-Kabel mit Ihrem Computer und stellen Sie den Modusschalter auf **Upload**.
+
+#. Öffnen Sie den obigen Link auf einem Computer in **Chrome** oder **Edge** und klicken Sie auf **Connect**.
+
+#. Wählen Sie die Baudrate, die zu Ihrem Sketch passt (die Beispiele in diesem Tutorial verwenden **9600**, das AI-Camera-Beispiel verwendet **115200**). Die seriellen Daten werden dann auf der Seite angezeigt.
+
+.. note::
+
+   * Das Öffnen des Ports setzt die meisten Arduino-Platinen zurück. Die Startausgabe, die direkt nach dem Verbinden erscheint, stammt von diesem Reset – das ist normal.
+   * Dieses Tool eignet sich gut, um zu prüfen, ob ein Upload erfolgreich war, und um die Logs zu lesen, die die R3-Platine beim Start ausgibt. Bei Verbindungsproblemen lesen Sie :ref:`update_uno_firmware`.
 
 .. _ap_to_sta:
 
-11. Wie richte ich die WLAN-Verbindung ein?
+12. Wie richte ich die WLAN-Verbindung ein?
 -----------------------------------------------------
 
 Standardmäßig arbeitet der GalaxyRVR im **AP-Modus**, bei dem er einen eigenen WLAN-Hotspot erstellt, mit dem sich andere Geräte verbinden können.
@@ -246,7 +268,7 @@ Wenn Sie möchten, dass sich der GalaxyRVR mit Ihrem **Heim-WLAN** verbindet, f�
 
 .. _faq_wifi_after_update:
 
-12. Wie setze ich die ESP32 CAM auf die Werkseinstellungen zurück?
+13. Wie setze ich die ESP32 CAM auf die Werkseinstellungen zurück?
 ---------------------------------------------------------------------------------------
 
 Wenn der WLAN-Hotspot des GalaxyRVR nicht erscheint oder Sie nach einem Update der ESP32-CAM-Firmware keine Verbindung herstellen können, verursachen möglicherweise die alten WLAN-Konfigurationsdaten im Flash-Speicher der ESP32 CAM einen Konflikt.
@@ -278,7 +300,7 @@ Um dies zu beheben, müssen Sie die ESP32 CAM auf die Werkseinstellungen zurück
 
 .. _uno_firmware_mac:
 
-13. Wie aktualisiert man die R3-Firmware unter macOS?
+14. Wie aktualisiert man die R3-Firmware unter macOS?
 ---------------------------------------------------------
 
 Das R3-Board enthält eine integrierte Firmware, die die Kommunikation mit der RoboPilot-App und Mammoth Coding ermöglicht.

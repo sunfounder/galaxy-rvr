@@ -23,27 +23,84 @@ Ihr Gerät verfügt möglicherweise nicht über die neueste Firmware, da das Pro
    <iframe width="600" height="400" src="https://www.youtube.com/embed/Tl2W26pIQoU?si=98bbfUPc1g2cEz3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
-1. Prüfen, ob ein Update erforderlich ist
------------------------------------------
+.. _update_uno_firmware:
 
-#. Schalten Sie den GalaxyRVR ein und überprüfen Sie den unteren Lichtstreifen.
+1. Aktualisieren der UNO R3-Firmware
+----------------------------------------
 
-   * Laden Sie vor der ersten Nutzung des GalaxyRVR den Akku mit dem mitgelieferten USB-C-Kabel vollständig auf.
-   * Schalten Sie den Netzschalter ein.
-   * Stellen Sie den Modus auf **Run** und drücken Sie die **Reset**-Taste auf dem R3-Board.
-   * Der untere Lichtstreifen beginnt zu blinken und zeigt damit einen erfolgreichen Start an.
+Das R3-Board enthält eine integrierte Firmware, die die Kommunikation mit der RoboPilot-App und Mammoth Coding ermöglicht.
 
-   .. raw:: html
+Sie müssen diese Firmware neu hochladen, wenn:
 
-      <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=rnoaDgQPnb-y6wnK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+- Ihr Gerät eine ältere Firmware-Version verwendet, oder
+- Sie Ihren eigenen Arduino-Code geflasht haben und die Kompatibilität wiederherstellen möchten.
 
-#. Überprüfen Sie den unteren Lichtstreifen.
+Sie können die Kommunikationsfirmware mit dem Flasher im Browser neu installieren; auf Ihrem Computer ist keine zusätzliche Software erforderlich.
 
-   * Wenn der untere Lichtstreifen **grün blinkt**, ist Ihre ESP32-Firmware bereits auf dem neuesten Stand. Sie können mit dem :ref:`quick_start` fortfahren.
-   * Wenn der untere Lichtstreifen in einer **anderen Farbe blinkt**, müssen Sie:
+**Methode 1: Flasher im Browser**
 
-     - :ref:`update_esp32_firmware`
-     - :ref:`update_r3_firmware`
+#. Schalten Sie den GalaxyRVR ein, verbinden Sie das USB-A-auf-B-Kabel (nicht das USB-Typ-C-Kabel) mit der **Hauptplatine** und stellen Sie den **Upload**-Schalter des Fahrzeugs auf das Upload-Ende.
+
+#. Entfernen Sie vor dem Flashen die ESP32 CAM aus ihrem Sockel – sie teilt sich dieselben RX- und TX-Pins mit der R3-Platine, siehe :ref:`FAQ 7 <faq_r3_upload_bat>`.
+
+#. Öffnen Sie auf einem Computer |link_galaxy_rvr_flasher| in **Chrome** oder **Edge** und wählen Sie die Firmware-Version:
+
+   * Version **2.0.0** ist für die aktuelle Generation des GalaxyRVR.
+   * Version **1.1.0** ist für die erste Generation des GalaxyRVR.
+
+   Wenn Sie sich nicht sicher sind, welche Generation Sie haben, prüfen Sie das Etikett auf der Schachtel oder kontaktieren Sie uns.
+
+#. Klicken Sie auf **Connect & Flash** und wählen Sie im Dialog den seriellen Anschluss Ihrer Platine. Das Update startet automatisch und ist in etwa einer Minute abgeschlossen.
+
+   .. image:: img/faq_web_flasher_en.png
+      :width: 600
+      :align: center
+
+#. Wenn das Update abgeschlossen ist, stellen Sie den Schalter wieder auf **Run**, stecken Sie die ESP32 CAM wieder ein und schalten Sie den GalaxyRVR erneut ein.
+
+.. note::
+
+   * Diese Seite verwendet Web Serial. Verwenden Sie daher **Chrome** oder **Edge** auf einem Computer und stellen Sie sicher, dass die Seite über **https** geöffnet wird. Unter Windows können Sie im Geräte-Manager prüfen, ob **USB-SERIAL CH340** aufgeführt ist, um sicherzustellen, dass der USB-Seriell-Treiber installiert ist.
+   * Schließen Sie andere Programme, die den seriellen Anschluss verwenden könnten, z. B. die Arduino IDE, den seriellen Monitor oder einen weiteren Browser-Tab.
+
+**Methode 2: Aktualisierungsskript**
+
+.. note::
+
+   Wenn Sie einen Mac verwenden, befolgen Sie bitte die macOS-spezifische Anleitung:
+
+   :ref:`uno_firmware_mac`
+
+#. Verbinden Sie den Arduino über ein USB-A-auf-B-Kabel (nicht USB-Typ-C) mit dem Computer und stellen Sie den Modusschalter auf **Upload**.
+
+   .. image:: img/camera_upload.png
+        :width: 500
+        :align: center
+
+#. Überprüfen Sie, ob die Firmware-Dateien heruntergeladen wurden.
+
+   * |download_galaxyrvr_filmware|
+
+#. Führen Sie das Update-Skript aus.
+
+   * Öffnen Sie den Ordner ``galaxy-rvr.ino.xxx`` (im vorherigen Schritt heruntergeladen und installiert).
+   * Doppelklicken Sie auf das Skript ``update-arduino-firmware.bat``.
+   * Ein Eingabeaufforderungsfenster wird automatisch geöffnet.
+
+   .. image:: img/faq_bat_file.png
+
+#. Wählen Sie die serielle Schnittstelle aus und laden Sie hoch.
+
+   * In der Eingabeaufforderung wird eine Liste der verfügbaren seriellen Schnittstellen angezeigt.
+   * Geben Sie die links angezeigte Sequenznummer ein, um die serielle Schnittstelle des Arduino Uno auszuwählen.
+   * Drücken Sie die **Eingabetaste**, um den automatischen Upload zu starten.
+   * Beispiel: Wenn die Liste `1 USB-SERIALXXX (COMxx)` anzeigt, geben Sie **1** ein und drücken Sie die **Eingabetaste**.
+
+   .. image:: img/faq_select_com.png
+
+#. Nachdem der Upload abgeschlossen ist, können Sie das USB-Kabel abziehen.
+
+   .. image:: img/faq_uno_updating.png
 
 
 .. _update_esp32_firmware:
@@ -125,56 +182,31 @@ Wenn die Firmware veraltet ist, funktionieren diese Funktionen möglicherweise n
    #. Nach Abschluss des Updates ändert sich der Name des WLAN-Hotspots des GalaxyRVR in "AI Camera-xxxxxx", das Passwort bleibt "12345678".
 
 
-.. _update_r3_firmware:
+3. Startprüfung
+--------------------
 
-3. Aktualisieren der R3-Board-Firmware
---------------------------------------
+#. Schalten Sie den GalaxyRVR ein und überprüfen Sie den unteren Lichtstreifen.
 
-Das R3-Board enthält eine integrierte Firmware, die die Kommunikation mit der RoboPilot-App und Mammoth Coding ermöglicht.
+   * Laden Sie vor der ersten Nutzung des GalaxyRVR den Akku mit dem mitgelieferten USB-C-Kabel vollständig auf.
+   * Schalten Sie den Netzschalter ein.
+   * Stellen Sie den Modus auf **Run** und drücken Sie die **Reset**-Taste auf dem R3-Board.
+   * Der untere Lichtstreifen beginnt zu blinken und zeigt damit einen erfolgreichen Start an.
 
-Sie müssen diese Firmware neu hochladen, wenn:
+   .. raw:: html
 
-- Ihr Gerät eine ältere Firmware-Version verwendet, oder
-- Sie Ihren eigenen Arduino-Code geflasht haben und die Kompatibilität wiederherstellen möchten.
+      <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=rnoaDgQPnb-y6wnK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Befolgen Sie die nachstehenden Schritte, um die Kommunikations-Firmware neu zu installieren.
+#. Überprüfen Sie den unteren Lichtstreifen.
 
-.. note::
+   * Wenn der untere Lichtstreifen **grün blinkt**, läuft die R3-Firmware korrekt. Sie können mit dem :ref:`quick_start` fortfahren.
+   * Wenn der untere Lichtstreifen in einer **anderen Farbe blinkt**, installieren Sie die R3-Firmware mit :ref:`update_uno_firmware` neu.
 
-   Wenn Sie einen Mac verwenden, befolgen Sie bitte die macOS-spezifische Anleitung:
+   .. raw:: html
 
-   :ref:`uno_firmware_mac`
-
-#. Verbinden Sie den Arduino über ein USB-A-auf-B-Kabel (nicht USB-Typ-C) mit dem Computer und stellen Sie den Modusschalter auf **Upload**.
-
-   .. image:: img/camera_upload.png
-        :width: 500
-        :align: center
-
-#. Überprüfen Sie, ob die Firmware-Dateien heruntergeladen wurden.
-
-   * |download_galaxyrvr_filmware|
-
-#. Führen Sie das Update-Skript aus.
-
-   * Öffnen Sie den Ordner ``galaxy-rvr.ino.xxx`` (im vorherigen Schritt heruntergeladen und installiert).
-   * Doppelklicken Sie auf das Skript ``update-arduino-firmware.bat``.
-   * Ein Eingabeaufforderungsfenster wird automatisch geöffnet.
-
-   .. image:: img/faq_bat_file.png
-
-#. Wählen Sie die serielle Schnittstelle aus und laden Sie hoch.
-
-   * In der Eingabeaufforderung wird eine Liste der verfügbaren seriellen Schnittstellen angezeigt.
-   * Geben Sie die links angezeigte Sequenznummer ein, um die serielle Schnittstelle des Arduino Uno auszuwählen.
-   * Drücken Sie die **Eingabetaste**, um den automatischen Upload zu starten.
-   * Beispiel: Wenn die Liste `1 USB-SERIALXXX (COMxx)` anzeigt, geben Sie **1** ein und drücken Sie die **Eingabetaste**.
-
-   .. image:: img/faq_select_com.png
-
-#. Nachdem der Upload abgeschlossen ist, können Sie das USB-Kabel abziehen.
-
-   .. image:: img/faq_uno_updating.png
+        <video width="600" loop autoplay muted>
+            <source src="_static/video/play_reset.mp4" type="video/mp4">
+            Ihr Browser unterstützt das Video-Tag nicht.
+        </video>
 
 .. important::
 
