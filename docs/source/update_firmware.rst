@@ -25,27 +25,77 @@ Nous vous recommandons de mettre à jour le firmware avant votre première utili
    <iframe width="600" height="400" src="https://www.youtube.com/embed/Tl2W26pIQoU?si=98bbfUPc1g2cEz3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
-1. Vérifier si une mise à jour est nécessaire
---------------------------------------------------
+.. _update_uno_firmware:
 
-#. Allumez le GalaxyRVR et vérifiez la bande lumineuse inférieure.
+1. Mise à jour du firmware de l'UNO R3
+--------------------------------------
 
-   * Avant d'utiliser le GalaxyRVR pour la première fois, chargez complètement la batterie avec le câble USB Type-C fourni.
-   * Mettez l'interrupteur d'alimentation en marche.
-   * Passez le mode sur **Run** et appuyez sur le bouton **Reset** de la carte R3.
-   * La bande lumineuse inférieure commencera à clignoter pour indiquer un démarrage réussi.
+La carte R3 comprend un firmware intégré qui permet la communication avec l'application RoboPilot et Mammoth Coding. Vous pouvez le réinstaller avec le flasheur en ligne ; aucun logiciel supplémentaire n'est nécessaire sur votre ordinateur.
 
-   .. raw:: html
+**Méthode 1 : Flasheur en ligne**
 
-      <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=rnoaDgQPnb-y6wnK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+#. Allumez le GalaxyRVR, connectez le câble USB A vers B (pas le câble USB Type-C) à la **carte principale**, puis placez l'interrupteur **Upload** du rover du côté téléversement.
 
-#. Vérifiez la bande lumineuse inférieure.
+#. Retirez l'ESP32 CAM de son support avant le flashage — elle partage les mêmes broches RX et TX que la carte R3, voir :ref:`FAQ 7 <faq_r3_upload_bat>`.
 
-   * Si la bande lumineuse inférieure affiche un **clignotement vert**, votre firmware ESP32 est déjà à jour. Vous pouvez passer à :ref:`quick_start`.
-   * Si la bande lumineuse inférieure clignote d'une **autre couleur**, vous devrez :
+#. Sur un ordinateur, ouvrez |link_galaxy_rvr_flasher| dans **Chrome** ou **Edge**, puis sélectionnez la version du firmware :
 
-     - :ref:`update_esp32_firmware`
-     - :ref:`update_r3_firmware`
+   * La version **2.0.0** est destinée à la génération actuelle du GalaxyRVR.
+   * La version **1.1.0** est destinée à la première génération du GalaxyRVR.
+
+   Si vous n'êtes pas sûr de la génération de votre produit, consultez l'étiquette sur la boîte ou contactez-nous.
+
+#. Cliquez sur **Connect & Flash** et sélectionnez le port série de votre carte dans la boîte de dialogue. La mise à jour démarre automatiquement et se termine en une minute environ.
+
+   .. image:: img/faq_web_flasher_en.png
+      :width: 600
+      :align: center
+
+#. Une fois la mise à jour terminée, remettez l'interrupteur sur **Run**, rebranchez l'ESP32 CAM et rallumez le GalaxyRVR.
+
+.. note::
+
+   * Cette page utilise Web Serial : utilisez **Chrome** ou **Edge** sur un ordinateur et assurez-vous que la page est ouverte en **https**. Sous Windows, vous pouvez vérifier que le pilote série USB est installé en recherchant **USB-SERIAL CH340** dans le Gestionnaire de périphériques.
+   * Fermez les autres programmes susceptibles d'utiliser le port série, comme l'Arduino IDE, le moniteur série ou un autre onglet du navigateur.
+
+**Méthode 2 : Script de mise à jour**
+
+.. note::
+
+   Si vous utilisez un Mac, veuillez consulter le guide spécifique à macOS :
+
+   :ref:`uno_firmware_mac`
+
+#. Connectez l'Arduino à votre ordinateur avec un câble USB A vers B (pas USB Type-C) et placez l'interrupteur de mode sur **Upload**.
+
+   .. image:: img/camera_upload.png
+        :width: 500
+        :align: center
+
+#. Vérifiez si les fichiers du firmware ont été téléchargés.
+
+   * |download_galaxyrvr_filmware|
+
+#. Exécutez le script de mise à jour
+
+   * Ouvrez le dossier ``galaxy-rvr.ino.xxx`` (téléchargé et installé à l'étape précédente).
+   * Double-cliquez sur le script ``update-arduino-firmware.bat``.
+   * Une fenêtre d'invite de commandes apparaîtra automatiquement.
+
+   .. image:: img/faq_bat_file.png
+
+#. Sélectionnez le port série et téléversez
+
+   * Dans l'invite de commandes, une liste des ports série disponibles sera affichée.
+   * Entrez le numéro de séquence affiché à gauche pour sélectionner le port série de l'Arduino Uno.
+   * Appuyez sur **Entrée** pour lancer le téléversement automatique.
+   * Exemple : Si la liste affiche `1 USB-SERIALXXX (COMxx)`, entrez **1** et appuyez sur **Entrée**.
+
+   .. image:: img/faq_select_com.png
+
+#. Après avoir attendu la fin du téléversement, vous pouvez débrancher le câble USB.
+
+   .. image:: img/faq_uno_updating.png
 
 
 .. _update_esp32_firmware:
@@ -127,56 +177,31 @@ Si le firmware est obsolète, ces fonctions peuvent ne pas fonctionner correctem
    #. Une fois la mise à jour terminée, le nom du hotspot WiFi du GalaxyRVR passera à "AI Camera-xxxxxx" et le mot de passe restera "12345678".
 
 
-.. _update_r3_firmware:
+3. Vérification au démarrage
+----------------------------
 
-3. Mise à jour du firmware de la carte R3
---------------------------------------------
+#. Allumez le GalaxyRVR et vérifiez la bande lumineuse inférieure.
 
-La carte R3 comprend un firmware intégré qui permet la communication avec l'application RoboPilot et Mammoth Coding.
+   * Avant d'utiliser le GalaxyRVR pour la première fois, chargez complètement la batterie avec le câble USB Type-C fourni.
+   * Mettez l'interrupteur d'alimentation en marche.
+   * Passez le mode sur **Run** et appuyez sur le bouton **Reset** de la carte R3.
+   * La bande lumineuse inférieure commencera à clignoter pour indiquer un démarrage réussi.
 
-Vous devez re-téléverser ce firmware si :
+   .. raw:: html
 
-- Votre appareil utilise une ancienne version du firmware, ou
-- Vous avez flashé votre propre code Arduino et souhaitez restaurer la compatibilité.
+      <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=rnoaDgQPnb-y6wnK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Suivez les étapes ci-dessous pour réinstaller le firmware de communication.
+#. Vérifiez la bande lumineuse inférieure.
 
-.. note::
+   * Si la bande lumineuse inférieure affiche un **clignotement vert**, le firmware de la carte R3 fonctionne correctement. Vous pouvez passer à :ref:`quick_start`.
+   * Si la bande lumineuse inférieure clignote d'une **autre couleur**, réinstallez le firmware de la carte R3 avec :ref:`update_uno_firmware`.
 
-   Si vous utilisez un Mac, veuillez consulter le guide spécifique à macOS :
+   .. raw:: html
 
-   :ref:`uno_firmware_mac`
-
-#. Connectez l'Arduino à votre ordinateur avec un câble USB A vers B (pas USB Type-C) et placez l'interrupteur de mode sur **Upload**.
-
-   .. image:: img/camera_upload.png
-        :width: 500
-        :align: center
-
-#. Vérifiez si les fichiers du firmware ont été téléchargés.
-
-   * |download_galaxyrvr_filmware|
-
-#. Exécutez le script de mise à jour
-
-   * Ouvrez le dossier ``galaxy-rvr.ino.xxx`` (téléchargé et installé à l'étape précédente).
-   * Double-cliquez sur le script ``update-arduino-firmware.bat``.
-   * Une fenêtre d'invite de commandes apparaîtra automatiquement.
-
-   .. image:: img/faq_bat_file.png
-
-#. Sélectionnez le port série et téléversez
-
-   * Dans l'invite de commandes, une liste des ports série disponibles sera affichée.
-   * Entrez le numéro de séquence affiché à gauche pour sélectionner le port série de l'Arduino Uno.
-   * Appuyez sur **Entrée** pour lancer le téléversement automatique.
-   * Exemple : Si la liste affiche `1 USB-SERIALXXX (COMxx)`, entrez **1** et appuyez sur **Entrée**.
-
-   .. image:: img/faq_select_com.png
-
-#. Après avoir attendu la fin du téléversement, vous pouvez débrancher le câble USB.
-
-   .. image:: img/faq_uno_updating.png
+        <video width="600" loop autoplay muted>
+            <source src="_static/video/play_reset.mp4" type="video/mp4">
+            Votre navigateur ne prend pas en charge la balise vidéo.
+        </video>
 
 .. important::
 

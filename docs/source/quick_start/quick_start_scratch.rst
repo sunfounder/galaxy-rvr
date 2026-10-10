@@ -12,7 +12,7 @@ Si vous souhaitez apprendre à créer ces scripts à partir de zéro, veuillez c
 .. note::
 
     * La carte R3 du GalaxyRVR est livrée avec un firmware qui prend en charge l'application RoboPilot et Mammoth Coding.
-    * Si vous avez écrasé le firmware et devez restaurer la communication, suivez :ref:`update_r3_firmware`.
+    * Si vous avez écrasé le firmware et devez restaurer la communication, suivez :ref:`update_uno_firmware`.
 
 
 Comment ouvrir rapidement un exemple Scratch

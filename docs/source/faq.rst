@@ -72,7 +72,7 @@ Pour resoudre ce probleme, suivez ces etapes **dans l'ordre exact** :
 Si l'application RoboPilot ne trouve pas ou ne parvient pas a se connecter a votre GalaxyRVR, veuillez verifier les points suivants :
 
 1. **Le micrologiciel de l'ESP32 CAM est-il a jour ?** Un micrologiciel ESP32 CAM obsolete peut causer des problemes de connexion. Suivez :ref:`update_esp32_firmware` pour verifier et mettre a jour.
-2. **Le micrologiciel de la carte R3 est-il a jour ?** La carte R3 doit disposer du micrologiciel de communication d'usine. Si vous avez televerse du code Arduino personnalise, cela ecrasera ce micrologiciel et interrompra la communication avec RoboPilot. Suivez :ref:`update_r3_firmware` pour le restaurer.
+2. **Le micrologiciel de la carte R3 est-il a jour ?** La carte R3 doit disposer du micrologiciel de communication d'usine. Si vous avez televerse du code Arduino personnalise, cela ecrasera ce micrologiciel et interrompra la communication avec RoboPilot. Suivez :ref:`update_uno_firmware` pour le restaurer.
 3. **L'interrupteur de mode est-il sur Run ?** L'interrupteur de mode doit etre regle sur **Run** (pas Upload) pour que le point d'acces WiFi fonctionne.
 4. **Votre appareil mobile est-il connecte au bon reseau WiFi ?** Connectez-vous au point d'acces GalaxyRVR (``GalaxyRVR`` / ``12345678``), ou si vous avez configure un WiFi domestique, connectez-vous a ce meme reseau.
 5. **Essayez de reinitialiser** : Passez en mode **Run** et appuyez sur le bouton **Reset**, puis essayez de vous reconnecter.
@@ -86,7 +86,7 @@ Si rien de ce qui precede ne fonctionne, essayez :ref:`faq_wifi_after_update`.
 Si Mammoth Coding ne parvient pas a se connecter a votre GalaxyRVR, veuillez verifier les points suivants :
 
 1. **Le micrologiciel de l'ESP32 CAM est-il a jour ?** L'ESP32 CAM gere la connexion WiFi dont Mammoth Coding a besoin. Suivez :ref:`update_esp32_firmware` pour vous assurer qu'il est a jour.
-2. **Le micrologiciel de la carte R3 est-il a jour ?** Mammoth Coding necessite le micrologiciel de communication d'usine sur la carte R3. Si vous avez televerse votre propre code Arduino, le micrologiciel de communication est ecrase. Suivez :ref:`update_r3_firmware` pour le restaurer.
+2. **Le micrologiciel de la carte R3 est-il a jour ?** Mammoth Coding necessite le micrologiciel de communication d'usine sur la carte R3. Si vous avez televerse votre propre code Arduino, le micrologiciel de communication est ecrase. Suivez :ref:`update_uno_firmware` pour le restaurer.
 3. **L'interrupteur de mode est-il sur Run ?** L'interrupteur de mode doit etre regle sur **Run** pour que le point d'acces WiFi soit actif.
 4. **Votre appareil mobile est-il connecte au bon reseau WiFi ?** Assurez-vous que votre appareil est connecte au point d'acces GalaxyRVR ou au meme reseau WiFi domestique configure sur le rover.
 
@@ -111,6 +111,8 @@ Veuillez installer les deux bibliotheques requises ``SoftPWM`` et ``SunFounder A
 Pour la bibliotheque ``SunFounder AI Camera``, vous devez selectionner "INSTALL ALL" pour installer simultanement la dependance ``ArduinoJson`` requise.
 
     .. image:: img/faq_install_ai_camera.png
+
+.. _faq_r3_upload_bat:
 
 7. avrdude: stk500_getsync() attempt 10 of 10: not in sync: resp=0x6e?
 -----------------------------------------------------------------------------
@@ -195,11 +197,31 @@ Pour des instructions detaillees, veuillez consulter : :ref:`update_esp32_firmwa
 
 La carte R3 du GalaxyRVR est livree avec un micrologiciel qui prend en charge a la fois l'application RoboPilot et Mammoth Coding.
 
-Si vous avez ecrase ce micrologiciel et devez restaurer la communication, suivez :ref:`update_r3_firmware`.
+Si vous avez ecrase ce micrologiciel et devez restaurer la communication, suivez :ref:`update_uno_firmware`.
+
+.. _serial_monitor:
+
+11. Comment vérifier la sortie série dans un navigateur ?
+-----------------------------------------------------------
+
+Si vous voulez voir ce que la carte R3 ou l'ESP32 CAM affiche — par exemple pour vérifier que les deux cartes communiquent, ou pour consulter l'adresse IP de la caméra — vous pouvez utiliser le moniteur série en ligne. Il fonctionne dans le navigateur, vous n'avez donc pas besoin d'installer l'Arduino IDE :
+
+|link_serial_monitor|
+
+#. Connectez le GalaxyRVR à votre ordinateur avec le câble USB A vers B, puis placez le sélecteur de mode sur **Upload**.
+
+#. Sur un ordinateur, ouvrez le lien ci-dessus dans **Chrome** ou **Edge**, puis cliquez sur **Connect**.
+
+#. Sélectionnez le débit en bauds correspondant à votre programme (les exemples de ce tutoriel utilisent **9600**, tandis que l'exemple AI Camera utilise **115200**) ; les données série s'affichent alors dans la page.
+
+.. note::
+
+   * L'ouverture du port réinitialise la plupart des cartes Arduino. La sortie de démarrage qui apparaît juste après la connexion provient de cette réinitialisation — c'est normal.
+   * Cet outil est pratique pour vérifier qu'un téléversement a réussi et pour lire les journaux que la carte R3 affiche au démarrage. En cas de problème de connexion, consultez :ref:`update_uno_firmware`.
 
 .. _ap_to_sta:
 
-11. Comment configurer la connexion WiFi
+12. Comment configurer la connexion WiFi
 -----------------------------------------------------
 
 Par defaut, le GalaxyRVR fonctionne en **mode AP**, creant son propre point d'acces WiFi auquel d'autres appareils peuvent se connecter.
@@ -246,7 +268,7 @@ Si vous souhaitez que le GalaxyRVR se connecte a votre **reseau WiFi domestique*
 
 .. _faq_wifi_after_update:
 
-12. Comment restaurer les parametres d'usine de l'ESP32 CAM ?
+13. Comment restaurer les parametres d'usine de l'ESP32 CAM ?
 ---------------------------------------------------------------------------------------
 
 Si le point d'acces WiFi du GalaxyRVR n'apparaît pas ou si vous ne parvenez pas a vous connecter apres avoir mis a jour le micrologiciel de l'ESP32 CAM, il est possible que l'ancienne configuration WiFi stockee dans la memoire flash de l'ESP32 CAM cause un conflit.
@@ -278,7 +300,7 @@ Pour resoudre ce probleme, vous devez restaurer les parametres d'usine de l'ESP3
 
 .. _uno_firmware_mac:
 
-13. Comment mettre à jour le firmware de la R3 sous macOS ?
+14. Comment mettre à jour le firmware de la R3 sous macOS ?
 ---------------------------------------------------------------
 
 La carte R3 comprend un firmware intégré qui permet la communication avec l'application RoboPilot et Mammoth Coding.

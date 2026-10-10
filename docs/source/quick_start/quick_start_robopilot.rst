@@ -17,7 +17,7 @@ Avec RoboPilot, vous pouvez :
 
 .. note::
 
-    * Si vous avez écrasé le firmware et devez restaurer la communication, suivez :ref:`update_r3_firmware`.
+    * Si vous avez écrasé le firmware et devez restaurer la communication, suivez :ref:`update_uno_firmware`.
 
 Guide rapide
 ---------------------
