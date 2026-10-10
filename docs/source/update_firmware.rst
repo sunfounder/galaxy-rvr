@@ -24,27 +24,77 @@ Si consiglia di aggiornare il firmware prima del primo utilizzo per garantire il
    <iframe width="600" height="400" src="https://www.youtube.com/embed/Tl2W26pIQoU?si=98bbfUPc1g2cEz3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
-1. Verificare se è necessario un aggiornamento
------------------------------------------------
+.. _update_uno_firmware:
 
-#. Accendere GalaxyRVR e controllare la striscia luminosa inferiore.
+1. Aggiornamento del firmware dell'UNO R3
+-----------------------------------------
 
-   * Prima di utilizzare GalaxyRVR per la prima volta, caricare completamente la batteria con il cavo USB Type-C in dotazione.
-   * Accendere l'interruttore di alimentazione.
-   * Portare la modalità su **Run** e premere il pulsante **Reset** sulla scheda R3.
-   * La striscia luminosa inferiore inizierà a lampeggiare per indicare l'avvenuto avvio.
+La scheda R3 include un firmware integrato che consente la comunicazione con l'APP RoboPilot e Mammoth Coding. È possibile reinstallarlo con il flasher web, che non richiede alcun software aggiuntivo sul computer.
 
-   .. raw:: html
+**Metodo 1: Flasher web**
 
-      <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=rnoaDgQPnb-y6wnK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+#. Accenda il GalaxyRVR, colleghi il cavo USB da A a B (non il cavo USB Type-C) alla **scheda principale**, quindi porti l'interruttore **Upload** del rover sul lato di caricamento.
 
-#. Controllare la striscia luminosa inferiore.
+#. Prima di eseguire il flashing, rimuova la ESP32 CAM dal suo slot: condivide gli stessi pin RX e TX con la scheda R3, vedi :ref:`FAQ 7 <faq_r3_upload_bat>`.
 
-   * Se la striscia luminosa inferiore mostra una **luce verde lampeggiante**, il firmware dell'ESP32 è già aggiornato. Può procedere a :ref:`quick_start`.
-   * Se la striscia luminosa inferiore lampeggia di **un altro colore**, sarà necessario:
+#. Su un computer, apra |link_galaxy_rvr_flasher| in **Chrome** o **Edge**, quindi selezioni la versione del firmware:
 
-     - :ref:`update_esp32_firmware`
-     - :ref:`update_r3_firmware`
+   * La versione **2.0.0** è per la generazione attuale del GalaxyRVR.
+   * La versione **1.1.0** è per la prima generazione del GalaxyRVR.
+
+   Se non è sicuro della generazione del suo prodotto, controlli l'etichetta sulla scatola o ci contatti.
+
+#. Faccia clic su **Connect & Flash** e selezioni la porta seriale della scheda nella finestra di dialogo. L'aggiornamento inizia automaticamente e termina in circa un minuto.
+
+   .. image:: img/faq_web_flasher_en.png
+      :width: 600
+      :align: center
+
+#. Al termine dell'aggiornamento, riporti l'interruttore su **Run**, ricolleghi la ESP32 CAM e riaccenda il GalaxyRVR.
+
+.. note::
+
+   * Questa pagina usa Web Serial, quindi usi **Chrome** o **Edge** su un computer e si assicuri che la pagina sia aperta in **https**. In Windows può verificare che il driver seriale USB sia installato controllando la presenza di **USB-SERIAL CH340** nel Gestore dispositivi.
+   * Chiuda gli altri programmi che potrebbero usare la porta seriale, come l'Arduino IDE, il monitor seriale o un'altra scheda del browser.
+
+**Metodo 2: Script di aggiornamento**
+
+.. note::
+
+   Se sta utilizzando un Mac, consulti la guida specifica per macOS:
+
+   :ref:`uno_firmware_mac`
+
+#. Colleghi Arduino al computer con un cavo USB A-B (non USB Type-C) e porti l'interruttore di modalità su **Upload**.
+
+   .. image:: img/camera_upload.png
+        :width: 500
+        :align: center
+
+#. Verificare che i file del firmware siano stati scaricati.
+
+   * |download_galaxyrvr_filmware|
+
+#. Eseguire lo script di aggiornamento.
+
+   * Aprire la cartella ``galaxy-rvr.ino.xxx`` (scaricata e installata nel passaggio precedente).
+   * Fare doppio clic sul file script ``update-arduino-firmware.bat``.
+   * Apparirà automaticamente una finestra del prompt dei comandi.
+
+   .. image:: img/faq_bat_file.png
+
+#. Selezionare la porta seriale e caricare.
+
+   * Nel prompt dei comandi, verrà visualizzato un elenco delle porte seriali disponibili.
+   * Inserire il numero di sequenza mostrato a sinistra per selezionare la porta seriale di Arduino Uno.
+   * Premere **Invio** per avviare il caricamento automatico.
+   * Esempio: se l'elenco mostra `1 USB-SERIALXXX (COMxx)`, inserire **1** e premere **Invio**.
+
+   .. image:: img/faq_select_com.png
+
+#. Dopo aver atteso il completamento del caricamento, è possibile scollegare il cavo USB.
+
+   .. image:: img/faq_uno_updating.png
 
 
 .. _update_esp32_firmware:
@@ -126,56 +176,31 @@ Se il firmware non è aggiornato, queste funzioni potrebbero non funzionare corr
    #. Dopo il completamento dell'aggiornamento, il nome dell'hotspot Wi-Fi di GalaxyRVR cambierà in "AI Camera-xxxxxx" e la password rimarrà "12345678".
 
 
-.. _update_r3_firmware:
+3. Verifica all'avvio
+---------------------
 
-3. Aggiornamento del Firmware della Scheda R3
------------------------------------------------
+#. Accendere GalaxyRVR e controllare la striscia luminosa inferiore.
 
-La scheda R3 include un firmware integrato che consente la comunicazione con l'APP RoboPilot e Mammoth Coding.
+   * Prima di utilizzare GalaxyRVR per la prima volta, caricare completamente la batteria con il cavo USB Type-C in dotazione.
+   * Accendere l'interruttore di alimentazione.
+   * Portare la modalità su **Run** e premere il pulsante **Reset** sulla scheda R3.
+   * La striscia luminosa inferiore inizierà a lampeggiare per indicare l'avvenuto avvio.
 
-È necessario ricaricare questo firmware se:
+   .. raw:: html
 
-- Il dispositivo utilizza una versione precedente del firmware, oppure
-- Ha caricato il proprio codice Arduino e desidera ripristinare la compatibilità.
+      <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=rnoaDgQPnb-y6wnK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Segua i passaggi seguenti per reinstallare il firmware di comunicazione.
+#. Controllare la striscia luminosa inferiore.
 
-.. note::
+   * Se la striscia luminosa inferiore mostra una **luce verde lampeggiante**, il firmware della scheda R3 funziona correttamente. Può procedere a :ref:`quick_start`.
+   * Se la striscia luminosa inferiore lampeggia di **un altro colore**, reinstalli il firmware della scheda R3 con :ref:`update_uno_firmware`.
 
-   Se sta utilizzando un Mac, consulti la guida specifica per macOS:
+   .. raw:: html
 
-   :ref:`uno_firmware_mac`
-
-#. Colleghi Arduino al computer con un cavo USB A-B (non USB Type-C) e porti l'interruttore di modalità su **Upload**.
-
-   .. image:: img/camera_upload.png
-        :width: 500
-        :align: center
-
-#. Verificare che i file del firmware siano stati scaricati.
-
-   * |download_galaxyrvr_filmware|
-
-#. Eseguire lo script di aggiornamento.
-
-   * Aprire la cartella ``galaxy-rvr.ino.xxx`` (scaricata e installata nel passaggio precedente).
-   * Fare doppio clic sul file script ``update-arduino-firmware.bat``.
-   * Apparirà automaticamente una finestra del prompt dei comandi.
-
-   .. image:: img/faq_bat_file.png
-
-#. Selezionare la porta seriale e caricare.
-
-   * Nel prompt dei comandi, verrà visualizzato un elenco delle porte seriali disponibili.
-   * Inserire il numero di sequenza mostrato a sinistra per selezionare la porta seriale di Arduino Uno.
-   * Premere **Invio** per avviare il caricamento automatico.
-   * Esempio: se l'elenco mostra `1 USB-SERIALXXX (COMxx)`, inserire **1** e premere **Invio**.
-
-   .. image:: img/faq_select_com.png
-
-#. Dopo aver atteso il completamento del caricamento, è possibile scollegare il cavo USB.
-
-   .. image:: img/faq_uno_updating.png
+        <video width="600" loop autoplay muted>
+            <source src="_static/video/play_reset.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
 .. important::
 
