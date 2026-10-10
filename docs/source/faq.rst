@@ -73,7 +73,7 @@ To resolve this, follow these steps **in the exact order**:
 If the RoboPilot app cannot find or connect to your GalaxyRVR, check the following:
 
 1. **Is the ESP32 CAM firmware up to date?** An outdated ESP32 CAM firmware may cause connection issues. Follow :ref:`update_esp32_firmware` to check and update.
-2. **Is the R3 firmware up to date?** The R3 board must have the factory communication firmware installed. If you have uploaded custom Arduino code, it will overwrite this firmware and break RoboPilot communication. Follow :ref:`update_r3_firmware` to restore it.
+2. **Is the R3 firmware up to date?** The R3 board must have the factory communication firmware installed. If you have uploaded custom Arduino code, it will overwrite this firmware and break RoboPilot communication. Follow :ref:`update_uno_firmware` to restore it.
 3. **Is the mode switch on Run?** The mode switch must be set to **Run** (not Upload) for the WiFi hotspot to work.
 4. **Is your mobile device on the correct WiFi network?** Connect to the GalaxyRVR hotspot (``GalaxyRVR`` / ``12345678``), or if you configured a home WiFi, connect to that same network.
 5. **Try resetting**: Switch to **Run** mode and press the **Reset** button, then try connecting again.
@@ -87,7 +87,7 @@ If none of the above helps, try :ref:`faq_wifi_after_update`.
 If Mammoth Coding cannot connect to your GalaxyRVR, check the following:
 
 1. **Is the ESP32 CAM firmware up to date?** The ESP32 CAM handles the WiFi connection that Mammoth Coding relies on. Follow :ref:`update_esp32_firmware` to ensure it is up to date.
-2. **Is the R3 firmware up to date?** Mammoth Coding requires the factory communication firmware on the R3 board. If you have uploaded your own Arduino code, the communication firmware is overwritten. Follow :ref:`update_r3_firmware` to restore it.
+2. **Is the R3 firmware up to date?** Mammoth Coding requires the factory communication firmware on the R3 board. If you have uploaded your own Arduino code, the communication firmware is overwritten. Follow :ref:`update_uno_firmware` to restore it.
 3. **Is the mode switch on Run?** The mode switch must be set to **Run** for the WiFi hotspot to be active.
 4. **Is your mobile device on the correct WiFi network?** Make sure your device is connected to the GalaxyRVR hotspot or the same home WiFi network configured on the rover.
 
@@ -112,6 +112,8 @@ Please install the two required libraries ``SoftPWM`` and ``SunFounder AI Camera
 For the ``SunFounder AI Camera`` library, you need to select "INSTALL ALL" to simultaneously install the required ``ArduinoJson`` dependency.
 
     .. image:: img/faq_install_ai_camera.png
+
+.. _faq_r3_upload_bat:
 
 7. avrdude: stk500_getsync() attempt 10 of 10: not in sync: resp=0x6e?
 -----------------------------------------------------------------------------
@@ -196,11 +198,31 @@ For detailed step-by-step instructions, please refer to: :ref:`update_esp32_firm
 
 The GalaxyRVR's R3 board comes with firmware that supports both the RoboPilot App and Mammoth Coding.
 
-If you have overwritten this firmware and need to restore communication, follow :ref:`update_r3_firmware`.
+If you have overwritten this firmware and need to restore communication, follow :ref:`update_uno_firmware`.
+
+.. _serial_monitor:
+
+11. How to Check Serial Output in a Browser?
+-------------------------------------------------------
+
+If you want to see what the R3 board or the ESP32 CAM is printing — for example, to confirm that the two boards are communicating, or to check the IP address of the camera — you can use the web-based serial monitor. It works in the browser, so you don't need to install the Arduino IDE:
+
+|link_serial_monitor|
+
+#. Connect the GalaxyRVR to your computer with the USB A to B cable, and set the mode switch to **Upload**.
+
+#. Open the link above in **Chrome** or **Edge** on a computer and click **Connect**.
+
+#. Select the baud rate that matches your sketch (the examples in this tutorial use **9600**, while the AI Camera example uses **115200**), and the serial data will be displayed on the page.
+
+.. note::
+
+   * Opening the port resets most Arduino boards. The startup output that appears right after you connect is the result of that reset — this is normal.
+   * This tool is handy for checking whether an upload was successful and for reading the logs the R3 board prints at startup. For connection issues, see :ref:`update_uno_firmware`.
 
 .. _ap_to_sta:
 
-11. How to Set Up Wi-Fi Connection
+12. How to Set Up Wi-Fi Connection
 -----------------------------------------------------
 
 By default, GalaxyRVR operates in **AP mode**, where it creates its own Wi-Fi hotspot that other devices can connect to.
@@ -247,7 +269,7 @@ If you want GalaxyRVR to connect to your **home Wi-Fi network**, follow the step
 
 .. _faq_wifi_after_update:
 
-12. How to Restore ESP32 CAM to Factory Settings?
+13. How to Restore ESP32 CAM to Factory Settings?
 ---------------------------------------------------------------------------------------
 
 If the GalaxyRVR's WiFi hotspot does not appear or you cannot connect after updating the ESP32 CAM firmware, the old WiFi configuration data stored in the ESP32 CAM's flash memory may be causing a conflict.
@@ -279,7 +301,7 @@ To resolve this, you need to restore the ESP32 CAM to its factory settings by cl
 
 .. _uno_firmware_mac:
 
-13. How to Update R3 Firmware on macOS
+14. How to Update R3 Firmware on macOS
 ------------------------------------------
 
 The R3 board includes built-in firmware that enables communication with the RoboPilot App and Mammoth Coding.

@@ -1,4 +1,4 @@
-﻿.. include:: /index.rst
+.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -12,7 +12,7 @@ If you want to learn how to create these scripts from scratch, please refer to t
 .. note::
 
     * The GalaxyRVR’s R3 board comes with firmware that supports the RoboPilot App and Mammoth Coding.
-    * If you have overwritten the firmware and need to restore communication, follow :ref:`update_r3_firmware`.
+    * If you have overwritten the firmware and need to restore communication, follow :ref:`update_uno_firmware`.
 
 
 How to Quickly Open a Scratch Example

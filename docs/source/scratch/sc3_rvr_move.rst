@@ -1,4 +1,4 @@
-﻿.. include:: /index.rst
+.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -34,7 +34,7 @@ Connecting the APP to GalaxyRVR
 
 .. note::
 
-    * If you have overwritten the firmware and need to restore communication, follow :ref:`update_r3_firmware`.
+    * If you have overwritten the firmware and need to restore communication, follow :ref:`update_uno_firmware`.
 
 .. raw:: html
 

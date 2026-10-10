@@ -1,4 +1,3 @@
-﻿
 .. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
@@ -25,29 +24,39 @@ We recommend updating the firmware before your first use to ensure everything wo
    <iframe width="600" height="400" src="https://www.youtube.com/embed/Tl2W26pIQoU?si=98bbfUPc1g2cEz3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
-1. Check Whether an Update Is Needed
--------------------------------------
+.. _update_uno_firmware:
 
-#. Power on the GalaxyRVR and check the bottom light strip.
+1. Updating the UNO R3 Board Firmware
+--------------------------------------
 
-   * Before using the GalaxyRVR for the first time, fully charge the battery with the supplied Type-C USB cable.
-   * Turn the power switch on.
-   * Switch the mode to **Run** and press the **Reset** button on the R3 board.
-   * The bottom light strip will begin flashing to indicate a successful startup.
+The R3 board includes built-in firmware that enables communication with the RoboPilot app and Mammoth Coding. You can reinstall it with the web-based flasher, which needs no additional software on your computer.
 
-   .. raw:: html
+**Method 1: Web-based flasher**
 
-      <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=rnoaDgQPnb-y6wnK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+#. Power on the GalaxyRVR, connect the USB A to B cable (not the USB Type C cable) to the **main board**, and then turn the **Upload** switch of the car to the upload end.
 
-#. Check the bottom light strip.
+#. Remove the ESP32 CAM from its slot before flashing — it shares the same RX and TX pins with the R3 board, as explained in :ref:`the FAQ <faq_r3_upload_bat>`.
 
-   * If the bottom light strip shows a **green flashing light**, your ESP32 firmware is already up to date. You may proceed to :ref:`quick_start`.
-   * If the bottom light strip flashes **other color**, you will need to:
+#. On a computer, open |link_galaxy_rvr_flasher| in **Chrome** or **Edge**, then select the firmware version:
 
-     - :ref:`update_esp32_firmware`
-     - :ref:`update_r3_firmware`
+   * Version **2.0.0** is for the current generation of GalaxyRVR.
+   * Version **1.1.0** is for the first generation of GalaxyRVR.
 
-   
+   If you are not sure which generation you have, check the label on the box or contact us.
+
+#. Click **Connect & Flash** and select your board's serial port in the dialog. The update begins automatically and finishes in about one minute.
+
+   .. image:: img/faq_web_flasher.png
+      :width: 600
+      :align: center
+
+#. When the update is complete, set the switch back to **Run**, plug the ESP32 CAM back in, and power on the GalaxyRVR again.
+
+.. note::
+
+   * This page uses Web Serial, so use **Chrome** or **Edge** on a computer, and make sure the page is opened over **https**. On Windows, you can confirm the USB serial driver is installed by checking for **USB-SERIAL CH340** in Device Manager.
+   * Close other programs that may be using the serial port, such as the Arduino IDE, the serial monitor, or another browser tab.
+
 .. _update_esp32_firmware:
 
 2. Updating the ESP32 CAM Firmware
@@ -126,60 +135,34 @@ If the firmware is outdated, these functions may not work properly. Follow the s
 
    #. After the update is complete, the GalaxyRVR's WiFi hotspot name will change to "AI Camera-xxxxxx", and the password will remain "12345678".
 
-.. _update_r3_firmware:
+3. Verifying the R3 Firmware Update
+----------------------------------------
 
-3. Updating the R3 Board Firmware
---------------------------------------
+#. Power on the GalaxyRVR and check the bottom light strip.
 
-The R3 board includes built-in firmware that enables communication with the RoboPilot APP and Mammoth Coding.  
+   * Before using the GalaxyRVR for the first time, fully charge the battery with the supplied Type-C USB cable.
+   * Turn the power switch on.
+   * Switch the mode to **Run** and press the **Reset** button on the R3 board.
+   * The bottom light strip will begin flashing to indicate a successful startup.
 
-You need to re-upload this firmware if:
+   .. raw:: html
 
-- Your device uses an older firmware version, or  
-- You have flashed your own Arduino code and want to restore compatibility.
+      <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=rnoaDgQPnb-y6wnK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Follow the steps below to reinstall the communication firmware.
+#. Check the bottom light strip.
 
-.. note::
+   * If the bottom light strip shows a **green flashing light**, the R3 firmware is running correctly. You may proceed to :ref:`quick_start`.
+   * If the bottom light strip flashes **another color**, reinstall the R3 firmware with :ref:`update_uno_firmware`.
 
-   If you are using a Mac, please follow the macOS-specific guide instead:
+   .. raw:: html
 
-   :ref:`uno_firmware_mac`
-
-
-#. Connect the Arduino and computer with a USB A to B cable (not the USB Type C), and then turn the **upload** switch of the car to the upload end.
-
-   .. image:: img/camera_upload.png
-        :width: 500
-        :align: center
-
-#. Check whether the firmware files have been downloaded.
-
-   * |download_galaxyrvr_filmware| 
-
-#. Run the update script
-
-   * Open the ``galaxy-rvr.ino.xxx`` folder (downloaded and installed in the previous step).
-   * Double-click the ``update-arduino-firmware.bat`` script.
-   * A command prompt window will appear automatically.
-
-   .. image:: img/faq_bat_file.png
-
-#. Select the serial port and upload
-
-   * In the command prompt, a list of available serial ports will be displayed.
-   * Enter the sequence number shown on the left to select the Arduino Uno's serial port.
-   * Press **Enter** to begin the automatic upload.
-   * Example: If the list shows `1 USB-SERIALXXX (COMxx)`, enter **1** and press **Enter**.
-
-   .. image:: img/faq_select_com.png
-
-#. After waiting for the upload to complete, you can unplug the USB cable.
-
-   .. image:: img/faq_uno_updating.png
+        <video width="600" loop autoplay muted>
+            <source src="_static/video/play_reset.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
 .. important::
 
-   * This firmware enables the GalaxyRVR to respond to app commands. 
+   * This firmware enables the GalaxyRVR to respond to app commands.
    * You won’t need to upload any additional code when using either the RoboPilot remote control app or the Mammoth Coding software.
    * You can now proceed to :ref:`quick_start` to start your GalaxyRVR journey!
