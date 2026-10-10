@@ -1,4 +1,4 @@
-﻿.. _rvr_move:
+.. _rvr_move:
 
 第3课：远程控制你的 GalaxyRVR
 ============================================
@@ -30,7 +30,7 @@
 
 .. note::
 
-    * 如果你覆盖了固件且需要恢复通信，请参考 :ref:`update_r3_firmware`。
+    * 如果你覆盖了固件且需要恢复通信，请参考 :ref:`update_uno_firmware`。
 
 #. 启动 GalaxyRVR。
 

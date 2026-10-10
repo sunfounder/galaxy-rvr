@@ -1,4 +1,4 @@
-﻿通过 Scratch 快速开始
+通过 Scratch 快速开始
 ==================================
 
 在本章中，您将学习如何 **在 Scratch（Mammoth Coding）中快速打开并运行示例项目** ，让您的 GalaxyRVR 动起来。
@@ -8,7 +8,7 @@
 .. note::
 
     * GalaxyRVR 的 R3 板搭载了支持 RoboPilot App 和 Mammoth Coding 的固件。
-    * 如果您已覆盖此固件并需要恢复通信，请按照 :ref:`update_r3_firmware` 进行操作。
+    * 如果您已覆盖此固件并需要恢复通信，请按照 :ref:`update_uno_firmware` 进行操作。
 
 .. _install_scratch:
 

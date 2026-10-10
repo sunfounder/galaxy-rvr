@@ -72,7 +72,7 @@ SunFounder 持续改进 GalaxyRVR 的固件，以提供更好的使用体验。�
 如果 RoboPilot App 无法找到或连接到您的 GalaxyRVR，请检查以下项目：
 
 1. **ESP32 CAM 固件是否最新？** 过旧的 ESP32 CAM 固件可能导致连接问题。请按照 :ref:`update_esp32_firmware` 进行检查和更新。
-2. **R3 固件是否最新？** R3 板上必须安装出厂通信固件。如果您上传了自定义 Arduino 代码，它将覆盖此固件并中断 RoboPilot 通信。请按照 :ref:`update_r3_firmware` 进行恢复。
+2. **R3 固件是否最新？** R3 板上必须安装出厂通信固件。如果您上传了自定义 Arduino 代码，它将覆盖此固件并中断 RoboPilot 通信。请按照 :ref:`update_uno_firmware` 进行恢复。
 3. **模式开关是否在 Run？** 模式开关必须设置为 **Run**（而非 Upload），WiFi 热点才能工作。
 4. **您的移动设备是否连接到正确的 WiFi 网络？** 连接到 GalaxyRVR 热点（``GalaxyRVR`` / ``12345678``），或者如果您配置了家庭 WiFi，请连接到同一网络。
 5. **尝试重置**：切换到 **Run** 模式并按下 **Reset** 按钮，然后重新尝试连接。
@@ -86,7 +86,7 @@ SunFounder 持续改进 GalaxyRVR 的固件，以提供更好的使用体验。�
 如果 Mammoth Coding 无法连接到您的 GalaxyRVR，请检查以下项目：
 
 1. **ESP32 CAM 固件是否最新？** ESP32 CAM 负责处理 Mammoth Coding 所依赖的 WiFi 连接。请按照 :ref:`update_esp32_firmware` 确保其为最新版本。
-2. **R3 固件是否最新？** Mammoth Coding 需要 R3 板上的出厂通信固件。如果您上传了自己的 Arduino 代码，通信固件已被覆盖。请按照 :ref:`update_r3_firmware` 进行恢复。
+2. **R3 固件是否最新？** Mammoth Coding 需要 R3 板上的出厂通信固件。如果您上传了自己的 Arduino 代码，通信固件已被覆盖。请按照 :ref:`update_uno_firmware` 进行恢复。
 3. **模式开关是否在 Run？** 模式开关必须设置为 **Run**，WiFi 热点才能激活。
 4. **您的移动设备是否连接到正确的 WiFi 网络？** 确保您的设备已连接到 GalaxyRVR 热点或火星车上配置的同一家庭 WiFi 网络。
 
@@ -111,6 +111,8 @@ SunFounder 持续改进 GalaxyRVR 的固件，以提供更好的使用体验。�
 对于 ``SunFounder AI Camera`` 库，您需要选择"INSTALL ALL"以同时安装所需的 ``ArduinoJson`` 依赖。
 
     .. image:: img/faq_install_ai_camera.png
+
+.. _faq_r3_upload_bat:
 
 7. avrdude: stk500_getsync() attempt 10 of 10: not in sync: resp=0x6e？
 -----------------------------------------------------------------------------
@@ -195,11 +197,31 @@ ESP32-CAM 和 Arduino 板共用相同的 RX（接收）和 TX（发送）引脚�
 
 GalaxyRVR 的 R3 板搭载了支持 RoboPilot App 和 Mammoth Coding 的固件。
 
-如果您已覆盖此固件并需要恢复通信，请按照 :ref:`update_r3_firmware` 进行操作。
+如果您已覆盖此固件并需要恢复通信，请按照 :ref:`update_uno_firmware` 进行操作。
+
+.. _serial_monitor:
+
+11. 如何在浏览器中查看串口输出？
+-------------------------------------------------------
+
+如果想知道 R3 主板或 ESP32 CAM 正在输出什么内容——例如确认两块板子是否在正常通信，或者查看摄像头的 IP 地址——可以使用网页版串口监视器。它直接在浏览器里运行，不需要安装 Arduino IDE：
+
+|link_serial_monitor|
+
+#. 用 USB A-B 数据线把 GalaxyRVR 连接到电脑，并把模式开关拨到 **Upload**。
+
+#. 在电脑上用 **Chrome** 或 **Edge** 打开上面的链接，点击 **Connect**。
+
+#. 选择与你的程序一致的波特率（本教程示例使用 **9600**，AI 摄像头示例使用 **115200**），串口数据就会显示在页面上。
+
+.. note::
+
+   * 打开串口会让大多数 Arduino 主板复位。刚连接时看到的那段启动输出就是这次复位产生的，属于正常现象。
+   * 这个工具很适合用来确认烧录是否成功，以及查看 R3 主板开机时打印的日志。如果遇到连接问题，请参考 :ref:`update_uno_firmware`。
 
 .. _ap_to_sta:
 
-11. 如何设置 Wi-Fi 连接
+12. 如何设置 Wi-Fi 连接
 -----------------------------------------------------
 
 默认情况下，GalaxyRVR 以 **AP 模式** 运行，即创建自己的 Wi-Fi 热点供其他设备连接。
@@ -246,7 +268,7 @@ GalaxyRVR 的 R3 板搭载了支持 RoboPilot App 和 Mammoth Coding 的固件�
 
 .. _faq_wifi_after_update:
 
-12. 如何将 ESP32 CAM 恢复出厂设置？
+13. 如何将 ESP32 CAM 恢复出厂设置？
 ---------------------------------------------------------------------------------------
 
 如果更新 ESP32 CAM 固件后 GalaxyRVR 的 WiFi 热点不出现或无法连接，可能是 ESP32 CAM 闪存中存储的旧 WiFi 配置数据导致冲突。
@@ -278,7 +300,7 @@ GalaxyRVR 的 R3 板搭载了支持 RoboPilot App 和 Mammoth Coding 的固件�
 
 .. _uno_firmware_mac:
 
-13. 如何在 macOS 上更新 R3 固件
+14. 如何在 macOS 上更新 R3 固件
 ----------------------------------
 
 R3 板包含内置固件，用于实现与 RoboPilot App 和 Mammoth Coding 的通信。

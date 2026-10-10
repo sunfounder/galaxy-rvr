@@ -1,4 +1,4 @@
-﻿
+
 
 
 通过 APP 快速开始
@@ -15,7 +15,7 @@
 
 .. note::
 
-    * 如果您已覆盖固件并需要恢复通信，请按照 :ref:`update_r3_firmware` 进行操作。
+    * 如果您已覆盖固件并需要恢复通信，请按照 :ref:`update_uno_firmware` 进行操作。
 
 安装 Mammoth Coding App
 ---------------------------

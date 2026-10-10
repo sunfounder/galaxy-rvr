@@ -21,30 +21,84 @@
   <iframe width="600" height="400" src="https://player.bilibili.com/player.html?isOutside=true&aid=116729342663499&bvid=BV11REY6JEFs&cid=39027148026&p=1" scrolling="no" border="0" frameborder="0" framespacing="0" allowfullscreen="true"></iframe>
 
 
-1. 检查是否需要更新
--------------------------------------
+.. _update_uno_firmware:
 
-#. 启动 GalaxyRVR 并检查底部灯带。
+1. 更新 UNO R3 固件
+--------------------------------------
 
-   * 首次使用 GalaxyRVR 前，请使用附带的 Type-C USB 线将电池充满电。
-   * 打开电源开关。
-   * 将模式切换到 **Run** 并按下 R3 板上的 **Reset** 按钮。
-   * 底部灯带将开始闪烁，表示启动成功。
+R3 板包含内置固件，用于实现与 RoboPilot APP 和 Mammoth Coding 的通信。
 
-   .. raw:: html
+在以下情况下，您需要重新上传此固件：
 
-        <video width="600" loop autoplay muted>
-            <source src="_static/video/power_start.mp4" type="video/mp4">
-            您的浏览器不支持此视频标签。
-        </video>
+- 您的设备使用较旧的固件版本，或
+- 您已烧录了自己的 Arduino 代码并希望恢复兼容性。
 
-#. 检查底部灯带。
+您可以使用网页烧录器重新安装它，电脑上无需安装任何额外软件。
 
-   * 如果底部灯带显示 **绿色闪烁灯光** ，则您的 ESP32 固件已是最新。您可以继续前往 :ref:`quick_start` 。
-   * 如果底部灯带闪烁 **其他颜色** ，您将需要：
+**方法一：网页烧录器**
 
-     - :ref:`update_esp32_firmware`
-     - :ref:`update_r3_firmware`
+#. 给 GalaxyRVR 通电，用 USB A-B 数据线（不是 USB Type-C）连接到 **主板**，然后把车上的 **Upload** 开关拨到烧录一端。
+
+#. 烧录前先把 ESP32 CAM 从插槽中取下——它和 R3 主板共用同一组 RX、TX 引脚，参见 :ref:`FAQ 第 7 条 <faq_r3_upload_bat>`。
+
+#. 在电脑上用 **Chrome** 或 **Edge** 打开 |link_galaxy_rvr_flasher|，然后选择固件版本：
+
+   * **2.0.0** 版适用于当前一代 GalaxyRVR。
+   * **1.1.0** 版适用于第一代 GalaxyRVR。
+
+   分不清自己手上是哪一代，可以看包装盒上的标签，或联系我们。
+
+#. 点击 **Connect & Flash**，在弹出的列表里选择主板对应的串口。烧录会自动开始，大约一分钟即可完成。
+
+   .. image:: img/faq_web_flasher.png
+      :width: 600
+      :align: center
+
+#. 烧录完成后，把拨动开关拨回 **Run**，装回 ESP32 CAM，再重新给 GalaxyRVR 上电。
+
+.. note::
+
+   * 本页使用 Web Serial 功能，请在电脑上使用 **Chrome** 或 **Edge**，并确认页面是通过 **https** 打开的。Windows 上可以在设备管理器里查看是否有 **USB-SERIAL CH340**，以确认串口驱动已安装。
+   * 请关闭其他可能占用串口的程序，例如 Arduino IDE、串口监视器和另一个浏览器标签页。
+
+**方法二：更新脚本**
+
+.. note::
+
+   如果您使用的是 Mac 电脑，请参考 macOS 专用指南：
+
+   :ref:`uno_firmware_mac`
+
+#. 使用 USB A 转 B 线（非 USB Type C）连接 Arduino 和计算机，然后将模式开关拨到 **Upload** 位置。
+
+   .. image:: img/camera_upload.png
+        :width: 500
+        :align: center
+
+#. 检查固件文件是否已下载。
+
+   * |download_galaxyrvr_filmware|
+
+#. 运行更新脚本
+
+   * 打开 ``galaxy-rvr.ino.xxx`` 文件夹（在上一步中下载并安装）。
+   * 双击 ``update-arduino-firmware.bat`` 脚本。
+   * 命令提示符窗口将自动出现。
+
+   .. image:: img/faq_bat_file.png
+
+#. 选择串口并上传
+
+   * 在命令提示符中，将显示可用串口列表。
+   * 输入左侧显示的序列号以选择 Arduino Uno 的串口。
+   * 按 **Enter** 开始自动上传。
+   * 示例：如果列表显示 `1 USB-SERIALXXX (COMxx)`，输入 **1** 并按 **Enter** 。
+
+   .. image:: img/faq_select_com.png
+
+#. 等待上传完成后，即可拔掉 USB 线。
+
+   .. image:: img/faq_uno_updating.png
 
 
 .. _update_esp32_firmware:
@@ -126,56 +180,34 @@ ESP32 CAM 负责广播 Wi-Fi 热点并为 GalaxyRVR 采集视频。
    #. 更新完成后，GalaxyRVR 的 WiFi 热点名称将更改为 "AI Camera-xxxxxx"，密码仍为 "12345678"。
 
 
-.. _update_r3_firmware:
-
-3. 更新 R3 板固件
+3. 开机验证结果
 --------------------------------------
 
-R3 板包含内置固件，用于实现与 RoboPilot APP 和 Mammoth Coding 的通信。
+#. 启动 GalaxyRVR 并检查底部灯带。
 
-在以下情况下，您需要重新上传此固件：
+   * 首次使用 GalaxyRVR 前，请使用附带的 Type-C USB 线将电池充满电。
+   * 打开电源开关。
+   * 将模式切换到 **Run** 并按下 R3 板上的 **Reset** 按钮。
+   * 底部灯带将开始闪烁，表示启动成功。
 
-- 您的设备使用较旧的固件版本，或
-- 您已烧录了自己的 Arduino 代码并希望恢复兼容性。
+   .. raw:: html
 
-请按照以下步骤重新安装通信固件。
+        <video width="600" loop autoplay muted>
+            <source src="_static/video/power_start.mp4" type="video/mp4">
+            您的浏览器不支持此视频标签。
+        </video>
 
-.. note::
+#. 检查底部灯带。
 
-   如果您使用的是 Mac 电脑，请参考 macOS 专用指南：
+   * 如果底部灯带显示 **绿色闪烁灯光** ，则说明 R3 固件运行正常。您可以继续前往 :ref:`quick_start` 。
+   * 如果底部灯带闪烁 **其他颜色** ，请使用 :ref:`update_uno_firmware` 重新安装 R3 固件。
 
-   :ref:`uno_firmware_mac`
+   .. raw:: html
 
-#. 使用 USB A 转 B 线（非 USB Type C）连接 Arduino 和计算机，然后将模式开关拨到 **Upload** 位置。
-
-   .. image:: img/camera_upload.png
-        :width: 500
-        :align: center
-
-#. 检查固件文件是否已下载。
-
-   * |download_galaxyrvr_filmware|
-
-#. 运行更新脚本
-
-   * 打开 ``galaxy-rvr.ino.xxx`` 文件夹（在上一步中下载并安装）。
-   * 双击 ``update-arduino-firmware.bat`` 脚本。
-   * 命令提示符窗口将自动出现。
-
-   .. image:: img/faq_bat_file.png
-
-#. 选择串口并上传
-
-   * 在命令提示符中，将显示可用串口列表。
-   * 输入左侧显示的序列号以选择 Arduino Uno 的串口。
-   * 按 **Enter** 开始自动上传。
-   * 示例：如果列表显示 `1 USB-SERIALXXX (COMxx)`，输入 **1** 并按 **Enter** 。
-
-   .. image:: img/faq_select_com.png
-
-#. 等待上传完成后，即可拔掉 USB 线。
-
-   .. image:: img/faq_uno_updating.png
+        <video width="600" loop autoplay muted>
+            <source src="_static/video/play_reset.mp4" type="video/mp4">
+            您的浏览器不支持此视频标签。
+        </video>
 
 .. important::
 
