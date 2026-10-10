@@ -25,9 +25,18 @@ Play(Android).
            https://docs.sunfounder.com
 
 ********************************************************************/
-#define VERSION "2.0.0"
+#define VERSION "2.0.1"
 
 #include "galaxy-rvr.h"
+
+// Requires the 1.4.x camera compatibility added in SunFounder_AI_Camera 1.2.0:
+// with a legacy camera the board no longer hangs in setup(), it brings the camera
+// access point up instead and tells the user to update the camera firmware.
+// This firmware is built from source by users, and a build against an older library
+// would look new while still hanging on a legacy camera - block that at compile time.
+#if !defined(AI_CAMERA_VERSION_CODE) || AI_CAMERA_VERSION_CODE < 10200
+#error "GalaxyRVR 2.0.1 needs SunFounder_AI_Camera >= 1.2.0. Please update the library first."
+#endif
 
 /*********************** Global variables ****************************/
 /** Instantiate aicamera, a class for serial communication with ESP32-CAM */
@@ -92,6 +101,28 @@ void setup() {
   aiCam.begin(AP_SSID, AP_PASSWORD, PORT, false);
   aiCam.setOnReceivedBinary(onReceive);
 
+  // Legacy (1.4.x) camera: it does not know the new APSSID/APPSK commands, so the
+  // library configured it with the old command set and its access point plus settings
+  // page are already up. All this sketch has to do is tell the user how to update it.
+  if (aiCam.cameraFirmwareLegacy) {
+    Serial.println();
+    Serial.println(F("=================================================="));
+    Serial.print(F(" Legacy ESP32-CAM firmware detected: "));
+    Serial.println(aiCam.cameraFirmwareVersion);
+    Serial.println(F(" Please update the camera firmware to 1.5.0 or newer."));
+    Serial.println(F(" The camera WiFi is on now:"));
+    Serial.print(F("   1. Connect your phone/PC to WiFi \""));
+    Serial.print(AP_SSID);
+    Serial.print(F("\" ("));
+    Serial.print(AP_PASSWORD);
+    Serial.println(F(")"));
+    Serial.println(F("   2. Open http://192.168.4.1/ and upload the new"));
+    Serial.println(F("      camera firmware (.bin)"));
+    Serial.println(F("   3. Restart the rover"));
+    Serial.println(F("=================================================="));
+    // No blinking here: the idle blink in loop() turns red while the camera is legacy.
+  }
+
   while (millis() - m < 500) { // Wait for peripherals to be ready
     delay(1);
   }
@@ -122,7 +153,8 @@ void loop() {
     switch (currentState) {
     case STATE_IDLE: {
       Serial.println(F("IDLE"));
-      rgbWrite(COLOR_STATE_IDLE);
+      // Red while the camera is running legacy firmware
+      rgbWrite(aiCam.cameraFirmwareLegacy ? RED : COLOR_STATE_IDLE);
       carStop();
       servoAngle = 90;
       servo.write(servoAngle);
@@ -146,7 +178,7 @@ void loop() {
       rgb_blink_start_time = millis();
     }
     if (rgb_blink_flag)
-      rgbWrite(COLOR_STATE_IDLE);
+      rgbWrite(aiCam.cameraFirmwareLegacy ? RED : COLOR_STATE_IDLE);
     else
       rgbOff();
     if (aiCam.ws_connected == true) {
