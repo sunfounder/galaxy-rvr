@@ -33,7 +33,7 @@ Conectando la Aplicación a GalaxyRVR
 
 .. note::
 
-    * Si has sobrescrito el firmware y necesitas restaurar la comunicación, sigue :ref:`update_r3_firmware`.
+    * Si has sobrescrito el firmware y necesitas restaurar la comunicación, sigue :ref:`update_uno_firmware`.
 
 .. raw:: html
 

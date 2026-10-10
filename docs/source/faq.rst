@@ -72,7 +72,7 @@ Para resolverlo, siga estos pasos **en el orden exacto**:
 Si la aplicación RoboPilot no encuentra o no puede conectarse a su GalaxyRVR, compruebe lo siguiente:
 
 1. **¿Está actualizado el firmware del ESP32 CAM?** Un firmware desactualizado del ESP32 CAM puede causar problemas de conexión. Siga :ref:`update_esp32_firmware` para verificar y actualizar.
-2. **¿Está actualizado el firmware de la R3?** La placa R3 debe tener instalado el firmware de comunicación de fábrica. Si ha cargado código Arduino personalizado, este sobrescribirá dicho firmware y romperá la comunicación con RoboPilot. Siga :ref:`update_r3_firmware` para restaurarlo.
+2. **¿Está actualizado el firmware de la R3?** La placa R3 debe tener instalado el firmware de comunicación de fábrica. Si ha cargado código Arduino personalizado, este sobrescribirá dicho firmware y romperá la comunicación con RoboPilot. Siga :ref:`update_uno_firmware` para restaurarlo.
 3. **¿El interruptor de modo está en Run?** El interruptor de modo debe estar en **Run** (no Upload) para que el punto de acceso WiFi funcione.
 4. **¿Su dispositivo móvil está en la red WiFi correcta?** Conéctese al punto de acceso de GalaxyRVR (``GalaxyRVR`` / ``12345678``), o si configuró una WiFi doméstica, conéctese a esa misma red.
 5. **Intente reiniciar**: Cambie al modo **Run** y pulse el botón **Reset**, luego intente conectar de nuevo.
@@ -86,7 +86,7 @@ Si nada de lo anterior funciona, pruebe con :ref:`faq_wifi_after_update`.
 Si Mammoth Coding no puede conectarse a su GalaxyRVR, compruebe lo siguiente:
 
 1. **¿Está actualizado el firmware del ESP32 CAM?** El ESP32 CAM gestiona la conexión WiFi de la que depende Mammoth Coding. Siga :ref:`update_esp32_firmware` para asegurarse de que está actualizado.
-2. **¿Está actualizado el firmware de la R3?** Mammoth Coding requiere el firmware de comunicación de fábrica en la placa R3. Si ha cargado su propio código Arduino, el firmware de comunicación se sobrescribe. Siga :ref:`update_r3_firmware` para restaurarlo.
+2. **¿Está actualizado el firmware de la R3?** Mammoth Coding requiere el firmware de comunicación de fábrica en la placa R3. Si ha cargado su propio código Arduino, el firmware de comunicación se sobrescribe. Siga :ref:`update_uno_firmware` para restaurarlo.
 3. **¿El interruptor de modo está en Run?** El interruptor de modo debe estar en **Run** para que el punto de acceso WiFi esté activo.
 4. **¿Su dispositivo móvil está en la red WiFi correcta?** Asegúrese de que su dispositivo esté conectado al punto de acceso de GalaxyRVR o a la misma red WiFi doméstica configurada en el rover.
 
@@ -111,6 +111,8 @@ Instale las dos librerías necesarias ``SoftPWM`` y ``SunFounder AI Camera`` com
 Para la librería ``SunFounder AI Camera``, debe seleccionar "INSTALL ALL" para instalar simultáneamente la dependencia ``ArduinoJson`` necesaria.
 
     .. image:: img/faq_install_ai_camera.png
+
+.. _faq_r3_upload_bat:
 
 7. avrdude: stk500_getsync() attempt 10 of 10: not in sync: resp=0x6e?
 -----------------------------------------------------------------------------
@@ -195,11 +197,31 @@ Para obtener instrucciones detalladas paso a paso, consulte: :ref:`update_esp32_
 
 La placa R3 de GalaxyRVR viene con un firmware compatible tanto con la aplicación RoboPilot como con Mammoth Coding.
 
-Si ha sobrescrito este firmware y necesita restaurar la comunicación, siga :ref:`update_r3_firmware`.
+Si ha sobrescrito este firmware y necesita restaurar la comunicación, siga :ref:`update_uno_firmware`.
+
+.. _serial_monitor:
+
+11. ¿Cómo comprobar la salida del puerto serie en un navegador?
+---------------------------------------------------------------
+
+Si desea ver qué están imprimiendo la placa R3 o la ESP32 CAM — por ejemplo, para confirmar que ambas placas se comunican o para consultar la dirección IP de la cámara — puede usar el monitor serie basado en web. Funciona en el navegador, por lo que no necesita instalar el Arduino IDE:
+
+|link_serial_monitor|
+
+#. Conecte el GalaxyRVR a su ordenador con el cable USB A a B y ponga el interruptor de modo en **Upload**.
+
+#. Abra el enlace anterior en **Chrome** o **Edge** en un ordenador y haga clic en **Connect**.
+
+#. Seleccione la velocidad en baudios que coincida con su programa (los ejemplos de este tutorial usan **9600**, mientras que el ejemplo de la cámara AI usa **115200**); los datos serie se mostrarán en la página.
+
+.. note::
+
+   * Abrir el puerto reinicia la mayoría de las placas Arduino. La salida de arranque que aparece justo después de conectarse es el resultado de ese reinicio; es normal.
+   * Esta herramienta resulta útil para comprobar si una carga se realizó correctamente y para leer los registros que imprime la placa R3 al arrancar. Si tiene problemas de conexión, consulte :ref:`update_uno_firmware`.
 
 .. _ap_to_sta:
 
-11. Cómo configurar la conexión WiFi
+12. Cómo configurar la conexión WiFi
 -----------------------------------------------------
 
 De forma predeterminada, GalaxyRVR funciona en **modo AP**, en el que crea su propio punto de acceso WiFi al que otros dispositivos pueden conectarse.
@@ -246,7 +268,7 @@ Si desea que GalaxyRVR se conecte a su **red WiFi doméstica**, siga los pasos q
 
 .. _faq_wifi_after_update:
 
-12. ¿Cómo restaurar los ajustes de fábrica del ESP32 CAM?
+13. ¿Cómo restaurar los ajustes de fábrica del ESP32 CAM?
 ---------------------------------------------------------------------------------------
 
 Si el punto de acceso WiFi de GalaxyRVR no aparece o no puede conectarse después de actualizar el firmware del ESP32 CAM, es posible que los datos antiguos de configuración WiFi almacenados en la memoria flash del ESP32 CAM estén causando un conflicto.
@@ -278,7 +300,7 @@ Para resolverlo, debe restaurar el ESP32 CAM a sus ajustes de fábrica borrando 
 
 .. _uno_firmware_mac:
 
-13. ¿Cómo actualizar el firmware de la R3 en macOS?
+14. ¿Cómo actualizar el firmware de la R3 en macOS?
 -------------------------------------------------------
 
 La placa R3 incluye firmware integrado que permite la comunicación con la aplicación RoboPilot y Mammoth Coding.

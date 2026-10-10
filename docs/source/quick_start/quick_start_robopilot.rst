@@ -16,7 +16,7 @@ Con RoboPilot, puedes:
 
 .. note::
 
-    * Si has sobrescrito el firmware y necesitas restaurar la comunicación, sigue :ref:`update_r3_firmware`.
+    * Si has sobrescrito el firmware y necesitas restaurar la comunicación, sigue :ref:`update_uno_firmware`.
 
 Guía Rápida
 ---------------------
