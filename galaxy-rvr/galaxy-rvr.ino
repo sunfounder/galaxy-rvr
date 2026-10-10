@@ -29,10 +29,11 @@ Play(Android).
 
 #include "galaxy-rvr.h"
 
-// 本固件依赖 SunFounder_AI_Camera 1.2.0 起的「1.4.x 老摄像头兼容」能力：
-// 遇到老摄像头不再让主板卡死，而是把它的 AP + 设置页拉起来，提示用户升级。
-// 用户自己下载源码编译时，若用旧库会编出一个"看着是新版、遇到老摄像头照样卡死"
-// 的固件，这里在编译期直接拦住。
+// Requires the 1.4.x camera compatibility added in SunFounder_AI_Camera 1.2.0:
+// with a legacy camera the board no longer hangs in setup(), it brings the camera
+// access point up instead and tells the user to update the camera firmware.
+// This firmware is built from source by users, and a build against an older library
+// would look new while still hanging on a legacy camera - block that at compile time.
 #if !defined(AI_CAMERA_VERSION_CODE) || AI_CAMERA_VERSION_CODE < 10200
 #error "GalaxyRVR 2.0.1 needs SunFounder_AI_Camera >= 1.2.0. Please update the library first."
 #endif
@@ -100,26 +101,26 @@ void setup() {
   aiCam.begin(AP_SSID, AP_PASSWORD, PORT, false);
   aiCam.setOnReceivedBinary(onReceive);
 
-  // ESP32-CAM 还是 1.4.x 老固件：新协议它不认（只认老的 SSID/PSK/MODE），
-  // 库那边已经用老命令把它的 AP + 设置页拉起来了。这里只做提示：
-  // 让用户连上去在浏览器里 OTA 升级摄像头固件，升级完重启火星车。
-  if (aiCam.cameraFirmwareTooOld) {
+  // Legacy (1.4.x) camera: it does not know the new APSSID/APPSK commands, so the
+  // library configured it with the old command set and its access point plus settings
+  // page are already up. All this sketch has to do is tell the user how to update it.
+  if (aiCam.cameraFirmwareLegacy) {
     Serial.println();
     Serial.println(F("=================================================="));
-    Serial.print(F("!! ESP32-CAM firmware too old: "));
+    Serial.print(F(" Legacy ESP32-CAM firmware detected: "));
     Serial.println(aiCam.cameraFirmwareVersion);
-    Serial.println(F("   Need 1.5.0 or newer."));
-    Serial.println(F("   Camera WiFi is ON now, update it like this:"));
-    Serial.print(F("     1. Connect phone/PC to WiFi \""));
+    Serial.println(F(" Please update the camera firmware to 1.5.0 or newer."));
+    Serial.println(F(" The camera WiFi is on now:"));
+    Serial.print(F("   1. Connect your phone/PC to WiFi \""));
     Serial.print(AP_SSID);
     Serial.print(F("\" ("));
     Serial.print(AP_PASSWORD);
     Serial.println(F(")"));
-    Serial.println(F("     2. Open http://192.168.4.1/ and upload the new"));
-    Serial.println(F("        camera firmware (.bin)"));
-    Serial.println(F("     3. Restart the rover"));
+    Serial.println(F("   2. Open http://192.168.4.1/ and upload the new"));
+    Serial.println(F("      camera firmware (.bin)"));
+    Serial.println(F("   3. Restart the rover"));
     Serial.println(F("=================================================="));
-    // 灯不在这里闪：loop() 待机闪灯见 cameraFirmwareTooOld 会改走红色，持续可见
+    // No blinking here: the idle blink in loop() turns red while the camera is legacy.
   }
 
   while (millis() - m < 500) { // Wait for peripherals to be ready
@@ -152,8 +153,8 @@ void loop() {
     switch (currentState) {
     case STATE_IDLE: {
       Serial.println(F("IDLE"));
-      // 摄像头固件过旧时用红色：提示"先把摄像头固件升级了再用"
-      rgbWrite(aiCam.cameraFirmwareTooOld ? RED : COLOR_STATE_IDLE);
+      // Red while the camera is running legacy firmware
+      rgbWrite(aiCam.cameraFirmwareLegacy ? RED : COLOR_STATE_IDLE);
       carStop();
       servoAngle = 90;
       servo.write(servoAngle);
@@ -177,7 +178,7 @@ void loop() {
       rgb_blink_start_time = millis();
     }
     if (rgb_blink_flag)
-      rgbWrite(aiCam.cameraFirmwareTooOld ? RED : COLOR_STATE_IDLE);
+      rgbWrite(aiCam.cameraFirmwareLegacy ? RED : COLOR_STATE_IDLE);
     else
       rgbOff();
     if (aiCam.ws_connected == true) {
