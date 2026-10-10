@@ -184,4 +184,12 @@ rst_epilog = """
 
 .. |download_galaxyrvr_filmware| replace:: :download:`GalaxyRVR Firmware File <https://github.com/sunfounder/galaxy-rvr/releases/latest/download/galaxy-rvr.ino.zip>`
 
+.. |link_galaxy_rvr_flasher| raw:: html
+
+    <a href="https://sunfounder.github.io/web-flasher/tools/galaxy-rvr/" target="_blank">GalaxyRVR ファームウェア書き込みツール</a>
+
+.. |link_serial_monitor| raw:: html
+
+    <a href="https://sunfounder.github.io/web-flasher/tools/serial-monitor/" target="_blank">シリアルモニター</a>
+
 """

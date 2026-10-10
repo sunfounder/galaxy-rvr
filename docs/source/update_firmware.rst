@@ -1,4 +1,4 @@
-﻿.. include:: /index.rst
+.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -24,35 +24,38 @@
    <iframe width="600" height="400" src="https://www.youtube.com/embed/Tl2W26pIQoU?si=98bbfUPc1g2cEz3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
-1. 更新が必要かどうかの確認
--------------------------------------
+.. _update_uno_firmware:
 
-#. GalaxyRVR の電源を入れ、底部のライトストリップを確認します。
+1. UNO R3 ボードファームウェアの更新
+--------------------------------------
 
-   * GalaxyRVR を初めて使用する前に、付属の Type-C USB ケーブルでバッテリーを完全に充電してください。
-   * 電源スイッチをオンにします。
-   * モードを **Run** に切り替え、R3 ボードの **Reset** ボタンを押します。
-   * 底部のライトストリップが点滅し、起動成功を示します。
+R3 ボードには、RoboPilot アプリおよび Mammoth Coding との通信を可能にするファームウェアが組み込まれています。以下のウェブ書き込みツールを使えば、コンピューターに追加のソフトウェアをインストールせずに再インストールできます。
 
-   .. raw:: html
+**方法 1：ウェブ書き込みツール**
 
-      <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=rnoaDgQPnb-y6wnK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+#. GalaxyRVR の電源を入れ、USB A-B ケーブル（USB Type-C ケーブルではありません）を **メインボード** に接続し、車の **Upload** スイッチを書き込み側に切り替えます。
 
-#. 底部のライトストリップを確認します。
+#. 書き込みの前に ESP32 CAM をスロットから取り外します。ESP32 CAM は R3 ボードと RX・TX ピンを共有しているためです。詳しくは :ref:`FAQ <faq_r3_upload_bat>` を参照してください。
 
-   * 底部のライトストリップが **緑色に点滅** している場合、ESP32 ファームウェアは最新です。 :ref:`quick_start` に進んでください。
-   * 底部のライトストリップが **他の色** で点滅している場合は、以下が必要です：
+#. コンピューターの **Chrome** または **Edge** で |link_galaxy_rvr_flasher| を開き、ファームウェアのバージョンを選択します：
 
-     - :ref:`update_esp32_firmware`
-     - :ref:`update_r3_firmware`
+   * バージョン **2.0.0** は現在の世代の GalaxyRVR 用です。
+   * バージョン **1.1.0** は初代 GalaxyRVR 用です。
 
-   .. raw:: html
+   どちらの世代か分からない場合は、箱のラベルを確認するか、お問い合わせください。
 
-        <video width="600" loop autoplay muted>
-            <source src="_static/video/play_reset.mp4" type="video/mp4">
-            お使いのブラウザはこのビデオタグをサポートしていません。
-        </video>
+#. **Connect & Flash** をクリックし、ダイアログでお使いのボードのシリアルポートを選択します。書き込みは自動的に始まり、約 1 分で完了します。
 
+   .. image:: img/faq_web_flasher_en.png
+      :width: 600
+      :align: center
+
+#. 書き込みが完了したら、スイッチを **Run** に戻し、ESP32 CAM を取り付けて、GalaxyRVR の電源を入れ直します。
+
+.. note::
+
+   * このページは Web Serial を使用するため、コンピューターの **Chrome** または **Edge** を使用し、ページが **https** で開かれていることを確認してください。Windows では、デバイスマネージャーに **USB-SERIAL CH340** が表示されているかで、USB シリアルドライバーがインストール済みかを確認できます。
+   * Arduino IDE、シリアルモニター、別のブラウザータブなど、シリアルポートを使用している可能性のある他のプログラムは終了してください。
 
 .. _update_esp32_firmware:
 
@@ -133,56 +136,31 @@ ESP32 CAM は、GalaxyRVR の Wi-Fi ホットスポットをブロードキャ�
    #. 更新が完了すると、GalaxyRVR の WiFi ホットスポット名は "AI Camera-xxxxxx" に変更され、パスワードは "12345678" のままです。
 
 
-.. _update_r3_firmware:
+3. R3 ファームウェア更新後の起動確認
+--------------------------------------------
 
-3. R3 ボードファームウェアの更新
---------------------------------------
+#. GalaxyRVR の電源を入れ、底部のライトストリップを確認します。
 
-R3 ボードには、RoboPilot APP および Mammoth Coding との通信を可能にするファームウェアが組み込まれています。
+   * GalaxyRVR を初めて使用する前に、付属の Type-C USB ケーブルでバッテリーを完全に充電してください。
+   * 電源スイッチをオンにします。
+   * モードを **Run** に切り替え、R3 ボードの **Reset** ボタンを押します。
+   * 底部のライトストリップが点滅し、起動成功を示します。
 
-以下の場合、このファームウェアを再アップロードする必要があります：
+   .. raw:: html
 
-- お使いのデバイスが古いファームウェアバージョンを使用している場合、または
-- 独自の Arduino コードを書き込んでおり、互換性を復元したい場合。
+      <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=rnoaDgQPnb-y6wnK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-以下の手順に従って、通信ファームウェアを再インストールしてください。
+#. 底部のライトストリップを確認します。
 
-.. note::
+   * 底部のライトストリップが **緑色に点滅** している場合、R3 のファームウェアは正常に動作しています。 :ref:`quick_start` に進んでください。
+   * 底部のライトストリップが **他の色** で点滅している場合は、:ref:`update_uno_firmware` で R3 のファームウェアを再インストールしてください。
 
-   Mac を使用している場合は、macOS 専用のガイドを参照してください：
+   .. raw:: html
 
-   :ref:`uno_firmware_mac`
-
-#. USB A-B ケーブル（USB Type-C ではありません）で Arduino をコンピューターに接続し、モードスイッチを **Upload** に切り替えます。
-
-   .. image:: img/camera_upload.png
-        :width: 500
-        :align: center
-
-#. ファームウェアファイルがダウンロードされているか確認します。
-
-   * |download_galaxyrvr_filmware|
-
-#. 更新スクリプトを実行します
-
-   * ``galaxy-rvr.ino.xxx`` フォルダー（前の手順でダウンロードおよびインストール済み）を開きます。
-   * ``update-arduino-firmware.bat`` スクリプトをダブルクリックします。
-   * コマンドプロンプトウィンドウが自動的に表示されます。
-
-   .. image:: img/faq_bat_file.png
-
-#. シリアルポートを選択してアップロードします
-
-   * コマンドプロンプトに、利用可能なシリアルポートのリストが表示されます。
-   * 左側に表示されているシーケンス番号を入力して、Arduino Uno のシリアルポートを選択します。
-   * **Enter** キーを押して、自動アップロードを開始します。
-   * 例：リストに `1 USB-SERIALXXX (COMxx)` と表示されている場合、 **1** を入力して **Enter** キーを押します。
-
-   .. image:: img/faq_select_com.png
-
-#. アップロードが完了するのを待ってから、USB ケーブルを抜いてください。
-
-   .. image:: img/faq_uno_updating.png
+        <video width="600" loop autoplay muted>
+            <source src="_static/video/play_reset.mp4" type="video/mp4">
+            お使いのブラウザはこのビデオタグをサポートしていません。
+        </video>
 
 .. important::
 

@@ -1,4 +1,4 @@
-﻿.. include:: /index.rst
+.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -34,7 +34,7 @@
 
 .. note::
 
-    * ファームウェアを上書きしてしまい、通信を復元する必要がある場合は、:ref:`update_r3_firmware` に従ってください。
+    * ファームウェアを上書きしてしまい、通信を復元する必要がある場合は、:ref:`update_uno_firmware` に従ってください。
 
 .. raw:: html
 
