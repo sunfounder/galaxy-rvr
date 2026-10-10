@@ -2,7 +2,7 @@
 
 GalaxyRVR 机器人小车的 Arduino UNO 控制固件，配合 SunFounder Controller APP 使用。
 
-当前版本：**2.0.1**
+当前版本：**2.0.2**
 
 - [开发环境](#开发环境)
 - [快速开始](#快速开始)
@@ -21,7 +21,7 @@ GalaxyRVR 机器人小车的 Arduino UNO 控制固件，配合 SunFounder Contro
 
 依赖库：
 
-> SunFounder_AI_Camera 需要 **>= 1.2.0**（1.4.x 老摄像头兼容），版本低了 sketch 会直接编译报错，见 [CHANGELOG.md](CHANGELOG.md)。
+> SunFounder_AI_Camera 需要 **>= 1.2.1**（1.4.x 老摄像头兼容 + 回包拷贝越界修复），版本低了 sketch 会直接编译报错，见 [CHANGELOG.md](CHANGELOG.md)。
 
 - IRLremote
 - SoftPWM

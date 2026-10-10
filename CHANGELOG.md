@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.2] - 2026-10-10
+
+### Fixed
+- The board no longer resets in a loop when the camera runs firmware 1.5.x. The AI Camera
+  library copied the camera reply with an unbounded `strcpy()` into a 10-byte stack buffer,
+  and 1.5.x answers things like `[OK] NAME already set`, so `NAME` / `APSSID` / `APPSK`
+  overflowed it on every boot. Fixed in `SunFounder_AI_Camera` 1.2.1.
+
+### Requires
+- `SunFounder_AI_Camera >= 1.2.1` (the compile-time guard was raised accordingly)
+
 ## [2.0.1] - 2026-10-10
 
 ### Fixed

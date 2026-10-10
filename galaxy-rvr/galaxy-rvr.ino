@@ -25,17 +25,19 @@ Play(Android).
            https://docs.sunfounder.com
 
 ********************************************************************/
-#define VERSION "2.0.1"
+#define VERSION "2.0.2"
 
 #include "galaxy-rvr.h"
 
-// Requires the 1.4.x camera compatibility added in SunFounder_AI_Camera 1.2.0:
-// with a legacy camera the board no longer hangs in setup(), it brings the camera
-// access point up instead and tells the user to update the camera firmware.
+// Requires SunFounder_AI_Camera 1.2.1 or newer:
+//   - 1.2.0 added the 1.4.x camera compatibility (a legacy camera no longer leaves the
+//     board stuck in setup(); it brings the camera AP up so the user can update it)
+//   - 1.2.1 fixed the unbounded reply copy that corrupted the stack on camera firmware
+//     1.5.x and reset the board in a loop
 // This firmware is built from source by users, and a build against an older library
-// would look new while still hanging on a legacy camera - block that at compile time.
-#if !defined(AI_CAMERA_VERSION_CODE) || AI_CAMERA_VERSION_CODE < 10200
-#error "GalaxyRVR 2.0.1 needs SunFounder_AI_Camera >= 1.2.0. Please update the library first."
+// would look new while still failing - block that at compile time.
+#if !defined(AI_CAMERA_VERSION_CODE) || AI_CAMERA_VERSION_CODE < 10201
+#error "GalaxyRVR 2.0.2 needs SunFounder_AI_Camera >= 1.2.1. Please update the library first."
 #endif
 
 /*********************** Global variables ****************************/
