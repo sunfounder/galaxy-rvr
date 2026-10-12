@@ -16,9 +16,11 @@
    如果您不想更新固件并希望继续使用当前配置，可以参考 `GalaxyRVR v1 文档 <https://docs.sunfounder.com/projects/galaxy-rvr/en/v1/index.html>`_ 。
 
 
-.. raw:: html
+.. 视频暂时停用：当前 Bilibili 视频演示的还是旧版更新方式，与新流程不一致，待重新录制后再启用。
 
-  <iframe width="600" height="400" src="https://player.bilibili.com/player.html?isOutside=true&aid=116729342663499&bvid=BV11REY6JEFs&cid=39027148026&p=1" scrolling="no" border="0" frameborder="0" framespacing="0" allowfullscreen="true"></iframe>
+.. .. raw:: html
+..
+..   <iframe width="600" height="400" src="https://player.bilibili.com/player.html?isOutside=true&aid=116729342663499&bvid=BV11REY6JEFs&cid=39027148026&p=1" scrolling="no" border="0" frameborder="0" framespacing="0" allowfullscreen="true"></iframe>
 
 
 .. _update_uno_firmware:
@@ -50,7 +52,7 @@ R3 板包含内置固件，用于实现与 RoboPilot APP 和 Mammoth Coding 的�
 
 #. 点击 **Connect & Flash**，在弹出的列表里选择主板对应的串口。烧录会自动开始，大约一分钟即可完成。
 
-   .. image:: img/faq_web_flasher.png
+   .. image:: img/faq_web_flasher_zh-cn.png
       :width: 600
       :align: center
 
