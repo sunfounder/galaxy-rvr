@@ -29,7 +29,7 @@ We recommend updating the firmware before your first use to ensure everything wo
 1. Updating the UNO R3 Firmware
 -------------------------------------
 
-The R3 board carries the firmware that talks to the RoboPilot app and Mammoth Coding. Reinstall it with the web-based flasher: it runs in your browser, needs no extra software, and shows each step with its own picture.
+The R3 board carries the firmware that talks to the RoboPilot app and Mammoth Coding. Reinstall it with the web-based flasher: open |link_galaxy_rvr_flasher| in **Chrome** or **Edge** on a computer — it runs in your browser, needs no extra software, and shows each step with its own picture.
 
 The flasher has three steps:
 
