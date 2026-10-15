@@ -12,7 +12,7 @@ If you want to learn how to create these scripts from scratch, please refer to t
 .. note::
 
     * The GalaxyRVR’s R3 board comes with firmware that supports the RoboPilot App and Mammoth Coding.
-    * If you have overwritten the firmware and need to restore communication, follow :ref:`update_uno_firmware`.
+    * If you have overwritten the firmware and need to restore communication, follow :ref:`update_firmware`.
 
 
 How to Quickly Open a Scratch Example

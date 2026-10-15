@@ -17,7 +17,7 @@ With RoboPilot, you can:
 
 .. note::
 
-    * If you have overwritten the firmware and need to restore communication, follow :ref:`update_uno_firmware`.
+    * If you have overwritten the firmware and need to restore communication, follow :ref:`update_firmware`.
 
 Quick Guide
 ---------------------

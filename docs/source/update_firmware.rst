@@ -26,53 +26,55 @@ We recommend updating the firmware before your first use to ensure everything wo
 ..    <iframe width="600" height="400" src="https://www.youtube.com/embed/Tl2W26pIQoU?si=98bbfUPc1g2cEz3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
-.. _update_uno_firmware:
-
 1. Updating the UNO R3 Firmware
 -------------------------------------
 
 The R3 board carries the firmware that talks to the RoboPilot app and Mammoth Coding. Reinstall it with the web-based flasher: it runs in your browser, needs no extra software, and shows each step with its own picture.
 
-#. Power on the rover, connect the **main board** to your computer with the USB A to B cable (not the Type-C one), and turn the mode switch to **Upload**. The switch also selects the USB-to-serial connection, so the ESP32 CAM does not need to be removed.
+The flasher has three steps:
 
-#. On a computer, open |link_galaxy_rvr_flasher| in **Chrome** or **Edge** and simply follow the **Connect → Flash → Done** steps on the page.
+#. **Connect** — Turn on the rover, connect the main board to your computer with a USB A to B cable (not the Type-C one), then set the mode switch to the **Upload** position. Then click **Next**.
 
-#. When it is finished, turn the switch back to **Run** and press the **Reset** button on the R3 board.
+   .. image:: img/flasher_step1.png
+      :width: 500
 
-.. note::
+#. **Flash** — Click **Connect & Flash**. In the port window that pops up, pick your board's port (for example ``USB Serial (COMxx)``), then click **Connect** and the flashing starts. If it fails, simply click **Connect & Flash** again.
 
-   * The page asks for the firmware version and the serial port itself (**Arduino UNO R3**, or **USB-SERIAL CH340** on CH340 boards) — see the pictures there.
-   * Use **Chrome** or **Edge** on a computer over **https** (Web Serial), and close other programs that hold the serial port. If the flash fails, unplug the USB cable, plug it back in, keep the switch on **Upload**, and click again — re-flashing does not damage the rover.
+   .. image:: img/flasher_step2.png
+      :width: 500
 
-.. _verify_r3_firmware:
+#. **Done** — When the flash finishes you will see the following in the log window, which confirms the firmware was written and shows the current version (**2.0.2**). Ignore ``Initialzing...`` and everything after it at this point: the rover is still in **Upload** mode, so it cannot communicate with the ESP32 CAM yet. Then click **Next**.
 
-Verifying the Update
-~~~~~~~~~~~~~~~~~~~~
+   .. code-block::
 
-Back in **Run** mode, the log window on the flasher page shows the rover booting. The update is successful when:
+      Reading firmwares/galaxy-rvr-2.0.2.hex
+      Resetting the board...
+      Connecting to the board...
+      Firmware written.
+      Verified - flash matches the file.
 
-* The first line reads ``GalaxyRVR version X.Y.Z``, followed by ``Initialzing...`` and ``Okie!`` — the page writes **2.0.2**.
-* The light strip under the rover flashes **green** on boot.
+      ---------- serial open at 115200 ----------
+      GalaxyRVR version 2.0.2
+      Initialzing...
+      SET+RESET
+      ...SET+RESET
+      ...SET+RESET
+      ...[FAIL]
 
-The same log shows the camera version as ``ESP32 firmware version X.Y.Z``. If it is lower than **1.5.4**, or the strip flashes **red**, move on to :ref:`update_esp32_firmware`.
+#. Now follow the prompt: set the mode switch back to its original position and press the **Reset** button on the R3 board. The log window then shows the current ESP32 CAM firmware.
+
+   * If the ESP32 CAM firmware is **1.5.4 or higher**, you can go straight to :ref:`quick_start`.
+   * If it is **lower than 1.5.4**, continue with :ref:`update_esp32_firmware`.
 
 
-.. important::
-
-   * This firmware enables the GalaxyRVR to respond to app commands.
-   * You won’t need to upload any additional code when using either the RoboPilot remote control app or the Mammoth Coding software.
-   * You can now proceed to :ref:`quick_start` to start your GalaxyRVR journey!
 
 .. _update_esp32_firmware:
 
 2. Updating the ESP32 CAM Firmware
 --------------------------------------
 
-The ESP32 CAM broadcasts the Wi-Fi hotspot and captures video for the GalaxyRVR. If it is older than **1.5.4**, or the light strip under the rover does not flash green on boot, update it by following the steps below.
-
-.. note::
-
-   The ``ESP32 firmware version X.Y.Z`` line in the flasher's log window tells you which version is currently installed.
+The ESP32 CAM broadcasts the Wi-Fi hotspot and captures video for the GalaxyRVR.  
+If the firmware is outdated, these functions may not work properly. Follow the steps below to update the firmware.
 
 #. Turn on the GalaxyRVR's power switch. To start the ESP32 CAM, switch the mode to **Run** and press the **Reset** button on the R3 board.
 
@@ -101,18 +103,58 @@ The ESP32 CAM broadcasts the Wi-Fi hotspot and captures video for the GalaxyRVR.
 #. Open a web browser on your mobile device and navigate to ``http://192.168.4.1`` to access the ESP32 CAM OTA update page.
 
 
-Select the firmware file you downloaded and start the update:
-
-* On the older interface, click **Add**, then **Update**.
-* On the newer interface, tap **Upgrade Firmware** and then **CONFIRM** when it finishes.
-
-The update takes 1–2 minutes. Afterwards the hotspot name changes to ``AI Camera-xxxxxx`` (password ``12345678``), so reconnect to it before continuing.
-
-.. note::
-
-   The OTA page shows one of two interfaces depending on the firmware version you have; both do the same thing.
+.. note:: On this page, you will see OTA upgrade options in one of two interfaces. Version A (the former) and Version B (the latter) will appear depending on your firmware version. Simply select the corresponding upgrade steps based on the interface you see.
 
    .. image:: img/firmware_access_ab.png
       :width: 80%
       :align: center
 
+
+**Version A**
+
+   6. On the OTA page, select the firmware file and start the update:
+
+      * Choose the previously downloaded ``ai-camera-firmware-vX.X.X-ota.bin`` file from your device and click **Add**.
+      * Click the **Update** button to begin the firmware update, then wait for it to complete.
+
+      .. image:: img/faq_ota_a.png
+         :width: 700
+
+
+   #. After the update is complete, the GalaxyRVR's WiFi hotspot name will change to "AI Camera-xxxxxx", and the password will remain "12345678".
+
+
+**Version B**
+
+
+   6. On the **OTA** page, check the current firmware version displayed on the webpage.
+      
+      * If your version number is **1.5.4 or higher**, an update is not required. You can skip the remaining steps and proceed directly to :ref:`quick_start`.
+      * If the version is **lower than 1.5.4**, please continue with the update.
+
+      .. image:: img/firmware_version.jpg
+         :width: 50%
+         :align: center
+
+   #. Tap **Upgrade Firmware**, select the firmware file, and wait for the update to complete:
+
+      * Tap the **Upgrade Firmware** button, then select the previously downloaded ``ai-camera-firware.ino.x.x.x.bin`` file from your device.
+      * The update will begin immediately and typically takes 1-2 minutes. Once finished, select **CONFIRM** to restart the GalaxyRVR.
+
+      .. image:: img/faq_ota_b.png
+         :width: 700
+
+   #. After the update is complete, the GalaxyRVR's WiFi hotspot name will change to "AI Camera-xxxxxx", and the password will remain "12345678".
+
+
+3. Verifying the Startup
+-----------------------------
+
+   * Before using the GalaxyRVR for the first time, fully charge the battery with the supplied Type-C USB cable.
+   * Turn the power switch on.
+   * Switch the mode to **Run** and press the **Reset** button on the R3 board.
+   * The bottom light strip will flash **green**, indicating a successful startup.
+
+   .. raw:: html
+
+      <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=rnoaDgQPnb-y6wnK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

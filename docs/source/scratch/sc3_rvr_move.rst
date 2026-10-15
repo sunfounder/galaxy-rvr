@@ -34,7 +34,7 @@ Connecting the APP to GalaxyRVR
 
 .. note::
 
-    * If you have overwritten the firmware and need to restore communication, follow :ref:`update_uno_firmware`.
+    * If you have overwritten the firmware and need to restore communication, follow :ref:`update_firmware`.
 
 .. raw:: html
 
