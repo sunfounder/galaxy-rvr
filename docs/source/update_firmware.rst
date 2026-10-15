@@ -64,7 +64,7 @@ The flasher has three steps:
 #. Now follow the prompt: set the mode switch back to its original position and press the **Reset** button on the R3 board. The log window then shows the current ESP32 CAM firmware.
 
    * If the ESP32 CAM firmware is **1.5.0 or higher**, you can go straight to :ref:`quick_start`.
-   * If it is **lower than 1.5.0**, log页面会提示需要更新ESP32 CAM的固件，continue with :ref:`update_esp32_firmware`.
+   * If it is **lower than 1.5.0**, the log window shows that the ESP32 CAM firmware needs updating — continue with :ref:`update_esp32_firmware`.
 
    .. image:: img/flasher_step3.png
       :width: 500
