@@ -28,6 +28,8 @@ We recommend updating the firmware before your first use to ensure everything wo
 ..
 ..    <iframe width="600" height="400" src="https://www.youtube.com/embed/Tl2W26pIQoU?si=98bbfUPc1g2cEz3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+.. _update_r3_firmware:
+
 1. Updating the UNO R3 Firmware
 -------------------------------------
 
@@ -70,7 +72,7 @@ The flasher has three steps:
    
 #. The log window then shows the current ESP32 CAM firmware.
 
-   * If the ESP32 CAM firmware is **1.5.0 or higher**, you can go straight to :ref:`quick_start`.
+   * If the ESP32 CAM firmware is **1.5.0 or higher**, the log shows the UNO R3 firmware, the ESP32 CAM firmware and finally a web address like ``http://xxx.xxx.xx.xxx:9000/mjpg``.
    * If it is **lower than 1.5.0**, the log window shows that the ESP32 CAM firmware needs updating — continue with :ref:`update_esp32_firmware`.
 
    .. image:: img/flasher_step3.png

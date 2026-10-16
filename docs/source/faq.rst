@@ -20,9 +20,31 @@ For step-by-step update instructions, see :ref:`update_firmware`.
 .. note::
    If you prefer not to update the firmware and want to keep using your current configuration, you can refer to the `GalaxyRVR v1 Documentation <https://docs.sunfounder.com/projects/galaxy-rvr/en/v1/index.html>`_.
 
+.. _serial_monitor:
+
+2. How to Check Serial Output in a Browser?
+-------------------------------------------------------
+
+If you want to see what the R3 board or the ESP32 CAM is printing — for example, to confirm that the two boards are communicating, or to check the IP address of the camera — you can use the |link_galaxy_rvr_flasher|. It works in the browser, so you don't need to install the Arduino IDE:
 
 
-2. Unable to Connect to GalaxyRVR?
+#. Open the |link_galaxy_rvr_flasher| in **Chrome** or **Edge** on a computer.
+
+#. Click **Next** twice to reach the third step, **Debug**, then follow the video: turn the power switch on, switch the mode to **Run**, and press the **Reset** button on the R3 board.
+
+   .. image:: img/faq_serial_monitor.png
+      :width: 500
+
+#. Click **Connect**. In the port window that pops up, pick your board's port (for example ``USB Serial (COMxx)``), then click **Connect**.
+
+   * If it is **lower than 1.5.0**, the log window shows that the ESP32 CAM firmware needs updating — continue with :ref:`update_esp32_firmware`.
+
+   .. image:: img/flasher_step3.png
+      :width: 500
+
+
+
+3. Unable to Connect to GalaxyRVR?
 -------------------------------------------------------------------------------------------------
 
 If you cannot connect to the GalaxyRVR, please check the following:
@@ -48,7 +70,7 @@ If you cannot connect to the GalaxyRVR, please check the following:
 
 If the RoboPilot app cannot find or connect to your GalaxyRVR, check the following:
 
-1. **Is the R3 firmware up to date?** The R3 board must have the factory communication firmware installed. If you have uploaded custom Arduino code, it overwrites this firmware and breaks the RoboPilot communication. Re-flash the latest official firmware with the web flasher, as described in :ref:`update_firmware`.
+1. **Is the R3 firmware up to date?** The R3 board must have the factory communication firmware installed. If you have uploaded custom Arduino code, it overwrites this firmware and breaks the RoboPilot communication. Re-flash the latest official firmware with the web flasher, as described in :ref:`update_r3_firmware`.
 2. **Is the ESP32 CAM firmware up to date?** An outdated ESP32 CAM firmware may also cause connection issues. Follow :ref:`update_esp32_firmware` to check and update it.
 3. **Is the mode switch on Run?** The mode switch must be set to **Run** (not Upload) for the WiFi hotspot to work.
 4. **Is your mobile device on the correct WiFi network?** Connect to the GalaxyRVR hotspot (``GalaxyRVR`` / ``12345678``), or if you configured a home WiFi, connect to that same network.
@@ -62,7 +84,7 @@ If none of the above helps, try :ref:`faq_wifi_after_update`.
 
 If Mammoth Coding cannot connect to your GalaxyRVR, check the following:
 
-1. **Is the R3 firmware up to date?** Mammoth Coding requires the factory communication firmware on the R3 board. If you have uploaded your own Arduino code, the communication firmware is overwritten. Re-flash the latest official firmware with the web flasher, as described in :ref:`update_firmware`.
+1. **Is the R3 firmware up to date?** Mammoth Coding requires the factory communication firmware on the R3 board. If you have uploaded your own Arduino code, the communication firmware is overwritten. Re-flash the latest official firmware with the web flasher, as described in :ref:`update_r3_firmware`.
 2. **Is the ESP32 CAM firmware up to date?** The ESP32 CAM handles the WiFi connection that Mammoth Coding relies on. Follow :ref:`update_esp32_firmware` to ensure it is up to date.
 3. **Is the mode switch on Run?** The mode switch must be set to **Run** for the WiFi hotspot to be active.
 4. **Is your mobile device on the correct WiFi network?** Make sure your device is connected to the GalaxyRVR hotspot or the same home WiFi network configured on the rover.
@@ -173,31 +195,11 @@ For detailed step-by-step instructions, please refer to: :ref:`update_esp32_firm
 
 The GalaxyRVR's R3 board comes with firmware that supports both the RoboPilot App and Mammoth Coding.
 
-If you have overwritten this firmware and need to restore communication, re-flash the latest official firmware as described in :ref:`update_firmware`.
-
-.. _serial_monitor:
-
-11. How to Check Serial Output in a Browser?
--------------------------------------------------------
-
-If you want to see what the R3 board or the ESP32 CAM is printing — for example, to confirm that the two boards are communicating, or to check the IP address of the camera — you can use the web-based serial monitor. It works in the browser, so you don't need to install the Arduino IDE:
-
-|link_serial_monitor|
-
-#. Connect the GalaxyRVR to your computer with the USB A to B cable, and set the mode switch to **Upload**.
-
-#. Open the link above in **Chrome** or **Edge** on a computer and click **Connect**.
-
-#. Select the baud rate that matches your sketch (the examples in this tutorial use **9600**, while the AI Camera example uses **115200**), and the serial data will be displayed on the page.
-
-.. note::
-
-   * Opening the port resets most Arduino boards. The startup output that appears right after you connect is the result of that reset — this is normal.
-   * This tool is handy for checking whether an upload was successful and for reading the logs the R3 board prints at startup. For connection issues, see :ref:`update_firmware`.
+If you have overwritten this firmware and need to restore communication, re-flash the latest official firmware as described in :ref:`update_r3_firmware`.
 
 .. _ap_to_sta:
 
-12. How to Set Up Wi-Fi Connection
+11. How to Set Up Wi-Fi Connection
 -----------------------------------------------------
 
 By default, GalaxyRVR operates in **AP mode**, where it creates its own Wi-Fi hotspot that other devices can connect to.
@@ -243,7 +245,7 @@ If you want GalaxyRVR to connect to your **home Wi-Fi network**, follow the step
 
 .. _faq_wifi_after_update:
 
-13. How to Restore ESP32 CAM to Factory Settings?
+12. How to Restore ESP32 CAM to Factory Settings?
 ---------------------------------------------------------------------------------------
 
 If the GalaxyRVR's WiFi hotspot does not appear or you cannot connect after updating the ESP32 CAM firmware, the old WiFi configuration data stored in the ESP32 CAM's flash memory may be causing a conflict.
@@ -273,68 +275,68 @@ To resolve this, you need to restore the ESP32 CAM to its factory settings by cl
    After restoring factory settings, you will need to reconfigure any previously saved home WiFi settings (:ref:`ap_to_sta`).
 
 
-.. _uno_firmware_mac:
+.. .. _uno_firmware_mac:
 
-14. How to Update R3 Firmware on macOS
-------------------------------------------
+.. 14. How to Update R3 Firmware on macOS
+.. ------------------------------------------
 
-The R3 board includes built-in firmware that enables communication with the RoboPilot App and Mammoth Coding.
+.. The R3 board includes built-in firmware that enables communication with the RoboPilot App and Mammoth Coding.
 
-You need to re-upload this firmware if:
+.. You need to re-upload this firmware if:
 
-- Your device uses an older firmware version, or
-- You have flashed your own Arduino code and want to restore compatibility.
+.. - Your device uses an older firmware version, or
+.. - You have flashed your own Arduino code and want to restore compatibility.
 
-Follow the steps below to reinstall the communication firmware.
+.. Follow the steps below to reinstall the communication firmware.
 
-#. Connect the Arduino to your computer with a USB cable, then set the mode switch to the **Upload** position.
+.. #. Connect the Arduino to your computer with a USB cable, then set the mode switch to the **Upload** position.
 
-   .. image:: img/camera_upload.png
-        :width: 500
+..    .. image:: img/camera_upload.png
+..         :width: 500
 
-   .. note:: Use the USB Type B port (for connecting to Arduino), not the USB Type C port (for charging only).
+..    .. note:: Use the USB Type B port (for connecting to Arduino), not the USB Type C port (for charging only).
 
-#. Make sure the firmware files have been downloaded.
+.. #. Make sure the firmware files have been downloaded.
 
-   * |download_galaxyrvr_filmware|
+..    * |download_galaxyrvr_filmware|
 
-#. Extract the downloaded archive to get an ``output`` folder. Right-click (or Control-click) the ``output`` folder and select **New Terminal at Folder** from the context menu.
+.. #. Extract the downloaded archive to get an ``output`` folder. Right-click (or Control-click) the ``output`` folder and select **New Terminal at Folder** from the context menu.
 
-   .. image:: img/faq_mac_firmware_open.png
-      :width: 400
+..    .. image:: img/faq_mac_firmware_open.png
+..       :width: 400
 
-#. The Terminal will open directly in the ``output`` folder. 
+.. #. The Terminal will open directly in the ``output`` folder. 
 
-   * Run the ``bash update-arduino-firmware-mac.sh`` command
-   * Then enter the number of the detected COM port (e.g., ``1``):
+..    * Run the ``bash update-arduino-firmware-mac.sh`` command
+..    * Then enter the number of the detected COM port (e.g., ``1``):
 
-   .. image:: img/faq_mac_firmware_run.png
-      :width: 600
+..    .. image:: img/faq_mac_firmware_run.png
+..       :width: 600
 
-#. If you see an **"avrdude not Opened"** prompt:
+.. #. If you see an **"avrdude not Opened"** prompt:
 
-   .. image:: img/faq_mac_firmware_avrdude.png
-      :width: 300
+..    .. image:: img/faq_mac_firmware_avrdude.png
+..       :width: 300
 
-#. Go to **System Settings** > **Privacy & Security** and click **Allow Anyway**.
+.. #. Go to **System Settings** > **Privacy & Security** and click **Allow Anyway**.
 
-   .. image:: img/faq_mac_firmware_allow.png
-      :width: 600
+..    .. image:: img/faq_mac_firmware_allow.png
+..       :width: 600
 
-#. Run the script again: ``bash update-arduino-firmware-mac.sh``
+.. #. Run the script again: ``bash update-arduino-firmware-mac.sh``
 
-   This time, you can select **Open Anyway**. Enter your administrator username and password to allow the operation.
+..    This time, you can select **Open Anyway**. Enter your administrator username and password to allow the operation.
 
-   .. image:: img/faq_mac_firmware_anyway.png
-      :width: 600
+..    .. image:: img/faq_mac_firmware_anyway.png
+..       :width: 600
 
-#. Once the success message appears, you can unplug the USB cable.
+.. #. Once the success message appears, you can unplug the USB cable.
 
-   .. image:: img/faq_mac_firmware_finish.png
-      :width: 600
+..    .. image:: img/faq_mac_firmware_finish.png
+..       :width: 600
 
-.. important::
+.. .. important::
 
-   * This firmware enables the GalaxyRVR to respond to app commands. 
-   * You won’t need to upload any additional code when using either the RoboPilot remote control app or the Mammoth Coding software.
-   * You can now proceed to :ref:`quick_start` to start your GalaxyRVR journey!
+..    * This firmware enables the GalaxyRVR to respond to app commands. 
+..    * You won’t need to upload any additional code when using either the RoboPilot remote control app or the Mammoth Coding software.
+..    * You can now proceed to :ref:`quick_start` to start your GalaxyRVR journey!
