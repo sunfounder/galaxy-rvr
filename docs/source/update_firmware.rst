@@ -18,13 +18,15 @@ We recommend updating the firmware before your first use to ensure everything wo
 .. note::
    If you prefer not to update the firmware and want to keep using your current configuration, you can refer to the `GalaxyRVR v1 Documentation <https://docs.sunfounder.com/projects/galaxy-rvr/en/v1/index.html>`_.
 
+.. tip::
+   Update the two boards in this order: the **R3 board first** (over USB, step 1), then the **ESP32 CAM** (over WiFi, step 2).
+
 
 .. Video temporarily disabled: it shows the old update procedure and is out of date. Re-enable it once the new video is recorded.
 ..
 .. .. raw:: html
 ..
 ..    <iframe width="600" height="400" src="https://www.youtube.com/embed/Tl2W26pIQoU?si=98bbfUPc1g2cEz3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 
 1. Updating the UNO R3 Firmware
 -------------------------------------
@@ -61,7 +63,12 @@ The flasher has three steps:
       ...SET+RESET
       ...[FAIL]
 
-#. Now follow the prompt: set the mode switch back to its original position and press the **Reset** button on the R3 board. The log window then shows the current ESP32 CAM firmware.
+#. Now follow the prompt: Turn the power switch on, set the mode switch back to its original position and press the **Reset** button on the R3 board. 
+
+   .. image:: img/flasher_step3_run.png
+      :width: 500
+   
+#. The log window then shows the current ESP32 CAM firmware.
 
    * If the ESP32 CAM firmware is **1.5.0 or higher**, you can go straight to :ref:`quick_start`.
    * If it is **lower than 1.5.0**, the log window shows that the ESP32 CAM firmware needs updating — continue with :ref:`update_esp32_firmware`.
@@ -152,11 +159,11 @@ If the firmware is outdated, these functions may not work properly. Follow the s
 3. Verifying the Startup
 -----------------------------
 
-   * Before using the GalaxyRVR for the first time, fully charge the battery with the supplied Type-C USB cable.
-   * Turn the power switch on.
-   * Switch the mode to **Run** and press the **Reset** button on the R3 board.
-   * The bottom light strip will flash **green**, indicating a successful startup.
+* Before using the GalaxyRVR for the first time, fully charge the battery with the supplied Type-C USB cable.
+* Turn the power switch on.
+* Switch the mode to **Run** and press the **Reset** button on the R3 board.
+* The bottom light strip will flash **green**, indicating a successful startup.
 
-   .. raw:: html
+.. raw:: html
 
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=D6eoReC_pGvL2a27" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+   <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=_idwN0kJrxbVW-5H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
