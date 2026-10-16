@@ -13,7 +13,7 @@ SunFounder R3 板
 
 SunFounder R3 板是一款基于 ATmega328P（`数据手册 <http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf>`_）的微控制器板。它有 14 个数字输入/输出引脚（其中 6 个可用作 PWM 输出）、6 个模拟输入、一个 16 MHz 陶瓷谐振器（CSTCE16M0V53-R0）、一个 USB 连接、一个电源插座、一个 ICSP 接口和一个复位按钮。它包含了支持微控制器所需的一切；只需通过 USB 线缆连接到计算机，或用 AC-DC 适配器或电池供电即可开始使用。
 
-**技术参数**
+** 技术参数**
 
 .. image:: img/uno.jpg
     :align: center
@@ -38,7 +38,7 @@ SunFounder R3 板是一款基于 ATmega328P（`数据手册 <http://ww1.microchi
 * I2C 接口：A4(SDA), A5(SCL)
 
 
-**更多信息**
+** 更多信息**
 
 * `Arduino IDE <https://www.arduino.cc/en/software>`_
 * `Arduino 编程语言参考 <https://www.arduino.cc/reference/en/>`_

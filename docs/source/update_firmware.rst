@@ -1,4 +1,3 @@
-
 .. _update_firmware:
 
 更新固件
@@ -7,10 +6,10 @@
 由于产品持续改进，您的设备可能未搭载最新固件。
 我们建议在首次使用前更新固件，以确保一切运行顺畅。更新固件可确保：
 
-* **Bug 修复**：解决已知问题，提高稳定性。
-* **App 兼容性**：RoboPilot App 和 Mammoth Coding 需要最新固件才能正常工作。
-* **新功能**：固件更新可能会添加新的功能和改进。
-* **更佳性能**：优化 WiFi 连接、摄像头视频流和电机控制。
+* **Bug 修复** ：解决已知问题，提高稳定性。
+* **App 兼容性** ：RoboPilot App 和 Mammoth Coding 需要最新固件才能正常工作。
+* ** 新功能** ：固件更新可能会添加新的功能和改进。
+* ** 更佳性能** ：优化 WiFi 连接、摄像头视频流和电机控制。
 
 .. note::
    如果您不想更新固件并希望继续使用当前配置，可以参考 `GalaxyRVR v1 文档 <https://docs.sunfounder.com/projects/galaxy-rvr/en/v1/index.html>`_ 。
@@ -22,86 +21,55 @@
 ..
 ..   <iframe width="600" height="400" src="https://player.bilibili.com/player.html?isOutside=true&aid=116729342663499&bvid=BV11REY6JEFs&cid=39027148026&p=1" scrolling="no" border="0" frameborder="0" framespacing="0" allowfullscreen="true"></iframe>
 
-
-.. _update_uno_firmware:
+.. _update_r3_firmware:
 
 1. 更新 UNO R3 固件
---------------------------------------
+-------------------------------------
 
-R3 板包含内置固件，用于实现与 RoboPilot APP 和 Mammoth Coding 的通信。
+R3 板搭载的固件负责与 RoboPilot App 和 Mammoth Coding 通信。请使用网页烧录器重新安装：在电脑上用 **Chrome** 或 **Edge** 打开 |link_galaxy_rvr_flasher| —— 它直接在浏览器中运行，无需安装额外的软件，而且每一步都有对应的图示。
 
-在以下情况下，您需要重新上传此固件：
+烧录器共有三个步骤：
 
-- 您的设备使用较旧的固件版本，或
-- 您已烧录了自己的 Arduino 代码并希望恢复兼容性。
+#. **Connect** —— 打开火星车电源，用 USB A 转 B 数据线（不是 Type-C 线）将主板连接到电脑，然后把模式开关拨到 **Upload** 位置。然后点击 **Next** 。
 
-您可以使用网页烧录器重新安装它，电脑上无需安装任何额外软件。
+   .. image:: img/flasher_step1.jpg
+      :width: 500
 
-**方法一：网页烧录器**
+#. **Flash** —— 点击 **Connect & Flash** 。在弹出的端口窗口中选择主板对应的端口（例如 ``USB Serial (COMxx)``），然后点击 **Connect** ，烧录随即开始。如果失败，再次点击 **Connect & Flash** 即可。
 
-#. 给 GalaxyRVR 通电，用 USB A-B 数据线（不是 USB Type-C）连接到 **主板**，然后把车上的 **Upload** 开关拨到烧录一端。
+   .. image:: img/flasher_step2.jpg
+      :width: 500
 
-#. 烧录前先把 ESP32 CAM 从插槽中取下——它和 R3 主板共用同一组 RX、TX 引脚，参见 :ref:`FAQ 第 7 条 <faq_r3_upload_bat>`。
+#. **Debug** —— 烧录完成后，您将在日志窗口中看到以下内容，这表示固件已写入，并显示当前版本 **2.0.2** 。此时请忽略 ``Initialzing...`` 及其之后的所有内容：火星车仍处于 **Upload** 模式，因此暂时无法与 ESP32 CAM 通信。然后点击 **Next** 。
 
-#. 在电脑上用 **Chrome** 或 **Edge** 打开 |link_galaxy_rvr_flasher|，然后选择固件版本：
+   .. code-block::
 
-   * **2.0.0** 版适用于当前一代 GalaxyRVR。
-   * **1.1.0** 版适用于第一代 GalaxyRVR。
+      Reading firmwares/galaxy-rvr-2.0.2.hex
+      Resetting the board...
+      Connecting to the board...
+      Firmware written.
+      Verified - flash matches the file.
 
-   分不清自己手上是哪一代，可以看包装盒上的标签，或联系我们。
+      ---------- serial open at 115200 ----------
+      GalaxyRVR version 2.0.2
+      Initialzing...
+      SET+RESET
+      ...SET+RESET
+      ...SET+RESET
+      ...[FAIL]
 
-#. 点击 **Connect & Flash**，在弹出的列表里选择主板对应的串口。烧录会自动开始，大约一分钟即可完成。
+#. 接下来按提示操作：打开电源开关，把模式开关拨回原来的位置，并按下 R3 板上的 **Reset** 按钮。
 
-   .. image:: img/faq_web_flasher_zh-cn.png
-      :width: 600
-      :align: center
+   .. image:: img/flasher_step3_run.jpg
+      :width: 500
 
-#. 烧录完成后，把拨动开关拨回 **Run**，装回 ESP32 CAM，再重新给 GalaxyRVR 上电。
+#. 日志窗口随后会显示当前 ESP32 CAM 的固件版本。
 
-.. note::
+   * 如果 ESP32 CAM 固件为 **1.5.0 或更高版本** ，日志会显示 UNO R3 固件、ESP32 CAM 固件，最后是一个类似 ``http://xxx.xxx.xx.xxx:9000/mjpg`` 的网址。
+   * 如果 ** 低于 1.5.0** ，日志窗口会提示 ESP32 CAM 固件需要更新 —— 请继续参阅 :ref:`update_esp32_firmware`。
 
-   * 本页使用 Web Serial 功能，请在电脑上使用 **Chrome** 或 **Edge**，并确认页面是通过 **https** 打开的。Windows 上可以在设备管理器里查看是否有 **USB-SERIAL CH340**，以确认串口驱动已安装。
-   * 请关闭其他可能占用串口的程序，例如 Arduino IDE、串口监视器和另一个浏览器标签页。
-
-**方法二：更新脚本**
-
-.. note::
-
-   如果您使用的是 Mac 电脑，请参考 macOS 专用指南：
-
-   :ref:`uno_firmware_mac`
-
-#. 使用 USB A 转 B 线（非 USB Type C）连接 Arduino 和计算机，然后将模式开关拨到 **Upload** 位置。
-
-   .. image:: img/camera_upload.png
-        :width: 500
-        :align: center
-
-#. 检查固件文件是否已下载。
-
-   * |download_galaxyrvr_filmware|
-
-#. 运行更新脚本
-
-   * 打开 ``galaxy-rvr.ino.xxx`` 文件夹（在上一步中下载并安装）。
-   * 双击 ``update-arduino-firmware.bat`` 脚本。
-   * 命令提示符窗口将自动出现。
-
-   .. image:: img/faq_bat_file.png
-
-#. 选择串口并上传
-
-   * 在命令提示符中，将显示可用串口列表。
-   * 输入左侧显示的序列号以选择 Arduino Uno 的串口。
-   * 按 **Enter** 开始自动上传。
-   * 示例：如果列表显示 `1 USB-SERIALXXX (COMxx)`，输入 **1** 并按 **Enter** 。
-
-   .. image:: img/faq_select_com.png
-
-#. 等待上传完成后，即可拔掉 USB 线。
-
-   .. image:: img/faq_uno_updating.png
-
+   .. image:: img/flasher_step3.jpg
+      :width: 500
 
 .. _update_esp32_firmware:
 
@@ -145,11 +113,11 @@ ESP32 CAM 负责广播 Wi-Fi 热点并为 GalaxyRVR 采集视频。
       :align: center
 
 
-**版本 A**
+** 版本 A**
 
    6. 在 OTA 页面选择固件文件并开始更新：
 
-      * 从设备中选择之前下载的 ``ai-camera-firmware-vX.X.X-ota.bin`` 文件，然后点击 **Add**。
+      * 从设备中选择之前下载的 ``ai-camera-firmware-vX.X.X-ota.bin`` 文件，然后点击 **Add** 。
       * 点击 **Update** 按钮开始固件更新，等待完成即可。
 
       .. image:: img/faq_ota_a.png
@@ -158,20 +126,20 @@ ESP32 CAM 负责广播 Wi-Fi 热点并为 GalaxyRVR 采集视频。
    #. 更新完成后，GalaxyRVR 的 WiFi 热点名称将更改为 "AI Camera-xxxxxx"，密码仍为 "12345678"。
 
 
-**版本 B**
+** 版本 B**
 
 
    6. 在 **OTA** 页面上，查看网页上显示的当前固件版本。
 
-      * 如果您的版本号 **高于 1.5.1** ，则无需更新。您可以跳过剩余步骤，直接前往 :ref:`quick_start` 。
-      * 如果版本为 **1.5.1 或更低** ，请继续更新。
+      * 如果您的版本号为 **1.5.0 或更高** ，则无需更新。您可以跳过剩余步骤，直接前往 :ref:`quick_start` 。
+      * 如果版本 ** 低于 1.5.0** ，请继续更新。
 
       .. image:: img/firmware_version.jpg
          :width: 50%
          :align: center
 
 
-   #. 点击 **Upgrade Firmware**，选择固件文件并等待更新完成：
+   #. 点击 **Upgrade Firmware** ，选择固件文件并等待更新完成：
 
       * 点击 **Upgrade Firmware** 按钮，然后从设备中选择之前下载的 ``ai-camera-firware.ino.x.x.x.bin`` 文件。
       * 更新将立即开始，通常需要 1-2 分钟。完成后，选择 **CONFIRM** 重启 GalaxyRVR。
@@ -181,38 +149,14 @@ ESP32 CAM 负责广播 Wi-Fi 热点并为 GalaxyRVR 采集视频。
 
    #. 更新完成后，GalaxyRVR 的 WiFi 热点名称将更改为 "AI Camera-xxxxxx"，密码仍为 "12345678"。
 
-
 3. 开机验证结果
---------------------------------------
+-----------------------------
 
-#. 启动 GalaxyRVR 并检查底部灯带。
+* 首次使用 GalaxyRVR 前，请使用附带的 Type-C USB 线将电池充满电。
+* 打开电源开关。
+* 将模式切换到 **Run** 并按下 R3 板上的 **Reset** 按钮。
+* 底部灯带将闪烁 ** 绿色** ，表示启动成功。
 
-   * 首次使用 GalaxyRVR 前，请使用附带的 Type-C USB 线将电池充满电。
-   * 打开电源开关。
-   * 将模式切换到 **Run** 并按下 R3 板上的 **Reset** 按钮。
-   * 底部灯带将开始闪烁，表示启动成功。
+.. raw:: html
 
-   .. raw:: html
-
-        <video width="600" loop autoplay muted>
-            <source src="_static/video/power_start.mp4" type="video/mp4">
-            您的浏览器不支持此视频标签。
-        </video>
-
-#. 检查底部灯带。
-
-   * 如果底部灯带显示 **绿色闪烁灯光** ，则说明 R3 固件运行正常。您可以继续前往 :ref:`quick_start` 。
-   * 如果底部灯带闪烁 **其他颜色** ，请使用 :ref:`update_uno_firmware` 重新安装 R3 固件。
-
-   .. raw:: html
-
-        <video width="600" loop autoplay muted>
-            <source src="_static/video/play_reset.mp4" type="video/mp4">
-            您的浏览器不支持此视频标签。
-        </video>
-
-.. important::
-
-   * 此固件使 GalaxyRVR 能够响应 App 命令。
-   * 在使用 RoboPilot 遥控 App 或 Mammoth Coding 软件时，您无需上传任何额外代码。
-   * 现在您可以前往 :ref:`quick_start` 开始您的 GalaxyRVR 之旅！
+   <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=_idwN0kJrxbVW-5H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

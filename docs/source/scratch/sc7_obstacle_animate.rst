@@ -30,7 +30,7 @@
 
      .. image:: img/5_animate_choose.png
 
-   * 选择 **火星** 背景。
+   * 选择 ** 火星** 背景。
 
      .. image:: img/5_animate_mars.png
 
@@ -42,7 +42,7 @@
 
 #. 添加障碍物
 
-   从库中选择一个 **岩石** 精灵并调整其大小。
+   从库中选择一个 ** 岩石** 精灵并调整其大小。
 
    .. image:: img/5_animate_rock.png
 

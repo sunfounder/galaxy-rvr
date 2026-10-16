@@ -19,7 +19,7 @@ Mega、Nano 等各种主板的能力。它允许您使用外部传感器和机�
 现在就开始这段探索之旅吧！
 
 
-**下载代码**
+** 下载代码**
 
 
 .. note::
@@ -31,7 +31,7 @@ Mega、Nano 等各种主板的能力。它允许您使用外部传感器和机�
 或者查看 `SunFounder GalaxyRVR Kit for Arduino - GitHub <https://github.com/sunfounder/galaxy-rvr/tree/1.2>`_ 上的代码。
 
 
-**基础项目**
+** 基础项目**
 
 这些项目是使用 Mammoth Coding 控制 GalaxyRVR 的基础课程。它们将逐步指导您如何使用 GalaxyRVR。
 
@@ -54,7 +54,7 @@ Mega、Nano 等各种主板的能力。它允许您使用外部传感器和机�
     sc13_all
 
 
-**趣味项目**
+** 趣味项目**
 
 以下是一些不需要 GalaxyRVR 即可实现的趣味项目。
 

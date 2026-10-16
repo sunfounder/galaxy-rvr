@@ -1,14 +1,14 @@
 通过 Scratch 快速开始
 ==================================
 
-在本章中，您将学习如何 **在 Scratch（Mammoth Coding）中快速打开并运行示例项目** ，让您的 GalaxyRVR 动起来。
+在本章中，您将学习如何 ** 在 Scratch（Mammoth Coding）中快速打开并运行示例项目** ，让您的 GalaxyRVR 动起来。
 
 如果您想学习如何从头创建这些脚本，请参阅 :ref:`programming_scratch` 章节。
 
 .. note::
 
     * GalaxyRVR 的 R3 板搭载了支持 RoboPilot App 和 Mammoth Coding 的固件。
-    * 如果您已覆盖此固件并需要恢复通信，请按照 :ref:`update_uno_firmware` 进行操作。
+    * 如果您已覆盖此固件并需要恢复通信，请按照 :ref:`update_r3_firmware` 进行操作。
 
 .. _install_scratch:
 
@@ -29,9 +29,9 @@
    :width: 300
    :align: center
 
-**安卓用户**
+** 安卓用户**
 
-#. 扫码后，点击右上角的菜单按钮，选择 **"用浏览器打开"**。进入浏览器后，点击 **"APK下载"**。
+#. 扫码后，点击右上角的菜单按钮，选择 **"用浏览器打开"** 。进入浏览器后，点击 **"APK下载"** 。
 
    .. image:: img/scratch_download.png
       :width: 700
@@ -41,7 +41,7 @@
    .. image:: img/scratch_download_start.png
       :width: 300
 
-#. 下载完成后，浏览器会询问是否安装。点击 **"允许"**，部分手机需要经过安全扫描才能继续安装，耐心等待就好。
+#. 下载完成后，浏览器会询问是否安装。点击 **"允许"** ，部分手机需要经过安全扫描才能继续安装，耐心等待就好。
 
    .. image:: img/scratch_install.png
       :width: 500
@@ -55,7 +55,7 @@
 
    * |download_galaxyrvr_code|
 
-#. 解压下载的文件并将 ``scratch_codes`` 文件夹传输到您的移动设备。您可以使用任何文件传输工具，例如 **ES 文件浏览器** 或 **文件传输助手**。
+#. 解压下载的文件并将 ``scratch_codes`` 文件夹传输到您的移动设备。您可以使用任何文件传输工具，例如 **ES 文件浏览器** 或 ** 文件传输助手** 。
 
    .. image:: img/scratch_mobile_save.png
       :width: 400
@@ -66,7 +66,7 @@
    * 首次使用 GalaxyRVR 前，请使用附带的 Type-C USB 线将电池充满电。
    * 打开电源开关。
    * 将模式切换到 **Run** 并按下 R3 板上的 **Reset** 按钮。
-   * 底部灯带将闪烁 **绿色** ，表示启动成功。
+   * 底部灯带将闪烁 ** 绿色** ，表示启动成功。
 
    .. raw:: html
 
@@ -75,7 +75,7 @@
             您的浏览器不支持此视频标签。
         </video>
 
-#. 如果底部灯带显示 **非绿色的闪烁灯光** ，则您的 GalaxyRVR 需要固件更新。请参阅 :ref:`update_firmware`。
+#. 如果底部灯带显示 ** 非绿色的闪烁灯光** ，则您的 GalaxyRVR 需要固件更新。请参阅 :ref:`update_firmware`。
 
 
 #. 将您的移动设备连接到 GalaxyRVR 的 WiFi 网络。
@@ -104,7 +104,7 @@
 示例
 ---------------
 
-**基础项目**
+** 基础项目**
 
 这些项目是使用 Mammoth Coding 控制 GalaxyRVR 的基础课程。它们将逐步指导您如何使用 GalaxyRVR。
 
@@ -123,7 +123,7 @@
 * ``12_camera.sb3``：从火星车的视角查看实时摄像头画面，探索周围环境。
 * ``13_realtime_control.sb3``：通过 Scratch 实时控制火星车的运动和灯光。
 
-**趣味项目**
+** 趣味项目**
 
 这些有趣的 Scratch 项目无需 GalaxyRVR。
 您可以在 ``scratch_codes/fun/`` 文件夹中找到它们。

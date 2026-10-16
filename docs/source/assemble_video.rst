@@ -1,13 +1,13 @@
 组装
 =========================
 
-**概述**
+** 概述**
 
 如果您希望在组装各个组件的同时进行学习，可以参考 :ref:`programming_arduino`。在该章节中，每节课都配有组装视频、组件原理和相关测试代码，让您边学边做。因此，您可以跳过本章。
 
 如果您希望快速组装并开始玩耍，可以先观看组装视频。完成组装后，前往 :ref:`quick_start` 了解应用安装和连接方法。然后，您就可以使用应用来控制 GalaxyRVR 了。
 
-**视频**
+** 视频**
 
 * 关于 GalaxyRVR 的组装，我们在套件中提供了纸质版组装说明。以下是其 PDF 版本：
 
@@ -20,7 +20,7 @@
 
         <iframe width="600" height="400" src="https://player.bilibili.com/player.html?isOutside=true&aid=114358436763399&bvid=BV1Ha5jziEfp&cid=29482159543&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
-**小贴士**
+** 小贴士**
 
 * 将 ESP32 CAM 插入摄像头适配器时，请注意其方向。它应与 ESP32 适配器正确对齐。
 

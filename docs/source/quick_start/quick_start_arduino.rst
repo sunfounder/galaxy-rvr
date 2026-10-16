@@ -1,7 +1,7 @@
-﻿通过 Arduino 快速开始
+通过 Arduino 快速开始
 ===============================
 
-在本章中，您将学习如何 **快速打开并运行特定的 Arduino 示例代码** ，让您的 GalaxyRVR 执行各种动作。
+在本章中，您将学习如何 ** 快速打开并运行特定的 Arduino 示例代码** ，让您的 GalaxyRVR 执行各种动作。
 
 如果您想了解这些示例背后的代码逻辑和编程原理，请参阅 :ref:`programming_arduino` 章节。
 
@@ -44,7 +44,7 @@
 
    .. image:: img/arduino_open_file.png
 
-#. 在 Arduino IDE 中，选择 **Arduino Uno** 作为板型，并为您的设备选择正确的 **端口**。
+#. 在 Arduino IDE 中，选择 **Arduino Uno** 作为板型，并为您的设备选择正确的 ** 端口** 。
 
    .. image:: img/arduino_choose_board.png
 
