@@ -34,7 +34,7 @@ Connecter l'application au GalaxyRVR
 
 .. note::
 
-    * Si vous avez écrasé le micrologiciel et devez rétablir la communication, suivez :ref:`update_uno_firmware`.
+    * Si vous avez écrasé le micrologiciel et devez rétablir la communication, suivez :ref:`update_r3_firmware`.
 
 .. raw:: html
 
