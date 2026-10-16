@@ -34,7 +34,7 @@ Collegare l'APP al GalaxyRVR
 
 .. note::
 
-    * Se hai sovrascritto il firmware e devi ripristinare la comunicazione, segui :ref:`update_uno_firmware`.
+    * Se hai sovrascritto il firmware e devi ripristinare la comunicazione, segui :ref:`update_firmware`.
 
 #. Prima di utilizzare GalaxyRVR per la prima volta, carica completamente la batteria con il cavo USB Type-C in dotazione. Dopo la ricarica, accendi l'alimentazione.
 

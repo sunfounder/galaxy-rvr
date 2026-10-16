@@ -16,7 +16,7 @@ Con RoboPilot, può:
 
 .. note::
 
-    * Se ha sovrascritto il firmware e deve ripristinare la comunicazione, segua :ref:`update_uno_firmware`.
+    * Se ha sovrascritto il firmware e deve ripristinare la comunicazione, segua :ref:`update_firmware`.
 
 Guida rapida
 ---------------------
