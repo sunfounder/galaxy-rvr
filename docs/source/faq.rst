@@ -20,8 +20,31 @@ Para obtener instrucciones detalladas de actualización, consulte :ref:`update_f
 .. note::
    Si prefiere no actualizar el firmware y desea seguir usando su configuración actual, puede consultar la `Documentación de GalaxyRVR v1 <https://docs.sunfounder.com/projects/galaxy-rvr/en/v1/index.html>`_.
 
+.. _serial_monitor:
 
-2. ¿No se puede conectar a GalaxyRVR?
+2. ¿Cómo comprobar la salida del puerto serie en un navegador?
+--------------------------------------------------------------
+
+Si desea ver qué están imprimiendo la placa R3 o la ESP32 CAM — por ejemplo, para confirmar que las dos placas se comunican o para consultar la dirección IP de la cámara — puede usar |link_galaxy_rvr_flasher|. Funciona en el navegador, por lo que no necesita instalar el Arduino IDE:
+
+
+#. Abra |link_galaxy_rvr_flasher| en **Chrome** o **Edge** en un ordenador.
+
+#. Haga clic en **Next** dos veces para llegar al tercer paso, **Debug**; después, siga el video: encienda el interruptor de alimentación, cambie el modo a **Run** y pulse el botón **Reset** de la placa R3.
+
+   .. image:: img/faq_serial_monitor.png
+      :width: 500
+
+#. Haga clic en **Connect**. En la ventana de puerto que aparece, elija el puerto de su placa (por ejemplo, ``USB Serial (COMxx)``) y, a continuación, haga clic en **Connect**.
+
+   * Si es **inferior a 1.5.0**, la ventana de registro muestra que es necesario actualizar el firmware de la ESP32 CAM; continúe con :ref:`update_esp32_firmware`.
+
+   .. image:: img/flasher_step3.jpg
+      :width: 500
+
+
+
+3. ¿No se puede conectar a GalaxyRVR?
 -------------------------------------------------------------------------------------------------
 
 Si no puede conectarse a GalaxyRVR, compruebe lo siguiente:
@@ -41,38 +64,14 @@ Si no puede conectarse a GalaxyRVR, compruebe lo siguiente:
 8. **Verifique la conexión de su dispositivo móvil**: Si está usando GalaxyRVR en modo AP (predeterminado), conecte su dispositivo móvil al punto de acceso de GalaxyRVR. Si ha :ref:`configurado una red WiFi doméstica <ap_to_sta>`, asegúrese de que su dispositivo móvil esté conectado a la **misma** red WiFi doméstica.
 
 
-3. ¿La luz inferior es naranja fijo y no aparece el punto de acceso WiFi?
-----------------------------------------------------------------------------------------------
-
-Si la tira de luz inferior de GalaxyRVR muestra una **luz naranja fija** y la red WiFi ``GalaxyRVR`` no aparece, la causa es una **incompatibilidad de versiones del firmware**:
-
-- El firmware del **ESP32 CAM** sigue siendo una versión anterior (1.4.x o 1.3.x)
-- El firmware de la **placa UNO R3** se ha actualizado a la versión 2.x
-- La incompatibilidad de versiones impide la comunicación entre el ESP32 CAM y la UNO R3
-
-Para resolverlo, siga estos pasos **en el orden exacto**:
-
-#. **Primero, revierta el firmware de la UNO R3 a la versión 1.x**:
-
-   Siga la guía en la documentación v1: `GalaxyRVR v1 — Cómo cargar el código galaxy-rvr.ino <https://docs.sunfounder.com/projects/galaxy-rvr/en/v1/faq.html#how-to-upload-the-galaxy-rvr-ino-code>`_
-
-#. **Actualice ambos firmware siguiendo el orden ESP32 CAM → UNO R3**:
-
-   Siga la guía actualizada: :ref:`update_firmware`
-
-.. note::
-
-   El orden es importante: actualice siempre primero el ESP32 CAM y luego la placa R3. Omitir el paso de reversión o cambiar el orden no solucionará el problema.
-
-
 
 4. ¿La aplicación RoboPilot no puede conectar?
 ---------------------------------------------------------------------------------------
 
 Si la aplicación RoboPilot no encuentra o no puede conectarse a su GalaxyRVR, compruebe lo siguiente:
 
-1. **¿Está actualizado el firmware del ESP32 CAM?** Un firmware desactualizado del ESP32 CAM puede causar problemas de conexión. Siga :ref:`update_esp32_firmware` para verificar y actualizar.
-2. **¿Está actualizado el firmware de la R3?** La placa R3 debe tener instalado el firmware de comunicación de fábrica. Si ha cargado código Arduino personalizado, este sobrescribirá dicho firmware y romperá la comunicación con RoboPilot. Siga :ref:`update_uno_firmware` para restaurarlo.
+1. **¿Está actualizado el firmware de la R3?** La placa R3 debe tener instalado el firmware de comunicación de fábrica. Si ha cargado código Arduino personalizado, este sobrescribirá dicho firmware y romperá la comunicación con RoboPilot. Vuelva a grabar el firmware oficial más reciente con el grabador web, como se describe en :ref:`update_r3_firmware`.
+2. **¿Está actualizado el firmware del ESP32 CAM?** Un firmware desactualizado del ESP32 CAM también puede causar problemas de conexión. Siga :ref:`update_esp32_firmware` para verificarlo y actualizarlo.
 3. **¿El interruptor de modo está en Run?** El interruptor de modo debe estar en **Run** (no Upload) para que el punto de acceso WiFi funcione.
 4. **¿Su dispositivo móvil está en la red WiFi correcta?** Conéctese al punto de acceso de GalaxyRVR (``GalaxyRVR`` / ``12345678``), o si configuró una WiFi doméstica, conéctese a esa misma red.
 5. **Intente reiniciar**: Cambie al modo **Run** y pulse el botón **Reset**, luego intente conectar de nuevo.
@@ -85,8 +84,8 @@ Si nada de lo anterior funciona, pruebe con :ref:`faq_wifi_after_update`.
 
 Si Mammoth Coding no puede conectarse a su GalaxyRVR, compruebe lo siguiente:
 
-1. **¿Está actualizado el firmware del ESP32 CAM?** El ESP32 CAM gestiona la conexión WiFi de la que depende Mammoth Coding. Siga :ref:`update_esp32_firmware` para asegurarse de que está actualizado.
-2. **¿Está actualizado el firmware de la R3?** Mammoth Coding requiere el firmware de comunicación de fábrica en la placa R3. Si ha cargado su propio código Arduino, el firmware de comunicación se sobrescribe. Siga :ref:`update_uno_firmware` para restaurarlo.
+1. **¿Está actualizado el firmware de la R3?** Mammoth Coding requiere el firmware de comunicación de fábrica en la placa R3. Si ha cargado su propio código Arduino, el firmware de comunicación se sobrescribe. Vuelva a grabar el firmware oficial más reciente con el grabador web, como se describe en :ref:`update_r3_firmware`.
+2. **¿Está actualizado el firmware del ESP32 CAM?** El ESP32 CAM gestiona la conexión WiFi de la que depende Mammoth Coding. Siga :ref:`update_esp32_firmware` para asegurarse de que está actualizado.
 3. **¿El interruptor de modo está en Run?** El interruptor de modo debe estar en **Run** para que el punto de acceso WiFi esté activo.
 4. **¿Su dispositivo móvil está en la red WiFi correcta?** Asegúrese de que su dispositivo esté conectado al punto de acceso de GalaxyRVR o a la misma red WiFi doméstica configurada en el rover.
 
@@ -153,7 +152,7 @@ La banda WiFi de 2.4 GHz tiene canales del 1 al 13. El ESP32 admite los canales 
 
    .. raw:: html
 
-      <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=rnoaDgQPnb-y6wnK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=_idwN0kJrxbVW-5H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 #. Conecte su dispositivo móvil a la red WiFi de GalaxyRVR.
@@ -197,31 +196,11 @@ Para obtener instrucciones detalladas paso a paso, consulte: :ref:`update_esp32_
 
 La placa R3 de GalaxyRVR viene con un firmware compatible tanto con la aplicación RoboPilot como con Mammoth Coding.
 
-Si ha sobrescrito este firmware y necesita restaurar la comunicación, siga :ref:`update_uno_firmware`.
-
-.. _serial_monitor:
-
-11. ¿Cómo comprobar la salida del puerto serie en un navegador?
----------------------------------------------------------------
-
-Si desea ver qué están imprimiendo la placa R3 o la ESP32 CAM — por ejemplo, para confirmar que ambas placas se comunican o para consultar la dirección IP de la cámara — puede usar el monitor serie basado en web. Funciona en el navegador, por lo que no necesita instalar el Arduino IDE:
-
-|link_serial_monitor|
-
-#. Conecte el GalaxyRVR a su ordenador con el cable USB A a B y ponga el interruptor de modo en **Upload**.
-
-#. Abra el enlace anterior en **Chrome** o **Edge** en un ordenador y haga clic en **Connect**.
-
-#. Seleccione la velocidad en baudios que coincida con su programa (los ejemplos de este tutorial usan **9600**, mientras que el ejemplo de la cámara AI usa **115200**); los datos serie se mostrarán en la página.
-
-.. note::
-
-   * Abrir el puerto reinicia la mayoría de las placas Arduino. La salida de arranque que aparece justo después de conectarse es el resultado de ese reinicio; es normal.
-   * Esta herramienta resulta útil para comprobar si una carga se realizó correctamente y para leer los registros que imprime la placa R3 al arrancar. Si tiene problemas de conexión, consulte :ref:`update_uno_firmware`.
+Si ha sobrescrito este firmware y necesita restaurar la comunicación, vuelva a grabar el firmware oficial más reciente como se describe en :ref:`update_r3_firmware`.
 
 .. _ap_to_sta:
 
-12. Cómo configurar la conexión WiFi
+11. Cómo configurar la conexión WiFi
 -----------------------------------------------------
 
 De forma predeterminada, GalaxyRVR funciona en **modo AP**, en el que crea su propio punto de acceso WiFi al que otros dispositivos pueden conectarse.
@@ -233,7 +212,7 @@ Si desea que GalaxyRVR se conecte a su **red WiFi doméstica**, siga los pasos q
 
    .. raw:: html
 
-      <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=rnoaDgQPnb-y6wnK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=_idwN0kJrxbVW-5H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 #. Conecte su dispositivo móvil a la red WiFi de GalaxyRVR.
@@ -268,7 +247,7 @@ Si desea que GalaxyRVR se conecte a su **red WiFi doméstica**, siga los pasos q
 
 .. _faq_wifi_after_update:
 
-13. ¿Cómo restaurar los ajustes de fábrica del ESP32 CAM?
+12. ¿Cómo restaurar los ajustes de fábrica del ESP32 CAM?
 ---------------------------------------------------------------------------------------
 
 Si el punto de acceso WiFi de GalaxyRVR no aparece o no puede conectarse después de actualizar el firmware del ESP32 CAM, es posible que los datos antiguos de configuración WiFi almacenados en la memoria flash del ESP32 CAM estén causando un conflicto.
@@ -298,68 +277,68 @@ Para resolverlo, debe restaurar el ESP32 CAM a sus ajustes de fábrica borrando 
    Después de restaurar los ajustes de fábrica, deberá volver a configurar todos los ajustes de WiFi doméstica guardados previamente (:ref:`ap_to_sta`).
 
 
-.. _uno_firmware_mac:
+.. .. _uno_firmware_mac:
 
-14. ¿Cómo actualizar el firmware de la R3 en macOS?
--------------------------------------------------------
+.. 14. Cómo actualizar el firmware de la R3 en macOS
+.. -------------------------------------------------------
 
-La placa R3 incluye firmware integrado que permite la comunicación con la aplicación RoboPilot y Mammoth Coding.
+.. La placa R3 incluye firmware integrado que permite la comunicación con la aplicación RoboPilot y Mammoth Coding.
 
-Necesita volver a cargar este firmware si:
+.. Necesita volver a cargar este firmware si:
 
-- Su dispositivo utiliza una versión de firmware anterior, o
-- Ha grabado su propio código de Arduino y desea restaurar la compatibilidad.
+.. - Su dispositivo utiliza una versión de firmware anterior, o
+.. - Ha grabado su propio código de Arduino y desea restaurar la compatibilidad.
 
-Siga los pasos a continuación para reinstalar el firmware de comunicación.
+.. Siga los pasos a continuación para reinstalar el firmware de comunicación.
 
-#. Conecte el Arduino al ordenador con un cable USB y coloque el interruptor de modo en **Upload**.
+.. #. Conecte el Arduino al ordenador con un cable USB y coloque el interruptor de modo en **Upload**.
 
-   .. image:: img/camera_upload.png
-        :width: 500
+..    .. image:: img/camera_upload.png
+..         :width: 500
 
-   .. note:: Use el puerto USB Tipo B (para conectar al Arduino), no el puerto USB Tipo C (solo para cargar).
+..    .. note:: Use el puerto USB Tipo B (para conectar al Arduino), no el puerto USB Tipo C (solo para cargar).
 
-#. Asegúrese de que los archivos de firmware se hayan descargado.
+.. #. Asegúrese de que los archivos de firmware se hayan descargado.
 
-   * |download_galaxyrvr_filmware|
+..    * |download_galaxyrvr_filmware|
 
-#. Extraiga el archivo descargado para obtener una carpeta ``output``. Haga clic derecho (o Control-clic) en la carpeta ``output`` y seleccione **New Terminal at Folder** del menú contextual.
+.. #. Extraiga el archivo descargado para obtener una carpeta ``output``. Haga clic derecho (o Control-clic) en la carpeta ``output`` y seleccione **New Terminal at Folder** del menú contextual.
 
-   .. image:: img/faq_mac_firmware_open.png
-      :width: 400
+..    .. image:: img/faq_mac_firmware_open.png
+..       :width: 400
 
-#. La Terminal se abrirá directamente en la carpeta ``output``.
+.. #. La Terminal se abrirá directamente en la carpeta ``output``.
 
-   * Ejecute el comando ``bash update-arduino-firmware-mac.sh``
-   * Luego ingrese el número del puerto COM detectado (por ejemplo, ``1``):
+..    * Ejecute el comando ``bash update-arduino-firmware-mac.sh``
+..    * Luego ingrese el número del puerto COM detectado (por ejemplo, ``1``):
 
-   .. image:: img/faq_mac_firmware_run.png
-      :width: 600
+..    .. image:: img/faq_mac_firmware_run.png
+..       :width: 600
 
-#. Si aparece el mensaje **"avrdude not Opened"**:
+.. #. Si aparece el mensaje **"avrdude not Opened"**:
 
-   .. image:: img/faq_mac_firmware_avrdude.png
-      :width: 300
+..    .. image:: img/faq_mac_firmware_avrdude.png
+..       :width: 300
 
-#. Vaya a **Configuración del Sistema** > **Privacidad y seguridad** y haga clic en **Allow Anyway**.
+.. #. Vaya a **Configuración del Sistema** > **Privacidad y seguridad** y haga clic en **Allow Anyway**.
 
-   .. image:: img/faq_mac_firmware_allow.png
-      :width: 600
+..    .. image:: img/faq_mac_firmware_allow.png
+..       :width: 600
 
-#. Ejecute el script de nuevo: ``bash update-arduino-firmware-mac.sh``
+.. #. Ejecute el script de nuevo: ``bash update-arduino-firmware-mac.sh``
 
-   Esta vez podrá seleccionar **Open Anyway**. Ingrese su nombre de usuario y contraseña de administrador para permitir la operación.
+..    Esta vez podrá seleccionar **Open Anyway**. Ingrese su nombre de usuario y contraseña de administrador para permitir la operación.
 
-   .. image:: img/faq_mac_firmware_anyway.png
-      :width: 600
+..    .. image:: img/faq_mac_firmware_anyway.png
+..       :width: 600
 
-#. Una vez que aparezca el mensaje de éxito, puede desconectar el cable USB.
+.. #. Una vez que aparezca el mensaje de éxito, puede desconectar el cable USB.
 
-   .. image:: img/faq_mac_firmware_finish.png
-      :width: 600
+..    .. image:: img/faq_mac_firmware_finish.png
+..       :width: 600
 
-.. important::
+.. .. important::
 
-   * Este firmware permite que el GalaxyRVR responda a los comandos de la aplicación.
-   * No necesitará cargar ningún código adicional al usar la aplicación de control remoto RoboPilot o el software Mammoth Coding.
-   * Ahora puede continuar con :ref:`quick_start` para comenzar su viaje con el GalaxyRVR.
+..    * Este firmware permite que el GalaxyRVR responda a los comandos de la aplicación.
+..    * No necesitará cargar ningún código adicional al usar la aplicación de control remoto RoboPilot o el software Mammoth Coding.
+..    * Ahora puede continuar con :ref:`quick_start` para comenzar su viaje con el GalaxyRVR.

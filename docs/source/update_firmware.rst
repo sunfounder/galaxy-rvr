@@ -2,107 +2,86 @@
    :start-after: start_hello_message
    :end-before: end_hello_message
 
-
 .. _update_firmware:
 
-Actualizar Firmware
+Actualizar el firmware
 ==========================
 
 Es posible que su dispositivo no tenga el firmware más reciente debido a las continuas mejoras del producto.
-Para garantizar un rendimiento óptimo y estable, actualice el firmware antes del primer uso. La actualización del firmware garantiza:
+Recomendamos actualizar el firmware antes del primer uso para garantizar que todo funcione correctamente. La actualización del firmware garantiza:
 
 * **Corrección de errores**: resuelve problemas conocidos y mejora la estabilidad.
-* **Compatibilidad con la aplicación**: se requiere el firmware más reciente para que la aplicación RoboPilot y Mammoth Coding funcionen correctamente.
+* **Compatibilidad con las aplicaciones**: se requiere el firmware más reciente para que la aplicación RoboPilot y Mammoth Coding funcionen correctamente.
 * **Nuevas funciones**: las actualizaciones de firmware pueden añadir nuevas capacidades y mejoras.
 * **Mejor rendimiento**: optimizaciones de la conectividad WiFi, la transmisión de la cámara y el control de los motores.
 
 .. note::
-   Si prefiere no actualizar el firmware y seguir usando su configuración actual, puede consultar la `documentación de GalaxyRVR v1 <https://docs.sunfounder.com/projects/galaxy-rvr/en/v1/index.html>`_.
-
-.. raw:: html
-
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/Tl2W26pIQoU?si=98bbfUPc1g2cEz3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+   Si prefiere no actualizar el firmware y desea seguir usando su configuración actual, puede consultar la `documentación de GalaxyRVR v1 <https://docs.sunfounder.com/projects/galaxy-rvr/en/v1/index.html>`_.
 
 
-.. _update_uno_firmware:
+.. Video desactivado temporalmente: muestra el procedimiento de actualización antiguo y está desactualizado. Vuelva a habilitarlo cuando se grabe el nuevo video.
+..
+.. .. raw:: html
+..
+..    <iframe width="600" height="400" src="https://www.youtube.com/embed/Tl2W26pIQoU?si=98bbfUPc1g2cEz3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+.. _update_r3_firmware:
 
 1. Actualizar el firmware del UNO R3
-------------------------------------------
+-------------------------------------
 
-La placa R3 incluye firmware integrado que permite la comunicación con la aplicación RoboPilot y Mammoth Coding. Puede reinstalarlo con el grabador web, que no necesita software adicional en su ordenador.
+La placa R3 lleva el firmware que se comunica con la aplicación RoboPilot y Mammoth Coding. Reinstálelo con el grabador web: abra |link_galaxy_rvr_flasher| en **Chrome** o **Edge** en un ordenador — se ejecuta en su navegador, no necesita software adicional y muestra cada paso con su propia imagen.
 
-**Método 1: Grabador web**
+El grabador tiene tres pasos:
 
-#. Encienda el GalaxyRVR, conecte el cable USB A a B (no el cable USB Type-C) a la **placa principal** y ponga el interruptor **Upload** del coche en el extremo de grabación.
+#. **Connect** — Encienda el rover, conecte la placa principal a su ordenador con un cable USB A a B (no el cable Tipo C) y, a continuación, ponga el interruptor de modo en la posición **Upload**. Después, haga clic en **Next**.
 
-#. Antes de grabar, retire la ESP32 CAM de su ranura: comparte los mismos pines RX y TX con la placa R3, consulte :ref:`FAQ 7 <faq_r3_upload_bat>`.
+   .. image:: img/flasher_step1.jpg
+      :width: 500
 
-#. En un ordenador, abra |link_galaxy_rvr_flasher| en **Chrome** o **Edge** y seleccione la versión del firmware:
+#. **Flash** — Haga clic en **Connect & Flash**. En la ventana de puerto que aparece, elija el puerto de su placa (por ejemplo, ``USB Serial (COMxx)``), luego haga clic en **Connect** y comenzará la grabación. Si falla, simplemente vuelva a hacer clic en **Connect & Flash**.
 
-   * La versión **2.0.0** es para la generación actual del GalaxyRVR.
-   * La versión **1.1.0** es para la primera generación del GalaxyRVR.
+   .. image:: img/flasher_step2.jpg
+      :width: 500
 
-   Si no está seguro de qué generación tiene, consulte la etiqueta de la caja o póngase en contacto con nosotros.
+#. **Debug** — Cuando finalice la grabación, verá lo siguiente en la ventana de registro, lo que confirma que el firmware se escribió y muestra la versión actual (**2.0.2**). Ignore ``Initialzing...`` y todo lo que aparece después en este momento: el rover sigue en modo **Upload**, por lo que todavía no puede comunicarse con la ESP32 CAM. Después, haga clic en **Next**.
 
-#. Haga clic en **Connect & Flash** y seleccione el puerto serie de su placa en el cuadro de diálogo. La actualización comienza automáticamente y termina en aproximadamente un minuto.
+   .. code-block::
 
-   .. image:: img/faq_web_flasher_en.png
-      :width: 600
-      :align: center
+      Reading firmwares/galaxy-rvr-2.0.2.hex
+      Resetting the board...
+      Connecting to the board...
+      Firmware written.
+      Verified - flash matches the file.
 
-#. Cuando termine la actualización, vuelva a poner el interruptor en **Run**, vuelva a colocar la ESP32 CAM y encienda de nuevo el GalaxyRVR.
+      ---------- serial open at 115200 ----------
+      GalaxyRVR version 2.0.2
+      Initialzing...
+      SET+RESET
+      ...SET+RESET
+      ...SET+RESET
+      ...[FAIL]
 
-.. note::
+#. Ahora siga la indicación: encienda el interruptor de alimentación, vuelva a poner el interruptor de modo en su posición original y pulse el botón **Reset** de la placa R3.
 
-   * Esta página usa Web Serial, así que utilice **Chrome** o **Edge** en un ordenador y asegúrese de que la página se abre mediante **https**. En Windows, puede confirmar que el controlador serie USB está instalado comprobando que aparece **USB-SERIAL CH340** en el Administrador de dispositivos.
-   * Cierre otros programas que puedan estar usando el puerto serie, como el Arduino IDE, el monitor serie u otra pestaña del navegador.
+   .. image:: img/flasher_step3_run.jpg
+      :width: 500
+   
+#. La ventana de registro muestra entonces el firmware actual de la ESP32 CAM.
 
-**Método 2: Script de actualización**
+   * Si el firmware de la ESP32 CAM es **1.5.0 o superior**, el registro muestra el firmware de la UNO R3, el firmware de la ESP32 CAM y, por último, una dirección web como ``http://xxx.xxx.xx.xxx:9000/mjpg``.
+   * Si es **inferior a 1.5.0**, la ventana de registro muestra que es necesario actualizar el firmware de la ESP32 CAM; continúe con :ref:`update_esp32_firmware`.
 
-.. note::
-
-   Si está usando un Mac, siga la guía específica para macOS:
-
-   :ref:`uno_firmware_mac`
-
-#. Conecte el Arduino al ordenador con un cable USB A a B (no USB Tipo C) y coloque el interruptor de modo en **Upload**.
-
-   .. image:: img/camera_upload.png
-        :width: 500
-        :align: center
-
-#. Verifique si los archivos de firmware se han descargado.
-
-   * |download_galaxyrvr_filmware|
-
-#. Ejecute el script de actualización
-
-   * Abra la carpeta ``galaxy-rvr.ino.xxx`` (descargada e instalada en el paso anterior).
-   * Haga doble clic en el script ``update-arduino-firmware.bat``.
-   * Aparecerá automáticamente una ventana de símbolo del sistema.
-
-   .. image:: img/faq_bat_file.png
-
-#. Seleccione el puerto serie y cargue
-
-   * En el símbolo del sistema, se mostrará una lista de puertos serie disponibles.
-   * Ingrese el número de secuencia que aparece a la izquierda para seleccionar el puerto serie del Arduino Uno.
-   * Presione **Enter** para comenzar la carga automática.
-   * Ejemplo: Si la lista muestra `1 USB-SERIALXXX (COMxx)`, ingrese **1** y presione **Enter**.
-
-   .. image:: img/faq_select_com.png
-
-#. Después de esperar a que se complete la carga, puede desconectar el cable USB.
-
-   .. image:: img/faq_uno_updating.png
+   .. image:: img/flasher_step3.jpg
+      :width: 500
 
 
 .. _update_esp32_firmware:
 
-2. Actualizar el Firmware de la ESP32 CAM
-------------------------------------------
+2. Actualizar el firmware de la ESP32 CAM
+-----------------------------------------
 
-La ESP32 CAM transmite el punto de acceso Wi-Fi y captura video para el GalaxyRVR.
+La ESP32 CAM transmite el punto de acceso Wi-Fi y captura video para el GalaxyRVR.  
 Si el firmware está desactualizado, estas funciones pueden no funcionar correctamente. Siga los pasos a continuación para actualizar el firmware.
 
 #. Encienda el interruptor de alimentación del GalaxyRVR. Para iniciar la ESP32 CAM, cambie el modo a **Run** y presione el botón **Reset** en la placa R3.
@@ -110,7 +89,7 @@ Si el firmware está desactualizado, estas funciones pueden no funcionar correct
    .. image:: img/camera_run.png
         :width: 500
         :align: center
-
+   
 #. Descargue el archivo de firmware.
 
    * |download_galaxyrvr_filmware|
@@ -122,7 +101,7 @@ Si el firmware está desactualizado, estas funciones pueden no funcionar correct
 
 #. Conecte su dispositivo móvil a la red WiFi del GalaxyRVR.
 
-   * El nombre de la red (SSID) es ``GalaxyRVR`` y la contraseña es ``12345678``.
+   * El nombre de la red (SSID) es ``GalaxyRVR`` y la contraseña es ``12345678``.  
    * Si ve una advertencia que indica "Sin acceso a Internet", elija la opción **"Mantener conexión".**
 
    .. image:: img/camera_lan.png
@@ -149,6 +128,7 @@ Si el firmware está desactualizado, estas funciones pueden no funcionar correct
       .. image:: img/faq_ota_a.png
          :width: 700
 
+
    #. Una vez completada la actualización, el nombre del punto de acceso WiFi del GalaxyRVR cambiará a "AI Camera-xxxxxx", y la contraseña seguirá siendo "12345678".
 
 
@@ -156,14 +136,13 @@ Si el firmware está desactualizado, estas funciones pueden no funcionar correct
 
 
    6. En la página **OTA**, verifique la versión actual del firmware mostrada en la página web.
-
-      * Si su número de versión es **superior a 1.5.1**, no es necesaria una actualización. Puede omitir los pasos restantes y continuar directamente con :ref:`quick_start`.
-      * Si la versión es **1.5.1 o inferior**, continúe con la actualización.
+      
+      * Si su número de versión es **1.5.0 o superior**, no es necesaria una actualización. Puede omitir los pasos restantes y continuar directamente con :ref:`quick_start`.
+      * Si la versión es **inferior a 1.5.0**, continúe con la actualización.
 
       .. image:: img/firmware_version.jpg
          :width: 50%
          :align: center
-
 
    #. Toque **Upgrade Firmware**, seleccione el archivo de firmware y espere a que finalice la actualización:
 
@@ -176,34 +155,14 @@ Si el firmware está desactualizado, estas funciones pueden no funcionar correct
    #. Una vez completada la actualización, el nombre del punto de acceso WiFi del GalaxyRVR cambiará a "AI Camera-xxxxxx", y la contraseña seguirá siendo "12345678".
 
 
-3. Verificación de arranque
-------------------------------
+3. Verificación del arranque
+-----------------------------
 
-#. Encienda el GalaxyRVR y verifique la tira de luz inferior.
+* Antes de usar el GalaxyRVR por primera vez, cargue completamente la batería con el cable USB Tipo-C suministrado.
+* Encienda el interruptor de alimentación.
+* Cambie el modo a **Run** y presione el botón **Reset** en la placa R3.
+* La tira de luz inferior parpadeará en **verde**, lo que indica un inicio correcto.
 
-   * Antes de usar el GalaxyRVR por primera vez, cargue completamente la batería con el cable USB Tipo-C suministrado.
-   * Encienda el interruptor de alimentación.
-   * Cambie el modo a **Run** y presione el botón **Reset** en la placa R3.
-   * La tira de luz inferior comenzará a parpadear para indicar un inicio exitoso.
+.. raw:: html
 
-   .. raw:: html
-
-      <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=rnoaDgQPnb-y6wnK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-#. Verifique la tira de luz inferior.
-
-   * Si la tira de luz inferior muestra una **luz verde parpadeante**, el firmware de la R3 se está ejecutando correctamente. Puede continuar con :ref:`quick_start`.
-   * Si la tira de luz inferior parpadea en **otro color**, reinstale el firmware de la R3 con :ref:`update_uno_firmware`.
-
-   .. raw:: html
-
-        <video width="600" loop autoplay muted>
-            <source src="_static/video/play_reset.mp4" type="video/mp4">
-            Su navegador no soporta la etiqueta de video.
-        </video>
-
-.. important::
-
-   * Este firmware permite que el GalaxyRVR responda a los comandos de la aplicación.
-   * No necesitará cargar ningún código adicional al usar la aplicación de control remoto RoboPilot o el software Mammoth Coding.
-   * Ahora puede continuar con :ref:`quick_start` para comenzar su viaje con el GalaxyRVR.
+   <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=_idwN0kJrxbVW-5H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
