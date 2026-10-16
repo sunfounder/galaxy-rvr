@@ -1,6 +1,10 @@
+# AGENTS.md
+
+Guidance for AI coding agents working in this repository. Humans are welcome to read it too.
+
 # GalaxyRVR
 
-Arduino UNO 固件项目，控制 GalaxyRVR 机器人小车。通过 ESP32-CAM 与 SunFounder Controller APP 通信，支持 APP 遥控、红外/超声波避障、红外跟随等模式。
+Arduino UNO 固件项目，控制 GalaxyRVR 机器人小车。V2 起切换为 **Robo Pilot 遥控器**，同时兼容 **Mammoth Coding** 图形化编程。通过 ESP32-CAM 与控制器通信，支持遥控、红外/超声波避障、红外跟随等模式。
 
 ## 构建
 
@@ -27,6 +31,8 @@ battery.h               — 电池电压/电量检测
 test.h                  — 各模块测试函数
 ```
 
+`scratch_codes/` — Mammoth Coding / Scratch 图形化编程示例（`.sb3` 文件），基础教程 + `funny/` 趣味项目
+
 ### 状态机
 
 主控状态：`STATE_IDLE`（等待 APP 连接, LED 闪烁）→ `STATE_APP`（已连接, 进入模式处理）
@@ -50,9 +56,11 @@ A . B . C
 ## Git 分支
 
 - `main` = 当前发布分支（v2 已合并，v1 保留在 `v1` 分支作为备份）
+- `1.2.x` = v1 最终版本的维护分支，含 Mammoth Coding 示例文件
 - 大版本开发在 `vN` 分支（如 `v3`），通过 PR 合并到 `main`
 - 旧版本分支仅修紧急 bug，新功能在对应大版本分支开发
 - 分支编号匹配大版本号 A
+- Tag 不带 `v` 前缀，格式 `A.B.C`（如 `2.0.0`）
 
 ## 发布流程
 
