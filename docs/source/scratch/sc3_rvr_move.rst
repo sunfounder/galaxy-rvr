@@ -35,7 +35,7 @@ Verbinden der App mit dem GalaxyRVR
 
 .. note::
 
-    * Falls Sie die Firmware uberschrieben haben und die Kommunikation wiederherstellen müssen, folgen Sie :ref:`update_uno_firmware`.
+    * Falls Sie die Firmware uberschrieben haben und die Kommunikation wiederherstellen müssen, folgen Sie :ref:`update_r3_firmware`.
 
 .. raw:: html
 

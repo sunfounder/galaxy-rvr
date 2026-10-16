@@ -18,7 +18,7 @@ Mit RoboPilot können Sie:
 
 .. note::
 
-    * Falls Sie die Firmware überschrieben haben und die Kommunikation wiederherstellen müssen, folgen Sie der Anleitung unter :ref:`update_uno_firmware`.
+    * Falls Sie die Firmware überschrieben haben und die Kommunikation wiederherstellen müssen, folgen Sie der Anleitung unter :ref:`update_r3_firmware`.
 
 Kurzanleitung
 ---------------------

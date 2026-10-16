@@ -6,7 +6,7 @@ FAQ
 ==============
 
 1. Warum sollte ich die Firmware aktualisieren?
-----------------------------------------------------------------------------------------
+-----------------------------------------------
 
 SunFounder verbessert kontinuierlich die Firmware des GalaxyRVR, um ein besseres Benutzererlebnis zu bieten. Wir empfehlen, die Firmware vor der ersten Nutzung zu aktualisieren, damit alles reibungslos funktioniert. Die Aktualisierung der Firmware gewährleistet:
 
@@ -20,9 +20,32 @@ Schritt-für-Schritt-Anleitungen zum Update finden Sie unter :ref:`update_firmwa
 .. note::
    Wenn Sie die Firmware nicht aktualisieren und Ihre aktuelle Konfiguration beibehalten möchten, können Sie die `GalaxyRVR v1 Dokumentation <https://docs.sunfounder.com/projects/galaxy-rvr/en/v1/index.html>`_ konsultieren.
 
+.. _serial_monitor:
 
-2. Kann keine Verbindung zum GalaxyRVR hergestellt werden?
--------------------------------------------------------------------------------------------------
+2. Wie prüfe ich die serielle Ausgabe im Browser?
+-------------------------------------------------
+
+Wenn Sie sehen möchten, was das R3-Board oder die ESP32 CAM ausgibt – zum Beispiel, um zu bestätigen, dass die beiden Platinen kommunizieren, oder um die IP-Adresse der Kamera zu prüfen –, können Sie |link_galaxy_rvr_flasher| verwenden. Er läuft im Browser, Sie müssen also die Arduino IDE nicht installieren:
+
+
+#. Öffnen Sie |link_galaxy_rvr_flasher| in **Chrome** oder **Edge** auf einem Computer.
+
+#. Klicken Sie zweimal auf **Next**, um zum dritten Schritt **Debug** zu gelangen, und folgen Sie dann dem Video: Schalten Sie den Netzschalter ein, stellen Sie den Modus auf **Run** und drücken Sie die **Reset**-Taste auf dem R3-Board.
+
+   .. image:: img/faq_serial_monitor.png
+      :width: 500
+
+#. Klicken Sie auf **Connect**. Wählen Sie im daraufhin angezeigten Port-Fenster den Anschluss Ihrer Platine (zum Beispiel ``USB Serial (COMxx)``) und klicken Sie dann auf **Connect**.
+
+   * Wenn sie **niedriger als 1.5.0** ist, zeigt das Log-Fenster an, dass die ESP32-CAM-Firmware aktualisiert werden muss — fahren Sie mit :ref:`update_esp32_firmware` fort.
+
+   .. image:: img/flasher_step3.jpg
+      :width: 500
+
+
+
+3. Kann keine Verbindung zum GalaxyRVR hergestellt werden?
+----------------------------------------------------------
 
 Wenn Sie keine Verbindung zum GalaxyRVR herstellen können, überprüfen Sie bitte Folgendes:
 
@@ -41,38 +64,14 @@ Wenn Sie keine Verbindung zum GalaxyRVR herstellen können, überprüfen Sie bit
 8. **Überprüfen Sie die Verbindung Ihres mobilen Geräts**: Wenn Sie GalaxyRVR im AP-Modus (Standard) verwenden, verbinden Sie Ihr mobiles Gerät mit dem GalaxyRVR-Hotspot. Falls Sie :ref:`ein Heim-WLAN konfiguriert haben <ap_to_sta>`, stellen Sie sicher, dass Ihr mobiles Gerät mit dem **selben** Heim-WLAN verbunden ist.
 
 
-3. Die untere Leuchte leuchtet dauerhaft orange und es erscheint kein WLAN-Hotspot?
-----------------------------------------------------------------------------------------------
-
-Wenn der untere LED-Streifen des GalaxyRVR ein **dauerhaft orangefarbenes Licht** anzeigt und das WLAN-Netzwerk ``GalaxyRVR`` nicht erscheint, liegt die Ursache in einem **Firmware-Versionskonflikt**:
-
-- Die **ESP32-CAM**-Firmware ist noch eine ältere Version (1.4.x oder 1.3.x)
-- Die **UNO-R3-Board**-Firmware wurde auf Version 2.x aktualisiert
-- Der Versionskonflikt verhindert die Kommunikation zwischen der ESP32 CAM und dem UNO R3
-
-Um dies zu beheben, führen Sie die folgenden Schritte **in der genauen Reihenfolge** aus:
-
-#. **Setzen Sie zuerst die UNO-R3-Firmware auf Version 1.x zurück**:
-
-   Folgen Sie der Anleitung in der v1-Dokumentation: `GalaxyRVR v1 — So laden Sie den galaxy-rvr.ino-Code hoch <https://docs.sunfounder.com/projects/galaxy-rvr/en/v1/faq.html#how-to-upload-the-galaxy-rvr-ino-code>`_
-
-#. **Aktualisieren Sie beide Firmware in der Reihenfolge ESP32 CAM → UNO R3**:
-
-   Folgen Sie der aktualisierten Anleitung: :ref:`update_firmware`
-
-.. note::
-
-   Die Reihenfolge ist wichtig — aktualisieren Sie immer zuerst die ESP32 CAM, dann das R3-Board. Das Überspringen des Rollback-Schritts oder das Ändern der Reihenfolge behebt das Problem nicht.
-
-
 
 4. RoboPilot-App kann keine Verbindung herstellen?
----------------------------------------------------------------------------------------
+--------------------------------------------------
 
 Wenn die RoboPilot-App Ihren GalaxyRVR nicht finden oder keine Verbindung herstellen kann, überprüfen Sie Folgendes:
 
-1. **Ist die ESP32-CAM-Firmware auf dem neuesten Stand?** Eine veraltete ESP32-CAM-Firmware kann Verbindungsprobleme verursachen. Folgen Sie :ref:`update_esp32_firmware`, um dies zu überprüfen und zu aktualisieren.
-2. **Ist die R3-Firmware auf dem neuesten Stand?** Das R3-Board muss über die werksseitige Kommunikationsfirmware verfügen. Wenn Sie benutzerdefinierten Arduino-Code hochgeladen haben, überschreibt dies die Firmware und unterbricht die RoboPilot-Kommunikation. Folgen Sie :ref:`update_uno_firmware`, um sie wiederherzustellen.
+1. **Ist die R3-Firmware auf dem neuesten Stand?** Das R3-Board muss über die werksseitige Kommunikationsfirmware verfügen. Wenn Sie benutzerdefinierten Arduino-Code hochgeladen haben, überschreibt dies die Firmware und unterbricht die RoboPilot-Kommunikation. Flashen Sie die neueste offizielle Firmware mit dem Web-Flasher neu, wie in :ref:`update_r3_firmware` beschrieben.
+2. **Ist die ESP32-CAM-Firmware auf dem neuesten Stand?** Eine veraltete ESP32-CAM-Firmware kann ebenfalls Verbindungsprobleme verursachen. Folgen Sie :ref:`update_esp32_firmware`, um sie zu prüfen und zu aktualisieren.
 3. **Steht der Modusschalter auf Run?** Der Modusschalter muss auf **Run** (nicht Upload) stehen, damit der WLAN-Hotspot funktioniert.
 4. **Ist Ihr mobiles Gerät mit dem richtigen WLAN-Netzwerk verbunden?** Verbinden Sie sich mit dem GalaxyRVR-Hotspot (``GalaxyRVR`` / ``12345678``), oder falls Sie ein Heim-WLAN konfiguriert haben, mit diesem selben Netzwerk.
 5. **Versuchen Sie einen Neustart**: Schalten Sie in den **Run**-Modus und drücken Sie die **Reset**-Taste, dann versuchen Sie erneut, eine Verbindung herzustellen.
@@ -81,12 +80,12 @@ Wenn nichts davon hilft, versuchen Sie es mit :ref:`faq_wifi_after_update`.
 
 
 5. Mammoth Coding (Scratch)-App kann keine Verbindung herstellen?
----------------------------------------------------------------------------------------
+-----------------------------------------------------------------
 
 Wenn Mammoth Coding keine Verbindung zu Ihrem GalaxyRVR herstellen kann, überprüfen Sie Folgendes:
 
-1. **Ist die ESP32-CAM-Firmware auf dem neuesten Stand?** Die ESP32 CAM verwaltet die WLAN-Verbindung, auf die Mammoth Coding angewiesen ist. Folgen Sie :ref:`update_esp32_firmware`, um sicherzustellen, dass sie auf dem neuesten Stand ist.
-2. **Ist die R3-Firmware auf dem neuesten Stand?** Mammoth Coding benötigt die werksseitige Kommunikationsfirmware auf dem R3-Board. Wenn Sie Ihren eigenen Arduino-Code hochgeladen haben, wird die Kommunikationsfirmware überschrieben. Folgen Sie :ref:`update_uno_firmware`, um sie wiederherzustellen.
+1. **Ist die R3-Firmware auf dem neuesten Stand?** Mammoth Coding benötigt die werksseitige Kommunikationsfirmware auf dem R3-Board. Wenn Sie Ihren eigenen Arduino-Code hochgeladen haben, wird die Kommunikationsfirmware überschrieben. Flashen Sie die neueste offizielle Firmware mit dem Web-Flasher neu, wie in :ref:`update_r3_firmware` beschrieben.
+2. **Ist die ESP32-CAM-Firmware auf dem neuesten Stand?** Die ESP32 CAM verwaltet die WLAN-Verbindung, auf die Mammoth Coding angewiesen ist. Folgen Sie :ref:`update_esp32_firmware`, um sicherzustellen, dass sie auf dem neuesten Stand ist.
 3. **Steht der Modusschalter auf Run?** Der Modusschalter muss auf **Run** stehen, damit der WLAN-Hotspot aktiv ist.
 4. **Ist Ihr mobiles Gerät mit dem richtigen WLAN-Netzwerk verbunden?** Stellen Sie sicher, dass Ihr Gerät mit dem GalaxyRVR-Hotspot oder demselben auf dem Rover konfigurierten Heim-WLAN verbunden ist.
 
@@ -96,8 +95,9 @@ Wenn Mammoth Coding keine Verbindung zu Ihrem GalaxyRVR herstellen kann, überpr
 .. _install_lib:
 
 6. Kompilierungsfehler: ``SoftPWM.h`` oder ``SunFounder_AI_Camera.h``: Datei oder Verzeichnis nicht gefunden?
----------------------------------------------------------------------------------------------------------------------
-Wenn Sie die Meldung „Kompilierungsfehler: ``SoftPWM.h``: Datei oder Verzeichnis nicht gefunden" erhalten, bedeutet dies, dass die SoftPWM-Bibliothek nicht installiert ist.
+-------------------------------------------------------------------------------------------------------------
+
+Wenn Sie die Meldung „Kompilierungsfehler: ``SoftPWM.h``: Datei oder Verzeichnis nicht gefunden“ erhalten, bedeutet dies, dass die SoftPWM-Bibliothek nicht installiert ist.
 
 Bitte installieren Sie die beiden erforderlichen Bibliotheken ``SoftPWM`` und ``SunFounder AI Camera`` wie gezeigt.
 
@@ -108,14 +108,15 @@ Bitte installieren Sie die beiden erforderlichen Bibliotheken ``SoftPWM`` und ``
             Ihr Browser unterstützt das Video-Tag nicht.
         </video>
 
-Für die Bibliothek ``SunFounder AI Camera`` müssen Sie „INSTALL ALL" auswählen, um gleichzeitig die erforderliche ``ArduinoJson``-Abhängigkeit zu installieren.
+Für die Bibliothek ``SunFounder AI Camera`` müssen Sie „INSTALL ALL“ auswählen, um gleichzeitig die erforderliche ``ArduinoJson``-Abhängigkeit zu installieren.
 
     .. image:: img/faq_install_ai_camera.png
 
 .. _faq_r3_upload_bat:
 
 7. avrdude: stk500_getsync() Versuch 10 von 10: nicht synchronisiert: resp=0x6e?
--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
 Wenn die folgende Meldung weiterhin erscheint, nachdem Sie auf die Schaltfläche **Upload** geklickt haben und das Board sowie der Port korrekt ausgewählt wurden.
 
 .. code-block::
@@ -144,7 +145,7 @@ Nachdem der Code erfolgreich hochgeladen wurde, müssen Sie den Schalter nach li
 .. _change_wifi_channel:
 
 8. Wie kann ich den WLAN-Kanal ändern?
-----------------------------------------
+--------------------------------------
 
 Das 2,4-GHz-WLAN-Band hat Kanäle von 1 bis 13. Der ESP32 unterstützt Kanäle 1 bis 11. Andere Geräte, die auf demselben Kanal arbeiten, können Interferenzen verursachen, was zu Verbindungsproblemen führt. Um dies zu mildern, können Sie versuchen, den Kanal zu wechseln. Standardmäßig ist der Kanal auf 1 eingestellt. Bei der Auswahl eines neuen Kanals wird empfohlen, jeweils 1–2 Kanäle zu überspringen. Wenn der aktuelle Kanal beispielsweise 1 ist, versuchen Sie zuerst Kanal 3, und falls das Signal weiterhin schwach ist, fahren Sie mit Kanal 5 fort.
 
@@ -153,13 +154,12 @@ Das 2,4-GHz-WLAN-Band hat Kanäle von 1 bis 13. Der ESP32 unterstützt Kanäle 1
 
    .. raw:: html
 
-      <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=rnoaDgQPnb-y6wnK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+      <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=_idwN0kJrxbVW-5H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 #. Verbinden Sie Ihr mobiles Gerät mit dem WLAN-Netzwerk des GalaxyRVR.
 
    * Der Netzwerkname (SSID) lautet ``GalaxyRVR`` und das Passwort ``12345678``.
-   * Wenn eine Warnung „Kein Internetzugriff" erscheint, wählen Sie bitte die Option **„Verbunden bleiben"**.
+   * Wenn eine Warnung „Kein Internetzugriff“ erscheint, wählen Sie bitte die Option **„Verbunden bleiben“**.
 
      .. image:: img/camera_lan.png
         :width: 50%
@@ -186,43 +186,23 @@ Das 2,4-GHz-WLAN-Band hat Kanäle von 1 bis 13. Der ESP32 unterstützt Kanäle 1
         :align: center
 
 9. Wie aktualisiere ich die Firmware für die ESP32 CAM?
------------------------------------------------------------
+-------------------------------------------------------
 
 Um die App-Kompatibilität und optimale Leistung zu gewährleisten, stellen Sie bitte sicher, dass Ihre ESP32-CAM-Firmware auf dem neuesten Stand ist.
 
 Eine detaillierte Schritt-für-Schritt-Anleitung finden Sie unter: :ref:`update_esp32_firmware`
 
 10. Wie stelle ich die R3-Firmware wieder her?
---------------------------------------------------
+----------------------------------------------
 
 Das R3-Board des GalaxyRVR wird mit einer Firmware ausgeliefert, die sowohl die RoboPilot-App als auch Mammoth Coding unterstützt.
 
-Wenn Sie diese Firmware überschrieben haben und die Kommunikation wiederherstellen müssen, folgen Sie :ref:`update_uno_firmware`.
-
-.. _serial_monitor:
-
-11. Wie prüfe ich die serielle Ausgabe im Browser?
--------------------------------------------------------
-
-Wenn Sie sehen möchten, was die R3-Platine oder die ESP32 CAM ausgibt – zum Beispiel um zu prüfen, ob die beiden Platinen kommunizieren, oder um die IP-Adresse der Kamera zu ermitteln – können Sie den seriellen Monitor im Browser verwenden. Er läuft direkt im Browser, Sie müssen also die Arduino IDE nicht installieren:
-
-|link_serial_monitor|
-
-#. Verbinden Sie den GalaxyRVR mit dem USB-A-auf-B-Kabel mit Ihrem Computer und stellen Sie den Modusschalter auf **Upload**.
-
-#. Öffnen Sie den obigen Link auf einem Computer in **Chrome** oder **Edge** und klicken Sie auf **Connect**.
-
-#. Wählen Sie die Baudrate, die zu Ihrem Sketch passt (die Beispiele in diesem Tutorial verwenden **9600**, das AI-Camera-Beispiel verwendet **115200**). Die seriellen Daten werden dann auf der Seite angezeigt.
-
-.. note::
-
-   * Das Öffnen des Ports setzt die meisten Arduino-Platinen zurück. Die Startausgabe, die direkt nach dem Verbinden erscheint, stammt von diesem Reset – das ist normal.
-   * Dieses Tool eignet sich gut, um zu prüfen, ob ein Upload erfolgreich war, und um die Logs zu lesen, die die R3-Platine beim Start ausgibt. Bei Verbindungsproblemen lesen Sie :ref:`update_uno_firmware`.
+Wenn Sie diese Firmware überschrieben haben und die Kommunikation wiederherstellen müssen, flashen Sie die neueste offizielle Firmware neu, wie in :ref:`update_r3_firmware` beschrieben.
 
 .. _ap_to_sta:
 
-12. Wie richte ich die WLAN-Verbindung ein?
------------------------------------------------------
+11. Wie richte ich die WLAN-Verbindung ein?
+-------------------------------------------
 
 Standardmäßig arbeitet der GalaxyRVR im **AP-Modus**, bei dem er einen eigenen WLAN-Hotspot erstellt, mit dem sich andere Geräte verbinden können.
 
@@ -233,13 +213,13 @@ Wenn Sie möchten, dass sich der GalaxyRVR mit Ihrem **Heim-WLAN** verbindet, f�
 
    .. raw:: html
 
-      <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=rnoaDgQPnb-y6wnK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe width="600" height="400" src="https://www.youtube.com/embed/q_rDtYt1F6A?si=_idwN0kJrxbVW-5H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 #. Verbinden Sie Ihr mobiles Gerät mit dem WLAN-Netzwerk des GalaxyRVR.
 
    * Der Netzwerkname (SSID) lautet ``GalaxyRVR`` und das Passwort ``12345678``.
-   * Wenn eine Warnung „Kein Internetzugriff" erscheint, wählen Sie bitte die Option **„Verbunden bleiben"**.
+   * Wenn eine Warnung „Kein Internetzugriff“ erscheint, wählen Sie bitte die Option **„Verbunden bleiben“**.
 
      .. image:: img/camera_lan.png
         :width: 50%
@@ -268,8 +248,8 @@ Wenn Sie möchten, dass sich der GalaxyRVR mit Ihrem **Heim-WLAN** verbindet, f�
 
 .. _faq_wifi_after_update:
 
-13. Wie setze ich die ESP32 CAM auf die Werkseinstellungen zurück?
----------------------------------------------------------------------------------------
+12. Wie setze ich die ESP32 CAM auf die Werkseinstellungen zurück?
+------------------------------------------------------------------
 
 Wenn der WLAN-Hotspot des GalaxyRVR nicht erscheint oder Sie nach einem Update der ESP32-CAM-Firmware keine Verbindung herstellen können, verursachen möglicherweise die alten WLAN-Konfigurationsdaten im Flash-Speicher der ESP32 CAM einen Konflikt.
 
@@ -298,68 +278,68 @@ Um dies zu beheben, müssen Sie die ESP32 CAM auf die Werkseinstellungen zurück
    Nach dem Zurücksetzen auf die Werkseinstellungen müssen Sie zuvor gespeicherte Heim-WLAN-Einstellungen erneut konfigurieren (:ref:`ap_to_sta`).
 
 
-.. _uno_firmware_mac:
+.. .. _uno_firmware_mac:
 
-14. Wie aktualisiert man die R3-Firmware unter macOS?
----------------------------------------------------------
+.. 14. Wie aktualisiert man die R3-Firmware unter macOS?
+.. -------------------------------------------------------------------------
 
-Das R3-Board enthält eine integrierte Firmware, die die Kommunikation mit der RoboPilot-App und Mammoth Coding ermöglicht.
+.. Das R3-Board enthält eine integrierte Firmware, die die Kommunikation mit der RoboPilot-App und Mammoth Coding ermöglicht.
 
-Sie müssen diese Firmware neu hochladen, wenn:
+.. Sie müssen diese Firmware neu hochladen, wenn:
 
-- Ihr Gerät eine ältere Firmware-Version verwendet, oder
-- Sie Ihren eigenen Arduino-Code geflasht haben und die Kompatibilität wiederherstellen möchten.
+.. - Ihr Gerät eine ältere Firmware-Version verwendet, oder
+.. - Sie Ihren eigenen Arduino-Code geflasht haben und die Kompatibilität wiederherstellen möchten.
 
-Befolgen Sie die nachstehenden Schritte, um die Kommunikations-Firmware neu zu installieren.
+.. Befolgen Sie die nachstehenden Schritte, um die Kommunikations-Firmware neu zu installieren.
 
-#. Verbinden Sie den Arduino mit einem USB-Kabel mit Ihrem Computer und stellen Sie den Modusschalter auf **Upload**.
+.. #. Verbinden Sie den Arduino mit einem USB-Kabel mit Ihrem Computer und stellen Sie den Modusschalter auf **Upload**.
 
-   .. image:: img/camera_upload.png
-        :width: 500
+..    .. image:: img/camera_upload.png
+..         :width: 500
 
-   .. note:: Verwenden Sie den USB-Typ-B-Anschluss (zum Anschließen des Arduino), nicht den USB-Typ-C-Anschluss (nur zum Laden).
+..    .. note:: Verwenden Sie den USB-Typ-B-Anschluss (zum Anschließen des Arduino), nicht den USB-Typ-C-Anschluss (nur zum Laden).
 
-#. Stellen Sie sicher, dass die Firmware-Dateien heruntergeladen wurden.
+.. #. Stellen Sie sicher, dass die Firmware-Dateien heruntergeladen wurden.
 
-   * |download_galaxyrvr_filmware|
+..    * |download_galaxyrvr_filmware|
 
-#. Entpacken Sie das heruntergeladene Archiv, um einen ``output``-Ordner zu erhalten. Klicken Sie mit der rechten Maustaste (oder bei gedrückter Control-Taste) auf den ``output``-Ordner und wählen Sie **New Terminal at Folder** aus dem Kontextmenü.
+.. #. Entpacken Sie das heruntergeladene Archiv, um einen ``output``-Ordner zu erhalten. Klicken Sie mit der rechten Maustaste (oder bei gedrückter Control-Taste) auf den ``output``-Ordner und wählen Sie **New Terminal at Folder** aus dem Kontextmenü.
 
-   .. image:: img/faq_mac_firmware_open.png
-      :width: 400
+..    .. image:: img/faq_mac_firmware_open.png
+..       :width: 400
 
-#. Das Terminal öffnet sich direkt im ``output``-Ordner.
+.. #. Das Terminal öffnet sich direkt im ``output``-Ordner.
 
-   * Führen Sie den Befehl ``bash update-arduino-firmware-mac.sh`` aus
-   * Geben Sie dann die Nummer des erkannten COM-Ports ein (z. B. ``1``):
+..    * Führen Sie den Befehl ``bash update-arduino-firmware-mac.sh`` aus
+..    * Geben Sie dann die Nummer des erkannten COM-Ports ein (z. B. ``1``):
 
-   .. image:: img/faq_mac_firmware_run.png
-      :width: 600
+..    .. image:: img/faq_mac_firmware_run.png
+..       :width: 600
 
-#. Wenn die Meldung **"avrdude not Opened"** erscheint:
+.. #. Wenn die Meldung **"avrdude not Opened"** erscheint:
 
-   .. image:: img/faq_mac_firmware_avrdude.png
-      :width: 300
+..    .. image:: img/faq_mac_firmware_avrdude.png
+..       :width: 300
 
-#. Gehen Sie zu **Systemeinstellungen** > **Privatsphäre & Sicherheit** und klicken Sie auf **Allow Anyway**.
+.. #. Gehen Sie zu **Systemeinstellungen** > **Privatsphäre & Sicherheit** und klicken Sie auf **Allow Anyway**.
 
-   .. image:: img/faq_mac_firmware_allow.png
-      :width: 600
+..    .. image:: img/faq_mac_firmware_allow.png
+..       :width: 600
 
-#. Führen Sie das Skript erneut aus: ``bash update-arduino-firmware-mac.sh``
+.. #. Führen Sie das Skript erneut aus: ``bash update-arduino-firmware-mac.sh``
 
-   Diesmal können Sie **Open Anyway** auswählen. Geben Sie Ihren Administrator-Benutzernamen und Ihr Passwort ein, um den Vorgang zu erlauben.
+..    Diesmal können Sie **Open Anyway** auswählen. Geben Sie Ihren Administrator-Benutzernamen und Ihr Passwort ein, um den Vorgang zu erlauben.
 
-   .. image:: img/faq_mac_firmware_anyway.png
-      :width: 600
+..    .. image:: img/faq_mac_firmware_anyway.png
+..       :width: 600
 
-#. Sobald die Erfolgsmeldung erscheint, können Sie das USB-Kabel abziehen.
+.. #. Sobald die Erfolgsmeldung erscheint, können Sie das USB-Kabel abziehen.
 
-   .. image:: img/faq_mac_firmware_finish.png
-      :width: 600
+..    .. image:: img/faq_mac_firmware_finish.png
+..       :width: 600
 
-.. important::
+.. .. important::
 
-   * Diese Firmware ermöglicht es dem GalaxyRVR, auf App-Befehle zu reagieren.
-   * Sie müssen keinen zusätzlichen Code hochladen, wenn Sie die RoboPilot-Fernsteuerungs-App oder die Mammoth-Coding-Software verwenden.
-   * Sie können nun mit dem :ref:`quick_start` fortfahren, um Ihre Reise mit dem GalaxyRVR zu beginnen!
+..    * Diese Firmware ermöglicht es dem GalaxyRVR, auf App-Befehle zu reagieren.
+..    * Sie müssen keinen zusätzlichen Code hochladen, wenn Sie die RoboPilot-Fernsteuerungs-App oder die Mammoth-Coding-Software verwenden.
+..    * Sie können nun mit dem :ref:`quick_start` fortfahren, um Ihre Reise mit dem GalaxyRVR zu beginnen!
