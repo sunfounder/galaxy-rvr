@@ -18,9 +18,6 @@ We recommend updating the firmware before your first use to ensure everything wo
 .. note::
    If you prefer not to update the firmware and want to keep using your current configuration, you can refer to the `GalaxyRVR v1 Documentation <https://docs.sunfounder.com/projects/galaxy-rvr/en/v1/index.html>`_.
 
-.. tip::
-   Update the two boards in this order: the **R3 board first** (over USB, step 1), then the **ESP32 CAM** (over WiFi, step 2).
-
 
 .. Video temporarily disabled: it shows the old update procedure and is out of date. Re-enable it once the new video is recorded.
 ..
@@ -39,15 +36,15 @@ The flasher has three steps:
 
 #. **Connect** — Turn on the rover, connect the main board to your computer with a USB A to B cable (not the Type-C one), then set the mode switch to the **Upload** position. Then click **Next**.
 
-   .. image:: img/flasher_step1.png
+   .. image:: img/flasher_step1.jpg
       :width: 500
 
 #. **Flash** — Click **Connect & Flash**. In the port window that pops up, pick your board's port (for example ``USB Serial (COMxx)``), then click **Connect** and the flashing starts. If it fails, simply click **Connect & Flash** again.
 
-   .. image:: img/flasher_step2.png
+   .. image:: img/flasher_step2.jpg
       :width: 500
 
-#. **Done** — When the flash finishes you will see the following in the log window, which confirms the firmware was written and shows the current version (**2.0.2**). Ignore ``Initialzing...`` and everything after it at this point: the rover is still in **Upload** mode, so it cannot communicate with the ESP32 CAM yet. Then click **Next**.
+#. **Debug** — When the flash finishes you will see the following in the log window, which confirms the firmware was written and shows the current version (**2.0.2**). Ignore ``Initialzing...`` and everything after it at this point: the rover is still in **Upload** mode, so it cannot communicate with the ESP32 CAM yet. Then click **Next**.
 
    .. code-block::
 
@@ -67,7 +64,7 @@ The flasher has three steps:
 
 #. Now follow the prompt: Turn the power switch on, set the mode switch back to its original position and press the **Reset** button on the R3 board. 
 
-   .. image:: img/flasher_step3_run.png
+   .. image:: img/flasher_step3_run.jpg
       :width: 500
    
 #. The log window then shows the current ESP32 CAM firmware.
@@ -75,7 +72,7 @@ The flasher has three steps:
    * If the ESP32 CAM firmware is **1.5.0 or higher**, the log shows the UNO R3 firmware, the ESP32 CAM firmware and finally a web address like ``http://xxx.xxx.xx.xxx:9000/mjpg``.
    * If it is **lower than 1.5.0**, the log window shows that the ESP32 CAM firmware needs updating — continue with :ref:`update_esp32_firmware`.
 
-   .. image:: img/flasher_step3.png
+   .. image:: img/flasher_step3.jpg
       :width: 500
 
 

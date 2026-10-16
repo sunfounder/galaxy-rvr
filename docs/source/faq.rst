@@ -39,7 +39,7 @@ If you want to see what the R3 board or the ESP32 CAM is printing — for exampl
 
    * If it is **lower than 1.5.0**, the log window shows that the ESP32 CAM firmware needs updating — continue with :ref:`update_esp32_firmware`.
 
-   .. image:: img/flasher_step3.png
+   .. image:: img/flasher_step3.jpg
       :width: 500
 
 
