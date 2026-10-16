@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.0.3] - 2026-10-16
+
+### Fixed
+- The IP address the board prints at startup is complete again. At 115200 the camera reply
+  `[OK] 192.168.4.1\n` often arrives in more than one chunk, and the AI Camera library returned
+  as soon as the serial port was momentarily empty - so the board printed
+  `WebServer started on ws://192.168.:30102` and `Video streamer started on
+  http://192.168.:9000/mjpg`. Fixed in `SunFounder_AI_Camera` 1.2.2, which accumulates a reply
+  until its line ending arrives.
+
+### Requires
+- `SunFounder_AI_Camera >= 1.2.2` (the compile-time guard was raised accordingly)
+
 ## [2.0.2] - 2026-10-10
 
 ### Fixed

@@ -2,7 +2,7 @@
 
 Arduino UNO firmware for the GalaxyRVR robot car, works with the SunFounder Controller APP.
 
-Current version: **2.0.2**
+Current version: **2.0.3**
 
 - [Dev Environment](#dev-environment)
 - [Quick Start](#quick-start)
@@ -25,8 +25,9 @@ Dependencies:
 - SoftPWM
 - Servo
 - ArduinoJson
-- **SunFounder_AI_Camera >= 1.2.1** — required for 1.4.x camera support and the reply-copy
-  fix; the sketch fails to compile with anything older (see [CHANGELOG.md](CHANGELOG.md))
+- **SunFounder_AI_Camera >= 1.2.2** — required for 1.4.x camera support, the reply-copy fix and
+  the complete IP address printed at startup; the sketch fails to compile with anything older
+  (see [CHANGELOG.md](CHANGELOG.md))
 
 ## Quick Start
 
