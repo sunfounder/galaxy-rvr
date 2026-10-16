@@ -1,4 +1,4 @@
-﻿.. include:: /index.rst
+.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -34,7 +34,7 @@
 
      .. image:: img/5_animate_choose.png
 
-   * **火星** の背景を選択します。
+   * ** 火星** の背景を選択します。
 
      .. image:: img/5_animate_mars.png
 

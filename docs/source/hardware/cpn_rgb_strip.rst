@@ -1,4 +1,4 @@
-﻿.. include:: /index.rst
+.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -34,7 +34,7 @@ R5050 RGB LED は、赤、青、緑の発光ダイオードを 1 つのパッケ
 
 
 
-**特徴**
+** 特徴**
 
 * 動作電圧: DC5V
 * 色: フルカラー RGB

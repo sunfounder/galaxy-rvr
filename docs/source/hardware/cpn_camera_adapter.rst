@@ -1,4 +1,4 @@
-﻿.. include:: /index.rst
+.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -29,14 +29,14 @@
     :width: 400
     :align: center
 
-**仕様**
+** 仕様**
 
 * 動作電圧: 5V
 * インターフェースモデル: ZH1.5, 7P
 * 寸法: 40mm x 27mm x 15mm
 * 通信プロトコル: UART および I2C
 
-**ドキュメント**
+** ドキュメント**
 
 * PCB
 

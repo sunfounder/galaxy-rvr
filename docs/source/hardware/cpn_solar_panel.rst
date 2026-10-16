@@ -1,4 +1,4 @@
-﻿.. include:: /index.rst
+.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -14,7 +14,7 @@
 ソーラーパネルは、家庭、企業、さらには地域社会全体への電力供給など、さまざまな目的で電力を生成するために使用できます。これらはクリーンで再生可能なエネルギー源であり、化石燃料への依存を減らすのに役立ちます。
 
 
-**特徴**
+** 特徴**
 
 
 * 出力電力: 6V/660mA

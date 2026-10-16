@@ -1,11 +1,11 @@
-﻿.. include:: /index.rst
+.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
 クイックプレイ with Arduino
 ===============================
 
-この章では、 **特定の Arduino サンプルコードをすばやく開いて実行** し、GalaxyRVR にさまざまな動作をさせる方法を学びます。
+この章では、 ** 特定の Arduino サンプルコードをすばやく開いて実行** し、GalaxyRVR にさまざまな動作をさせる方法を学びます。
 
 これらのサンプルのコードロジックやプログラミング原理を理解したい場合は、:ref:`programming_arduino` の章を参照してください。
 

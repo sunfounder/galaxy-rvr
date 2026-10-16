@@ -1,4 +1,4 @@
-﻿.. include:: /index.rst
+.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -24,11 +24,11 @@
 1. スプライトと背景を追加する
 ----------------------------------------
 
-* デフォルトのスプライトを削除し、スプライトエリアの右下隅にある **スプライトを選ぶ** ボタンをクリックします。次に、 **Balloon1** スプライトを選択します。
+* デフォルトのスプライトを削除し、スプライトエリアの右下隅にある ** スプライトを選ぶ** ボタンをクリックします。次に、 **Balloon1** スプライトを選択します。
 
   .. image:: img/balloon_choose_sprite.png
 
-* **背景を選ぶ** ボタンから **Boardwalk** 背景、またはお好みの背景を追加します。
+* ** 背景を選ぶ** ボタンから **Boardwalk** 背景、またはお好みの背景を追加します。
 
   .. image:: img/balloon_choose_backdrop.png
 
@@ -41,12 +41,12 @@
 
   .. image:: img/balloon_set_ball1.png
 
-* 色を選び、 **ブラシ** ツールを使って模様を描きます。
+* 色を選び、 ** ブラシ** ツールを使って模様を描きます。
 
   .. image:: img/balloon_set_ball2.png
     :width: 90%
 
-* 別の色を選び、 **塗りつぶし** ツールを選択して、模様の内側をタップして色を塗ります。
+* 別の色を選び、 ** 塗りつぶし** ツールを選択して、模様の内側をタップして色を塗ります。
 
   .. image:: img/balloon_set_ball3.png
     :width: 90%
@@ -56,14 +56,14 @@
   .. image:: img/balloon_set_ball4.png
     :width: 90%
 
-3. **風船** スプライトのスクリプト作成
+3. ** 風船** スプライトのスクリプト作成
 ------------------------------------------
 
 * **Balloon1** スプライトの位置とサイズを初期化します。
 
   .. image:: img/balloon_script1.png
 
-* **風船** スプライトのサイズを徐々に大きくします。
+* ** 風船** スプライトのサイズを徐々に大きくします。
 
   .. image:: img/balloon_script2.png
 

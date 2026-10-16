@@ -1,4 +1,4 @@
-﻿.. include:: /index.rst
+.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -62,15 +62,15 @@
 
    .. image:: img/13.ccc_code_in_stage.png
 
-1. 前進時にローバーを **緑色** に光らせます。
+1. 前進時にローバーを ** 緑色** に光らせます。
 
    .. image:: img/13.ccc_light_forward.png
 
-2. 後退時にローバーを **赤色** に光らせます。
+2. 後退時にローバーを ** 赤色** に光らせます。
 
    .. image:: img/13.ccc_light_backfwd.png
 
-3. 左折または右折時にローバーを **黄色** に光らせます。
+3. 左折または右折時にローバーを ** 黄色** に光らせます。
 
    .. image:: img/13.ccc_light_left_right.png
 
@@ -129,14 +129,14 @@ GalaxyRVRの完全制御
 
 .. image:: img/13_camera_go_all2.png
 
-**ローバーの操作：**
+** ローバーの操作：**
 
 - 矢印キーを使って前進、後退、旋回
 - Ballスプライトをクリックしてライブカメラビデオのオン/オフを切り替え
 - BalloonスプライトをクリックしてカメラLEDライトのオン/オフを制御
 - 矢印スプライトをドラッグしてカメラを上下に傾ける
 
-**すべての機能を一緒にテスト：**
+** すべての機能を一緒にテスト：**
 
 - ローバーからのライブカメラ映像を見ながら走行
 - 各動作を知らせる色付きのライトに注目

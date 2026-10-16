@@ -1,4 +1,4 @@
-﻿.. include:: /index.rst
+.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -17,7 +17,7 @@ SunFounder R3 ボード
 
 SunFounder R3 ボードは、ATmega328P（`データシート <http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf>`_）ベースのマイクロコントローラーボードです。14 個のデジタル入出力ピン（うち 6 個は PWM 出力として使用可能）、6 個のアナログ入力、16 MHz のセラミック共振器（CSTCE16M0V53-R0）、USB 接続、電源ジャック、ICSP ヘッダー、リセットボタンを備えています。マイクロコントローラーをサポートするために必要なすべてのものが含まれています。USB ケーブルでコンピューターに接続するか、AC-DC アダプターまたはバッテリーで電源を供給するだけで使用を開始できます。
 
-**技術パラメータ**
+** 技術パラメータ**
 
 .. image:: img/uno.jpg
     :align: center
@@ -42,7 +42,7 @@ SunFounder R3 ボードは、ATmega328P（`データシート <http://ww1.microc
 * I2C ポート: A4(SDA)、A5(SCL)
 
 
-**詳細情報**
+** 詳細情報**
 
 * `Arduino IDE <https://www.arduino.cc/en/software>`_
 * `Arduino プログラミング言語リファレンス <https://www.arduino.cc/reference/en/>`_

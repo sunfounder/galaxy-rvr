@@ -1,4 +1,4 @@
-﻿.. include:: /index.rst
+.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -21,7 +21,7 @@ Scratchのコーディングブロックをドラッグ＆ドロップするだ�
 それでは、この探求の旅を始めましょう！
 
 
-**コードのダウンロード**
+** コードのダウンロード**
 
 
 .. note::
@@ -33,7 +33,7 @@ Scratchのコーディングブロックをドラッグ＆ドロップするだ�
 または、`SunFounder GalaxyRVR Kit for Arduino - GitHub <https://github.com/sunfounder/galaxy-rvr/tree/1.2>`_ でコードを確認してください。
 
 
-**基本プロジェクト**
+** 基本プロジェクト**
 
 これらのプロジェクトは、Mammoth CodingでGalaxyRVRを制御するための基本コースです。GalaxyRVRの使用方法を段階的にガイドします。
 
@@ -56,7 +56,7 @@ Scratchのコーディングブロックをドラッグ＆ドロップするだ�
     sc13_all
 
 
-**ファンプロジェクト**
+** ファンプロジェクト**
 
 以下はGalaxyRVRを必要としない楽しいプロジェクトですが、ここで実装することができます。
 

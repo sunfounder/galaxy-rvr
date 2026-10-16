@@ -1,4 +1,4 @@
-﻿.. include:: /index.rst
+.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -20,7 +20,7 @@ GalaxyRVR は 3 つの制御方法をサポートしています：
 
 ----
 
-**コードのダウンロード**
+** コードのダウンロード**
 
 以下のリンクからサンプルコードをダウンロードしてください：
 

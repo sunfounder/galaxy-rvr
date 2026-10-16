@@ -1,4 +1,4 @@
-﻿.. include:: /index.rst
+.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -12,7 +12,7 @@ Arduino IDE でプログラミング
 
 赤い惑星を身近に感じる準備をしましょう。今すぐローバーアドベンチャーを始めましょう！
 
-**コードをダウンロード**
+** コードをダウンロード**
 
 
 以下のリンクから関連するコードをダウンロードしてください。
