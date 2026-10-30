@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.0.4] - 2026-10-30
+
+### Fixed
+- The board no longer hangs in `setup()` right after the camera is reset, which made 2.0.3
+  unbootable: the camera answers `SET+RESET` with its boot ROM banner and only then
+  `[OK] <version>`, and the AI Camera library appended that reply to the previous line, so
+  `[OK]` was never matched. `command()` exhausted its three retries, printed `[FAIL]` and
+  spun in `while (1)` - no WebSocket, the LED stayed orange and the app could not connect.
+  The startup log also shows the camera's boot output garbled, because the line reader spent
+  1 ms per character and fell behind the 115200 baud stream. Fixed in
+  `SunFounder_AI_Camera` 1.2.3.
+
+### Requires
+- `SunFounder_AI_Camera >= 1.2.3` (the compile-time guard was raised accordingly)
+
 ## [2.0.3] - 2026-10-16
 
 ### Fixed
