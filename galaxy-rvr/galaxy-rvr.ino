@@ -14,7 +14,7 @@ Play(Android).
     - ArduinoJson
     - Sunfounder_AI_Camera
 
-  Version: 2.0.3
+  Version: 2.0.4
     -- https://github.com/sunfounder/galaxy-rvr.git
 
   Documentation:
@@ -25,7 +25,7 @@ Play(Android).
            https://docs.sunfounder.com
 
 ********************************************************************/
-#define VERSION "2.0.3"
+#define VERSION "2.0.4"
 
 #include "galaxy-rvr.h"
 
@@ -36,10 +36,13 @@ Play(Android).
 //     1.5.x and reset the board in a loop
 //   - 1.2.2 reads camera replies line by line, so the IP printed at startup is complete
 //     instead of "http://192.168.:9000/mjpg"
+//   - 1.2.3 clears the receive buffer after each complete line again, so the reply that
+//     follows the camera's boot ROM banner ("[OK] <version>") is parsed: without it the
+//     RESET handshake always failed and setup() hung in while (1) ("[FAIL]")
 // This firmware is built from source by users, and a build against an older library
 // would look new while still failing - block that at compile time.
-#if !defined(AI_CAMERA_VERSION_CODE) || AI_CAMERA_VERSION_CODE < 10202
-#error "GalaxyRVR 2.0.3 needs SunFounder_AI_Camera >= 1.2.2. Please update the library first."
+#if !defined(AI_CAMERA_VERSION_CODE) || AI_CAMERA_VERSION_CODE < 10203
+#error "GalaxyRVR 2.0.4 needs SunFounder_AI_Camera >= 1.2.3. Please update the library first."
 #endif
 
 /*********************** Global variables ****************************/

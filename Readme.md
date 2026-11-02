@@ -1,8 +1,8 @@
 # GalaxyRVR
 
-Arduino UNO firmware for the GalaxyRVR robot car, works with the SunFounder Controller APP.
+Arduino UNO firmware for the GalaxyRVR robot car, works with the Robo Pilot remote controller.
 
-Current version: **2.0.3**
+Current version: **2.0.4**
 
 - [Dev Environment](#dev-environment)
 - [Quick Start](#quick-start)
@@ -25,16 +25,17 @@ Dependencies:
 - SoftPWM
 - Servo
 - ArduinoJson
-- **SunFounder_AI_Camera >= 1.2.2** — required for 1.4.x camera support, the reply-copy fix and
-  the complete IP address printed at startup; the sketch fails to compile with anything older
-  (see [CHANGELOG.md](CHANGELOG.md))
+- **SunFounder_AI_Camera >= 1.2.3** — required for 1.4.x camera support, the reply-copy fix,
+  the complete IP address printed at startup and a camera that is given time to boot before it
+  is configured; the sketch fails to compile with anything older (see [CHANGELOG.md](CHANGELOG.md))
 
 ## Quick Start
 
 1. Open `galaxy-rvr/galaxy-rvr.ino` in Arduino IDE
 2. Select Board: Arduino UNO, pick the correct port
 3. Compile and upload
-4. Install SunFounder Controller APP on your phone, connect to WiFi `GalaxyRVR` (password `12345678`)
+4. Install the Robo Pilot app on your phone, connect to WiFi `GalaxyRVR` (password `12345678`)
+   (v2 firmware talks to Robo Pilot; the older SunFounder Controller app is not compatible)
 
 ## Project Structure
 
