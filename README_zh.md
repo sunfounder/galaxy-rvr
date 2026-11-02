@@ -1,8 +1,8 @@
 # GalaxyRVR
 
-GalaxyRVR 机器人小车的 Arduino UNO 控制固件，配合 SunFounder Controller APP 使用。
+GalaxyRVR 机器人小车的 Arduino UNO 控制固件，配合 Robo Pilot 遥控器使用。
 
-当前版本：**2.0.3**
+当前版本：**2.0.4**
 
 - [开发环境](#开发环境)
 - [快速开始](#快速开始)
@@ -21,7 +21,7 @@ GalaxyRVR 机器人小车的 Arduino UNO 控制固件，配合 SunFounder Contro
 
 依赖库：
 
-> SunFounder_AI_Camera 需要 **>= 1.2.2**（1.4.x 老摄像头兼容 + 回包拷贝越界修复 + 启动打印的 IP 完整），版本低了 sketch 会直接编译报错，见 [CHANGELOG.md](CHANGELOG.md)。
+> SunFounder_AI_Camera 需要 **>= 1.2.3**（1.4.x 老摄像头兼容 + 回包拷贝越界修复 + 启动打印的 IP 完整 + 配置前给摄像头留足启动时间），版本低了 sketch 会直接编译报错，见 [CHANGELOG.md](CHANGELOG.md)。
 
 - IRLremote
 - SoftPWM
@@ -34,7 +34,8 @@ GalaxyRVR 机器人小车的 Arduino UNO 控制固件，配合 SunFounder Contro
 1. 用 Arduino IDE 打开 `galaxy-rvr/galaxy-rvr.ino`
 2. 选择 Board: Arduino UNO，选择正确端口
 3. 编译并上传
-4. 手机安装 SunFounder Controller APP，连接 WiFi `GalaxyRVR`（密码 `12345678`）
+4. 手机安装 **Robo Pilot** App，连接 WiFi `GalaxyRVR`（密码 `12345678`）
+   （v2 固件配 Robo Pilot；老的 SunFounder Controller App 不兼容）
 
 ## 项目结构
 
