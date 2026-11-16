@@ -1,4 +1,4 @@
-﻿# Configuration file for the Sphinx documentation builder.
+# Configuration file for the Sphinx documentation builder.
 #
 # This file only contains a selection of the most common options. For a full
 # list see the documentation:
@@ -182,7 +182,7 @@ rst_epilog = """
 .. |download_galaxyrvr_code| replace:: :download:`GalaxyRVR Code File <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
 
 
-.. |download_galaxyrvr_filmware| replace:: :download:`GalaxyRVR Firmware File <https://github.com/sunfounder/galaxy-rvr/releases/latest/download/galaxy-rvr.ino.zip>`
+.. |download_galaxyrvr_filmware| replace:: :download:`GalaxyRVR Firmware File <https://github.com/sunfounder/ai-camera-firmware/releases/latest>`
 
 .. |link_galaxy_rvr_flasher| raw:: html
 
