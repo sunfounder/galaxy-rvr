@@ -183,7 +183,7 @@ rst_epilog = """
 
 .. |download_galaxyrvr_code| replace:: :download:`File Codice GalaxyRVR <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
 
-.. |download_galaxyrvr_filmware| replace:: :download:`File Firmware GalaxyRVR <https://github.com/sunfounder/galaxy-rvr/releases/latest/download/galaxy-rvr.ino.zip>`
+.. |download_galaxyrvr_filmware| replace:: :download:`File Firmware GalaxyRVR <https://github.com/sunfounder/ai-camera-firmware/releases/latest>`
 
 .. |link_galaxy_rvr_flasher| raw:: html
 
