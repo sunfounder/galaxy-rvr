@@ -94,7 +94,7 @@ If the firmware is outdated, these functions may not work properly. Follow the s
 
    * |download_galaxyrvr_filmware|
 
-#. Extract the downloaded ZIP file. Locate the firmware file named ``ai-camera-firware.ino.x.x.x.bin`` and transfer it to your mobile device. You can use any file manager app, such as ES File Explorer or a file transfer utility.
+#. Extract the downloaded ZIP file. Locate the firmware file named ``ai-camera-firmware.vX.X.X.zip`` and transfer it to your mobile device. You can use any file manager app, such as ES File Explorer or a file transfer utility.
 
    .. image:: img/firmware_bin_file.png
         :align: center
@@ -146,7 +146,7 @@ If the firmware is outdated, these functions may not work properly. Follow the s
 
    #. Tap **Upgrade Firmware**, select the firmware file, and wait for the update to complete:
 
-      * Tap the **Upgrade Firmware** button, then select the previously downloaded ``ai-camera-firware.ino.x.x.x.bin`` file from your device.
+      * Tap the **Upgrade Firmware** button, then select the previously downloaded ``ai-camera-firmware.vX.X.X.zip`` file from your device.
       * The update will begin immediately and typically takes 1-2 minutes. Once finished, select **CONFIRM** to restart the GalaxyRVR.
 
       .. image:: img/faq_ota_b.png
