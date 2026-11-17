@@ -85,14 +85,18 @@ ESP32 CAM 负责广播 Wi-Fi 热点并为 GalaxyRVR 采集视频。
         :width: 500
         :align: center
 
-#. 下载固件文件。
+#. 下载摄像头固件。打开发布页：|link_ai_camera_firmware|
 
-   * |download_galaxyrvr_filmware|
-
-#. 解压下载的 ZIP 文件。找到名为 ``ai-camera-firware.ino.x.x.x.bin`` 的固件文件，并将其传输到您的移动设备。您可以使用任何文件管理器应用，例如 ES 文件浏览器或文件传输工具。
+#. 在该页面向下滚动到 **Assets**，点击文件名以 ``-ota.bin`` 结尾的那个文件，例如 ``ai-camera-firmware.vX.X.X-ota.bin``。
 
    .. image:: img/firmware_bin_file.png
         :align: center
+
+   .. note::
+
+      请选 ``-ota.bin`` 文件。另外两个文件各有用途：``-factory.bin`` 用于把摄像头恢复到出厂状态，``.zip`` 包则是源代码。
+
+#. 把下载好的文件传输到您的移动设备。您可以使用任意文件管理器应用，例如 ES 文件浏览器或文件传输工具。
 
 #. 将您的移动设备连接到 GalaxyRVR 的 WiFi 网络。
 
@@ -117,7 +121,7 @@ ESP32 CAM 负责广播 Wi-Fi 热点并为 GalaxyRVR 采集视频。
 
    6. 在 OTA 页面选择固件文件并开始更新：
 
-      * 从设备中选择之前下载的 ``ai-camera-firmware-vX.X.X-ota.bin`` 文件，然后点击 **Add** 。
+      * 从设备中选择之前下载的 ``ai-camera-firmware.vX.X.X-ota.bin`` 文件，然后点击 **Add** 。
       * 点击 **Update** 按钮开始固件更新，等待完成即可。
 
       .. image:: img/faq_ota_a.png
@@ -141,7 +145,7 @@ ESP32 CAM 负责广播 Wi-Fi 热点并为 GalaxyRVR 采集视频。
 
    #. 点击 **Upgrade Firmware** ，选择固件文件并等待更新完成：
 
-      * 点击 **Upgrade Firmware** 按钮，然后从设备中选择之前下载的 ``ai-camera-firware.ino.x.x.x.bin`` 文件。
+      * 点击 **Upgrade Firmware** 按钮，然后从设备中选择之前下载的 ``ai-camera-firmware.vX.X.X-ota.bin`` 文件。
       * 更新将立即开始，通常需要 1-2 分钟。完成后，选择 **CONFIRM** 重启 GalaxyRVR。
 
       .. image:: img/faq_ota_b.png
