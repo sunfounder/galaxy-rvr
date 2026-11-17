@@ -300,7 +300,6 @@ Pour résoudre ce problème, vous devez restaurer les paramètres d'usine de l'E
 ..
 .. #. Assurez-vous que les fichiers du firmware ont été téléchargés.
 ..
-..    * |download_galaxyrvr_filmware|
 ..
 .. #. Extrayez l'archive téléchargée pour obtenir un dossier ``output``. Faites un clic droit (ou Ctrl-clic) sur le dossier ``output`` et sélectionnez **New Terminal at Folder** dans le menu contextuel.
 ..
