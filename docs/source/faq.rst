@@ -298,8 +298,6 @@ To resolve this, you need to restore the ESP32 CAM to its factory settings by cl
 
 .. #. Make sure the firmware files have been downloaded.
 
-..    * |download_galaxyrvr_filmware|
-
 .. #. Extract the downloaded archive to get an ``output`` folder. Right-click (or Control-click) the ``output`` folder and select **New Terminal at Folder** from the context menu.
 
 ..    .. image:: img/faq_mac_firmware_open.png

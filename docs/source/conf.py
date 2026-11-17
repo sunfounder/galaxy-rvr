@@ -165,7 +165,7 @@ rst_epilog = """
 
 .. |link_ai_camera_firmware| raw:: html
 
-    <a href="https://github.com/sunfounder/ai-camera-firmware" target="_blank">ai-camera-firmware</a>
+    <a href="https://github.com/sunfounder/ai-camera-firmware/releases/latest" target="_blank">ai-camera-firmware</a>
 
 .. |link_GalaxyRVR| raw:: html
 
@@ -180,9 +180,6 @@ rst_epilog = """
     <a href="https://github.com/sunfounder/galaxy-rvr/tree/1.2.x" target="_blank">SunFounder GalaxyRVR Kit for Arduino - GitHub</a>
 
 .. |download_galaxyrvr_code| replace:: :download:`GalaxyRVR Code File <https://github.com/sunfounder/galaxy-rvr/archive/refs/heads/main.zip>`
-
-
-.. |download_galaxyrvr_filmware| replace:: :download:`GalaxyRVR Firmware File <https://github.com/sunfounder/ai-camera-firmware/releases/latest>`
 
 .. |link_galaxy_rvr_flasher| raw:: html
 
