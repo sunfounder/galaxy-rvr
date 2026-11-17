@@ -90,14 +90,18 @@ Se il firmware è obsoleto, queste funzioni potrebbero non funzionare correttame
         :width: 500
         :align: center
    
-#. Scarichi il file del firmware.
+#. Scarichi il firmware della camera. Apra la pagina delle release qui: |link_ai_camera_firmware|
 
-   * |download_galaxyrvr_filmware|
-
-#. Estragga il file ZIP scaricato. Individui il file firmware denominato ``ai-camera-firware.ino.x.x.x.bin`` e lo trasferisca sul Suo dispositivo mobile. Può utilizzare qualsiasi app di gestione file, come ES File Explorer o un'utility di trasferimento file.
+#. In quella pagina, scorra fino a **Assets** e faccia clic sul file il cui nome termina con ``-ota.bin``, per esempio ``ai-camera-firmware.vX.X.X-ota.bin``.
 
    .. image:: img/firmware_bin_file.png
         :align: center
+
+   .. note::
+
+      Scelga il file ``-ota.bin``. Gli altri file servono ad altro: ``-factory.bin`` ripristina una camera da zero e il pacchetto ``.zip`` contiene il codice sorgente.
+
+#. Trasferisca il file scaricato sul Suo dispositivo mobile. Può utilizzare qualsiasi app di gestione file, come ES File Explorer o un'utility di trasferimento file.
 
 #. Colleghi il Suo dispositivo mobile alla rete WiFi del GalaxyRVR.
 
@@ -122,7 +126,7 @@ Se il firmware è obsoleto, queste funzioni potrebbero non funzionare correttame
 
    6. Nella pagina OTA, selezioni il file del firmware e avvii l'aggiornamento:
 
-      * Scelga il file ``ai-camera-firmware-vX.X.X-ota.bin`` precedentemente scaricato sul Suo dispositivo e faccia clic su **Add**.
+      * Scelga il file ``ai-camera-firmware.vX.X.X-ota.bin`` precedentemente scaricato sul Suo dispositivo e faccia clic su **Add**.
       * Faccia clic sul pulsante **Update** per avviare l'aggiornamento del firmware, quindi attenda che sia completato.
 
       .. image:: img/faq_ota_a.png
@@ -146,7 +150,7 @@ Se il firmware è obsoleto, queste funzioni potrebbero non funzionare correttame
 
    #. Tocchi **Upgrade Firmware**, selezioni il file del firmware e attenda il completamento dell'aggiornamento:
 
-      * Tocchi il pulsante **Upgrade Firmware**, quindi selezioni il file ``ai-camera-firware.ino.x.x.x.bin`` precedentemente scaricato sul Suo dispositivo.
+      * Tocchi il pulsante **Upgrade Firmware**, quindi selezioni il file ``ai-camera-firmware.vX.X.X-ota.bin`` precedentemente scaricato sul Suo dispositivo.
       * L'aggiornamento inizierà immediatamente e richiede in genere 1-2 minuti. Al termine, selezioni **CONFIRM** per riavviare il GalaxyRVR.
 
       .. image:: img/faq_ota_b.png
