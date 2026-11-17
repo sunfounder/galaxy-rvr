@@ -303,8 +303,6 @@ GalaxyRVR の Wi-Fi ホットスポットが表示されない場合、または
 
 .. #. ファームウェアファイルがダウンロードされていることを確認します。
 
-..    * |download_galaxyrvr_filmware|
-
 .. #. ダウンロードしたアーカイブを解凍し、``output`` フォルダーを取得します。``output`` フォルダーを右クリック（または Control キーを押しながらクリック）し、コンテキストメニューから **New Terminal at Folder** を選択します。
 
 ..    .. image:: img/faq_mac_firmware_open.png

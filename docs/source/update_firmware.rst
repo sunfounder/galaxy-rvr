@@ -90,14 +90,18 @@ ESP32 CAM は、GalaxyRVR の Wi-Fi ホットスポットをブロードキャ�
         :width: 500
         :align: center
 
-#. ファームウェアファイルをダウンロードします。
+#. カメラのファームウェアをダウンロードします。リリースページはこちらです： |link_ai_camera_firmware|
 
-   * |download_galaxyrvr_filmware|
-
-#. ダウンロードした ZIP ファイルを解凍します。``ai-camera-firware.ino.x.x.x.bin`` という名前のファームウェアファイルを見つけ、モバイルデバイスに転送します。ES File Explorer やファイル転送ユーティリティなど、任意のファイルマネージャーアプリを使用できます。
+#. そのページで **Assets** まで下にスクロールし、名前が ``-ota.bin`` で終わるファイル（例：``ai-camera-firmware.vX.X.X-ota.bin``）をクリックします。
 
    .. image:: img/firmware_bin_file.png
         :align: center
+
+   .. note::
+
+      ``-ota.bin`` ファイルを選んでください。ほかのファイルは用途が異なります：``-factory.bin`` はカメラを初期状態に戻すためのもの、``.zip`` パッケージはソースコードです。
+
+#. ダウンロードしたファイルをモバイルデバイスに転送します。ES File Explorer やファイル転送ユーティリティなど、任意のファイルマネージャーアプリを使用できます。
 
 #. モバイルデバイスを GalaxyRVR の WiFi ネットワークに接続します。
 
@@ -122,7 +126,7 @@ ESP32 CAM は、GalaxyRVR の Wi-Fi ホットスポットをブロードキャ�
 
    6. OTA ページでファームウェアファイルを選択し、更新を開始します：
 
-      * デバイスから先ほどダウンロードした ``ai-camera-firmware-vX.X.X-ota.bin`` ファイルを選択し、**Add** をクリックします。
+      * デバイスから先ほどダウンロードした ``ai-camera-firmware.vX.X.X-ota.bin`` ファイルを選択し、**Add** をクリックします。
       * **Update** ボタンをクリックしてファームウェアの更新を開始し、完了するまで待ちます。
 
       .. image:: img/faq_ota_a.png
@@ -147,7 +151,7 @@ ESP32 CAM は、GalaxyRVR の Wi-Fi ホットスポットをブロードキャ�
 
    #. **Upgrade Firmware** をタップし、ファームウェアファイルを選択して更新の完了を待ちます：
 
-      * **Upgrade Firmware** ボタンをタップし、先ほどデバイスにダウンロードした ``ai-camera-firware.ino.x.x.x.bin`` ファイルを選択します。
+      * **Upgrade Firmware** ボタンをタップし、先ほどデバイスにダウンロードした ``ai-camera-firmware.vX.X.X-ota.bin`` ファイルを選択します。
       * 更新はすぐに開始され、通常 1〜2 分かかります。完了したら **CONFIRM** を選択して GalaxyRVR を再起動します。
 
       .. image:: img/faq_ota_b.png
