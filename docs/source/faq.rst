@@ -300,8 +300,6 @@ Para resolverlo, debe restaurar el ESP32 CAM a sus ajustes de fábrica borrando 
 
 .. #. Asegúrese de que los archivos de firmware se hayan descargado.
 
-..    * |download_galaxyrvr_filmware|
-
 .. #. Extraiga el archivo descargado para obtener una carpeta ``output``. Haga clic derecho (o Control-clic) en la carpeta ``output`` y seleccione **New Terminal at Folder** del menú contextual.
 
 ..    .. image:: img/faq_mac_firmware_open.png
