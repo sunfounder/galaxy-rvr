@@ -294,8 +294,6 @@ GalaxyRVR 的 R3 板搭载了支持 RoboPilot App 和 Mammoth Coding 的固件�
 
 .. #. 确保固件文件已下载。
 
-..    * |download_galaxyrvr_filmware|
-
 .. #. 解压下载的压缩包，获取 ``output`` 文件夹。右键点击（或按住 Control 点击） ``output`` 文件夹，从上下文菜单中选择 **New Terminal at Folder** 。
 
 ..    .. image:: img/faq_mac_firmware_open.png
