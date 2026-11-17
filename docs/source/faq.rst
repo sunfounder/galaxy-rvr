@@ -299,8 +299,6 @@ Per risolvere il problema, deve ripristinare le impostazioni di fabbrica dell'ES
 
 .. #. Si assicuri che i file del firmware siano stati scaricati.
 
-..    * |download_galaxyrvr_filmware|
-
 .. #. Estragga l'archivio scaricato per ottenere una cartella ``output``. Faccia clic destro (o Ctrl-clic) sulla cartella ``output`` e selezioni **New Terminal at Folder** dal menu contestuale.
 
 ..    .. image:: img/faq_mac_firmware_open.png
