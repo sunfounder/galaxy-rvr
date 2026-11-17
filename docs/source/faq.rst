@@ -301,8 +301,6 @@ Um dies zu beheben, müssen Sie die ESP32 CAM auf die Werkseinstellungen zurück
 
 .. #. Stellen Sie sicher, dass die Firmware-Dateien heruntergeladen wurden.
 
-..    * |download_galaxyrvr_filmware|
-
 .. #. Entpacken Sie das heruntergeladene Archiv, um einen ``output``-Ordner zu erhalten. Klicken Sie mit der rechten Maustaste (oder bei gedrückter Control-Taste) auf den ``output``-Ordner und wählen Sie **New Terminal at Folder** aus dem Kontextmenü.
 
 ..    .. image:: img/faq_mac_firmware_open.png
